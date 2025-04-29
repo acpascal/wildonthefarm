@@ -27,7 +27,7 @@ export default function Header(props) {
             className={classNames(
                 'sb-component',
                 'sb-component-header',
-                isScrolled ? colors : 'bg-transparent',
+                isScrolled ? colors : 'bg-transparent text-white',
                 styles?.self?.margin ? mapStyles({ padding: styles?.self?.margin }) : undefined,
                 styles?.self?.padding ? mapStyles({ padding: styles?.self?.padding }) : 'p-4'
             )}
@@ -330,7 +330,7 @@ function LinkWithSubnav(props) {
             data-sb-field-path={fieldPath}
         >
             <button
-                aria-expanded={isSubNavOpen ? 'true' : 'false'}
+                aria-expanded={Boolean(isSubNavOpen)}
                 onMouseOver={
                     !process.env.stackbitPreview && !inMobileMenu
                         ? () => {
