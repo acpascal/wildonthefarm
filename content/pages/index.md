@@ -26,7 +26,7 @@ sections:
       url: /images/logo-dark.svg
       altText: Fun feature preview
       type: ImageBlock
-    subtitle: High atop the cliffs of Big Sur, the striking views and otherworldly serenity can’t help but stir your soul. Find your calm, and so much more.
+    text: In an exceptional location, at 6000 feet elevation and 15 minutes from Boquete, enveloped by the cloud forest of Amistad National Park, our 42 acres organic farm & cloud forest lodge,offers the highest standard to reconnect with nature, serenity and Health.
     colors: bg-emerald-fg-light
     styles:
       self:
@@ -58,42 +58,12 @@ sections:
         elementId: ''
         type: Button
     items:
-      - title: Coast House
+      - title: Cloud forest Chalet
         text: >-
-          With a circular design that mirrors the surrounding redwood trees, Coast Houses offer the chance to admire the Pacific. Curl up indoors by the fireplace or outdoors on the deck with views of the ocean and neighboring forest.
+          Silence, fresh air, magnificent view, here begins a deep detox from stress. A chalet in harmony with nature, a beautiful bathroom, and a bed with a comfortable mattress, everything here is order and beauty, luxury, calm and serenity.
         image:
-          url: /images/hero2.svg
-          altText: Maria Walters
-          type: ImageBlock
-        actions:
-          - label: View Cabin
-            altText: ''
-            url: /
-            showIcon: true
-            icon: arrowRight
-            iconPosition: right
-            style: primary
-            elementId: ''
-            type: Link
-        colors: bg-light-fg-dark
-        styles:
-          text:
-            padding:
-              - pt-9
-              - pb-9
-              - pl-9
-              - pr-9
-          self:
-            textAlign: left
-            borderRadius: large
-            flexDirection: col
-        type: FeaturedItem
-      - title: Coast House
-        text: >-
-          With a circular design that mirrors the surrounding redwood trees, Coast Houses offer the chance to admire the Pacific. Curl up indoors by the fireplace or outdoors on the deck with views of the ocean and neighboring forest.
-        image:
-          url: /images/hero2.svg
-          altText: Maria Walters
+          url: /images/dce64507-88ba-43ac-8935-a192e5ddb70d.jpg
+          altText: Cloud forest Chalet
           type: ImageBlock
         actions:
           - label: View Cabin
@@ -204,7 +174,7 @@ sections:
         elementId: ''
         type: Link
     media:
-      url: /images/dine.jpg
+      url: /images/20241218_120642 2.jpg
       altText: Unblock your team boost your time to production preview
       elementId: ''
       className:
