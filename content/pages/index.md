@@ -5,7 +5,7 @@ sections:
   - type: GenericSection
     media:
       title: Title of the video
-      url: /images/placeholder-video.mp4
+      url: https://www.youtube.com/watch?v=qQnjBXCXJEg
       controls: false
       aspectRatio: '16:9'
       type: VideoBlock
@@ -15,15 +15,12 @@ sections:
     colors: bg-light-fg-dark
     styles:
       self:
-        flexDirection: col
-        justifyContent: center
+        maxWidth: max-w-screen
         padding:
           - pt-0
           - pl-0
           - pb-0
           - pr-0
-      subtitle:
-        textAlign: center
   - type: GenericSection
     media:
       url: /images/logo-dark.svg
