@@ -1,0 +1,110 @@
+{
+    "logo": {
+        "url": "/images/logo-white.svg",
+        "altText": "Logo light",
+        "type": "ImageBlock"
+    },
+    "text": "A description of your brand",
+    "primaryLinks": {
+        "title": "Menu",
+        "links": [
+            {
+                "label": "The Farm",
+                "altText": "Phone number",
+                "url": "tel:50712345678",
+                "style": "secondary",
+                "type": "Link"
+            },
+            {
+                "label": "Stay",
+                "altText": "Contact email",
+                "url": "mailto:reservations@finca.com",
+                "style": "secondary",
+                "type": "Link"
+            },
+            {
+                "label": "Dine",
+                "url": "https://maps.app.goo.gl/Muz5pNFhUCRdEXZT7",
+                "style": "secondary",
+                "type": "Link"
+            },
+            {
+                "label": "Experience",
+                "url": "https://maps.app.goo.gl/Muz5pNFhUCRdEXZT7",
+                "style": "secondary",
+                "type": "Link"
+            },
+            {
+                "label": "Blog",
+                "url": "https://maps.app.goo.gl/Muz5pNFhUCRdEXZT7",
+                "style": "secondary",
+                "type": "Link"
+            }
+        ],
+        "type": "FooterLinksGroup"
+    },
+    "secondaryLinks": {
+        "title": "Contact Us",
+        "links": [
+            {
+                "label": "+507 1234 5678",
+                "altText": "Phone number",
+                "url": "tel:50712345678",
+                "style": "secondary",
+                "type": "Link"
+            },
+            {
+                "label": "reservations@finca.com",
+                "altText": "Contact email",
+                "url": "mailto:reservations@finca.com",
+                "style": "secondary",
+                "type": "Link"
+            },
+            {
+                "label": "Finca Amistad\nHorqueta, Boquete, Chiriqui\nPanama",
+                "url": "https://maps.app.goo.gl/Muz5pNFhUCRdEXZT7",
+                "style": "secondary",
+                "type": "Link"
+            }
+        ],
+        "type": "FooterLinksGroup"
+    },
+    "socialLinks": [
+        {
+            "altText": "GitHub link",
+            "url": "https://github.com/netlify",
+            "icon": "github",
+            "type": "Social"
+        },
+        {
+            "altText": "Twitter link",
+            "url": "https://twitter.com/netlify",
+            "icon": "twitter",
+            "type": "Social"
+        },
+        {
+            "altText": "LinkedIn link",
+            "url": "https://www.linkedin.com/company/netlify",
+            "icon": "linkedin",
+            "type": "Social"
+        },
+        {
+            "altText": "Email link",
+            "url": "/",
+            "icon": "mail",
+            "type": "Social"
+        }
+    ],
+    "copyrightText": "©2025 THE RANCH",
+    "colors": "bg-emerald-fg-light",
+    "type": "Footer",
+    "styles":{
+        "self": {
+            "padding": [
+                "px-4",
+                "pt-28",
+                "pb-4"
+            ]
+        }
+    }
+}

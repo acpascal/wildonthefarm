@@ -1,0 +1,56 @@
+{
+    "logo": {
+        "url": "/images/logo-dark.svg",
+        "altText": "Logo dark",
+        "styles": {
+            "self": {
+                "margin": [
+                    "mr-3"
+                ]
+            }
+        },
+        "type": "ImageBlock"
+    },
+    "title": "Finca Amistad",
+    "primaryLinks": [
+        {
+            "label": "THE FARM",
+            "altText": "About us",
+            "url": "/aboutus",
+            "style": "secondary",
+            "type": "Link"
+        },
+        {
+            "label": "STAY",
+            "altText": "Stay",
+            "url": "/stay",
+            "style": "secondary",
+            "type": "Link"
+        },
+        {
+            "label": "DINE",
+            "altText": "Dine page",
+            "url": "/dine",
+            "style": "secondary",
+            "type": "Link"
+        },
+        {
+            "label": "EXPERIENCE",
+            "altText": "Experience page",
+            "url": "/experience",
+            "style": "secondary",
+            "type": "Link"
+        },
+        {
+            "label": "BLOG",
+            "altText": "Blog",
+            "url": "/blog",
+            "style": "secondary",
+            "type": "Link"
+        }
+    ],
+    "secondaryLinks": [],
+    "variant": "logo-left-primary-nav-right",
+    "colors": "bg-emerald-fg-light",
+    "type": "Header"
+}
