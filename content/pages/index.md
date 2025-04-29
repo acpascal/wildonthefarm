@@ -4,7 +4,7 @@ slug: /
 sections:
   - type: GenericSection
     media:
-      title: Title of the video
+      title: Wild on the farm
       url: https://www.youtube.com/watch?v=qQnjBXCXJEg
       controls: false
       aspectRatio: '16:9'
@@ -64,6 +64,36 @@ sections:
         image:
           url: /images/dce64507-88ba-43ac-8935-a192e5ddb70d.jpg
           altText: Cloud forest Chalet
+          type: ImageBlock
+        actions:
+          - label: View Cabin
+            altText: ''
+            url: /
+            showIcon: true
+            icon: arrowRight
+            iconPosition: right
+            style: primary
+            elementId: ''
+            type: Link
+        colors: bg-light-fg-dark
+        styles:
+          text:
+            padding:
+              - pt-9
+              - pb-9
+              - pl-9
+              - pr-9
+          self:
+            textAlign: left
+            borderRadius: large
+            flexDirection: col
+        type: FeaturedItem
+      - title: Coast House
+        text: >-
+          With a circular design that mirrors the surrounding redwood trees, Coast Houses offer the chance to admire the Pacific. Curl up indoors by the fireplace or outdoors on the deck with views of the ocean and neighboring forest.
+        image:
+          url: /images/hero2.svg
+          altText: Maria Walters
           type: ImageBlock
         actions:
           - label: View Cabin
