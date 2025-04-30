@@ -27,9 +27,8 @@ sections:
       altText: Fun feature preview
       type: ImageBlock
     text: >
-
-
-      HEALING WITH NATURE
+      ##                                                       HEALING WITH
+      NATURE
 
 
       In an exceptional location, at 6000 feet elevation and 15 minutes from
