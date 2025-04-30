@@ -5,7 +5,7 @@ sections:
   - type: GenericSection
     media:
       title: Wild on the farm
-      url: https://www.youtube.com/watch?v=qQnjBXCXJEg
+      url: 'https://www.youtube.com/watch?v=qQnjBXCXJEg'
       controls: false
       aspectRatio: '16:9'
       type: VideoBlock
@@ -26,7 +26,16 @@ sections:
       url: /images/logo-dark.svg
       altText: Fun feature preview
       type: ImageBlock
-    text: In an exceptional location, at 6000 feet elevation and 15 minutes from Boquete, enveloped by the cloud forest of Amistad National Park, our 42 acres organic farm & cloud forest lodge,offers the highest standard to reconnect with nature, serenity and Health.
+    text: >
+
+
+      HEALING WITH NATURE
+
+
+      In an exceptional location, at 6000 feet elevation and 15 minutes from
+      Boquete, enveloped by the cloud forest of Amistad National Park, our 42
+      acres organic farm & cloud forest lodge,offers the highest standard to
+      reconnect with nature, serenity and Health.
     colors: bg-emerald-fg-light
     styles:
       self:
@@ -60,7 +69,10 @@ sections:
     items:
       - title: Cloud forest Chalet
         text: >-
-          Silence, fresh air, magnificent view, here begins a deep detox from stress. A chalet in harmony with nature, a beautiful bathroom, and a bed with a comfortable mattress, everything here is order and beauty, luxury, calm and serenity.
+          Silence, fresh air, magnificent view, here begins a deep detox from
+          stress. A chalet in harmony with nature, a beautiful bathroom, and a
+          bed with a comfortable mattress, everything here is order and beauty,
+          luxury, calm and serenity.
         image:
           url: /images/dce64507-88ba-43ac-8935-a192e5ddb70d.jpg
           altText: Cloud forest Chalet
@@ -90,7 +102,10 @@ sections:
         type: FeaturedItem
       - title: Coast House
         text: >-
-          With a circular design that mirrors the surrounding redwood trees, Coast Houses offer the chance to admire the Pacific. Curl up indoors by the fireplace or outdoors on the deck with views of the ocean and neighboring forest.
+          With a circular design that mirrors the surrounding redwood trees,
+          Coast Houses offer the chance to admire the Pacific. Curl up indoors
+          by the fireplace or outdoors on the deck with views of the ocean and
+          neighboring forest.
         image:
           url: /images/hero2.svg
           altText: Maria Walters
@@ -120,7 +135,10 @@ sections:
         type: FeaturedItem
       - title: Coast House
         text: >-
-          With a circular design that mirrors the surrounding redwood trees, Coast Houses offer the chance to admire the Pacific. Curl up indoors by the fireplace or outdoors on the deck with views of the ocean and neighboring forest.
+          With a circular design that mirrors the surrounding redwood trees,
+          Coast Houses offer the chance to admire the Pacific. Curl up indoors
+          by the fireplace or outdoors on the deck with views of the ocean and
+          neighboring forest.
         image:
           url: /images/hero2.svg
           altText: Maria Walters
@@ -150,7 +168,10 @@ sections:
         type: FeaturedItem
       - title: Coast House
         text: >-
-          With a circular design that mirrors the surrounding redwood trees, Coast Houses offer the chance to admire the Pacific. Curl up indoors by the fireplace or outdoors on the deck with views of the ocean and neighboring forest.
+          With a circular design that mirrors the surrounding redwood trees,
+          Coast Houses offer the chance to admire the Pacific. Curl up indoors
+          by the fireplace or outdoors on the deck with views of the ocean and
+          neighboring forest.
         image:
           url: /images/hero2.svg
           altText: Maria Walters
@@ -192,7 +213,9 @@ sections:
       color: text-dark
       type: TitleBlock
     text: >
-      Sierra Mar restuarant sits high atop the cliffs of Big Sur, offering breathtaking views alongside inspired, artfully-prepared cuisine and a Wine Spectator Grand Award-winning wine list.
+      Sierra Mar restuarant sits high atop the cliffs of Big Sur, offering
+      breathtaking views alongside inspired, artfully-prepared cuisine and a
+      Wine Spectator Grand Award-winning wine list.
     actions:
       - label: Dining Options
         altText: ''
@@ -207,7 +230,7 @@ sections:
       url: /images/20241218_120642 2.jpg
       altText: Unblock your team boost your time to production preview
       elementId: ''
-      className:
+      className: null
       type: ImageBlock
     badge:
       label: Dine
@@ -243,7 +266,9 @@ sections:
     items:
       - title: Activities
         text: >-
-          Heated infinity pools, guided nature walks, yoga, meditation, falconry and more - an array of engaging activities, many of which are complimentary, await.
+          Heated infinity pools, guided nature walks, yoga, meditation, falconry
+          and more - an array of engaging activities, many of which are
+          complimentary, await.
         image:
           url: /images/hero2.svg
           altText: Maria Walters
@@ -274,7 +299,9 @@ sections:
         type: FeaturedItem
       - title: Activities
         text: >-
-          Heated infinity pools, guided nature walks, yoga, meditation, falconry and more - an array of engaging activities, many of which are complimentary, await.
+          Heated infinity pools, guided nature walks, yoga, meditation, falconry
+          and more - an array of engaging activities, many of which are
+          complimentary, await.
         image:
           url: /images/hero2.svg
           altText: Maria Walters
@@ -305,7 +332,9 @@ sections:
         type: FeaturedItem
       - title: Activities
         text: >-
-          Heated infinity pools, guided nature walks, yoga, meditation, falconry and more - an array of engaging activities, many of which are complimentary, await.
+          Heated infinity pools, guided nature walks, yoga, meditation, falconry
+          and more - an array of engaging activities, many of which are
+          complimentary, await.
         image:
           url: /images/hero2.svg
           altText: Maria Walters
@@ -336,7 +365,9 @@ sections:
         type: FeaturedItem
       - title: Activities
         text: >-
-          Heated infinity pools, guided nature walks, yoga, meditation, falconry and more - an array of engaging activities, many of which are complimentary, await.
+          Heated infinity pools, guided nature walks, yoga, meditation, falconry
+          and more - an array of engaging activities, many of which are
+          complimentary, await.
         image:
           url: /images/hero2.svg
           altText: Maria Walters
@@ -379,7 +410,10 @@ sections:
       color: text-dark
       type: TitleBlock
     text: >
-      The Post family worked this land for generations, first as a homestead and then later as a farm. Today it retains much of its original character, with the added distinction of offering visitors a serene getaway and retreat.
+      The Post family worked this land for generations, first as a homestead and
+      then later as a farm. Today it retains much of its original character,
+      with the added distinction of offering visitors a serene getaway and
+      retreat.
     actions:
       - label: Discover the ranch
         altText: ''
@@ -430,7 +464,8 @@ sections:
             justifyContent: center
         type: FeaturedItem
       - title: >-
-          "Design is a plan for arranging elements in such a way as best to accomplish a particular purpose."
+          "Design is a plan for arranging elements in such a way as best to
+          accomplish a particular purpose."
         subtitle: 'John Doe, Company'
         actions: []
         colors: bg-orange-fg-dark
@@ -447,7 +482,8 @@ sections:
             justifyContent: center
         type: FeaturedItem
       - title: >-
-          "Design is how it works, how it functions. Good design doesn't just make a product aesthetically pleasing, it makes it a pleasure to use."
+          "Design is how it works, how it functions. Good design doesn't just
+          make a product aesthetically pleasing, it makes it a pleasure to use."
         subtitle: 'Maria Walters, Company'
         actions: []
         colors: bg-orange-fg-dark
