@@ -16,7 +16,7 @@
         {
             "label": "THE FARM",
             "altText": "About us",
-            "url": "/aboutus",
+            "url": "/the-farm",
             "style": "secondary",
             "type": "Link"
         },
@@ -28,9 +28,9 @@
             "type": "Link"
         },
         {
-            "label": "HOST TABLE",
-            "altText": "Dine page",
-            "url": "/dine",
+            "label": "KITCHEN",
+            "altText": "Kitchen page",
+            "url": "/kitchen",
             "style": "secondary",
             "type": "Link"
         },

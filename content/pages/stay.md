@@ -2,14 +2,7 @@
 title: Stay
 slug: stay
 sections:
-  - title:
-      text: Stay
-      color: text-light
-      styles:
-        self:
-          textAlign: center
-      type: TitleBlock
-    colors: bg-neutral-fg-dark
+  - colors: bg-neutral-fg-dark
     styles:
       self:
         padding:
@@ -28,7 +21,7 @@ sections:
       backgroundPosition: center
       backgroundRepeat: no-repeat
       opacity: 100
-      url: /images/dine.jpg
+      url: /images/stay.jpg
   - type: GenericSection
     media:
       url: /images/logo-dark.svg
@@ -47,80 +40,193 @@ sections:
         flexDirection: col
       subtitle:
         textAlign: center
-  - type: GenericSection
-    actions:
-      - label: View All
-        altText: ''
-        url: '/aboutus/#dine'
-        style: secondary
-        elementId: ''
-        type: Link
-      - label: View Some
-        altText: ''
-        url: '/aboutus/#dine-other'
-        style: secondary
-        elementId: ''
-        type: Link
+  - title:
+      text: Spaces To Stir Your Imagination
+      color: text-primary
+      styles:
+        self:
+          textAlign: center
+      type: TitleBlock
+    subtitle: View Our Cabins
+    items:
+      - title: Exterior
+        tagline: This is the tagline
+        subtitle: This is the item subtitle
+        text: |
+          Follow the tutorial to build your first Netlify Create site.
+        image:
+          url: /images/exterior-1.jpg
+          altText: Placeholder Image
+          type: ImageBlock
+        colors: bg-neutral-fg-dark
+        styles:
+          self:
+            flexDirection: col
+        type: FeaturedItem
+      - title: Interior
+        tagline: This is the tagline
+        subtitle: This is the item subtitle
+        text: |
+          Follow the tutorial to build your first awesome Netlify Create site.
+        image:
+          url: /images/interior-1.jpg
+          altText: Placeholder image
+          type: ImageBlock
+        colors: bg-neutral-fg-dark
+        styles:
+          self:
+            flexDirection: col
+        type: FeaturedItem
+      - title: Bathroom
+        tagline: This is the tagline
+        subtitle: View
+        text: |
+          Learn from the tutorial and build your first awesome Netlify Create site.
+        image:
+          url: /images/bathroom-1.png
+          altText: Placeholder image
+          type: ImageBlock
+        colors: bg-neutral-fg-dark
+        styles:
+          self:
+            flexDirection: col
+        type: FeaturedItem
+      - title: Balcony
+        tagline: This is the tagline
+        subtitle: View
+        text: |
+          Learn from the tutorial and build your first awesome Netlify Create site.
+        image:
+          url: /images/balcony-1.jpg
+          altText: Placeholder image
+          type: ImageBlock
+        colors: bg-neutral-fg-dark
+        styles:
+          self:
+            flexDirection: col
+        type: FeaturedItem
+    variant: two-col-grid
+    colors: bg-neutral-fg-dark
     styles:
       self:
         padding:
-          - pb-16
           - pt-16
-          - pl-16
-          - pr-16
+          - pl-8
+          - pb-16
+          - pr-8
         justifyContent: center
-        flexDirection: col
       subtitle:
         textAlign: center
-  - type: GenericSection
-    title:
-      text: Dine Amongst the Clouds
+    type: FeaturedItemsSection
+  - title:
+      text: Video Tour
       color: text-dark
+      styles:
+        self:
+          textAlign: center
       type: TitleBlock
-    text: >
-      Sierra Mar restuarant sits high atop the cliffs of Big Sur, offering breathtaking views alongside inspired, artfully-prepared cuisine and a Wine Spectator Grand Award-winning wine list.
     media:
-      url: /images/dine.jpg
-      altText: Unblock your team boost your time to production preview
-      elementId: ''
-      type: ImageBlock
-    badge:
-      label: Dine
-      color: text-primary
-      type: Badge
-    elementId: dine-other
-    colors: bg-emerald-fg-light
-    styles:
-      self:
-        alignItems: center
-        flexDirection: row
-        padding:
-          - pr-32
-  - type: GenericSection
-    title:
-      text: Dine Amongst the Clouds
-      color: text-dark
-      type: TitleBlock
-    text: >
-      Sierra Mar restuarant sits high atop the cliffs of Big Sur, offering breathtaking views alongside inspired, artfully-prepared cuisine and a Wine Spectator Grand Award-winning wine list.
-    media:
-      url: /images/finca.jpeg
-      altText: Unblock your team boost your time to production preview
-      elementId: ''
+      title: Title of the video
+      url: /images/placeholder-video.mp4
+      controls: false
+      aspectRatio: '16:9'
       goesLast: true
-      type: ImageBlock
-    badge:
-      label: Dine
-      color: text-primary
-      type: Badge
-    elementId: 'dine'
-    colors: bg-orange-fg-dark
+      styles:
+        self:
+          padding:
+            - pt-2
+            - pb-2
+            - pl-2
+            - pr-2
+          borderColor: border-dark
+          borderStyle: solid
+          borderWidth: 1
+          borderRadius: large
+      type: VideoBlock
+      autoplay: true
+      loop: true
+      muted: true
+    colors: bg-light-fg-dark
     styles:
       self:
-        alignItems: center
-        flexDirection: row
+        flexDirection: col
+        justifyContent: center
+    type: GenericSection
+  - title:
+      text: Gallery
+      color: text-primary
+      styles:
+        self:
+          textAlign: center
+      type: TitleBlock
+    items:
+      - image:
+          url: /images/exterior-2.jpg
+          altText: Placeholder Image
+          type: ImageBlock
+        colors: bg-light-fg-dark
+        type: FeaturedItem
+      - image:
+          url: /images/exterior-3.jpg
+          altText: Placeholder Image
+          type: ImageBlock
+        colors: bg-light-fg-dark
+        type: FeaturedItem
+      - image:
+          url: /images/interior-2.jpg
+          altText: Placeholder Image
+          type: ImageBlock
+        colors: bg-light-fg-dark
+        type: FeaturedItem
+      - image:
+          url: /images/interior-3.jpg
+          altText: Placeholder Image
+          type: ImageBlock
+        colors: bg-light-fg-dark
+        type: FeaturedItem
+      - image:
+          url: /images/interior-4.jpg
+          altText: Placeholder Image
+          type: ImageBlock
+        colors: bg-light-fg-dark
+        type: FeaturedItem
+      - image:
+          url: /images/bathroom-2.jpg
+          altText: Placeholder Image
+          type: ImageBlock
+        colors: bg-light-fg-dark
+        type: FeaturedItem
+      - image:
+          url: /images/bathroom-3.jpg
+          altText: Placeholder Image
+          type: ImageBlock
+        colors: bg-light-fg-dark
+        type: FeaturedItem
+      - image:
+          url: /images/balcony-2.jpg
+          altText: Placeholder Image
+          type: ImageBlock
+        colors: bg-light-fg-dark
+        type: FeaturedItem
+      - image:
+          url: /images/balcony-3.jpg
+          altText: Placeholder Image
+          type: ImageBlock
+        colors: bg-light-fg-dark
+        type: FeaturedItem
+    variant: two-col-grid
+    colors: bg-neutral-fg-dark
+    styles:
+      self:
         padding:
-          - pl-32
+          - pt-16
+          - pl-8
+          - pb-16
+          - pr-8
+        justifyContent: center
+      subtitle:
+        textAlign: center
+    type: FeaturedItemsSection
 seo:
   metaTitle: Stay - The Ranch
   metaDescription: This is the pricing page built with Netlify Create.

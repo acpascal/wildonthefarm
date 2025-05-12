@@ -4,39 +4,39 @@
         "altText": "Logo light",
         "type": "ImageBlock"
     },
-    "text": "A description of your brand",
+    "text": "Boquete Cloud Forest Lodge",
     "primaryLinks": {
         "title": "Menu",
         "links": [
             {
                 "label": "The Farm",
                 "altText": "Phone number",
-                "url": "tel:50712345678",
+                "url": "/the-farm",
                 "style": "secondary",
                 "type": "Link"
             },
             {
                 "label": "Stay",
                 "altText": "Contact email",
-                "url": "mailto:reservations@finca.com",
+                "url": "/stay",
                 "style": "secondary",
                 "type": "Link"
             },
             {
-                "label": "Dine",
-                "url": "https://maps.app.goo.gl/Muz5pNFhUCRdEXZT7",
+                "label": "Kitchen",
+                "url": "/kitchen",
                 "style": "secondary",
                 "type": "Link"
             },
             {
                 "label": "Experience",
-                "url": "https://maps.app.goo.gl/Muz5pNFhUCRdEXZT7",
+                "url": "/experience",
                 "style": "secondary",
                 "type": "Link"
             },
             {
                 "label": "Blog",
-                "url": "https://maps.app.goo.gl/Muz5pNFhUCRdEXZT7",
+                "url": "/blog",
                 "style": "secondary",
                 "type": "Link"
             }
@@ -95,7 +95,7 @@
             "type": "Social"
         }
     ],
-    "copyrightText": "©2025 THE RANCH",
+    "copyrightText": "©2025 WILD ON THE FARM",
     "colors": "bg-emerald-fg-light",
     "type": "Footer",
     "styles":{

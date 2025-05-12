@@ -5,7 +5,7 @@ sections:
   - type: GenericSection
     media:
       title: Wild on the farm
-      url: https://www.youtube.com/watch?v=qQnjBXCXJEg
+      url: https://www.youtube.com/watch?v=FQQjSE7GJfE
       controls: false
       aspectRatio: '16:9'
       type: VideoBlock
@@ -39,340 +39,6 @@ sections:
         flexDirection: col
       subtitle:
         textAlign: center
-  - type: CarouselSection
-    title:
-      text: Stay
-      color: text-dark
-      styles:
-        self:
-          textAlign: left
-      type: TitleBlock
-    actions:
-      - label: View All
-        altText: ''
-        url: /
-        showIcon: true
-        icon: arrowRight
-        iconPosition: right
-        style: secondary
-        elementId: ''
-        type: Button
-    items:
-      - title: Cloud forest Chalet
-        text: >-
-          Silence, fresh air, magnificent view, here begins a deep detox from stress. A chalet in harmony with nature, a beautiful bathroom, and a bed with a comfortable mattress, everything here is order and beauty, luxury, calm and serenity.
-        image:
-          url: /images/dce64507-88ba-43ac-8935-a192e5ddb70d.jpg
-          altText: Cloud forest Chalet
-          type: ImageBlock
-        actions:
-          - label: View Cabin
-            altText: ''
-            url: /
-            showIcon: true
-            icon: arrowRight
-            iconPosition: right
-            style: primary
-            elementId: ''
-            type: Link
-        colors: bg-light-fg-dark
-        styles:
-          text:
-            padding:
-              - pt-9
-              - pb-9
-              - pl-9
-              - pr-9
-          self:
-            textAlign: left
-            borderRadius: large
-            flexDirection: col
-        type: FeaturedItem
-      - title: Coast House
-        text: >-
-          With a circular design that mirrors the surrounding redwood trees, Coast Houses offer the chance to admire the Pacific. Curl up indoors by the fireplace or outdoors on the deck with views of the ocean and neighboring forest.
-        image:
-          url: /images/hero2.svg
-          altText: Maria Walters
-          type: ImageBlock
-        actions:
-          - label: View Cabin
-            altText: ''
-            url: /
-            showIcon: true
-            icon: arrowRight
-            iconPosition: right
-            style: primary
-            elementId: ''
-            type: Link
-        colors: bg-light-fg-dark
-        styles:
-          text:
-            padding:
-              - pt-9
-              - pb-9
-              - pl-9
-              - pr-9
-          self:
-            textAlign: left
-            borderRadius: large
-            flexDirection: col
-        type: FeaturedItem
-      - title: Coast House
-        text: >-
-          With a circular design that mirrors the surrounding redwood trees, Coast Houses offer the chance to admire the Pacific. Curl up indoors by the fireplace or outdoors on the deck with views of the ocean and neighboring forest.
-        image:
-          url: /images/hero2.svg
-          altText: Maria Walters
-          type: ImageBlock
-        actions:
-          - label: View Cabin
-            altText: ''
-            url: /
-            showIcon: true
-            icon: arrowRight
-            iconPosition: right
-            style: primary
-            elementId: ''
-            type: Link
-        colors: bg-light-fg-dark
-        styles:
-          text:
-            padding:
-              - pt-9
-              - pb-9
-              - pl-9
-              - pr-9
-          self:
-            textAlign: left
-            borderRadius: large
-            flexDirection: col
-        type: FeaturedItem
-      - title: Coast House
-        text: >-
-          With a circular design that mirrors the surrounding redwood trees, Coast Houses offer the chance to admire the Pacific. Curl up indoors by the fireplace or outdoors on the deck with views of the ocean and neighboring forest.
-        image:
-          url: /images/hero2.svg
-          altText: Maria Walters
-          type: ImageBlock
-        actions:
-          - label: View Cabin
-            altText: ''
-            url: /
-            showIcon: true
-            icon: arrowRight
-            iconPosition: right
-            style: primary
-            elementId: ''
-            type: Link
-        colors: bg-light-fg-dark
-        styles:
-          text:
-            padding:
-              - pt-9
-              - pb-9
-              - pl-9
-              - pr-9
-          self:
-            textAlign: left
-            borderRadius: large
-            flexDirection: col
-        type: FeaturedItem
-    elementId: null
-    variant: next-prev-nav-multiple
-    colors: bg-light-fg-dark
-    styles:
-      self:
-        justifyContent: center
-      subtitle:
-        textAlign: center
-  - type: GenericSection
-    title:
-      text: Dine Amongst the Clouds
-      color: text-dark
-      type: TitleBlock
-    text: >
-      Sierra Mar restuarant sits high atop the cliffs of Big Sur, offering breathtaking views alongside inspired, artfully-prepared cuisine and a Wine Spectator Grand Award-winning wine list.
-    actions:
-      - label: Dining Options
-        altText: ''
-        url: /
-        showIcon: true
-        icon: arrowRight
-        iconPosition: right
-        style: primary
-        elementId: ''
-        type: Link
-    media:
-      url: /images/20241218_120642 2.jpg
-      altText: Unblock your team boost your time to production preview
-      elementId: ''
-      className:
-      type: ImageBlock
-    badge:
-      label: Dine
-      color: text-primary
-      type: Badge
-    elementId: ''
-    colors: bg-orange-fg-dark
-    styles:
-      self:
-        alignItems: center
-        flexDirection: row
-        justifyContent: center
-        padding:
-          - px-4
-  - type: CarouselSection
-    title:
-      text: Experiences
-      color: text-dark
-      styles:
-        self:
-          textAlign: left
-      type: TitleBlock
-    actions:
-      - label: View All
-        altText: ''
-        url: /
-        showIcon: true
-        icon: arrowRight
-        iconPosition: right
-        style: secondary
-        elementId: ''
-        type: Button
-    items:
-      - title: Activities
-        text: >-
-          Heated infinity pools, guided nature walks, yoga, meditation, falconry and more - an array of engaging activities, many of which are complimentary, await.
-        image:
-          url: /images/hero2.svg
-          altText: Maria Walters
-          type: ImageBlock
-        actions:
-          - label: Learn More
-            altText: ''
-            url: /
-            showIcon: true
-            icon: arrowRight
-            iconPosition: right
-            style: primary
-            elementId: ''
-            type: Link
-        colors: bg-light-fg-dark
-        styles:
-          text:
-            padding:
-              - pt-9
-              - pb-9
-              - pl-9
-              - pr-9
-          self:
-            textAlign: left
-            borderRadius: large
-            flexDirection: col
-            justifyContent: center
-        type: FeaturedItem
-      - title: Activities
-        text: >-
-          Heated infinity pools, guided nature walks, yoga, meditation, falconry and more - an array of engaging activities, many of which are complimentary, await.
-        image:
-          url: /images/hero2.svg
-          altText: Maria Walters
-          type: ImageBlock
-        actions:
-          - label: Learn More
-            altText: ''
-            url: /
-            showIcon: true
-            icon: arrowRight
-            iconPosition: right
-            style: primary
-            elementId: ''
-            type: Link
-        colors: bg-light-fg-dark
-        styles:
-          text:
-            padding:
-              - pt-9
-              - pb-9
-              - pl-9
-              - pr-9
-          self:
-            textAlign: left
-            borderRadius: large
-            flexDirection: col
-            justifyContent: center
-        type: FeaturedItem
-      - title: Activities
-        text: >-
-          Heated infinity pools, guided nature walks, yoga, meditation, falconry and more - an array of engaging activities, many of which are complimentary, await.
-        image:
-          url: /images/hero2.svg
-          altText: Maria Walters
-          type: ImageBlock
-        actions:
-          - label: Learn More
-            altText: ''
-            url: /
-            showIcon: true
-            icon: arrowRight
-            iconPosition: right
-            style: primary
-            elementId: ''
-            type: Link
-        colors: bg-light-fg-dark
-        styles:
-          text:
-            padding:
-              - pt-9
-              - pb-9
-              - pl-9
-              - pr-9
-          self:
-            textAlign: left
-            borderRadius: large
-            flexDirection: col
-            justifyContent: center
-        type: FeaturedItem
-      - title: Activities
-        text: >-
-          Heated infinity pools, guided nature walks, yoga, meditation, falconry and more - an array of engaging activities, many of which are complimentary, await.
-        image:
-          url: /images/hero2.svg
-          altText: Maria Walters
-          type: ImageBlock
-        actions:
-          - label: Learn More
-            altText: ''
-            url: /
-            showIcon: true
-            icon: arrowRight
-            iconPosition: right
-            style: primary
-            elementId: ''
-            type: Link
-        colors: bg-light-fg-dark
-        styles:
-          text:
-            padding:
-              - pt-9
-              - pb-9
-              - pl-9
-              - pr-9
-          self:
-            textAlign: left
-            borderRadius: large
-            flexDirection: col
-            justifyContent: center
-        type: FeaturedItem
-    elementId: null
-    variant: next-prev-nav-multiple
-    colors: bg-light-fg-dark
-    styles:
-      self:
-        justifyContent: center
-      subtitle:
-        textAlign: center
   - type: GenericSection
     title:
       text: Luxury On The Homestead
@@ -381,9 +47,9 @@ sections:
     text: >
       The Post family worked this land for generations, first as a homestead and then later as a farm. Today it retains much of its original character, with the added distinction of offering visitors a serene getaway and retreat.
     actions:
-      - label: Discover the ranch
+      - label: Discover the farm
         altText: ''
-        url: /
+        url: /the-farm
         showIcon: true
         icon: arrowRight
         iconPosition: right
@@ -391,12 +57,12 @@ sections:
         elementId: ''
         type: Link
     media:
-      url: /images/finca.jpeg
+      url: /images/about-the-farm.jpg
       altText: Unblock your team boost your time to production preview
       elementId: ''
       type: ImageBlock
     badge:
-      label: The Ranch
+      label: The Farm
       color: text-primary
       type: Badge
     elementId: ''
@@ -408,6 +74,198 @@ sections:
         justifyContent: center
         padding:
           - px-4
+  - type: GenericSection
+    title:
+      text: Cloud Forest Chalet
+      color: text-dark
+      type: TitleBlock
+    text: >
+      Silence, fresh air, magnificent view, here begins a deep detox from stress. A chalet in harmony with nature, a beautiful bathroom, and a bed with a comfortable mattress, everything here is order and beauty, luxury, calm and serenity.
+    actions:
+      - label: View Cabins
+        altText: ''
+        url: /stay
+        showIcon: true
+        icon: arrowRight
+        iconPosition: right
+        style: primary
+        elementId: ''
+        type: Link
+    media:
+      url: /images/stay.JPG
+      altText: Cloud forest chalet
+      elementId: ''
+      goesLast: true
+      className:
+      type: ImageBlock
+    badge:
+      label: Stay
+      color: text-primary
+      type: Badge
+    elementId: ''
+    colors: bg-emerald-fg-light
+    styles:
+      self:
+        alignItems: center
+        flexDirection: row
+        justifyContent: center
+        padding:
+          - px-4
+  - type: GenericSection
+    title:
+      text: Food from our organic garden
+      color: text-dark
+      type: TitleBlock
+    text: >
+      Silence, fresh air, magnificent view, here begins a deep detox from stress. A chalet in harmony with nature, a beautiful bathroom, and a bed with a comfortable mattress, everything here is order and beauty, luxury, calm and serenity.
+    actions:
+      - label: Learn More
+        altText: ''
+        url: /kitchen
+        showIcon: true
+        icon: arrowRight
+        iconPosition: right
+        style: primary
+        elementId: ''
+        type: Link
+    media:
+      url: /images/kitchen.jpg
+      altText: Kitchen
+      elementId: ''
+      className:
+      type: ImageBlock
+    badge:
+      label: Kitchen
+      color: text-primary
+      type: Badge
+    elementId: ''
+    colors: bg-orange-fg-dark
+    styles:
+      self:
+        alignItems: center
+        flexDirection: row
+        justifyContent: center
+        padding:
+          - px-4
+  - title:
+      text: Experience
+      color: text-dark
+      styles:
+        self:
+          textAlign: left
+      type: TitleBlock
+    actions:
+      - label: View All
+        altText: ''
+        url: /experience
+        showIcon: true
+        icon: arrowRight
+        iconPosition: right
+        style: secondary
+        elementId: ''
+        type: Button
+    items:
+      - title: Bird Watching
+        text: |
+          Follow the tutorial to build your first Netlify Create site.
+        image:
+          url: /images/bird-watching.JPG
+          altText: Placeholder Image
+          type: ImageBlock
+        actions:
+          - label: Learn More
+            altText: ''
+            url: /experience/#bird-watching
+            showIcon: true
+            icon: arrowRight
+            iconPosition: right
+            style: primary
+            elementId: ''
+            type: Link
+        colors: bg-neutral-fg-dark
+        styles:
+          self:
+            flexDirection: col
+        type: FeaturedItem
+      - title: Hiking
+        text: |
+          Follow the tutorial to build your first Netlify Create site.
+        image:
+          url: /images/hiking.png
+          altText: Placeholder Image
+          type: ImageBlock
+        actions:
+          - label: Learn More
+            altText: ''
+            url: /experience/#hiking
+            showIcon: true
+            icon: arrowRight
+            iconPosition: right
+            style: primary
+            elementId: ''
+            type: Link
+        colors: bg-neutral-fg-dark
+        styles:
+          self:
+            flexDirection: col
+        type: FeaturedItem
+      - title: Detox Retreat
+        text: |
+          Follow the tutorial to build your first Netlify Create site.
+        image:
+          url: /images/detox-retreat.JPG
+          altText: Placeholder Image
+          type: ImageBlock
+        actions:
+          - label: Learn More
+            altText: ''
+            url: /experience/#detox-retreat
+            showIcon: true
+            icon: arrowRight
+            iconPosition: right
+            style: primary
+            elementId: ''
+            type: Link
+        colors: bg-neutral-fg-dark
+        styles:
+          self:
+            flexDirection: col
+        type: FeaturedItem
+      - title: Tailored Discovery
+        text: |
+          Follow the tutorial to build your first Netlify Create site.
+        image:
+          url: /images/tailored-discovery.JPG
+          altText: Placeholder Image
+          type: ImageBlock
+        actions:
+          - label: Learn More
+            altText: ''
+            url: /experience/#tailored-discovery
+            showIcon: true
+            icon: arrowRight
+            iconPosition: right
+            style: primary
+            elementId: ''
+            type: Link
+        colors: bg-neutral-fg-dark
+        styles:
+          self:
+            flexDirection: col
+        type: FeaturedItem
+    variant: two-col-grid
+    colors: bg-neutral-fg-dark
+    styles:
+      self:
+        padding:
+          - pt-16
+          - pl-8
+          - pb-16
+          - pr-8
+        justifyContent: center
+      subtitle:
+        textAlign: center
+    type: FeaturedItemsSection
   - type: CarouselSection
     subtitle: Featured Reviews
     items:
@@ -549,7 +407,7 @@ sections:
     colors: bg-neutralAlt-fg-dark
     type: GenericSection
 seo:
-  metaTitle: Home - Demo site
+  metaTitle: Wild On The Farm - Boquete Cloud Forest Lodge
   metaDescription: This demo site is built with Netlify Create.
   socialImage: /images/main-hero.jpg
   type: Seo
