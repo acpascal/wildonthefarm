@@ -12,15 +12,13 @@ sections:
       autoplay: true
       loop: true
       muted: true
-    colors: bg-light-fg-dark
+    colors: bg-emerald-fg-light
     styles:
       self:
         maxWidth: max-w-screen
         padding:
-          - pt-0
-          - pl-0
-          - pb-0
-          - pr-0
+          - px-28
+          - py-0
   - type: GenericSection
     media:
       url: /images/logo-dark.svg
