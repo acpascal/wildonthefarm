@@ -5,7 +5,7 @@ sections:
   - type: GenericSection
     media:
       title: Wild on the farm
-      url: https://www.youtube.com/watch?v=FQQjSE7GJfE
+      url: 'https://www.youtube.com/watch?v=FQQjSE7GJfE'
       controls: false
       aspectRatio: '16:9'
       type: VideoBlock
@@ -26,7 +26,36 @@ sections:
       url: /images/logo-dark.svg
       altText: Fun feature preview
       type: ImageBlock
-    text: In an exceptional location, at 6000 feet elevation and 15 minutes from Boquete, enveloped by the cloud forest of Amistad National Park, our 42 acres organic farm & cloud forest lodge,offers the highest standard to reconnect with nature, serenity and Health.
+    text: >+
+      WILD ON THE FARM: A masterpiece of synergy with nature, located just 15
+      minutes from Boquete, Panama. Step into the authentic heart of the Cloud
+      Forest – an enchanted sanctuary where silence speaks volumes, the crisp
+      altitude air invigorates , and clouds dance with the wind without
+      disturbing your profound serenity.
+
+
+      As Panama's first organic farm and only macadamia plantation, rooted in
+      Horqueta since 2009, WILD ON THE FARM embodies over 15 years of
+      innovative, environmentally harmonious cultivation in this exceptional
+      setting.
+
+
+      Starting in 2025, we open our doors to an exclusive few – a maximum of six
+      guests – inviting you to immerse yourself in our unique world. Experience
+      transformative detox stays, thrilling bird watching, guided cloud forest
+      hikes, peaceful moments of reading in silence, or rejuvenating meditation
+      amidst the farm's tranquility.
+
+
+      Here, time takes on a different rhythm, designed for profound regeneration
+      of your vitality.
+
+
+
+
+
+
+
     colors: bg-emerald-fg-light
     styles:
       self:
@@ -45,7 +74,10 @@ sections:
       color: text-dark
       type: TitleBlock
     text: >
-      The Post family worked this land for generations, first as a homestead and then later as a farm. Today it retains much of its original character, with the added distinction of offering visitors a serene getaway and retreat.
+      The Post family worked this land for generations, first as a homestead and
+      then later as a farm. Today it retains much of its original character,
+      with the added distinction of offering visitors a serene getaway and
+      retreat.
     actions:
       - label: Discover the farm
         altText: ''
@@ -80,7 +112,10 @@ sections:
       color: text-dark
       type: TitleBlock
     text: >
-      Silence, fresh air, magnificent view, here begins a deep detox from stress. A chalet in harmony with nature, a beautiful bathroom, and a bed with a comfortable mattress, everything here is order and beauty, luxury, calm and serenity.
+      Silence, fresh air, magnificent view, here begins a deep detox from
+      stress. A chalet in harmony with nature, a beautiful bathroom, and a bed
+      with a comfortable mattress, everything here is order and beauty, luxury,
+      calm and serenity.
     actions:
       - label: View Cabins
         altText: ''
@@ -96,7 +131,7 @@ sections:
       altText: Cloud forest chalet
       elementId: ''
       goesLast: true
-      className:
+      className: null
       type: ImageBlock
     badge:
       label: Stay
@@ -117,7 +152,10 @@ sections:
       color: text-dark
       type: TitleBlock
     text: >
-      Silence, fresh air, magnificent view, here begins a deep detox from stress. A chalet in harmony with nature, a beautiful bathroom, and a bed with a comfortable mattress, everything here is order and beauty, luxury, calm and serenity.
+      Silence, fresh air, magnificent view, here begins a deep detox from
+      stress. A chalet in harmony with nature, a beautiful bathroom, and a bed
+      with a comfortable mattress, everything here is order and beauty, luxury,
+      calm and serenity.
     actions:
       - label: Learn More
         altText: ''
@@ -132,7 +170,7 @@ sections:
       url: /images/kitchen.jpg
       altText: Kitchen
       elementId: ''
-      className:
+      className: null
       type: ImageBlock
     badge:
       label: Kitchen
@@ -288,7 +326,8 @@ sections:
             justifyContent: center
         type: FeaturedItem
       - title: >-
-          "Design is a plan for arranging elements in such a way as best to accomplish a particular purpose."
+          "Design is a plan for arranging elements in such a way as best to
+          accomplish a particular purpose."
         subtitle: 'John Doe, Company'
         actions: []
         colors: bg-orange-fg-dark
@@ -305,7 +344,8 @@ sections:
             justifyContent: center
         type: FeaturedItem
       - title: >-
-          "Design is how it works, how it functions. Good design doesn't just make a product aesthetically pleasing, it makes it a pleasure to use."
+          "Design is how it works, how it functions. Good design doesn't just
+          make a product aesthetically pleasing, it makes it a pleasure to use."
         subtitle: 'Maria Walters, Company'
         actions: []
         colors: bg-orange-fg-dark
