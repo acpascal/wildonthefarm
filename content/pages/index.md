@@ -5,7 +5,7 @@ sections:
   - type: GenericSection
     media:
       title: Wild on the farm
-      url: 'https://www.youtube.com/watch?v=FQQjSE7GJfE'
+      url: 'https://youtu.be/FGbUEGNd524'
       controls: false
       aspectRatio: '16:9'
       type: VideoBlock
