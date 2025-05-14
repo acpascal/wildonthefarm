@@ -28,10 +28,11 @@ sections:
       type: ImageBlock
     text: >+
       WILD ON THE FARM: A masterpiece of synergy with nature, located just 15
-      minutes from Boquete, Panama. Step into the authentic heart of the Cloud
-      Forest – an enchanted sanctuary where silence speaks volumes, the crisp
-      altitude air invigorates , and clouds dance with the wind without
-      disturbing your profound serenity.
+      minutes from Boquete at 5905 feet elevation and nestled into the Amistad
+      National Park. Step into the authentic heart of the Cloud Forest – an
+      enchanted sanctuary where silence speaks volumes, the crisp altitude air
+      invigorates , and clouds dance with the wind without disturbing your
+      profound serenity.
 
 
       As Panama's first organic farm and only macadamia plantation, rooted in
@@ -40,11 +41,12 @@ sections:
       setting.
 
 
-      Starting in 2025, we open our doors to an exclusive few – a maximum of six
-      guests – inviting you to immerse yourself in our unique world. Experience
-      transformative detox stays, thrilling bird watching, guided cloud forest
-      hikes, peaceful moments of reading in silence, or rejuvenating meditation
-      amidst the farm's tranquility.
+      Starting in 2025, we open our doors with three beautiful and luxurious
+      cabins, an host table to enjoy a cuisine signed by the scents and flavors
+      of the garden, the farm and the jungle inviting you to immerse yourself in
+      our unique world. Experience transformative detox stays, thrilling bird
+      watching, guided cloud forest hikes, peaceful moments of reading in
+      silence, or rejuvenating meditation amidst the farm's tranquility.
 
 
       Here, time takes on a different rhythm, designed for profound regeneration
