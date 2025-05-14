@@ -2,17 +2,11 @@
 title: Stay
 slug: stay
 sections:
-  - colors: bg-neutral-fg-dark
-    styles:
+  - styles:
       self:
         padding:
-          - pt-80
-          - pl-4
-          - pb-80
-          - pr-4
-        alignItems: center
-        flexDirection: row-reverse
-        justifyContent: center
+          - pt-100vh
+          - px-4
     type: GenericSection
     backgroundImage:
       type: BackgroundImage
@@ -127,7 +121,7 @@ sections:
       type: TitleBlock
     media:
       title: Title of the video
-      url: /images/placeholder-video.mp4
+      url: https://youtu.be/bk39qkZrv5I
       controls: false
       aspectRatio: '16:9'
       goesLast: true
@@ -143,9 +137,9 @@ sections:
           borderWidth: 1
           borderRadius: large
       type: VideoBlock
-      autoplay: true
+      autoplay: false
       loop: true
-      muted: true
+      muted: false
     colors: bg-light-fg-dark
     styles:
       self:

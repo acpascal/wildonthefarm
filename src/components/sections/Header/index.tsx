@@ -60,12 +60,12 @@ function HeaderVariants(props) {
 }
 
 function HeaderLogoLeftPrimaryLeft(props) {
-    const { title, logo, primaryLinks = [], secondaryLinks = [], colors = 'bg-light-fg-dark', enableAnnotations } = props;
+    const { title, subtitle, logo, primaryLinks = [], secondaryLinks = [], colors = 'bg-light-fg-dark', enableAnnotations } = props;
     return (
         <div className="relative flex items-center">
             {(title || logo?.url) && (
                 <div className="mr-10">
-                    <SiteLogoLink title={title} logo={logo} enableAnnotations={enableAnnotations} />
+                    <SiteLogoLink title={title} subtitle={subtitle} logo={logo} enableAnnotations={enableAnnotations} />
                 </div>
             )}
             {primaryLinks.length > 0 && (
@@ -84,12 +84,12 @@ function HeaderLogoLeftPrimaryLeft(props) {
 }
 
 function HeaderLogoLeftPrimaryCentered(props) {
-    const { title, logo, primaryLinks = [], secondaryLinks = [], colors = 'bg-light-fg-dark', enableAnnotations } = props;
+    const { title, subtitle, logo, primaryLinks = [], secondaryLinks = [], colors = 'bg-light-fg-dark', enableAnnotations } = props;
     return (
         <div className="relative flex items-center">
             {(title || logo?.url) && (
                 <div className="mr-10">
-                    <SiteLogoLink title={title} logo={logo} enableAnnotations={enableAnnotations} />
+                    <SiteLogoLink title={title} subtitle={subtitle} logo={logo} enableAnnotations={enableAnnotations} />
                 </div>
             )}
             {primaryLinks.length > 0 && (
@@ -111,12 +111,12 @@ function HeaderLogoLeftPrimaryCentered(props) {
 }
 
 function HeaderLogoLeftPrimaryRight(props) {
-    const { title, logo, primaryLinks = [], secondaryLinks = [], colors = 'bg-light-fg-dark', enableAnnotations } = props;
+    const { title, subtitle, logo, primaryLinks = [], secondaryLinks = [], colors = 'bg-light-fg-dark', enableAnnotations } = props;
     return (
         <div className="relative flex items-center">
             {(title || logo?.url) && (
                 <div className="mr-10">
-                    <SiteLogoLink title={title} logo={logo} enableAnnotations={enableAnnotations} />
+                    <SiteLogoLink title={title} subtitle={subtitle} logo={logo} enableAnnotations={enableAnnotations} />
                 </div>
             )}
             {primaryLinks.length > 0 && (
@@ -138,12 +138,12 @@ function HeaderLogoLeftPrimaryRight(props) {
 }
 
 function HeaderLogoCenteredPrimaryLeft(props) {
-    const { title, logo, primaryLinks = [], secondaryLinks = [], colors = 'bg-light-fg-dark', enableAnnotations } = props;
+    const { title, subtitle, logo, primaryLinks = [], secondaryLinks = [], colors = 'bg-light-fg-dark', enableAnnotations } = props;
     return (
         <div className="relative flex items-center">
             {(title || logo?.url) && (
                 <div className="mr-10 lg:mr-0 lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-y-1/2 lg:-translate-x-1/2">
-                    <SiteLogoLink title={title} logo={logo} enableAnnotations={enableAnnotations} />
+                    <SiteLogoLink title={title} subtitle={subtitle} logo={logo} enableAnnotations={enableAnnotations} />
                 </div>
             )}
             {primaryLinks.length > 0 && (
@@ -162,13 +162,13 @@ function HeaderLogoCenteredPrimaryLeft(props) {
 }
 
 function HeaderLogoCenteredPrimaryCentered(props) {
-    const { title, logo, primaryLinks = [], secondaryLinks = [], colors = 'bg-light-fg-dark', enableAnnotations } = props;
+    const { title, subtitle, logo, primaryLinks = [], secondaryLinks = [], colors = 'bg-light-fg-dark', enableAnnotations } = props;
     return (
         <>
             <div className="relative flex items-center">
                 {(title || logo?.url) && (
                     <div className="mr-10 lg:mr-0 lg:absolute lg:top-1/2 lg:left-1/2 lg:-translate-y-1/2 lg:-translate-x-1/2">
-                        <SiteLogoLink title={title} logo={logo} enableAnnotations={enableAnnotations} />
+                        <SiteLogoLink title={title} subtitle={subtitle} logo={logo} enableAnnotations={enableAnnotations} />
                     </div>
                 )}
                 {secondaryLinks.length > 0 && (
@@ -191,7 +191,7 @@ function HeaderLogoCenteredPrimaryCentered(props) {
 }
 
 function MobileMenu(props) {
-    const { title, logo, primaryLinks = [], secondaryLinks = [], colors = 'bg-light-fg-dark', styles = {}, enableAnnotations } = props;
+    const { title, subtitle, logo, primaryLinks = [], secondaryLinks = [], colors = 'bg-light-fg-dark', styles = {}, enableAnnotations } = props;
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const router = useRouter();
 
@@ -226,7 +226,7 @@ function MobileMenu(props) {
             <div className={classNames(colors, 'fixed', 'inset-0', styles?.self?.padding ?? 'p-4', 'overflow-y-auto', 'z-10', isMenuOpen ? 'block' : 'hidden')}>
                 <div className="flex flex-col min-h-full">
                     <div className="flex items-center justify-between mb-10">
-                        {(title || logo?.url) && <SiteLogoLink title={title} logo={logo} enableAnnotations={enableAnnotations} />}
+                        {(title || logo?.url) && <SiteLogoLink title={title} subtitle={subtitle} logo={logo} enableAnnotations={enableAnnotations} />}
                         <button aria-label="Close Menu" title="Close Menu" className="p-2 -mr-1 focus:outline-none" onClick={closeMobileMenu}>
                             <CloseIcon className="w-6 h-6 fill-current" />
                         </button>
@@ -247,14 +247,37 @@ function MobileMenu(props) {
     );
 }
 
-function SiteLogoLink({ title, logo, enableAnnotations }) {
+function SiteLogoLink({ title, subtitle, logo, enableAnnotations }) {
     return (
         <Link href="/" className="flex items-center">
-            {logo && <ImageBlock {...logo} {...(enableAnnotations && { 'data-sb-field-path': 'logo' })} />}
-            {title && (
-                <span className="h4" {...(enableAnnotations && { 'data-sb-field-path': 'title' })}>
-                    {title}
-                </span>
+            {logo && (
+                <ImageBlock
+                    {...logo}
+                    {...(enableAnnotations && { 'data-sb-field-path': 'logo' })}
+                />
+            )}
+            {title && subtitle ? (
+                <div className="flex flex-col">
+                    <span className="h4" {...(enableAnnotations && { 'data-sb-field-path': 'title' })}>
+                        {title}
+                    </span>
+                    <span className="h6" {...(enableAnnotations && { 'data-sb-field-path': 'subtitle' })}>
+                        {subtitle}
+                    </span>
+                </div>
+            ) : (
+                <>
+                    {title && (
+                        <span className="h4" {...(enableAnnotations && { 'data-sb-field-path': 'title' })}>
+                            {title}
+                        </span>
+                    )}
+                    {subtitle && (
+                        <span className="h6" {...(enableAnnotations && { 'data-sb-field-path': 'subtitle' })}>
+                            {subtitle}
+                        </span>
+                    )}
+                </>
             )}
         </Link>
     );

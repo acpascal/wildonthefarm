@@ -2,17 +2,11 @@
 title: Kitchen
 slug: kitchen
 sections:
-  - colors: bg-neutral-fg-dark
-    styles:
+  - styles:
       self:
         padding:
-          - pt-80
-          - pl-4
-          - pb-80
-          - pr-4
-        alignItems: center
-        flexDirection: row-reverse
-        justifyContent: center
+          - px-4
+          - pt-100vh
     type: GenericSection
     backgroundImage:
       type: BackgroundImage

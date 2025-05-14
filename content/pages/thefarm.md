@@ -2,17 +2,11 @@
 title: The Farm
 slug: the-farm
 sections:
-  - colors: bg-neutral-fg-dark
-    styles:
+  - styles:
       self:
         padding:
-          - pt-80
-          - pl-4
-          - pb-80
-          - pr-4
-        alignItems: center
-        flexDirection: row-reverse
-        justifyContent: center
+          - px-4
+          - pt-100vh
     type: GenericSection
     backgroundImage:
       type: BackgroundImage
@@ -21,7 +15,7 @@ sections:
       backgroundPosition: center
       backgroundRepeat: no-repeat
       opacity: 100
-      url: /images/dce64507-88ba-43ac-8935-a192e5ddb70d.jpg
+      url: /images/the-farm.jpg
   - type: GenericSection
     actions:
       - label: About The Farm

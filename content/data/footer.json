@@ -47,9 +47,9 @@
         "title": "Contact Us",
         "links": [
             {
-                "label": "+507 1234 5678",
+                "label": "+507 6569 9134",
                 "altText": "Phone number",
-                "url": "tel:50712345678",
+                "url": "tel:50765699134",
                 "style": "secondary",
                 "type": "Link"
             },
@@ -62,7 +62,7 @@
             },
             {
                 "label": "Finca Amistad\nHorqueta, Boquete, Chiriqui\nPanama",
-                "url": "https://maps.app.goo.gl/Muz5pNFhUCRdEXZT7",
+                "url": "https://maps.app.goo.gl/US5hdg29rwvch9jS6",
                 "style": "secondary",
                 "type": "Link"
             }
@@ -71,26 +71,26 @@
     },
     "socialLinks": [
         {
-            "altText": "GitHub link",
-            "url": "https://github.com/netlify",
-            "icon": "github",
+            "altText": "Facebook link",
+            "url": "https://www.facebook.com/profile.php?id=61562308296749",
+            "icon": "facebook",
             "type": "Social"
         },
         {
-            "altText": "Twitter link",
-            "url": "https://twitter.com/netlify",
-            "icon": "twitter",
+            "altText": "Youtube link",
+            "url": "https://www.youtube.com/@wildonthefarm8302",
+            "icon": "youtube",
             "type": "Social"
         },
         {
-            "altText": "LinkedIn link",
+            "altText": "Instagram link",
             "url": "https://www.linkedin.com/company/netlify",
-            "icon": "linkedin",
+            "icon": "instagram",
             "type": "Social"
         },
         {
             "altText": "Email link",
-            "url": "/",
+            "url": "mailto:reservations@finca.com",
             "icon": "mail",
             "type": "Social"
         }
