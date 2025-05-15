@@ -21,7 +21,7 @@ sections:
       text: From The Garden
       color: text-dark
       type: TitleBlock
-    text: >+
+    text: >
       The Enchanting Garden of the Cloud Forest
 
 
@@ -30,28 +30,6 @@ sections:
       a testament to the power of syntropy, illustrating an ideal connection
       with life. This garden embodies a philosophy of living in harmony with
       nature, promoting sustainability and regeneration.
-
-
-      The Syntropic Path
-
-
-      Syntropy, a concept pioneered by Ernst Götsch, emphasizes collaborating
-      with natural processes to restore ecosystems and produce abundant yields.
-      In this garden, every action is guided by the principles of syntropy. By
-      mimicking the patterns of natural ecosystems, this approach fosters
-      resilience and productivity. The garden becomes a living testament to
-      perseverance, showing how dedication to these principles can lead to
-      thriving abundance.
-
-
-      The Journey to Abundance
-
-
-      Creating such a garden is no small feat. It demands patience, persistence,
-      and a deep respect for natural systems. This journey is one of learning
-      and adaptation, where each step forward brings new insights and rewards.
-      The fruits of this labor are evident in the form of lush foliage, vibrant
-      flowers, and a diverse array of fruits and vegetables.
 
 
       Flavors and Fragrances
@@ -75,16 +53,12 @@ sections:
       and wildlife.
 
 
-      Amidst the cloud forest, this extraordinary garden stands as a symbol of
-      what can be achieved when we align ourselves with the rhythms of nature.
-      It is a testament to the power of syntropy and a reminder that by
-      nurturing the earth, we nurture ourselves. As we walk this path, we move
-      closer to an ideal connection with life, rich in flavors, fragrances, and
-      a profound sense of abundance.
-
-
-
-
+      Amidst the cloud forest, the garden stands as a symbol of what can be
+      achieved when we align ourselves with the rhythms of nature. It is a
+      testament to the power of syntropy and a reminder that by nurturing the
+      earth, we nurture ourselves. As we walk this path, we move closer to an
+      ideal connection with life, rich in flavors, fragrances, and a profound
+      sense of abundance.
     media:
       url: /images/from-the-garden.JPG
       altText: Unblock your team boost your time to production preview
