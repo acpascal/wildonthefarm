@@ -179,7 +179,7 @@ sections:
       elementId: ''
       type: ImageBlock
     badge:
-      label: Dine
+      label: ''
       color: text-primary
       type: Badge
     elementId: dine-other
