@@ -17,26 +17,6 @@ sections:
       opacity: 100
       url: /images/kitchen.jpg
   - type: GenericSection
-    media:
-      url: /images/logo-dark.svg
-      altText: Fun feature preview
-      type: ImageBlock
-    subtitle: >-
-      High atop the cliffs of Big Sur, the striking views and otherworldly
-      serenity can’t help but stir your soul. Find your calm, and so much more.
-    colors: bg-emerald-fg-light
-    styles:
-      self:
-        padding:
-          - pb-16
-          - pt-16
-          - pl-16
-          - pr-16
-        justifyContent: center
-        flexDirection: col
-      subtitle:
-        textAlign: center
-  - type: GenericSection
     title:
       text: From The Garden
       color: text-dark
@@ -125,6 +105,26 @@ sections:
           - px-4
       text:
         textAlign: justify
+  - type: GenericSection
+    media:
+      url: /images/logo-dark.svg
+      altText: Fun feature preview
+      type: ImageBlock
+    subtitle: >-
+      High atop the cliffs of Big Sur, the striking views and otherworldly
+      serenity can’t help but stir your soul. Find your calm, and so much more.
+    colors: bg-emerald-fg-light
+    styles:
+      self:
+        padding:
+          - pb-16
+          - pt-16
+          - pl-16
+          - pr-16
+        justifyContent: center
+        flexDirection: col
+      subtitle:
+        textAlign: center
   - type: GenericSection
     title:
       text: Into Our Kitchen
