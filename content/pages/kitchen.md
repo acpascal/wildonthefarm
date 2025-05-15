@@ -123,6 +123,8 @@ sections:
         justifyContent: center
         padding:
           - px-4
+      text:
+        textAlign: justify
   - type: GenericSection
     title:
       text: Into Our Kitchen
