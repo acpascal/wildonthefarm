@@ -130,10 +130,36 @@ sections:
       text: Into Our Kitchen
       color: text-dark
       type: TitleBlock
-    text: >
-      Sierra Mar restuarant sits high atop the cliffs of Big Sur, offering
-      breathtaking views alongside inspired, artfully-prepared cuisine and a
-      Wine Spectator Grand Award-winning wine list.
+    text: >+
+      To the Kitchen
+
+
+      I know the garden, and i love picking aromatic herbs and vegetables at all
+      stages of their growth, just before cooking them, so, that all their
+      fragrances exalt their freshness and vitality. From rich and living soil
+      flourish vegetables full of nutrients and vitality, herbs rich in
+      essential oils that nourish you deeply, offering health and, beyond that,
+      the joy of living.
+
+
+      My cooking finds its inspiration in the garden; it changes with the
+      seasons and the weather. It is lived in the present in a spontaneous
+      creation to invite you to the joy of being at the table.
+
+
+      Among other things, you will love our endless salads, nettle soup,
+      Tagines, pasta with fresh herb oil, melted tomatoes on a slice of grilled
+      bread with garlic and parsley, and chicken with fresh vegetables and
+      coconut milk. Poached eggs in a bath of fresh tomatoes and herbs with our
+      homemade bacon, for a delicious breakfast. Of course, we also make our own
+      jams, pestos, etc.
+
+
+      I cultivate and cook for your pleasure and for your health, simply.
+
+
+
+
     media:
       url: /images/into-our-kitchen.jpg
       altText: Unblock your team boost your time to production preview
