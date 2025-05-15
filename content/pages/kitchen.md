@@ -184,10 +184,21 @@ sections:
       text: To Our Table
       color: text-dark
       type: TitleBlock
-    text: >
-      Sierra Mar restuarant sits high atop the cliffs of Big Sur, offering
-      breathtaking views alongside inspired, artfully-prepared cuisine and a
-      Wine Spectator Grand Award-winning wine list.
+    text: >+
+      This is a time to gather around the table, share conversation, and truly
+      savor a delicious meal. Among other things, you will love our endless
+      salads, nettle soup, Tagines, pasta with fresh herb oil, melted tomatoes
+      on a slice of grilled bread with garlic and parsley, and chicken with
+      fresh vegetables and coconut milk. Poached eggs in a bath of fresh
+      tomatoes and herbs with our homemade bacon, for a delicious breakfast. Of
+      course, we also make our own jams, pestos, etc.
+
+
+      I cultivate and cook for your pleasure and for your health, simply.
+
+
+
+
     media:
       url: /images/to-our-table.jpg
       altText: Unblock your team boost your time to production preview
