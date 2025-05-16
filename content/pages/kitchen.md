@@ -120,20 +120,6 @@ sections:
       seasons and the weather. It is lived in the present in a spontaneous
       creation to invite you to the joy of being at the table.
 
-
-      Among other things, you will love our endless salads, nettle soup,
-      Tagines, pasta with fresh herb oil, melted tomatoes on a slice of grilled
-      bread with garlic and parsley, and chicken with fresh vegetables and
-      coconut milk. Poached eggs in a bath of fresh tomatoes and herbs with our
-      homemade bacon, for a delicious breakfast. Of course, we also make our own
-      jams, pestos, etc.
-
-
-      I cultivate and cook for your pleasure and for your health, simply.
-
-
-
-
     media:
       url: /images/into-our-kitchen.jpg
       altText: Unblock your team boost your time to production preview
