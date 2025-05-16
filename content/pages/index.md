@@ -27,7 +27,7 @@ sections:
     text: >
       WILD ON THE FARM: A masterpiece of synergy with nature, located just 15
       minutes from Boquete at 5905 feet elevation and nestled into the Amistad
-      National Park. 
+      National Park.
 
 
       <div style="text-align: left">Step into the authentic heart of the Cloud
