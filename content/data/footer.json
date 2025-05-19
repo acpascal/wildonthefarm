@@ -54,9 +54,9 @@
                 "type": "Link"
             },
             {
-                "label": "reservations@finca.com",
+                "label": "contact@boquetecloudforestlodge.com",
                 "altText": "Contact email",
-                "url": "mailto:reservations@finca.com",
+                "url": "mailto:contact@boquetecloudforestlodge.com",
                 "style": "secondary",
                 "type": "Link"
             },
@@ -90,7 +90,7 @@
         },
         {
             "altText": "Email link",
-            "url": "mailto:reservations@finca.com",
+            "url": "mailto:contact@boquetecloudforestlodge.com",
             "icon": "mail",
             "type": "Social"
         }
