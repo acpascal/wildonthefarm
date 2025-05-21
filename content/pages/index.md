@@ -25,15 +25,15 @@ sections:
       altText: Fun feature preview
       type: ImageBlock
     text: >
-      WILD ON THE FARM: A masterpiece of synergy with nature, located just 15
+      A masterpiece of synergy with nature, located just 15
       minutes from Boquete at 5905 feet elevation and nestled into the Amistad
       National Park.
 
 
-      <div style="text-align: left">Step into the authentic heart of the Cloud
+      Step into the authentic heart of the Cloud
       Forest – an enchanted sanctuary where silence speaks volumes, the crisp
       altitude air invigorates , and clouds dance with the wind without
-      disturbing your profound serenity.</div>
+      disturbing your profound serenity.
 
 
       As Panama's first organic farm and only macadamia plantation, rooted in
@@ -43,7 +43,7 @@ sections:
 
 
       Starting in 2025, we open our doors with three beautiful and luxurious
-      cabins, an host table to enjoy a cuisine signed by the scents and flavors
+      cabins, a host table to enjoy a cuisine signed by the scents and flavors
       of the garden, the farm and the jungle inviting you to immerse yourself in
       our unique world. Experience transformative detox stays, thrilling bird
       watching, guided cloud forest hikes, peaceful moments of reading in
@@ -201,7 +201,7 @@ sections:
     items:
       - title: Bird Watching
         text: |
-          Follow the tutorial to build your first Netlify Create site.
+          Immerse yourself in the sights and sounds of nature at Wild on the Farm. Surrounded by lush gardens and pristine forest, our haven invites bird lovers to discover rare species like the Quetzal, unwind in serene beauty, and savor the peaceful joy of birdwatching in harmony with nature.
         image:
           url: /images/bird-watchingX.JPG
           altText: Placeholder Image
@@ -223,7 +223,7 @@ sections:
         type: FeaturedItem
       - title: Hiking
         text: |
-          Follow the tutorial to build your first Netlify Create site.
+          Step out your door and into the heart of the cloud forest. At Wild on the Farm, hiking is more than a walk—it’s full immersion in a mystical world of mist, moss, and towering trees. Let nature guide your journey through beauty, serenity, and quiet wonder.
         image:
           url: /images/hikingX.png
           altText: Placeholder Image
@@ -245,7 +245,7 @@ sections:
         type: FeaturedItem
       - title: Detox Retreat
         text: |
-          Follow the tutorial to build your first Netlify Create site.
+          Reclaim your vitality with a detox retreat at Wild on the Farm. Surrounded by pure air, organic healing plants, and the serene cloud forest, our program offers deep restoration through nature, nourishing food, guided walks, and silence. Breathe, reset, and return home lighter, clearer, and renewed.
         image:
           url: /images/detox-retreatX.JPG
           altText: Placeholder Image
@@ -267,7 +267,7 @@ sections:
         type: FeaturedItem
       - title: Tailored Discovery
         text: |
-          Follow the tutorial to build your first Netlify Create site.
+          Your journey is uniquely yours. Whether you seek stillness, adventure, or expert-guided discovery, our Tailored Discovery service curates meaningful, personalized experiences—yoga, nature walks, wildlife exploration, or quiet reflection—so you can reconnect, recharge, and make your stay unforgettable.
         image:
           url: /images/tailored-discoveryX.JPG
           altText: Placeholder Image

@@ -59,11 +59,7 @@ sections:
       color: text-dark
       type: TitleBlock
     text: >
-      Nestled at the edge of the magnificent Amistad National Park, Wild on the
-      Farm is a true paradise for bird lovers. Our garden, rich with juicy
-      fruits and blooming flowers, attracts a multitude of species, from
-      frugivores to hummingbirds with vibrant wings that feed and find refuge in
-      our flowering hedges.
+      Immerse yourself in the sights and sounds of nature at Wild on the Farm. Surrounded by lush gardens and pristine forest, our haven invites bird lovers to discover rare species like the Quetzal, unwind in serene beauty, and savor the peaceful joy of birdwatching in harmony with nature.
     media:
       url: /images/bird-watching.JPG
       altText: Unblock your team boost your time to production preview
@@ -84,14 +80,21 @@ sections:
       altText: Fun feature preview
       type: ImageBlock
     title:
-      text: Bird Watching Title
+      text: Wings of the Forest
       color: text-dark
       type: TitleBlock
       styles:
         self:
           textAlign: center
-    subtitle: Bird Watching Subtitle
+    subtitle: Discover rare birds in serene natural beauty
     text: >
+      Nestled at the edge of the magnificent Amistad National Park, Wild on the
+      Farm is a true paradise for bird lovers. Our garden, rich with juicy
+      fruits and blooming flowers, attracts a multitude of species, from
+      frugivores to hummingbirds with vibrant wings that feed and find refuge in
+      our flowering hedges.
+
+
       The surrounding forest, vast and preserved, is home to incredible
       biodiversity. Here, a symphony of songs and colors resonates, housing
       birds with shimmering plumage and unique calls. Among them, the legendary
@@ -132,11 +135,7 @@ sections:
       color: text-dark
       type: TitleBlock
     text: >
-      Your stay here is a moment of peace, a deep relaxation nestled within
-      nature characteristic of this very region. While bars, discos, and
-      restaurants abound everywhere, the true magic of the cloud forest and its
-      unique universe awaits you right here, high in the mountains at Wild on
-      the Farm.
+      Step out your door and into the heart of the cloud forest. At Wild on the Farm, hiking is more than a walk—it’s full immersion in a mystical world of mist, moss, and towering trees. Let nature guide your journey through beauty, serenity, and quiet wonder.
     media:
       url: /images/hiking.png
       altText: Unblock your team boost your time to production preview
@@ -158,14 +157,21 @@ sections:
       altText: Fun feature preview
       type: ImageBlock
     title:
-      text: Hiking Title
+      text: Into the Cloud Forest
       color: text-dark
       type: TitleBlock
       styles:
         self:
           textAlign: center
-    subtitle: Hiking Subtitle
+    subtitle: Hike mystical trails right from your doorstep
     text: >
+      Your stay here is a moment of peace, a deep relaxation nestled within
+      nature characteristic of this very region. While bars, discos, and
+      restaurants abound everywhere, the true magic of the cloud forest and its
+      unique universe awaits you right here, high in the mountains at Wild on
+      the Farm.
+
+
       Here, you don't just go on an excursion to the cloud forest along
       organized paths; you integrate with it, day and night. You'll live its
       sounds, its ancient trees, feel the warmth of its sun, and yes, embrace
@@ -207,13 +213,7 @@ sections:
       color: text-dark
       type: TitleBlock
     text: >
-      Nestled at 1800 meters altitude, in the heart of the preserved cloud
-      forest, our farm invites you to rediscover balance and vitality. Far from
-      the daily hustle and bustle, our detox retreat program is a deep immersion
-      in nature and well-being, drawing on the powerful virtues of the plants we
-      cultivate according to organic farming principles, and the revitalizing
-      benefits of a unique synergy of silence, fresh and healthy air, and
-      nature.
+      Reclaim your vitality with a detox retreat at Wild on the Farm. Surrounded by pure air, organic healing plants, and the serene cloud forest, our program offers deep restoration through nature, nourishing food, guided walks, and silence. Breathe, reset, and return home lighter, clearer, and renewed.
     media:
       url: /images/detox-retreat.JPG
       altText: Unblock your team boost your time to production preview
@@ -243,6 +243,15 @@ sections:
           textAlign: center
     subtitle: Combining Organic Plants and Cloud Forest Nature
     text: >
+      Nestled at 1800 meters altitude, in the heart of the preserved cloud
+      forest, our farm invites you to rediscover balance and vitality. Far from
+      the daily hustle and bustle, our detox retreat program is a deep immersion
+      in nature and well-being, drawing on the powerful virtues of the plants we
+      cultivate according to organic farming principles, and the revitalizing
+      benefits of a unique synergy of silence, fresh and healthy air, and
+      nature.
+
+
       Our detox program goes beyond simple herbal teas. It's a synergy of
       several elements for complete purification and revitalization, drawing
       from the generosity of Wild on the Farm and its environment:
@@ -339,13 +348,7 @@ sections:
       color: text-dark
       type: TitleBlock
     text: >
-      Welcome to Wild on the Farm, a sanctuary crafted for profound
-      disconnection and meaningful reconnection. Here, life slows to the gentle
-      rhythm of nature, inviting moments of meditation, exploration of the
-      ancient forest, or the practice of yoga and Tai Chi. Above all, it is a
-      haven to shed daily stress, to simply be – observing, listening, tasting;
-      reawakening senses often muted in the bustle of modern life. It is a space
-      for peace, for presence.
+      At Wild on the Farm, your journey is uniquely yours. Whether you seek stillness, adventure, or expert-guided discovery, our Tailored Discovery service curates meaningful, personalized experiences—yoga, nature walks, wildlife exploration, or quiet reflection—so you can reconnect, recharge, and make your stay truly unforgettable.
     media:
       url: /images/tailored-discovery.JPG
       altText: Unblock your team boost your time to production preview
@@ -367,14 +370,23 @@ sections:
       altText: Fun feature preview
       type: ImageBlock
     title:
-      text: Tailored Discovery Title
+      text: Tailored Discovery Experiences
       color: text-dark
       type: TitleBlock
       styles:
         self:
           textAlign: center
-    subtitle: Tailored Discovery Subtitle
+    subtitle: Personalized adventures, crafted just for you
     text: >
+      Welcome to Wild on the Farm, a sanctuary crafted for profound
+      disconnection and meaningful reconnection. Here, life slows to the gentle
+      rhythm of nature, inviting moments of meditation, exploration of the
+      ancient forest, or the practice of yoga and Tai Chi. Above all, it is a
+      haven to shed daily stress, to simply be – observing, listening, tasting;
+      reawakening senses often muted in the bustle of modern life. It is a space
+      for peace, for presence.
+
+
       Experience the vibrant pulse of the living world, find profound serenity,
       or embrace quietude with a book, comfortably nestled in the solitude of a
       cabin suspended above a sweeping, splendid view. These are moments of
