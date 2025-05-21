@@ -66,14 +66,11 @@ sections:
         textAlign: center
   - type: GenericSection
     title:
-      text: Luxury On The Homestead
+      text: A Sanctuary in the Clouds
       color: text-dark
       type: TitleBlock
     text: >
-      The Post family worked this land for generations, first as a homestead and
-      then later as a farm. Today it retains much of its original character,
-      with the added distinction of offering visitors a serene getaway and
-      retreat.
+      Welcome to Wild on the Farm, a handcrafted eco-sanctuary at 1800 meters, nestled beside Amistad National Park. With pure spring water, solar energy, organic farming, and artisanal architecture, it's a serene retreat where nature, comfort, and sustainability meet. Come to rest, reconnect, and thrive in the heart of the cloud forest.
     actions:
       - label: Discover the farm
         altText: ''
