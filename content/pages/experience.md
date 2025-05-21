@@ -80,7 +80,7 @@ sections:
           - px-4
   - type: GenericSection
     media:
-      url: /images/nettle-leaf.png
+      url: /images/icons/bird-watching.png
       altText: Fun feature preview
       type: ImageBlock
     title:
@@ -154,7 +154,7 @@ sections:
           - px-4
   - type: GenericSection
     media:
-      url: /images/nettle-leaf.png
+      url: /images/icons/hiking.png
       altText: Fun feature preview
       type: ImageBlock
     title:
@@ -363,7 +363,7 @@ sections:
           - px-4
   - type: GenericSection
     media:
-      url: /images/nettle-leaf.png
+      url: /images/icons/tailored-discovery.png
       altText: Fun feature preview
       type: ImageBlock
     title:

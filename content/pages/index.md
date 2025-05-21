@@ -203,7 +203,7 @@ sections:
         text: |
           Follow the tutorial to build your first Netlify Create site.
         image:
-          url: /images/bird-watching.JPG
+          url: /images/bird-watchingX.JPG
           altText: Placeholder Image
           type: ImageBlock
         actions:
@@ -225,7 +225,7 @@ sections:
         text: |
           Follow the tutorial to build your first Netlify Create site.
         image:
-          url: /images/hiking.png
+          url: /images/hikingX.png
           altText: Placeholder Image
           type: ImageBlock
         actions:
@@ -247,7 +247,7 @@ sections:
         text: |
           Follow the tutorial to build your first Netlify Create site.
         image:
-          url: /images/detox-retreat.JPG
+          url: /images/detox-retreatX.JPG
           altText: Placeholder Image
           type: ImageBlock
         actions:
@@ -269,7 +269,7 @@ sections:
         text: |
           Follow the tutorial to build your first Netlify Create site.
         image:
-          url: /images/tailored-discovery.JPG
+          url: /images/tailored-discoveryX.JPG
           altText: Placeholder Image
           type: ImageBlock
         actions:
