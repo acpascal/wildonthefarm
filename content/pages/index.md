@@ -145,10 +145,7 @@ sections:
       color: text-dark
       type: TitleBlock
     text: >
-      Silence, fresh air, magnificent view, here begins a deep detox from
-      stress. A chalet in harmony with nature, a beautiful bathroom, and a bed
-      with a comfortable mattress, everything here is order and beauty, luxury,
-      calm and serenity.
+      Discover the vibrant heart of Wild on the Farm—our 100% organic permaculture garden. Grown with care and respect for nature, it offers seasonal fruits, vegetables, herbs, and edible flowers bursting with flavor. Enjoy the rich taste of sustainability and the joy of cooking with truly fresh, nourishing ingredients.
     actions:
       - label: Learn More
         altText: ''

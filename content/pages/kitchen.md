@@ -18,49 +18,13 @@ sections:
       url: /images/kitchen.jpg
   - type: GenericSection
     title:
-      text: From The Garden
+      text: Our Garden
       color: text-dark
       type: TitleBlock
     text: >
-      The Enchanting Garden of the Cloud Forest
-
-
-      Nestled in the heart of the cloud forest, a remarkable garden thrives,
-      serving as a beacon of hope and harmony. This is no ordinary garden; it's
-      a testament to the power of syntropy, illustrating an ideal connection
-      with life. This garden embodies a philosophy of living in harmony with
-      nature, promoting sustainability and regeneration.
-
-
-      Flavors and Fragrances
-
-
-      The garden offers more than just visual beauty; it is a sensory delight.
-      It fills the air with enchanting fragrances, a bouquet of scents that
-      tantalize and soothe. The produce from this garden enriches our kitchen,
-      offering flavors that are both exquisite and nourishing. Each bite carries
-      the essence of the cloud forest, a reminder of the interconnectedness of
-      all living things.
-
-
-      A Path of Perseverance
-
-
-      This path towards abundance is marked by perseverance. It is a commitment
-      to nurturing life, understanding that every element in the garden plays a
-      crucial role in the ecosystem. Through careful observation and mindful
-      intervention, the garden flourishes, becoming a sanctuary for both humans
-      and wildlife.
-
-
-      Amidst the cloud forest, the garden stands as a symbol of what can be
-      achieved when we align ourselves with the rhythms of nature. It is a
-      testament to the power of syntropy and a reminder that by nurturing the
-      earth, we nurture ourselves. As we walk this path, we move closer to an
-      ideal connection with life, rich in flavors, fragrances, and a profound
-      sense of abundance.
+      Discover the vibrant heart of Wild on the Farm—our 100% organic permaculture garden. Grown with care and respect for nature, it offers seasonal fruits, vegetables, herbs, and edible flowers bursting with flavor. Enjoy the rich taste of sustainability and the joy of cooking with truly fresh, nourishing ingredients.
     media:
-      url: /images/from-the-garden.JPG
+      url: /images/from-the-garden11.JPG
       altText: Unblock your team boost your time to production preview
       elementId: ''
       type: ImageBlock
@@ -69,7 +33,7 @@ sections:
       color: text-primary
       type: Badge
     elementId: dine-other
-    colors: bg-orange-fg-dark
+    colors: bg-emerald-fg-light
     styles:
       self:
         alignItems: center
@@ -84,10 +48,36 @@ sections:
       url: /images/logo-dark.svg
       altText: Fun feature preview
       type: ImageBlock
-    subtitle: >-
-      High atop the cliffs of Big Sur, the striking views and otherworldly
-      serenity can’t help but stir your soul. Find your calm, and so much more.
-    colors: bg-emerald-fg-light
+    title:
+      text: From Our Organic Garden
+      color: text-dark
+      type: TitleBlock
+      styles:
+        self:
+          textAlign: center
+    subtitle: Seasonal abundance, grown with love and purpose
+    text: >
+      Step into our garden, a place where passion for nature meets the joy of cooking with the freshest ingredients. It's a vibrant source of abundance, teeming with a wide variety of vegetables, fruits, herbs, and edible flowers.
+
+
+      ** Our Philosophy **
+
+
+      Everything grown here is cultivated with profound care, respect for nature, and completely free from pesticides and chemicals. We embrace the principles of sustainability and living in harmony with the earth. This approach ensures our produce boasts incomparable flavor and optimal nutritional quality, perfect for a diverse, delicious, and truly healthy kitchen.
+
+
+      ** A Sensory and Culinary Delight **
+
+
+      Our garden is a feast for the senses. It fills the air with enchanting fragrances and offers flavors that are both exquisite and deeply nourishing. We harvest at peak maturity to capture the most intense and authentic tastes. By following the rhythm of the seasons, we ensure you enjoy the very best nature offers throughout the year.
+
+
+      ** Cultivated with Care **
+
+
+      This path to abundance is a testament to perseverance. Every element in the garden is nurtured, understanding its crucial role in the ecosystem. It's a place where we strive for an ideal connection with life, demonstrating that by nurturing the earth, we nurture ourselves.
+      Join us in celebrating the bounty of our garden. Experience the richness in flavors, fragrances, and health that comes from cooking with ingredients grown with love and respect for the earth.
+    colors: bg-orange-fg-dark
     styles:
       self:
         padding:
@@ -97,6 +87,8 @@ sections:
           - pr-16
         justifyContent: center
         flexDirection: col
+      text:
+        fontSize: x-small
       subtitle:
         textAlign: center
   - type: GenericSection
@@ -105,10 +97,7 @@ sections:
       color: text-dark
       type: TitleBlock
     text: >+
-      To the Kitchen
-
-
-      I know the garden, and i love picking aromatic herbs and vegetables at all
+      I know the garden, and I love picking aromatic herbs and vegetables at all
       stages of their growth, just before cooking them, so, that all their
       fragrances exalt their freshness and vitality. From rich and living soil
       flourish vegetables full of nutrients and vitality, herbs rich in
@@ -121,16 +110,11 @@ sections:
       creation to invite you to the joy of being at the table.
 
     media:
-      url: /images/into-our-kitchen.jpg
+      url: /images/into-our-kitchenTall.jpg
       altText: Unblock your team boost your time to production preview
       elementId: ''
       goesLast: true
       type: ImageBlock
-    badge:
-      label: Dine
-      color: text-primary
-      type: Badge
-    elementId: dine
     colors: bg-emerald-fg-light
     styles:
       self:
@@ -155,12 +139,8 @@ sections:
 
 
       I cultivate and cook for your pleasure and for your health, simply.
-
-
-
-
     media:
-      url: /images/to-our-table.jpg
+      url: /images/to-our-tableTall.jpg
       altText: Unblock your team boost your time to production preview
       elementId: ''
       type: ImageBlock
