@@ -17,7 +17,7 @@ sections:
       self:
         maxWidth: max-w-screen
         padding:
-          - px-28
+          - lg:px-28
           - py-0
   - type: GenericSection
     media:
