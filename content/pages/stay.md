@@ -21,7 +21,14 @@ sections:
       url: /images/logo-dark.svg
       altText: Fun feature preview
       type: ImageBlock
-    subtitle: High atop the cliffs of Big Sur, the striking views and otherworldly serenity can’t help but stir your soul. Find your calm, and so much more.
+    text: >
+      Escape the everyday and reconnect with yourself amidst unparalleled natural beauty. Our three exquisite cabins offer a sanctuary for your wellbeing, seemingly suspended above a breathtaking panorama. Nestled within the embracing tranquility of the cloud forest, your senses will be soothed by the gentle, ever-present sounds of nature.
+
+
+      Each cabin is a testament to sustainable craftsmanship, built with a deep respect for its environment. The exterior features the remarkable strength and durability of Amargo-amargo, an exceptionally hard tropical wood, while the interior is lined with softer tropical woods, creating a warm, inviting, and naturally healthy atmosphere.
+
+
+      Here, in the heart of the wild, we offer an exceptional stay that blends authentic comfort with cozy, restorative luxury. Sink into deep, rejuvenating sleep on our carefully selected mattresses, wrapped in soft, high-quality linens. Every small detail, from the natural materials to the thoughtful amenities, has been curated to ensure your stay is infused with happiness and profound relaxation.
     colors: bg-emerald-fg-light
     styles:
       self:
@@ -34,84 +41,6 @@ sections:
         flexDirection: col
       subtitle:
         textAlign: center
-  - title:
-      text: Spaces To Stir Your Imagination
-      color: text-primary
-      styles:
-        self:
-          textAlign: center
-      type: TitleBlock
-    subtitle: View Our Cabins
-    items:
-      - title: Exterior
-        tagline: This is the tagline
-        subtitle: This is the item subtitle
-        text: |
-          Follow the tutorial to build your first Netlify Create site.
-        image:
-          url: /images/exterior-1.jpg
-          altText: Placeholder Image
-          type: ImageBlock
-        colors: bg-neutral-fg-dark
-        styles:
-          self:
-            flexDirection: col
-        type: FeaturedItem
-      - title: Interior
-        tagline: This is the tagline
-        subtitle: This is the item subtitle
-        text: |
-          Follow the tutorial to build your first awesome Netlify Create site.
-        image:
-          url: /images/interior-1.jpg
-          altText: Placeholder image
-          type: ImageBlock
-        colors: bg-neutral-fg-dark
-        styles:
-          self:
-            flexDirection: col
-        type: FeaturedItem
-      - title: Bathroom
-        tagline: This is the tagline
-        subtitle: View
-        text: |
-          Learn from the tutorial and build your first awesome Netlify Create site.
-        image:
-          url: /images/bathroom-1.png
-          altText: Placeholder image
-          type: ImageBlock
-        colors: bg-neutral-fg-dark
-        styles:
-          self:
-            flexDirection: col
-        type: FeaturedItem
-      - title: Balcony
-        tagline: This is the tagline
-        subtitle: View
-        text: |
-          Learn from the tutorial and build your first awesome Netlify Create site.
-        image:
-          url: /images/balcony-1.jpg
-          altText: Placeholder image
-          type: ImageBlock
-        colors: bg-neutral-fg-dark
-        styles:
-          self:
-            flexDirection: col
-        type: FeaturedItem
-    variant: two-col-grid
-    colors: bg-neutral-fg-dark
-    styles:
-      self:
-        padding:
-          - pt-16
-          - pl-8
-          - pb-16
-          - pr-8
-        justifyContent: center
-      subtitle:
-        textAlign: center
-    type: FeaturedItemsSection
   - title:
       text: Video Tour
       color: text-dark
@@ -154,6 +83,26 @@ sections:
           textAlign: center
       type: TitleBlock
     items:
+      - image:
+          url: /images/exterior-1.jpg
+          altText: Placeholder Image
+          type: ImageBlock
+        colors: bg-light-fg-dark
+      - image:
+          url: /images/interior-1.jpg
+          altText: Placeholder Image
+          type: ImageBlock
+        colors: bg-light-fg-dark
+      - image:
+          url: /images/bathroom-1.png
+          altText: Placeholder Image
+          type: ImageBlock
+        colors: bg-light-fg-dark
+      - image:
+          url: /images/balcony-1.jpg
+          altText: Placeholder Image
+          type: ImageBlock
+        colors: bg-light-fg-dark
       - image:
           url: /images/exterior-2.jpg
           altText: Placeholder Image

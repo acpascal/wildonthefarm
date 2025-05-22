@@ -101,14 +101,11 @@ sections:
           - px-4
   - type: GenericSection
     title:
-      text: Cloud Forest Chalet
+      text: Cloud Forest Cabins
       color: text-dark
       type: TitleBlock
     text: >
-      Silence, fresh air, magnificent view, here begins a deep detox from
-      stress. A chalet in harmony with nature, a beautiful bathroom, and a bed
-      with a comfortable mattress, everything here is order and beauty, luxury,
-      calm and serenity.
+      Experience peaceful luxury in our handcrafted cabins, nestled in the serene cloud forest and overlooking breathtaking views. Built with sustainable tropical wood and designed for comfort, each space offers a restorative retreat where nature’s beauty and tranquil silence invite deep rest, reflection, and a true sense of wellbeing.
     actions:
       - label: View Cabins
         altText: ''
@@ -378,15 +375,11 @@ sections:
       subtitle:
         textAlign: center
   - title:
-      text: Generic Section With A Form
+      text: Contact Us
       color: text-dark
       type: TitleBlock
-    subtitle: Section with a form subtitle
     text: |-
-      Aenean eros ipsum, interdum quis dignissim non, sollicitudin vitae nisl.
-      Aenean vel aliquet elit, at blandit ipsum. Sed eleifend felis sit amet
-      erat molestie, hendrerit malesuada justo ultrices. Nunc volutpat at erat
-      vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.
+      We’d love to welcome you to Wild on the Farm—a place where nature, comfort, and wellbeing come together in perfect harmony. Whether you’re ready to book your stay, have questions about our retreats or cabins, or simply want to learn more, don’t hesitate to reach out. We’re here to help you plan your unforgettable escape into the cloud forest.
     media:
       fields:
         - name: name
@@ -430,10 +423,6 @@ sections:
         iconPosition: right
         style: primary
         elementId: null
-    badge:
-      label: Contact Us
-      color: text-primary
-      type: Badge
     colors: bg-neutralAlt-fg-dark
     type: GenericSection
 seo:
