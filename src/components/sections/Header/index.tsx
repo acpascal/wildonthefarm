@@ -27,7 +27,7 @@ export default function Header(props) {
             className={classNames(
                 'sb-component',
                 'sb-component-header',
-                isScrolled ? colors : 'bg-transparent text-white',
+                isScrolled ? colors : 'bg-transparent text-neutral',
                 styles?.self?.margin ? mapStyles({ padding: styles?.self?.margin }) : undefined,
                 styles?.self?.padding ? mapStyles({ padding: styles?.self?.padding }) : 'p-4'
             )}

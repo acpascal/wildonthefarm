@@ -129,16 +129,13 @@ sections:
       color: text-dark
       type: TitleBlock
     text: >+
-      This is a time to gather around the table, share conversation, and truly
-      savor a delicious meal. Among other things, you will love our endless
-      salads, nettle soup, Tagines, pasta with fresh herb oil, melted tomatoes
-      on a slice of grilled bread with garlic and parsley, and chicken with
-      fresh vegetables and coconut milk. Poached eggs in a bath of fresh
-      tomatoes and herbs with our homemade bacon, for a delicious breakfast. Of
-      course, we also make our own jams, pestos, etc.
+      More than just a meal, our table is a moment of genuine connection and conviviality. It's a welcoming space to share delicious food, exchange stories of the day's discoveries, and simply enjoy good company in a relaxed setting.
 
 
-      I cultivate and cook for your pleasure and for your health, simply.
+      We carefully tailor your menu to perfectly align with your specific needs, dietary preferences, and culinary desires, ensuring a truly personalized dining experience.
+
+
+      Our deepest passion is to bring you joy and profound gastronomic pleasure with every single dish we serve. We focus on creating meals that nourish the body and delight the senses.
     media:
       url: /images/to-our-tableTall.jpg
       altText: Unblock your team boost your time to production preview
