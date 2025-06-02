@@ -102,7 +102,7 @@ sections:
   - type: GenericSection
     title:
       text: Cloud Forest Cabins
-      color: text-dark
+      color: text-light
       type: TitleBlock
     text: >
       Experience peaceful luxury in our handcrafted cabins, nestled in the serene cloud forest and overlooking breathtaking views. Built with sustainable tropical wood and designed for comfort, each space offers a restorative retreat where nature’s beauty and tranquil silence invite deep rest, reflection, and a true sense of wellbeing.
@@ -113,7 +113,7 @@ sections:
         showIcon: true
         icon: arrowRight
         iconPosition: right
-        style: primary
+        style: secondary
         elementId: ''
         type: Link
     media:
@@ -125,7 +125,7 @@ sections:
       type: ImageBlock
     badge:
       label: Stay
-      color: text-primary
+      color: text-light
       type: Badge
     elementId: ''
     colors: bg-emerald-fg-light
@@ -403,25 +403,13 @@ sections:
           width: full
           type: TextareaFormControl
       elementId: contact-form
-      styles:
-        self:
-          padding:
-            - pt-6
-            - pb-6
-            - pl-6
-            - pr-6
-          borderColor: border-dark
-          borderStyle: solid
-          borderWidth: 1
-          borderRadius: large
       type: FormBlock
+      goesLast: true
+      netlify: true
       submitButton:
         type: SubmitButtonFormControl
         label: Submit
-        showIcon: false
-        icon: arrowRight
-        iconPosition: right
-        style: primary
+        style: secondary
         elementId: null
     colors: bg-neutralAlt-fg-dark
     type: GenericSection

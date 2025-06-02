@@ -7,19 +7,19 @@ import SubmitButtonFormControl from './SubmitButtonFormControl';
 
 export default function FormBlock(props) {
     const formRef = React.createRef<HTMLFormElement>();
-    const { fields = [], elementId, submitButton, className, styles = {}, 'data-sb-field-path': fieldPath } = props;
+    const { fields = [], elementId, submitButton, className, styles = {}, 'data-sb-field-path': fieldPath, netlify = false } = props;
 
     if (fields.length === 0) {
         return null;
     }
 
-    function handleSubmit(event) {
-        event.preventDefault();
+    // function handleSubmit(event) {
+    //     event.preventDefault();
 
-        const data = new FormData(formRef.current);
-        const value = Object.fromEntries(data.entries());
-        alert(`Form data: ${JSON.stringify(value)}`);
-    }
+    //     const data = new FormData(formRef.current);
+    //     const value = Object.fromEntries(data.entries());
+    //     alert(`Form data: ${JSON.stringify(value)}`);
+    // }
 
     return (
         <form
@@ -41,9 +41,10 @@ export default function FormBlock(props) {
             )}
             name={elementId}
             id={elementId}
-            onSubmit={handleSubmit}
+            // onSubmit={handleSubmit}
             ref={formRef}
             data-sb-field-path= {fieldPath}
+            data-netlify={netlify}
         >
             <div
                 className={classNames('w-full', 'flex', 'flex-wrap', 'gap-8', mapStyles({ justifyContent: styles?.self?.justifyContent ?? 'flex-start' }))}

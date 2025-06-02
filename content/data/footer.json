@@ -51,20 +51,29 @@
                 "altText": "Phone number",
                 "url": "tel:50765699134",
                 "style": "secondary",
-                "type": "Link"
+                "type": "Link",
+                "icon": "whatsapp",
+                "showIcon": true,
+                "iconPosition": "left"
             },
             {
                 "label": "contact@boquetecloudforestlodge.com",
                 "altText": "Contact email",
                 "url": "mailto:contact@boquetecloudforestlodge.com",
                 "style": "secondary",
-                "type": "Link"
+                "type": "Link",
+                "icon": "mail",
+                "showIcon": true,
+                "iconPosition": "left"
             },
             {
                 "label": "Finca Amistad\nHorqueta, Boquete, Chiriqui\nPanama",
                 "url": "https://maps.app.goo.gl/US5hdg29rwvch9jS6",
                 "style": "secondary",
-                "type": "Link"
+                "type": "Link",
+                "icon": "googlemaps",
+                "showIcon": true,
+                "iconPosition": "left"
             }
         ],
         "type": "FooterLinksGroup"
@@ -86,12 +95,6 @@
             "altText": "Instagram link",
             "url": "https://www.linkedin.com/company/netlify",
             "icon": "instagram",
-            "type": "Social"
-        },
-        {
-            "altText": "Email link",
-            "url": "mailto:contact@boquetecloudforestlodge.com",
-            "icon": "mail",
             "type": "Social"
         }
     ],

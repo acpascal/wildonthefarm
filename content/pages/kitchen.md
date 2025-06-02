@@ -19,7 +19,7 @@ sections:
   - type: GenericSection
     title:
       text: Our Garden
-      color: text-dark
+      color: text-light
       type: TitleBlock
     text: >
       Discover the vibrant heart of Wild on the Farm—our 100% organic permaculture garden. Grown with care and respect for nature, it offers seasonal fruits, vegetables, herbs, and edible flowers bursting with flavor. Enjoy the rich taste of sustainability and the joy of cooking with truly fresh, nourishing ingredients.
@@ -41,8 +41,6 @@ sections:
         justifyContent: center
         padding:
           - px-4
-      text:
-        textAlign: justify
   - type: GenericSection
     media:
       url: /images/logo-dark.svg
@@ -94,7 +92,7 @@ sections:
   - type: GenericSection
     title:
       text: Into Our Kitchen
-      color: text-dark
+      color: text-light
       type: TitleBlock
     text: >+
       I know the garden, and I love picking aromatic herbs and vegetables at all

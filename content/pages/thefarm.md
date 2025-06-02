@@ -56,7 +56,7 @@ sections:
   - type: GenericSection
     title:
       text: About The Farm
-      color: text-dark
+      color: text-light
       type: TitleBlock
     text: >
       Welcome to Wild on the Farm, a handcrafted eco-sanctuary at 1800 meters, nestled beside Amistad National Park. With pure spring water, solar energy, organic farming, and artisanal architecture, it's a serene retreat where nature, comfort, and sustainability meet. Come to rest, reconnect, and thrive in the heart of the cloud forest.
@@ -121,7 +121,7 @@ sections:
   - type: GenericSection
     title:
       text: Our History
-      color: text-dark
+      color: text-light
       type: TitleBlock
     text: >
       Wild on the Farm was born from a deep journey through Panama’s wildest places. When the founder discovered this untouched land after years of exploration, he saw the perfect setting to create a self-sustaining haven—where peace, nature, and the art of living harmonize in a place shaped by passion and purpose.
@@ -174,7 +174,7 @@ sections:
   - type: GenericSection
     title:
       text: Sustainability
-      color: text-dark
+      color: text-light
       type: TitleBlock
     text: >
       We believe in fostering abundance rather than entropy, a path that opens doors to understanding what we call nature. It is a contemplative gaze towards the universe, the cohesion of living beings moving towards abundance, ultimately, humus giving rise to life.

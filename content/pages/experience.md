@@ -56,7 +56,7 @@ sections:
   - type: GenericSection
     title:
       text: Bird Watching
-      color: text-dark
+      color: text-light
       type: TitleBlock
     text: >
       Immerse yourself in the sights and sounds of nature at Wild on the Farm. Surrounded by lush gardens and pristine forest, our haven invites bird lovers to discover rare species like the Quetzal, unwind in serene beauty, and savor the peaceful joy of birdwatching in harmony with nature.
@@ -132,7 +132,7 @@ sections:
   - type: GenericSection
     title:
       text: Hiking
-      color: text-dark
+      color: text-light
       type: TitleBlock
     text: >
       Step out your door and into the heart of the cloud forest. At Wild on the Farm, hiking is more than a walk—it’s full immersion in a mystical world of mist, moss, and towering trees. Let nature guide your journey through beauty, serenity, and quiet wonder.
@@ -210,7 +210,7 @@ sections:
   - type: GenericSection
     title:
       text: Detox and Return to Vitality Retreat
-      color: text-dark
+      color: text-light
       type: TitleBlock
     text: >
       Reclaim your vitality with a detox retreat at Wild on the Farm. Surrounded by pure air, organic healing plants, and the serene cloud forest, our program offers deep restoration through nature, nourishing food, guided walks, and silence. Breathe, reset, and return home lighter, clearer, and renewed.
@@ -345,7 +345,7 @@ sections:
   - type: GenericSection
     title:
       text: Tailored Discovery
-      color: text-dark
+      color: text-light
       type: TitleBlock
     text: >
       At Wild on the Farm, your journey is uniquely yours. Whether you seek stillness, adventure, or expert-guided discovery, our Tailored Discovery service curates meaningful, personalized experiences—yoga, nature walks, wildlife exploration, or quiet reflection—so you can reconnect, recharge, and make your stay truly unforgettable.
