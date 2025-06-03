@@ -42,10 +42,6 @@ sections:
         padding:
           - px-4
   - type: GenericSection
-    media:
-      url: /images/logo-dark.svg
-      altText: Fun feature preview
-      type: ImageBlock
     title:
       text: From Our Organic Garden
       color: text-dark

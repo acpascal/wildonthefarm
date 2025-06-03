@@ -153,7 +153,7 @@ sections:
           - px-4
   - type: GenericSection
     media:
-      url: /images/icons/hiking.jpg
+      url: /images/icons/hiking.png
       altText: Fun feature preview
       type: ImageBlock
     title:
@@ -231,7 +231,7 @@ sections:
           - px-4
   - type: GenericSection
     media:
-      url: /images/nettle-leaf.png
+      url: /images/icons/nettle-leaf.png
       altText: Fun feature preview
       type: ImageBlock
     title:

@@ -21,7 +21,7 @@ sections:
           - py-0
   - type: GenericSection
     media:
-      url: /images/logo-dark.svg
+      url: /images/logo.png
       altText: Fun feature preview
       type: ImageBlock
     text: >
