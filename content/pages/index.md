@@ -216,7 +216,7 @@ sections:
         text: |
           Step out your door and into the heart of the cloud forest. At Wild on the Farm, hiking is more than a walk—it’s full immersion in a mystical world of mist, moss, and towering trees. Let nature guide your journey through beauty, serenity, and quiet wonder.
         image:
-          url: /images/hikingX.png
+          url: /images/hikingX.jpg
           altText: Placeholder Image
           type: ImageBlock
         actions:

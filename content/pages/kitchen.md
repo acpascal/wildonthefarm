@@ -167,13 +167,13 @@ sections:
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
-          url: /images/garden/garden-2.png
+          url: /images/garden/garden-2.jpg
           altText: Placeholder Image
           type: ImageBlock
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
-          url: /images/garden/garden-3.png
+          url: /images/garden/garden-3.jpg
           altText: Placeholder Image
           type: ImageBlock
         colors: bg-neutral-fg-dark
@@ -185,7 +185,7 @@ sections:
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
-          url: /images/garden/garden-5.png
+          url: /images/garden/garden-5.jpg
           altText: Placeholder Image
           type: ImageBlock
         colors: bg-neutral-fg-dark

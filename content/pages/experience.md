@@ -137,7 +137,7 @@ sections:
     text: >
       Step out your door and into the heart of the cloud forest. At Wild on the Farm, hiking is more than a walk—it’s full immersion in a mystical world of mist, moss, and towering trees. Let nature guide your journey through beauty, serenity, and quiet wonder.
     media:
-      url: /images/hiking.png
+      url: /images/hiking.jpg
       altText: Unblock your team boost your time to production preview
       elementId: ''
       goesLast: true
@@ -153,7 +153,7 @@ sections:
           - px-4
   - type: GenericSection
     media:
-      url: /images/icons/hiking.png
+      url: /images/icons/hiking.jpg
       altText: Fun feature preview
       type: ImageBlock
     title:
@@ -625,37 +625,37 @@ sections:
         tagline: Bird Text
         type: FeaturedItem
       - image:
-          url: /images/hiking/hiking-1.png
+          url: /images/hiking/hiking-1.jpg
           altText: Placeholder Image
           type: ImageBlock
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
-          url: /images/hiking/hiking-2.png
+          url: /images/hiking/hiking-2.jpg
           altText: Placeholder Image
           type: ImageBlock
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
-          url: /images/hiking/hiking-3.png
+          url: /images/hiking/hiking-3.jpg
           altText: Placeholder Image
           type: ImageBlock
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
-          url: /images/hiking/hiking-4.png
+          url: /images/hiking/hiking-4.jpg
           altText: Placeholder Image
           type: ImageBlock
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
-          url: /images/hiking/hiking-5.png
+          url: /images/hiking/hiking-5.jpg
           altText: Placeholder Image
           type: ImageBlock
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
-          url: /images/hiking/hiking-6.png
+          url: /images/hiking/hiking-6.jpg
           altText: Placeholder Image
           type: ImageBlock
         colors: bg-neutral-fg-dark
