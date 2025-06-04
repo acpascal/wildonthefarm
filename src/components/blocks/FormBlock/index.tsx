@@ -31,7 +31,9 @@ export default function FormBlock(props) {
       const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(data).toString()
+        body: new URLSearchParams(
+          Array.from(data.entries()).map(([k, v]) => [k, typeof v === 'string' ? v : ''])
+        ).toString()
       });
 
       if (response.ok) {
