@@ -22,10 +22,14 @@ export default function FormBlock(props) {
         try {
             setStatus('pending');
             setError(null);
+            const myForm = event.target;
+            const formData = new FormData(myForm);
             const res = await fetch('/__forms.html', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: ''
+                body: new URLSearchParams(
+                    Array.from(formData.entries()).map(([k, v]) => [k, typeof v === 'string' ? v : v.name])
+                ).toString()
             });
             if (res.status === 200) {
                 setStatus('ok');
