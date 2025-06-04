@@ -28,7 +28,7 @@ export default function FormBlock(props) {
     data.set('form-name', formName);
 
     try {
-      const response = await fetch('/__forms', {
+      const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(
