@@ -405,7 +405,7 @@ sections:
       elementId: contact-form
       type: FormBlock
       goesLast: true
-      netlify: true
+      successMessage: Thank you! We can’t wait to welcome you—we'll get back to you soon!
       submitButton:
         type: SubmitButtonFormControl
         label: Submit

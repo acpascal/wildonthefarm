@@ -11,7 +11,7 @@ export default function FormBlock(props) {
     const [status, setStatus] = useState(null);
     const [error, setError] = useState(null);
     const formRef = React.createRef<HTMLFormElement>();
-    const { fields = [], elementId, submitButton, className, styles = {}, 'data-sb-field-path': fieldPath } = props;
+    const { fields = [], elementId, submitButton, className, styles = {}, successMessage, 'data-sb-field-path': fieldPath } = props;
 
     if (fields.length === 0) {
         return null;
@@ -84,12 +84,12 @@ export default function FormBlock(props) {
                     return <FormControl key={index} {...field} {...(fieldPath && { 'data-sb-field-path': `.${index}` })} />;
                 })}
             </div>
-            {submitButton && (
+            {submitButton && (status === null || status === 'pending') && (
                 <div className={classNames('mt-8', 'flex', mapStyles({ justifyContent: styles?.self?.justifyContent ?? 'flex-start' }))}>
-                    <SubmitButtonFormControl {...submitButton} {...(fieldPath && { 'data-sb-field-path': '.submitButton' })} />
+                    <SubmitButtonFormControl {...submitButton} disabled={status === 'pending'} {...(fieldPath && { 'data-sb-field-path': '.submitButton' })} />
                 </div>
             )}
-            {status === 'ok' && <Alert className type="success">Submitted!</Alert>}
+            {status === 'ok' && <Alert className type="success">{successMessage}</Alert>}
             {status === 'error' && <Alert className type="error">{error}</Alert>}
         </form>
     );
