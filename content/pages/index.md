@@ -4,32 +4,54 @@ slug: /
 sections:
   - type: GenericSection
     media:
-      title: Title of the video
-      url: /images/placeholder-video.mp4
+      title: Wild on the farm
+      url: 'https://youtu.be/FGbUEGNd524'
       controls: false
       aspectRatio: '16:9'
       type: VideoBlock
       autoplay: true
       loop: true
       muted: true
-    colors: bg-light-fg-dark
+    colors: bg-emerald-fg-light
     styles:
       self:
-        flexDirection: col
-        justifyContent: center
+        maxWidth: max-w-screen
         padding:
-          - pt-0
-          - pl-0
-          - pb-0
-          - pr-0
-      subtitle:
-        textAlign: center
+          - lg:px-28
+          - py-0
   - type: GenericSection
     media:
-      url: /images/logo-dark.svg
+      url: /images/logo.png
       altText: Fun feature preview
       type: ImageBlock
-    subtitle: High atop the cliffs of Big Sur, the striking views and otherworldly serenity can’t help but stir your soul. Find your calm, and so much more.
+    text: >
+      A masterpiece of synergy with nature, located just 15
+      minutes from Boquete at 5905 feet elevation and nestled into the Amistad
+      National Park.
+
+
+      Step into the authentic heart of the Cloud
+      Forest – an enchanted sanctuary where silence speaks volumes, the crisp
+      altitude air invigorates , and clouds dance with the wind without
+      disturbing your profound serenity.
+
+
+      As Panama's first organic farm and only macadamia plantation, rooted in
+      Horqueta since 2009, WILD ON THE FARM embodies over 15 years of
+      innovative, environmentally harmonious cultivation in this exceptional
+      setting.
+
+
+      Starting in 2025, we open our doors with three beautiful and luxurious
+      cabins, a host table to enjoy a cuisine signed by the scents and flavors
+      of the garden, the farm and the jungle inviting you to immerse yourself in
+      our unique world. Experience transformative detox stays, thrilling bird
+      watching, guided cloud forest hikes, peaceful moments of reading in
+      silence, or rejuvenating meditation amidst the farm's tranquility.
+
+
+      Here, time takes on a different rhythm, designed for profound regeneration
+      of your vitality.
     colors: bg-emerald-fg-light
     styles:
       self:
@@ -42,164 +64,89 @@ sections:
         flexDirection: col
       subtitle:
         textAlign: center
-  - type: CarouselSection
+  - type: GenericSection
     title:
-      text: Stay
+      text: A Sanctuary in the Clouds
       color: text-dark
-      styles:
-        self:
-          textAlign: left
       type: TitleBlock
+    text: >
+      Welcome to Wild on the Farm, a handcrafted eco-sanctuary at 1800 meters, nestled beside Amistad National Park. With pure spring water, solar energy, organic farming, and artisanal architecture, it's a serene retreat where nature, comfort, and sustainability meet. Come to rest, reconnect, and thrive in the heart of the cloud forest.
     actions:
-      - label: View All
+      - label: Discover the farm
         altText: ''
-        url: /
+        url: /the-farm
         showIcon: true
         icon: arrowRight
         iconPosition: right
         style: secondary
         elementId: ''
-        type: Button
-    items:
-      - title: Coast House
-        text: >-
-          With a circular design that mirrors the surrounding redwood trees, Coast Houses offer the chance to admire the Pacific. Curl up indoors by the fireplace or outdoors on the deck with views of the ocean and neighboring forest.
-        image:
-          url: /images/hero2.svg
-          altText: Maria Walters
-          type: ImageBlock
-        actions:
-          - label: View Cabin
-            altText: ''
-            url: /
-            showIcon: true
-            icon: arrowRight
-            iconPosition: right
-            style: primary
-            elementId: ''
-            type: Link
-        colors: bg-light-fg-dark
-        styles:
-          text:
-            padding:
-              - pt-9
-              - pb-9
-              - pl-9
-              - pr-9
-          self:
-            textAlign: left
-            borderRadius: large
-            flexDirection: col
-        type: FeaturedItem
-      - title: Coast House
-        text: >-
-          With a circular design that mirrors the surrounding redwood trees, Coast Houses offer the chance to admire the Pacific. Curl up indoors by the fireplace or outdoors on the deck with views of the ocean and neighboring forest.
-        image:
-          url: /images/hero2.svg
-          altText: Maria Walters
-          type: ImageBlock
-        actions:
-          - label: View Cabin
-            altText: ''
-            url: /
-            showIcon: true
-            icon: arrowRight
-            iconPosition: right
-            style: primary
-            elementId: ''
-            type: Link
-        colors: bg-light-fg-dark
-        styles:
-          text:
-            padding:
-              - pt-9
-              - pb-9
-              - pl-9
-              - pr-9
-          self:
-            textAlign: left
-            borderRadius: large
-            flexDirection: col
-        type: FeaturedItem
-      - title: Coast House
-        text: >-
-          With a circular design that mirrors the surrounding redwood trees, Coast Houses offer the chance to admire the Pacific. Curl up indoors by the fireplace or outdoors on the deck with views of the ocean and neighboring forest.
-        image:
-          url: /images/hero2.svg
-          altText: Maria Walters
-          type: ImageBlock
-        actions:
-          - label: View Cabin
-            altText: ''
-            url: /
-            showIcon: true
-            icon: arrowRight
-            iconPosition: right
-            style: primary
-            elementId: ''
-            type: Link
-        colors: bg-light-fg-dark
-        styles:
-          text:
-            padding:
-              - pt-9
-              - pb-9
-              - pl-9
-              - pr-9
-          self:
-            textAlign: left
-            borderRadius: large
-            flexDirection: col
-        type: FeaturedItem
-      - title: Coast House
-        text: >-
-          With a circular design that mirrors the surrounding redwood trees, Coast Houses offer the chance to admire the Pacific. Curl up indoors by the fireplace or outdoors on the deck with views of the ocean and neighboring forest.
-        image:
-          url: /images/hero2.svg
-          altText: Maria Walters
-          type: ImageBlock
-        actions:
-          - label: View Cabin
-            altText: ''
-            url: /
-            showIcon: true
-            icon: arrowRight
-            iconPosition: right
-            style: primary
-            elementId: ''
-            type: Link
-        colors: bg-light-fg-dark
-        styles:
-          text:
-            padding:
-              - pt-9
-              - pb-9
-              - pl-9
-              - pr-9
-          self:
-            textAlign: left
-            borderRadius: large
-            flexDirection: col
-        type: FeaturedItem
-    elementId: null
-    variant: next-prev-nav-multiple
-    colors: bg-light-fg-dark
+        type: Link
+    media:
+      url: /images/about-the-farm.jpg
+      altText: Unblock your team boost your time to production preview
+      elementId: ''
+      type: ImageBlock
+    badge:
+      label: The Farm
+      color: text-primary
+      type: Badge
+    elementId: ''
+    colors: bg-orange-fg-dark
     styles:
       self:
+        alignItems: center
+        flexDirection: row
         justifyContent: center
-      subtitle:
-        textAlign: center
+        padding:
+          - px-4
   - type: GenericSection
     title:
-      text: Dine Amongst the Clouds
+      text: Cloud Forest Cabins
+      color: text-light
+      type: TitleBlock
+    text: >
+      Experience peaceful luxury in our handcrafted cabins, nestled in the serene cloud forest and overlooking breathtaking views. Built with sustainable tropical wood and designed for comfort, each space offers a restorative retreat where nature’s beauty and tranquil silence invite deep rest, reflection, and a true sense of wellbeing.
+    actions:
+      - label: View Cabins
+        altText: ''
+        url: /stay
+        showIcon: true
+        icon: arrowRight
+        iconPosition: right
+        style: secondary
+        elementId: ''
+        type: Link
+    media:
+      url: /images/stay.JPG
+      altText: Cloud forest chalet
+      elementId: ''
+      goesLast: true
+      className: null
+      type: ImageBlock
+    badge:
+      label: Stay
+      color: text-light
+      type: Badge
+    elementId: ''
+    colors: bg-emerald-fg-light
+    styles:
+      self:
+        alignItems: center
+        flexDirection: row
+        justifyContent: center
+        padding:
+          - px-4
+  - type: GenericSection
+    title:
+      text: Food from our organic garden
       color: text-dark
       type: TitleBlock
     text: >
-      Sierra Mar restuarant sits high atop the cliffs of Big Sur, offering breathtaking views alongside inspired, artfully-prepared cuisine and a Wine Spectator Grand Award-winning wine list.
+      Discover the vibrant heart of Wild on the Farm—our 100% organic permaculture garden. Grown with care and respect for nature, it offers seasonal fruits, vegetables, herbs, and edible flowers bursting with flavor. Enjoy the rich taste of sustainability and the joy of cooking with truly fresh, nourishing ingredients.
     actions:
-      - label: Dining Options
+      - label: Learn More
         altText: ''
-        url: /
+        url: /kitchen
         showIcon: true
         icon: arrowRight
         iconPosition: right
@@ -207,13 +154,13 @@ sections:
         elementId: ''
         type: Link
     media:
-      url: /images/dine.jpg
-      altText: Unblock your team boost your time to production preview
+      url: /images/kitchen.jpg
+      altText: Kitchen
       elementId: ''
-      className:
+      className: null
       type: ImageBlock
     badge:
-      label: Dine
+      label: Kitchen
       color: text-primary
       type: Badge
     elementId: ''
@@ -225,9 +172,8 @@ sections:
         justifyContent: center
         padding:
           - px-4
-  - type: CarouselSection
-    title:
-      text: Experiences
+  - title:
+      text: Experience
       color: text-dark
       styles:
         self:
@@ -236,7 +182,7 @@ sections:
     actions:
       - label: View All
         altText: ''
-        url: /
+        url: /experience
         showIcon: true
         icon: arrowRight
         iconPosition: right
@@ -244,173 +190,107 @@ sections:
         elementId: ''
         type: Button
     items:
-      - title: Activities
-        text: >-
-          Heated infinity pools, guided nature walks, yoga, meditation, falconry and more - an array of engaging activities, many of which are complimentary, await.
+      - title: Bird Watching
+        text: |
+          Immerse yourself in the sights and sounds of nature at Wild on the Farm. Surrounded by lush gardens and pristine forest, our haven invites bird lovers to discover rare species like the Quetzal, unwind in serene beauty, and savor the peaceful joy of birdwatching in harmony with nature.
         image:
-          url: /images/hero2.svg
-          altText: Maria Walters
+          url: /images/bird-watchingX.JPG
+          altText: Placeholder Image
           type: ImageBlock
         actions:
           - label: Learn More
             altText: ''
-            url: /
+            url: /experience/#bird-watching
             showIcon: true
             icon: arrowRight
             iconPosition: right
             style: primary
             elementId: ''
             type: Link
-        colors: bg-light-fg-dark
+        colors: bg-neutral-fg-dark
         styles:
-          text:
-            padding:
-              - pt-9
-              - pb-9
-              - pl-9
-              - pr-9
           self:
-            textAlign: left
-            borderRadius: large
             flexDirection: col
-            justifyContent: center
         type: FeaturedItem
-      - title: Activities
-        text: >-
-          Heated infinity pools, guided nature walks, yoga, meditation, falconry and more - an array of engaging activities, many of which are complimentary, await.
+      - title: Hiking
+        text: |
+          Step out your door and into the heart of the cloud forest. At Wild on the Farm, hiking is more than a walk—it’s full immersion in a mystical world of mist, moss, and towering trees. Let nature guide your journey through beauty, serenity, and quiet wonder.
         image:
-          url: /images/hero2.svg
-          altText: Maria Walters
+          url: /images/hikingX.jpg
+          altText: Placeholder Image
           type: ImageBlock
         actions:
           - label: Learn More
             altText: ''
-            url: /
+            url: /experience/#hiking
             showIcon: true
             icon: arrowRight
             iconPosition: right
             style: primary
             elementId: ''
             type: Link
-        colors: bg-light-fg-dark
+        colors: bg-neutral-fg-dark
         styles:
-          text:
-            padding:
-              - pt-9
-              - pb-9
-              - pl-9
-              - pr-9
           self:
-            textAlign: left
-            borderRadius: large
             flexDirection: col
-            justifyContent: center
         type: FeaturedItem
-      - title: Activities
-        text: >-
-          Heated infinity pools, guided nature walks, yoga, meditation, falconry and more - an array of engaging activities, many of which are complimentary, await.
+      - title: Detox Retreat
+        text: |
+          Reclaim your vitality with a detox retreat at Wild on the Farm. Surrounded by pure air, organic healing plants, and the serene cloud forest, our program offers deep restoration through nature, nourishing food, guided walks, and silence. Breathe, reset, and return home lighter, clearer, and renewed.
         image:
-          url: /images/hero2.svg
-          altText: Maria Walters
+          url: /images/detox-retreatX.JPG
+          altText: Placeholder Image
           type: ImageBlock
         actions:
           - label: Learn More
             altText: ''
-            url: /
+            url: /experience/#detox-retreat
             showIcon: true
             icon: arrowRight
             iconPosition: right
             style: primary
             elementId: ''
             type: Link
-        colors: bg-light-fg-dark
+        colors: bg-neutral-fg-dark
         styles:
-          text:
-            padding:
-              - pt-9
-              - pb-9
-              - pl-9
-              - pr-9
           self:
-            textAlign: left
-            borderRadius: large
             flexDirection: col
-            justifyContent: center
         type: FeaturedItem
-      - title: Activities
-        text: >-
-          Heated infinity pools, guided nature walks, yoga, meditation, falconry and more - an array of engaging activities, many of which are complimentary, await.
+      - title: Tailored Discovery
+        text: |
+          Your journey is uniquely yours. Whether you seek stillness, adventure, or expert-guided discovery, our Tailored Discovery service curates meaningful, personalized experiences—yoga, nature walks, wildlife exploration, or quiet reflection—so you can reconnect, recharge, and make your stay unforgettable.
         image:
-          url: /images/hero2.svg
-          altText: Maria Walters
+          url: /images/tailored-discoveryX.JPG
+          altText: Placeholder Image
           type: ImageBlock
         actions:
           - label: Learn More
             altText: ''
-            url: /
+            url: /experience/#tailored-discovery
             showIcon: true
             icon: arrowRight
             iconPosition: right
             style: primary
             elementId: ''
             type: Link
-        colors: bg-light-fg-dark
+        colors: bg-neutral-fg-dark
         styles:
-          text:
-            padding:
-              - pt-9
-              - pb-9
-              - pl-9
-              - pr-9
           self:
-            textAlign: left
-            borderRadius: large
             flexDirection: col
-            justifyContent: center
         type: FeaturedItem
-    elementId: null
-    variant: next-prev-nav-multiple
-    colors: bg-light-fg-dark
+    variant: two-col-grid
+    colors: bg-neutral-fg-dark
     styles:
       self:
+        padding:
+          - pt-16
+          - pl-8
+          - pb-16
+          - pr-8
         justifyContent: center
       subtitle:
         textAlign: center
-  - type: GenericSection
-    title:
-      text: Luxury On The Homestead
-      color: text-dark
-      type: TitleBlock
-    text: >
-      The Post family worked this land for generations, first as a homestead and then later as a farm. Today it retains much of its original character, with the added distinction of offering visitors a serene getaway and retreat.
-    actions:
-      - label: Discover the ranch
-        altText: ''
-        url: /
-        showIcon: true
-        icon: arrowRight
-        iconPosition: right
-        style: secondary
-        elementId: ''
-        type: Link
-    media:
-      url: /images/finca.jpeg
-      altText: Unblock your team boost your time to production preview
-      elementId: ''
-      type: ImageBlock
-    badge:
-      label: The Ranch
-      color: text-primary
-      type: Badge
-    elementId: ''
-    colors: bg-orange-fg-dark
-    styles:
-      self:
-        alignItems: center
-        flexDirection: row
-        justifyContent: center
-        padding:
-          - px-4
+    type: FeaturedItemsSection
   - type: CarouselSection
     subtitle: Featured Reviews
     items:
@@ -433,7 +313,8 @@ sections:
             justifyContent: center
         type: FeaturedItem
       - title: >-
-          "Design is a plan for arranging elements in such a way as best to accomplish a particular purpose."
+          "Design is a plan for arranging elements in such a way as best to
+          accomplish a particular purpose."
         subtitle: 'John Doe, Company'
         actions: []
         colors: bg-orange-fg-dark
@@ -450,7 +331,8 @@ sections:
             justifyContent: center
         type: FeaturedItem
       - title: >-
-          "Design is how it works, how it functions. Good design doesn't just make a product aesthetically pleasing, it makes it a pleasure to use."
+          "Design is how it works, how it functions. Good design doesn't just
+          make a product aesthetically pleasing, it makes it a pleasure to use."
         subtitle: 'Maria Walters, Company'
         actions: []
         colors: bg-orange-fg-dark
@@ -493,15 +375,11 @@ sections:
       subtitle:
         textAlign: center
   - title:
-      text: Generic Section With A Form
+      text: Contact Us
       color: text-dark
       type: TitleBlock
-    subtitle: Section with a form subtitle
     text: |-
-      Aenean eros ipsum, interdum quis dignissim non, sollicitudin vitae nisl.
-      Aenean vel aliquet elit, at blandit ipsum. Sed eleifend felis sit amet
-      erat molestie, hendrerit malesuada justo ultrices. Nunc volutpat at erat
-      vitae interdum. Ut nec massa eget lorem blandit condimentum et at risus.
+      We’d love to welcome you to Wild on the Farm—a place where nature, comfort, and wellbeing come together in perfect harmony. Whether you’re ready to book your stay, have questions about our retreats or cabins, or simply want to learn more, don’t hesitate to reach out. We’re here to help you plan your unforgettable escape into the cloud forest.
     media:
       fields:
         - name: name
@@ -525,34 +403,18 @@ sections:
           width: full
           type: TextareaFormControl
       elementId: contact-form
-      styles:
-        self:
-          padding:
-            - pt-6
-            - pb-6
-            - pl-6
-            - pr-6
-          borderColor: border-dark
-          borderStyle: solid
-          borderWidth: 1
-          borderRadius: large
       type: FormBlock
+      goesLast: true
+      netlify: true
       submitButton:
         type: SubmitButtonFormControl
         label: Submit
-        showIcon: false
-        icon: arrowRight
-        iconPosition: right
-        style: primary
+        style: secondary
         elementId: null
-    badge:
-      label: Contact Us
-      color: text-primary
-      type: Badge
     colors: bg-neutralAlt-fg-dark
     type: GenericSection
 seo:
-  metaTitle: Home - Demo site
+  metaTitle: Wild On The Farm - Boquete Cloud Forest Lodge
   metaDescription: This demo site is built with Netlify Create.
   socialImage: /images/main-hero.jpg
   type: Seo

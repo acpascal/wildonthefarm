@@ -1,42 +1,42 @@
 {
     "logo": {
-        "url": "/images/logo-white.svg",
+        "url": "/images/logo.png",
         "altText": "Logo light",
         "type": "ImageBlock"
     },
-    "text": "A description of your brand",
+    "text": "Boquete Cloud Forest Lodge",
     "primaryLinks": {
         "title": "Menu",
         "links": [
             {
                 "label": "The Farm",
                 "altText": "Phone number",
-                "url": "tel:50712345678",
+                "url": "/the-farm",
                 "style": "secondary",
                 "type": "Link"
             },
             {
                 "label": "Stay",
                 "altText": "Contact email",
-                "url": "mailto:reservations@finca.com",
+                "url": "/stay",
                 "style": "secondary",
                 "type": "Link"
             },
             {
-                "label": "Dine",
-                "url": "https://maps.app.goo.gl/Muz5pNFhUCRdEXZT7",
+                "label": "Kitchen",
+                "url": "/kitchen",
                 "style": "secondary",
                 "type": "Link"
             },
             {
                 "label": "Experience",
-                "url": "https://maps.app.goo.gl/Muz5pNFhUCRdEXZT7",
+                "url": "/experience",
                 "style": "secondary",
                 "type": "Link"
             },
             {
                 "label": "Blog",
-                "url": "https://maps.app.goo.gl/Muz5pNFhUCRdEXZT7",
+                "url": "/blog",
                 "style": "secondary",
                 "type": "Link"
             }
@@ -47,55 +47,58 @@
         "title": "Contact Us",
         "links": [
             {
-                "label": "+507 1234 5678",
+                "label": "+507 6569 9134",
                 "altText": "Phone number",
-                "url": "tel:50712345678",
+                "url": "tel:50765699134",
                 "style": "secondary",
-                "type": "Link"
+                "type": "Link",
+                "icon": "whatsapp",
+                "showIcon": true,
+                "iconPosition": "left"
             },
             {
-                "label": "reservations@finca.com",
+                "label": "contact@boquetecloudforestlodge.com",
                 "altText": "Contact email",
-                "url": "mailto:reservations@finca.com",
+                "url": "mailto:contact@boquetecloudforestlodge.com",
                 "style": "secondary",
-                "type": "Link"
+                "type": "Link",
+                "icon": "mail",
+                "showIcon": true,
+                "iconPosition": "left"
             },
             {
                 "label": "Finca Amistad\nHorqueta, Boquete, Chiriqui\nPanama",
-                "url": "https://maps.app.goo.gl/Muz5pNFhUCRdEXZT7",
+                "url": "https://maps.app.goo.gl/US5hdg29rwvch9jS6",
                 "style": "secondary",
-                "type": "Link"
+                "type": "Link",
+                "icon": "googlemaps",
+                "showIcon": true,
+                "iconPosition": "left"
             }
         ],
         "type": "FooterLinksGroup"
     },
     "socialLinks": [
         {
-            "altText": "GitHub link",
-            "url": "https://github.com/netlify",
-            "icon": "github",
+            "altText": "Facebook link",
+            "url": "https://www.facebook.com/profile.php?id=61562308296749",
+            "icon": "facebook",
             "type": "Social"
         },
         {
-            "altText": "Twitter link",
-            "url": "https://twitter.com/netlify",
-            "icon": "twitter",
+            "altText": "Youtube link",
+            "url": "https://www.youtube.com/@wildonthefarm8302",
+            "icon": "youtube",
             "type": "Social"
         },
         {
-            "altText": "LinkedIn link",
+            "altText": "Instagram link",
             "url": "https://www.linkedin.com/company/netlify",
-            "icon": "linkedin",
-            "type": "Social"
-        },
-        {
-            "altText": "Email link",
-            "url": "/",
-            "icon": "mail",
+            "icon": "instagram",
             "type": "Social"
         }
     ],
-    "copyrightText": "©2025 THE RANCH",
+    "copyrightText": "©2025 WILD ON THE FARM",
     "colors": "bg-emerald-fg-light",
     "type": "Footer",
     "styles":{
