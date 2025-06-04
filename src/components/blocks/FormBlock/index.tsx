@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState } from 'react';
 import classNames from 'classnames';
 
 import { getComponent } from '../../components-registry';
@@ -6,6 +7,8 @@ import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to
 import SubmitButtonFormControl from './SubmitButtonFormControl';
 
 export default function FormBlock(props) {
+    const [status, setStatus] = useState(null);
+    const [error, setError] = useState(null);
     const formRef = React.createRef<HTMLFormElement>();
     const { fields = [], elementId, submitButton, className, styles = {}, 'data-sb-field-path': fieldPath, netlify = false } = props;
 
@@ -13,13 +16,27 @@ export default function FormBlock(props) {
         return null;
     }
 
-    // function handleSubmit(event) {
-    //     event.preventDefault();
-
-    //     const data = new FormData(formRef.current);
-    //     const value = Object.fromEntries(data.entries());
-    //     alert(`Form data: ${JSON.stringify(value)}`);
-    // }
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+        try {
+            setStatus('pending');
+            setError(null);
+            const res = await fetch('/__forms.html', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: ''
+            });
+            if (res.status === 200) {
+                setStatus('ok');
+            } else {
+                setStatus('error');
+                setError(`${res.status} ${res.statusText}`);
+            }
+        } catch (e) {
+            setStatus('error');
+            setError(`${e}`);
+        }
+    }
 
     return (
         <form
@@ -41,7 +58,7 @@ export default function FormBlock(props) {
             )}
             name={elementId}
             id={elementId}
-            // onSubmit={handleSubmit}
+            onSubmit={handleFormSubmit}
             ref={formRef}
             data-sb-field-path= {fieldPath}
             data-netlify={netlify}
