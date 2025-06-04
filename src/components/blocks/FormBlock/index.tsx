@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Alert } from '../../atoms/Alert/alert';
 import { useState } from 'react';
 import classNames from 'classnames';
 
@@ -10,7 +11,7 @@ export default function FormBlock(props) {
     const [status, setStatus] = useState(null);
     const [error, setError] = useState(null);
     const formRef = React.createRef<HTMLFormElement>();
-    const { fields = [], elementId, submitButton, className, styles = {}, 'data-sb-field-path': fieldPath, netlify = false } = props;
+    const { fields = [], elementId, submitButton, className, styles = {}, 'data-sb-field-path': fieldPath } = props;
 
     if (fields.length === 0) {
         return null;
@@ -61,7 +62,6 @@ export default function FormBlock(props) {
             onSubmit={handleFormSubmit}
             ref={formRef}
             data-sb-field-path= {fieldPath}
-            data-netlify={netlify}
         >
             <div
                 className={classNames('w-full', 'flex', 'flex-wrap', 'gap-8', mapStyles({ justifyContent: styles?.self?.justifyContent ?? 'flex-start' }))}
@@ -85,6 +85,8 @@ export default function FormBlock(props) {
                     <SubmitButtonFormControl {...submitButton} {...(fieldPath && { 'data-sb-field-path': '.submitButton' })} />
                 </div>
             )}
+            {status === 'ok' && <Alert className type="success">Submitted!</Alert>}
+            {status === 'error' && <Alert className type="error">{error}</Alert>}
         </form>
     );
 }
