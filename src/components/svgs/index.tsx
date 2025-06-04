@@ -11,6 +11,7 @@ import ChevronUp from './chevron-up';
 import Close from './close';
 import Facebook from './facebook';
 import GitHub from './github';
+import GoogleMaps from './googlemaps';
 import Instagram from './instagram';
 import LinkedIn from './linkedin';
 import Mail from './mail';
@@ -22,6 +23,7 @@ import ShoppingBag from './shopping-bag';
 import Twitter from './twitter';
 import Vimeo from './vimeo';
 import YouTube from './youtube';
+import WhatsApp from './whatsapp';
 
 export const iconMap = {
     arrowDown: ArrowDown,
@@ -37,6 +39,7 @@ export const iconMap = {
     close: Close,
     facebook: Facebook,
     github: GitHub,
+    googlemaps: GoogleMaps,
     instagram: Instagram,
     linkedin: LinkedIn,
     mail: Mail,
@@ -47,5 +50,6 @@ export const iconMap = {
     shoppingBag: ShoppingBag,
     twitter: Twitter,
     vimeo: Vimeo,
-    youtube: YouTube
+    youtube: YouTube,
+    whatsapp: WhatsApp
 };

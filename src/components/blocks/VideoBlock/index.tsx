@@ -80,7 +80,7 @@ function YouTubeVideo({ id, autoplay, loop, muted, controls = true, hasAnnotatio
     const queryParams = new URLSearchParams(paramsObj).toString();
     return (
         <iframe
-            src={`https://www.youtube.com/embed/${id}?${queryParams}`}
+            src={`https://www.youtube.com/embed/${id}?playlist=${id}&${queryParams}`}
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

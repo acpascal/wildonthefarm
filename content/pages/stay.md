@@ -2,24 +2,11 @@
 title: Stay
 slug: stay
 sections:
-  - title:
-      text: Stay
-      color: text-light
-      styles:
-        self:
-          textAlign: center
-      type: TitleBlock
-    colors: bg-neutral-fg-dark
-    styles:
+  - styles:
       self:
         padding:
-          - pt-80
-          - pl-4
-          - pb-80
-          - pr-4
-        alignItems: center
-        flexDirection: row-reverse
-        justifyContent: center
+          - pt-100vh
+          - px-4
     type: GenericSection
     backgroundImage:
       type: BackgroundImage
@@ -28,13 +15,20 @@ sections:
       backgroundPosition: center
       backgroundRepeat: no-repeat
       opacity: 100
-      url: /images/dine.jpg
+      url: /images/stay.jpg
   - type: GenericSection
     media:
-      url: /images/logo-dark.svg
+      url: /images/logo.png
       altText: Fun feature preview
       type: ImageBlock
-    subtitle: High atop the cliffs of Big Sur, the striking views and otherworldly serenity can’t help but stir your soul. Find your calm, and so much more.
+    text: >
+      Escape the everyday and reconnect with yourself amidst unparalleled natural beauty. Our three exquisite cabins offer a sanctuary for your wellbeing, seemingly suspended above a breathtaking panorama. Nestled within the embracing tranquility of the cloud forest, your senses will be soothed by the gentle, ever-present sounds of nature.
+
+
+      Each cabin is a testament to sustainable craftsmanship, built with a deep respect for its environment. The exterior features the remarkable strength and durability of Amargo-amargo, an exceptionally hard tropical wood, while the interior is lined with softer tropical woods, creating a warm, inviting, and naturally healthy atmosphere.
+
+
+      Here, in the heart of the wild, we offer an exceptional stay that blends authentic comfort with cozy, restorative luxury. Sink into deep, rejuvenating sleep on our carefully selected mattresses, wrapped in soft, high-quality linens. Every small detail, from the natural materials to the thoughtful amenities, has been curated to ensure your stay is infused with happiness and profound relaxation.
     colors: bg-emerald-fg-light
     styles:
       self:
@@ -47,80 +41,135 @@ sections:
         flexDirection: col
       subtitle:
         textAlign: center
-  - type: GenericSection
-    actions:
-      - label: View All
-        altText: ''
-        url: '/aboutus/#dine'
-        style: secondary
-        elementId: ''
-        type: Link
-      - label: View Some
-        altText: ''
-        url: '/aboutus/#dine-other'
-        style: secondary
-        elementId: ''
-        type: Link
-    styles:
-      self:
-        padding:
-          - pb-16
-          - pt-16
-          - pl-16
-          - pr-16
-        justifyContent: center
-        flexDirection: col
-      subtitle:
-        textAlign: center
-  - type: GenericSection
-    title:
-      text: Dine Amongst the Clouds
+  - title:
+      text: Video Tour
       color: text-dark
+      styles:
+        self:
+          textAlign: center
       type: TitleBlock
-    text: >
-      Sierra Mar restuarant sits high atop the cliffs of Big Sur, offering breathtaking views alongside inspired, artfully-prepared cuisine and a Wine Spectator Grand Award-winning wine list.
     media:
-      url: /images/dine.jpg
-      altText: Unblock your team boost your time to production preview
-      elementId: ''
-      type: ImageBlock
-    badge:
-      label: Dine
-      color: text-primary
-      type: Badge
-    elementId: dine-other
-    colors: bg-emerald-fg-light
-    styles:
-      self:
-        alignItems: center
-        flexDirection: row
-        padding:
-          - pr-32
-  - type: GenericSection
-    title:
-      text: Dine Amongst the Clouds
-      color: text-dark
-      type: TitleBlock
-    text: >
-      Sierra Mar restuarant sits high atop the cliffs of Big Sur, offering breathtaking views alongside inspired, artfully-prepared cuisine and a Wine Spectator Grand Award-winning wine list.
-    media:
-      url: /images/finca.jpeg
-      altText: Unblock your team boost your time to production preview
-      elementId: ''
+      title: Title of the video
+      url: https://youtu.be/bk39qkZrv5I
+      controls: false
+      aspectRatio: '16:9'
       goesLast: true
-      type: ImageBlock
-    badge:
-      label: Dine
-      color: text-primary
-      type: Badge
-    elementId: 'dine'
-    colors: bg-orange-fg-dark
+      styles:
+        self:
+          padding:
+            - pt-2
+            - pb-2
+            - pl-2
+            - pr-2
+          borderColor: border-dark
+          borderStyle: solid
+          borderWidth: 1
+          borderRadius: large
+      type: VideoBlock
+      autoplay: false
+      loop: true
+      muted: false
+    colors: bg-light-fg-dark
     styles:
       self:
-        alignItems: center
-        flexDirection: row
+        flexDirection: col
+        justifyContent: center
+    type: GenericSection
+  - title:
+      text: Gallery
+      color: text-primary
+      styles:
+        self:
+          textAlign: center
+      type: TitleBlock
+    items:
+      - image:
+          url: /images/exterior-1.jpg
+          altText: Placeholder Image
+          type: ImageBlock
+        colors: bg-light-fg-dark
+      - image:
+          url: /images/interior-1.jpg
+          altText: Placeholder Image
+          type: ImageBlock
+        colors: bg-light-fg-dark
+      - image:
+          url: /images/bathroom-1.png
+          altText: Placeholder Image
+          type: ImageBlock
+        colors: bg-light-fg-dark
+      - image:
+          url: /images/balcony-1.jpg
+          altText: Placeholder Image
+          type: ImageBlock
+        colors: bg-light-fg-dark
+      - image:
+          url: /images/exterior-2.jpg
+          altText: Placeholder Image
+          type: ImageBlock
+        colors: bg-light-fg-dark
+        type: FeaturedItem
+      - image:
+          url: /images/exterior-3.jpg
+          altText: Placeholder Image
+          type: ImageBlock
+        colors: bg-light-fg-dark
+        type: FeaturedItem
+      - image:
+          url: /images/interior-2.jpg
+          altText: Placeholder Image
+          type: ImageBlock
+        colors: bg-light-fg-dark
+        type: FeaturedItem
+      - image:
+          url: /images/interior-3.jpg
+          altText: Placeholder Image
+          type: ImageBlock
+        colors: bg-light-fg-dark
+        type: FeaturedItem
+      - image:
+          url: /images/interior-4.jpg
+          altText: Placeholder Image
+          type: ImageBlock
+        colors: bg-light-fg-dark
+        type: FeaturedItem
+      - image:
+          url: /images/bathroom-2.jpg
+          altText: Placeholder Image
+          type: ImageBlock
+        colors: bg-light-fg-dark
+        type: FeaturedItem
+      - image:
+          url: /images/bathroom-3.jpg
+          altText: Placeholder Image
+          type: ImageBlock
+        colors: bg-light-fg-dark
+        type: FeaturedItem
+      - image:
+          url: /images/balcony-2.jpg
+          altText: Placeholder Image
+          type: ImageBlock
+        colors: bg-light-fg-dark
+        type: FeaturedItem
+      - image:
+          url: /images/balcony-3.jpg
+          altText: Placeholder Image
+          type: ImageBlock
+        colors: bg-light-fg-dark
+        type: FeaturedItem
+    variant: two-col-grid
+    colors: bg-neutral-fg-dark
+    styles:
+      self:
         padding:
-          - pl-32
+          - pt-16
+          - pl-8
+          - pb-16
+          - pr-8
+        justifyContent: center
+      subtitle:
+        textAlign: center
+    type: FeaturedItemsSection
 seo:
   metaTitle: Stay - The Ranch
   metaDescription: This is the pricing page built with Netlify Create.
