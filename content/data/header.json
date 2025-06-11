@@ -48,6 +48,13 @@
             "url": "/blog",
             "style": "secondary",
             "type": "Link"
+        },
+        {
+            "label": "FAQ",
+            "altText": "FAQ",
+            "url": "/faq",
+            "style": "secondary",
+            "type": "Link"
         }
     ],
     "secondaryLinks": [],

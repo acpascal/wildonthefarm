@@ -734,7 +734,7 @@ sections:
         textAlign: center
     type: FeaturedItemsSection
 seo:
-  metaTitle: Experience - Wild On The Farm
+  metaTitle: Experience - Boquete Cloud Forest Lodge
   metaDescription: This is the pricing page built with Netlify Create.
   socialImage: /images/main-hero.jpg
   type: Seo

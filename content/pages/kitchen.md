@@ -332,7 +332,7 @@ sections:
         textAlign: center
     type: FeaturedItemsSection
 seo:
-  metaTitle: Dine - The Ranch
+  metaTitle: Kitchen - Boquete Cloud Forest Lodge
   metaDescription: This is the pricing page built with Netlify Create.
   socialImage: /images/main-hero.jpg
   type: Seo
