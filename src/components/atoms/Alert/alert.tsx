@@ -3,7 +3,7 @@ export function Alert({ children, className, type }) {
         <div
             className={[
                 'flex gap-4 p-4 mt-4 rounded-sm',
-                type === 'error' ? 'bg-orange-fg-dark' : 'bg-emerald-fg-light',
+                type === 'error' ? 'bg-orange-fg-dark' : 'bg-lime-fg-light',
                 className
             ]
                 .filter(Boolean)

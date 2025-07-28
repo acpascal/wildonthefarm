@@ -12,7 +12,7 @@ sections:
       autoplay: true
       loop: true
       muted: true
-    colors: bg-emerald-fg-light
+    colors: bg-lime-fg-light
     styles:
       self:
         maxWidth: max-w-screen
@@ -52,7 +52,7 @@ sections:
 
       Here, time takes on a different rhythm, designed for profound regeneration
       of your vitality.
-    colors: bg-emerald-fg-light
+    colors: bg-lime-fg-light
     styles:
       self:
         padding:
@@ -128,7 +128,7 @@ sections:
       color: text-light
       type: Badge
     elementId: ''
-    colors: bg-emerald-fg-light
+    colors: bg-lime-fg-light
     styles:
       self:
         alignItems: center
@@ -179,16 +179,6 @@ sections:
         self:
           textAlign: left
       type: TitleBlock
-    actions:
-      - label: View All
-        altText: ''
-        url: /experience
-        showIcon: true
-        icon: arrowRight
-        iconPosition: right
-        style: secondary
-        elementId: ''
-        type: Button
     items:
       - title: Bird Watching
         text: |
@@ -200,7 +190,29 @@ sections:
         actions:
           - label: Learn More
             altText: ''
-            url: /experience/#bird-watching
+            url: /bird-watching
+            showIcon: true
+            icon: arrowRight
+            iconPosition: right
+            style: primary
+            elementId: ''
+            type: Link
+        colors: bg-neutral-fg-dark
+        styles:
+          self:
+            flexDirection: col
+        type: FeaturedItem
+      - title: Detox Retreat
+        text: |
+          Reclaim your vitality with a detox retreat at Wild on the Farm. Surrounded by pure air, organic healing plants, and the serene cloud forest, our program offers deep restoration through nature, nourishing food, guided walks, and silence. Breathe, reset, and return home lighter, clearer, and renewed.
+        image:
+          url: /images/detox-retreatX.JPG
+          altText: Placeholder Image
+          type: ImageBlock
+        actions:
+          - label: Learn More
+            altText: ''
+            url: /detox-retreat
             showIcon: true
             icon: arrowRight
             iconPosition: right
@@ -223,28 +235,6 @@ sections:
           - label: Learn More
             altText: ''
             url: /experience/#hiking
-            showIcon: true
-            icon: arrowRight
-            iconPosition: right
-            style: primary
-            elementId: ''
-            type: Link
-        colors: bg-neutral-fg-dark
-        styles:
-          self:
-            flexDirection: col
-        type: FeaturedItem
-      - title: Detox Retreat
-        text: |
-          Reclaim your vitality with a detox retreat at Wild on the Farm. Surrounded by pure air, organic healing plants, and the serene cloud forest, our program offers deep restoration through nature, nourishing food, guided walks, and silence. Breathe, reset, and return home lighter, clearer, and renewed.
-        image:
-          url: /images/detox-retreatX.JPG
-          altText: Placeholder Image
-          type: ImageBlock
-        actions:
-          - label: Learn More
-            altText: ''
-            url: /experience/#detox-retreat
             showIcon: true
             icon: arrowRight
             iconPosition: right
@@ -396,6 +386,14 @@ sections:
           isRequired: true
           width: full
           type: EmailFormControl
+        - name: dateRange
+          label: Check-in and check-out date
+          hideLabel: true
+          fromLabel: Check-in
+          toLabel: Check-out
+          isRequired: false
+          width: full
+          type: DateRangeFormControl
         - name: message
           label: Message
           hideLabel: true

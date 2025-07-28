@@ -29,7 +29,7 @@ sections:
 
 
       Here, in the heart of the wild, we offer an exceptional stay that blends authentic comfort with cozy, restorative luxury. Sink into deep, rejuvenating sleep on our carefully selected mattresses, wrapped in soft, high-quality linens. Every small detail, from the natural materials to the thoughtful amenities, has been curated to ensure your stay is infused with happiness and profound relaxation.
-    colors: bg-emerald-fg-light
+    colors: bg-lime-fg-light
     styles:
       self:
         padding:

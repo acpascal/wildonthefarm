@@ -66,7 +66,7 @@ sections:
       elementId: ''
       type: ImageBlock
     elementId: about-the-farm
-    colors: bg-emerald-fg-light
+    colors: bg-lime-fg-light
     styles:
       self:
         alignItems: center
@@ -132,7 +132,7 @@ sections:
       goesLast: true
       type: ImageBlock
     elementId: 'our-history'
-    colors: bg-emerald-fg-light
+    colors: bg-lime-fg-light
     styles:
       self:
         alignItems: center
@@ -190,7 +190,7 @@ sections:
       elementId: ''
       type: ImageBlock
     elementId: sustainability
-    colors: bg-emerald-fg-light
+    colors: bg-lime-fg-light
     styles:
       self:
         alignItems: center
@@ -253,18 +253,6 @@ sections:
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
-          url: /images/our-history/our-history-2.JPG
-          altText: Placeholder Image
-          type: ImageBlock
-        colors: bg-neutral-fg-dark
-        type: FeaturedItem
-      - image:
-          url: /images/our-history/our-history-3.JPG
-          altText: Placeholder Image
-          type: ImageBlock
-        colors: bg-neutral-fg-dark
-        type: FeaturedItem
-      - image:
           url: /images/our-history/our-history-4.JPG
           altText: Placeholder Image
           type: ImageBlock
@@ -272,6 +260,12 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/our-history/our-history-5.JPG
+          altText: Placeholder Image
+          type: ImageBlock
+        colors: bg-neutral-fg-dark
+        type: FeaturedItem
+      - image:
+          url: /images/our-history/our-history-3.JPG
           altText: Placeholder Image
           type: ImageBlock
         colors: bg-neutral-fg-dark

@@ -49,7 +49,8 @@ const TAILWIND_MAP = {
         1: 'border',
         2: 'border-2',
         4: 'border-4',
-        8: 'border-8'
+        8: 'border-8',
+        16: 'border-16'
     },
     boxShadow: {
         none: 'shadow-none',

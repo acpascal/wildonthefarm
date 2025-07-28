@@ -33,7 +33,7 @@ sections:
       color: text-primary
       type: Badge
     elementId: dine-other
-    colors: bg-emerald-fg-light
+    colors: bg-lime-fg-light
     styles:
       self:
         alignItems: center
@@ -109,7 +109,7 @@ sections:
       elementId: ''
       goesLast: true
       type: ImageBlock
-    colors: bg-emerald-fg-light
+    colors: bg-lime-fg-light
     styles:
       self:
         alignItems: center
