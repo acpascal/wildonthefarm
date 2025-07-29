@@ -39,8 +39,6 @@ sections:
           - pr-16
         justifyContent: center
         flexDirection: col
-      subtitle:
-        textAlign: center
   - type: GenericSection
     title:
       text: Hiking
@@ -70,7 +68,7 @@ sections:
       type: ImageBlock
     title:
       text: Into the Cloud Forest
-      color: text-dark
+      color: text-black
       type: TitleBlock
       styles:
         self:
@@ -147,7 +145,7 @@ sections:
       type: ImageBlock
     title:
       text: Tailored Discovery Experiences
-      color: text-dark
+      color: text-black
       type: TitleBlock
       styles:
         self:
@@ -234,96 +232,176 @@ sections:
           url: /images/hiking/hiking-1.jpg
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/hiking/hiking-2.jpg
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/hiking/hiking-3.jpg
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/hiking/hiking-4.jpg
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/hiking/hiking-5.jpg
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/hiking/hiking-6.jpg
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/hiking/hiking-7.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/hiking/hiking-8.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/hiking/hiking-9.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/hiking/hiking-10.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/hiking/hiking-11.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/hiking/hiking-12.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/hiking/hiking-13.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/hiking/hiking-14.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/hiking/hiking-15.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/hiking/hiking-16.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
     variant: two-col-grid

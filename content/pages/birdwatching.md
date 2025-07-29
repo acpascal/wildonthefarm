@@ -28,11 +28,6 @@ sections:
       altText: Unblock your team boost your time to production preview
       elementId: ''
       type: ImageBlock
-      styles:
-        self:
-          borderColor: 'border-orange-200'
-          borderStyle: 'solid'
-          borderWidth: 8
     elementId: bird-watching
     colors: bg-lime-fg-light
     styles:
@@ -49,7 +44,7 @@ sections:
       type: ImageBlock
     title:
       text: Wings of the Forest
-      color: text-dark
+      color: text-black
       type: TitleBlock
       styles:
         self:
@@ -99,7 +94,7 @@ sections:
         textAlign: center
   - title:
       text: Gallery
-      color: text-primary
+      color: text-black
       styles:
         self:
           textAlign: center
@@ -109,270 +104,544 @@ sections:
           url: /images/bird-watching/bird-watching-2.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         tagline: Social Flycatcher
         type: FeaturedItem
         styles:
           self:
-            borderColor: 'border-orange-200'
-            borderStyle: 'solid'
-            borderWidth: 8
+            textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-5.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         tagline: Slate-throated Redstart
         type: FeaturedItem
+        styles:
+          self:
+            textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-7.jpg
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         tagline: Collared Trogon
         type: FeaturedItem
+        styles:
+          self:
+            textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-36.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         tagline: Scintillant Hummingbird
         type: FeaturedItem
+        styles:
+          self:
+            textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-rufous-tailed_hummingbird.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         tagline: Rufous-tailed Hummingbird
         type: FeaturedItem
+        styles:
+          self:
+            textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-snowy-bellied_hummingbird.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         tagline: Snowy-bellied Hummingbird
         type: FeaturedItem
+        styles:
+          self:
+            textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-10.jpg
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         tagline: Black Guan
         type: FeaturedItem
+        styles:
+          self:
+            textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-30.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         tagline: Spangled-cheeked Tanager
         type: FeaturedItem
+        styles:
+          self:
+            textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-3.JPG
           altText: Placeholder Image
           type: ImageBlock
-        colors: bg-neutral-fg-dark
-        tagline: Silver-throated Tanager
-        type: FeaturedItem
-      - image:
-          url: /images/bird-watching/bird-watching-4.JPG
-          altText: Placeholder Image
-          type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         tagline: Silver-throated Tanager
         type: FeaturedItem
         styles:
           self:
-            borderColor: 'border-dark'
-            borderStyle: 'solid'
-            borderWidth: 8
+            textAlign: center
+      - image:
+          url: /images/bird-watching/bird-watching-4.JPG
+          altText: Placeholder Image
+          type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
+        colors: bg-neutral-fg-dark
+        tagline: Silver-throated Tanager
+        type: FeaturedItem
+        styles:
+          self:
+            textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-flame-coloured_tanager.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         tagline: Western Tanager
+        type: FeaturedItem
+        styles:
+          self:
+            textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-25.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         tagline: Flame-coloured Tanager
         type: FeaturedItem
+        styles:
+          self:
+            textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-1.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         tagline: Female Flame-coloured Tanager
         type: FeaturedItem
         styles:
           self:
-            borderColor: 'border-lime-700'
-            borderStyle: 'solid'
-            borderWidth: 16
+            textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-golden_browed_chlorophonia.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         tagline: Golden Browed Chlorophonia
         type: FeaturedItem
+        styles:
+          self:
+            textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-golden-crowned_warbler.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         tagline: Golden Crowned Warbler
         type: FeaturedItem
+        styles:
+          self:
+            textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-hairy_woodpecker.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         tagline: Hairy Woodpecker
         type: FeaturedItem
+        styles:
+          self:
+            textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-middle-american_leafthosser.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         tagline: Middle American Leafthosser
         type: FeaturedItem
+        styles:
+          self:
+            textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-mountain_elaenia-2.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         tagline: Mountain Elaenia
         type: FeaturedItem
+        styles:
+          self:
+            textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-purple-throated_mountain-gem.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         tagline: Purple-throated Mountain-gem
         type: FeaturedItem
+        styles:
+          self:
+            textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-15.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         tagline: White-throated Mountain-gem
         type: FeaturedItem
+        styles:
+          self:
+            textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-8.jpg
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         tagline: Quetzal
         type: FeaturedItem
+        styles:
+          self:
+            textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-26.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         tagline: Quetzal
         type: FeaturedItem
+        styles:
+          self:
+            textAlign: center
       - image:
           url: >-
             /images/bird-watching/bird-watching-scaly-throated_foliage_gleaner.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         tagline: Scaly-throated Foliage Gleaner
         type: FeaturedItem
+        styles:
+          self:
+            textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-14.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         tagline: Pronged-billed Barbet
         type: FeaturedItem
+        styles:
+          self:
+            textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-23.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         tagline: Northern Emerald Toucanet
         type: FeaturedItem
+        styles:
+          self:
+            textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-24.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         tagline: Green Honeycreeper
         type: FeaturedItem
+        styles:
+          self:
+            textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-27.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         tagline: Ruddy Pidgeon
         type: FeaturedItem
+        styles:
+          self:
+            textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-28.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         tagline: Black and white Becard
         type: FeaturedItem
+        styles:
+          self:
+            textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-31.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         tagline: White-breasted Wood Wren
         type: FeaturedItem
+        styles:
+          self:
+            textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-12.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         tagline: Mountain Wren
         type: FeaturedItem
+        styles:
+          self:
+            textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-32.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         tagline: Black-faced Solitaire
         type: FeaturedItem
+        styles:
+          self:
+            textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-33.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         tagline: Common Chlorospingus
         type: FeaturedItem
+        styles:
+          self:
+            textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-34.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         tagline: Slaty Flowerpiercer
         type: FeaturedItem
+        styles:
+          self:
+            textAlign: center
       - image:
           url: >-
             /images/bird-watching/bird-watching-slaty-backed_nightingale-thrush.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         tagline: Slaty-backed Nightingale Thrush
         type: FeaturedItem
+        styles:
+          self:
+            textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-11.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         tagline: Swainson's Thrush
         type: FeaturedItem
+        styles:
+          self:
+            textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-35.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         tagline: White-throated Thrush
         type: FeaturedItem
+        styles:
+          self:
+            textAlign: center
     variant: two-col-grid
     colors: bg-neutral-fg-dark
     styles:

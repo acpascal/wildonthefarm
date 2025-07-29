@@ -216,7 +216,7 @@
     }
     .bg-neutral-fg-dark,
     .sb-card.bg-neutral-fg-dark {
-        @apply text-dark bg-neutral;
+        @apply text-black bg-neutral;
         .sb-input,
         .sb-select,
         .sb-textarea {
@@ -253,7 +253,7 @@
         @apply text-light bg-lime-700;
     }
     .bg-orange-fg-dark{
-        @apply text-dark bg-orange-200;
+        @apply text-black bg-orange-200;
     }
     .bg-dark-fg-light,
     .sb-card.bg-dark-fg-light {

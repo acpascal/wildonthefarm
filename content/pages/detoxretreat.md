@@ -45,7 +45,7 @@ sections:
       type: ImageBlock
     title:
       text: Our Detox Approach
-      color: text-dark
+      color: text-black
       type: TitleBlock
       styles:
         self:
@@ -154,7 +154,7 @@ sections:
         textAlign: center
   - title:
       text: Gallery
-      color: text-primary
+      color: text-black
       styles:
         self:
           textAlign: center

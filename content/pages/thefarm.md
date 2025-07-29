@@ -77,7 +77,7 @@ sections:
   - type: GenericSection
     title:
       text: A Sanctuary in the Clouds
-      color: text-dark
+      color: text-black
       type: TitleBlock
       styles:
         self:
@@ -143,7 +143,7 @@ sections:
   - type: GenericSection
     title:
       text: A Journey to Harmony
-      color: text-dark
+      color: text-black
       type: TitleBlock
       styles:
         self:
@@ -201,7 +201,7 @@ sections:
   - type: GenericSection
     title:
       text: Macadamia Farm
-      color: text-dark
+      color: text-black
       type: TitleBlock
     text: >
       Unique in the country, we have a large Macadamia plantation. The first trees were planted 12 years ago and are starting to produce. The Macadamia is a slow-growing tree, it takes 15 years to be in full production, which will last 100 years. The Macadamia allows us to have an excellent oil on-site, and with the pulp, a vegetable milk.
@@ -222,7 +222,7 @@ sections:
           - px-4
   - title:
       text: Gallery
-      color: text-primary
+      color: text-black
       styles:
         self:
           textAlign: center
@@ -232,48 +232,88 @@ sections:
           url: /images/macadamia-farm/macadamia-farm-1.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/macadamia-farm/macadamia-farm-2.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/macadamia-farm/macadamia-farm-3.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/our-history/our-history-1.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/our-history/our-history-4.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/our-history/our-history-5.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/our-history/our-history-3.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/our-history/our-history-6.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
     variant: two-col-grid

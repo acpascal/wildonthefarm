@@ -44,7 +44,7 @@ sections:
   - type: GenericSection
     title:
       text: From Our Organic Garden
-      color: text-dark
+      color: text-black
       type: TitleBlock
       styles:
         self:
@@ -120,7 +120,7 @@ sections:
   - type: GenericSection
     title:
       text: To Our Table
-      color: text-dark
+      color: text-black
       type: TitleBlock
     text: >+
       More than just a meal, our table is a moment of genuine connection and conviviality. It's a welcoming space to share delicious food, exchange stories of the day's discoveries, and simply enjoy good company in a relaxed setting.
@@ -150,7 +150,7 @@ sections:
           - px-4
   - title:
       text: Gallery
-      color: text-primary
+      color: text-black
       styles:
         self:
           textAlign: center
@@ -160,162 +160,286 @@ sections:
           url: /images/garden/garden-1.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/garden/garden-2.jpg
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/garden/garden-3.jpg
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/garden/garden-4.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/garden/garden-5.jpg
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/garden/garden-6.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/garden/garden-7.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/garden/garden-8.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/garden/garden-9.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/garden/garden-10.jpg
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/garden/garden-11.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-1.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-2.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-3.png
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-4.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-5.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-6.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-7.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-8.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-9.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-10.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-11.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-12.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-13.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-14.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-15.JPG
           altText: Placeholder Image
           type: ImageBlock
-        colors: bg-neutral-fg-dark
-        type: FeaturedItem
-      - image:
-          url: /images/kitchen/kitchen-16.JPG
-          altText: Placeholder Image
-          type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
     variant: two-col-grid
