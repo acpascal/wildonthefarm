@@ -102,7 +102,7 @@ sections:
     items:
       - image:
           url: /images/bird-watching/bird-watching-2.JPG
-          altText: Placeholder Image
+          altText: Social Flycatcher
           type: ImageBlock
           styles:
             self:
@@ -117,7 +117,7 @@ sections:
             textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-5.JPG
-          altText: Placeholder Image
+          altText: Slate-throated Redstart
           type: ImageBlock
           styles:
             self:
@@ -132,7 +132,7 @@ sections:
             textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-7.jpg
-          altText: Placeholder Image
+          altText: Collared Trogon
           type: ImageBlock
           styles:
             self:
@@ -147,7 +147,7 @@ sections:
             textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-36.JPG
-          altText: Placeholder Image
+          altText: Scintillant Hummingbird
           type: ImageBlock
           styles:
             self:
@@ -162,7 +162,7 @@ sections:
             textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-rufous-tailed_hummingbird.JPG
-          altText: Placeholder Image
+          altText: Rufous-tailed Hummingbird
           type: ImageBlock
           styles:
             self:
@@ -177,7 +177,7 @@ sections:
             textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-snowy-bellied_hummingbird.JPG
-          altText: Placeholder Image
+          altText: Snowy-bellied Hummingbird
           type: ImageBlock
           styles:
             self:
@@ -192,7 +192,7 @@ sections:
             textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-10.jpg
-          altText: Placeholder Image
+          altText: Black Guan
           type: ImageBlock
           styles:
             self:
@@ -207,7 +207,7 @@ sections:
             textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-30.JPG
-          altText: Placeholder Image
+          altText: Spangled-cheeked Tanager
           type: ImageBlock
           styles:
             self:
@@ -222,7 +222,7 @@ sections:
             textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-3.JPG
-          altText: Placeholder Image
+          altText: Silver-throated Tanager
           type: ImageBlock
           styles:
             self:
@@ -237,7 +237,7 @@ sections:
             textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-4.JPG
-          altText: Placeholder Image
+          altText: Silver-throated Tanager
           type: ImageBlock
           styles:
             self:
@@ -252,7 +252,7 @@ sections:
             textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-flame-coloured_tanager.JPG
-          altText: Placeholder Image
+          altText: Western Tanager
           type: ImageBlock
           styles:
             self:
@@ -267,7 +267,7 @@ sections:
             textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-25.JPG
-          altText: Placeholder Image
+          altText: Flame-coloured Tanager
           type: ImageBlock
           styles:
             self:
@@ -282,7 +282,7 @@ sections:
             textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-1.JPG
-          altText: Placeholder Image
+          altText: Female Flame-coloured Tanager
           type: ImageBlock
           styles:
             self:
@@ -297,7 +297,7 @@ sections:
             textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-golden_browed_chlorophonia.JPG
-          altText: Placeholder Image
+          altText: Golden Browed Chlorophonia
           type: ImageBlock
           styles:
             self:
@@ -312,7 +312,7 @@ sections:
             textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-golden-crowned_warbler.JPG
-          altText: Placeholder Image
+          altText: Golden Crowned Warbler
           type: ImageBlock
           styles:
             self:
@@ -327,7 +327,7 @@ sections:
             textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-hairy_woodpecker.JPG
-          altText: Placeholder Image
+          altText: Hairy Woodpecker
           type: ImageBlock
           styles:
             self:
@@ -342,7 +342,7 @@ sections:
             textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-middle-american_leafthosser.JPG
-          altText: Placeholder Image
+          altText: Middle American Leafthosser
           type: ImageBlock
           styles:
             self:
@@ -357,7 +357,7 @@ sections:
             textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-mountain_elaenia-2.JPG
-          altText: Placeholder Image
+          altText: Mountain Elaenia
           type: ImageBlock
           styles:
             self:
@@ -372,7 +372,7 @@ sections:
             textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-purple-throated_mountain-gem.JPG
-          altText: Placeholder Image
+          altText: Purple-throated Mountain-gem
           type: ImageBlock
           styles:
             self:
@@ -387,7 +387,7 @@ sections:
             textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-15.JPG
-          altText: Placeholder Image
+          altText: White-throated Mountain-gem
           type: ImageBlock
           styles:
             self:
@@ -402,7 +402,7 @@ sections:
             textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-8.jpg
-          altText: Placeholder Image
+          altText: Quetzal
           type: ImageBlock
           styles:
             self:
@@ -417,7 +417,7 @@ sections:
             textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-26.JPG
-          altText: Placeholder Image
+          altText: Quetzal
           type: ImageBlock
           styles:
             self:
@@ -433,7 +433,7 @@ sections:
       - image:
           url: >-
             /images/bird-watching/bird-watching-scaly-throated_foliage_gleaner.JPG
-          altText: Placeholder Image
+          altText: Scaly-throated Foliage Gleaner
           type: ImageBlock
           styles:
             self:
@@ -448,7 +448,7 @@ sections:
             textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-14.JPG
-          altText: Placeholder Image
+          altText: Pronged-billed Barbet
           type: ImageBlock
           styles:
             self:
@@ -463,7 +463,7 @@ sections:
             textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-23.JPG
-          altText: Placeholder Image
+          altText: Northern Emerald Toucanet
           type: ImageBlock
           styles:
             self:
@@ -478,7 +478,7 @@ sections:
             textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-24.JPG
-          altText: Placeholder Image
+          altText: Green Honeycreeper
           type: ImageBlock
           styles:
             self:
@@ -493,7 +493,7 @@ sections:
             textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-27.JPG
-          altText: Placeholder Image
+          altText: Ruddy Pidgeon
           type: ImageBlock
           styles:
             self:
@@ -508,7 +508,7 @@ sections:
             textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-28.JPG
-          altText: Placeholder Image
+          altText: Black and white Becard
           type: ImageBlock
           styles:
             self:
@@ -523,7 +523,7 @@ sections:
             textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-31.JPG
-          altText: Placeholder Image
+          altText: White-breasted Wood Wren
           type: ImageBlock
           styles:
             self:
@@ -538,7 +538,7 @@ sections:
             textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-12.JPG
-          altText: Placeholder Image
+          altText: Mountain Wren
           type: ImageBlock
           styles:
             self:
@@ -553,7 +553,7 @@ sections:
             textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-32.JPG
-          altText: Placeholder Image
+          altText: Black-faced Solitaire
           type: ImageBlock
           styles:
             self:
@@ -568,7 +568,7 @@ sections:
             textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-33.JPG
-          altText: Placeholder Image
+          altText: Common Chlorospingus
           type: ImageBlock
           styles:
             self:
@@ -583,7 +583,7 @@ sections:
             textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-34.JPG
-          altText: Placeholder Image
+          altText: Slaty Flowerpiercer
           type: ImageBlock
           styles:
             self:
@@ -599,7 +599,7 @@ sections:
       - image:
           url: >-
             /images/bird-watching/bird-watching-slaty-backed_nightingale-thrush.JPG
-          altText: Placeholder Image
+          altText: Slaty-backed Nightingale Thrush
           type: ImageBlock
           styles:
             self:
@@ -614,7 +614,7 @@ sections:
             textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-11.JPG
-          altText: Placeholder Image
+          altText: Swainson's Thrush
           type: ImageBlock
           styles:
             self:
@@ -629,7 +629,7 @@ sections:
             textAlign: center
       - image:
           url: /images/bird-watching/bird-watching-35.JPG
-          altText: Placeholder Image
+          altText: White-throated Thrush
           type: ImageBlock
           styles:
             self:
@@ -638,6 +638,36 @@ sections:
               borderWidth: 16
         colors: bg-neutral-fg-dark
         tagline: White-throated Thrush
+        type: FeaturedItem
+        styles:
+          self:
+            textAlign: center
+      - image:
+          url: /images/bird-watching/bird-watching-38.JPG
+          altText: Wattled Bellbird
+          type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
+        colors: bg-neutral-fg-dark
+        tagline: Wattled Bellbird
+        type: FeaturedItem
+        styles:
+          self:
+            textAlign: center
+      - image:
+          url: /images/bird-watching/bird-watching-39.JPG
+          altText: Wattled Bellbird
+          type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
+        colors: bg-neutral-fg-dark
+        tagline: Wattled Bellbird
         type: FeaturedItem
         styles:
           self:
