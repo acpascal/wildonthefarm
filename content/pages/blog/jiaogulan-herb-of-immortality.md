@@ -6,7 +6,7 @@ date: '2025-05-20'
 excerpt: >-
   Known as the "herb of immortality," Jiaogulan (Gynostemma pentaphyllum) is a revered adaptogenic plant traditionally used in China to promote longevity and vitality. We include Jiaogulan in our detox programs for its powerful antioxidant, adaptogenic, and liver-supporting properties. Rich in gypenosides, it helps the body manage stress, support immune function, and enhance natural detoxification. Typically consumed as a soothing herbal tea, Jiaogulan is a gentle yet potent ally in fostering balance, resilience, and holistic well-being.
 featuredImage:
-  url: /images/abstract-feature3.svg
+  url: /images/blog/jiaogulan/cover.jpg
   altText: Thumbnail
   type: ImageBlock
   styles:
@@ -18,7 +18,7 @@ isDraft: false
 seo:
   metaTitle: Jiaogulan - The Herb Of Immortality
   metaDescription: You can add the excerpt and main keywords of your blog post here.
-  socialImage: /images/abstract-feature3.svg
+  socialImage: /images/blog/jiaogulan/cover.jpg
   type: Seo
 colors: bg-light-fg-dark
 styles:
@@ -30,6 +30,8 @@ author: content/data/person1.json
 ** Jiaogulan: The Herb of Immortality **
 
 I first discovered Jiaogulan (Gynostemma pentaphyllum), a climbing herb native to Asia, while training in Taichi at a Taoist temple in China. There, this plant is traditionally used and often nicknamed the "herb of immortality". This name comes from observations of local populations, particularly in the Guizhou province, where residents who regularly consumed this plant seemed to enjoy remarkable longevity and vitality. Impressed by its potential benefits and history, I decided to cultivate it so I could share its immense adaptogenic benefits with others. Today, Jiaogulan is also gaining popularity in the West for its many beneficial properties.
+
+![JiaoGuLan](/images/blog/jiaogulan/jiaogulan.jpg)
 
 ** Why Jiaogulan in Our Detox Programs? **
 

@@ -117,7 +117,7 @@ sections:
         elementId: ''
         type: Link
     media:
-      url: /images/stay.JPG
+      url: /images/stay.jpg
       altText: Cloud forest chalet
       elementId: ''
       goesLast: true
@@ -184,7 +184,7 @@ sections:
         text: |
           Immerse yourself in the sights and sounds of nature at Wild on the Farm. Surrounded by lush gardens and pristine forest, our haven invites bird lovers to discover rare species like the Quetzal, unwind in serene beauty, and savor the peaceful joy of birdwatching in harmony with nature.
         image:
-          url: /images/bird-watchingX.JPG
+          url: /images/bird-watching-wide.JPG
           altText: Placeholder Image
           type: ImageBlock
         actions:
@@ -206,7 +206,7 @@ sections:
         text: |
           Reclaim your vitality with a detox retreat at Wild on the Farm. Surrounded by pure air, organic healing plants, and the serene cloud forest, our program offers deep restoration through nature, nourishing food, guided walks, and silence. Breathe, reset, and return home lighter, clearer, and renewed.
         image:
-          url: /images/detox-retreatX.JPG
+          url: /images/detox-retreat-wide.JPG
           altText: Placeholder Image
           type: ImageBlock
         actions:
@@ -228,7 +228,7 @@ sections:
         text: |
           Step out your door and into the heart of the cloud forest. At Wild on the Farm, hiking is more than a walk—it’s full immersion in a mystical world of mist, moss, and towering trees. Let nature guide your journey through beauty, serenity, and quiet wonder.
         image:
-          url: /images/hikingX.jpg
+          url: /images/hiking-wide.jpg
           altText: Placeholder Image
           type: ImageBlock
         actions:
@@ -250,7 +250,7 @@ sections:
         text: |
           Your journey is uniquely yours. Whether you seek stillness, adventure, or expert-guided discovery, our Tailored Discovery service curates meaningful, personalized experiences—yoga, nature walks, wildlife exploration, or quiet reflection—so you can reconnect, recharge, and make your stay unforgettable.
         image:
-          url: /images/tailored-discoveryX.JPG
+          url: /images/tailored-discovery-tall.JPG
           altText: Placeholder Image
           type: ImageBlock
         actions:

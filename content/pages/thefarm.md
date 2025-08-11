@@ -185,7 +185,7 @@ sections:
 
       Sustainability for us is simply a love for life, a heightened respect amplified by consciousness, a happy responsibility that guides us forward. It is the opposite of the degradation created by the greed we sometimes pride ourselves on. Sustainability is life in all its beauty.
     media:
-      url: /images/sustainabilityTall.jpg
+      url: /images/sustainability.jpg
       altText: Unblock your team boost your time to production preview
       elementId: ''
       type: ImageBlock

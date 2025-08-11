@@ -2,20 +2,6 @@
 title: Frequently Asked Questions
 slug: faq
 sections:
-  - styles:
-      self:
-        padding:
-          - px-4
-          - pt-100vh
-    type: GenericSection
-    backgroundImage:
-      type: BackgroundImage
-      altText: altText of the image
-      backgroundSize: cover
-      backgroundPosition: center
-      backgroundRepeat: no-repeat
-      opacity: 100
-      url: /images/the-farm.jpg
   - type: GenericSection
     elementId: accommodation-and-dining
     text: >
@@ -122,6 +108,7 @@ sections:
       self:
         padding:
           - p-16
+          - pt-32
         justifyContent: center
         flexDirection: col
 seo:

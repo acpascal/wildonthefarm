@@ -9,7 +9,7 @@ topSections:
       color: text-dark
       type: TitleBlock
     posts:
-      - content/pages/blog/nettle-properties.md
+      - content/pages/blog/jiaogulan-herb-of-immortality.md
     showThumbnail: true
     showExcerpt: true
     showDate: true

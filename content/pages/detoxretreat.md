@@ -15,42 +15,12 @@ sections:
       backgroundPosition: center
       backgroundRepeat: no-repeat
       opacity: 100
-      url: /images/the-farm.jpg
+      url: /images/wellness-destination.jpg
   - type: GenericSection
     title:
       text: Detox and Return to Vitality Retreat
       color: text-light
       type: TitleBlock
-    text: >
-      Reclaim your vitality with a detox retreat at Wild on the Farm. Surrounded by pure air, organic healing plants, and the serene cloud forest, our program offers deep restoration through nature, nourishing food, guided walks, and silence. Breathe, reset, and return home lighter, clearer, and renewed.
-    media:
-      url: /images/detox-retreat.JPG
-      altText: Unblock your team boost your time to production preview
-      elementId: ''
-      type: ImageBlock
-    elementId: detox-retreat
-    colors: bg-lime-fg-light
-    styles:
-      self:
-        alignItems: center
-        flexDirection: row
-        justifyContent: center
-        fontSize: small
-        padding:
-          - px-4
-  - type: GenericSection
-    media:
-      url: /images/icons/nettle-leaf.png
-      altText: Fun feature preview
-      type: ImageBlock
-    title:
-      text: Our Detox Approach
-      color: text-black
-      type: TitleBlock
-      styles:
-        self:
-          textAlign: center
-    subtitle: Combining Organic Plants and Cloud Forest Nature
     text: >
       Nestled at 1800 meters altitude, in the heart of the preserved cloud
       forest, our farm invites you to rediscover balance and vitality. Far from
@@ -61,214 +31,224 @@ sections:
       nature.
 
 
-      Our detox program goes beyond simple herbal teas. It's a synergy of
-      several elements for complete purification and revitalization, drawing
-      from the generosity of Wild on the Farm and its environment:
+      By participating in our retreat, you will benefit from the multiple virtues of plants from our organic agriculture and our unique environment, aiming particularly at:
 
+      * Deep Detoxification: Our program supports the elimination of metabolic waste, toxins, and can help chelate certain heavy metals, restoring lightness and energy to your body.
 
-      * Fresh Organic Farm Plant Cures: We use nettle and other detoxifying plants
-      freshly picked on-site, from our organic farm. Their detoxifying
-      properties (diuretic action, liver support, blood and lymphatic
-      purification, de-acidifying action, heavy metal chelation) are optimized
-      by their freshness and the purity of their cultivation.
+      * Support for Bone Health: The exceptional mineral intake from organic nettle contributes to strengthening the bone matrix.
 
-      * Revitalizing Diet: Our meals are designed to support detoxification,
-      light, nutritious, and prepared with products from our organic farm.
+      * Anti-aging and Anti-inflammatory Action: The antioxidant and anti-inflammatory properties of farm plants help combat oxidative stress and can relieve joint pain.
 
-      * Pure Cloud Forest Air: Breathing the fresh and healthy air of our
-      environment at 1800m altitude is an act of purification in itself, deeply
-      oxygenating your body and mind.
+      * Relief from Allergic Reactions: Certain nettle compounds are known for their potential to modulate the histamine response, offering natural support against allergic symptoms like hay fever.
 
-      * Cloud Forest Walks: Guided walks
-      in the cloud forest are not just gentle physical activity; they are an
-      essential reconnection with the nature of our location, promoting
-      movement, mental clarity, and elimination, while enjoying the silence and
-      beauty.
-
-      * Silence Space: The monastic side of our environment is a
-      place of silence allowing you to disconnect from external and internal
-      noise, facilitating introspection, stress reduction, and mental
-      regeneration, an integral part of the well-being synergy at Wild on the
-      Farm.
-
-      * Restorative Sleep: The calm environment of our farm and the
-      air quality of the cloud forest promote deep and restorative sleep,
-      essential for the body's healing and revitalization processes.
-
-
-      ** The Benefits for Your Vitality, Supported by Organic Plants and
-      the Farm Environment **
-
-
-      By participating in our retreat at Wild on the Farm, you will benefit from the multiple virtues of plants
-      from our organic agriculture and our unique environment, aiming
-      particularly at:
-      *   Deep Detoxification: Our program supports the
-      elimination of metabolic waste, toxins, and can help chelate certain heavy
-      metals, restoring lightness and energy to your body thanks to the plants
-      cultivated on site.
-
-      *   Support for Bone Health: The exceptional
-      mineral intake from organic nettle (calcium, magnesium, silicon)
-      contributes to strengthening the bone matrix.
-
-      *   Anti-aging and Anti-inflammatory Action: The antioxidant and anti-inflammatory properties
-      of farm plants help combat oxidative stress and can relieve joint pain
-      (arthritis, osteoarthritis), contributing to lasting well-being.
-
-      *   Relief from Allergic Reactions: Certain nettle compounds are known for
-      their potential to modulate the histamine response, offering natural
-      support against allergic symptoms like hay fever.
-
-      *   General Strengthening: The entire program (organic plants, diet, pure air, rest)
-      aims to strengthen your immune system, combat fatigue, and restore your
-      vitality in the ideal setting of Wild on the Farm.
-
-
-      Join Us at Wild on the Farm for a Regenerative Break
-
-
-      If you feel the need to take a break, cleanse your body, calm your mind, and regain your vital
-      energy, Wild on the Farm offers the ideal setting and adapted program.
-      Away from distractions, at 1800m altitude above Boquete, surrounded by
-      generous cloud forest nature and nourished by the treasures of our organic
-      land, offer yourself this unique experience of revitalization and
-      beneficial synergy.
-
-
-      Contact us to learn more about our upcoming
-      retreats and book your regenerative stay.
-    colors: bg-orange-fg-dark
+      * General Strengthening: The entire program aims to strengthen your immune system, combat fatigue, and restore your vitality in the ideal setting of Wild on the Farm.
+    media:
+      url: /images/icons/nettle-leaf.png
+      altText: Fun feature preview
+      type: ImageBlock
+    elementId: detox-retreat
+    colors: bg-lime-fg-light
     styles:
       self:
+        alignItems: center
+        flexDirection: col
+        justifyContent: center
+        fontSize: small
         padding:
           - pb-16
           - pt-16
           - pl-16
           - pr-16
-        justifyContent: center
-        flexDirection: col
-      text:
-        fontSize: x-small
-      subtitle:
-        textAlign: center
-  - title:
-      text: Gallery
+  - type: GenericSection
+    title:
+      text: Breathe Freely
       color: text-black
-      styles:
-        self:
-          textAlign: center
       type: TitleBlock
-    items:
-      - image:
-          url: /images/hiking/hiking-1.jpg
-          altText: Placeholder Image
-          type: ImageBlock
-        colors: bg-neutral-fg-dark
-        type: FeaturedItem
-      - image:
-          url: /images/hiking/hiking-2.jpg
-          altText: Placeholder Image
-          type: ImageBlock
-        colors: bg-neutral-fg-dark
-        type: FeaturedItem
-      - image:
-          url: /images/hiking/hiking-3.jpg
-          altText: Placeholder Image
-          type: ImageBlock
-        colors: bg-neutral-fg-dark
-        type: FeaturedItem
-      - image:
-          url: /images/hiking/hiking-4.jpg
-          altText: Placeholder Image
-          type: ImageBlock
-        colors: bg-neutral-fg-dark
-        type: FeaturedItem
-      - image:
-          url: /images/hiking/hiking-5.jpg
-          altText: Placeholder Image
-          type: ImageBlock
-        colors: bg-neutral-fg-dark
-        type: FeaturedItem
-      - image:
-          url: /images/hiking/hiking-6.jpg
-          altText: Placeholder Image
-          type: ImageBlock
-        colors: bg-neutral-fg-dark
-        type: FeaturedItem
-      - image:
-          url: /images/hiking/hiking-7.JPG
-          altText: Placeholder Image
-          type: ImageBlock
-        colors: bg-neutral-fg-dark
-        type: FeaturedItem
-      - image:
-          url: /images/hiking/hiking-8.JPG
-          altText: Placeholder Image
-          type: ImageBlock
-        colors: bg-neutral-fg-dark
-        type: FeaturedItem
-      - image:
-          url: /images/hiking/hiking-9.JPG
-          altText: Placeholder Image
-          type: ImageBlock
-        colors: bg-neutral-fg-dark
-        type: FeaturedItem
-      - image:
-          url: /images/hiking/hiking-10.JPG
-          altText: Placeholder Image
-          type: ImageBlock
-        colors: bg-neutral-fg-dark
-        type: FeaturedItem
-      - image:
-          url: /images/hiking/hiking-11.JPG
-          altText: Placeholder Image
-          type: ImageBlock
-        colors: bg-neutral-fg-dark
-        type: FeaturedItem
-      - image:
-          url: /images/hiking/hiking-12.JPG
-          altText: Placeholder Image
-          type: ImageBlock
-        colors: bg-neutral-fg-dark
-        type: FeaturedItem
-      - image:
-          url: /images/hiking/hiking-13.JPG
-          altText: Placeholder Image
-          type: ImageBlock
-        colors: bg-neutral-fg-dark
-        type: FeaturedItem
-      - image:
-          url: /images/hiking/hiking-14.JPG
-          altText: Placeholder Image
-          type: ImageBlock
-        colors: bg-neutral-fg-dark
-        type: FeaturedItem
-      - image:
-          url: /images/hiking/hiking-15.JPG
-          altText: Placeholder Image
-          type: ImageBlock
-        colors: bg-neutral-fg-dark
-        type: FeaturedItem
-      - image:
-          url: /images/hiking/hiking-16.JPG
-          altText: Placeholder Image
-          type: ImageBlock
-        colors: bg-neutral-fg-dark
-        type: FeaturedItem
-    variant: two-col-grid
-    colors: bg-neutral-fg-dark
+    text: >
+      Every breath in our pristine cloud forest air is an act of purification. Guided walks and mindful breathing in nature deeply oxygenate your body, reduce stress, and restore mental clarity.
+
+      * Forest bathing — guided walks to breathe phytoncide-rich forest air.
+
+      * Salt Therapy — a salt room or salt lamp breathing space.
+
+      * Herbal Steam Inhalations — eucalyptus, thyme, or pine infusions.
+
+      * Allergies and Asthma Treatment  — [Learn More](/blog/allergies-and-asthma)
+    media:
+      url: /images/detox-retreat/forest_bathing.png
+      altText: Unblock your team boost your time to production preview
+      goesLast: true
+      type: ImageBlock
+    colors: bg-orange-fg-dark
     styles:
       self:
-        padding:
-          - pt-16
-          - pl-8
-          - pb-16
-          - pr-8
+        alignItems: center
+        flexDirection: row
         justifyContent: center
-      subtitle:
-        textAlign: center
-    type: FeaturedItemsSection
+        fontSize: small
+        padding:
+          - px-4
+  - type: GenericSection
+    title:
+      text: Move with Ease
+      color: text-light
+      type: TitleBlock
+    text: >
+      Our mountain air, peaceful forest, and nourishing surroundings create the ideal setting for your body to regain lightness and fluidity. Here, movement becomes effortless, and each step reconnects you with your natural vitality.
+
+      * Gentle movement classes — yoga, tai chi, or qi gong for flexibility and joint health.
+
+      * Thermal therapy — hot/cold contrast baths, natural hot springs.
+
+      * Herbal compress massages — using anti-inflammatory plants like arnica, comfrey, or turmeric.
+    media:
+      url: /images/detox-retreat/yoga.jpg
+      altText: Unblock your team boost your time to production preview
+      type: ImageBlock
+    colors: bg-lime-fg-light
+    styles:
+      self:
+        alignItems: center
+        flexDirection: row
+        justifyContent: center
+        padding:
+          - px-4
+  - type: GenericSection
+    title:
+      text: Nourish Your Core
+      color: text-dark
+      type: TitleBlock
+    text: >
+      Light, nutrient-rich meals and fresh herbal infusions support digestion and detoxification. Lactofermented foods and natural plant remedies nourish the microbiome.
+
+      * Fermentation workshops — make your own kimchi, sauerkraut, kombucha.
+
+      * Wild herb foraging tours — edible plants that promote digestion.
+
+      * Gut-friendly menus — probiotic-rich meals prepared from local, organic produce.
+    media:
+      url: /images/detox-retreat/lactofermentation.png
+      altText: Unblock your team boost your time to production preview
+      goesLast: true
+      type: ImageBlock
+    elementId: detox-retreat
+    colors: bg-orange-fg-dark
+    styles:
+      self:
+        alignItems: center
+        flexDirection: row
+        justifyContent: center
+        fontSize: small
+        padding:
+          - px-4
+  - type: GenericSection
+    title:
+      text: Calm Your Mind
+      color: text-light
+      type: TitleBlock
+    text: >
+      In the stillness of the cloud forest, the constant noise of the outside world fades away. Clarity returns, tension melts, and your mind finds the space it needs to breathe.
+
+      * Meditation & Breathwork – Daily guided sessions to reset your nervous system.
+
+      * Digital Detox Packages – Phone-free days with books, nature, and journaling.
+
+      * Sound Healing – Immersive gong and singing bowl experiences.
+
+      * Plants – [Jiaogulan](/blog/jiaogulan), [Nettle](/blog/nettle-properties.md)
+    media:
+      url: /images/detox-retreat/balcony_meditation.png
+      altText: Unblock your team boost your time to production preview
+      type: ImageBlock
+    colors: bg-lime-fg-light
+    styles:
+      self:
+        alignItems: center
+        flexDirection: row
+        justifyContent: center
+        padding:
+          - px-4
+  - type: GenericSection
+    title:
+      text: Strenghten Defenses
+      color: text-dark
+      type: TitleBlock
+    text: >
+      From the purity of the air to the richness of the plants grown on our organic farm, everything here works in harmony to fortify your body’s resilience and restore balance from within.
+
+      * Herbal tonics & teas — echinacea, elderberry, ginger, tulsi.
+
+      * Outdoor cold immersion — invigorating river dips or cold showers for immunity boost.
+
+      * Seasonal detox programs — juice fasting, intermittent fasting guidance.
+    media:
+      url: /images/detox-retreat/cozy_tea.png
+      altText: Unblock your team boost your time to production preview
+      goesLast: true
+      type: ImageBlock
+    elementId: detox-retreat
+    colors: bg-orange-fg-dark
+    styles:
+      self:
+        alignItems: center
+        flexDirection: row
+        justifyContent: center
+        fontSize: small
+        padding:
+          - px-4
+  - type: GenericSection
+    title:
+      text: Sleep Deeply
+      color: text-light
+      type: TitleBlock
+    text: >
+      Silence is part of the cure. Our monastic, distraction-free setting and clean mountain air encourage restorative sleep and mental regeneration.
+
+      * Sleep-Friendly Cabins – Blackout curtains, natural scents, no EMF zones.
+
+      * Evening herbal tea rituals — chamomile, lemon balm, passionflower blends.
+
+      * Guided stargazing — nature’s natural sleep reset via circadian rhythm support.
+    media:
+      url: /images/about-the-farm.jpg
+      altText: Unblock your team boost your time to production preview
+      elementId: ''
+      type: ImageBlock
+    colors: bg-lime-fg-light
+    styles:
+      self:
+        alignItems: center
+        flexDirection: row
+        justifyContent: center
+        padding:
+          - px-4
+  - type: GenericSection
+    title:
+      text: Glow Naturally
+      color: text-dark
+      type: TitleBlock
+    text: >
+      Surrounded by nature’s abundance, your body renews itself. Toxins release, circulation awakens, and your skin reflects the vitality you feel inside.
+
+      * Herbal facials — aloe vera, calendula, honey.
+
+      * Clay therapy — local clay masks for detox.
+
+      * Natural sun care & recovery workshops — using oils and herbs.
+    media:
+      url: /images/detox-retreat/clay_mask.png
+      altText: Unblock your team boost your time to production preview
+      goesLast: true
+      type: ImageBlock
+    colors: bg-orange-fg-dark
+    styles:
+      self:
+        alignItems: center
+        flexDirection: row
+        justifyContent: center
+        fontSize: small
+        padding:
+          - px-4
 seo:
   metaTitle: Detox Retreat - Boquete Cloud Forest Lodge
   metaDescription: This is the pricing page built with Netlify Create.

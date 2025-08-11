@@ -17,6 +17,7 @@ sections:
       opacity: 100
       url: /images/the-farm.jpg
   - type: GenericSection
+    colors: bg-orange-fg-dark
     actions:
       - label: Hiking
         altText: ''
@@ -63,7 +64,7 @@ sections:
           - px-4
   - type: GenericSection
     media:
-      url: /images/icons/hiking.png
+      url: /images/logo-notext.png
       altText: Fun feature preview
       type: ImageBlock
     title:
@@ -139,10 +140,6 @@ sections:
         padding:
           - px-4
   - type: GenericSection
-    media:
-      url: /images/icons/tailored-discovery.png
-      altText: Fun feature preview
-      type: ImageBlock
     title:
       text: Tailored Discovery Experiences
       color: text-black

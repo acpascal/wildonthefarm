@@ -39,7 +39,7 @@ sections:
           - px-4
   - type: GenericSection
     media:
-      url: /images/icons/bird-watching.png
+      url: /images/logo-notext.png
       altText: Fun feature preview
       type: ImageBlock
     title:

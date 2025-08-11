@@ -24,7 +24,7 @@ sections:
     text: >
       Discover the vibrant heart of Wild on the Farm—our 100% organic permaculture garden. Grown with care and respect for nature, it offers seasonal fruits, vegetables, herbs, and edible flowers bursting with flavor. Enjoy the rich taste of sustainability and the joy of cooking with truly fresh, nourishing ingredients.
     media:
-      url: /images/from-the-garden11.JPG
+      url: /images/from-the-garden.JPG
       altText: Unblock your team boost your time to production preview
       elementId: ''
       type: ImageBlock
@@ -104,7 +104,7 @@ sections:
       creation to invite you to the joy of being at the table.
 
     media:
-      url: /images/into-our-kitchenTall.jpg
+      url: /images/into-our-kitchen.jpg
       altText: Unblock your team boost your time to production preview
       elementId: ''
       goesLast: true
@@ -131,7 +131,7 @@ sections:
 
       Our deepest passion is to bring you joy and profound gastronomic pleasure with every single dish we serve. We focus on creating meals that nourish the body and delight the senses.
     media:
-      url: /images/to-our-tableTall.jpg
+      url: /images/to-our-table-tall.jpg
       altText: Unblock your team boost your time to production preview
       elementId: ''
       type: ImageBlock
