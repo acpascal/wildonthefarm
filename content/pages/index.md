@@ -4,23 +4,6 @@ slug: /
 sections:
   - type: GenericSection
     media:
-      title: Wild on the farm
-      url: 'https://youtu.be/FGbUEGNd524'
-      controls: false
-      aspectRatio: '4:3'
-      type: VideoBlock
-      autoplay: true
-      loop: true
-      muted: true
-    colors: bg-lime-fg-light
-    styles:
-      self:
-        maxWidth: max-w-screen
-        padding:
-          - 'lg:px-28'
-          - py-0
-  - type: GenericSection
-    media:
       url: /images/logo.png
       altText: Fun feature preview
       type: ImageBlock
@@ -62,6 +45,23 @@ sections:
         flexDirection: col
       subtitle:
         textAlign: center
+  - type: GenericSection
+    media:
+      title: Wild on the farm
+      url: 'https://youtu.be/FGbUEGNd524'
+      controls: false
+      aspectRatio: '4:3'
+      type: VideoBlock
+      autoplay: true
+      loop: true
+      muted: true
+    colors: bg-lime-fg-light
+    styles:
+      self:
+        maxWidth: max-w-screen
+        padding:
+          - 'lg:px-28'
+          - py-0
   - type: GenericSection
     title:
       text: A Sanctuary in the Clouds
