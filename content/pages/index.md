@@ -7,7 +7,7 @@ sections:
       title: Wild on the farm
       url: 'https://youtu.be/FGbUEGNd524'
       controls: false
-      aspectRatio: '16:9'
+      aspectRatio: '4:3'
       type: VideoBlock
       autoplay: true
       loop: true
@@ -17,7 +17,7 @@ sections:
       self:
         maxWidth: max-w-screen
         padding:
-          - lg:px-28
+          - 'lg:px-28'
           - py-0
   - type: GenericSection
     media:
@@ -25,15 +25,13 @@ sections:
       altText: Fun feature preview
       type: ImageBlock
     text: >
-      A masterpiece of synergy with nature, located just 15
-      minutes from Boquete at 5905 feet elevation and nestled into the Amistad
-      National Park.
+      A masterpiece of synergy with nature, located just 15 minutes from Boquete
+      at 5905 feet elevation and nestled into the Amistad National Park.
 
 
-      Step into the authentic heart of the Cloud
-      Forest – an enchanted sanctuary where silence speaks volumes, the crisp
-      altitude air invigorates , and clouds dance with the wind without
-      disturbing your profound serenity.
+      Step into the authentic heart of the Cloud Forest – an enchanted sanctuary
+      where silence speaks volumes, the crisp altitude air invigorates , and
+      clouds dance with the wind without disturbing your profound serenity.
 
 
       As Panama's first organic farm and only macadamia plantation, rooted in
@@ -70,7 +68,11 @@ sections:
       color: text-dark
       type: TitleBlock
     text: >
-      Welcome to Wild on the Farm, a handcrafted eco-sanctuary at 1800 meters, nestled beside Amistad National Park. With pure spring water, solar energy, organic farming, and artisanal architecture, it's a serene retreat where nature, comfort, and sustainability meet. Come to rest, reconnect, and thrive in the heart of the cloud forest.
+      Welcome to Wild on the Farm, a handcrafted eco-sanctuary at 1800 meters,
+      nestled beside Amistad National Park. With pure spring water, solar
+      energy, organic farming, and artisanal architecture, it's a serene retreat
+      where nature, comfort, and sustainability meet. Come to rest, reconnect,
+      and thrive in the heart of the cloud forest.
     actions:
       - label: Discover the farm
         altText: ''
@@ -105,7 +107,11 @@ sections:
       color: text-light
       type: TitleBlock
     text: >
-      Experience peaceful luxury in our handcrafted cabins, nestled in the serene cloud forest and overlooking breathtaking views. Built with sustainable tropical wood and designed for comfort, each space offers a restorative retreat where nature’s beauty and tranquil silence invite deep rest, reflection, and a true sense of wellbeing.
+      Experience peaceful luxury in our handcrafted cabins, nestled in the
+      serene cloud forest and overlooking breathtaking views. Built with
+      sustainable tropical wood and designed for comfort, each space offers a
+      restorative retreat where nature’s beauty and tranquil silence invite deep
+      rest, reflection, and a true sense of wellbeing.
     actions:
       - label: View Cabins
         altText: ''
@@ -142,7 +148,11 @@ sections:
       color: text-dark
       type: TitleBlock
     text: >
-      Discover the vibrant heart of Wild on the Farm—our 100% organic permaculture garden. Grown with care and respect for nature, it offers seasonal fruits, vegetables, herbs, and edible flowers bursting with flavor. Enjoy the rich taste of sustainability and the joy of cooking with truly fresh, nourishing ingredients.
+      Discover the vibrant heart of Wild on the Farm—our 100% organic
+      permaculture garden. Grown with care and respect for nature, it offers
+      seasonal fruits, vegetables, herbs, and edible flowers bursting with
+      flavor. Enjoy the rich taste of sustainability and the joy of cooking with
+      truly fresh, nourishing ingredients.
     actions:
       - label: Learn More
         altText: ''
@@ -181,8 +191,12 @@ sections:
       type: TitleBlock
     items:
       - title: Bird Watching
-        text: |
-          Immerse yourself in the sights and sounds of nature at Wild on the Farm. Surrounded by lush gardens and pristine forest, our haven invites bird lovers to discover rare species like the Quetzal, unwind in serene beauty, and savor the peaceful joy of birdwatching in harmony with nature.
+        text: >
+          Immerse yourself in the sights and sounds of nature at Wild on the
+          Farm. Surrounded by lush gardens and pristine forest, our haven
+          invites bird lovers to discover rare species like the Quetzal, unwind
+          in serene beauty, and savor the peaceful joy of birdwatching in
+          harmony with nature.
         image:
           url: /images/bird-watching-wide.JPG
           altText: Placeholder Image
@@ -203,8 +217,12 @@ sections:
             flexDirection: col
         type: FeaturedItem
       - title: Detox Retreat
-        text: |
-          Reclaim your vitality with a detox retreat at Wild on the Farm. Surrounded by pure air, organic healing plants, and the serene cloud forest, our program offers deep restoration through nature, nourishing food, guided walks, and silence. Breathe, reset, and return home lighter, clearer, and renewed.
+        text: >
+          Reclaim your vitality with a detox retreat at Wild on the Farm.
+          Surrounded by pure air, organic healing plants, and the serene cloud
+          forest, our program offers deep restoration through nature, nourishing
+          food, guided walks, and silence. Breathe, reset, and return home
+          lighter, clearer, and renewed.
         image:
           url: /images/detox-retreat-wide.JPG
           altText: Placeholder Image
@@ -225,8 +243,11 @@ sections:
             flexDirection: col
         type: FeaturedItem
       - title: Hiking
-        text: |
-          Step out your door and into the heart of the cloud forest. At Wild on the Farm, hiking is more than a walk—it’s full immersion in a mystical world of mist, moss, and towering trees. Let nature guide your journey through beauty, serenity, and quiet wonder.
+        text: >
+          Step out your door and into the heart of the cloud forest. At Wild on
+          the Farm, hiking is more than a walk—it’s full immersion in a mystical
+          world of mist, moss, and towering trees. Let nature guide your journey
+          through beauty, serenity, and quiet wonder.
         image:
           url: /images/hiking-wide.jpg
           altText: Placeholder Image
@@ -247,8 +268,12 @@ sections:
             flexDirection: col
         type: FeaturedItem
       - title: Tailored Discovery
-        text: |
-          Your journey is uniquely yours. Whether you seek stillness, adventure, or expert-guided discovery, our Tailored Discovery service curates meaningful, personalized experiences—yoga, nature walks, wildlife exploration, or quiet reflection—so you can reconnect, recharge, and make your stay unforgettable.
+        text: >
+          Your journey is uniquely yours. Whether you seek stillness, adventure,
+          or expert-guided discovery, our Tailored Discovery service curates
+          meaningful, personalized experiences—yoga, nature walks, wildlife
+          exploration, or quiet reflection—so you can reconnect, recharge, and
+          make your stay unforgettable.
         image:
           url: /images/tailored-discovery-tall.JPG
           altText: Placeholder Image
@@ -368,8 +393,12 @@ sections:
       text: Contact Us
       color: text-dark
       type: TitleBlock
-    text: |-
-      We’d love to welcome you to Wild on the Farm—a place where nature, comfort, and wellbeing come together in perfect harmony. Whether you’re ready to book your stay, have questions about our retreats or cabins, or simply want to learn more, don’t hesitate to reach out. We’re here to help you plan your unforgettable escape into the cloud forest.
+    text: >-
+      We’d love to welcome you to Wild on the Farm—a place where nature,
+      comfort, and wellbeing come together in perfect harmony. Whether you’re
+      ready to book your stay, have questions about our retreats or cabins, or
+      simply want to learn more, don’t hesitate to reach out. We’re here to help
+      you plan your unforgettable escape into the cloud forest.
     media:
       fields:
         - name: name
