@@ -7,7 +7,7 @@ sections:
       title: Wild on the farm
       url: 'https://youtu.be/FGbUEGNd524'
       controls: false
-      aspectRatio: '16:9'
+      aspectRatio: '4:3'
       type: VideoBlock
       autoplay: true
       loop: true
