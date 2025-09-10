@@ -80,7 +80,7 @@
         }
     ],
     "secondaryLinks": [],
-    "variant": "logo-left-primary-nav-centered",
+    "variant": "logo-left-primary-nav-right",
     "colors": "bg-lime-fg-light",
     "type": "Header"
 }
