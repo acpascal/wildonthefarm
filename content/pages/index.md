@@ -148,7 +148,7 @@ sections:
       color: text-dark
       type: TitleBlock
     text: >
-      Discover the vibrant heart of Wild on the Farm—our 100% organic
+      Discover the vibrant heart of our 100% organic
       permaculture garden. Grown with care and respect for nature, it offers
       seasonal fruits, vegetables, herbs, and edible flowers bursting with
       flavor. Enjoy the rich taste of sustainability and the joy of cooking with
@@ -441,7 +441,7 @@ sections:
     colors: bg-neutralAlt-fg-dark
     type: GenericSection
 seo:
-  metaTitle: Wild On The Farm - Boquete Cloud Forest Lodge
+  metaTitle: Wild On The Farm
   metaDescription: This demo site is built with Netlify Create.
   socialImage: /images/main-hero.jpg
   type: Seo

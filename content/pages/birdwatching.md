@@ -686,7 +686,7 @@ sections:
         textAlign: center
     type: FeaturedItemsSection
 seo:
-  metaTitle: Bird Watching - Boquete Cloud Forest Lodge
+  metaTitle: Bird Watching
   metaDescription: This is the pricing page built with Netlify Create.
   socialImage: /images/main-hero.jpg
   type: Seo

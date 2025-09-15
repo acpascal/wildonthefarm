@@ -17,7 +17,6 @@ sections:
       opacity: 100
       url: /images/the-farm.jpg
   - type: GenericSection
-    colors: bg-orange-fg-dark
     actions:
       - label: Hiking
         altText: ''
@@ -415,7 +414,7 @@ sections:
         textAlign: center
     type: FeaturedItemsSection
 seo:
-  metaTitle: Experience - Boquete Cloud Forest Lodge
+  metaTitle: Experience
   metaDescription: This is the pricing page built with Netlify Create.
   socialImage: /images/main-hero.jpg
   type: Seo

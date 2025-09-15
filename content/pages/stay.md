@@ -219,7 +219,7 @@ sections:
         textAlign: center
     type: FeaturedItemsSection
 seo:
-  metaTitle: Stay - Boquete Cloud Forest Lodge
+  metaTitle: Stay
   metaDescription: This is the pricing page built with Netlify Create.
   socialImage: /images/main-hero.jpg
   type: Seo

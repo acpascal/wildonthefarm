@@ -40,8 +40,6 @@ I had suffered from _severe allergies_ for years, making daily life miserable. A
 
 A few months later, while traveling with my children and admiring massive blooming trees, I suddenly realized something: **my allergies were completely gone** — and they have never returned since.
 
-> **Image suggestion:** Close-up shot of misty Talamanca mountain jungle with dappled light.
-
 ---
 
 ###### Helping a Friend with Asthma
@@ -52,8 +50,6 @@ The high-altitude, humid air triggered an **asthma attack** for him, and he reac
 I told him about my experience and offered a **freshly harvested dose of the same plant’s seeds**.
 
 His result was nothing short of astonishing: after **40 years of suffering**, and now 14 years since that day, **he has never had another asthma attack**. His asthma was gone.
-
-> **Image suggestion:** A Quetzal perched on a moss-covered branch.
 
 ---
 
@@ -79,8 +75,6 @@ Years passed, and I came to believe that **institutions like the AAFA** are more
 This left me with a mix of **frustration and disappointment**.  
 I wasn’t asking for money — just for the possibility to explore a natural cure.
 
-> **Image suggestion:** A macro photo of the plant’s leaves (without identifying too much detail if you wish to keep it protected).
-
 ---
 
 ###### A New Chapter: Our Retreats
@@ -105,8 +99,6 @@ our retreats offer the perfect setting:
 - **Detox retreats** with organic farm-to-table meals
 - **Bird watching tours** in one of Panama’s richest habitats
 - Access to a **rare and remarkable plant** with healing potential
-
-> **Image suggestion:** Guests walking on a lush jungle path, looking relaxed and inspired.
 
 ---
 

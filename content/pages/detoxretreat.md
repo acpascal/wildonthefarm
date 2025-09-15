@@ -222,35 +222,8 @@ sections:
         justifyContent: center
         padding:
           - px-4
-  - type: GenericSection
-    title:
-      text: Glow Naturally
-      color: text-dark
-      type: TitleBlock
-    text: >
-      Surrounded by nature’s abundance, your body renews itself. Toxins release, circulation awakens, and your skin reflects the vitality you feel inside.
-
-      * Herbal facials — aloe vera, calendula, honey.
-
-      * Clay therapy — local clay masks for detox.
-
-      * Natural sun care & recovery workshops — using oils and herbs.
-    media:
-      url: /images/detox-retreat/clay_mask.png
-      altText: Unblock your team boost your time to production preview
-      goesLast: true
-      type: ImageBlock
-    colors: bg-orange-fg-dark
-    styles:
-      self:
-        alignItems: center
-        flexDirection: row
-        justifyContent: center
-        fontSize: small
-        padding:
-          - px-4
 seo:
-  metaTitle: Detox Retreat - Boquete Cloud Forest Lodge
+  metaTitle: Detox Retreat
   metaDescription: This is the pricing page built with Netlify Create.
   socialImage: /images/main-hero.jpg
   type: Seo

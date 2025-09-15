@@ -456,7 +456,7 @@ sections:
         textAlign: center
     type: FeaturedItemsSection
 seo:
-  metaTitle: Kitchen - Boquete Cloud Forest Lodge
+  metaTitle: Kitchen
   metaDescription: This is the pricing page built with Netlify Create.
   socialImage: /images/main-hero.jpg
   type: Seo

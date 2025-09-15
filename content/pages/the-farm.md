@@ -389,7 +389,7 @@ sections:
         textAlign: center
     type: FeaturedItemsSection
 seo:
-  metaTitle: The Farm - Boquete Cloud Forest Lodge
+  metaTitle: The Farm
   metaDescription: ''
   socialImage: /images/main-hero.jpg
   type: Seo

@@ -4,7 +4,7 @@ import { iconMap } from '../../svgs';
 import Link from '../Link';
 
 export default function Action(props) {
-    const { elementId, className, label, altText, url, showIcon, icon, iconPosition = 'right', style = 'primary' } = props;
+    const { elementId, className, label, altText, url, showIcon, icon, iconPosition = 'right', openLinkInNewTab = false, style = 'primary' } = props;
     const IconComponent = icon ? iconMap[icon] : null;
     const fieldPath = props['data-sb-field-path'];
     const annotations = fieldPath
@@ -28,7 +28,8 @@ export default function Action(props) {
                     'sb-component-link-secondary': type === 'Link' && style === 'secondary'
                 },
                 className
-            )}
+            )}            
+            {...(openLinkInNewTab ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
             {...annotations}
         >
             {label && <span  {...(fieldPath && { 'data-sb-field-path': '.label' })} className='whitespace-pre-line text-left'>{label}</span>}

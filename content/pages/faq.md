@@ -31,8 +31,6 @@ sections:
 
       * Herbal teas, all vegetable and fruit juices
 
-      * Body masks and body care treatments
-
       * Assistance for allergies and asthma. There is a high probability that our plants can help significantly alleviate or eliminate these conditions. This support is provided without charge.
 
       * Hikes in the cloud forest
@@ -45,11 +43,11 @@ sections:
 
       |--|--|--|--|
 
-      |High Season|December 15th to May 15th|$4000 - $4500|$4500|
+      |High Season|December 15th to May 15th|$4000|$4500|
 
-      |Low Season|May 15th to September 15th|$2500 - $3000|$3000|
+      |Low Season|May 15th to September 15th|$3500|$4000|
 
-      |Rainy Season|September 15th to December 15th|$1500 - $2000|$2000|
+      |Rainy Season|September 15th to December 15th|$2000|$2500|
 
 
       **SPECIAL:** THREE FRIENDS THREE CABINS, CONTACT US.
