@@ -17,7 +17,7 @@ isFeatured: false
 isDraft: false
 seo:
   metaTitle: Jiaogulan - The Herb Of Immortality
-  metaDescription: You can add the excerpt and main keywords of your blog post here.
+  metaDescription: Jiaogulan is an adaptogenic herb used to support longevity and resilience; learn how we use it in our detox programs to boost recovery and vitality.
   socialImage: /images/blog/jiaogulan/cover.jpg
   type: Seo
 colors: bg-light-fg-dark

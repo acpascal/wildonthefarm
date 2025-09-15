@@ -442,8 +442,8 @@ sections:
     type: GenericSection
 seo:
   metaTitle: Wild On The Farm
-  metaDescription: This demo site is built with Netlify Create.
-  socialImage: /images/main-hero.jpg
+  metaDescription: Wild on the Farm — an eco-sanctuary in Panama's cloud forest offering organic farming, macadamia groves, restorative retreats, and nature experiences.
+  socialImage: /images/the-farm.jpg
   type: Seo
 type: PageLayout
 ---

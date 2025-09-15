@@ -224,8 +224,8 @@ sections:
           - px-4
 seo:
   metaTitle: Detox Retreat
-  metaDescription: This is the pricing page built with Netlify Create.
-  socialImage: /images/main-hero.jpg
+  metaDescription: Rejuvenate at our 7-day Detox Retreat in the cloud forest with organic food, medicinal plants, and guided programs to restore vitality.
+  socialImage: /images/detox-retreat-wide.JPG
   type: Seo
 type: PageLayout
 ---

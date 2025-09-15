@@ -17,8 +17,8 @@ isFeatured: false
 isDraft: false
 seo:
   metaTitle: Nettle Properties
-  metaDescription: You can add the excerpt and main keywords of your blog post here.
-  socialImage: /images/detox-retreat-wide.JPG
+  metaDescription: Nettle is a nutrient-rich, detoxifying plant we cultivate for its remineralizing and anti-inflammatory benefits—featured in our cleansing programs.
+  socialImage: /images/blog/nettle/nettle.JPG
   type: Seo
 colors: bg-light-fg-dark
 styles:

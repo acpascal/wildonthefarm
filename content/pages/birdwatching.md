@@ -687,8 +687,8 @@ sections:
     type: FeaturedItemsSection
 seo:
   metaTitle: Bird Watching
-  metaDescription: This is the pricing page built with Netlify Create.
-  socialImage: /images/main-hero.jpg
+  metaDescription: Discover rare cloud-forest birds at Wild on the Farm—an immersive birdwatching sanctuary beside Amistad National Park.
+  socialImage: /images/bird-watching.JPG
   type: Seo
 type: PageLayout
 ---

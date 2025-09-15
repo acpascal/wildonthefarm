@@ -391,7 +391,7 @@ sections:
 seo:
   metaTitle: The Farm
   metaDescription: ''
-  socialImage: /images/main-hero.jpg
+  socialImage: /images/the-farm.jpg
   type: Seo
 type: PageLayout
 ---

@@ -220,8 +220,8 @@ sections:
     type: FeaturedItemsSection
 seo:
   metaTitle: Stay
-  metaDescription: This is the pricing page built with Netlify Create.
-  socialImage: /images/main-hero.jpg
+  metaDescription: Stay in our handcrafted cabins among cloud-forest vistas—luxury comfort, sustainable design, and restorative solitude for a one-week retreat.
+  socialImage: /images/stay.jpg
   type: Seo
 type: PageLayout
 ---

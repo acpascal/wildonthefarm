@@ -17,7 +17,7 @@ isFeatured: false
 isDraft: false
 seo:
   metaTitle: Rosemary - Benefits and Properties
-  metaDescription: Rosemary is far more than a fragrant kitchen herb — it’s a powerful antioxidant, liver tonic, brain booster, and natural protector against oxidative stress. From supporting digestion to enhancing memory, discover why this humble plant deserves a place in your daily wellness routine.
+  metaDescription: Learn how rosemary supports liver health, digestion, and cognitive function—our guide to using this aromatic herb in food and remedies.
   socialImage: /images/blog/rosemary/rosemary_plant_1.png
   type: Seo
 colors: bg-light-fg-dark

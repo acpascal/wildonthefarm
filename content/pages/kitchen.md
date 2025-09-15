@@ -457,8 +457,8 @@ sections:
     type: FeaturedItemsSection
 seo:
   metaTitle: Kitchen
-  metaDescription: This is the pricing page built with Netlify Create.
-  socialImage: /images/main-hero.jpg
+  metaDescription: Taste farm-to-table cuisine from our organic gardens—seasonal menus, herbal infusions, and nourishing meals inspired by our terroir.
+  socialImage: /images/into-our-kitchen.jpg
   type: Seo
 type: PageLayout
 ---

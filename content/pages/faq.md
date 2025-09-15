@@ -110,9 +110,9 @@ sections:
         justifyContent: center
         flexDirection: col
 seo:
-  metaTitle: FAQ - Boquete Cloud Forest Lodge
-  metaDescription: This is the pricing page built with Netlify Create.
-  socialImage: /images/main-hero.jpg
+  metaTitle: Frequently Asked Questions
+  metaDescription: Answers about stays, pricing, dietary needs, and our plant-based natural therapies to help you prepare for a restorative visit.
+  socialImage: /images/the-farm.jpg
   type: Seo
 type: PageLayout
 ---

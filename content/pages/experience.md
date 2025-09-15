@@ -415,8 +415,8 @@ sections:
     type: FeaturedItemsSection
 seo:
   metaTitle: Experience
-  metaDescription: This is the pricing page built with Netlify Create.
-  socialImage: /images/main-hero.jpg
+  metaDescription: Explore hiking, birdwatching, and tailored discovery experiences at our cloud-forest farm—guided adventures to reconnect with nature.
+  socialImage: /images/hiking-wide.jpg
   type: Seo
 type: PageLayout
 ---
