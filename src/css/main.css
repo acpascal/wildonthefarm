@@ -216,7 +216,7 @@
     }
     .bg-neutral-fg-dark,
     .sb-card.bg-neutral-fg-dark {
-        @apply text-dark bg-neutral;
+        @apply text-black bg-neutral;
         .sb-input,
         .sb-select,
         .sb-textarea {
@@ -249,11 +249,11 @@
             @apply bg-dark;
         }
     }
-    .bg-emerald-fg-light{
-        @apply text-light bg-emerald-700;
+    .bg-lime-fg-light{
+        @apply text-light bg-lime-700;
     }
     .bg-orange-fg-dark{
-        @apply text-dark bg-orange-200;
+        @apply text-black bg-orange-200;
     }
     .bg-dark-fg-light,
     .sb-card.bg-dark-fg-light {
@@ -303,6 +303,10 @@
 
     .max-h-screen {
         max-height: 100vh;
+    }
+
+    .border-16 {
+        border-width: 16px;
     }
 }
 

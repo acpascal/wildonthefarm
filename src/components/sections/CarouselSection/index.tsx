@@ -199,9 +199,19 @@ function CarouselWithPagination({ items = [], hasTopMargin, hasSectionTitle, has
     const [swiperRef, setSwiperRef] = React.useState<SwiperClass>();
     const [activeDot, setActiveDot] = React.useState(0);
 
+    React.useEffect(() => {
+        if (swiperRef) {
+            // ensure Swiper recalculates sizes / active slide on first mount
+            swiperRef.update();
+            if (typeof (swiperRef as any).updateAutoHeight === 'function') {
+                (swiperRef as any).updateAutoHeight();
+            }
+        }
+    }, [swiperRef, items]);
+
     return (
         <div className={classNames('w-full', { 'mt-12': hasTopMargin })} {...(hasAnnotations && { 'data-sb-field-path': '.items' })}>
-            <Swiper effect={'fade'} fadeEffect={{ crossFade: true }} speed={500} autoHeight={true} modules={[EffectFade]} onSwiper={setSwiperRef}>
+            <Swiper effect={'fade'} fadeEffect={{ crossFade: true }} speed={500} autoHeight={true} modules={[EffectFade]} onSwiper={setSwiperRef} observer={true} observeParents={true}>
                 {items.map((item, index) => (
                     <SwiperSlide key={index}>
                         <div className="w-full max-w-5xl mx-auto">

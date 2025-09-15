@@ -6,7 +6,7 @@ date: '2025-05-20'
 excerpt: >-
   Often mistaken for a mere weed, nettle (Urtica dioica) is a powerhouse of nutrition and healing. We grow and use it in our detox programs for its exceptional detoxifying and remineralizing properties. Rich in vitamins, minerals (especially silica), proteins, and antioxidants, nettle helps eliminate toxins, support joint and bone health, combat fatigue, and enhance skin and hair vitality. Whether brewed as a tea, added to dishes, or taken as a powder, nettle is a natural ally for cleansing, energy, and overall wellness—used with care and respect.
 featuredImage:
-  url: /images/detox-retreatX.JPG
+  url: /images/blog/nettle/nettle.JPG
   altText: Thumbnail
   type: ImageBlock
   styles:
@@ -17,8 +17,8 @@ isFeatured: false
 isDraft: false
 seo:
   metaTitle: Nettle Properties
-  metaDescription: You can add the excerpt and main keywords of your blog post here.
-  socialImage: /images/detox-retreatX.JPG
+  metaDescription: Nettle is a nutrient-rich, detoxifying plant we cultivate for its remineralizing and anti-inflammatory benefits—featured in our cleansing programs.
+  socialImage: /images/blog/nettle/nettle.JPG
   type: Seo
 colors: bg-light-fg-dark
 styles:
@@ -26,6 +26,8 @@ styles:
     flexDirection: col
 author: content/data/person1.json
 ---
+
+![Nettle](/images/blog/nettle/nettle.jpg)
 
 Why We Cultivate Nettle (Urtica dioica) and Use it for Detox.
 

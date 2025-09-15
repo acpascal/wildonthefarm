@@ -37,10 +37,32 @@
         },
         {
             "label": "EXPERIENCE",
-            "altText": "Experience page",
-            "url": "/experience",
-            "style": "secondary",
-            "type": "Link"
+            "altText": "EXPERIENCE",
+            "links": [
+                {
+                    "label": "BIRD WATCHING",
+                    "altText": "Bird Watching page",
+                    "url": "/bird-watching",
+                    "style": "secondary",
+                    "type": "Link"
+                },
+                {
+                    "label": "DETOX RETREAT",
+                    "altText": "Detox Retreat page",
+                    "url": "/detox-retreat",
+                    "style": "secondary",
+                    "type": "Link"
+                },
+                {
+                    "label": "DISCOVER",
+                    "altText": "Experiences page",
+                    "url": "/experience",
+                    "style": "secondary",
+                    "type": "Link"
+                }
+            ],
+            "labelStyle": "secondary",
+            "type": "SubNav"
         },
         {
             "label": "BLOG",
@@ -48,10 +70,17 @@
             "url": "/blog",
             "style": "secondary",
             "type": "Link"
+        },
+        {
+            "label": "FAQ",
+            "altText": "FAQ",
+            "url": "/faq",
+            "style": "secondary",
+            "type": "Link"
         }
     ],
     "secondaryLinks": [],
     "variant": "logo-left-primary-nav-right",
-    "colors": "bg-emerald-fg-light",
+    "colors": "bg-lime-fg-light",
     "type": "Header"
 }

@@ -29,7 +29,7 @@ sections:
 
 
       Here, in the heart of the wild, we offer an exceptional stay that blends authentic comfort with cozy, restorative luxury. Sink into deep, rejuvenating sleep on our carefully selected mattresses, wrapped in soft, high-quality linens. Every small detail, from the natural materials to the thoughtful amenities, has been curated to ensure your stay is infused with happiness and profound relaxation.
-    colors: bg-emerald-fg-light
+    colors: bg-lime-fg-light
     styles:
       self:
         padding:
@@ -43,7 +43,7 @@ sections:
         textAlign: center
   - title:
       text: Video Tour
-      color: text-dark
+      color: text-black
       styles:
         self:
           textAlign: center
@@ -56,15 +56,9 @@ sections:
       goesLast: true
       styles:
         self:
-          padding:
-            - pt-2
-            - pb-2
-            - pl-2
-            - pr-2
-          borderColor: border-dark
+          borderColor: border-black
           borderStyle: solid
-          borderWidth: 1
-          borderRadius: large
+          borderWidth: 16
       type: VideoBlock
       autoplay: false
       loop: true
@@ -77,7 +71,7 @@ sections:
     type: GenericSection
   - title:
       text: Gallery
-      color: text-primary
+      color: text-black
       styles:
         self:
           textAlign: center
@@ -87,74 +81,128 @@ sections:
           url: /images/exterior-1.jpg
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-light-fg-dark
       - image:
           url: /images/interior-1.jpg
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-light-fg-dark
       - image:
           url: /images/bathroom-1.png
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-light-fg-dark
       - image:
           url: /images/balcony-1.jpg
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-light-fg-dark
       - image:
           url: /images/exterior-2.jpg
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-light-fg-dark
         type: FeaturedItem
       - image:
           url: /images/exterior-3.jpg
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-light-fg-dark
         type: FeaturedItem
       - image:
           url: /images/interior-2.jpg
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-light-fg-dark
         type: FeaturedItem
       - image:
           url: /images/interior-3.jpg
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-light-fg-dark
         type: FeaturedItem
       - image:
           url: /images/interior-4.jpg
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-light-fg-dark
         type: FeaturedItem
       - image:
           url: /images/bathroom-2.jpg
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-light-fg-dark
         type: FeaturedItem
       - image:
           url: /images/bathroom-3.jpg
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-light-fg-dark
         type: FeaturedItem
       - image:
           url: /images/balcony-2.jpg
           altText: Placeholder Image
           type: ImageBlock
-        colors: bg-light-fg-dark
-        type: FeaturedItem
-      - image:
-          url: /images/balcony-3.jpg
-          altText: Placeholder Image
-          type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-light-fg-dark
         type: FeaturedItem
     variant: two-col-grid
@@ -171,9 +219,9 @@ sections:
         textAlign: center
     type: FeaturedItemsSection
 seo:
-  metaTitle: Stay - The Ranch
-  metaDescription: This is the pricing page built with Netlify Create.
-  socialImage: /images/main-hero.jpg
+  metaTitle: Stay
+  metaDescription: Stay in our handcrafted cabins among cloud-forest vistas—luxury comfort, sustainable design, and restorative solitude for a one-week retreat.
+  socialImage: /images/stay.jpg
   type: Seo
 type: PageLayout
 ---

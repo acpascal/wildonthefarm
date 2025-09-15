@@ -15,7 +15,7 @@ export const FormBlock: Model = {
             localized: false,
             items: {
                 type: 'model',
-                models: ['TextFormControl', 'EmailFormControl', 'TextareaFormControl', 'CheckboxFormControl', 'SelectFormControl']
+                models: ['TextFormControl', 'EmailFormControl', 'TextareaFormControl', 'CheckboxFormControl', 'SelectFormControl', 'DateRangeFormControl']
             }
         },
         {

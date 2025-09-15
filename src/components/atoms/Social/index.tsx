@@ -28,6 +28,8 @@ export default function Social(props) {
                 className
             )}
             href={url}
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label={altText}
             {...annotations}
         >

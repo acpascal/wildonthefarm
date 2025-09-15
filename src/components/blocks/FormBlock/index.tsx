@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { Alert } from '../../atoms/Alert/alert';
+import { useState } from 'react';
 import classNames from 'classnames';
 
 import { getComponent } from '../../components-registry';
@@ -6,20 +8,40 @@ import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to
 import SubmitButtonFormControl from './SubmitButtonFormControl';
 
 export default function FormBlock(props) {
+    const [status, setStatus] = useState(null);
+    const [error, setError] = useState(null);
     const formRef = React.createRef<HTMLFormElement>();
-    const { fields = [], elementId, submitButton, className, styles = {}, 'data-sb-field-path': fieldPath, netlify = false } = props;
+    const { fields = [], elementId, submitButton, className, styles = {}, successMessage, 'data-sb-field-path': fieldPath } = props;
 
     if (fields.length === 0) {
         return null;
     }
 
-    // function handleSubmit(event) {
-    //     event.preventDefault();
-
-    //     const data = new FormData(formRef.current);
-    //     const value = Object.fromEntries(data.entries());
-    //     alert(`Form data: ${JSON.stringify(value)}`);
-    // }
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+        try {
+            setStatus('pending');
+            setError(null);
+            const myForm = event.target;
+            const formData = new FormData(myForm);
+            const res = await fetch('/__forms.html', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(
+                    Array.from(formData.entries()).map(([k, v]) => [k, typeof v === 'string' ? v : v.name])
+                ).toString()
+            });
+            if (res.status === 200) {
+                setStatus('ok');
+            } else {
+                setStatus('error');
+                setError(`${res.status} ${res.statusText}`);
+            }
+        } catch (e) {
+            setStatus('error');
+            setError(`${e}`);
+        }
+    }
 
     return (
         <form
@@ -41,10 +63,9 @@ export default function FormBlock(props) {
             )}
             name={elementId}
             id={elementId}
-            // onSubmit={handleSubmit}
+            onSubmit={handleFormSubmit}
             ref={formRef}
             data-sb-field-path= {fieldPath}
-            data-netlify={netlify}
         >
             <div
                 className={classNames('w-full', 'flex', 'flex-wrap', 'gap-8', mapStyles({ justifyContent: styles?.self?.justifyContent ?? 'flex-start' }))}
@@ -63,11 +84,13 @@ export default function FormBlock(props) {
                     return <FormControl key={index} {...field} {...(fieldPath && { 'data-sb-field-path': `.${index}` })} />;
                 })}
             </div>
-            {submitButton && (
+            {submitButton && (status === null || status === 'pending') && (
                 <div className={classNames('mt-8', 'flex', mapStyles({ justifyContent: styles?.self?.justifyContent ?? 'flex-start' }))}>
-                    <SubmitButtonFormControl {...submitButton} {...(fieldPath && { 'data-sb-field-path': '.submitButton' })} />
+                    <SubmitButtonFormControl {...submitButton} disabled={status === 'pending'} {...(fieldPath && { 'data-sb-field-path': '.submitButton' })} />
                 </div>
             )}
+            {status === 'ok' && <Alert className type="success">{successMessage}</Alert>}
+            {status === 'error' && <Alert className type="error">{error}</Alert>}
         </form>
     );
 }

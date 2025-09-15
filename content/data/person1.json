@@ -1,9 +1,9 @@
 {
-    "name": "Pascal Accard",
+    "name": "Wild On The Farm",
     "role": "Job title",
     "image": {
         "url": "/images/avatar1.svg",
-        "altText": "Pascal Accard",
+        "altText": "Wild On The Farm",
         "styles": {
             "self": {
                 "borderRadius": "medium",

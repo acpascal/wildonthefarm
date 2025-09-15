@@ -4,6 +4,7 @@ import { Button } from './Button';
 import { CarouselSection } from './CarouselSection';
 import { CheckboxFormControl } from './CheckboxFormControl';
 import { Config } from './Config';
+import { DateRangeFormControl } from './DateRangeFormControl';
 import { DividerSection } from './DividerSection';
 import { EmailFormControl } from './EmailFormControl';
 import { FeaturedItem } from './FeaturedItem';
@@ -50,6 +51,7 @@ export const allModels = {
     CarouselSection,
     CheckboxFormControl,
     Config,
+    DateRangeFormControl,
     DividerSection,
     EmailFormControl,
     FeaturedItem,

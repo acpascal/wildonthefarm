@@ -24,7 +24,7 @@ sections:
     text: >
       Discover the vibrant heart of Wild on the Farm—our 100% organic permaculture garden. Grown with care and respect for nature, it offers seasonal fruits, vegetables, herbs, and edible flowers bursting with flavor. Enjoy the rich taste of sustainability and the joy of cooking with truly fresh, nourishing ingredients.
     media:
-      url: /images/from-the-garden11.JPG
+      url: /images/from-the-garden.JPG
       altText: Unblock your team boost your time to production preview
       elementId: ''
       type: ImageBlock
@@ -33,7 +33,7 @@ sections:
       color: text-primary
       type: Badge
     elementId: dine-other
-    colors: bg-emerald-fg-light
+    colors: bg-lime-fg-light
     styles:
       self:
         alignItems: center
@@ -44,7 +44,7 @@ sections:
   - type: GenericSection
     title:
       text: From Our Organic Garden
-      color: text-dark
+      color: text-black
       type: TitleBlock
       styles:
         self:
@@ -104,12 +104,12 @@ sections:
       creation to invite you to the joy of being at the table.
 
     media:
-      url: /images/into-our-kitchenTall.jpg
+      url: /images/into-our-kitchen.jpg
       altText: Unblock your team boost your time to production preview
       elementId: ''
       goesLast: true
       type: ImageBlock
-    colors: bg-emerald-fg-light
+    colors: bg-lime-fg-light
     styles:
       self:
         alignItems: center
@@ -120,7 +120,7 @@ sections:
   - type: GenericSection
     title:
       text: To Our Table
-      color: text-dark
+      color: text-black
       type: TitleBlock
     text: >+
       More than just a meal, our table is a moment of genuine connection and conviviality. It's a welcoming space to share delicious food, exchange stories of the day's discoveries, and simply enjoy good company in a relaxed setting.
@@ -131,7 +131,7 @@ sections:
 
       Our deepest passion is to bring you joy and profound gastronomic pleasure with every single dish we serve. We focus on creating meals that nourish the body and delight the senses.
     media:
-      url: /images/to-our-tableTall.jpg
+      url: /images/to-our-table-tall.jpg
       altText: Unblock your team boost your time to production preview
       elementId: ''
       type: ImageBlock
@@ -150,7 +150,7 @@ sections:
           - px-4
   - title:
       text: Gallery
-      color: text-primary
+      color: text-black
       styles:
         self:
           textAlign: center
@@ -160,162 +160,286 @@ sections:
           url: /images/garden/garden-1.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/garden/garden-2.jpg
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/garden/garden-3.jpg
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/garden/garden-4.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/garden/garden-5.jpg
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/garden/garden-6.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/garden/garden-7.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/garden/garden-8.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/garden/garden-9.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/garden/garden-10.jpg
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/garden/garden-11.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-1.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-2.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-3.png
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-4.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-5.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-6.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-7.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-8.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-9.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-10.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-11.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-12.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-13.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-14.JPG
           altText: Placeholder Image
           type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-15.JPG
           altText: Placeholder Image
           type: ImageBlock
-        colors: bg-neutral-fg-dark
-        type: FeaturedItem
-      - image:
-          url: /images/kitchen/kitchen-16.JPG
-          altText: Placeholder Image
-          type: ImageBlock
+          styles:
+            self:
+              borderColor: 'border-black'
+              borderStyle: 'solid'
+              borderWidth: 16
         colors: bg-neutral-fg-dark
         type: FeaturedItem
     variant: two-col-grid
@@ -332,9 +456,9 @@ sections:
         textAlign: center
     type: FeaturedItemsSection
 seo:
-  metaTitle: Dine - The Ranch
-  metaDescription: This is the pricing page built with Netlify Create.
-  socialImage: /images/main-hero.jpg
+  metaTitle: Kitchen
+  metaDescription: Taste farm-to-table cuisine from our organic gardens—seasonal menus, herbal infusions, and nourishing meals inspired by our terroir.
+  socialImage: /images/into-our-kitchen.jpg
   type: Seo
 type: PageLayout
 ---

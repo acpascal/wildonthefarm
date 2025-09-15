@@ -73,7 +73,8 @@
                 "type": "Link",
                 "icon": "googlemaps",
                 "showIcon": true,
-                "iconPosition": "left"
+                "iconPosition": "left",
+                "openLinkInNewTab": true
             }
         ],
         "type": "FooterLinksGroup"
@@ -90,16 +91,10 @@
             "url": "https://www.youtube.com/@wildonthefarm8302",
             "icon": "youtube",
             "type": "Social"
-        },
-        {
-            "altText": "Instagram link",
-            "url": "https://www.linkedin.com/company/netlify",
-            "icon": "instagram",
-            "type": "Social"
         }
     ],
     "copyrightText": "©2025 WILD ON THE FARM",
-    "colors": "bg-emerald-fg-light",
+    "colors": "bg-lime-fg-light",
     "type": "Footer",
     "styles":{
         "self": {

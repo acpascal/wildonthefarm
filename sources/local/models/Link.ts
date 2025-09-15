@@ -162,6 +162,16 @@ export const Link: Model = {
       controlType: 'button-group'
     },
     {
+      type: 'boolean',
+      name: 'openLinkInNewTab',
+      label: 'Open link in new tab',
+      required: false,
+      default: false,
+      hidden: false,
+      localized: false,
+      group: 'styles'
+    },
+    {
       type: 'enum',
       name: 'style',
       label: 'Style',
