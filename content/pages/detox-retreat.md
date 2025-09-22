@@ -71,19 +71,7 @@ sections:
       text: Breathe Freely
       color: text-black
       type: TitleBlock
-    text: >
-      Every breath in our pristine cloud forest air is an act of purification.
-      Guided walks and mindful breathing in nature deeply oxygenate your body,
-      reduce stress, and restore mental clarity.
-
-      * Forest bathing — guided walks to breathe phytoncide-rich forest air.
-
-      * Salt Therapy — a salt room or salt lamp breathing space.
-
-      * Herbal Steam Inhalations — eucalyptus, thyme, or pine infusions.
-
-      * Allergies and Asthma Treatment  — [Learn
-      More](/blog/allergies-and-asthma)
+    text: "\n\n\nStep into the fresh, pure air of the cloud forest and feel your body begin to purify. Our guided walks in the forest and guided breathwork sessions on the farm are designed to oxygenate your system, melt away stress, and restore a vivid sense of calm and clarity..\_\n\n*   **Guided Breathwork:** We will guide you through breathing practices focused on **nervous system regulation** for deep relaxation and oxygenation.\n\n*   **Forest bathing:** Guided walks in nature to breathe fresh forest air.\n\n*   **Herbal Support** for Allergies and Asthma — [Learn More](/blog/allergies-and-asthma)\n\n"
     media:
       url: /images/detox-retreat/forest_bathing.png
       altText: Unblock your team boost your time to production preview
