@@ -18,7 +18,7 @@ sections:
       url: /images/wellness-destination.jpg
   - type: GenericSection
     title:
-      text: Detox and Return to Vitality Retreat
+      text: Boquete Detox Retreat
       color: text-light
       type: TitleBlock
     text: >
