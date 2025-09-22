@@ -164,21 +164,33 @@ sections:
       text: Calm Your Mind
       color: text-light
       type: TitleBlock
-    text: >
+    text: >+
       In the stillness of the cloud forest, the constant noise of the outside
       world fades away. Clarity returns, tension melts, and your mind finds the
       space it needs to breathe.
 
-      * Meditation & Breathwork – Daily guided sessions to reset your nervous
-      system.
 
-      * Digital Detox Packages – Phone-free days with books, nature, and
-      journaling.
+      *   **Breathwork and Somatic Movement** — Expert-led sessions designed to
+      help you release tension and cultivate a profound sense of inner calm.
 
-      * Sound Healing – Immersive gong and singing bowl experiences.
 
-      * Plants – [Jiaogulan](/blog/jiaogulan),
-      [Nettle](/blog/nettle-properties.md)
+      *   **Nervous System Regulation** — Learn and practice nervous system
+      regulation exercises that you can do every day to strengthen your
+      resilience and ability to stay grounded and at ease.
+
+
+      *   **Optional Digital Detox** — We offer you the choice to disconnect
+      from or limit technology use during your stay, encouraging you to engage
+      with books, nature, and journaling.
+
+
+      *   **Plants for Inner Calm** — We incorporate specific botanicals from
+      our farm to support strengthen and relax your mind and body.
+
+          [Jiaogulan](/blog/jiaogulan): This powerful adaptogenic herb, known as the "Herb of Immortality," helps your body cope with physical and emotional stress. It is known to promote a sense of calm focus, helping to regulate your nervous system without causing drowsiness.
+
+          [Nettle](/blog/nettle-properties.md): A nutrient-dense botanical, nettle acts as a restorative tonic for the entire body. Its compounds work to support your adrenal glands and nervous system, helping to combat fatigue and nourish your body's resilience to stress from within.
+
     media:
       url: /images/detox-retreat/balcony_meditation.png
       altText: Unblock your team boost your time to production preview
