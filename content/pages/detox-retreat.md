@@ -208,17 +208,28 @@ sections:
       text: Strenghten Defenses
       color: text-dark
       type: TitleBlock
-    text: >
+    text: >+
       From the purity of the air to the richness of the plants grown on our
       organic farm, everything here works in harmony to fortify your body’s
       resilience and restore balance from within.
 
-      * Herbal tonics & teas — echinacea, elderberry, ginger, tulsi.
 
-      * Outdoor cold immersion — invigorating river dips or cold showers for
-      immunity boost.
+      *   **Detoxification for Healing:** We provide optional guidance on
+      detoxification strategies to combat fatigue and boost your immune system.
 
-      * Seasonal detox programs — juice fasting, intermittent fasting guidance.
+
+      *   **Herbal tonics & teas** — Enjoy organic teas, made from freshly
+      harvested herbs on our farm.
+
+
+      *   **Outdoor cold immersion** — Invigorating river dips or cold showers
+      for an immunity boost.
+
+
+      *   **Seasonal detox programs** — Upon request, we can tailor a more in
+      depth detox program for longer periods or to continue the detox journey
+      once you're back home.
+
     media:
       url: /images/detox-retreat/cozy_tea.png
       altText: Unblock your team boost your time to production preview
