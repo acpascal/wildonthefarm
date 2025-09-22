@@ -250,17 +250,7 @@ sections:
       text: Sleep Deeply
       color: text-light
       type: TitleBlock
-    text: >
-      Silence is part of the cure. Our monastic, distraction-free setting and
-      clean mountain air encourage restorative sleep and mental regeneration.
-
-      * Sleep-Friendly Cabins – Blackout curtains, natural scents, no EMF zones.
-
-      * Evening herbal tea rituals — chamomile, lemon balm, passionflower
-      blends.
-
-      * Guided stargazing — nature’s natural sleep reset via circadian rhythm
-      support.
+    text: "Silence and rest is foundational to our detox retreat. Our distraction-free setting, peaceful wood cabins, low EMF environment, and clean mountain air encourage deep restorative sleep and mental regeneration.\n\n*   **Sleep-Friendly Cabins** — Rest with the natural light from the moon and stars at night and in an environment free from chemicals and artificial fragrance.\_\n\n*   **Evening herbal tea** — Enjoy organic herbal tea in the evening to support deeper relaxation.\n\n*   **Stargazing** — Nature’s natural sleep reset via circadian rhythm support.\n\n"
     media:
       url: /images/about-the-farm.jpg
       altText: Unblock your team boost your time to production preview
