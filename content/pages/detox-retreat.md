@@ -187,9 +187,9 @@ sections:
       *   **Plants for Inner Calm** — We incorporate specific botanicals from
       our farm to support strengthen and relax your mind and body.
 
-          [Jiaogulan](/blog/jiaogulan): This powerful adaptogenic herb, known as the "Herb of Immortality," helps your body cope with physical and emotional stress. It is known to promote a sense of calm focus, helping to regulate your nervous system without causing drowsiness.
+          [Jiaogulan](/blog/jiaogulan): This powerful adaptogenic herb helps your body cope with physical and emotional stress. It is known to promote a sense of calm focus, helping to regulate your nervous system without causing drowsiness.
 
-          [Nettle](/blog/nettle-properties.md): A nutrient-dense botanical, nettle acts as a restorative tonic for the entire body. Its compounds work to support your adrenal glands and nervous system, helping to combat fatigue and nourish your body's resilience to stress from within.
+          [Nettle](/blog/nettle-properties.md): A nutrient-dense botanical, nettle acts as a restorative tonic for the entire body. Its compounds work to support your adrenal glands and nervous system, helping to nourish your body's immune system. 
 
     media:
       url: /images/detox-retreat/balcony_meditation.png
