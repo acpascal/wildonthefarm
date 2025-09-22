@@ -170,10 +170,6 @@ sections:
       space it needs to breathe.
 
 
-      *   **Breathwork and Somatic Movement** — Expert-led sessions designed to
-      help you release tension and cultivate a profound sense of inner calm.
-
-
       *   **Nervous System Regulation** — Learn and practice nervous system
       regulation exercises that you can do every day to strengthen your
       resilience and ability to stay grounded and at ease.
@@ -189,7 +185,7 @@ sections:
 
           [Jiaogulan](/blog/jiaogulan): This powerful adaptogenic herb helps your body cope with physical and emotional stress. It is known to promote a sense of calm focus, helping to regulate your nervous system without causing drowsiness.
 
-          [Nettle](/blog/nettle-properties.md): A nutrient-dense botanical, nettle acts as a restorative tonic for the entire body. Its compounds work to support your adrenal glands and nervous system, helping to nourish your body's immune system. 
+          [Nettle](/blog/nettle-properties.md): A nutrient-dense botanical, nettle acts as a restorative tonic for the entire body. Its compounds work to support your adrenal glands and nervous system, helping to nourish your body's immune system.
 
     media:
       url: /images/detox-retreat/balcony_meditation.png
