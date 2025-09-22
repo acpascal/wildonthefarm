@@ -91,19 +91,20 @@ sections:
       text: Move with Ease
       color: text-light
       type: TitleBlock
-    text: >
+    text: >+
       Our mountain air, peaceful forest, and nourishing surroundings create the
       ideal setting for your body to regain lightness and fluidity. Here,
       movement becomes effortless, and each step reconnects you with your
       natural vitality.
 
-      * Gentle movement classes — yoga, tai chi, or qi gong for flexibility and
-      joint health.
 
-      * Thermal therapy — hot/cold contrast baths, natural hot springs.
+      *   Functional / Somatic Movement & Functional Fitness Classes — Led by
+      Jessie, these classes focus on flexibility, mobility, and joint health.
 
-      * Herbal compress massages — using anti-inflammatory plants like arnica,
-      comfrey, or turmeric.
+
+      *   Therapeutic Massages — Curated to relieve tension, improve
+      circulation, and restore your body’s natural fluidity.
+
     media:
       url: /images/detox-retreat/yoga.jpg
       altText: Unblock your team boost your time to production preview
