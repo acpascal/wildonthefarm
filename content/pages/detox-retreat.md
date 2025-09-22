@@ -122,17 +122,28 @@ sections:
       text: Nourish Your Core
       color: text-dark
       type: TitleBlock
-    text: >
-      Light, nutrient-rich meals and fresh herbal infusions support digestion
-      and detoxification. Lactofermented foods and natural plant remedies
-      nourish the microbiome.
+    text: >+
+      Nutrient-rich meals and fresh herbal infusions support digestion and
+      detoxification. Lacto-fermented foods and natural plant remedies nourish
+      the microbiome.
 
-      * Fermentation workshops — make your own kimchi, sauerkraut, kombucha.
 
-      * Wild herb foraging tours — edible plants that promote digestion.
+      *   **Farm to Table Dining**: Enjoy freshly prepared meals every day from
+      our organic farm, designed to help revitalize your health from the inside
+      out.
 
-      * Gut-friendly menus — probiotic-rich meals prepared from local, organic
-      produce.
+
+      *   **Healthy Food Preparation Workshop:** Learn delicious, gut-friendly
+      recipes and practical tips for foods that support optimal health.
+
+
+      *   **Wild herb foraging tours** — Edible plants that promote optimal
+      digestion.
+
+
+      *   **Gut-friendly dishes** — Probiotic-rich meals prepared from our
+      farm’s organic produce.
+
     media:
       url: /images/detox-retreat/lactofermentation.png
       altText: Unblock your team boost your time to production preview
