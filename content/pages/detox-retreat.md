@@ -98,11 +98,11 @@ sections:
       natural vitality.
 
 
-      *   Functional / Somatic Movement & Functional Fitness Classes — Led by
-      Jessie, these classes focus on flexibility, mobility, and joint health.
+      *   **Functional / Somatic Movement & Functional Fitness Classes** — Led
+      by Jessie, these classes focus on flexibility, mobility, and joint health.
 
 
-      *   Therapeutic Massages — Curated to relieve tension, improve
+      *   **Therapeutic Massages** — Curated to relieve tension, improve
       circulation, and restore your body’s natural fluidity.
 
     media:
