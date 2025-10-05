@@ -7,9 +7,11 @@ const nextConfig = {
     },
     trailingSlash: true,
     reactStrictMode: true,
-    allowedDevOrigins: [
-        '192.168.1.84'
-    ]
+    allowedDevOrigins: ['192.168.1.84'],
+    i18n: {
+        locales: ['en', 'es'],
+        defaultLocale: 'en'
+    }
 };
 
 module.exports = nextConfig;

@@ -5,7 +5,7 @@ export const Person: Model = {
     name: 'Person',
     label: 'Person',
     labelField: 'name',
-    filePath: 'content/data/{slug}.json',
+    filePath: 'content/data/{lang}/{slug}.json',
     fieldGroups: [
         {
             name: 'cardStyles',

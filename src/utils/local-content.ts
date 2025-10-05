@@ -25,7 +25,17 @@ function isRefField(modelName: string, fieldName: string) {
 }
 
 const supportedFileTypes = ['md', 'json'];
-function contentFilesInPath(dir: string) {
+function contentFilesInPath(dir: string, locale?: string) {
+    // Prefer locale-specific directory (e.g. content/pages/en) when available
+    if (locale) {
+        const localeDir = `${dir}/${locale}`;
+        if (fs.existsSync(localeDir)) {
+            const globPattern = `${localeDir}/**/*.{${supportedFileTypes.join(',')}}`;
+            const localeFiles = globSync(globPattern);
+            if (localeFiles.length > 0) return localeFiles;
+        }
+    }
+
     const globPattern = `${dir}/**/*.{${supportedFileTypes.join(',')}}`;
     return globSync(globPattern);
 }
@@ -90,10 +100,12 @@ function resolveReferences(content, fileToContent) {
     }
 }
 
-export function allContent() {
+export function allContent(locale: string = 'en') {
     const [data, pages] = [dataDir, pagesDir].map((dir) => {
-        return contentFilesInPath(dir).map((file) => readContent(file));
+        const files = contentFilesInPath(dir, locale);
+        return files.map((file) => readContent(file));
     });
+
     const objects = [...pages, ...data];
     const fileToContent = Object.fromEntries(objects.map((e) => [e.__metadata.id, e]));
     objects.forEach((e) => resolveReferences(e, fileToContent));
@@ -106,5 +118,5 @@ export function allContent() {
 
     resolveReferences(siteConfig, fileToContent);
 
-    return { objects, pages, props: { site: siteConfig } };
+    return { pages, objects, props: { site: siteConfig } };
 }

@@ -14,6 +14,7 @@ import GitHub from './github';
 import GoogleMaps from './googlemaps';
 import Instagram from './instagram';
 import LinkedIn from './linkedin';
+import LocalizationGlobe from './localization-globe';
 import Mail from './mail';
 import Menu from './menu';
 import Play from './play';
@@ -42,6 +43,7 @@ export const iconMap = {
     googlemaps: GoogleMaps,
     instagram: Instagram,
     linkedin: LinkedIn,
+    localizationGlobe: LocalizationGlobe,
     mail: Mail,
     menu: Menu,
     play: Play,

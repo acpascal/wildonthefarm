@@ -6,7 +6,7 @@ export const Header: Model = {
     label: 'Header',
     labelField: 'title',
     canDelete: false,
-    filePath: 'content/data/{slug}.json',
+    filePath: 'content/data/{lang}/{slug}.json',
     fieldGroups: [
         {
             name: 'styles',
@@ -27,7 +27,7 @@ export const Header: Model = {
             required: false,
             default: 'Your Brand',
             hidden: false,
-            localized: false
+            localized: true
         },
         {
             type: 'model',
@@ -44,7 +44,7 @@ export const Header: Model = {
             label: 'Primary links',
             required: false,
             hidden: false,
-            localized: false,
+            localized: true,
             items: {
                 type: 'model',
                 models: ['Button', 'Link', 'SubNav']
@@ -56,10 +56,22 @@ export const Header: Model = {
             label: 'Secondary links',
             required: false,
             hidden: false,
-            localized: false,
+            localized: true,
             items: {
                 type: 'model',
                 models: ['Button', 'Link']
+            }
+        },
+        {
+            type: 'list',
+            name: 'locales',
+            label: 'Locales',
+            required: false,
+            hidden: false,
+            localized: true,
+            items: {
+                type: 'model',
+                models: ['Locale']
             }
         },
         {
