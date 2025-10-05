@@ -310,63 +310,8 @@ sections:
     subtitle: Featured Reviews
     items:
       - title: >-
-          “A designer knows he has achieved perfection not when there is nothing
-          left to add, but when there is nothing left to take away.”
-        subtitle: 'Maria Walters, Company'
-        actions: []
-        colors: bg-orange-fg-dark
-        styles:
-          self:
-            padding:
-              - pt-9
-              - pb-9
-              - pl-9
-              - pr-9
-            textAlign: left
-            borderRadius: large
-            flexDirection: row
-            justifyContent: center
-        type: FeaturedItem
-      - title: >-
-          "Design is a plan for arranging elements in such a way as best to
-          accomplish a particular purpose."
-        subtitle: 'John Doe, Company'
-        actions: []
-        colors: bg-orange-fg-dark
-        styles:
-          self:
-            padding:
-              - pt-9
-              - pb-9
-              - pl-9
-              - pr-9
-            textAlign: left
-            borderRadius: large
-            flexDirection: row
-            justifyContent: center
-        type: FeaturedItem
-      - title: >-
-          "Design is how it works, how it functions. Good design doesn't just
-          make a product aesthetically pleasing, it makes it a pleasure to use."
-        subtitle: 'Maria Walters, Company'
-        actions: []
-        colors: bg-orange-fg-dark
-        styles:
-          self:
-            padding:
-              - pt-9
-              - pb-9
-              - pl-9
-              - pr-9
-            textAlign: left
-            borderRadius: large
-            flexDirection: row
-            justifyContent: center
-        type: FeaturedItem
-      - title: >-
-          “A designer knows he has achieved perfection not when there is nothing
-          left to add, but when there is nothing left to take away.”
-        subtitle: 'Maria Walters, Company'
+          “I stayed at Wild on the Farm and I really reconnected with real life values.”
+        subtitle: 'Charlotte Hamilton'
         actions: []
         colors: bg-orange-fg-dark
         styles:
