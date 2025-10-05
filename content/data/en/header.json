@@ -4,9 +4,7 @@
         "altText": "Logo dark",
         "styles": {
             "self": {
-                "margin": [
-                    "mr-3"
-                ]
+                "margin": ["mr-3"]
             }
         },
         "type": "ImageBlock"
@@ -80,6 +78,18 @@
         }
     ],
     "secondaryLinks": [],
+    "locales": [
+        {
+            "value": "en",
+            "label": "EN",
+            "type": "Locale"
+        },
+        {
+            "value": "es",
+            "label": "ES",
+            "type": "Locale"
+        }
+    ],
     "variant": "logo-left-primary-nav-right",
     "colors": "bg-lime-fg-light",
     "type": "Header"

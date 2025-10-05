@@ -1,0 +1,96 @@
+{
+    "logo": {
+        "url": "/images/logo-notext.png",
+        "altText": "Logo dark",
+        "styles": {
+            "self": {
+                "margin": ["mr-3"]
+            }
+        },
+        "type": "ImageBlock"
+    },
+    "title": "WILD ON THE FARM",
+    "subtitle": "Boquete Cloud Forest Lodge",
+    "primaryLinks": [
+        {
+            "label": "THE FARM",
+            "altText": "About us",
+            "url": "/the-farm",
+            "style": "secondary",
+            "type": "Link"
+        },
+        {
+            "label": "STAY",
+            "altText": "Stay",
+            "url": "/stay",
+            "style": "secondary",
+            "type": "Link"
+        },
+        {
+            "label": "KITCHEN",
+            "altText": "Kitchen page",
+            "url": "/kitchen",
+            "style": "secondary",
+            "type": "Link"
+        },
+        {
+            "label": "EXPERIENCE",
+            "altText": "EXPERIENCE",
+            "links": [
+                {
+                    "label": "BIRD WATCHING",
+                    "altText": "Bird Watching page",
+                    "url": "/bird-watching",
+                    "style": "secondary",
+                    "type": "Link"
+                },
+                {
+                    "label": "DETOX RETREAT",
+                    "altText": "Detox Retreat page",
+                    "url": "/detox-retreat",
+                    "style": "secondary",
+                    "type": "Link"
+                },
+                {
+                    "label": "DISCOVER",
+                    "altText": "Experiences page",
+                    "url": "/experience",
+                    "style": "secondary",
+                    "type": "Link"
+                }
+            ],
+            "labelStyle": "secondary",
+            "type": "SubNav"
+        },
+        {
+            "label": "BLOG",
+            "altText": "Blog",
+            "url": "/blog",
+            "style": "secondary",
+            "type": "Link"
+        },
+        {
+            "label": "FAQ",
+            "altText": "FAQ",
+            "url": "/faq",
+            "style": "secondary",
+            "type": "Link"
+        }
+    ],
+    "secondaryLinks": [],
+    "locales": [
+        {
+            "value": "en",
+            "label": "EN",
+            "type": "Locale"
+        },
+        {
+            "value": "es",
+            "label": "ES",
+            "type": "Locale"
+        }
+    ],
+    "variant": "logo-left-primary-nav-right",
+    "colors": "bg-lime-fg-light",
+    "type": "Header"
+}

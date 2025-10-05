@@ -24,7 +24,7 @@ colors: bg-light-fg-dark
 styles:
   self:
     flexDirection: col
-author: content/data/person1.json
+author: content/data/en/person1.json
 ---
 
 ![Nettle](/images/blog/nettle/nettle.jpg)
