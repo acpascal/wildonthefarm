@@ -9,7 +9,7 @@ const nextConfig = {
     reactStrictMode: true,
     allowedDevOrigins: ['192.168.1.84'],
     i18n: {
-        locales: ['en', 'es'],
+        locales: ['en', 'es', 'fr'],
         defaultLocale: 'en'
     }
 };

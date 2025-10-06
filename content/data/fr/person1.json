@@ -1,0 +1,29 @@
+{
+    "name": "Wild On The Farm",
+    "role": "Titre du poste",
+    "image": {
+        "url": "/images/avatar1.svg",
+        "altText": "Wild On The Farm",
+        "styles": {
+            "self": {
+                "borderRadius": "medium",
+                "margin": ["mb-8"]
+            }
+        },
+        "type": "ImageBlock"
+    },
+    "colors": "bg-light-fg-dark",
+    "styles": {
+        "self": {
+            "padding": ["pt-6", "pb-6", "pl-6", "pr-6"],
+            "textAlign": "center",
+            "borderColor": "border-neutral",
+            "borderStyle": "solid",
+            "borderWidth": 0,
+            "borderRadius": "none",
+            "justifyContent": "center"
+        }
+    },
+    "type": "Person",
+    "bio": "Wild on the farm"
+}
