@@ -1,6 +1,6 @@
 ---
-title: Stay
-slug: stay
+title: Estancia
+slug: estancia
 sections:
   - styles:
       self:
@@ -10,7 +10,7 @@ sections:
     type: GenericSection
     backgroundImage:
       type: BackgroundImage
-      altText: altText of the image
+      altText: Estancia
       backgroundSize: cover
       backgroundPosition: center
       backgroundRepeat: no-repeat
@@ -19,16 +19,16 @@ sections:
   - type: GenericSection
     media:
       url: /images/logo.png
-      altText: Fun feature preview
+      altText: Logo
       type: ImageBlock
     text: >
-      Escape the everyday and reconnect with yourself amidst unparalleled natural beauty. Our three exquisite cabins offer a sanctuary for your wellbeing, seemingly suspended above a breathtaking panorama. Nestled within the embracing tranquility of the cloud forest, your senses will be soothed by the gentle, ever-present sounds of nature.
+      Escapa de la rutina diaria y reconéctate contigo mismo en medio de una belleza natural incomparable. Nuestras tres exquisitas cabañas ofrecen un santuario para tu bienestar, aparentemente suspendidas sobre un panorámico paisaje. Enclavadas en la tranquila calidez del bosque nuboso, tus sentidos serán acariciados por los suaves y constantes sonidos de la naturaleza.
 
 
-      Each cabin is a testament to sustainable craftsmanship, built with a deep respect for its environment. The exterior features the remarkable strength and durability of Amargo-amargo, an exceptionally hard tropical wood, while the interior is lined with softer tropical woods, creating a warm, inviting, and naturally healthy atmosphere.
+      Cada cabaña es un testimonio de la artesanía sostenible, construida con profundo respeto por su entorno. El exterior muestra la notable resistencia y durabilidad del Amargo-amargo, una madera tropical excepcionalmente dura, mientras que el interior está revestido con maderas tropicales más suaves, creando un ambiente cálido, acogedor y naturalmente saludable.
 
 
-      Here, in the heart of the wild, we offer an exceptional stay that blends authentic comfort with cozy, restorative luxury. Sink into deep, rejuvenating sleep on our carefully selected mattresses, wrapped in soft, high-quality linens. Every small detail, from the natural materials to the thoughtful amenities, has been curated to ensure your stay is infused with happiness and profound relaxation.
+      Aquí, en el corazón de lo salvaje, ofrecemos una estancia excepcional que combina confort auténtico con un lujo acogedor y reparador. Sumérgete en un sueño profundo y revitalizante sobre nuestros colchones cuidadosamente seleccionados, envuelto en sábanas suaves y de alta calidad. Cada pequeño detalle, desde los materiales naturales hasta las comodidades pensadas, ha sido curado para asegurar que tu estancia esté impregnada de bienestar y profunda relajación.
     colors: bg-lime-fg-light
     styles:
       self:
@@ -42,14 +42,14 @@ sections:
       subtitle:
         textAlign: center
   - title:
-      text: Video Tour
+      text: Tour en video
       color: text-black
       styles:
         self:
           textAlign: center
       type: TitleBlock
     media:
-      title: Title of the video
+      title: Tour de la cabaña
       url: https://youtu.be/bk39qkZrv5I
       controls: false
       aspectRatio: '16:9'
@@ -70,7 +70,7 @@ sections:
         justifyContent: center
     type: GenericSection
   - title:
-      text: Gallery
+      text: Galería
       color: text-black
       styles:
         self:
@@ -79,7 +79,7 @@ sections:
     items:
       - image:
           url: /images/exterior-1.jpg
-          altText: Placeholder Image
+          altText: Exterior
           type: ImageBlock
           styles:
             self:
@@ -89,7 +89,7 @@ sections:
         colors: bg-light-fg-dark
       - image:
           url: /images/interior-1.jpg
-          altText: Placeholder Image
+          altText: Interior
           type: ImageBlock
           styles:
             self:
@@ -99,7 +99,7 @@ sections:
         colors: bg-light-fg-dark
       - image:
           url: /images/bathroom-1.png
-          altText: Placeholder Image
+          altText: Baño
           type: ImageBlock
           styles:
             self:
@@ -109,7 +109,7 @@ sections:
         colors: bg-light-fg-dark
       - image:
           url: /images/balcony-1.jpg
-          altText: Placeholder Image
+          altText: Balcón
           type: ImageBlock
           styles:
             self:
@@ -119,7 +119,7 @@ sections:
         colors: bg-light-fg-dark
       - image:
           url: /images/exterior-2.jpg
-          altText: Placeholder Image
+          altText: Exterior
           type: ImageBlock
           styles:
             self:
@@ -130,7 +130,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/exterior-3.jpg
-          altText: Placeholder Image
+          altText: Exterior
           type: ImageBlock
           styles:
             self:
@@ -141,7 +141,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/interior-2.jpg
-          altText: Placeholder Image
+          altText: Interior
           type: ImageBlock
           styles:
             self:
@@ -152,7 +152,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/interior-3.jpg
-          altText: Placeholder Image
+          altText: Interior
           type: ImageBlock
           styles:
             self:
@@ -163,7 +163,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/interior-4.jpg
-          altText: Placeholder Image
+          altText: Interior
           type: ImageBlock
           styles:
             self:
@@ -174,7 +174,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/bathroom-2.jpg
-          altText: Placeholder Image
+          altText: Baño
           type: ImageBlock
           styles:
             self:
@@ -185,7 +185,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/bathroom-3.jpg
-          altText: Placeholder Image
+          altText: Baño
           type: ImageBlock
           styles:
             self:
@@ -196,7 +196,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/balcony-2.jpg
-          altText: Placeholder Image
+          altText: Balcón
           type: ImageBlock
           styles:
             self:
@@ -219,8 +219,8 @@ sections:
         textAlign: center
     type: FeaturedItemsSection
 seo:
-  metaTitle: Stay
-  metaDescription: Stay in our handcrafted cabins among cloud-forest vistas—luxury comfort, sustainable design, and restorative solitude for a one-week retreat.
+  metaTitle: Estancia
+  metaDescription: Alójate en nuestras cabañas artesanales con vistas al bosque nuboso — confort de lujo, diseño sostenible y soledad reparadora para un retiro de una semana.
   socialImage: /images/stay.jpg
   type: Seo
 type: PageLayout

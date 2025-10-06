@@ -10,7 +10,7 @@ sections:
     type: GenericSection
     backgroundImage:
       type: BackgroundImage
-      altText: altText of the image
+      altText: The farm
       backgroundSize: cover
       backgroundPosition: center
       backgroundRepeat: no-repeat
@@ -25,7 +25,7 @@ sections:
       Immerse yourself in the sights and sounds of nature at Wild on the Farm. Surrounded by lush gardens and pristine forest, our haven invites bird lovers to discover rare species like the Quetzal, unwind in serene beauty, and savor the peaceful joy of birdwatching in harmony with nature.
     media:
       url: /images/bird-watching.JPG
-      altText: Unblock your team boost your time to production preview
+      altText: Bird watching
       elementId: ''
       type: ImageBlock
     elementId: bird-watching
@@ -40,7 +40,7 @@ sections:
   - type: GenericSection
     media:
       url: /images/logo-notext.png
-      altText: Fun feature preview
+      altText: Logo
       type: ImageBlock
     title:
       text: Wings of the Forest

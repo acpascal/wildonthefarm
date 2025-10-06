@@ -7,9 +7,7 @@
         "styles": {
             "self": {
                 "borderRadius": "medium",
-                "margin": [
-                    "mb-8"
-                ]
+                "margin": ["mb-8"]
             }
         },
         "type": "ImageBlock"
@@ -17,12 +15,7 @@
     "colors": "bg-light-fg-dark",
     "styles": {
         "self": {
-            "padding": [
-                "pt-6",
-                "pb-6",
-                "pl-6",
-                "pr-6"
-            ],
+            "padding": ["pt-6", "pb-6", "pl-6", "pr-6"],
             "textAlign": "center",
             "borderColor": "border-neutral",
             "borderStyle": "solid",
@@ -32,5 +25,5 @@
         }
     },
     "type": "Person",
-    "bio": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.\n"
+    "bio": "Wild on the farm"
 }

@@ -4,20 +4,18 @@
         "altText": "Logo light",
         "type": "ImageBlock"
     },
-    "text": "Boquete Cloud Forest Lodge",
+    "text": "Finca de la Amistad Verde",
     "primaryLinks": {
         "title": "Menu",
         "links": [
             {
                 "label": "The Farm",
-                "altText": "Phone number",
                 "url": "/the-farm",
                 "style": "secondary",
                 "type": "Link"
             },
             {
                 "label": "Stay",
-                "altText": "Contact email",
                 "url": "/stay",
                 "style": "secondary",
                 "type": "Link"
@@ -48,7 +46,7 @@
         "links": [
             {
                 "label": "+507 6569 9134",
-                "altText": "Phone number",
+                "altText": "Número de teléfono",
                 "url": "tel:50765699134",
                 "style": "secondary",
                 "type": "Link",
@@ -58,7 +56,7 @@
             },
             {
                 "label": "contact@boquetecloudforestlodge.com",
-                "altText": "Contact email",
+                "altText": "Correo electronico de contacto",
                 "url": "mailto:contact@boquetecloudforestlodge.com",
                 "style": "secondary",
                 "type": "Link",
@@ -93,16 +91,12 @@
             "type": "Social"
         }
     ],
-    "copyrightText": "©2025 WILD ON THE FARM",
+    "copyrightText": "©2025 FINCA DE LA AMISTAD VERDE",
     "colors": "bg-lime-fg-light",
     "type": "Footer",
-    "styles":{
+    "styles": {
         "self": {
-            "padding": [
-                "px-4",
-                "pt-28",
-                "pb-4"
-            ]
+            "padding": ["px-4", "pt-28", "pb-4"]
         }
     }
 }

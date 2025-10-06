@@ -1,6 +1,6 @@
 ---
-title: Kitchen
-slug: kitchen
+title: Cocina
+slug: cocina
 sections:
   - styles:
       self:
@@ -10,7 +10,7 @@ sections:
     type: GenericSection
     backgroundImage:
       type: BackgroundImage
-      altText: altText of the image
+      altText: La cocina
       backgroundSize: cover
       backgroundPosition: center
       backgroundRepeat: no-repeat
@@ -18,21 +18,20 @@ sections:
       url: /images/kitchen.jpg
   - type: GenericSection
     title:
-      text: Our Garden
+      text: Nuestro huerto
       color: text-light
       type: TitleBlock
     text: >
-      Discover the vibrant heart of Wild on the Farm—our 100% organic permaculture garden. Grown with care and respect for nature, it offers seasonal fruits, vegetables, herbs, and edible flowers bursting with flavor. Enjoy the rich taste of sustainability and the joy of cooking with truly fresh, nourishing ingredients.
+      Descubre el corazón vibrante de Wild on the Farm: nuestro huerto de permacultura 100% orgánico. Cultivado con cuidado y respeto por la naturaleza, ofrece frutas, verduras, hierbas y flores comestibles de temporada repletas de sabor. Disfruta el rico sabor de la sostenibilidad y la alegría de cocinar con ingredientes verdaderamente frescos y nutritivos.
     media:
       url: /images/from-the-garden.JPG
-      altText: Unblock your team boost your time to production preview
+      altText: Del huerto
       elementId: ''
       type: ImageBlock
     badge:
       label: ''
       color: text-primary
       type: Badge
-    elementId: dine-other
     colors: bg-lime-fg-light
     styles:
       self:
@@ -43,34 +42,34 @@ sections:
           - px-4
   - type: GenericSection
     title:
-      text: From Our Organic Garden
+      text: Desde nuestro huerto orgánico
       color: text-black
       type: TitleBlock
       styles:
         self:
           textAlign: center
-    subtitle: Seasonal abundance, grown with love and purpose
+    subtitle: Abundancia estacional, cultivada con amor y propósito
     text: >
-      Step into our garden, a place where passion for nature meets the joy of cooking with the freshest ingredients. It's a vibrant source of abundance, teeming with a wide variety of vegetables, fruits, herbs, and edible flowers.
+      Entra en nuestro huerto, un lugar donde la pasión por la naturaleza se encuentra con la alegría de cocinar con los ingredientes más frescos. Es una fuente vibrante de abundancia, llena de una amplia variedad de verduras, frutas, hierbas y flores comestibles.
 
 
-      ** Our Philosophy **
+      **Nuestra filosofía**
 
 
-      Everything grown here is cultivated with profound care, respect for nature, and completely free from pesticides and chemicals. We embrace the principles of sustainability and living in harmony with the earth. This approach ensures our produce boasts incomparable flavor and optimal nutritional quality, perfect for a diverse, delicious, and truly healthy kitchen.
+      Todo lo que cultivamos aquí se produce con profundo cuidado, respeto por la naturaleza y totalmente libre de pesticidas y químicos. Abrazamos los principios de sostenibilidad y la vida en armonía con la tierra. Este enfoque garantiza que nuestros productos tengan un sabor incomparable y una calidad nutricional óptima, perfectos para una cocina diversa, deliciosa y verdaderamente saludable.
 
 
-      ** A Sensory and Culinary Delight **
+      **Un deleite sensorial y culinario**
 
 
-      Our garden is a feast for the senses. It fills the air with enchanting fragrances and offers flavors that are both exquisite and deeply nourishing. We harvest at peak maturity to capture the most intense and authentic tastes. By following the rhythm of the seasons, we ensure you enjoy the very best nature offers throughout the year.
+      Nuestro huerto es una fiesta para los sentidos. Llena el aire de fragancias cautivadoras y ofrece sabores exquisitos y profundamente nutritivos. Cosechamos en su punto óptimo para capturar los sabores más intensos y auténticos. Siguiendo el ritmo de las estaciones, te aseguramos disfrutar de lo mejor que la naturaleza ofrece durante todo el año.
 
 
-      ** Cultivated with Care **
+      **Cultivado con cuidado**
 
 
-      This path to abundance is a testament to perseverance. Every element in the garden is nurtured, understanding its crucial role in the ecosystem. It's a place where we strive for an ideal connection with life, demonstrating that by nurturing the earth, we nurture ourselves.
-      Join us in celebrating the bounty of our garden. Experience the richness in flavors, fragrances, and health that comes from cooking with ingredients grown with love and respect for the earth.
+      Este camino hacia la abundancia es un testimonio de perseverancia. Cada elemento del huerto es alimentado, comprendiendo su papel crucial en el ecosistema. Es un lugar donde buscamos una conexión ideal con la vida, demostrando que al cuidar la tierra, nos cuidamos a nosotros mismos.
+      Únete a nosotros para celebrar la generosidad del huerto. Experimenta la riqueza en sabores, fragancias y salud que provienen de cocinar con ingredientes cultivados con amor y respeto por la tierra.
     colors: bg-orange-fg-dark
     styles:
       self:
@@ -87,25 +86,25 @@ sections:
         textAlign: center
   - type: GenericSection
     title:
-      text: Into Our Kitchen
+      text: En nuestra cocina
       color: text-light
       type: TitleBlock
     text: >+
-      I know the garden, and I love picking aromatic herbs and vegetables at all
-      stages of their growth, just before cooking them, so, that all their
-      fragrances exalt their freshness and vitality. From rich and living soil
-      flourish vegetables full of nutrients and vitality, herbs rich in
-      essential oils that nourish you deeply, offering health and, beyond that,
-      the joy of living.
+      Conozco el huerto y me encanta recoger hierbas aromáticas y verduras en
+      todos los estados de su crecimiento, justo antes de cocinarlas, para que
+      todas sus fragancias exalten su frescura y vitalidad. De suelos ricos y vivos
+      brotan verduras llenas de nutrientes y vitalidad, hierbas repletas de aceites
+      esenciales que te nutren profundamente, ofreciendo salud y, más allá de eso,
+      la alegría de vivir.
 
 
-      My cooking finds its inspiration in the garden; it changes with the
-      seasons and the weather. It is lived in the present in a spontaneous
-      creation to invite you to the joy of being at the table.
+      Mi cocina encuentra su inspiración en el huerto; cambia con las estaciones
+      y el clima. Se vive en el presente en una creación espontánea que te invita
+      a la alegría de estar en la mesa.
 
     media:
       url: /images/into-our-kitchen.jpg
-      altText: Unblock your team boost your time to production preview
+      altText: Cocina
       elementId: ''
       goesLast: true
       type: ImageBlock
@@ -119,20 +118,27 @@ sections:
           - px-4
   - type: GenericSection
     title:
-      text: To Our Table
+      text: A nuestra mesa
       color: text-black
       type: TitleBlock
     text: >+
-      More than just a meal, our table is a moment of genuine connection and conviviality. It's a welcoming space to share delicious food, exchange stories of the day's discoveries, and simply enjoy good company in a relaxed setting.
+      Más que una comida, nuestra mesa es un momento de genuina conexión y
+      convivialidad. Es un espacio acogedor para compartir platos deliciosos,
+      intercambiar historias de los descubrimientos del día y simplemente disfrutar
+      de buena compañía en un ambiente relajado.
 
 
-      We carefully tailor your menu to perfectly align with your specific needs, dietary preferences, and culinary desires, ensuring a truly personalized dining experience.
+      Adaptamos cuidadosamente tu menú para alinearlo perfectamente con tus
+      necesidades específicas, preferencias dietéticas y deseos culinarios,
+      asegurando una experiencia gastronómica verdaderamente personalizada.
 
 
-      Our deepest passion is to bring you joy and profound gastronomic pleasure with every single dish we serve. We focus on creating meals that nourish the body and delight the senses.
+      Nuestra mayor pasión es brindarte alegría y un profundo placer gastronómico
+      con cada plato que servimos. Nos enfocamos en crear comidas que nutran el
+      cuerpo y deleiten los sentidos.
     media:
       url: /images/to-our-table-tall.jpg
-      altText: Unblock your team boost your time to production preview
+      altText: Nuestra mesa
       elementId: ''
       type: ImageBlock
     badge:
@@ -149,7 +155,7 @@ sections:
         padding:
           - px-4
   - title:
-      text: Gallery
+      text: Galería
       color: text-black
       styles:
         self:
@@ -158,7 +164,7 @@ sections:
     items:
       - image:
           url: /images/garden/garden-1.JPG
-          altText: Placeholder Image
+          altText: Huerto
           type: ImageBlock
           styles:
             self:
@@ -169,7 +175,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/garden/garden-2.jpg
-          altText: Placeholder Image
+          altText: Huerto
           type: ImageBlock
           styles:
             self:
@@ -180,7 +186,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/garden/garden-3.jpg
-          altText: Placeholder Image
+          altText: Huerto
           type: ImageBlock
           styles:
             self:
@@ -191,7 +197,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/garden/garden-4.JPG
-          altText: Placeholder Image
+          altText: Huerto
           type: ImageBlock
           styles:
             self:
@@ -202,7 +208,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/garden/garden-5.jpg
-          altText: Placeholder Image
+          altText: Huerto
           type: ImageBlock
           styles:
             self:
@@ -213,7 +219,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/garden/garden-6.JPG
-          altText: Placeholder Image
+          altText: Huerto
           type: ImageBlock
           styles:
             self:
@@ -224,7 +230,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/garden/garden-7.JPG
-          altText: Placeholder Image
+          altText: Huerto
           type: ImageBlock
           styles:
             self:
@@ -235,7 +241,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/garden/garden-8.JPG
-          altText: Placeholder Image
+          altText: Huerto
           type: ImageBlock
           styles:
             self:
@@ -246,7 +252,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/garden/garden-9.JPG
-          altText: Placeholder Image
+          altText: Huerto
           type: ImageBlock
           styles:
             self:
@@ -257,7 +263,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/garden/garden-10.jpg
-          altText: Placeholder Image
+          altText: Huerto
           type: ImageBlock
           styles:
             self:
@@ -268,7 +274,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/garden/garden-11.JPG
-          altText: Placeholder Image
+          altText: Huerto
           type: ImageBlock
           styles:
             self:
@@ -279,7 +285,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-1.JPG
-          altText: Placeholder Image
+          altText: Cocina
           type: ImageBlock
           styles:
             self:
@@ -290,7 +296,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-2.JPG
-          altText: Placeholder Image
+          altText: Cocina
           type: ImageBlock
           styles:
             self:
@@ -301,7 +307,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-3.png
-          altText: Placeholder Image
+          altText: Cocina
           type: ImageBlock
           styles:
             self:
@@ -312,7 +318,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-4.JPG
-          altText: Placeholder Image
+          altText: Cocina
           type: ImageBlock
           styles:
             self:
@@ -323,7 +329,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-5.JPG
-          altText: Placeholder Image
+          altText: Cocina
           type: ImageBlock
           styles:
             self:
@@ -334,7 +340,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-6.JPG
-          altText: Placeholder Image
+          altText: Cocina
           type: ImageBlock
           styles:
             self:
@@ -345,7 +351,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-7.JPG
-          altText: Placeholder Image
+          altText: Cocina
           type: ImageBlock
           styles:
             self:
@@ -356,7 +362,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-8.JPG
-          altText: Placeholder Image
+          altText: Cocina
           type: ImageBlock
           styles:
             self:
@@ -367,7 +373,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-9.JPG
-          altText: Placeholder Image
+          altText: Cocina
           type: ImageBlock
           styles:
             self:
@@ -378,7 +384,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-10.JPG
-          altText: Placeholder Image
+          altText: Cocina
           type: ImageBlock
           styles:
             self:
@@ -389,7 +395,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-11.JPG
-          altText: Placeholder Image
+          altText: Cocina
           type: ImageBlock
           styles:
             self:
@@ -400,7 +406,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-12.JPG
-          altText: Placeholder Image
+          altText: Cocina
           type: ImageBlock
           styles:
             self:
@@ -411,7 +417,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-13.JPG
-          altText: Placeholder Image
+          altText: Cocina
           type: ImageBlock
           styles:
             self:
@@ -422,7 +428,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-14.JPG
-          altText: Placeholder Image
+          altText: Cocina
           type: ImageBlock
           styles:
             self:
@@ -433,7 +439,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/kitchen/kitchen-15.JPG
-          altText: Placeholder Image
+          altText: Cocina
           type: ImageBlock
           styles:
             self:
@@ -456,8 +462,8 @@ sections:
         textAlign: center
     type: FeaturedItemsSection
 seo:
-  metaTitle: Kitchen
-  metaDescription: Taste farm-to-table cuisine from our organic gardens—seasonal menus, herbal infusions, and nourishing meals inspired by our terroir.
+  metaTitle: Cocina
+  metaDescription: Degusta cocina de nuestros huertos orgánicos a la mesa — menús estacionales, infusiones herbales y comidas nutritivas inspiradas en nuestro terruño.
   socialImage: /images/into-our-kitchen.jpg
   type: Seo
 type: PageLayout

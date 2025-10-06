@@ -10,14 +10,12 @@
         "links": [
             {
                 "label": "The Farm",
-                "altText": "Phone number",
                 "url": "/the-farm",
                 "style": "secondary",
                 "type": "Link"
             },
             {
                 "label": "Stay",
-                "altText": "Contact email",
                 "url": "/stay",
                 "style": "secondary",
                 "type": "Link"
@@ -96,13 +94,9 @@
     "copyrightText": "©2025 WILD ON THE FARM",
     "colors": "bg-lime-fg-light",
     "type": "Footer",
-    "styles":{
+    "styles": {
         "self": {
-            "padding": [
-                "px-4",
-                "pt-28",
-                "pb-4"
-            ]
+            "padding": ["px-4", "pt-28", "pb-4"]
         }
     }
 }

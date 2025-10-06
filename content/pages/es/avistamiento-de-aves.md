@@ -1,6 +1,6 @@
 ---
-title: Bird Watching
-slug: bird-watching
+title: Avistamiento de aves
+slug: avistamiento-de-aves
 sections:
   - styles:
       self:
@@ -10,7 +10,7 @@ sections:
     type: GenericSection
     backgroundImage:
       type: BackgroundImage
-      altText: altText of the image
+      altText: La finca
       backgroundSize: cover
       backgroundPosition: center
       backgroundRepeat: no-repeat
@@ -18,14 +18,14 @@ sections:
       url: /images/the-farm.jpg
   - type: GenericSection
     title:
-      text: Bird Watching
+      text: Avistamiento de aves
       color: text-light
       type: TitleBlock
     text: >
-      Immerse yourself in the sights and sounds of nature at Wild on the Farm. Surrounded by lush gardens and pristine forest, our haven invites bird lovers to discover rare species like the Quetzal, unwind in serene beauty, and savor the peaceful joy of birdwatching in harmony with nature.
+      Sumérgete en los sonidos y paisajes de la naturaleza en Wild on the Farm. Rodeado de jardines exuberantes y bosque pristino, nuestro refugio invita a los amantes de las aves a descubrir especies raras como el Quetzal, relajarse en una belleza serena y disfrutar de la tranquila experiencia de la observación de aves en armonía con la naturaleza.
     media:
       url: /images/bird-watching.JPG
-      altText: Unblock your team boost your time to production preview
+      altText: Avistamiento de aves
       elementId: ''
       type: ImageBlock
     elementId: bird-watching
@@ -40,44 +40,27 @@ sections:
   - type: GenericSection
     media:
       url: /images/logo-notext.png
-      altText: Fun feature preview
+      altText: Logo
       type: ImageBlock
     title:
-      text: Wings of the Forest
+      text: Alas del Bosque
       color: text-black
       type: TitleBlock
       styles:
         self:
           textAlign: center
-    subtitle: Discover rare birds in serene natural beauty
+    subtitle: Descubre aves raras en la serena belleza natural
     text: >
-      Nestled at the edge of the magnificent Amistad National Park, Wild on the
-      Farm is a true paradise for bird lovers. Our garden, rich with juicy
-      fruits and blooming flowers, attracts a multitude of species, from
-      frugivores to hummingbirds with vibrant wings that feed and find refuge in
-      our flowering hedges.
+      Ubicado al borde del magnífico Parque Nacional La Amistad, Wild on the Farm es un verdadero paraíso para los amantes de las aves. Nuestro jardín, lleno de frutas jugosas y flores en flor, atrae a multitud de especies, desde frugívoros hasta colibríes de colores vibrantes que se alimentan y encuentran refugio en nuestros setos floridos.
 
 
-      The surrounding forest, vast and preserved, is home to incredible
-      biodiversity. Here, a symphony of songs and colors resonates, housing
-      birds with shimmering plumage and unique calls. Among them, the legendary
-      Quetzal, jewel of the forest, can be spotted, offering an unforgettable
-      moment of grace.
+      El bosque circundante, amplio y preservado, alberga una biodiversidad increíble. Aquí, una sinfonía de cantos y colores resuena, hogar de aves con plumajes brillantes y llamados únicos. Entre ellas, el legendario Quetzal, joya del bosque, puede ser avistado, ofreciendo un momento inolvidable de gracia.
 
 
-      For the ornithology enthusiast, Wild on the Farm
-      is a land of adventure and discovery. Imagine yourself, walking for hours
-      in the heart of silence, far from the world's hustle and bustle, searching
-      for these winged treasures. Letting yourself be carried away by nature's
-      melody, observing life in its purest state... This is the sensory detox we
-      offer.
+      Para el entusiasta de la ornitología, Wild on the Farm es tierra de aventura y descubrimiento. Imagínate caminando durante horas en el corazón del silencio, lejos del ajetreo del mundo, buscando esos tesoros alados. Dejándote llevar por la melodía de la naturaleza, observando la vida en su estado más puro... Esta es la desintoxicación sensorial que ofrecemos.
 
 
-      Beyond observation, we cultivate a place of well-being:
-      healthy and tasty food shared around a welcoming table, comfortable living
-      spaces to make you feel at home yet transported. Come and experience Wild
-      on the Farm, where the beauty of birds meets the tranquility of nature and
-      the warmth of hospitality.
+      Más allá de la observación, cultivamos un lugar de bienestar: comida saludable y sabrosa compartida alrededor de una mesa acogedora, espacios de alojamiento cómodos que te harán sentir en casa y al mismo tiempo transportado. Ven y vive Wild on the Farm, donde la belleza de las aves se encuentra con la tranquilidad de la naturaleza y la calidez de la hospitalidad.
     colors: bg-orange-fg-dark
     styles:
       self:
@@ -93,7 +76,7 @@ sections:
       subtitle:
         textAlign: center
   - title:
-      text: Gallery
+      text: Galería
       color: text-black
       styles:
         self:
@@ -686,8 +669,8 @@ sections:
         textAlign: center
     type: FeaturedItemsSection
 seo:
-  metaTitle: Bird Watching
-  metaDescription: Discover rare cloud-forest birds at Wild on the Farm—an immersive birdwatching sanctuary beside Amistad National Park.
+  metaTitle: Avistamiento de aves
+  metaDescription: Descubre aves raras de bosque nublado en Wild on the Farm—un santuario de observación de aves junto al Parque Nacional La Amistad.
   socialImage: /images/bird-watching.JPG
   type: Seo
 type: PageLayout

@@ -1,6 +1,6 @@
 ---
-title: Experience
-slug: experience
+title: Experiencia
+slug: experiencia
 sections:
   - styles:
       self:
@@ -10,7 +10,7 @@ sections:
     type: GenericSection
     backgroundImage:
       type: BackgroundImage
-      altText: altText of the image
+      altText: La finca
       backgroundSize: cover
       backgroundPosition: center
       backgroundRepeat: no-repeat
@@ -18,14 +18,14 @@ sections:
       url: /images/the-farm.jpg
   - type: GenericSection
     actions:
-      - label: Hiking
-        altText: ''
+      - label: Senderismo
+        altText: Senderismo
         url: /experience/#hiking
         style: secondary
         elementId: ''
         type: Link
-      - label: Tailored Discovery
-        altText: ''
+      - label: Descubrimiento personalizado
+        altText: Descubrimiento personalizado
         url: /experience/#tailored-discovery
         style: secondary
         elementId: ''
@@ -41,14 +41,14 @@ sections:
         flexDirection: col
   - type: GenericSection
     title:
-      text: Hiking
+      text: Senderismo
       color: text-light
       type: TitleBlock
     text: >
-      Step out your door and into the heart of the cloud forest. At Wild on the Farm, hiking is more than a walk—it’s full immersion in a mystical world of mist, moss, and towering trees. Let nature guide your journey through beauty, serenity, and quiet wonder.
+      Sal de tu puerta y adéntrate en el corazón del bosque nuboso. En Wild on the Farm, el senderismo es más que una caminata: es una inmersión total en un mundo místico de niebla, musgo y árboles imponentes. Deja que la naturaleza guíe tu camino entre belleza, serenidad y asombro silencioso.
     media:
       url: /images/hiking.jpg
-      altText: Unblock your team boost your time to production preview
+      altText: Senderismo
       elementId: ''
       goesLast: true
       type: ImageBlock
@@ -64,45 +64,44 @@ sections:
   - type: GenericSection
     media:
       url: /images/logo-notext.png
-      altText: Fun feature preview
+      altText: Logo
       type: ImageBlock
     title:
-      text: Into the Cloud Forest
+      text: En el bosque nuboso
       color: text-black
       type: TitleBlock
       styles:
         self:
           textAlign: center
-    subtitle: Hike mystical trails right from your doorstep
+    subtitle: Camina por senderos místicos desde tu puerta
     text: >
-      Your stay here is a moment of peace, a deep relaxation nestled within
-      nature characteristic of this very region. While bars, discos, and
-      restaurants abound everywhere, the true magic of the cloud forest and its
-      unique universe awaits you right here, high in the mountains at Wild on
-      the Farm.
+      Tu estancia aquí es un momento de paz, una profunda relajación acogida por
+      la naturaleza característica de esta región. Mientras que bares, discotecas
+      y restaurantes abundan en muchos lugares, la verdadera magia del bosque
+      nuboso y su universo único te espera aquí mismo, en lo alto de la montaña
+      en Wild on the Farm.
 
 
-      Here, you don't just go on an excursion to the cloud forest along
-      organized paths; you integrate with it, day and night. You'll live its
-      sounds, its ancient trees, feel the warmth of its sun, and yes, embrace
-      the invigorating freshness of the 'Bajareque' mist we love so much.
+      Aquí no solo haces una excursión al bosque nuboso por senderos organizados;
+      te integras con él, día y noche. Vivirás sus sonidos, sus árboles ancestrales,
+      sentirás el calor de su sol y, sí, abrazarás la refrescante bruma 'Bajareque'
+      que tanto apreciamos.
 
 
-      Hiking truly finds its meaning with us. Trails open up right from
-      your doorstep, inviting you into immediate immersion within the forest and
-      the mountain landscape. Whether you're a beginner or an experienced hiker,
-      a scientist or a nature lover, a photographer or simply a contemplator,
-      the wild nature of La Amistad National Park will gently envelop you.
+      El senderismo encuentra su verdadero sentido con nosotros. Los senderos se
+      abren desde tu puerta, invitándote a una inmersión inmediata en el bosque y
+      el paisaje montañoso. Ya seas principiante o caminante experimentado, científico
+      o amante de la naturaleza, fotógrafo o simplemente contemplativo, la naturaleza
+      salvaje del Parque Nacional La Amistad te envolverá con suavidad.
 
 
-      Our paths here are not wide, cleared tracks, but gentle trails
-      that keep you intimately connected with the universe you're exploring.
-      It's a world abundant with vibrant mosses and intricate lichens, home to
-      majestic trees reaching for the sky and dazzling bromeliads. It's alive
-      with the presence of birds and a rich, though often unseen, array of
-      fauna. But most wonderfully, it is a forest where, when the mists descend
-      and everything becomes more mysterious and luminous, you can still catch a
-      glimpse of fairies.
+      Nuestros caminos no son pistas anchas y despejadas, sino senderos suaves que
+      te mantienen íntimamente conectado con el universo que exploras. Es un mundo
+      abundante en musgos vibrantes y líquenes intrincados, hogar de árboles majestuosos
+      que se alzan hacia el cielo y bromelias deslumbrantes. Está vivo con la presencia
+      de aves y una rica, aunque a menudo invisible, variedad de fauna. Y, lo más
+      maravilloso, es un bosque donde, cuando bajan las nieblas y todo se vuelve más
+      misterioso y luminoso, aún puedes vislumbrar un halo de magia.
     colors: bg-orange-fg-dark
     styles:
       self:
@@ -119,14 +118,18 @@ sections:
         textAlign: center
   - type: GenericSection
     title:
-      text: Tailored Discovery
+      text: Descubrimiento personalizado
       color: text-light
       type: TitleBlock
     text: >
-      At Wild on the Farm, your journey is uniquely yours. Whether you seek stillness, adventure, or expert-guided discovery, our Tailored Discovery service curates meaningful, personalized experiences—yoga, nature walks, wildlife exploration, or quiet reflection—so you can reconnect, recharge, and make your stay truly unforgettable.
+      En Wild on the Farm, tu viaje es únicamente tuyo. Ya busques quietud, aventura
+      o descubrimiento guiado por expertos, nuestro servicio de Descubrimiento personalizado
+      curará experiencias significativas y personalizadas — yoga, caminatas por la naturaleza,
+      exploración de la vida silvestre o reflexión tranquila — para que puedas reconectar,
+      recargarte y hacer que tu estancia sea realmente inolvidable.
     media:
       url: /images/tailored-discovery.JPG
-      altText: Unblock your team boost your time to production preview
+      altText: Descubrimiento personalizado
       elementId: ''
       type: ImageBlock
     elementId: tailored-discovery
@@ -140,68 +143,67 @@ sections:
           - px-4
   - type: GenericSection
     title:
-      text: Tailored Discovery Experiences
+      text: Experiencias de Descubrimiento Personalizado
       color: text-black
       type: TitleBlock
       styles:
         self:
           textAlign: center
-    subtitle: Personalized adventures, crafted just for you
+    subtitle: Aventuras personalizadas, diseñadas para ti
     text: >
-      Welcome to Wild on the Farm, a sanctuary crafted for profound
-      disconnection and meaningful reconnection. Here, life slows to the gentle
-      rhythm of nature, inviting moments of meditation, exploration of the
-      ancient forest, or the practice of yoga and Tai Chi. Above all, it is a
-      haven to shed daily stress, to simply be – observing, listening, tasting;
-      reawakening senses often muted in the bustle of modern life. It is a space
-      for peace, for presence.
+      Bienvenido a Wild on the Farm, un santuario creado para una desconexión profunda
+      y una reconexión significativa. Aquí, la vida desacelera al ritmo suave de la
+      naturaleza, invitando a momentos de meditación, exploración del bosque antiguo
+      o la práctica de yoga y Tai Chi. Sobre todo, es un refugio para soltar el estrés
+      diario y simplemente ser — observar, escuchar, probar; reavivar los sentidos
+      a menudo apagados por el ajetreo moderno. Es un espacio para la paz, para la
+      presencia.
 
 
-      Experience the vibrant pulse of the living world, find profound serenity,
-      or embrace quietude with a book, comfortably nestled in the solitude of a
-      cabin suspended above a sweeping, splendid view. These are moments of
-      pure, internal happiness.
+      Experimenta el pulso vibrante del mundo vivo, encuentra una serenidad profunda
+      o disfruta de la quietud con un libro, cómodamente instalado en la soledad de
+      una cabaña suspendida sobre una vista amplia y espléndida. Son momentos de
+      felicidad interna pura.
 
 
-      While the heart of Wild on the Farm lies in tranquility and
-      self-discovery, we understand that sometimes, your journey calls for
-      curated experiences. This is the essence of our "Tailored Discovery"
-      service.
+      Aunque el corazón de Wild on the Farm reside en la tranquilidad y el autodescubrimiento,
+      entendemos que a veces tu viaje requiere experiencias curadas. Esta es la esencia
+      de nuestro servicio de "Descubrimiento personalizado".
 
 
-      Beyond the stillness, we are dedicated to enriching your stay with bespoke
-      activities and personalized services, meticulously arranged to match your
-      unique desires and the interests of your companions.
+      Más allá de la quietud, nos dedicamos a enriquecer tu estancia con actividades
+      a medida y servicios personalizados, meticulosamente organizados para coincidir
+      con tus deseos únicos y los intereses de tus acompañantes.
 
 
-      Imagine:
+      Imagínate:
 
 
-      *   A gathering of three friends seeking collective well-being? We can
-      arrange a private Yoga instructor session just for your group.
+      *   ¿Un encuentro de tres amigos en busca de bienestar colectivo? Podemos
+          organizar una sesión privada con un instructor de yoga solo para vuestro grupo.
 
 
-      *   A trio of friends with a shared passion for herpetology? Allow us to
-      connect you with a specialist biologist for an insightful guided
-      exploration.
+      *   ¿Un trío de amigos apasionados por la herpetología? Permítenos conectarte
+          con un biólogo especialista para una exploración guiada e informativa.
 
 
-      *   For the avid bird watcher, let us secure an expert local guide to
-      unlock the secrets of our diverse avian residents.
+      *   Para el aficionado a la observación de aves, podemos contratar un guía
+          local experto para desvelar los secretos de nuestros diversos residentes
+          aviarios.
 
 
-      *   Should you wish to venture beyond our immediate surroundings, let our
-      team expertly orient you and arrange tailored tours.
+      *   Si deseas aventurarte más allá de nuestros alrededores inmediatos, nuestro
+          equipo orientará y organizará excursiones a medida.
 
 
-      *   Discover the hidden gems of our ancient forest on a guided hike,
-      crafted to your pace and interests.
+      *   Descubre las joyas escondidas de nuestro bosque ancestral en una caminata
+          guiada, diseñada según tu ritmo e intereses.
 
 
-      Have a singular request? Whether it's orchestrating a special surprise,
-      arranging an intimate gathering, or handling a reservation with the utmost
-      discretion, our experienced team possesses the savoir-faire to manage your
-      particular needs seamlessly.
+      ¿Tienes una petición singular? Ya sea orquestar una sorpresa especial, organizar
+      una reunión íntima o gestionar una reserva con la máxima discreción, nuestro
+      equipo experimentado tiene el savoir-faire para atender tus necesidades particulares
+      sin contratiempos.
     colors: bg-orange-fg-dark
     styles:
       self:
@@ -217,7 +219,7 @@ sections:
       subtitle:
         textAlign: center
   - title:
-      text: Gallery
+      text: Galería
       color: text-primary
       styles:
         self:
@@ -226,7 +228,7 @@ sections:
     items:
       - image:
           url: /images/hiking/hiking-1.jpg
-          altText: Placeholder Image
+          altText: Senderismo
           type: ImageBlock
           styles:
             self:
@@ -237,7 +239,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/hiking/hiking-2.jpg
-          altText: Placeholder Image
+          altText: Senderismo
           type: ImageBlock
           styles:
             self:
@@ -248,7 +250,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/hiking/hiking-3.jpg
-          altText: Placeholder Image
+          altText: Senderismo
           type: ImageBlock
           styles:
             self:
@@ -259,7 +261,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/hiking/hiking-4.jpg
-          altText: Placeholder Image
+          altText: Senderismo
           type: ImageBlock
           styles:
             self:
@@ -270,7 +272,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/hiking/hiking-5.jpg
-          altText: Placeholder Image
+          altText: Senderismo
           type: ImageBlock
           styles:
             self:
@@ -281,7 +283,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/hiking/hiking-6.jpg
-          altText: Placeholder Image
+          altText: Senderismo
           type: ImageBlock
           styles:
             self:
@@ -292,7 +294,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/hiking/hiking-7.JPG
-          altText: Placeholder Image
+          altText: Senderismo
           type: ImageBlock
           styles:
             self:
@@ -303,7 +305,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/hiking/hiking-8.JPG
-          altText: Placeholder Image
+          altText: Senderismo
           type: ImageBlock
           styles:
             self:
@@ -314,7 +316,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/hiking/hiking-9.JPG
-          altText: Placeholder Image
+          altText: Senderismo
           type: ImageBlock
           styles:
             self:
@@ -325,7 +327,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/hiking/hiking-10.JPG
-          altText: Placeholder Image
+          altText: Senderismo
           type: ImageBlock
           styles:
             self:
@@ -336,7 +338,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/hiking/hiking-11.JPG
-          altText: Placeholder Image
+          altText: Senderismo
           type: ImageBlock
           styles:
             self:
@@ -347,7 +349,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/hiking/hiking-12.JPG
-          altText: Placeholder Image
+          altText: Senderismo
           type: ImageBlock
           styles:
             self:
@@ -358,7 +360,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/hiking/hiking-13.JPG
-          altText: Placeholder Image
+          altText: Senderismo
           type: ImageBlock
           styles:
             self:
@@ -369,7 +371,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/hiking/hiking-14.JPG
-          altText: Placeholder Image
+          altText: Senderismo
           type: ImageBlock
           styles:
             self:
@@ -380,7 +382,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/hiking/hiking-15.JPG
-          altText: Placeholder Image
+          altText: Senderismo
           type: ImageBlock
           styles:
             self:
@@ -391,7 +393,7 @@ sections:
         type: FeaturedItem
       - image:
           url: /images/hiking/hiking-16.JPG
-          altText: Placeholder Image
+          altText: Senderismo
           type: ImageBlock
           styles:
             self:
@@ -414,8 +416,8 @@ sections:
         textAlign: center
     type: FeaturedItemsSection
 seo:
-  metaTitle: Experience
-  metaDescription: Explore hiking, birdwatching, and tailored discovery experiences at our cloud-forest farm—guided adventures to reconnect with nature.
+  metaTitle: Experiencia
+  metaDescription: Explora senderismo, observación de aves y experiencias personalizadas en nuestra finca en el bosque nuboso—aventuras guiadas para reconectar con la naturaleza.
   socialImage: /images/hiking-wide.jpg
   type: Seo
 type: PageLayout

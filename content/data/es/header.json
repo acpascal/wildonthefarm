@@ -9,52 +9,45 @@
         },
         "type": "ImageBlock"
     },
-    "title": "WILD ON THE FARM",
-    "subtitle": "Boquete Cloud Forest Lodge",
+    "title": "Finca de la Amistad Verde",
+    "subtitle": "Lodge en el Bosque Nuboso de Boquete",
     "primaryLinks": [
         {
-            "label": "THE FARM",
-            "altText": "About us",
-            "url": "/the-farm",
+            "label": "LA FINCA",
+            "url": "/la-finca",
             "style": "secondary",
             "type": "Link"
         },
         {
-            "label": "STAY",
-            "altText": "Stay",
-            "url": "/stay",
+            "label": "ESTANCIA",
+            "url": "/estancia",
             "style": "secondary",
             "type": "Link"
         },
         {
-            "label": "KITCHEN",
-            "altText": "Kitchen page",
-            "url": "/kitchen",
+            "label": "COCINA",
+            "url": "/cocina",
             "style": "secondary",
             "type": "Link"
         },
         {
-            "label": "EXPERIENCE",
-            "altText": "EXPERIENCE",
+            "label": "EXPERIENCIAS",
             "links": [
                 {
-                    "label": "BIRD WATCHING",
-                    "altText": "Bird Watching page",
-                    "url": "/bird-watching",
+                    "label": "Avistamiento de Aves",
+                    "url": "/avistamiento-de-aves",
                     "style": "secondary",
                     "type": "Link"
                 },
                 {
-                    "label": "DETOX RETREAT",
-                    "altText": "Detox Retreat page",
-                    "url": "/detox-retreat",
+                    "label": "RETIRO DETOX",
+                    "url": "/retiro-detox",
                     "style": "secondary",
                     "type": "Link"
                 },
                 {
-                    "label": "DISCOVER",
-                    "altText": "Experiences page",
-                    "url": "/experience",
+                    "label": "DESCUBRIR",
+                    "url": "/experiencias",
                     "style": "secondary",
                     "type": "Link"
                 }
@@ -64,15 +57,13 @@
         },
         {
             "label": "BLOG",
-            "altText": "Blog",
             "url": "/blog",
             "style": "secondary",
             "type": "Link"
         },
         {
-            "label": "FAQ",
-            "altText": "FAQ",
-            "url": "/faq",
+            "label": "PREGUNTAS FRECUENTES",
+            "url": "/preguntas-frecuentes",
             "style": "secondary",
             "type": "Link"
         }

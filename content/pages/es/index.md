@@ -1,10 +1,10 @@
 ---
-title: Home
+title: Inicio
 slug: /
 sections:
   - type: GenericSection
     media:
-      title: Wild on the farm
+      title: Wild on the Farm
       url: 'https://youtu.be/FGbUEGNd524'
       controls: false
       aspectRatio: '16:9'
@@ -22,34 +22,31 @@ sections:
   - type: GenericSection
     media:
       url: /images/logo.png
-      altText: Fun feature preview
+      altText: Logo
       type: ImageBlock
     text: >
-      A masterpiece of synergy with nature, located just 15 minutes from Boquete
-      at 5905 feet elevation and nestled into the Amistad National Park.
+      Una obra maestra de sinergia con la naturaleza, ubicada a solo 15 minutos de Boquete
+      a 5905 pies de altitud e integrada al Parque Nacional La Amistad.
 
 
-      Step into the authentic heart of the Cloud Forest – an enchanted sanctuary
-      where silence speaks volumes, the crisp altitude air invigorates , and
-      clouds dance with the wind without disturbing your profound serenity.
+      Adéntrate en el auténtico corazón del Bosque Nuboso — un santuario encantado
+      donde el silencio habla, el aire puro de la altura vigoriza, y las nubes danzan con el viento
+      sin perturbar tu profunda serenidad.
 
 
-      As Panama's first organic farm and only macadamia plantation, rooted in
-      Horqueta since 2009, WILD ON THE FARM embodies over 15 years of
-      innovative, environmentally harmonious cultivation in this exceptional
-      setting.
+      Como la primera finca orgánica de Panamá y la única plantación de macadamia, con raíces
+      en Horqueta desde 2009, WILD ON THE FARM encarna más de 15 años de cultivo innovador y en
+      armonía con el medio ambiente en este entorno excepcional.
 
 
-      Starting in 2025, we open our doors with three beautiful and luxurious
-      cabins, a host table to enjoy a cuisine signed by the scents and flavors
-      of the garden, the farm and the jungle inviting you to immerse yourself in
-      our unique world. Experience transformative detox stays, thrilling bird
-      watching, guided cloud forest hikes, peaceful moments of reading in
-      silence, or rejuvenating meditation amidst the farm's tranquility.
+      A partir de 2025 abrimos nuestras puertas con tres cabañas bellas y lujosas,
+      una mesa de anfitriones para disfrutar una cocina marcada por los aromas y sabores
+      del huerto, la finca y la selva, invitándote a sumergirte en nuestro mundo único.
+      Vive estancias detox transformadoras, emocionantes avistamientos de aves, caminatas guiadas
+      por el bosque nuboso, momentos de lectura en silencio o meditaciones reparadoras en la tranquilidad de la finca.
 
 
-      Here, time takes on a different rhythm, designed for profound regeneration
-      of your vitality.
+      Aquí, el tiempo adquiere otro ritmo, pensado para la regeneración profunda de tu vitalidad.
     colors: bg-lime-fg-light
     styles:
       self:
@@ -68,15 +65,15 @@ sections:
       color: text-dark
       type: TitleBlock
     text: >
-      Welcome to Wild on the Farm, a handcrafted eco-sanctuary at 1800 meters,
-      nestled beside Amistad National Park. With pure spring water, solar
-      energy, organic farming, and artisanal architecture, it's a serene retreat
-      where nature, comfort, and sustainability meet. Come to rest, reconnect,
-      and thrive in the heart of the cloud forest.
+      Bienvenido a Wild on the Farm, un eco-santuario artesanal a 1800 metros,
+      ubicado junto al Parque Nacional La Amistad. Con agua de manantial pura, energía solar,
+      agricultura orgánica y arquitectura artesanal, es un retiro sereno donde naturaleza,
+      confort y sostenibilidad se encuentran. Ven a descansar, reconectar y prosperar en el
+      corazón del bosque nuboso.
     actions:
-      - label: Discover the farm
+      - label: Descubre la finca
         altText: ''
-        url: /the-farm
+        url: /la-finca
         showIcon: true
         icon: arrowRight
         iconPosition: right
@@ -85,11 +82,11 @@ sections:
         type: Link
     media:
       url: /images/about-the-farm.jpg
-      altText: Unblock your team boost your time to production preview
+      altText: La finca
       elementId: ''
       type: ImageBlock
     badge:
-      label: The Farm
+      label: La finca
       color: text-primary
       type: Badge
     elementId: ''
@@ -103,19 +100,19 @@ sections:
           - px-4
   - type: GenericSection
     title:
-      text: Cloud Forest Cabins
+      text: Cabañas en el bosque nuboso
       color: text-light
       type: TitleBlock
     text: >
-      Experience peaceful luxury in our handcrafted cabins, nestled in the
-      serene cloud forest and overlooking breathtaking views. Built with
-      sustainable tropical wood and designed for comfort, each space offers a
-      restorative retreat where nature’s beauty and tranquil silence invite deep
-      rest, reflection, and a true sense of wellbeing.
+      Disfruta de un lujo sereno en nuestras cabañas artesanales, ubicadas en el
+      tranquilo bosque nuboso y con vistas impresionantes. Construidas con madera tropical
+      sostenible y diseñadas para la comodidad, cada estancia ofrece un refugio reparador
+      donde la belleza de la naturaleza y el silencio invitan al descanso profundo, la reflexión
+      y un verdadero bienestar.
     actions:
-      - label: View Cabins
+      - label: Ver cabañas
         altText: ''
-        url: /stay
+        url: /estancia
         showIcon: true
         icon: arrowRight
         iconPosition: right
@@ -124,13 +121,13 @@ sections:
         type: Link
     media:
       url: /images/stay.jpg
-      altText: Cloud forest chalet
+      altText: Chalet en bosque nuboso
       elementId: ''
       goesLast: true
       className: null
       type: ImageBlock
     badge:
-      label: Stay
+      label: Estancia
       color: text-light
       type: Badge
     elementId: ''
@@ -144,19 +141,18 @@ sections:
           - px-4
   - type: GenericSection
     title:
-      text: Food from our organic garden
+      text: Comida de nuestro huerto orgánico
       color: text-dark
       type: TitleBlock
     text: >
-      Discover the vibrant heart of our 100% organic
-      permaculture garden. Grown with care and respect for nature, it offers
-      seasonal fruits, vegetables, herbs, and edible flowers bursting with
-      flavor. Enjoy the rich taste of sustainability and the joy of cooking with
-      truly fresh, nourishing ingredients.
+      Descubre el corazón vibrante de nuestro huerto 100% orgánico de permacultura.
+      Cultivado con cuidado y respeto por la naturaleza, ofrece frutas de temporada,
+      verduras, hierbas y flores comestibles llenas de sabor. Disfruta el rico gusto de la sostenibilidad
+      y la alegría de cocinar con ingredientes verdaderamente frescos y nutritivos.
     actions:
-      - label: Learn More
+      - label: Más información
         altText: ''
-        url: /kitchen
+        url: /cocina
         showIcon: true
         icon: arrowRight
         iconPosition: right
@@ -165,12 +161,12 @@ sections:
         type: Link
     media:
       url: /images/kitchen.jpg
-      altText: Kitchen
+      altText: Cocina
       elementId: ''
       className: null
       type: ImageBlock
     badge:
-      label: Kitchen
+      label: Cocina
       color: text-primary
       type: Badge
     elementId: ''
@@ -183,28 +179,27 @@ sections:
         padding:
           - px-4
   - title:
-      text: Experience
+      text: Experiencia
       color: text-dark
       styles:
         self:
           textAlign: left
       type: TitleBlock
     items:
-      - title: Bird Watching
+      - title: Avistamiento de aves
         text: >
-          Immerse yourself in the sights and sounds of nature at Wild on the
-          Farm. Surrounded by lush gardens and pristine forest, our haven
-          invites bird lovers to discover rare species like the Quetzal, unwind
-          in serene beauty, and savor the peaceful joy of birdwatching in
-          harmony with nature.
+          Sumérgete en los sonidos y paisajes de la naturaleza en Wild on the Farm. Rodeado
+          de jardines exuberantes y bosque pristino, nuestro refugio invita a los amantes de las aves
+          a descubrir especies raras como el Quetzal, relajarse en una belleza serena y disfrutar de
+          la tranquila experiencia de la observación de aves en armonía con la naturaleza.
         image:
           url: /images/bird-watching-wide.JPG
-          altText: Placeholder Image
+          altText: Avistamiento de aves
           type: ImageBlock
         actions:
-          - label: Learn More
+          - label: Más información
             altText: ''
-            url: /bird-watching
+            url: /avistamiento-de-aves
             showIcon: true
             icon: arrowRight
             iconPosition: right
@@ -216,21 +211,20 @@ sections:
           self:
             flexDirection: col
         type: FeaturedItem
-      - title: Detox Retreat
+      - title: Retiro detox
         text: >
-          Reclaim your vitality with a detox retreat at Wild on the Farm.
-          Surrounded by pure air, organic healing plants, and the serene cloud
-          forest, our program offers deep restoration through nature, nourishing
-          food, guided walks, and silence. Breathe, reset, and return home
-          lighter, clearer, and renewed.
+          Recupera tu vitalidad con un retiro detox en Wild on the Farm. Rodeado de aire puro,
+          plantas medicinales orgánicas y el sereno bosque nuboso, nuestro programa ofrece una
+          restauración profunda mediante la naturaleza, alimentación nutritiva, caminatas guiadas y silencio.
+          Respira, reinicia y vuelve a casa más ligero, claro y renovado.
         image:
           url: /images/detox-retreat-wide.JPG
-          altText: Placeholder Image
+          altText: Retiro detox
           type: ImageBlock
         actions:
-          - label: Learn More
+          - label: Más información
             altText: ''
-            url: /detox-retreat
+            url: /retiro-detox
             showIcon: true
             icon: arrowRight
             iconPosition: right
@@ -242,20 +236,20 @@ sections:
           self:
             flexDirection: col
         type: FeaturedItem
-      - title: Hiking
+      - title: Senderismo
         text: >
-          Step out your door and into the heart of the cloud forest. At Wild on
-          the Farm, hiking is more than a walk—it’s full immersion in a mystical
-          world of mist, moss, and towering trees. Let nature guide your journey
-          through beauty, serenity, and quiet wonder.
+          Sal de tu puerta y adéntrate en el corazón del bosque nuboso. En Wild on the Farm,
+          el senderismo es más que una caminata: es una inmersión total en un mundo místico de niebla,
+          musgo y árboles imponentes. Deja que la naturaleza guíe tu camino entre belleza, serenidad
+          y asombro silencioso.
         image:
           url: /images/hiking-wide.jpg
-          altText: Placeholder Image
+          altText: Imagen de muestra
           type: ImageBlock
         actions:
-          - label: Learn More
+          - label: Más información
             altText: ''
-            url: /experience/#hiking
+            url: /experiencia/#senderismo
             showIcon: true
             icon: arrowRight
             iconPosition: right
@@ -267,21 +261,20 @@ sections:
           self:
             flexDirection: col
         type: FeaturedItem
-      - title: Tailored Discovery
+      - title: Descubrimiento personalizado
         text: >
-          Your journey is uniquely yours. Whether you seek stillness, adventure,
-          or expert-guided discovery, our Tailored Discovery service curates
-          meaningful, personalized experiences—yoga, nature walks, wildlife
-          exploration, or quiet reflection—so you can reconnect, recharge, and
-          make your stay unforgettable.
+          Tu viaje es únicamente tuyo. Ya busques quietud, aventura o descubrimiento guiado por expertos,
+          nuestro servicio de Descubrimiento personalizado diseña experiencias significativas y personalizadas —
+          yoga, caminatas por la naturaleza, exploración de la vida silvestre o reflexión tranquila — para que
+          puedas reconectar, recargar energías y hacer que tu estancia sea inolvidable.
         image:
           url: /images/tailored-discovery-tall.JPG
-          altText: Placeholder Image
+          altText: Descubrimiento personalizado
           type: ImageBlock
         actions:
-          - label: Learn More
+          - label: Más información
             altText: ''
-            url: /experience/#tailored-discovery
+            url: /experiencia/#descubrimiento-personalizado
             showIcon: true
             icon: arrowRight
             iconPosition: right
@@ -307,10 +300,10 @@ sections:
         textAlign: center
     type: FeaturedItemsSection
   - type: CarouselSection
-    subtitle: Featured Reviews
+    subtitle: Reseñas destacadas
     items:
       - title: >-
-          “I stayed at Wild on the Farm and I really reconnected with real life values.”
+          “Me alojé en Wild on the Farm y realmente me reconecté con los valores reales de la vida.”
         subtitle: 'Charlotte Hamilton'
         actions: []
         colors: bg-orange-fg-dark
@@ -335,59 +328,58 @@ sections:
       subtitle:
         textAlign: center
   - title:
-      text: Contact Us
+      text: Contáctanos
       color: text-dark
       type: TitleBlock
     text: >-
-      We’d love to welcome you to Wild on the Farm—a place where nature,
-      comfort, and wellbeing come together in perfect harmony. Whether you’re
-      ready to book your stay, have questions about our retreats or cabins, or
-      simply want to learn more, don’t hesitate to reach out. We’re here to help
-      you plan your unforgettable escape into the cloud forest.
+      Nos encantaría darte la bienvenida en Wild on the Farm — un lugar donde la naturaleza,
+      el confort y el bienestar se unen en perfecta armonía. Ya estés listo para reservar tu estancia,
+      tengas preguntas sobre nuestros retiros o cabañas, o simplemente quieras saber más, no dudes en contactarnos.
+      Estamos aquí para ayudarte a planear tu escape inolvidable al bosque nuboso.
     media:
       fields:
         - name: name
-          label: Name
+          label: Nombre
           hideLabel: true
-          placeholder: Your name
+          placeholder: Tu nombre
           isRequired: true
           width: full
           type: TextFormControl
         - name: email
-          label: Email
+          label: Correo electrónico
           hideLabel: true
-          placeholder: Your email
+          placeholder: Tu correo electrónico
           isRequired: true
           width: full
           type: EmailFormControl
         - name: dateRange
-          label: Check-in and check-out date
+          label: Fecha de entrada y salida
           hideLabel: true
-          fromLabel: Check-in
-          toLabel: Check-out
+          fromLabel: Entrada
+          toLabel: Salida
           isRequired: false
           width: full
           type: DateRangeFormControl
         - name: message
-          label: Message
+          label: Mensaje
           hideLabel: true
-          placeholder: Your message
+          placeholder: Tu mensaje
           width: full
           type: TextareaFormControl
       elementId: contact-form
       type: FormBlock
       goesLast: true
-      successMessage: Thank you! We can’t wait to welcome you—we'll get back to you soon!
+      successMessage: ¡Gracias! Estamos deseando darte la bienvenida — nos pondremos en contacto contigo pronto.
       submitButton:
         type: SubmitButtonFormControl
-        label: Submit
+        label: Enviar
         style: secondary
         elementId: null
     colors: bg-neutralAlt-fg-dark
     type: GenericSection
 seo:
-  metaTitle: Wild On The Farm
-  metaDescription: Wild on the Farm — an eco-sanctuary in Panama's cloud forest offering organic farming, macadamia groves, restorative retreats, and nature experiences.
+  metaTitle: Wild on the Farm
+  metaDescription: Wild on the Farm — un eco-santuario en el bosque nuboso de Panamá que ofrece agricultura orgánica, plantaciones de macadamia, retiros reparadores y experiencias en la naturaleza.
   socialImage: /images/the-farm.jpg
   type: Seo
 type: PageLayout
