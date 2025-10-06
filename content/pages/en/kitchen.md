@@ -18,33 +18,8 @@ sections:
       url: /images/kitchen.jpg
   - type: GenericSection
     title:
-      text: Our Garden
-      color: text-light
-      type: TitleBlock
-    text: >
-      Discover the vibrant heart of Wild on the Farm—our 100% organic permaculture garden. Grown with care and respect for nature, it offers seasonal fruits, vegetables, herbs, and edible flowers bursting with flavor. Enjoy the rich taste of sustainability and the joy of cooking with truly fresh, nourishing ingredients.
-    media:
-      url: /images/from-the-garden.JPG
-      altText: Unblock your team boost your time to production preview
-      elementId: ''
-      type: ImageBlock
-    badge:
-      label: ''
-      color: text-primary
-      type: Badge
-    elementId: dine-other
-    colors: bg-lime-fg-light
-    styles:
-      self:
-        alignItems: center
-        flexDirection: row
-        justifyContent: center
-        padding:
-          - px-4
-  - type: GenericSection
-    title:
       text: From Our Organic Garden
-      color: text-black
+      color: text-white
       type: TitleBlock
       styles:
         self:
@@ -71,7 +46,7 @@ sections:
 
       This path to abundance is a testament to perseverance. Every element in the garden is nurtured, understanding its crucial role in the ecosystem. It's a place where we strive for an ideal connection with life, demonstrating that by nurturing the earth, we nurture ourselves.
       Join us in celebrating the bounty of our garden. Experience the richness in flavors, fragrances, and health that comes from cooking with ingredients grown with love and respect for the earth.
-    colors: bg-orange-fg-dark
+    colors: bg-lime-fg-light
     styles:
       self:
         padding:
@@ -85,6 +60,31 @@ sections:
         fontSize: x-small
       subtitle:
         textAlign: center
+  - type: GenericSection
+    title:
+      text: Our Garden
+      color: text-black
+      type: TitleBlock
+    text: >
+      Discover the vibrant heart of Wild on the Farm—our 100% organic permaculture garden. Grown with care and respect for nature, it offers seasonal fruits, vegetables, herbs, and edible flowers bursting with flavor. Enjoy the rich taste of sustainability and the joy of cooking with truly fresh, nourishing ingredients.
+    media:
+      url: /images/from-the-garden.JPG
+      altText: Unblock your team boost your time to production preview
+      elementId: ''
+      type: ImageBlock
+    badge:
+      label: ''
+      color: text-primary
+      type: Badge
+    elementId: dine-other
+    colors: bg-orange-fg-dark
+    styles:
+      self:
+        alignItems: center
+        flexDirection: row
+        justifyContent: center
+        padding:
+          - px-4
   - type: GenericSection
     title:
       text: Into Our Kitchen

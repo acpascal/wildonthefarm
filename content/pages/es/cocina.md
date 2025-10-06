@@ -18,32 +18,8 @@ sections:
       url: /images/kitchen.jpg
   - type: GenericSection
     title:
-      text: Nuestro huerto
-      color: text-light
-      type: TitleBlock
-    text: >
-      Descubre el corazón vibrante de Wild on the Farm: nuestro huerto de permacultura 100% orgánico. Cultivado con cuidado y respeto por la naturaleza, ofrece frutas, verduras, hierbas y flores comestibles de temporada repletas de sabor. Disfruta el rico sabor de la sostenibilidad y la alegría de cocinar con ingredientes verdaderamente frescos y nutritivos.
-    media:
-      url: /images/from-the-garden.JPG
-      altText: Del huerto
-      elementId: ''
-      type: ImageBlock
-    badge:
-      label: ''
-      color: text-primary
-      type: Badge
-    colors: bg-lime-fg-light
-    styles:
-      self:
-        alignItems: center
-        flexDirection: row
-        justifyContent: center
-        padding:
-          - px-4
-  - type: GenericSection
-    title:
       text: Desde nuestro huerto orgánico
-      color: text-black
+      color: text-white
       type: TitleBlock
       styles:
         self:
@@ -70,7 +46,7 @@ sections:
 
       Este camino hacia la abundancia es un testimonio de perseverancia. Cada elemento del huerto es alimentado, comprendiendo su papel crucial en el ecosistema. Es un lugar donde buscamos una conexión ideal con la vida, demostrando que al cuidar la tierra, nos cuidamos a nosotros mismos.
       Únete a nosotros para celebrar la generosidad del huerto. Experimenta la riqueza en sabores, fragancias y salud que provienen de cocinar con ingredientes cultivados con amor y respeto por la tierra.
-    colors: bg-orange-fg-dark
+    colors: bg-lime-fg-light
     styles:
       self:
         padding:
@@ -84,6 +60,30 @@ sections:
         fontSize: x-small
       subtitle:
         textAlign: center
+  - type: GenericSection
+    title:
+      text: Nuestro huerto
+      color: text-black
+      type: TitleBlock
+    text: >
+      Descubre el corazón vibrante de Wild on the Farm: nuestro huerto de permacultura 100% orgánico. Cultivado con cuidado y respeto por la naturaleza, ofrece frutas, verduras, hierbas y flores comestibles de temporada repletas de sabor. Disfruta el rico sabor de la sostenibilidad y la alegría de cocinar con ingredientes verdaderamente frescos y nutritivos.
+    media:
+      url: /images/from-the-garden.JPG
+      altText: Del huerto
+      elementId: ''
+      type: ImageBlock
+    badge:
+      label: ''
+      color: text-primary
+      type: Badge
+    colors: bg-orange-fg-dark
+    styles:
+      self:
+        alignItems: center
+        flexDirection: row
+        justifyContent: center
+        padding:
+          - px-4
   - type: GenericSection
     title:
       text: En nuestra cocina

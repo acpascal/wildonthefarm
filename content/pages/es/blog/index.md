@@ -9,7 +9,7 @@ topSections:
       color: text-dark
       type: TitleBlock
     posts:
-      - content/pages/es/blog/jiaogulan-herb-of-immortality.md
+      - content/pages/es/blog/jiaogulan-hierba-de-la-inmortalidad.md
     showThumbnail: true
     showExcerpt: true
     showDate: true
