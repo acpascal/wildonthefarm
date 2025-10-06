@@ -24,7 +24,7 @@ colors: bg-light-fg-dark
 styles:
   self:
     flexDirection: col
-author: content/data/person1.json
+author: content/data/en/person1.json
 ---
 
 _Sometimes, nature hides miracles in plain sight. My story begins 15 years ago, in the lush Talamanca mountain range of Panama._

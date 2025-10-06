@@ -1,0 +1,102 @@
+{
+    "logo": {
+        "url": "/images/logo.png",
+        "altText": "Logo light",
+        "type": "ImageBlock"
+    },
+    "text": "Boquete Cloud Forest Lodge",
+    "primaryLinks": {
+        "title": "Menu",
+        "links": [
+            {
+                "label": "The Farm",
+                "url": "/the-farm",
+                "style": "secondary",
+                "type": "Link"
+            },
+            {
+                "label": "Stay",
+                "url": "/stay",
+                "style": "secondary",
+                "type": "Link"
+            },
+            {
+                "label": "Kitchen",
+                "url": "/kitchen",
+                "style": "secondary",
+                "type": "Link"
+            },
+            {
+                "label": "Experience",
+                "url": "/experience",
+                "style": "secondary",
+                "type": "Link"
+            },
+            {
+                "label": "Blog",
+                "url": "/blog",
+                "style": "secondary",
+                "type": "Link"
+            }
+        ],
+        "type": "FooterLinksGroup"
+    },
+    "secondaryLinks": {
+        "title": "Contact Us",
+        "links": [
+            {
+                "label": "+507 6569 9134",
+                "altText": "Phone number",
+                "url": "tel:50765699134",
+                "style": "secondary",
+                "type": "Link",
+                "icon": "whatsapp",
+                "showIcon": true,
+                "iconPosition": "left"
+            },
+            {
+                "label": "contact@boquetecloudforestlodge.com",
+                "altText": "Contact email",
+                "url": "mailto:contact@boquetecloudforestlodge.com",
+                "style": "secondary",
+                "type": "Link",
+                "icon": "mail",
+                "showIcon": true,
+                "iconPosition": "left"
+            },
+            {
+                "label": "Finca Amistad\nHorqueta, Boquete, Chiriqui\nPanama",
+                "url": "https://maps.app.goo.gl/US5hdg29rwvch9jS6",
+                "style": "secondary",
+                "type": "Link",
+                "icon": "googlemaps",
+                "showIcon": true,
+                "iconPosition": "left",
+                "openLinkInNewTab": true
+            }
+        ],
+        "type": "FooterLinksGroup"
+    },
+    "socialLinks": [
+        {
+            "altText": "Facebook link",
+            "url": "https://www.facebook.com/profile.php?id=61562308296749",
+            "icon": "facebook",
+            "type": "Social"
+        },
+        {
+            "altText": "Youtube link",
+            "url": "https://www.youtube.com/@wildonthefarm8302",
+            "icon": "youtube",
+            "type": "Social"
+        }
+    ],
+    "copyrightText": "©2025 WILD ON THE FARM",
+    "colors": "bg-lime-fg-light",
+    "type": "Footer",
+    "styles": {
+        "self": {
+            "padding": ["px-4", "pt-28", "pb-4"]
+        }
+    }
+}

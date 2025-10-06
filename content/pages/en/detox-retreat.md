@@ -10,7 +10,7 @@ sections:
     type: GenericSection
     backgroundImage:
       type: BackgroundImage
-      altText: altText of the image
+      altText: Wellness destination
       backgroundSize: cover
       backgroundPosition: center
       backgroundRepeat: no-repeat
@@ -51,7 +51,7 @@ sections:
       vitality.
     media:
       url: /images/icons/nettle-leaf.png
-      altText: Fun feature preview
+      altText: Nettle leaf
       type: ImageBlock
     elementId: detox-retreat
     colors: bg-lime-fg-light
@@ -74,7 +74,7 @@ sections:
     text: "\n\n\nStep into the fresh, pure air of the cloud forest and feel your body begin to purify. Our guided walks in the forest and guided breathwork sessions on the farm are designed to oxygenate your system, melt away stress, and restore a vivid sense of calm and clarity..\_\n\n*   **Guided Breathwork:** We will guide you through breathing practices focused on **nervous system regulation** for deep relaxation and oxygenation.\n\n*   **Forest bathing:** Guided walks in nature to breathe fresh forest air.\n\n*   **Herbal Support** for Allergies and Asthma — [Learn More](/blog/allergies-and-asthma)\n\n"
     media:
       url: /images/detox-retreat/forest_bathing.png
-      altText: Unblock your team boost your time to production preview
+      altText: Forest bathing
       goesLast: true
       type: ImageBlock
     colors: bg-orange-fg-dark
@@ -107,7 +107,7 @@ sections:
 
     media:
       url: /images/detox-retreat/yoga.jpg
-      altText: Unblock your team boost your time to production preview
+      altText: Yoga
       type: ImageBlock
     colors: bg-lime-fg-light
     styles:
@@ -146,7 +146,7 @@ sections:
 
     media:
       url: /images/detox-retreat/lactofermentation.png
-      altText: Unblock your team boost your time to production preview
+      altText: Lactofermentation
       goesLast: true
       type: ImageBlock
     elementId: detox-retreat
@@ -189,7 +189,7 @@ sections:
 
     media:
       url: /images/detox-retreat/balcony_meditation.png
-      altText: Unblock your team boost your time to production preview
+      altText: Balcony meditation
       type: ImageBlock
     colors: bg-lime-fg-light
     styles:
@@ -228,7 +228,7 @@ sections:
 
     media:
       url: /images/detox-retreat/cozy_tea.png
-      altText: Unblock your team boost your time to production preview
+      altText: Cozy tea
       goesLast: true
       type: ImageBlock
     elementId: detox-retreat
@@ -249,7 +249,7 @@ sections:
     text: "Silence and rest is foundational to our detox retreat. Our distraction-free setting, peaceful wood cabins, low EMF environment, and clean mountain air encourage deep restorative sleep and mental regeneration.\n\n*   **Sleep-Friendly Cabins** — Rest with the natural light from the moon and stars at night and in an environment free from chemicals and artificial fragrance.\_\n\n*   **Evening herbal tea** — Enjoy organic herbal tea in the evening to support deeper relaxation.\n\n*   **Stargazing** — Nature’s natural sleep reset via circadian rhythm support.\n\n"
     media:
       url: /images/about-the-farm.jpg
-      altText: Unblock your team boost your time to production preview
+      altText: The farm
       elementId: ''
       type: ImageBlock
     colors: bg-lime-fg-light

@@ -39,16 +39,34 @@ function Page(props) {
     );
 }
 
-export function getStaticPaths() {
-    const data = allContent();
-    const paths = resolveStaticPaths(data);
+export function getStaticPaths({ locales = ['en'] }) {
+    const paths = [];
+
+    // build paths for every locale
+    for (const locale of locales) {
+        const data = allContent(locale);
+        const rawPaths = resolveStaticPaths(data);
+        const localePaths = rawPaths.map((p) => {
+            // normalize string paths into Next-compatible { params: { slug: [...] } }
+            if (typeof p === 'string') {
+                const url = p;
+                const slugArray = url === '/' ? [] : url.replace(/^\//, '').split('/');
+                return { params: { slug: slugArray }, locale };
+            }
+            // if already an object (likely with params), just attach locale
+            return { ...p, locale };
+        });
+        paths.push(...localePaths);
+    }
     return { paths, fallback: false };
 }
 
-export async function getStaticProps({ params }) {
-    const data = allContent();
+export async function getStaticProps({ params, locale }) {
+    const data = allContent(locale || 'en');
     const urlPath = '/' + (params.slug || []).join('/');
     const props = await resolveStaticProps(urlPath, data);
+    // include locale so components can render locale-specific UI
+    props.locale = locale || 'en';
     return { props };
 }
 

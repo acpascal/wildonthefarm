@@ -1,0 +1,87 @@
+{
+    "logo": {
+        "url": "/images/logo-notext.png",
+        "altText": "Logo dark",
+        "styles": {
+            "self": {
+                "margin": ["mr-3"]
+            }
+        },
+        "type": "ImageBlock"
+    },
+    "title": "Finca de la Amistad Verde",
+    "subtitle": "Lodge en el Bosque Nuboso de Boquete",
+    "primaryLinks": [
+        {
+            "label": "LA FINCA",
+            "url": "/la-finca",
+            "style": "secondary",
+            "type": "Link"
+        },
+        {
+            "label": "ESTANCIA",
+            "url": "/estancia",
+            "style": "secondary",
+            "type": "Link"
+        },
+        {
+            "label": "COCINA",
+            "url": "/cocina",
+            "style": "secondary",
+            "type": "Link"
+        },
+        {
+            "label": "EXPERIENCIAS",
+            "links": [
+                {
+                    "label": "AVISTAMIENTO DE AVES",
+                    "url": "/avistamiento-de-aves",
+                    "style": "secondary",
+                    "type": "Link"
+                },
+                {
+                    "label": "RETIRO DETOX",
+                    "url": "/retiro-detox",
+                    "style": "secondary",
+                    "type": "Link"
+                },
+                {
+                    "label": "DESCUBRIR",
+                    "url": "/experiencias",
+                    "style": "secondary",
+                    "type": "Link"
+                }
+            ],
+            "labelStyle": "secondary",
+            "type": "SubNav"
+        },
+        {
+            "label": "BLOG",
+            "url": "/blog",
+            "style": "secondary",
+            "type": "Link"
+        },
+        {
+            "label": "PREGUNTAS FRECUENTES",
+            "url": "/preguntas-frecuentes",
+            "style": "secondary",
+            "type": "Link"
+        }
+    ],
+    "secondaryLinks": [],
+    "locales": [
+        {
+            "value": "en",
+            "label": "EN",
+            "type": "Locale"
+        },
+        {
+            "value": "es",
+            "label": "ES",
+            "type": "Locale"
+        }
+    ],
+    "variant": "logo-left-primary-nav-right",
+    "colors": "bg-lime-fg-light",
+    "type": "Header"
+}

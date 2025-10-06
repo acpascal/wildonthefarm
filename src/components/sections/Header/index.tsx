@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 import classNames from 'classnames';
 
@@ -8,6 +8,7 @@ import { Link, Action } from '../../atoms';
 import ImageBlock from '../../blocks/ImageBlock';
 import ChevronDownIcon from '../../svgs/chevron-down';
 import CloseIcon from '../../svgs/close';
+import LocalizationGlobeIcon from '../../svgs/localization-globe';
 import MenuIcon from '../../svgs/menu';
 
 export default function Header(props) {
@@ -60,7 +61,7 @@ function HeaderVariants(props) {
 }
 
 function HeaderLogoLeftPrimaryLeft(props) {
-    const { title, subtitle, logo, primaryLinks = [], secondaryLinks = [], colors = 'bg-light-fg-dark', enableAnnotations } = props;
+    const { title, subtitle, logo, primaryLinks = [], secondaryLinks = [], locales = [], colors = 'bg-light-fg-dark', enableAnnotations, locale } = props;
     return (
         <div className="relative flex items-center">
             {(title || logo?.url) && (
@@ -78,13 +79,25 @@ function HeaderLogoLeftPrimaryLeft(props) {
                     <ListOfLinks links={secondaryLinks} enableAnnotations={enableAnnotations} />
                 </ul>
             )}
+            <div className="hidden lg:flex lg:items-center ml-auto">
+                {secondaryLinks.length > 0 && (
+                    <ul className="flex items-center" {...(enableAnnotations && { 'data-sb-field-path': 'secondaryLinks' })}>
+                        <ListOfLinks links={secondaryLinks} enableAnnotations={enableAnnotations} />
+                    </ul>
+                )}
+            </div>
+            {locales.length > 0 && (
+                <ul className="hidden lg:flex lg:items-center ml-auto gap-x-2.5" {...(enableAnnotations && { 'data-sb-field-path': 'locales' })}>
+                    <LocaleSwitcher locales={locales} enableAnnotations={enableAnnotations} />
+                </ul>
+            )}
             {(primaryLinks.length > 0 || secondaryLinks.length > 0) && <MobileMenu {...props} />}
         </div>
     );
 }
 
 function HeaderLogoLeftPrimaryCentered(props) {
-    const { title, subtitle, logo, primaryLinks = [], secondaryLinks = [], colors = 'bg-light-fg-dark', enableAnnotations } = props;
+    const { title, subtitle, logo, primaryLinks = [], secondaryLinks = [], locales = [], colors = 'bg-light-fg-dark', enableAnnotations, locale } = props;
     return (
         <div className="relative flex items-center">
             {(title || logo?.url) && (
@@ -105,13 +118,19 @@ function HeaderLogoLeftPrimaryCentered(props) {
                     <ListOfLinks links={secondaryLinks} enableAnnotations={enableAnnotations} />
                 </ul>
             )}
+            {locales.length > 0 && (
+                <ul className="hidden lg:flex lg:items-center ml-auto gap-x-2.5" {...(enableAnnotations && { 'data-sb-field-path': 'locales' })}>
+                    <LocaleSwitcher locales={locales} enableAnnotations={enableAnnotations} />
+                </ul>
+            )}
             {(primaryLinks.length > 0 || secondaryLinks.length > 0) && <MobileMenu {...props} />}
         </div>
     );
 }
 
 function HeaderLogoLeftPrimaryRight(props) {
-    const { title, subtitle, logo, primaryLinks = [], secondaryLinks = [], colors = 'bg-light-fg-dark', enableAnnotations } = props;
+    const { title, subtitle, logo, primaryLinks = [], secondaryLinks = [], locales = [], colors = 'bg-light-fg-dark', enableAnnotations, locale } = props;
+    console.log(colors);
     return (
         <div className="relative flex items-center">
             {(title || logo?.url) && (
@@ -132,13 +151,18 @@ function HeaderLogoLeftPrimaryRight(props) {
                     <ListOfLinks links={secondaryLinks} enableAnnotations={enableAnnotations} />
                 </ul>
             )}
-            {(primaryLinks.length > 0 || secondaryLinks.length > 0) && <MobileMenu {...props} />}
+            {locales.length > 0 && (
+                <ul className="hidden lg:flex lg:items-center ml-auto gap-x-2.5" {...(enableAnnotations && { 'data-sb-field-path': 'locales' })}>
+                    <LocaleSwitcher locales={locales} colors={colors} enableAnnotations={enableAnnotations} />
+                </ul>
+            )}
+            {(primaryLinks.length > 0 || secondaryLinks.length > 0 || locales.length > 0) && <MobileMenu {...props} />}
         </div>
     );
 }
 
 function HeaderLogoCenteredPrimaryLeft(props) {
-    const { title, subtitle, logo, primaryLinks = [], secondaryLinks = [], colors = 'bg-light-fg-dark', enableAnnotations } = props;
+    const { title, subtitle, logo, primaryLinks = [], secondaryLinks = [], locales = [], colors = 'bg-light-fg-dark', enableAnnotations, locale } = props;
     return (
         <div className="relative flex items-center">
             {(title || logo?.url) && (
@@ -156,13 +180,18 @@ function HeaderLogoCenteredPrimaryLeft(props) {
                     <ListOfLinks links={secondaryLinks} enableAnnotations={enableAnnotations} />
                 </ul>
             )}
+            {locales.length > 0 && (
+                <ul className="hidden lg:flex lg:items-center ml-auto gap-x-2.5" {...(enableAnnotations && { 'data-sb-field-path': 'locales' })}>
+                    <LocaleSwitcher locales={locales} enableAnnotations={enableAnnotations} />
+                </ul>
+            )}
             {(primaryLinks.length > 0 || secondaryLinks.length > 0) && <MobileMenu {...props} />}
         </div>
     );
 }
 
 function HeaderLogoCenteredPrimaryCentered(props) {
-    const { title, subtitle, logo, primaryLinks = [], secondaryLinks = [], colors = 'bg-light-fg-dark', enableAnnotations } = props;
+    const { title, subtitle, logo, primaryLinks = [], secondaryLinks = [], locales = [], colors = 'bg-light-fg-dark', enableAnnotations, locale } = props;
     return (
         <>
             <div className="relative flex items-center">
@@ -178,6 +207,11 @@ function HeaderLogoCenteredPrimaryCentered(props) {
                 )}
                 {(primaryLinks.length > 0 || secondaryLinks.length > 0) && <MobileMenu {...props} />}
             </div>
+            {locales.length > 0 && (
+                <ul className="hidden lg:flex lg:items-center ml-auto gap-x-2.5" {...(enableAnnotations && { 'data-sb-field-path': 'locales' })}>
+                    <LocaleSwitcher locales={locales} enableAnnotations={enableAnnotations} />
+                </ul>
+            )}
             {primaryLinks.length > 0 && (
                 <ul
                     className="hidden mt-4 lg:flex lg:items-center lg:justify-center gap-x-10"
@@ -191,7 +225,7 @@ function HeaderLogoCenteredPrimaryCentered(props) {
 }
 
 function MobileMenu(props) {
-    const { title, subtitle, logo, primaryLinks = [], secondaryLinks = [], colors = 'bg-light-fg-dark', styles = {}, enableAnnotations } = props;
+    const { title, subtitle, logo, primaryLinks = [], secondaryLinks = [], locales = [], colors = 'bg-light-fg-dark', styles = {}, enableAnnotations, locale } = props;
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const router = useRouter();
 
@@ -239,6 +273,11 @@ function MobileMenu(props) {
                     {secondaryLinks.length > 0 && (
                         <ul {...(enableAnnotations && { 'data-sb-field-path': 'secondaryLinks' })}>
                             <ListOfLinks links={secondaryLinks} enableAnnotations={enableAnnotations} inMobileMenu />
+                        </ul>
+                    )}
+                    {locales.length > 0 && (
+                        <ul {...(enableAnnotations && { 'data-sb-field-path': 'locales' })}>
+                            <LocaleSwitcher locales={locales} enableAnnotations={enableAnnotations} />
                         </ul>
                     )}
                 </div>
@@ -353,7 +392,6 @@ function LinkWithSubnav(props) {
             data-sb-field-path={fieldPath}
         >
             <button
-                aria-expanded={Boolean(isSubNavOpen)}
                 onMouseOver={
                     !process.env.stackbitPreview && !inMobileMenu
                         ? () => {
@@ -410,5 +448,88 @@ function ListOfSubNavLinks({ links = [], hasAnnotations, inMobileMenu = false })
                 </li>
             ))}
         </>
+    );
+}
+
+function LocaleSwitcher(props) {
+    const { locales, colors, inMobileMenu = false } = props;
+    const router = useRouter();
+    const [isOpen, setIsOpen] = useState(false);
+    const selfTriggeredSwitch = useRef(false);
+    console.log(colors);
+
+    useEffect(() => {
+        const handler = (event) => {
+            if (selfTriggeredSwitch.current) {
+                selfTriggeredSwitch.current = false;
+                return;
+            }
+            const locale = event?.detail?.locale;
+            if (!locale) return;
+            const asPath = router.asPath;
+            router.push(asPath, asPath, { locale });
+        };
+        window.addEventListener('stackbitLocaleChanged', handler);
+        return () => window.removeEventListener('stackbitLocaleChanged', handler);
+    }, [router]);
+
+    useEffect(() => {
+        // close menu on route change
+        const handleRouteChange = () => setIsOpen(false);
+        router.events.on('routeChangeStart', handleRouteChange);
+        return () => router.events.off('routeChangeStart', handleRouteChange);
+    }, [router.events]);
+
+    const navigateLocale = (locale) => {
+        const asPath = router.asPath;
+        router.push(asPath, asPath, { locale });
+        selfTriggeredSwitch.current = true;
+        try {
+            (window as any).stackbit?.setLocale(locale);
+        } catch (err) {
+            // ignore
+        }
+        setIsOpen(false);
+    };
+
+    return (
+        <li
+            className={classNames('relative', inMobileMenu ? 'border-t py-3' : 'py-2 group')}
+            onMouseLeave={!process.env.stackbitPreview && !inMobileMenu ? () => setIsOpen(false) : undefined}
+        >
+            <button
+                onMouseOver={!process.env.stackbitPreview && !inMobileMenu ? () => setIsOpen(true) : undefined}
+                onClick={() => setIsOpen((p) => !p)}
+                className={classNames(
+                    'sb-component',
+                    'sb-component-block',
+                    'sb-component-link',
+                    'inline-flex',
+                    'items-center',
+                    inMobileMenu ? 'w-full' : 'text-sm'
+                )}
+            >
+                <LocalizationGlobeIcon className={classNames('shrink-0', 'h-4', 'w-4', inMobileMenu ? 'mr-2' : 'mr-1')} />
+                <ChevronDownIcon className={classNames('fill-current', 'shrink-0', 'h-4', 'w-4', isOpen && 'rotate-180', inMobileMenu ? 'ml-auto' : 'ml-1')} />
+            </button>
+            <ul
+                className={classNames(
+                    colors,
+                    inMobileMenu ? 'p-4 space-y-3' : 'absolute top-full left-0 w-32 border-t border-primary shadow-header z-10 px-6 pt-5 pb-6 space-y-4',
+                    isOpen ? 'block' : 'hidden'
+                )}
+            >
+                {locales.map((l) => (
+                    <li key={l.value}>
+                        <button
+                            onClick={() => navigateLocale(l.value)}
+                            className={classNames(inMobileMenu ? 'w-full justify-start' : 'text-sm')}
+                        >
+                            {l.label}
+                        </button>
+                    </li>
+                ))}
+            </ul>
+        </li>
     );
 }

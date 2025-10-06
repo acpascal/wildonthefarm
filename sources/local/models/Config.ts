@@ -7,7 +7,7 @@ export const Config: Model = {
     labelField: 'titleSuffix',
     singleInstance: true,
     canDelete: false,
-    filePath: 'content/data/site.json',
+    filePath: 'content/data/{lang}/site.json',
     fields: [
         {
             type: 'image',

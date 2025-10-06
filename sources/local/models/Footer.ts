@@ -6,7 +6,7 @@ export const Footer: Model = {
     label: 'Footer',
     labelField: 'title',
     canDelete: false,
-    filePath: 'content/data/{slug}.json',
+    filePath: 'content/data/{lang}/{slug}.json',
     fieldGroups: [
         {
             name: 'styles',

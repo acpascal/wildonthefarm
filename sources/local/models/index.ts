@@ -43,6 +43,7 @@ import { VideoBlock } from './VideoBlock';
 import { MetaTag } from './MetaTag';
 import { FooterLinksGroup } from './FooterLinksGroup';
 import { Seo } from './Seo';
+import { Locale } from './Locale';
 
 export const allModels = {
     BackgroundImage,
@@ -65,6 +66,7 @@ export const allModels = {
     ImageBlock,
     ImageGallerySection,
     Link,
+    Locale,
     PageLayout,
     PagedPostsSection,
     Person,

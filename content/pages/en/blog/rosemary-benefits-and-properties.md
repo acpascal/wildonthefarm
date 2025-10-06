@@ -24,7 +24,7 @@ colors: bg-light-fg-dark
 styles:
   self:
     flexDirection: col
-author: content/data/person1.json
+author: content/data/en/person1.json
 ---
 
 ![Rosemary Plant](/images/blog/rosemary/rosemary_plant_1.png)

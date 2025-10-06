@@ -36,18 +36,14 @@ sections:
       * Hikes in the cloud forest
 
 
-      **Seasonal Pricing (Per Week)**
+      **Pricing (Per Week)**
 
 
-      |Season|Dates|Single occupancy|Double occupancy|
+      |Single occupancy|Double occupancy|
 
-      |--|--|--|--|
+      |--|--|
 
-      |High Season|December 15th to May 15th|$4000|$4500|
-
-      |Low Season|May 15th to September 15th|$3500|$4000|
-
-      |Rainy Season|September 15th to December 15th|$2000|$2500|
+      |$2500|$2800|
 
 
       **SPECIAL:** THREE FRIENDS THREE CABINS, CONTACT US.

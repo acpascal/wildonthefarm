@@ -24,7 +24,7 @@ colors: bg-light-fg-dark
 styles:
   self:
     flexDirection: col
-author: content/data/person1.json
+author: content/data/en/person1.json
 ---
 
 _A magnificent bird, a symbol of freedom for the Mayans and an icon of our highland forests._
