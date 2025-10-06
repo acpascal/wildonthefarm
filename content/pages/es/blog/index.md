@@ -5,11 +5,11 @@ numOfPostsPerPage: 6
 enableSearch: false
 topSections:
   - title:
-      text: Featured Post
+      text: Publicación destacada
       color: text-dark
       type: TitleBlock
     posts:
-      - content/pages/blog/jiaogulan-herb-of-immortality.md
+      - content/pages/es/blog/jiaogulan-herb-of-immortality.md
     showThumbnail: true
     showExcerpt: true
     showDate: true
@@ -30,8 +30,10 @@ styles:
   title:
     textAlign: center
 seo:
-  metaTitle: Wild On The Farm - Blog
-  metaDescription: Explore the Wild on the Farm blog - plant remedies, detox tips, birdwatching guides, and stories from our cloud-forest sanctuary.
+  metaTitle: Blog de Wild on the Farm
+  metaDescription: >-
+    Explora el blog de Wild on the Farm: remedios con plantas, consejos para desintoxicación,
+    guías de observación de aves e historias desde nuestro santuario en el bosque nuboso.
   socialImage: /images/the-farm.jpg
   type: Seo
 type: PostFeedLayout

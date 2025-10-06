@@ -9,26 +9,26 @@
         "title": "Menu",
         "links": [
             {
-                "label": "The Farm",
-                "url": "/the-farm",
+                "label": "La finca",
+                "url": "/la-finca",
                 "style": "secondary",
                 "type": "Link"
             },
             {
-                "label": "Stay",
-                "url": "/stay",
+                "label": "Estancia",
+                "url": "/estancia",
                 "style": "secondary",
                 "type": "Link"
             },
             {
-                "label": "Kitchen",
-                "url": "/kitchen",
+                "label": "Cocina",
+                "url": "/cocina",
                 "style": "secondary",
                 "type": "Link"
             },
             {
-                "label": "Experience",
-                "url": "/experience",
+                "label": "Experiencias",
+                "url": "/experiencias",
                 "style": "secondary",
                 "type": "Link"
             },
@@ -42,7 +42,7 @@
         "type": "FooterLinksGroup"
     },
     "secondaryLinks": {
-        "title": "Contact Us",
+        "title": "Contáctenos",
         "links": [
             {
                 "label": "+507 6569 9134",

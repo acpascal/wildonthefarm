@@ -130,6 +130,7 @@ function HeaderLogoLeftPrimaryCentered(props) {
 
 function HeaderLogoLeftPrimaryRight(props) {
     const { title, subtitle, logo, primaryLinks = [], secondaryLinks = [], locales = [], colors = 'bg-light-fg-dark', enableAnnotations, locale } = props;
+    console.log(colors);
     return (
         <div className="relative flex items-center">
             {(title || logo?.url) && (
@@ -152,7 +153,7 @@ function HeaderLogoLeftPrimaryRight(props) {
             )}
             {locales.length > 0 && (
                 <ul className="hidden lg:flex lg:items-center ml-auto gap-x-2.5" {...(enableAnnotations && { 'data-sb-field-path': 'locales' })}>
-                    <LocaleSwitcher locales={locales} enableAnnotations={enableAnnotations} />
+                    <LocaleSwitcher locales={locales} colors={colors} enableAnnotations={enableAnnotations} />
                 </ul>
             )}
             {(primaryLinks.length > 0 || secondaryLinks.length > 0 || locales.length > 0) && <MobileMenu {...props} />}
@@ -451,10 +452,11 @@ function ListOfSubNavLinks({ links = [], hasAnnotations, inMobileMenu = false })
 }
 
 function LocaleSwitcher(props) {
-    const { locales, inMobileMenu = false } = props;
+    const { locales, colors, inMobileMenu = false } = props;
     const router = useRouter();
     const [isOpen, setIsOpen] = useState(false);
     const selfTriggeredSwitch = useRef(false);
+    console.log(colors);
 
     useEffect(() => {
         const handler = (event) => {
@@ -512,6 +514,7 @@ function LocaleSwitcher(props) {
             </button>
             <ul
                 className={classNames(
+                    colors,
                     inMobileMenu ? 'p-4 space-y-3' : 'absolute top-full left-0 w-32 border-t border-primary shadow-header z-10 px-6 pt-5 pb-6 space-y-4',
                     isOpen ? 'block' : 'hidden'
                 )}

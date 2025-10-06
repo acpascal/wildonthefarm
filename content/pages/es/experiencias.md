@@ -1,6 +1,6 @@
 ---
-title: Experiencia
-slug: experiencia
+title: Experiencias
+slug: experiencias
 sections:
   - styles:
       self:
@@ -20,13 +20,13 @@ sections:
     actions:
       - label: Senderismo
         altText: Senderismo
-        url: /experience/#hiking
+        url: /experiencias/#senderismo
         style: secondary
         elementId: ''
         type: Link
       - label: Descubrimiento personalizado
         altText: Descubrimiento personalizado
-        url: /experience/#tailored-discovery
+        url: /experiencias/#descubrimiento-personalizado
         style: secondary
         elementId: ''
         type: Link
@@ -52,7 +52,7 @@ sections:
       elementId: ''
       goesLast: true
       type: ImageBlock
-    elementId: hiking
+    elementId: senderismo
     colors: bg-lime-fg-light
     styles:
       self:
@@ -132,7 +132,7 @@ sections:
       altText: Descubrimiento personalizado
       elementId: ''
       type: ImageBlock
-    elementId: tailored-discovery
+    elementId: descubrimiento-personalizado
     colors: bg-lime-fg-light
     styles:
       self:
