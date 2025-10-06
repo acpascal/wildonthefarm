@@ -19,8 +19,11 @@ sections:
   - type: GenericSection
     title:
       text: Boquete Detox Retreat
-      color: text-light
+      color: text-black
       type: TitleBlock
+      styles:
+        self:
+          textAlign: center
     text: >
       Nestled at 1800 meters altitude, in the heart of a **pristine cloud
       forest**, our farm invites you to rediscover **balance and vitality**. Far
@@ -54,7 +57,7 @@ sections:
       altText: Nettle leaf
       type: ImageBlock
     elementId: detox-retreat
-    colors: bg-lime-fg-light
+    colors: bg-orange-fg-dark
     styles:
       self:
         alignItems: center
@@ -69,7 +72,7 @@ sections:
   - type: GenericSection
     title:
       text: Breathe Freely
-      color: text-black
+      color: text-white
       type: TitleBlock
     text: "\n\n\nStep into the fresh, pure air of the cloud forest and feel your body begin to purify. Our guided walks in the forest and guided breathwork sessions on the farm are designed to oxygenate your system, melt away stress, and restore a vivid sense of calm and clarity..\_\n\n*   **Guided Breathwork:** We will guide you through breathing practices focused on **nervous system regulation** for deep relaxation and oxygenation.\n\n*   **Forest bathing:** Guided walks in nature to breathe fresh forest air.\n\n*   **Herbal Support** for Allergies and Asthma — [Learn More](/blog/allergies-and-asthma)\n\n"
     media:
@@ -77,7 +80,7 @@ sections:
       altText: Forest bathing
       goesLast: true
       type: ImageBlock
-    colors: bg-orange-fg-dark
+    colors: bg-lime-fg-light
     styles:
       self:
         alignItems: center
@@ -89,7 +92,7 @@ sections:
   - type: GenericSection
     title:
       text: Move with Ease
-      color: text-light
+      color: text-black
       type: TitleBlock
     text: >+
       Our mountain air, peaceful forest, and nourishing surroundings create the
@@ -109,7 +112,7 @@ sections:
       url: /images/detox-retreat/yoga.jpg
       altText: Yoga
       type: ImageBlock
-    colors: bg-lime-fg-light
+    colors: bg-orange-fg-dark
     styles:
       self:
         alignItems: center
@@ -120,7 +123,7 @@ sections:
   - type: GenericSection
     title:
       text: Nourish Your Core
-      color: text-dark
+      color: text-white
       type: TitleBlock
     text: >+
       Nutrient-rich meals and fresh herbal infusions support digestion and
@@ -150,7 +153,7 @@ sections:
       goesLast: true
       type: ImageBlock
     elementId: detox-retreat
-    colors: bg-orange-fg-dark
+    colors: bg-lime-fg-light
     styles:
       self:
         alignItems: center
@@ -162,7 +165,7 @@ sections:
   - type: GenericSection
     title:
       text: Calm Your Mind
-      color: text-light
+      color: text-black
       type: TitleBlock
     text: >+
       In the stillness of the cloud forest, the constant noise of the outside
@@ -183,15 +186,11 @@ sections:
       *   **Plants for Inner Calm** — We incorporate specific botanicals from
       our farm to support strengthen and relax your mind and body.
 
-          [Jiaogulan](/blog/jiaogulan): This powerful adaptogenic herb helps your body cope with physical and emotional stress. It is known to promote a sense of calm focus, helping to regulate your nervous system without causing drowsiness.
-
-          [Nettle](/blog/nettle-properties.md): A nutrient-dense botanical, nettle acts as a restorative tonic for the entire body. Its compounds work to support your adrenal glands and nervous system, helping to nourish your body's immune system.
-
     media:
       url: /images/detox-retreat/balcony_meditation.png
       altText: Balcony meditation
       type: ImageBlock
-    colors: bg-lime-fg-light
+    colors: bg-orange-fg-dark
     styles:
       self:
         alignItems: center
@@ -202,7 +201,7 @@ sections:
   - type: GenericSection
     title:
       text: Strenghten Defenses
-      color: text-dark
+      color: text-white
       type: TitleBlock
     text: >+
       From the purity of the air to the richness of the plants grown on our
@@ -232,7 +231,7 @@ sections:
       goesLast: true
       type: ImageBlock
     elementId: detox-retreat
-    colors: bg-orange-fg-dark
+    colors: bg-lime-fg-light
     styles:
       self:
         alignItems: center
@@ -244,7 +243,7 @@ sections:
   - type: GenericSection
     title:
       text: Sleep Deeply
-      color: text-light
+      color: text-black
       type: TitleBlock
     text: "Silence and rest is foundational to our detox retreat. Our distraction-free setting, peaceful wood cabins, low EMF environment, and clean mountain air encourage deep restorative sleep and mental regeneration.\n\n*   **Sleep-Friendly Cabins** — Rest with the natural light from the moon and stars at night and in an environment free from chemicals and artificial fragrance.\_\n\n*   **Evening herbal tea** — Enjoy organic herbal tea in the evening to support deeper relaxation.\n\n*   **Stargazing** — Nature’s natural sleep reset via circadian rhythm support.\n\n"
     media:
@@ -252,7 +251,7 @@ sections:
       altText: The farm
       elementId: ''
       type: ImageBlock
-    colors: bg-lime-fg-light
+    colors: bg-orange-fg-dark
     styles:
       self:
         alignItems: center

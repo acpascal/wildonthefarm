@@ -19,8 +19,11 @@ sections:
   - type: GenericSection
     title:
       text: Retiro Detox en Boquete
-      color: text-light
+      color: text-black
       type: TitleBlock
+      styles:
+        self:
+          textAlign: center
     text: >
       Ubicado a 1800 metros de altitud, en el corazón de un **bosque nuboso
       pristino**, nuestra finca te invita a redescubrir el **equilibrio y la vitalidad**. Lejos del ajetreo diario, nuestro programa de retiro detox es una inmersión profunda en la naturaleza y el bienestar. Tu viaje personal aquí está cuidadosamente guiado por nuestro equipo de expertos en bienestar, que adapta cada elemento a tus necesidades únicas.
@@ -44,7 +47,7 @@ sections:
       altText: Hoja de ortiga
       type: ImageBlock
     elementId: detox-retreat
-    colors: bg-lime-fg-light
+    colors: bg-orange-fg-dark
     styles:
       self:
         alignItems: center
@@ -59,7 +62,7 @@ sections:
   - type: GenericSection
     title:
       text: Respira libremente
-      color: text-black
+      color: text-white
       type: TitleBlock
     text: "\n\n\nRespira el aire fresco y puro del bosque nuboso y siente cómo tu cuerpo comienza a purificarse. Nuestras caminatas guiadas por el bosque y las sesiones de respiración guiada en la finca están diseñadas para oxigenar tu sistema, disipar el estrés y restaurar una vívida sensación de calma y claridad..\_\n\n*   **Respiración guiada:** Te guiaremos en prácticas de respiración centradas en la **regulación del sistema nervioso** para una relajación profunda y una mejor oxigenación.\n\n*   **Baños de bosque:** Caminatas guiadas en la naturaleza para respirar el aire puro del bosque.\n\n*   **Apoyo herbal** para alergias y asma — [Más información](/blog/allergies-and-asthma)\n\n"
     media:
@@ -67,7 +70,7 @@ sections:
       altText: Bosque
       goesLast: true
       type: ImageBlock
-    colors: bg-orange-fg-dark
+    colors: bg-lime-fg-light
     styles:
       self:
         alignItems: center
@@ -79,7 +82,7 @@ sections:
   - type: GenericSection
     title:
       text: Muévete con facilidad
-      color: text-light
+      color: text-black
       type: TitleBlock
     text: >+
       Nuestro aire de montaña, el bosque apacible y un entorno nutritivo crean el escenario ideal para que tu cuerpo recupere ligereza y fluidez. Aquí, el movimiento se vuelve natural y cada paso te reconecta con tu vitalidad.
@@ -94,7 +97,7 @@ sections:
       url: /images/detox-retreat/yoga.jpg
       altText: Yoga
       type: ImageBlock
-    colors: bg-lime-fg-light
+    colors: bg-orange-fg-dark
     styles:
       self:
         alignItems: center
@@ -105,7 +108,7 @@ sections:
   - type: GenericSection
     title:
       text: Nutre tu interior
-      color: text-dark
+      color: text-white
       type: TitleBlock
     text: >+
       Comidas ricas en nutrientes e infusiones herbales frescas apoyan la digestión y la desintoxicación. Alimentos lactofermentados y remedios naturales de plantas nutren el microbioma.
@@ -128,7 +131,7 @@ sections:
       goesLast: true
       type: ImageBlock
     elementId: detox-retreat
-    colors: bg-orange-fg-dark
+    colors: bg-lime-fg-light
     styles:
       self:
         alignItems: center
@@ -140,7 +143,7 @@ sections:
   - type: GenericSection
     title:
       text: Calma tu mente
-      color: text-light
+      color: text-black
       type: TitleBlock
     text: >+
       En la quietud del bosque nuboso, el ruido constante del mundo exterior se desvanece. La claridad regresa, la tensión se disuelve y tu mente encuentra el espacio necesario para respirar.
@@ -153,15 +156,11 @@ sections:
 
 
       *   **Plantas para la calma interior** — Incorporamos botánicas específicas de nuestra finca para ayudar a relajar y fortalecer tu mente y cuerpo.
-
-          [Jiaogulan](/blog/jiaogulan): Esta poderosa hierba adaptógena ayuda a tu cuerpo a afrontar el estrés físico y emocional. Se la conoce por promover una concentración calmada, regulando el sistema nervioso sin provocar somnolencia.
-
-          [Ortica](/blog/nettle-properties.md): Una planta nutritiva, la ortiga actúa como tónico restaurador para todo el cuerpo. Sus compuestos apoyan las glándulas suprarrenales y el sistema nervioso, ayudando a nutrir el sistema inmunológico.
     media:
       url: /images/detox-retreat/balcony_meditation.png
       altText: Meditación en el balcón
       type: ImageBlock
-    colors: bg-lime-fg-light
+    colors: bg-orange-fg-dark
     styles:
       self:
         alignItems: center
@@ -172,22 +171,22 @@ sections:
   - type: GenericSection
     title:
       text: Fortalece tus defensas
-      color: text-dark
+      color: text-white
       type: TitleBlock
     text: >+
-      Desde la pureza del aire hasta la riqueza de las plantas cultivadas en nuestra finca orgánica, todo aquí trabaja en armonía para fortalecer la resistencia de tu cuerpo y restablecer el equilibrio desde adentro.
+      Desde la pureza del aire hasta la riqueza de las plantas cultivadas en nuestra finca, todo aquí trabaja en armonía para fortalecer la resistencia de tu cuerpo y restablecer el equilibrio desde adentro.
 
 
-      *   **Desintoxicación para la curación:** Ofrecemos orientación opcional sobre estrategias de desintoxicación para combatir la fatiga y reforzar el sistema inmunitario.
+      *   **Detox:** Ofrecemos orientación opcional sobre estrategias de desintoxicación para combatir la fatiga y reforzar el sistema inmunitario.
 
 
-      *   **Tónicos y tés herbales** — Disfruta de tés orgánicos hechos con hierbas recién cosechadas en la finca.
+      *   **Tés herbales:** Disfruta de tés orgánicos hechos con hierbas recién cosechadas.
 
 
-      *   **Inmersiones frías al aire libre** — Chapuzones en el río o duchas frías vigorizantes para estimular la inmunidad.
+      *   **Inmersiones frías al aire libre:** Chapuzones en el río o duchas frías vigorizantes para estimular la inmunidad.
 
 
-      *   **Programas de desintoxicación estacionales** — A petición, podemos diseñar un programa de desintoxicación más profundo para estancias prolongadas o para continuar el proceso una vez en casa.
+      *   **Programas de desintoxicación estacionales:** Podemos diseñar un programa de detox más profundo para estancias prolongadas o para continuar el proceso una vez en casa.
 
     media:
       url: /images/detox-retreat/cozy_tea.png
@@ -195,7 +194,7 @@ sections:
       goesLast: true
       type: ImageBlock
     elementId: detox-retreat
-    colors: bg-orange-fg-dark
+    colors: bg-lime-fg-light
     styles:
       self:
         alignItems: center
@@ -207,15 +206,15 @@ sections:
   - type: GenericSection
     title:
       text: Duerme profundamente
-      color: text-light
+      color: text-black
       type: TitleBlock
-    text: "El silencio y el descanso son la base de nuestro retiro detox. Nuestro entorno libre de distracciones, las cabañas de madera pacíficas, el ambiente de baja EMF y el aire puro de montaña fomentan un sueño reparador profundo y la regeneración mental.\n\n*   **Cabañas favorables al sueño** — Descansa con la luz natural de la luna y las estrellas por la noche en un entorno libre de químicos y fragancias artificiales.\_\n\n*   **Té herbal nocturno** — Disfruta de tés herbales orgánicos por la tarde para favorecer una relajación más profunda.\n\n*   **Observación de estrellas** — Un reinicio natural del sueño mediante el apoyo al ritmo circadiano.\n\n"
+    text: "El silencio y el descanso son la base de nuestro retiro detox. Nuestro entorno libre de distracciones, las cabañas de madera pacíficas, el ambiente de baja EMF y el aire puro de montaña fomentan un sueño reparador profundo.\n\n*   **Cabañas favorables al sueño** — Descansa con la luz natural de la luna y las estrellas por la noche en un entorno libre de químicos y fragancias artificiales.\_\n\n*   **Té herbal nocturno** — Disfruta de tés herbales orgánicos por la tarde para favorecer una relajación más profunda.\n\n*   **Observación de estrellas** — Un reinicio natural del sueño mediante el apoyo al ritmo circadiano.\n\n"
     media:
       url: /images/about-the-farm.jpg
       altText: La finca
       elementId: ''
       type: ImageBlock
-    colors: bg-lime-fg-light
+    colors: bg-orange-fg-dark
     styles:
       self:
         alignItems: center

@@ -62,7 +62,7 @@ sections:
   - type: GenericSection
     title:
       text: Un santuario en las nubes
-      color: text-dark
+      color: text-black
       type: TitleBlock
     text: >
       Bienvenido a Wild on the Farm, un eco-santuario artesanal a 1800 metros,
@@ -87,7 +87,7 @@ sections:
       type: ImageBlock
     badge:
       label: La finca
-      color: text-primary
+      color: text-black
       type: Badge
     elementId: ''
     colors: bg-orange-fg-dark
@@ -101,7 +101,7 @@ sections:
   - type: GenericSection
     title:
       text: Cabañas en el bosque nuboso
-      color: text-light
+      color: text-white
       type: TitleBlock
     text: >
       Disfruta de un lujo sereno en nuestras cabañas artesanales, ubicadas en el
@@ -128,7 +128,7 @@ sections:
       type: ImageBlock
     badge:
       label: Estancia
-      color: text-light
+      color: text-white
       type: Badge
     elementId: ''
     colors: bg-lime-fg-light
@@ -142,7 +142,7 @@ sections:
   - type: GenericSection
     title:
       text: Comida de nuestro huerto orgánico
-      color: text-dark
+      color: text-black
       type: TitleBlock
     text: >
       Descubre el corazón vibrante de nuestro huerto 100% orgánico de permacultura.
@@ -167,7 +167,7 @@ sections:
       type: ImageBlock
     badge:
       label: Cocina
-      color: text-primary
+      color: text-black
       type: Badge
     elementId: ''
     colors: bg-orange-fg-dark
@@ -180,7 +180,7 @@ sections:
           - px-4
   - title:
       text: Experiencia
-      color: text-dark
+      color: text-black
       styles:
         self:
           textAlign: left
@@ -300,13 +300,19 @@ sections:
         textAlign: center
     type: FeaturedItemsSection
   - type: CarouselSection
-    subtitle: Reseñas destacadas
+    title:
+      text: Featured Reviews
+      color: text-black
+      type: TitleBlock
+      styles:
+        self:
+          textAlign: center
     items:
       - title: >-
           “Me alojé en Wild on the Farm y realmente me reconecté con los valores reales de la vida.”
         subtitle: 'Charlotte Hamilton'
         actions: []
-        colors: bg-orange-fg-dark
+        colors: bg-lime-fg-light
         styles:
           self:
             padding:
@@ -329,7 +335,7 @@ sections:
         textAlign: center
   - title:
       text: Contáctanos
-      color: text-dark
+      color: text-black
       type: TitleBlock
     text: >-
       Nos encantaría darte la bienvenida en Wild on the Farm — un lugar donde la naturaleza,
@@ -368,14 +374,14 @@ sections:
           type: TextareaFormControl
       elementId: contact-form
       type: FormBlock
-      goesLast: true
+      goesLast: false
       successMessage: ¡Gracias! Estamos deseando darte la bienvenida — nos pondremos en contacto contigo pronto.
       submitButton:
         type: SubmitButtonFormControl
         label: Enviar
         style: secondary
         elementId: null
-    colors: bg-neutralAlt-fg-dark
+    colors: bg-neutral-fg-dark
     type: GenericSection
 seo:
   metaTitle: Wild on the Farm

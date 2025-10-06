@@ -65,7 +65,7 @@ sections:
   - type: GenericSection
     title:
       text: A Sanctuary in the Clouds
-      color: text-dark
+      color: text-black
       type: TitleBlock
     text: >
       Welcome to Wild on the Farm, a handcrafted eco-sanctuary at 1800 meters,
@@ -90,7 +90,7 @@ sections:
       type: ImageBlock
     badge:
       label: The Farm
-      color: text-primary
+      color: text-black
       type: Badge
     elementId: ''
     colors: bg-orange-fg-dark
@@ -145,7 +145,7 @@ sections:
   - type: GenericSection
     title:
       text: Food from our organic garden
-      color: text-dark
+      color: text-black
       type: TitleBlock
     text: >
       Discover the vibrant heart of our 100% organic
@@ -171,7 +171,7 @@ sections:
       type: ImageBlock
     badge:
       label: Kitchen
-      color: text-primary
+      color: text-black
       type: Badge
     elementId: ''
     colors: bg-orange-fg-dark
@@ -184,7 +184,7 @@ sections:
           - px-4
   - title:
       text: Experience
-      color: text-dark
+      color: text-black
       styles:
         self:
           textAlign: left
@@ -307,13 +307,19 @@ sections:
         textAlign: center
     type: FeaturedItemsSection
   - type: CarouselSection
-    subtitle: Featured Reviews
+    title:
+      text: Featured Reviews
+      color: text-black
+      type: TitleBlock
+      styles:
+        self:
+          textAlign: center
     items:
       - title: >-
           “I stayed at Wild on the Farm and I really reconnected with real life values.”
         subtitle: 'Charlotte Hamilton'
         actions: []
-        colors: bg-orange-fg-dark
+        colors: bg-lime-fg-light
         styles:
           self:
             padding:
@@ -336,7 +342,7 @@ sections:
         textAlign: center
   - title:
       text: Contact Us
-      color: text-dark
+      color: text-black
       type: TitleBlock
     text: >-
       We’d love to welcome you to Wild on the Farm—a place where nature,
@@ -376,14 +382,14 @@ sections:
           type: TextareaFormControl
       elementId: contact-form
       type: FormBlock
-      goesLast: true
+      goesLast: false
       successMessage: Thank you! We can’t wait to welcome you—we'll get back to you soon!
       submitButton:
         type: SubmitButtonFormControl
         label: Submit
         style: secondary
         elementId: null
-    colors: bg-neutralAlt-fg-dark
+    colors: bg-neutral-fg-dark
     type: GenericSection
 seo:
   metaTitle: Wild On The Farm
