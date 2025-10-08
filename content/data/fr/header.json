@@ -1,7 +1,7 @@
 {
     "logo": {
         "url": "/images/logo-notext.png",
-        "altText": "Logo dark",
+        "altText": "Logo sombre",
         "styles": {
             "self": {
                 "margin": ["mr-3"]
@@ -9,45 +9,52 @@
         },
         "type": "ImageBlock"
     },
-    "title": "Finca de la Amistad Verde",
-    "subtitle": "Lodge en el Bosque Nuboso de Boquete",
+    "title": "WILD ON THE FARM",
+    "subtitle": "Lodge dans la forêt nuageuse de Boquete",
     "primaryLinks": [
         {
-            "label": "LA FINCA",
-            "url": "/la-finca",
+            "label": "LA FERME",
+            "altText": "À propos de nous",
+            "url": "/la-ferme",
             "style": "secondary",
             "type": "Link"
         },
         {
-            "label": "ESTANCIA",
-            "url": "/estancia",
+            "label": "SÉJOUR",
+            "altText": "Séjour",
+            "url": "/sejour",
             "style": "secondary",
             "type": "Link"
         },
         {
-            "label": "COCINA",
-            "url": "/cocina",
+            "label": "CUISINE",
+            "altText": "Page Cuisine",
+            "url": "/cuisine",
             "style": "secondary",
             "type": "Link"
         },
         {
-            "label": "EXPERIENCIAS",
+            "label": "EXPÉRIENCE",
+            "altText": "EXPÉRIENCE",
             "links": [
                 {
-                    "label": "AVISTAMIENTO DE AVES",
-                    "url": "/avistamiento-de-aves",
+                    "label": "OBSERVATION DES OISEAUX",
+                    "altText": "Page Observation des Oiseaux",
+                    "url": "/observation-des-oiseaux",
                     "style": "secondary",
                     "type": "Link"
                 },
                 {
-                    "label": "RETIRO DETOX",
-                    "url": "/retiro-detox",
+                    "label": "RETRAITE DÉTOX",
+                    "altText": "Page Retraite Détox",
+                    "url": "/retraite-detox",
                     "style": "secondary",
                     "type": "Link"
                 },
                 {
-                    "label": "DESCUBRIR",
-                    "url": "/experiencias",
+                    "label": "DÉCOUVRIR",
+                    "altText": "Page des Expériences",
+                    "url": "/experience",
                     "style": "secondary",
                     "type": "Link"
                 }
@@ -57,13 +64,15 @@
         },
         {
             "label": "BLOG",
+            "altText": "Blog",
             "url": "/blog",
             "style": "secondary",
             "type": "Link"
         },
         {
-            "label": "PREGUNTAS FRECUENTES",
-            "url": "/preguntas-frecuentes",
+            "label": "QFP",
+            "altText": "QFP",
+            "url": "/qfp",
             "style": "secondary",
             "type": "Link"
         }

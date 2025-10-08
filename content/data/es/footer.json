@@ -55,9 +55,9 @@
                 "iconPosition": "left"
             },
             {
-                "label": "contact@boquetecloudforestlodge.com",
+                "label": "boquetecloudforestlodge@hotmail.com",
                 "altText": "Correo electronico de contacto",
-                "url": "mailto:contact@boquetecloudforestlodge.com",
+                "url": "mailto:boquetecloudforestlodge@hotmail.com",
                 "style": "secondary",
                 "type": "Link",
                 "icon": "mail",

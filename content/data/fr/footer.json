@@ -1,33 +1,33 @@
 {
     "logo": {
         "url": "/images/logo.png",
-        "altText": "Logo light",
+        "altText": "Logo clair",
         "type": "ImageBlock"
     },
-    "text": "Boquete Cloud Forest Lodge",
+    "text": "Lodge dans la forêt nuageuse de Boquete",
     "primaryLinks": {
         "title": "Menu",
         "links": [
             {
-                "label": "The Farm",
-                "url": "/the-farm",
+                "label": "La Ferme",
+                "url": "/la-ferme",
                 "style": "secondary",
                 "type": "Link"
             },
             {
-                "label": "Stay",
-                "url": "/stay",
+                "label": "Séjour",
+                "url": "/sejour",
                 "style": "secondary",
                 "type": "Link"
             },
             {
-                "label": "Kitchen",
-                "url": "/kitchen",
+                "label": "Cuisine",
+                "url": "/cuisine",
                 "style": "secondary",
                 "type": "Link"
             },
             {
-                "label": "Experience",
+                "label": "Expérience",
                 "url": "/experience",
                 "style": "secondary",
                 "type": "Link"
@@ -42,11 +42,11 @@
         "type": "FooterLinksGroup"
     },
     "secondaryLinks": {
-        "title": "Contact Us",
+        "title": "Contactez-nous",
         "links": [
             {
                 "label": "+507 6569 9134",
-                "altText": "Phone number",
+                "altText": "Numéro de téléphone",
                 "url": "tel:50765699134",
                 "style": "secondary",
                 "type": "Link",
@@ -56,7 +56,7 @@
             },
             {
                 "label": "boquetecloudforestlodge@hotmail.com",
-                "altText": "Contact email",
+                "altText": "Email de contact",
                 "url": "mailto:boquetecloudforestlodge@hotmail.com",
                 "style": "secondary",
                 "type": "Link",
@@ -79,13 +79,13 @@
     },
     "socialLinks": [
         {
-            "altText": "Facebook link",
+            "altText": "Lien Facebook",
             "url": "https://www.facebook.com/profile.php?id=61562308296749",
             "icon": "facebook",
             "type": "Social"
         },
         {
-            "altText": "Youtube link",
+            "altText": "Lien Youtube",
             "url": "https://www.youtube.com/@wildonthefarm8302",
             "icon": "youtube",
             "type": "Social"

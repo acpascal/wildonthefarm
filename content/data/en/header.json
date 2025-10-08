@@ -88,6 +88,11 @@
             "value": "es",
             "label": "ES",
             "type": "Locale"
+        },
+        {
+            "value": "fr",
+            "label": "FR",
+            "type": "Locale"
         }
     ],
     "variant": "logo-left-primary-nav-right",
