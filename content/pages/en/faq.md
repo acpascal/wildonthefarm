@@ -5,9 +5,7 @@ sections:
   - type: GenericSection
     elementId: accommodation-and-dining
     text: >
-      ##### **Accommodation and Dining**
-
-      Our stays are offered for one week (7 nights), exclusively from Saturday to Saturday.
+      ##### **Dining**
 
 
       Special dietary needs can be accommodated based on your preferences or a program suggested by your doctor. Please inform us of any special requirements upon registration.
@@ -19,37 +17,6 @@ sections:
 
 
       Similarly, for arthritis issues, many plants are highly effective for long-term relief, especially when applied at the onset of symptoms.
-
-
-      ##### **Pricing**
-
-      Our prices include:
-
-      * Cabin accommodation
-
-      * Generous breakfast, lunch, and dinner
-
-      * Herbal teas, all vegetable and fruit juices
-
-      * Assistance for allergies and asthma. There is a high probability that our plants can help significantly alleviate or eliminate these conditions. This support is provided without charge.
-
-      * Hikes in the cloud forest
-
-
-      **Pricing (Per Week)**
-
-
-      |Single occupancy|Double occupancy|
-
-      |--|--|
-
-      |$2500|$2800|
-
-
-      **SPECIAL:** THREE FRIENDS THREE CABINS, CONTACT US.
-
-
-      Independent guides for bird watching or herpetology, and private Yoga classes, can be arranged à la carte with excellent professionals upon request.
 
 
       ##### **Weather and What to Wear**

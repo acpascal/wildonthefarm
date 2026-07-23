@@ -4,10 +4,7 @@ slug: qfp
 sections:
   - type: GenericSection
     text: >
-      ##### **Hébergement et Restauration**
-
-      Nos séjours sont proposés pour une semaine (7 nuits), exclusivement du samedi au samedi.
-
+      ##### **Restauration**
 
       Les besoins alimentaires spécifiques peuvent être pris en compte en fonction de vos préférences ou d'un programme suggéré par votre médecin. Veuillez nous informer de toute exigence particulière lors de l'inscription.
 
@@ -18,37 +15,6 @@ sections:
 
 
       De même, pour les problèmes d'arthrite, de nombreuses plantes sont très efficaces pour un soulagement à long terme, en particulier lorsqu'elles sont appliquées dès l'apparition des symptômes.
-
-
-      ##### **Tarifs**
-
-      Nos tarifs incluent :
-
-      * Hébergement en cabane
-
-      * Petit-déjeuner, déjeuner et dîner généreux
-
-      * Tisanes, tous les jus de légumes et de fruits
-
-      * Assistance pour les allergies et l'asthme. Il y a une forte probabilité que nos plantes puissent aider à soulager ou éliminer ces conditions. Ce soutien est fourni gratuitement.
-
-      * Randonnées dans la forêt nuageuse
-
-
-      **Tarifs (Par Semaine)**
-
-
-      |Occupation simple|Occupation double|
-
-      |--|--|
-
-      |2500 $|2800 $|
-
-
-      **SPÉCIAL :** TROIS AMIS TROIS CABANES, CONTACTEZ-NOUS.
-
-
-      Des guides indépendants pour l'observation des oiseaux ou l'herpétologie, ainsi que des cours privés de yoga, peuvent être organisés à la carte avec d'excellents professionnels sur demande.
 
 
       ##### **Météo et Vêtements à Prévoir**

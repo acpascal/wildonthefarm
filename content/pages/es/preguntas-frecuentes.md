@@ -4,10 +4,7 @@ slug: preguntas-frecuentes
 sections:
   - type: GenericSection
     text: >
-      ##### **Alojamiento y comidas**
-
-      Nuestras estancias se ofrecen por una semana (7 noches), exclusivamente de sábado a sábado.
-
+      ##### **Comidas**
 
       Se pueden atender necesidades dietéticas especiales según tus preferencias o un programa sugerido por tu médico. Por favor indícanos cualquier requisito especial al momento de la inscripción.
 
@@ -18,37 +15,6 @@ sections:
 
 
       De igual forma, para problemas de artritis, muchas plantas resultan muy eficaces para proporcionar un alivio a largo plazo, especialmente cuando se aplican al inicio de los síntomas.
-
-
-      ##### **Precios**
-
-      Nuestros precios incluyen:
-
-      * Alojamiento en cabaña
-
-      * Generoso desayuno, almuerzo y cena
-
-      * Tés herbales, todos los jugos de verduras y frutas
-
-      * Asistencia para alergias y asma. Existe una alta probabilidad de que nuestras plantas puedan ayudar a aliviar o eliminar significativamente estas condiciones. Este apoyo se brinda sin cargo.
-
-      * Caminatas por el bosque nuboso
-
-
-      **Precios (por semana)**
-
-
-      |Ocupación individual|Ocupación doble|
-
-      |--|--|
-
-      |$2500|$2800|
-
-
-      **ESPECIAL:** TRES AMIGOS, TRES CABAÑAS. CONTÁCTANOS.
-
-
-      Guías independientes para observación de aves o herpetología, y clases privadas de Yoga, pueden organizarse a la carta con excelentes profesionales a pedido.
 
 
       ##### **Clima y qué llevar**

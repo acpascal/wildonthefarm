@@ -45,9 +45,9 @@
         "title": "Contactez-nous",
         "links": [
             {
-                "label": "+507 6898 0754",
+                "label": "+507 6569 9134",
                 "altText": "Numéro de téléphone",
-                "url": "tel:50768980754",
+                "url": "tel:50765699134",
                 "style": "secondary",
                 "type": "Link",
                 "icon": "whatsapp",
@@ -55,9 +55,9 @@
                 "iconPosition": "left"
             },
             {
-                "label": "info@wildonthefarm.com",
+                "label": "boquetecloudforestlodge@hotmail.com",
                 "altText": "Email de contact",
-                "url": "mailto:info@wildonthefarm.com",
+                "url": "mailto:boquetecloudforestlodge@hotmail.com",
                 "style": "secondary",
                 "type": "Link",
                 "icon": "mail",
