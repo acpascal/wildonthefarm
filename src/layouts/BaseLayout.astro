@@ -22,5 +22,8 @@ const { locale = defaultLocale, ...seo } = Astro.props;
     <Nav locale={locale} />
     <slot />
     <Footer locale={locale} />
+    <script>
+      import '../scripts/lightbox.js';
+    </script>
   </body>
 </html>

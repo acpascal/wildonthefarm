@@ -780,3 +780,165 @@ section.no-pad-bottom {
     gap: var(--space-6);
   }
 }
+
+.bg-cream {
+  background: var(--cream);
+}
+
+/* ==========================================================================
+   Quote section
+   ========================================================================== */
+
+.quote-section {
+  text-align: center;
+}
+
+.quote-section blockquote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: var(--green-deep);
+  max-width: 42rem;
+  margin: 0 auto var(--space-3);
+}
+
+.quote-section cite {
+  font-style: normal;
+  font-size: 0.85rem;
+  color: var(--gold);
+  letter-spacing: 0.04em;
+}
+
+@media (min-width: 860px) {
+  .quote-section blockquote {
+    font-size: 1.7rem;
+  }
+}
+
+/* ==========================================================================
+   Photo tile / Gallery — explicit per-tile size (lg/wide/tall/normal),
+   never inferred from list position (see PhotoTile.astro).
+   ========================================================================== */
+
+.photo-tile {
+  display: block;
+  overflow: hidden;
+  border-radius: 4px;
+  cursor: zoom-in;
+}
+
+.photo-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 130px;
+  grid-auto-flow: dense;
+  gap: 8px;
+}
+
+.gallery .pt-lg {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.gallery .pt-wide {
+  grid-column: span 2;
+}
+
+.gallery .pt-tall {
+  grid-row: span 2;
+}
+
+@media (min-width: 860px) {
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 160px;
+    gap: 12px;
+  }
+}
+
+/* ==========================================================================
+   Lightbox
+   ========================================================================== */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+  background: rgba(15, 20, 12, 0.94);
+}
+
+.lightbox.is-open {
+  display: flex;
+}
+
+.lightbox-stage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+}
+
+.lightbox-stage img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  cursor: default;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: none;
+  color: var(--paper);
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--paper);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.lightbox-prev {
+  left: var(--space-2);
+}
+
+.lightbox-next {
+  right: var(--space-2);
+}
+
+@media (min-width: 640px) {
+  .lightbox-stage {
+    padding: 4rem;
+  }
+
+  .lightbox-nav {
+    width: 52px;
+    height: 52px;
+  }
+}

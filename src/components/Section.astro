@@ -4,12 +4,13 @@ interface Props {
   heading?: string;
   noPadTop?: boolean;
   noPadBottom?: boolean;
+  bg?: 'cream';
 }
 
-const { label, heading, noPadTop = false, noPadBottom = false } = Astro.props;
+const { label, heading, noPadTop = false, noPadBottom = false, bg } = Astro.props;
 ---
 
-<section class:list={{ 'no-pad-top': noPadTop, 'no-pad-bottom': noPadBottom }}>
+<section class:list={{ 'no-pad-top': noPadTop, 'no-pad-bottom': noPadBottom, 'bg-cream': bg === 'cream' }}>
   <div class="container">
     {label && <div class="section-label">{label}</div>}
     {heading && <h2 class="lede">{heading}</h2>}
