@@ -8,6 +8,10 @@ const journal = defineCollection({
     z.object({
       title: z.string(),
       description: z.string(),
+      /** Italic centered lede shown right below the hero — distinct from
+       * `description` (meta/listing text), matches the source site's
+       * .pull-intro paragraph on every article. */
+      pullIntro: z.string(),
       date: z.coerce.date(),
       kind: z.enum(['plant', 'note']),
       section: z.enum(['what-we-grow', 'farm-notes', 'travel-panama']),

@@ -1,0 +1,86 @@
+---
+title: "Darién, 2008: Hunting and Village Life With the Emberá"
+description: "A personal story from Panama's Darién — running the jungle with Emberá hunters along the Sambú River, and being welcomed into village life after days on foot. From the founder of Wild on the Farm, Boquete Cloud Forest Lodge."
+pullIntro: "When you're trained to walk 40 kilometres a day through the jungle, the doors of the local people start to open — and you're invited in to take part in their daily life."
+date: 2026-05-04
+kind: note
+section: travel-panama
+cover: ../../../assets/journal/darien/chasse_03.jpg
+coverAlt: Crossing the Sambú River in the Darién
+---
+
+import PhotoGrid from '../../../components/PhotoGrid.astro';
+import { img } from '../../../lib/images';
+
+{/*
+  Alt text below is thematic, not photo-specific — generated from the
+  section's subject matter (the river/hunt vs. village/trail) rather than
+  each individual image, since the exact content of 81 personal travel
+  photos can't be known without viewing each one. Worth a pass to make
+  these more specific where it matters.
+*/}
+
+export const chasseThemes = [
+  'Traveling up the Sambú River by piragua',
+  'Emberá hunters moving through the Darién jungle',
+  'Crossing the river during the hunt',
+  'Tracking wild peccary through dense jungle',
+  'Emberá hunters at rest during the trek',
+  'The jungle canopy along the Sambú River',
+  'Piragua canoes on the riverbank',
+  'Following the Emberá hunters through the forest',
+];
+
+export const villageThemes = [
+  'Village life on the Sambú River',
+  'An open-air kitchen on stilts above the ground',
+  'Evening around the fire in the Emberá village',
+  'Children and daily life in the village',
+  'Hiking the trail back from the village',
+  'The stilted huts of the Emberá village',
+  'Village life along the riverbank',
+  'The trail through the Darién jungle',
+];
+
+export const chassePhotos = Array.from({ length: 33 }, (_, i) => ({
+  image: img(`journal/darien/chasse_${String(i + 1).padStart(2, '0')}.jpg`),
+  alt: `${chasseThemes[i % chasseThemes.length]} (${i + 1} of 33)`,
+}));
+
+export const villagePhotos = Array.from({ length: 48 }, (_, i) => ({
+  image: img(`journal/darien/village_${String(i + 1).padStart(2, '0')}.jpg`),
+  alt: `${villageThemes[i % villageThemes.length]} (${i + 1} of 48)`,
+}));
+
+## The Sambú River
+
+Long before there was a farm in Boquete, there was the Darién — Panama's wildest, least-touched province, where the road simply stops and the rivers take over. In 2008, I travelled up the Sambú River by piragua, the dugout canoes poled by hand through currents and shallow rapids, into the territory of the Emberá.
+
+The Emberá have lived along the Sambú, the Chucunaque, and the Tuira rivers for generations, in villages of stilted, open-sided huts that catch every breath of river air. I wasn't there as a tourist passing through for an afternoon. I was there because I could keep up — and in the jungle, that changes everything.
+
+## Embedded in an Emberá Hunt
+
+At the time, I was in serious physical training — the kind that has you covering 40 kilometres a day, on mountain trails, through jungle, always outdoors, always wild. It's not a boast so much as a fact that mattered: it's what let me follow the Emberá hunters at their own pace, and their pace is fast. They don't walk the forest so much as read it, moving at a near-run over roots and rock, tracking animals most outsiders would never even notice had passed.
+
+Wild peccary — jungle pigs — was the prize we were after, and when a hunt succeeds, it isn't kept by the hunter alone. Among the Emberá, a peccary or any large animal is shared across the whole village: every family gets a portion, cooked the same evening over open fire. Coming back into the village with the men who'd made that happen, and being handed a share of it myself, is still one of the most honest welcomes I've ever received anywhere.
+
+## Life in the Village
+
+What stayed with me wasn't just the hunt — it was everything around it. Days spent in the open-air kitchens, up on stilts above the ground, where the older women ran the household with total authority. Evenings around the fire. Children, dogs, and hammocks everywhere. Nobody explained the rhythm of the place to me; you simply had to fall into step with it, the same way you'd fallen into step on the trail.
+
+That's the part I still carry into the farm today: nature doesn't perform for visitors, and neither do the people who actually live inside it. You have to arrive on its terms. Boquete is a gentler forest than the Darién, but the philosophy is the same one I first understood on the Sambú River — earn the trail, and the rest opens up on its own.
+
+[Hiking from Wild on the Farm →](/hiking/)
+[Reserve your stay →](/#reserve)
+
+## The Hunt
+
+Every photo from the river and the hunt.
+
+<PhotoGrid items={chassePhotos} groupId="darien" />
+
+## Village Life & Hiking
+
+Every photo from the village and the trail.
+
+<PhotoGrid items={villagePhotos} groupId="darien" />

@@ -1,0 +1,59 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from './PageLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import ReserveCTA from '../components/ReserveCTA.astro';
+import ReserveContactBlock from '../components/ReserveContactBlock.astro';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+  cover: ImageMetadata;
+  coverAlt: string;
+  eyebrow: string;
+  dateDisplay: string;
+  pullIntro: string;
+}
+
+const { title, description, path, cover, coverAlt, eyebrow, dateDisplay, pullIntro } = Astro.props;
+const ogImage = await getImage({ src: cover, width: 1200, format: 'webp' });
+---
+
+<PageLayout
+  title={`${title} — Wild on the Farm | Boquete Cloud Forest Lodge`}
+  description={description}
+  path={path}
+  image={ogImage.src}
+  pullIntro={pullIntro}
+>
+  <Fragment slot="hero">
+    <PageHero image={cover} alt={coverAlt} eyebrow={eyebrow}>
+      {title}
+    </PageHero>
+  </Fragment>
+
+  <div class="article-meta container">
+    <time>{dateDisplay}</time>
+  </div>
+
+  <article class="journal-article">
+    <div class="container">
+      <slot />
+    </div>
+  </article>
+
+  <ReserveCTA>
+    <Fragment slot="left">
+      <div class="section-label">Continue Reading</div>
+      <h2>More from the Journal.</h2>
+      <div class="contact-list">
+        <a href="/journal/">All Journal Posts →</a>
+      </div>
+    </Fragment>
+    <Fragment slot="right">
+      <ReserveContactBlock />
+    </Fragment>
+  </ReserveCTA>
+</PageLayout>
