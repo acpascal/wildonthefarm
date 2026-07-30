@@ -1,17 +1,161 @@
 ---
+import { getImage } from 'astro:assets';
+import PageLayout from '../layouts/PageLayout.astro';
+import Hero from '../components/Hero.astro';
+import Stats from '../components/Stats.astro';
+import Section from '../components/Section.astro';
+import Split from '../components/Split.astro';
+import Story from '../components/Story.astro';
+import Pillars from '../components/Pillars.astro';
+import Cards from '../components/Cards.astro';
+import QuoteSection from '../components/QuoteSection.astro';
+import ReserveCTA from '../components/ReserveCTA.astro';
+import SchemaLodging from '../components/SchemaLodging.astro';
+import { business } from '../data/business';
+import { img } from '../lib/images';
 
+const heroImage = img('home/hero.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const stats = [
+  { num: "5,905'", label: 'Elevation' },
+  { num: 'Three', label: 'Cloud Forest Cabins' },
+  { num: 'Est. 2008', label: 'Organic & Macadamia Farm' },
+  { num: 'Amistad', label: 'National Park' },
+];
+
+const pillars = [
+  { title: 'Authenticity', description: 'Eighteen years of real organic farming, not a backdrop built for hospitality.' },
+  { title: 'Intimacy', description: 'Only three cabins, ever. A choice, not a limitation.' },
+  { title: 'Sensory silence', description: 'Clouds, altitude, and a quiet that has texture.' },
+  { title: 'Honest comfort', description: "Off-grid doesn't mean roughing it — high-end bedding, private baths, warm timber." },
+  { title: 'A living table', description: "Meals grown a few steps from where they're served." },
+];
+
+const cards = [
+  {
+    href: '/stay/',
+    image: img('stay/card_cloud_forest_cabins.jpg'),
+    alt: 'A cloud forest cabin at Wild on the Farm',
+    label: 'Stay',
+    title: 'Cloud Forest Cabins',
+    description: 'Warm timber, floor-to-ceiling views, and a silence built for rest.',
+  },
+  {
+    href: '/kitchen/',
+    image: img('food/four_salads.jpg'),
+    alt: 'Four seasonal salads served at Wild on the Farm',
+    label: 'Kitchen',
+    title: 'From Our Garden',
+    description: 'Organic, seasonal, harvested a few steps from the table.',
+  },
+  {
+    href: '/birdwatching/',
+    image: img('birds/bird_14.jpg'),
+    alt: 'A bird species seen at Wild on the Farm',
+    label: 'Experience',
+    title: 'Birdwatching & Trails',
+    description: 'Home to the Resplendent Quetzal and the trails of Amistad park.',
+  },
+];
+
+const mapsHref =
+  'https://www.google.com/maps/search/?api=1&query=Finca+Amistad,+Horqueta,+Boquete,+Chiriqui,+Panama';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<PageLayout title={`${business.name} — ${business.tagline}`} description={business.description} path="/" image={ogImage.src}>
+  <Fragment slot="hero">
+    <Hero
+      image={heroImage}
+      alt="Cabin overlooking the cloud forest at Wild on the Farm"
+      title={business.name}
+      tagline={business.tagline}
+      eyebrow="Permaculture & Organic Macadamia Farm since 2008"
+      focalPosition="center 78%"
+    >
+      <p>
+        Three handcrafted cabins on an organic &amp; permaculture macadamia farm in Panama —
+        reached by a mountain road that leaves the ordinary world behind, so the silence up here
+        stays whole.
+      </p>
+      <div class="hero-cta">
+        <a href="#reserve" class="btn btn-solid">Reserve Your Stay</a>
+        <a href="/the-farm/" class="btn">Discover the Farm</a>
+      </div>
+    </Hero>
+  </Fragment>
+
+  <Stats stats={stats} />
+
+  <Section>
+    <Split>
+      <div>
+        <div class="section-label">The Farm</div>
+        <h2 class="lede">Eighteen years of organic ground, before the first guest ever arrived.</h2>
+      </div>
+      <div>
+        <p>
+          Wild on the Farm was never built to look like a farm. It has been one since 2008 — a
+          certified organic farm and macadamia plantation, cultivated in patient harmony with the
+          cloud forest that surrounds it.
+        </p>
+        <p>
+          In 2025, three handcrafted cabins opened their doors for the first time. Everything
+          else — the soil, the trees, the rhythm — was already here, eighteen years in the
+          making.
+        </p>
+      </div>
+    </Split>
+  </Section>
+
+  <Story image={img('home/story.jpg')} alt="A living roof at Wild on the Farm" label="A Masterpiece of Synergy" heading="Roofs grown from the hillside.">
+    <p>
+      Living roofs blur the line between shelter and slope, built from sustainable tropical
+      hardwood and set into the mountain rather than onto it. Solar power, spring water, and
+      organic soil keep the sanctuary self-sufficient — comfort and sustainability, held as one
+      and the same.
+    </p>
+  </Story>
+
+  <Section label="What Stays With You" heading="Five things we never compromise on.">
+    <Pillars pillars={pillars} />
+  </Section>
+
+  <Section label="Explore" heading="Stay, eat, and wander — on the farm's own terms.">
+    <Cards items={cards} />
+  </Section>
+
+  <QuoteSection cite="— Charlotte Hamilton">
+    "I stayed at Wild on the Farm and truly reconnected with what matters. The silence here has a
+    texture you don't forget."
+  </QuoteSection>
+
+  <ReserveCTA>
+    <Fragment slot="left">
+      <div class="section-label">Reserve</div>
+      <h2>Plan your escape into the clouds.</h2>
+      <p>
+        Tell us when you'd like to arrive and what you're dreaming of — birdwatching, a digital
+        detox, or simply the silence. We'll help you plan an unforgettable stay.
+      </p>
+      <div class="contact-list">
+        <a href={business.whatsappHref}>{business.phone} (WhatsApp)</a>
+        <a href={`mailto:${business.email}`}>{business.email}</a>
+        <a href={mapsHref}>Finca Amistad, Horqueta, Boquete, Chiriquí, Panama</a>
+      </div>
+    </Fragment>
+    <Fragment slot="right">
+      <div class="section-label">Journal</div>
+      <h2>From the farm, every week.</h2>
+      <p>
+        Seasonal notes on native plants, trail conditions, permaculture, and the health of this
+        small mountain — updated as the farm itself changes.
+      </p>
+      <div class="contact-list">
+        <a href="/journal/">Read The Journal →</a>
+      </div>
+    </Fragment>
+  </ReserveCTA>
+
+  <SchemaLodging imageUrl={ogImage.src} />
+</PageLayout>

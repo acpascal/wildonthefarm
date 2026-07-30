@@ -1,0 +1,37 @@
+---
+import { business } from '../data/business';
+import { absoluteUrl } from '../lib/seo';
+
+interface Props {
+  /** Root-relative image path (e.g. an astro:assets getImage() .src). */
+  imageUrl: string;
+}
+
+const { imageUrl } = Astro.props;
+const site = Astro.site!;
+const siteTrimmed = site.toString().replace(/\/$/, '');
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'LodgingBusiness',
+  name: `${business.name} — ${business.tagline}`,
+  description: business.description,
+  url: `${siteTrimmed}/`,
+  telephone: business.phone,
+  email: business.email,
+  image: absoluteUrl(site, imageUrl),
+  priceRange: '$$',
+  address: {
+    '@type': 'PostalAddress',
+    ...business.address,
+  },
+  amenityFeature: [
+    { '@type': 'LocationFeatureSpecification', name: 'Solar power' },
+    { '@type': 'LocationFeatureSpecification', name: 'Organic farm' },
+    { '@type': 'LocationFeatureSpecification', name: 'Private terrace' },
+  ],
+  sameAs: [business.social.facebook, business.social.instagram, business.social.youtube],
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

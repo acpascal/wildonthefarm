@@ -1,0 +1,23 @@
+---
+import { getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  image: ImageMetadata;
+  alt: string;
+  label: string;
+  heading: string;
+}
+
+const { image, alt, label, heading } = Astro.props;
+const optimized = await getImage({ src: image, width: 1200, format: 'webp' });
+---
+
+<div class="story">
+  <div class="story-img" style={`background-image:url(${optimized.src})`} role="img" aria-label={alt} />
+  <div class="story-text">
+    <div class="section-label">{label}</div>
+    <h2>{heading}</h2>
+    <slot />
+  </div>
+</div>
