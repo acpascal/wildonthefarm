@@ -1,0 +1,6 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Redirects (old-domain catch-alls, old->new page map) are added in Phase 6,
+# once every v3 URL is final. See the implementation plan.
