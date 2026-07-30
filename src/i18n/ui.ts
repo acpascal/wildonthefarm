@@ -35,6 +35,7 @@ export const ui = {
     'lightbox.previous': 'Previous photo',
     'lightbox.next': 'Next photo',
     'language.switch': 'Language',
+    'reserve.defaultHeading': 'Plan your escape into the clouds.',
   },
   es: {
     'nav.farmAndStay': 'Finca y Estancia',
@@ -60,6 +61,7 @@ export const ui = {
     'lightbox.previous': 'Foto anterior',
     'lightbox.next': 'Foto siguiente',
     'language.switch': 'Idioma',
+    'reserve.defaultHeading': 'Planifica tu escape hacia las nubes.',
   },
   fr: {
     'nav.farmAndStay': 'Ferme et Séjour',
@@ -85,6 +87,7 @@ export const ui = {
     'lightbox.previous': 'Photo précédente',
     'lightbox.next': 'Photo suivante',
     'language.switch': 'Langue',
+    'reserve.defaultHeading': 'Planifiez votre évasion dans les nuages.',
   },
 } as const satisfies Record<Locale, Record<string, string>>;
 

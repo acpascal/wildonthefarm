@@ -1,0 +1,13 @@
+---
+interface Props {
+  /** 'todo' marks content gaps carried over from the draft (missing photos,
+   * placeholder copy) — visible to you, not hidden, until resolved. */
+  variant?: 'default' | 'todo';
+}
+
+const { variant = 'default' } = Astro.props;
+---
+
+<div class:list={['note-box', { 'note-box-todo': variant === 'todo' }]}>
+  <slot />
+</div>

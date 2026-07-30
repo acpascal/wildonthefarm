@@ -1,0 +1,26 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+import type { PageSeo } from '../lib/seo';
+import { defaultLocale, type Locale } from '../i18n/ui';
+
+interface Props extends PageSeo {
+  locale?: Locale;
+}
+
+const { locale = defaultLocale, ...seo } = Astro.props;
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <BaseHead {...seo} />
+  </head>
+  <body>
+    <Nav locale={locale} />
+    <slot />
+    <Footer locale={locale} />
+  </body>
+</html>

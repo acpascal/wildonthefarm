@@ -1,0 +1,20 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import PullIntro from '../components/PullIntro.astro';
+import type { PageSeo } from '../lib/seo';
+import { defaultLocale, type Locale } from '../i18n/ui';
+
+interface Props extends PageSeo {
+  locale?: Locale;
+  /** Italic centered lede paragraph shown right below the hero, if any. */
+  pullIntro?: string;
+}
+
+const { locale = defaultLocale, pullIntro, ...seo } = Astro.props;
+---
+
+<BaseLayout locale={locale} {...seo}>
+  <slot name="hero" />
+  {pullIntro && <PullIntro>{pullIntro}</PullIntro>}
+  <slot />
+</BaseLayout>

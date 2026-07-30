@@ -117,3 +117,666 @@ button {
     --container-pad: 2rem;
   }
 }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75em 1.5em;
+  border: 1px solid var(--green-deep);
+  border-radius: 2px;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  color: var(--green-deep);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.btn-solid {
+  background: var(--green-deep);
+  border-color: var(--green-deep);
+  color: var(--paper);
+}
+
+.btn:hover {
+  background: var(--green-deep);
+  color: var(--paper);
+}
+
+/* ==========================================================================
+   Nav — mobile-first: base styles are the drawer/off-canvas menu,
+   the min-width query below switches to a horizontal bar with hover
+   dropdowns. See --bp-md (860px) in the breakpoint comment above.
+   ========================================================================== */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 253, 248, 0.94);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: 0.9rem var(--container-pad);
+  position: relative;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--green-deep);
+  line-height: 1.2;
+}
+
+.logo span {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.55rem;
+  letter-spacing: 0.16em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* Hamburger toggle — mobile only */
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  order: 3;
+}
+
+.nav-toggle-bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--green-deep);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav.is-open .nav-toggle-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav.is-open .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+.nav.is-open .nav-toggle-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Off-canvas link panel — mobile default */
+.nav-links {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--paper);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+  padding: var(--space-2) var(--container-pad) var(--space-4);
+  max-height: calc(100vh - 100%);
+  overflow-y: auto;
+  order: 2;
+  width: 100%;
+}
+
+.nav.is-open .nav-links {
+  display: flex;
+}
+
+.nav-links > a {
+  padding: 0.85em 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 1rem;
+}
+
+.nav-reserve {
+  order: 1;
+  padding: 0.6em 1.1em;
+  font-size: 0.8rem;
+}
+
+/* Dropdown groups — mobile: inline disclosure within the drawer */
+.nav-dropdown {
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-dropdown > a {
+  border-bottom: none;
+  display: inline-block;
+  padding: 0.85em 0;
+}
+
+.nav-dropdown-toggle {
+  float: right;
+  margin-top: 0.7em;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--green-deep);
+}
+
+.nav-dropdown-toggle svg {
+  width: 12px;
+  height: 8px;
+  transition: transform 0.2s ease;
+}
+
+.nav-dropdown.is-open .nav-dropdown-toggle svg {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+  display: none;
+  flex-direction: column;
+  padding: 0 0 0.5em 1em;
+  clear: both;
+}
+
+.nav-dropdown.is-open .nav-dropdown-menu {
+  display: flex;
+}
+
+.nav-dropdown-menu a {
+  padding: 0.6em 0;
+  color: var(--gray);
+}
+
+@media (min-width: 860px) {
+  .nav-inner {
+    padding: 1.1rem var(--container-pad);
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: static;
+    box-shadow: none;
+    border-bottom: none;
+    background: none;
+    padding: 0;
+    max-height: none;
+    overflow: visible;
+    gap: 1.9rem;
+    font-size: 0.92rem;
+    order: 2;
+    width: auto;
+  }
+
+  .nav-links > a {
+    padding: 0;
+    border-bottom: none;
+  }
+
+  .nav-links > a:hover {
+    color: var(--gold);
+  }
+
+  .nav-reserve {
+    order: 3;
+    padding: 0.75em 1.5em;
+    font-size: 0.9rem;
+  }
+
+  .nav-dropdown {
+    position: relative;
+    border-bottom: none;
+  }
+
+  .nav-dropdown > a {
+    padding: 0;
+  }
+
+  .nav-dropdown > a:hover {
+    color: var(--gold);
+  }
+
+  .nav-dropdown-toggle {
+    display: none;
+  }
+
+  .nav-dropdown-menu {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-top: 14px;
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 10px 0;
+    min-width: 210px;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.16);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(4px);
+    transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s;
+    clear: none;
+    padding-left: 0;
+  }
+
+  /* Invisible bridge over the gap between the nav link and the dropdown —
+     without this, the mouse briefly hovers nothing while moving down to
+     the menu, and it closes before you reach it. */
+  .nav-dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -14px;
+    left: 0;
+    right: 0;
+    height: 14px;
+  }
+
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown:focus-within .nav-dropdown-menu,
+  .nav-dropdown.is-open .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .nav-dropdown-menu a {
+    padding: 8px 20px;
+    color: var(--ink);
+    white-space: nowrap;
+    display: block;
+  }
+
+  .nav-dropdown-menu a:hover {
+    color: var(--gold);
+    background: var(--cream);
+  }
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: var(--space-4) 0;
+  font-size: 0.85rem;
+  color: var(--gray);
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.footer-links a:hover {
+  color: var(--gold);
+}
+
+@media (min-width: 860px) {
+  .footer-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/* ==========================================================================
+   Typography helpers
+   ========================================================================== */
+
+.section-label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: var(--space-2);
+}
+
+.lede {
+  font-size: 1.5rem;
+}
+
+.display {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.hero-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold-bright);
+}
+
+@media (min-width: 860px) {
+  .lede {
+    font-size: 2rem;
+  }
+}
+
+/* ==========================================================================
+   Sections
+   ========================================================================== */
+
+section {
+  padding: var(--space-6) 0;
+}
+
+section.no-pad-top {
+  padding-top: 0;
+}
+
+section.no-pad-bottom {
+  padding-bottom: 0;
+}
+
+@media (min-width: 860px) {
+  section {
+    padding: var(--space-7) 0;
+  }
+}
+
+/* ==========================================================================
+   Pull intro
+   ========================================================================== */
+
+.pull-intro {
+  padding-top: var(--space-5);
+  padding-bottom: var(--space-3);
+}
+
+.pull-intro .display {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  max-width: 46rem;
+  color: var(--green-deep);
+}
+
+@media (min-width: 860px) {
+  .pull-intro .display {
+    font-size: 1.6rem;
+  }
+}
+
+/* ==========================================================================
+   Heroes
+   ========================================================================== */
+
+/* Photo hero — full uncropped image, caption band below it (not overlaid) */
+.photo-hero img {
+  width: 100%;
+  height: auto;
+  max-height: 60vh;
+  object-fit: cover;
+}
+
+.photo-hero-caption {
+  background: var(--green-deep);
+  color: var(--paper);
+  padding: var(--space-4) var(--container-pad);
+  text-align: center;
+}
+
+.photo-hero-caption h1 {
+  color: var(--paper);
+  margin: 0.3em 0 0;
+  font-size: 1.6rem;
+}
+
+.photo-hero-caption .hero-eyebrow {
+  color: var(--gold-bright);
+}
+
+@media (min-width: 860px) {
+  .photo-hero-caption h1 {
+    font-size: 2.4rem;
+  }
+}
+
+/* Page hero — cropped background-image, overlaid text */
+.page-hero {
+  position: relative;
+  min-height: 44vh;
+  display: flex;
+  align-items: flex-end;
+  background-size: cover;
+  background-position: center;
+  color: var(--paper);
+}
+
+.page-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 20, 12, 0.75), rgba(15, 20, 12, 0.05) 60%);
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 1;
+  padding-bottom: var(--space-5);
+}
+
+.page-hero-content h1 {
+  color: var(--paper);
+  font-size: 1.9rem;
+  margin-top: 0.3em;
+}
+
+.page-hero .hero-eyebrow {
+  color: var(--gold-bright);
+}
+
+@media (min-width: 860px) {
+  .page-hero {
+    min-height: 56vh;
+  }
+
+  .page-hero-content h1 {
+    font-size: 2.8rem;
+  }
+}
+
+/* ==========================================================================
+   Amenity list
+   ========================================================================== */
+
+.amenity-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: var(--space-3);
+}
+
+.amenity-list span {
+  font-size: 0.82rem;
+  color: var(--green-deep);
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.5em 1.1em;
+}
+
+/* ==========================================================================
+   Cabin block
+   ========================================================================== */
+
+.cabin-block {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  padding: var(--space-5) 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.cabin-block:last-child {
+  border-bottom: none;
+}
+
+.cabin-img {
+  display: block;
+  aspect-ratio: 4 / 3;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.cabin-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cabin-block p {
+  color: var(--gray);
+}
+
+.cabin-cta {
+  margin-top: var(--space-4);
+}
+
+@media (min-width: 860px) {
+  .cabin-block {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: var(--space-5);
+  }
+
+  .cabin-block.reverse .cabin-img {
+    order: 2;
+  }
+
+  .cabin-img {
+    aspect-ratio: 3 / 4;
+  }
+}
+
+/* ==========================================================================
+   Split (two-column text/image)
+   ========================================================================== */
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+@media (min-width: 860px) {
+  .split {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-5);
+  }
+
+  .split.reverse > *:first-child {
+    order: 2;
+  }
+}
+
+/* ==========================================================================
+   Note box
+   ========================================================================== */
+
+.note-box {
+  border-left: 3px solid var(--gold);
+  background: var(--cream);
+  padding: var(--space-3) var(--space-4);
+  border-radius: 0 4px 4px 0;
+  margin: var(--space-3) 0;
+  font-size: 0.92rem;
+  color: var(--green-deep);
+}
+
+.note-box-todo {
+  border-left-color: var(--gold-bright);
+}
+
+.note-box p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   Reserve CTA
+   ========================================================================== */
+
+.reserve {
+  background: var(--green-deep);
+  color: var(--paper);
+}
+
+.reserve .section-label {
+  color: var(--gold-bright);
+}
+
+.reserve h2 {
+  color: var(--paper);
+}
+
+.reserve-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: var(--space-3);
+}
+
+.contact-list a:hover {
+  color: var(--gold-bright);
+}
+
+@media (min-width: 860px) {
+  .reserve-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+  }
+}

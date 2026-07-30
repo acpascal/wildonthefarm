@@ -1,0 +1,98 @@
+---
+import { useTranslations } from '../i18n/utils';
+import { defaultLocale, type Locale } from '../i18n/ui';
+import { navItems, isDropdown } from '../data/nav';
+import { business } from '../data/business';
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = defaultLocale } = Astro.props;
+const t = useTranslations(locale);
+const home = locale === defaultLocale ? '/' : `/${locale}/`;
+---
+
+<nav class="nav" data-nav>
+  <div class="nav-inner container">
+    <a href={home} class="logo">
+      {business.name}<span>{business.tagline}</span>
+    </a>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="nav-links"
+      data-nav-toggle
+    >
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="sr-only">Menu</span>
+    </button>
+
+    <div class="nav-links" id="nav-links" data-nav-links>
+      {
+        navItems.map((item) =>
+          isDropdown(item) ? (
+            <div class="nav-dropdown">
+              <a href={item.href}>{t(item.key)}</a>
+              <button
+                class="nav-dropdown-toggle"
+                type="button"
+                aria-expanded="false"
+                data-dropdown-toggle
+              >
+                <svg viewBox="0 0 12 8" aria-hidden="true">
+                  <path d="M1 1l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.5" />
+                </svg>
+                <span class="sr-only">Toggle submenu</span>
+              </button>
+              <div class="nav-dropdown-menu">
+                {item.items.map((sub) => (
+                  <a href={sub.href}>{t(sub.key)}</a>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <a href={item.href}>{t(item.key)}</a>
+          )
+        )
+      }
+    </div>
+
+    <a href="#reserve" class="btn btn-solid nav-reserve">{t('nav.reserve')}</a>
+  </div>
+</nav>
+
+<script>
+  // Mobile drawer + dropdown disclosure. Desktop dropdowns already reveal
+  // via CSS :hover/:focus-within with no JS — this only adds click-to-toggle
+  // for touch/keyboard users and the mobile drawer's open/close state.
+  const nav = document.querySelector<HTMLElement>('[data-nav]');
+  if (nav) {
+    const toggle = nav.querySelector<HTMLButtonElement>('[data-nav-toggle]');
+    const links = nav.querySelector<HTMLElement>('[data-nav-links]');
+
+    toggle?.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    nav.querySelectorAll<HTMLButtonElement>('[data-dropdown-toggle]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const dropdown = btn.closest('.nav-dropdown');
+        const isOpen = dropdown?.classList.toggle('is-open') ?? false;
+        btn.setAttribute('aria-expanded', String(isOpen));
+      });
+    });
+
+    links?.querySelectorAll('a').forEach((a) => {
+      a.addEventListener('click', () => {
+        nav.classList.remove('is-open');
+        toggle?.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+</script>

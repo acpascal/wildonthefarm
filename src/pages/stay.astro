@@ -1,0 +1,115 @@
+---
+import { getImage, Image } from 'astro:assets';
+import PageLayout from '../layouts/PageLayout.astro';
+import PhotoHero from '../components/PhotoHero.astro';
+import Section from '../components/Section.astro';
+import ReserveCTA from '../components/ReserveCTA.astro';
+import ReserveContactBlock from '../components/ReserveContactBlock.astro';
+import { img } from '../lib/images';
+
+const heroImage = img('stay/hero_cabin_exterior.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const cabins = [
+  {
+    slug: 'cabin-1',
+    label: 'Cabin One',
+    heading: 'Deepest into the mist.',
+    description:
+      'The most enclosed of the three, wrapped in bamboo and forest, with a bathroom finished entirely in hand-painted leaf tile.',
+    image: img('cabin1/hero.jpg'),
+  },
+  {
+    slug: 'cabin-2',
+    label: 'Cabin Two',
+    heading: 'Raised above the valley.',
+    description:
+      'Standing on stilts at the edge of the hillside, with the widest view on the property — the Chiriquí valley and, on clear mornings, Volcán Barú.',
+    image: img('cabin2/hero.jpg'),
+  },
+  {
+    slug: 'cabin-3',
+    label: 'Cabin Three',
+    heading: 'The most intricate of the three.',
+    description:
+      'A hand-carved headboard, botanical linens, and a bathroom dressed floor to ceiling in hand-painted Art Nouveau tile.',
+    image: img('cabin3/hero.jpg'),
+  },
+];
+
+const amenities = [
+  'Private ensuite bathroom',
+  'High-end bedding',
+  'Private terrace',
+  'Living roof',
+  'Solar power',
+  'Spring water',
+  'No Wi-Fi or TV in cabin, by design',
+  'Wi-Fi available in common areas',
+];
+---
+
+<PageLayout
+  title="Stay — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Three handcrafted cabins built into the cloud forest of Boquete, Panama — living roofs, private terraces, and views over Amistad National Park."
+  path="/stay/"
+  image={ogImage.src}
+  pullIntro="Each cabin was set into the hillside rather than onto it — living roofs, hardwood walls, and glass turned toward the cloud forest, so the line between shelter and mountain nearly disappears."
+>
+  <Fragment slot="hero">
+    <PhotoHero
+      image={heroImage}
+      alt="Cabin exterior grown into the cloud forest at Wild on the Farm"
+      eyebrow="Stay"
+    >
+      Three cabins, grown into the forest.
+    </PhotoHero>
+  </Fragment>
+
+  <Section label="Wherever You Stay" heading="Off-grid comfort, without compromise.">
+    <div class="amenity-list">
+      {amenities.map((item) => <span>{item}</span>)}
+    </div>
+  </Section>
+
+  <Section noPadTop>
+    {
+      cabins.map((cabin, i) => (
+        <div class:list={['cabin-block', { reverse: i === 1 }]}>
+          <a href={`/${cabin.slug}/`} class="cabin-img">
+            <Image
+              src={cabin.image}
+              alt={`${cabin.label} exterior at Wild on the Farm`}
+              widths={[400, 700, 1000]}
+              sizes="(min-width: 860px) 50vw, 100vw"
+              loading="lazy"
+            />
+          </a>
+          <div>
+            <div class="section-label">{cabin.label}</div>
+            <h2 class="lede">{cabin.heading}</h2>
+            <p>{cabin.description}</p>
+            <a href={`/${cabin.slug}/`} class="btn cabin-cta">
+              See All of {cabin.label}
+            </a>
+          </div>
+        </div>
+      ))
+    }
+  </Section>
+
+  <ReserveCTA>
+    <Fragment slot="left">
+      <div class="section-label">Not Sure Which One?</div>
+      <h2>Tell us how you'd like to spend your days.</h2>
+      <p>Write to us and we'll help you choose the cabin that fits your stay best.</p>
+      <div class="contact-list">
+        <a href="/the-farm/">Back to The Farm →</a>
+        <a href="/kitchen/">The Kitchen →</a>
+      </div>
+    </Fragment>
+    <Fragment slot="right">
+      <ReserveContactBlock />
+    </Fragment>
+  </ReserveCTA>
+</PageLayout>

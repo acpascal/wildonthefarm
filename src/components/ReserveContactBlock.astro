@@ -1,0 +1,20 @@
+---
+import { useTranslations } from '../i18n/utils';
+import { defaultLocale, type Locale } from '../i18n/ui';
+import { business } from '../data/business';
+
+interface Props {
+  locale?: Locale;
+  heading?: string;
+}
+
+const { locale = defaultLocale, heading } = Astro.props;
+const t = useTranslations(locale);
+---
+
+<div class="section-label">{t('nav.reserve')}</div>
+<h2>{heading ?? t('reserve.defaultHeading')}</h2>
+<div class="contact-list">
+  <a href={business.whatsappHref}>{business.phone} (WhatsApp)</a>
+  <a href={`mailto:${business.email}`}>{business.email}</a>
+</div>

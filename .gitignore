@@ -16,9 +16,16 @@ pnpm-debug.log*
 # environment variables
 .env
 .env.production
+.env.*.local
 
 # macOS-specific files
 .DS_Store
 
 # jetbrains setting folder
 .idea/
+
+# Netlify CLI local state (site link info, machine-specific)
+.netlify/
+
+# Claude Code local settings (personal permission overrides, not shared)
+.claude/settings.local.json
