@@ -1,0 +1,372 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../layouts/PageLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Section from '../components/Section.astro';
+import PhotoGrid from '../components/PhotoGrid.astro';
+import SpeciesGrid from '../components/SpeciesGrid.astro';
+import SpeciesCard from '../components/SpeciesCard.astro';
+import TextCardGrid from '../components/TextCardGrid.astro';
+import TextCard from '../components/TextCard.astro';
+import QuoteSection from '../components/QuoteSection.astro';
+import NoteBox from '../components/NoteBox.astro';
+import ReserveCTA from '../components/ReserveCTA.astro';
+import ReserveContactBlock from '../components/ReserveContactBlock.astro';
+import { img } from '../lib/images';
+
+const heroImage = img('hiking/gallery_05.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const trackPhotos = [
+  { image: img('wildlife/jaguar_track_terrace_1.jpg'), alt: 'Jaguar paw print on the terrace decking' },
+  { image: img('wildlife/jaguar_track_terrace_2.jpg'), alt: 'A second jaguar paw print on the terrace decking' },
+  { image: img('wildlife/jaguar_track_cabin1_1.jpg'), alt: 'Jaguar paw print in soft ground behind Cabin One' },
+  { image: img('wildlife/jaguar_track_cabin1_2.jpg'), alt: 'A second jaguar paw print behind Cabin One' },
+];
+
+const primates = [
+  {
+    image: img('wildlife/mantled_howler_monkey.jpg'),
+    alt: 'A mother mantled howler monkey with a clinging baby, spotted on the farm',
+    name: 'Mantled Howler Monkey',
+    latin: 'Alouatta palliata',
+    description:
+      "Their roaring call carries for miles through the canopy at dawn and dusk, a territorial announcement rather than a threat. Troops move slowly through the treetops, feeding mainly on leaves, and rest for much of the day to digest. This mother and clinging baby were spotted right on the farm.",
+  },
+  {
+    image: img('wildlife/white_faced_capuchin.jpg'),
+    alt: 'A white-faced capuchin monkey foraging on the property',
+    name: 'White-faced Capuchin',
+    latin: 'Cebus capucinus',
+    description:
+      "Easily the most inquisitive primate on the farm — social, noisy, and constantly foraging through the mid-story for fruit, insects, and the occasional small vertebrate. Troops are matriarchal and rarely stray far from the same core territory. Photographed right on the property.",
+  },
+];
+
+const wildCats = [
+  {
+    image: img('wildlife/jaguar.jpg'),
+    alt: 'A female jaguar photographed near the farm',
+    name: 'Jaguar',
+    latin: 'Panthera onca',
+    description:
+      "The largest cat in the Americas and the park's apex predator — solitary, mostly nocturnal, and needing vast territory to hunt peccaries and deer. Sightings this close to a cabin, as Pascal can attest, are exceptionally rare even here.",
+  },
+  {
+    image: img('wildlife/puma.jpg'),
+    alt: 'A puma in the Talamanca highlands',
+    name: 'Puma',
+    latin: 'Puma concolor',
+    description:
+      'A powerful, adaptable cat found from lowland forest to these highlands, hunting alone across a wide range. More often confirmed by tracks or a camera trap than by direct sighting.',
+  },
+  {
+    image: img('wildlife/ocelot.jpg'),
+    alt: 'An ocelot showing its rosette-patterned coat',
+    name: 'Ocelot',
+    latin: 'Leopardus pardalis',
+    description:
+      'A striking, medium-sized cat that hunts mostly at night on the forest floor, equally comfortable stalking small mammals, birds, or reptiles. Its rosette pattern gives excellent camouflage in dappled light.',
+  },
+  {
+    image: img('wildlife/margay.jpg'),
+    alt: 'A margay, one of the most acrobatic small wild cats',
+    name: 'Margay',
+    latin: 'Leopardus wiedii',
+    description:
+      'The most acrobatic of the small cats, with ankles that rotate nearly 180 degrees, letting it climb down trees head-first like a squirrel. Almost entirely arboreal and nocturnal.',
+  },
+  {
+    image: img('wildlife/oncilla.jpg'),
+    alt: 'A melanistic (black) oncilla',
+    name: 'Oncilla',
+    latin: 'Leopardus tigrinus',
+    description:
+      'One of the smallest wild cats in the Americas, barely bigger than a house cat, hunting small rodents and birds through the highland forest understory. In cloud forest populations like this one, an all-black (melanistic) colour morph is unusually common — the individual pictured here is one.',
+  },
+  {
+    image: img('wildlife/jaguarundi.jpg'),
+    alt: 'A jaguarundi, an unusually shaped small wild cat',
+    name: 'Jaguarundi',
+    latin: 'Herpailurus yagouaroundi',
+    description:
+      "An unusually shaped cat — long-bodied, short-legged, small-headed — often mistaken at a glance for a large weasel. Unlike most cats here, it's frequently active during the day.",
+  },
+];
+
+const herbivoresAndPeccaries = [
+  {
+    image: img('wildlife/tapir.jpg'),
+    alt: "A Baird's tapir, the largest land mammal in Central America",
+    name: "Baird's Tapir",
+    latin: 'Tapirus bairdii',
+    description:
+      'The largest land mammal in Central America, using its short, flexible snout to pull leaves and fruit within reach. Mostly nocturnal, it depends on dense, humid forest and nearby water to wallow and cool off. Now endangered across its range.',
+  },
+  {
+    image: img('wildlife/coati.jpg'),
+    alt: 'A white-nosed coati foraging through leaf litter',
+    name: 'White-nosed Coati',
+    latin: 'Nasua narica',
+    description:
+      'A relative of the raccoon that travels by day in noisy, active bands of females and young, snuffling through leaf litter with a long, flexible snout. Adult males are mostly solitary — one of the more commonly encountered mammals around forest edges and farmland.',
+  },
+  {
+    image: img('wildlife/agouti.jpg'),
+    alt: 'A Central American agouti',
+    name: 'Central American Agouti',
+    latin: 'Dasyprocta punctata',
+    description:
+      "A large, long-legged rodent, active by day, that buries seeds and nuts for later — including many it never retrieves, making it one of the forest's most important tree planters.",
+  },
+  {
+    image: img('wildlife/brocket_deer.jpg'),
+    alt: 'A red brocket deer in the forest understory',
+    name: 'Red Brocket Deer',
+    latin: 'Mazama temama',
+    description:
+      'A small, solitary forest deer that moves quietly through dense understory rather than open ground, freezing rather than fleeing when startled — which makes it easy to miss even close by.',
+  },
+  {
+    image: img('wildlife/white_lipped_peccary.jpg'),
+    alt: 'A herd of white-lipped peccaries',
+    name: 'White-lipped Peccary',
+    latin: 'Tayassu pecari',
+    description:
+      "Panama's most social wild pig relative, moving through the forest in tight herds that can number in the dozens, clicking their teeth and grunting constantly to stay in contact.",
+  },
+  {
+    image: img('wildlife/collared_peccary.jpg'),
+    alt: 'A collared peccary near the farm',
+    name: 'Collared Peccary',
+    latin: 'Pecari tajacu',
+    description:
+      'Smaller and far more adaptable than its white-lipped cousin, moving in modest family groups and comfortable foraging close to farmland edges — the peccary most likely to be seen near the cabins.',
+  },
+];
+
+const slothsAndSmallMammals = [
+  {
+    image: img('wildlife/three_toed_sloth.jpg'),
+    alt: 'A brown-throated three-toed sloth',
+    name: 'Brown-throated Three-toed Sloth',
+    latin: 'Bradypus variegatus',
+    description:
+      'An almost exclusively arboreal leaf-eater, moving so slowly that algae grows in its fur. It descends to the ground roughly once a week, purely to defecate — one of the odder rituals in the animal kingdom.',
+  },
+  {
+    image: img('wildlife/two_toed_sloth.jpg'),
+    alt: "A Hoffmann's two-toed sloth",
+    name: "Hoffmann's Two-toed Sloth",
+    latin: 'Choloepus hoffmanni',
+    description:
+      'Faster-moving and more nocturnal than its three-toed cousin, with a broader diet that includes fruit, flowers, and even the occasional insect or small lizard.',
+  },
+  {
+    image: img('wildlife/tamandua.jpg'),
+    alt: 'A northern tamandua climbing a tree',
+    name: 'Northern Tamandua',
+    latin: 'Tamandua mexicana',
+    description:
+      'A tree-climbing anteater, solitary and mostly nocturnal, tearing open ant and termite nests with powerful curved claws and drawing prey in with a long, sticky tongue.',
+  },
+  {
+    image: img('wildlife/alstons_mouse_opossum.jpg'),
+    alt: "Alston's woolly mouse opossum",
+    name: "Alston's Woolly Mouse Opossum",
+    latin: 'Marmosa alstoni',
+    description:
+      'A small, nocturnal marsupial that nests in tree hollows and dense vine tangles, foraging alone through the mid-story. Rarely seen by day — more often detected by camera trap than by chance encounter.',
+  },
+];
+
+const reptilesAndAmphibians = [
+  {
+    image: img('wildlife/la_lora.jpg'),
+    alt: 'La Lora, the side-striped palm-pitviper, photographed on the property',
+    name: 'La Lora (Side-striped Palm-Pitviper)',
+    latin: 'Bothriechis lateralis',
+    description:
+      "The local highland pit viper, named for its parrot-green colouring. Usually arboreal, coiled in foliage well above the ground, though it does come down — venomous, but shy, and rarely encountered up close.",
+  },
+  {
+    image: img('wildlife/bothriechis_nubestris.jpg'),
+    alt: 'The Talamancan palm-pitviper, photographed on the property',
+    name: 'Talamancan Palm-Pitviper',
+    latin: 'Bothriechis nubestris',
+    description:
+      'A cloud-forest specialist described only recently, found in the highest, mistiest reaches of the Talamanca range. Small, green, and arboreal like its lowland relatives — Pascal has photographed one on the property.',
+  },
+  {
+    image: img('wildlife/bothriechis_nigroadspersus_01.jpg'),
+    alt: 'The Central American eyelash pit-viper, photographed on the property',
+    name: 'Central American Eyelash Pit-Viper',
+    latin: 'Bothriechis nigroadspersus',
+    description:
+      "A close relative of the well-known Eyelash Viper, only recognized as its own species in a 2024 taxonomic revision. Mottled green and cream, coiled motionless against moss and bark, it's built to be missed entirely — until you notice it hasn't moved. Photographed right on the property.",
+  },
+  {
+    image: img('wildlife/bothriechis_nigroadspersus_02.jpg'),
+    alt: 'A second photo of the Central American eyelash pit-viper on the property',
+    name: 'Central American Eyelash Pit-Viper',
+    latin: 'Bothriechis nigroadspersus',
+    description:
+      "A second individual, photographed in the same stretch of forest — mottled green and cream, coiled motionless against moss and bark.",
+  },
+  {
+    image: img('wildlife/anole.jpg'),
+    alt: 'An anole displaying its throat fan',
+    name: 'Anoles',
+    latin: 'Anolis spp.',
+    description:
+      'Small, quick lizards common on trees, walls, and railings throughout the farm, the males flashing a colourful throat fan (dewlap) to defend territory or attract a mate.',
+  },
+  {
+    image: img('wildlife/glass_frog.jpg'),
+    alt: 'A glass frog with translucent skin',
+    name: 'Glass Frogs',
+    latin: 'Centrolenidae',
+    description:
+      "Pale green, translucent-skinned frogs of the forest streams — some species famously transparent enough to see their internal organs from below. Calls carry at night from vegetation overhanging water.",
+  },
+  {
+    image: img('wildlife/highland_tree_frog.jpg'),
+    alt: 'A highland tree frog perched on a fern leaf at night',
+    name: 'Highland Tree Frogs',
+    latin: 'various species',
+    description:
+      "The cloud forest's night chorus — small, brightly patterned frogs calling from bromeliads and damp leaf litter after rain, most active in the cool, misty hours after dark. This one was found perched on a fern leaf at night, right on the property.",
+  },
+];
+
+const treesAndOrchids = [
+  { name: 'Highland Oaks', latin: 'Quercus costaricensis & Q. copeyensis', description: 'Endemic oaks that dominate the upper canopy, some reaching 50 metres — the structural backbone of this cloud forest, their branches the main scaffolding for the moss and epiphytes above.' },
+  { name: 'Wild Avocados', latin: 'Family Lauraceae', description: 'The laurel family, rich in small wild avocado species, forms much of the mid-canopy — and is the reason the Resplendent Quetzal chooses this forest, since wild avocado fruit makes up almost its entire diet.' },
+  { name: 'Dwarf Bamboo', latin: 'Chusquea spp.', description: "A tangled, shade-tolerant understory bamboo found through much of the property's wilder ground, giving cover to birds and small mammals moving low through the forest." },
+  { name: 'Orchids', latin: 'Family Orchidaceae', description: 'The Talamanca-Chiriquí highlands hold roughly 300 orchid species — one of the densest concentrations anywhere in the world, most growing as epiphytes on mossy branches rather than in the ground.' },
+  { name: 'Tree Ferns', latin: 'Cyatheaceae', description: 'Ancient, slow-growing ferns that form a distinct sub-canopy layer, their fiddleheads unfurling into broad fronds — a signature silhouette of Talamancan cloud forest.' },
+  { name: 'Mosses & Epiphytes', latin: 'various families', description: "The constant mist keeps branches, trunks, and even fence posts draped in moss, lichen, and bromeliads — the same epiphyte load that gives the farm's older trees their shaggy, otherworldly look." },
+];
+---
+
+<PageLayout
+  title="Wildlife Around the Farm — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Monkeys, wild cats, tapirs, sloths, peccaries, and cloud-forest vipers sharing Amistad National Park with Wild on the Farm, Boquete Cloud Forest Lodge."
+  path="/wildlife/"
+  image={ogImage.src}
+  pullIntro="The farm sits inside the highlands of Amistad International Park — one of the largest, wildest protected areas in Central America, and home to monkeys, wild cats, and mammals rarely seen anywhere near a place to stay."
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="View of the cloud forest home to the farm's wildlife" eyebrow="Wildlife Around The Farm">
+      More than birds share this forest.
+    </PageHero>
+  </Fragment>
+
+  <QuoteSection label="A Rare Encounter" cite="— Pascal, Founder (draft account — real details to come)">
+    "A female jaguar and her two cubs, resting on our own terrace — one of those moments that reminds you exactly whose forest this really is."
+  </QuoteSection>
+
+  <Section noPadTop label="The Proof" heading="Her tracks, the morning after.">
+    <p>Paw prints from the jaguar and her cubs, left on the terrace decking and in the soft ground behind Cabin One.</p>
+    <PhotoGrid items={trackPhotos} groupId="wildlife-tracks" />
+  </Section>
+
+  <Section noPadTop label="Primates" heading="Heard before they're seen.">
+    <SpeciesGrid>
+      {primates.map((s) => (
+        <SpeciesCard image={s.image} alt={s.alt} name={s.name} latin={s.latin} groupId="wildlife-primates">
+          {s.description}
+        </SpeciesCard>
+      ))}
+    </SpeciesGrid>
+  </Section>
+
+  <Section bg="cream" label="Wild Cats" heading="All six of Central America's cats live in this park.">
+    <SpeciesGrid>
+      {wildCats.map((s) => (
+        <SpeciesCard image={s.image} alt={s.alt} name={s.name} latin={s.latin} groupId="wildlife-cats">
+          {s.description}
+        </SpeciesCard>
+      ))}
+    </SpeciesGrid>
+  </Section>
+
+  <Section label="Herbivores & Peccaries" heading="The forest floor's grazers, browsers, and wild pigs.">
+    <SpeciesGrid>
+      {herbivoresAndPeccaries.map((s) => (
+        <SpeciesCard image={s.image} alt={s.alt} name={s.name} latin={s.latin} groupId="wildlife-herbivores">
+          {s.description}
+        </SpeciesCard>
+      ))}
+    </SpeciesGrid>
+  </Section>
+
+  <Section bg="cream" label="Sloths & Small Mammals" heading="Slow movers and quiet residents.">
+    <SpeciesGrid>
+      {slothsAndSmallMammals.map((s) => (
+        <SpeciesCard image={s.image} alt={s.alt} name={s.name} latin={s.latin} groupId="wildlife-sloths">
+          {s.description}
+        </SpeciesCard>
+      ))}
+    </SpeciesGrid>
+  </Section>
+
+  <Section label="Reptiles & Amphibians" heading="Small, well-camouflaged, and mostly harmless.">
+    <p>
+      At this elevation it's too cold for the fer-de-lance, the venomous snake most associated with
+      Panama — that species keeps to Boquete town, some 700 metres lower. Up here, the pit vipers
+      are smaller, greener, and live in the trees.
+    </p>
+    <SpeciesGrid>
+      {reptilesAndAmphibians.map((s) => (
+        <SpeciesCard image={s.image} alt={s.alt} name={s.name} latin={s.latin} groupId="wildlife-reptiles">
+          {s.description}
+        </SpeciesCard>
+      ))}
+    </SpeciesGrid>
+  </Section>
+
+  <Section bg="cream" label="Trees & Orchids of the Canopy" heading="One of the richest epiphyte forests on Earth.">
+    <TextCardGrid>
+      {treesAndOrchids.map((t) => (
+        <TextCard name={t.name} latin={t.latin}>
+          {t.description}
+        </TextCard>
+      ))}
+    </TextCardGrid>
+    <NoteBox variant="todo">
+      <p>
+        This list covers what's documented for the Talamanca–Chiriquí highlands generally — not yet
+        a confirmed inventory specific to the farm's own trees and orchids. Particular species
+        growing on the property (especially in the gardens or terraces) can be folded in alongside
+        these.
+      </p>
+    </NoteBox>
+  </Section>
+
+  <Section>
+    <NoteBox>
+      <p>
+        Photo credits: the wild cats, tapir, coati, agouti, deer, peccaries, sloths, tamandua,
+        mouse opossum, anole, and glass frog are Creative Commons photos via Wikimedia Commons; the
+        Talamancan palm-pitviper, white-faced capuchin, mantled howler monkey, La Lora, and
+        highland tree frog are the farm's own photos, as are the four jaguar-track shots above.
+      </p>
+    </NoteBox>
+  </Section>
+
+  <ReserveCTA>
+    <Fragment slot="left">
+      <div class="section-label">Plan Your Visit</div>
+      <h2>Quiet mornings, quiet trails.</h2>
+      <p>Most mammals here are shy and mainly active at dawn, dusk, or night — a guided walk improves the odds of an encounter.</p>
+      <div class="contact-list">
+        <a href="/hiking/">Hiking &amp; Trails →</a>
+        <a href="/birdwatching/">Birdwatching →</a>
+      </div>
+    </Fragment>
+    <Fragment slot="right">
+      <ReserveContactBlock />
+    </Fragment>
+  </ReserveCTA>
+</PageLayout>

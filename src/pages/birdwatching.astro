@@ -1,0 +1,127 @@
+---
+import { Image, getImage } from 'astro:assets';
+import PageLayout from '../layouts/PageLayout.astro';
+import PhotoHero from '../components/PhotoHero.astro';
+import Section from '../components/Section.astro';
+import SpeciesGrid from '../components/SpeciesGrid.astro';
+import SpeciesCard from '../components/SpeciesCard.astro';
+import NoteBox from '../components/NoteBox.astro';
+import ReserveCTA from '../components/ReserveCTA.astro';
+import ReserveContactBlock from '../components/ReserveContactBlock.astro';
+import { img } from '../lib/images';
+
+const heroImage = img('birds/bird_00.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const quetzalImage = img('birds/bird_01.jpg');
+const chlorophoniaImage = img('birds/bird_02.jpg');
+
+const species = [
+  { image: img('birds/bird_03.jpg'), alt: "A Resplendent Quetzal perched, showing its iridescent green crest", name: 'Resplendent Quetzal', latin: 'Pharomachrus mocinno', description: "Perched still, the male's iridescent green crest and crimson breast catch the light — the farm's most legendary resident, seen here at rest rather than in flight." },
+  { image: img('birds/bird_04.jpg'), alt: 'A Flame-coloured Tanager', name: 'Flame-coloured Tanager', latin: 'Piranga bidentata', description: 'Males wear a solid blaze of orange-red with black-and-white wings; females are a softer ochre. Forages in pairs, often mixing into passing flocks.' },
+  { image: img('birds/bird_05.jpg'), alt: 'A Black-and-white Warbler foraging on a branch', name: 'Black-and-white Warbler', latin: 'Mniotilta varia', description: 'A long-distance migrant from North America, spending its winters creeping along trunks and branches like a nuthatch, probing bark for insects.' },
+  { image: img('birds/bird_06.jpg'), alt: 'A Golden-crowned Warbler in the understory', name: 'Golden-crowned Warbler', latin: 'Basileuterus culicivorus', description: 'A quiet, olive-and-yellow warbler of the understory, more often heard than seen as it gleans insects from low foliage.' },
+  { image: img('birds/bird_07.jpg'), alt: 'A Hairy Woodpecker on a tree trunk', name: 'Hairy Woodpecker', latin: 'Dryobates villosus', description: 'Drums on dead wood at all hours, chiseling out insects with a bill built for the job — look for the flash of white down its back.' },
+  { image: img('birds/bird_08.jpg'), alt: 'A Middle American Leaftosser on the forest floor', name: 'Middle American Leaftosser', latin: 'Sclerurus mexicanus', description: 'A ground-dwelling forest bird that lives up to its name, flinging leaf litter aside with quick sideways kicks to uncover insects underneath.' },
+  { image: img('birds/bird_09.jpg'), alt: 'A Mountain Elaenia flycatcher', name: 'Mountain Elaenia', latin: 'Elaenia frantzii', description: 'A modest highland flycatcher, easiest to notice by its scratchy, upslurred call from the mid-story.' },
+  { image: img('birds/bird_10.jpg'), alt: 'An Ochraceous Wren on a mossy branch', name: 'Ochraceous Wren', latin: 'Troglodytes ochraceus', description: 'A cinnamon-coloured wren of mossy branches, often working alone through epiphyte-laden limbs, tail cocked.' },
+  { image: img('birds/bird_11.jpg'), alt: 'A Purple-throated Mountain-gem hummingbird', name: 'Purple-throated Mountain-gem', latin: 'Lampornis calolaimus', description: "One of the farm's signature hummingbirds — males flash an iridescent violet throat and turquoise crown when the light catches just right." },
+  { image: img('birds/bird_12.jpg'), alt: 'A Rufous-tailed Hummingbird', name: 'Rufous-tailed Hummingbird', latin: 'Amazilia tzacatl', description: 'Common and pugnacious, this hummingbird defends flowering shrubs with real determination, chasing off rivals many times its size.' },
+  { image: img('birds/bird_13.jpg'), alt: 'A Scintillant Hummingbird', name: 'Scintillant Hummingbird', latin: 'Selasphorus scintilla', description: 'One of the smallest birds on Earth, barely bigger than a bumblebee, favoring open, flowery edges over deep forest.' },
+  { image: img('birds/bird_14.jpg'), alt: 'A Snowy-bellied Hummingbird', name: 'Snowy-bellied Hummingbird', latin: 'Amazilia edward', description: "A highland specialty with a clean white belly against iridescent green — a regular at the farm's flowering hedges." },
+  { image: img('birds/bird_15.jpg'), alt: 'A Spangled-cheeked Tanager', name: 'Spangled-cheeked Tanager', latin: 'Tangara dowii', description: 'A Talamancan highland specialty, its blue-black head finely speckled like scattered stars, moving in small mixed flocks through the canopy.' },
+  { image: img('birds/bird_16.jpg'), alt: "A Swainson's Thrush on the forest floor", name: "Swainson's Thrush", latin: 'Catharus ustulatus', description: 'A spot-breasted migrant thrush passing through on its way between North and South America, foraging quietly on the forest floor.' },
+  { image: img('birds/bird_17.jpg'), alt: 'A White-throated Mountain-gem hummingbird', name: 'White-throated Mountain-gem', latin: 'Lampornis castaneoventris', description: 'Found only in this stretch of the Talamancan highlands, with a bold white throat stripe and rufous underparts on the female.' },
+  { image: img('birds/bird_18.jpg'), alt: 'A White-throated Thrush', name: 'White-throated Thrush', latin: 'Turdus assimilis', description: 'A soft-voiced thrush of the forest edge, its bright orange eye-ring and bill standing out against otherwise understated plumage.' },
+  { image: img('birds/bird_19.jpg'), alt: "A Wilson's Warbler", name: "Wilson's Warbler", latin: 'Cardellina pusilla', description: 'A bright yellow migrant with a neat black cap, flitting restlessly through low branches in search of insects.' },
+  { image: img('birds/bird_20.jpg'), alt: 'A Black-faced Solitaire', name: 'Black-faced Solitaire', latin: 'Myadestes melanops', description: 'Its flute-like, otherworldly song is one of the defining sounds of the cloud forest, even when the bird itself stays hidden.' },
+  { image: img('birds/bird_21.jpg'), alt: 'A pair of Prong-billed Barbets', name: 'Prong-billed Barbet', latin: 'Semnornis frantzii', description: 'A stocky, orange-collared bird of the highlands, usually in pairs, calling back and forth in a duet that carries through the trees.' },
+  { image: img('birds/bird_22.jpg'), alt: 'A Red-tailed Hawk riding a thermal', name: 'Red-tailed Hawk', latin: 'Buteo jamaicensis', description: "The farm's resident broad-winged hawk, often seen riding thermals above the valley or perched watching from a bare snag." },
+  { image: img('birds/bird_23.jpg'), alt: 'A Slate-throated Redstart foraging', name: 'Slate-throated Redstart', latin: 'Myioborus miniatus', description: 'An active little warbler that fans its tail and flashes its wings almost constantly while foraging, a habit that helps flush hidden insects.' },
+  { image: img('birds/bird_24.jpg'), alt: 'A Slaty-backed Nightingale-Thrush', name: 'Slaty-backed Nightingale-Thrush', latin: 'Catharus fuscater', description: 'A shy understory thrush with a piercing orange bill and eye-ring, better known for its clear, haunting song than for showing itself.' },
+  { image: img('birds/bird_25.jpg'), alt: 'A Spot-crowned Woodcreeper on a tree trunk', name: 'Spot-crowned Woodcreeper', latin: 'Lepidocolaptes affinis', description: 'Spirals up tree trunks probing bark crevices with its long, curved bill, part of the mixed flocks that move together through the forest.' },
+  { image: img('birds/bird_26.jpg'), alt: 'A Swallow-tailed Kite in flight', name: 'Swallow-tailed Kite', latin: 'Elanoides forficatus', description: 'Unmistakable overhead, with a deeply forked tail and effortless, gliding flight as it hunts insects and small prey on the wing.' },
+  { image: img('birds/bird_27.jpg'), alt: 'A Northern Emerald-Toucanet', name: 'Northern Emerald-Toucanet', latin: 'Aulacorhynchus prasinus', description: 'A small toucan in bright green plumage with a two-tone bill, often heard croaking from the canopy before it’s seen.' },
+  { image: img('birds/bird_28.jpg'), alt: 'A Scaly-throated Foliage-gleaner', name: 'Scaly-throated Foliage-gleaner', latin: 'Anabacerthia variegaticeps', description: 'An understory forager that works methodically through dead leaf clusters, probing for hidden insects.' },
+];
+---
+
+<PageLayout
+  title="Birdwatching — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Birdwatching at Wild on the Farm: home to the Resplendent Quetzal and the Golden-browed Chlorophonia, on the edge of Amistad National Park, Panama."
+  path="/birdwatching/"
+  image={ogImage.src}
+  pullIntro="On the edge of Amistad National Park, the cloud forest holds some of the most sought-after birds in Central America — quiet, patient, and best met at first light."
+>
+  <Fragment slot="hero">
+    <PhotoHero image={heroImage} alt="Resplendent Quetzal in flight at Wild on the Farm" eyebrow="Experience — Birdwatching">
+      Where the Resplendent Quetzal still nests.
+    </PhotoHero>
+  </Fragment>
+
+  <Section noPadTop>
+    <div class="cabin-block">
+      <div class="cabin-img">
+        <Image src={quetzalImage} alt="A Resplendent Quetzal in the canopy" widths={[400, 700, 1000]} sizes="(min-width: 860px) 50vw, 100vw" />
+      </div>
+      <div>
+        <div class="section-label">Featured Species</div>
+        <h2 class="lede">Resplendent Quetzal</h2>
+        <p>
+          Panama's most legendary bird, and the reason many travelers first look toward the
+          highlands. Males trail iridescent green tail feathers nearly three feet long, moving
+          quietly through the canopy in search of wild avocados — almost the only fruit they rely
+          on. Dawn and dusk, in the quiet stretches near the tree line, are when they're most
+          often seen.
+        </p>
+      </div>
+    </div>
+
+    <div class="cabin-block reverse">
+      <div class="cabin-img">
+        <Image src={chlorophoniaImage} alt="A Golden-browed Chlorophonia in the understory" widths={[400, 700, 1000]} sizes="(min-width: 860px) 50vw, 100vw" />
+      </div>
+      <div>
+        <div class="section-label">Featured Species</div>
+        <h2 class="lede">Golden-browed Chlorophonia</h2>
+        <p>
+          A small, almost impossibly colored bird — moss green, gold, and sky blue — moving
+          through the mossy understory in search of mistletoe berries and small fruit. Easier to
+          hear than to see: a soft, whistled call from deep in the cover.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <Section bg="cream" label="Seen On The Farm" heading="Twenty-six more species, photographed right here.">
+    <SpeciesGrid>
+      {species.map((s) => (
+        <SpeciesCard image={s.image} alt={s.alt} name={s.name} latin={s.latin} groupId="birdwatching-species">
+          {s.description}
+        </SpeciesCard>
+      ))}
+    </SpeciesGrid>
+    <NoteBox variant="todo">
+      <p>
+        Species are identified from source filenames, trusted as accurate. A handful of additional
+        photos couldn't be confidently identified and aren't included yet — worth a second pass if
+        an ID becomes available.
+      </p>
+    </NoteBox>
+  </Section>
+
+  <ReserveCTA>
+    <Fragment slot="left">
+      <div class="section-label">Plan Your Visit</div>
+      <h2>Best at first light.</h2>
+      <p>Guided walks can be arranged for early morning, when the forest is at its most active. Tell us if birdwatching is the focus of your stay and we'll plan around it.</p>
+      <div class="contact-list">
+        <a href="/hiking/">Hiking &amp; Trails →</a>
+        <a href="/the-farm/">Back to The Farm →</a>
+      </div>
+    </Fragment>
+    <Fragment slot="right">
+      <ReserveContactBlock />
+    </Fragment>
+  </ReserveCTA>
+</PageLayout>

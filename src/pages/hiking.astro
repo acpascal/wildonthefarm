@@ -1,0 +1,108 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../layouts/PageLayout.astro';
+import PhotoHero from '../components/PhotoHero.astro';
+import Section from '../components/Section.astro';
+import Split from '../components/Split.astro';
+import PhotoGrid from '../components/PhotoGrid.astro';
+import NoteBox from '../components/NoteBox.astro';
+import ReserveCTA from '../components/ReserveCTA.astro';
+import ReserveContactBlock from '../components/ReserveContactBlock.astro';
+import { img } from '../lib/images';
+import type { PhotoItem } from '../lib/photos';
+
+const heroImage = img('hiking/hero.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const amenities = [
+  'Guided or self-guided',
+  'Direct access to Amistad park',
+  'Primary cloud forest',
+  'Monkeys & birdlife en route',
+  'Sturdy boots recommended',
+];
+
+const trailPhotos: PhotoItem[] = [
+  { image: img('hiking/gallery_01.jpg'), alt: 'The trail entering the cloud forest', size: 'lg' },
+  { image: img('hiking/gallery_02.jpg'), alt: 'Moss-covered trees along the trail' },
+  { image: img('hiking/gallery_03.jpg'), alt: 'A narrow trail through dense cloud forest', size: 'tall' },
+  { image: img('hiking/gallery_04.jpg'), alt: 'Ferns and undergrowth beside the trail' },
+  { image: img('hiking/gallery_05.jpg'), alt: 'View over the cloud forest canopy from the trail', size: 'wide' },
+  { image: img('hiking/gallery_06.jpg'), alt: 'Sunlight filtering through the cloud forest' },
+  { image: img('hiking/gallery_07.jpg'), alt: 'A misty stretch of the hiking trail', size: 'lg' },
+  { image: img('hiking/gallery_08.jpg'), alt: 'Bromeliads growing on a trailside tree' },
+  { image: img('hiking/gallery_09.jpg'), alt: 'The trail winding through the forest', size: 'tall' },
+  { image: img('hiking/gallery_10.jpg'), alt: 'Tree roots crossing the trail' },
+  { image: img('hiking/gallery_11.jpg'), alt: 'A quiet section of the cloud forest trail' },
+  { image: img('hiking/gallery_12.jpg'), alt: 'Wide view of the forest from the trail', size: 'wide' },
+  { image: img('hiking/gallery_13.jpg'), alt: 'Moss and epiphytes on a trailside branch' },
+  { image: img('hiking/gallery_14.jpg'), alt: 'The trail beneath the forest canopy', size: 'lg' },
+  { image: img('hiking/gallery_15.jpg'), alt: 'A steep section of the hiking trail' },
+  { image: img('hiking/gallery_16.jpg'), alt: 'Tree ferns along the trail', size: 'tall' },
+  { image: img('hiking/gallery_17.jpg'), alt: 'A stream crossing on the trail' },
+  { image: img('hiking/gallery_18.jpg'), alt: 'View across the Chiriquí highlands from the trail', size: 'wide' },
+  { image: img('hiking/gallery_19.jpg'), alt: 'Dense understory beside the trail' },
+  { image: img('hiking/gallery_20.jpg'), alt: 'The trail disappearing into mist' },
+  { image: img('hiking/gallery_21.jpg'), alt: 'A mossy tree trunk beside the trail', size: 'tall' },
+  { image: img('wildlife/mantled_howler_monkey.jpg'), alt: 'A mantled howler monkey spotted along the trail' },
+  { image: img('hiking/gallery_22.jpg'), alt: 'The trail winding deeper into the cloud forest', size: 'lg' },
+];
+---
+
+<PageLayout
+  title="Hiking the Cloud Forest — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Trails into Amistad National Park, starting at the farm's doorstep — moss-draped cloud forest, monkeys, and views over the Chiriquí highlands."
+  path="/hiking/"
+  image={ogImage.src}
+  pullIntro="Hiking, far from the crowds. No shuttle, no trailhead parking lot — just a gate, and then moss, mist, and the sound of the forest waking up."
+>
+  <Fragment slot="hero">
+    <PhotoHero image={heroImage} alt="Hiking the cloud forest at Wild on the Farm" eyebrow="Hiking — Far From The Crowds">
+      Trails that start at our door and end inside the clouds.
+    </PhotoHero>
+  </Fragment>
+
+  <Section label="On the Trail" heading="What you'll walk through.">
+    <Split>
+      <div>
+        <p>
+          The trails climb through primary cloud forest — moss-wrapped trunks, bromeliads, tree
+          ferns — with the kind of quiet that makes every distant call or rustle in the canopy
+          impossible to ignore. White-faced capuchins and mantled howler monkeys move through the
+          same territory, often spotted straight overhead.
+        </p>
+        <NoteBox variant="todo">
+          <p>
+            Practical details needed here: names of the main trails, approximate distances and
+            duration, difficulty level, and whether a guide is required or optional.
+          </p>
+        </NoteBox>
+      </div>
+      <div>
+        <div class="amenity-list">
+          {amenities.map((item) => <span>{item}</span>)}
+        </div>
+      </div>
+    </Split>
+    <p><a href="/journal/hiking-in-boquete/"><strong>The trails of Boquete, their history, and our own map →</strong></a></p>
+  </Section>
+
+  <Section bg="cream" label="In the Field" heading="A forest best met on foot.">
+    <PhotoGrid items={trailPhotos} groupId="hiking" variant="varied" />
+  </Section>
+
+  <ReserveCTA>
+    <Fragment slot="left">
+      <div class="section-label">Pair It With</div>
+      <h2>Early mornings belong to the birds.</h2>
+      <p>Many guests combine a dawn birdwatching walk with a longer hike later in the day.</p>
+      <div class="contact-list">
+        <a href="/birdwatching/">Birdwatching →</a>
+        <a href="/the-farm/">Back to The Farm →</a>
+      </div>
+    </Fragment>
+    <Fragment slot="right">
+      <ReserveContactBlock />
+    </Fragment>
+  </ReserveCTA>
+</PageLayout>

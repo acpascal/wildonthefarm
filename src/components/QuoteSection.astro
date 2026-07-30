@@ -1,13 +1,15 @@
 ---
 interface Props {
   cite: string;
+  label?: string;
 }
 
-const { cite } = Astro.props;
+const { cite, label } = Astro.props;
 ---
 
 <section class="quote-section">
   <div class="container">
+    {label && <div class="section-label">{label}</div>}
     <blockquote><slot /></blockquote>
     <cite>{cite}</cite>
   </div>

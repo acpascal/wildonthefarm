@@ -1,0 +1,14 @@
+---
+interface Props {
+  name: string;
+  latin: string;
+}
+
+const { name, latin } = Astro.props;
+---
+
+<div class="text-card">
+  <h3>{name}</h3>
+  <span class="species-latin">{latin}</span>
+  <p><slot /></p>
+</div>
