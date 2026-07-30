@@ -1,43 +1,16 @@
-# Astro Starter Kit: Minimal
+# Wild on the Farm
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Astro site for Wild on the Farm, Boquete Cloud Forest Lodge. Static output, deployed to Netlify from `main`.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Commands
 
-## 🚀 Project Structure
+| Command           | Action                                       |
+| :----------------- | :-------------------------------------------- |
+| `npm install`       | Install dependencies                          |
+| `npm run dev`       | Start local dev server at `localhost:4321`    |
+| `npm run build`     | Build production site to `./dist/`            |
+| `npm run preview`   | Preview the build locally before deploying    |
 
-Inside of your Astro project, you'll see the following folders and files:
+## Content TODOs
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- **`src/content/journal/en/allergies-and-asthma.mdx`** (and its ES/FR translations): this article encourages guests to try consuming an unidentified wild plant on-site as a home remedy for allergies/asthma. Migrated as-is per an explicit decision during the v3 rebuild, but it carries real liability exposure beyond the standard plant-profile medical disclaimer (an unstudied, unidentified plant rather than a documented traditional-use herb). Worth a legal/content review before this gets meaningful traffic.
