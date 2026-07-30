@@ -1,6 +1,12 @@
 ---
+interface Props {
+  /** Desktop column count override; default is a responsive 1/2/3. */
+  cols?: 2 | 4;
+}
+
+const { cols } = Astro.props;
 ---
 
-<div class="text-card-grid">
+<div class:list={['text-card-grid', cols && `cols-${cols}`]}>
   <slot />
 </div>

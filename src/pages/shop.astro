@@ -1,0 +1,159 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../layouts/PageLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Section from '../components/Section.astro';
+import Split from '../components/Split.astro';
+import TextCardGrid from '../components/TextCardGrid.astro';
+import TextCard from '../components/TextCard.astro';
+import NoteBox from '../components/NoteBox.astro';
+import ReserveCTA from '../components/ReserveCTA.astro';
+import ReserveContactBlock from '../components/ReserveContactBlock.astro';
+import { img } from '../lib/images';
+
+const heroImage = img('products/macadamia_harvest.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+const macadamiaSplitImage = await getImage({ src: heroImage, width: 800, format: 'webp' });
+const fertilizerSplitImage = await getImage({ src: img('garden/garden_harvest.jpg'), width: 800, format: 'webp' });
+---
+
+<PageLayout
+  title="Farm Products — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Organic macadamia nuts and farm products, grown and harvested at Wild on the Farm, Boquete Cloud Forest Lodge, Panama — order directly from the farm."
+  path="/shop/"
+  image={ogImage.src}
+  pullIntro="Macadamia nuts, herbal teas, preserves, ferments, and a garden fertilizer perfected over 18 years — everything grown and made by hand on the farm, at 1,800 metres in Panama's cloud forest."
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="Freshly harvested macadamia nuts from the farm" eyebrow="Farm Products">
+      Everything we grow, some of it you can take home.
+    </PageHero>
+  </Fragment>
+
+  <Section noPadTop label="Macadamia Nuts" heading="Grown on the farm, harvested by hand.">
+    <Split>
+      <div>
+        <p>
+          Our macadamia trees have been part of the farm for years, grown organically alongside
+          the vegetable gardens and cloud forest. Each harvest is picked, cracked, and prepared
+          on-site.
+        </p>
+        <div class="amenity-list">
+          <span>Organically grown</span>
+          <span>Hand-harvested</span>
+          <span>From the farm to your door</span>
+        </div>
+        <NoteBox variant="todo">
+          <p>
+            Needed: which formats are sold (raw / roasted, shell-on / shelled), bag sizes, prices,
+            and whether orders ship beyond Panama or are pickup/on-site only.
+          </p>
+        </NoteBox>
+      </div>
+      <div>
+        <div class="story-img" style={`background-image:url(${macadamiaSplitImage.src})`} role="img" aria-label="Freshly harvested macadamia nuts" />
+      </div>
+    </Split>
+  </Section>
+
+  <Section bg="cream" label="Herbal Teas" heading="Two blends, grown and dried on the farm.">
+    <p>
+      Herbal tea blends made from what grows on the farm — a morning blend and an evening blend.
+      Curious about each ingredient? The Journal has a full profile on every plant in these
+      blends, including its traditional uses.
+    </p>
+    <TextCardGrid cols={2}>
+      <TextCard name="Morning Blend" latin="Jiaogulan, nettle & rosemary">
+        Grown and dried on the farm. Read about <a href="/journal/jiaogulan/">jiaogulan</a>,{' '}
+        <a href="/journal/nettle/">nettle</a>, and <a href="/journal/rosemary/">rosemary</a> on
+        the Journal.
+      </TextCard>
+      <TextCard name="Evening Blend" latin="Jiaogulan, nettle & verbena">
+        Grown and dried on the farm. Read about <a href="/journal/jiaogulan/">jiaogulan</a>,{' '}
+        <a href="/journal/nettle/">nettle</a>, and <a href="/journal/verbena/">verbena</a> on the
+        Journal.
+      </TextCard>
+    </TextCardGrid>
+    <NoteBox variant="todo">
+      <p>Needed: prices, package sizes, and whether these ship or are pickup/on-site only.</p>
+    </NoteBox>
+  </Section>
+
+  <Section label="Preserves & Ferments" heading="Jams, soups, and lacto-fermented vegetables.">
+    <p>Small-batch preserves made from the garden's own harvest, and traditional lacto-fermentation.</p>
+    <TextCardGrid>
+      <TextCard name="Tree Tomato Jam" latin="Tamarillo">
+        A tangy, slightly tart jam made from the farm's tree tomatoes.
+      </TextCard>
+      <TextCard name="Nettle Soup" latin="Ortie">
+        A simple, earthy soup made from farm-grown <a href="/journal/nettle/">nettle</a>.
+      </TextCard>
+      <TextCard name="Kimchi & Ferments" latin="Lacto-fermentation">
+        Our <a href="/journal/garden-kimchi/">Garden Kimchi</a> and other lacto-fermented
+        vegetables from the garden.
+      </TextCard>
+    </TextCardGrid>
+    <NoteBox variant="todo">
+      <p>
+        Needed: the rest of the preserves list, plus prices, jar/container sizes, and shipping vs.
+        pickup for this section.
+      </p>
+    </NoteBox>
+  </Section>
+
+  <Section bg="cream" label="Garden Fertilizer" heading="18 years of experimenting, in one blend.">
+    <Split>
+      <div>
+        <p>
+          A liquid plant fertilizer ("purin") made by fermenting nettle, comfrey, and tithonia —
+          a blend refined over 18 years of growing on this farm. For garden use only, not for
+          eating.
+        </p>
+        <div class="amenity-list">
+          <span>Nettle</span>
+          <span>Comfrey</span>
+          <span>Tithonia</span>
+          <span>18 years in the making</span>
+        </div>
+      </div>
+      <div>
+        <div class="story-img" style={`background-image:url(${fertilizerSplitImage.src})`} role="img" aria-label="Harvested vegetables from the organic garden" />
+      </div>
+    </Split>
+    <NoteBox variant="todo">
+      <p>Needed: prices, bottle/container sizes, and shipping vs. pickup for the fertilizer too.</p>
+    </NoteBox>
+  </Section>
+
+  <Section bg="cream" label="See The Latest Harvest" heading="Follow along on Instagram.">
+    <p>
+      For current harvest photos, product availability, and what's fresh from the farm right now,
+      follow us on Instagram.
+    </p>
+    <div class="contact-list">
+      <a href="https://www.instagram.com/wildonthefarm">@wildonthefarm on Instagram →</a>
+    </div>
+  </Section>
+
+  <Section noPadTop label="How To Order" heading="Message us directly — no online checkout.">
+    <p>
+      Write to us on WhatsApp or by email with what you'd like, and we'll confirm availability,
+      price, and how to receive your order.
+    </p>
+  </Section>
+
+  <ReserveCTA>
+    <Fragment slot="left">
+      <div class="section-label">Taste The Farm</div>
+      <h2>Curious what else we grow?</h2>
+      <p>See the gardens and the kitchen behind everything we produce.</p>
+      <div class="contact-list">
+        <a href="/the-farm/">The Farm →</a>
+        <a href="/kitchen/">The Kitchen →</a>
+      </div>
+    </Fragment>
+    <Fragment slot="right">
+      <ReserveContactBlock label="Order" heading="Get in touch to place an order." />
+    </Fragment>
+  </ReserveCTA>
+</PageLayout>

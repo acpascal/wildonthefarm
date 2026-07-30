@@ -1,0 +1,184 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../layouts/PageLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Section from '../components/Section.astro';
+import Split from '../components/Split.astro';
+import NoteBox from '../components/NoteBox.astro';
+import ReserveCTA from '../components/ReserveCTA.astro';
+import ReserveContactBlock from '../components/ReserveContactBlock.astro';
+import { business } from '../data/business';
+import { img } from '../lib/images';
+
+const heroImage = img('farm/property_overview.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+---
+
+<PageLayout
+  title="FAQs & Contact — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Answers to common questions about staying at Wild on the Farm, Boquete Cloud Forest Lodge, and how to reach us directly."
+  path="/faqs-contact/"
+  image={ogImage.src}
+  pullIntro="Everything guests tend to ask before arriving — and if it's not here, just write to us directly."
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="Aerial view of the farm property" eyebrow="Plan Your Stay">
+      Questions, answered. And how to reach us.
+    </PageHero>
+  </Fragment>
+
+  <Section noPadTop label="Get In Touch" heading="We answer WhatsApp faster than email.">
+    <div class="contact-list contact-list-lg">
+      <a href={business.whatsappHref}>{business.phone} (WhatsApp)</a>
+      <a href={`mailto:${business.email}`}>{business.email}</a>
+    </div>
+  </Section>
+
+  <Section bg="cream" label="Frequently Asked Questions" heading="Before you book.">
+    <Split>
+      <div class="faq-item">
+        <h3>How do I get to the farm?</h3>
+        <p>
+          The last kilometre of the road is very steep and requires a 4x4. If you're arriving in a
+          regular car, park at the bottom and we'll come get you. If you arrive on foot, we'll
+          pick you up and drop you back in Boquete (5 km away) at the end of your stay. If you'd
+          like to go into Boquete during your stay, you can book a 4x4 taxi for $25 — or, whenever
+          we're heading into town ourselves, you're welcome to ride along with us for free.
+          Traveling from further afield? See our full guide on{' '}
+          <a href="/journal/boquete-travel-guide/">getting to Boquete from Panama City</a>.
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3>Is there Wi-Fi?</h3>
+        <p>
+          By design, there's no Wi-Fi or TV inside the cabins — the silence is part of the
+          experience. Wi-Fi is available in the common areas for anyone who needs to check in with
+          the outside world.
+        </p>
+      </div>
+    </Split>
+
+    <div class="faq-item max-prose">
+      <h3>What about electricity — can I bring a hairdryer?</h3>
+      <p>
+        We're entirely off-grid and generate our own solar power, so high-draw resistance
+        appliances like hairdryers aren't permitted. There's no shortage of power otherwise — we
+        just ask every guest to use only the lights they need, switch off what isn't in use, and
+        remember to turn off the bathroom light when you leave.
+      </p>
+    </div>
+
+    <Split>
+      <div class="faq-item">
+        <h3>What's the weather like?</h3>
+        <p>
+          Pleasant, thanks to the altitude — you escape the heavy, unbearable heat found lower
+          down. Pack a fleece, a light rain jacket, and hiking boots if you plan on walking the
+          trails.
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3>Will I definitely see the Quetzal, or the jaguar?</h3>
+        <p>
+          The best window for birdwatching — and for Quetzal sightings especially — is between
+          March 15 and May 15, when most birds are nesting and Quetzals are abundant in the area.
+          Outside that window sightings are still possible, just less reliable. Rarer sightings
+          like the jaguar are genuinely rare, even here — this is a working cloud forest, not a
+          zoo.
+        </p>
+      </div>
+    </Split>
+
+    <Split>
+      <div class="faq-item">
+        <h3>Is a guide required for hiking?</h3>
+        <p>
+          Some sections are walkable without a guide if you're an experienced hiker comfortable
+          navigating on your own. For hikes over 3 hours into the cloud forest, a guide is
+          strongly recommended — the trails from the farm are faint and remote — though
+          experienced hikers who want their independence are free to go without one. All hikers
+          are asked to sign a liability waiver beforehand, and guests should have their own travel
+          or personal insurance.
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3>Do you accommodate dietary restrictions?</h3>
+        <p>Just let us know if you have a special diet or any allergies when you book, and we'll plan meals around it.</p>
+      </div>
+    </Split>
+
+    <Split>
+      <div class="faq-item">
+        <h3>What are meals like?</h3>
+        <p>
+          Breakfast is included and generally hearty, served between 8 and 9am. Dinner can be
+          reserved each evening — two appetizers, a main dish, and a dessert. We bake our own
+          bread.
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3>Are pets welcome?</h3>
+        <p>We're sorry, but we don't accept pets. We keep animals on the farm, and outside animals cause them a great deal of stress.</p>
+      </div>
+    </Split>
+
+    <Split>
+      <div class="faq-item">
+        <h3>Are children welcome?</h3>
+        <p>For safety reasons, children under 12 aren't accepted, and there are no extra beds available in the cabins.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What's your cancellation policy?</h3>
+        <p>
+          Free cancellation up to 1 month before arrival. From 1 month to 15 days out, 50% is
+          refundable; from 15 days to 1 week out, 25% is refundable. Inside 1 week of arrival,
+          bookings are non-refundable.
+        </p>
+      </div>
+    </Split>
+
+    <Split>
+      <div class="faq-item">
+        <h3>How do I book?</h3>
+        <p>
+          Reach out directly by WhatsApp or email — tell us your dates and what you're hoping to
+          experience, and we'll help you pick the right cabin and plan the stay.
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3>What payment methods do you accept?</h3>
+        <NoteBox variant="todo">
+          <p>
+            Accepted payment methods not yet decided — cash, transfer, card, deposit vs. balance
+            on arrival, etc.
+          </p>
+        </NoteBox>
+      </div>
+    </Split>
+
+    <div class="faq-item max-prose">
+      <h3>Any apps you'd recommend bringing?</h3>
+      <p>
+        For birdwatching, we recommend downloading (and updating) the Merlin Bird ID app before
+        you arrive — it's a great help identifying what you're seeing. If you're into plants and
+        flowers, a specialized plant-identification app is useful too for putting a name to what's
+        growing around you.
+      </p>
+    </div>
+  </Section>
+
+  <ReserveCTA>
+    <Fragment slot="left">
+      <div class="section-label">Still Have Questions?</div>
+      <h2>We're happy to talk it through.</h2>
+      <p>Write to us directly and we'll help you plan your stay, whatever's still unclear.</p>
+      <div class="contact-list">
+        <a href="/rates-retreats/">Rates &amp; Retreats →</a>
+        <a href="/stay/">See The Cabins →</a>
+      </div>
+    </Fragment>
+    <Fragment slot="right">
+      <ReserveContactBlock />
+    </Fragment>
+  </ReserveCTA>
+</PageLayout>

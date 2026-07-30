@@ -1,0 +1,234 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../layouts/PageLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Section from '../components/Section.astro';
+import Split from '../components/Split.astro';
+import TextCardGrid from '../components/TextCardGrid.astro';
+import TextCard from '../components/TextCard.astro';
+import ReserveCTA from '../components/ReserveCTA.astro';
+import ReserveContactBlock from '../components/ReserveContactBlock.astro';
+import { img } from '../lib/images';
+
+const heroImage = img('retreats/farm_animals.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const detoxImage = await getImage({ src: img('garden/garden_harvest.jpg'), width: 800, format: 'webp' });
+const sisterhoodImage = await getImage({ src: img('retreats/qigong.jpg'), width: 800, format: 'webp' });
+const friendsImage = await getImage({ src: img('kitchen/table_guests_2.jpg'), width: 800, format: 'webp' });
+const businessImage = await getImage({ src: img('retreats/landscape.jpg'), width: 800, format: 'webp' });
+const wholeFarmImage = await getImage({ src: img('retreats/owners_house.jpg'), width: 800, format: 'webp' });
+---
+
+<PageLayout
+  title="Rates & Retreats — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Nightly cabin rates and whole-property retreat packages at Wild on the Farm, Boquete Cloud Forest Lodge — detox and sisterhood retreats, friends' getaways, business retreats, and full farm rentals."
+  path="/rates-retreats/"
+  image={ogImage.src}
+  pullIntro="A single cabin for a couple, or the entire property for a group retreat — here's what each costs and what's included either way."
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="Sheep and chickens on the farm" eyebrow="Plan Your Stay">
+      Cabin rates, and renting the whole farm.
+    </PageHero>
+  </Fragment>
+
+  <Section noPadTop label="Cabin Rates" heading="One rate across all three cabins, breakfast included.">
+    <TextCardGrid cols={4}>
+      <TextCard name="Jan 1 – Jan 31" latin="High season">
+        <p class="price">$250 / night</p>
+        <p>Breakfast included.</p>
+      </TextCard>
+      <TextCard name="Feb 1 – Mar 31" latin="Peak season">
+        <p class="price">$350 / night</p>
+        <p>Breakfast included.</p>
+      </TextCard>
+      <TextCard name="Apr 1 – Dec 20" latin="Green season">
+        <p class="price">$250 / night</p>
+        <p>Breakfast included.</p>
+      </TextCard>
+      <TextCard name="Dec 20 – Dec 31" latin="Holiday season">
+        <p class="price">$350 / night</p>
+        <p>Breakfast included.</p>
+      </TextCard>
+    </TextCardGrid>
+    <p class="fine-print">
+      Rate is per cabin. Minimum stay: 3 nights. Dinner can be reserved separately each evening —
+      see What's Included below.
+    </p>
+  </Section>
+
+  <Section bg="cream" label="Last-Minute Rates" heading="A cabin sitting empty is a cabin at a discount.">
+    <p>
+      If a cabin is still available close to your arrival date, it's offered at a reduced rate —
+      non-refundable, since it's priced for that specific date.
+    </p>
+    <TextCardGrid cols={2}>
+      <TextCard name="15 days before arrival" latin="If the cabin is still free">
+        <p class="price">20% off</p>
+        <p>Non-refundable.</p>
+      </TextCard>
+      <TextCard name="7 days before arrival" latin="If the cabin is still free">
+        <p class="price">30% off</p>
+        <p>Non-refundable.</p>
+      </TextCard>
+    </TextCardGrid>
+  </Section>
+
+  <Section label="What's Included" heading="Simple, all-in pricing.">
+    <div class="amenity-list">
+      <span>Breakfast included, farm-to-table</span>
+      <span>Dinner available each evening (reserve ahead)</span>
+      <span>Private ensuite bathroom</span>
+      <span>High-end bedding</span>
+      <span>Private terrace</span>
+      <span>Solar power &amp; spring water</span>
+      <span>Wi-Fi in common areas</span>
+      <span>Self-guided access to farm trails</span>
+      <span>Pickup at the bottom of the road</span>
+    </div>
+  </Section>
+
+  <Section bg="cream" label="Rent The Whole Farm" heading="Take over the whole property for a group retreat.">
+    <p>
+      Beyond a single cabin, the entire property is available for special group stays — a full
+      week minimum (6 nights), with or without prepared dinners, with or without the owner's own
+      house. Five ways to gather here, built around what brings your group together.
+    </p>
+  </Section>
+
+  <Section noPadTop label="Detox Retreat" heading="Slow mornings, clean food, and a full reset.">
+    <Split>
+      <div>
+        <p>
+          A full week focused on rest and reset — herbal teas and a special diet built around the
+          farm's own produce, fresh juice, a cooking class, two guided hikes, and an hour of Qi
+          Gong every morning. Minimum 3 people, one person per cabin.
+        </p>
+        <div class="amenity-list">
+          <span>Breakfast &amp; dinner included</span>
+          <span>Special herbal tea &amp; diet</span>
+          <span>Fresh juice</span>
+          <span>Cooking class</span>
+          <span>2 guided hikes</span>
+          <span>1 hour Qi Gong each morning</span>
+        </div>
+      </div>
+      <div>
+        <div class="story-img" style={`background-image:url(${detoxImage.src})`} role="img" aria-label="Fresh harvest from the garden" />
+      </div>
+    </Split>
+    <p class="price">$2,000 / week / person <span class="price-note">— minimum 3 people</span></p>
+    <p class="fine-print">À la carte, on request: massage, yoga class, additional hiking, hot spring visit.</p>
+  </Section>
+
+  <Section bg="cream" label="Sisterhood Retreat" heading="A week of connection, movement, and quiet company.">
+    <Split>
+      <div>
+        <p>
+          Built around the same rhythm as the Detox Retreat — herbal teas and a special diet from
+          the farm's own produce, fresh juice, a cooking class, two guided hikes, and an hour of
+          Qi Gong every morning — held for a group gathering together. Minimum 3 people, one
+          person per cabin.
+        </p>
+        <div class="amenity-list">
+          <span>Breakfast &amp; dinner included</span>
+          <span>Special herbal tea &amp; diet</span>
+          <span>Fresh juice</span>
+          <span>Cooking class</span>
+          <span>2 guided hikes</span>
+          <span>1 hour Qi Gong each morning</span>
+        </div>
+      </div>
+      <div>
+        <div class="story-img" style={`background-image:url(${sisterhoodImage.src})`} role="img" aria-label="Qi Gong practice on the farm" />
+      </div>
+    </Split>
+    <p class="price">$2,000 / week / person <span class="price-note">— minimum 3 people</span></p>
+    <p class="fine-print">À la carte, on request: massage, yoga class, additional hiking, hot spring visit.</p>
+  </Section>
+
+  <Section label="Friends Meeting" heading="Three couples, one farm, no schedule but your own.">
+    <Split>
+      <div>
+        <p>
+          Bring your closest friends and take the whole property for the week — two to a cabin,
+          meals taken care of, two guided hikes to get everyone out into the cloud forest
+          together. Minimum 3 couples.
+        </p>
+        <div class="amenity-list">
+          <span>Breakfast &amp; special dinner included</span>
+          <span>2 guided hikes</span>
+          <span>2 persons per cabin</span>
+        </div>
+      </div>
+      <div>
+        <div class="story-img" style={`background-image:url(${friendsImage.src})`} role="img" aria-label="Guests sharing a meal together" />
+      </div>
+    </Split>
+    <p class="price">$2,300 / week / couple <span class="price-note">— minimum 3 couples</span></p>
+    <p class="fine-print">À la carte, on request: massage, yoga class, additional hiking, hot spring visit.</p>
+  </Section>
+
+  <Section bg="cream" label="Business Retreat" heading="Take the team somewhere they'll actually disconnect.">
+    <Split>
+      <div>
+        <p>
+          No Wi-Fi in the cabins, no distractions, just the team and the mountain. Three people,
+          one per cabin, with meals handled and two guided hikes built in to get everyone outside
+          together.
+        </p>
+        <div class="amenity-list">
+          <span>Breakfast &amp; special dinner included</span>
+          <span>2 guided hikes</span>
+          <span>1 person per cabin</span>
+        </div>
+      </div>
+      <div>
+        <div class="story-img" style={`background-image:url(${businessImage.src})`} role="img" aria-label="Landscape view from the farm" />
+      </div>
+    </Split>
+    <p class="price">$2,000 / week / cabin <span class="price-note">— 3 people</span></p>
+    <p class="fine-print">À la carte, on request: massage, yoga class, additional hiking, hot spring visit.</p>
+  </Section>
+
+  <Section label="The Whole Farm" heading="Everything, including the owner's own house.">
+    <Split>
+      <div>
+        <p>
+          The complete property for up to 8 people — all three cabins plus the owner's own house
+          and kitchen. A kitchen helper and a general helper are available on-site, and the farm's
+          own organic vegetable garden and fresh eggs are yours to cook with. One week minimum (6
+          nights).
+        </p>
+        <div class="amenity-list">
+          <span>Owner's house &amp; kitchen included</span>
+          <span>Kitchen helper available</span>
+          <span>General helper available</span>
+          <span>Organic garden &amp; fresh eggs on-site</span>
+          <span>Up to 8 people</span>
+        </div>
+      </div>
+      <div>
+        <div class="story-img" style={`background-image:url(${wholeFarmImage.src})`} role="img" aria-label="The owner's house on the farm" />
+      </div>
+    </Split>
+    <p class="price">$7,200 / week <span class="price-note">— up to 8 people, minimum 1 week (6 nights)</span></p>
+    <p class="fine-print">À la carte, on request: massage, yoga class, additional hiking, hot spring visit.</p>
+  </Section>
+
+  <ReserveCTA>
+    <Fragment slot="left">
+      <div class="section-label">Questions?</div>
+      <h2>See the FAQs, or write to us directly.</h2>
+      <p>Whether it's a single cabin or the whole farm, we'll help you find the right fit.</p>
+      <div class="contact-list">
+        <a href="/faqs-contact/">FAQs &amp; Contact →</a>
+        <a href="/stay/">See The Cabins →</a>
+      </div>
+    </Fragment>
+    <Fragment slot="right">
+      <ReserveContactBlock />
+    </Fragment>
+  </ReserveCTA>
+</PageLayout>

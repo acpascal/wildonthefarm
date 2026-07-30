@@ -96,6 +96,21 @@ a {
   text-decoration: none;
 }
 
+/* Links embedded inside prose need a visible affordance — unlike nav/footer/
+   contact-list links, which are unambiguous from context (position, being
+   the only content on their line), a link sitting mid-sentence is invisible
+   without this since it otherwise inherits the paragraph's exact color. */
+p a {
+  text-decoration: underline;
+  text-decoration-color: var(--border);
+  text-underline-offset: 2px;
+}
+
+p a:hover {
+  color: var(--gold);
+  text-decoration-color: currentColor;
+}
+
 button {
   font: inherit;
   color: inherit;
@@ -774,6 +789,10 @@ section.no-pad-bottom {
   color: var(--gold-bright);
 }
 
+.contact-list-lg a {
+  font-size: 1.2rem;
+}
+
 @media (min-width: 860px) {
   .reserve-grid {
     grid-template-columns: 1fr 1fr;
@@ -983,6 +1002,46 @@ section.no-pad-bottom {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-4);
   }
+
+  .text-card-grid.cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .text-card-grid.cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.price {
+  font-family: var(--font-body);
+  font-size: 1.3rem;
+  color: var(--green-deep);
+  margin: 0.6em 0;
+}
+
+.price-note {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--gray);
+}
+
+.fine-print {
+  font-size: 0.88rem;
+  color: var(--gray);
+  margin-top: var(--space-2);
+}
+
+.max-prose {
+  max-width: 48rem;
+}
+
+.faq-item:not(:last-child) {
+  margin-bottom: var(--space-4);
+}
+
+.faq-item h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.4em;
 }
 
 /* ==========================================================================
