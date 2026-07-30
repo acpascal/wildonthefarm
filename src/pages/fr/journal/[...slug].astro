@@ -1,7 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import ArticleLayout from '../../../layouts/ArticleLayout.astro';
-import { slugFromId, localeFromId, type JournalSection } from '../../../lib/journal';
+import { slugFromId, localeFromId, getJournalTranslations, type JournalSection } from '../../../lib/journal';
 
 export async function getStaticPaths() {
   const entries = await getCollection('journal', (entry) => localeFromId(entry.id) === 'fr' && !entry.data.draft);
@@ -14,6 +14,7 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 const slug = slugFromId(entry.id);
+const alternates = await getJournalTranslations(entry);
 
 const eyebrowBySection: Record<JournalSection, string> = {
   'what-we-grow': entry.data.kind === 'plant' ? 'Profil de Plante' : 'Journal',
@@ -43,6 +44,7 @@ const dateDisplay = entry.data.date.toLocaleDateString('fr-FR', {
   dateDisplay={dateDisplay}
   pullIntro={entry.data.pullIntro}
   locale="fr"
+  alternates={alternates}
 >
   <Content />
 </ArticleLayout>

@@ -36,5 +36,13 @@ export default defineConfig({
     },
   ],
 
-  integrations: [mdx(), sitemap()],
+  integrations: [
+    mdx(),
+    sitemap({
+      i18n: {
+        defaultLocale: 'en',
+        locales: { en: 'en', es: 'es', fr: 'fr' },
+      },
+    }),
+  ],
 });

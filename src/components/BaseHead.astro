@@ -2,6 +2,7 @@
 import { Font } from 'astro:assets';
 import { buildSeo, type PageSeo } from '../lib/seo';
 import { business } from '../data/business';
+import { defaultLocale } from '../i18n/ui';
 
 interface Props extends PageSeo {}
 
@@ -28,6 +29,13 @@ const seo = buildSeo(Astro.site!, props);
 {seo.image && <meta name="twitter:image" content={seo.image} />}
 
 <link rel="canonical" href={seo.canonical} />
+{
+  seo.alternates &&
+    Object.entries(seo.alternates).map(([locale, href]) => (
+      <link rel="alternate" hreflang={locale} href={href} />
+    ))
+}
+{seo.alternates?.[defaultLocale] && <link rel="alternate" hreflang="x-default" href={seo.alternates[defaultLocale]} />}
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="icon" href="/favicon.ico" />
 

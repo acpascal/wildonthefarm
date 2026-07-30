@@ -6,6 +6,7 @@ import Section from '../components/Section.astro';
 import ReserveCTA from '../components/ReserveCTA.astro';
 import ReserveContactBlock from '../components/ReserveContactBlock.astro';
 import { img } from '../lib/images';
+import { pageAlternates } from '../data/pageTranslations';
 
 const heroImage = img('stay/hero_cabin_exterior.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
@@ -55,6 +56,7 @@ const amenities = [
   path="/stay/"
   image={ogImage.src}
   pullIntro="Each cabin was set into the hillside rather than onto it — living roofs, hardwood walls, and glass turned toward the cloud forest, so the line between shelter and mountain nearly disappears."
+  alternates={pageAlternates('stay')}
 >
   <Fragment slot="hero">
     <PhotoHero

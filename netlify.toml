@@ -88,19 +88,14 @@
   status = 301
   force = true
 
-# --- ES: top-level pages. No translated v3 page exists yet for these
-# (that's future work beyond this plan, past Phase 7's routing proof),
-# so they land on the matching EN v3 page rather than 404 — update once
-# real /es/ pages exist. ---
+# --- ES: top-level pages. /es/estancia/ has a real translated v3 page
+# (see src/pages/es/estancia.astro) so it's excluded here — it's a live
+# page now, not a redirect. Everything else below has no translation yet
+# (future work beyond this plan), so it lands on the matching EN v3 page
+# rather than 404 — update each one as its real /es/ page ships. ---
 [[redirects]]
   from = "/es/"
   to = "https://wildonthefarm.com/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/es/estancia/"
-  to = "https://wildonthefarm.com/stay/"
   status = 301
   force = true
 
@@ -184,16 +179,12 @@
   status = 301
   force = true
 
-# --- FR: top-level pages. Same interim situation as ES above. ---
+# --- FR: top-level pages. /fr/sejour/ has a real translated v3 page
+# (see src/pages/fr/sejour.astro) so it's excluded here — same situation
+# as /es/estancia/ above. Everything else has no translation yet. ---
 [[redirects]]
   from = "/fr/"
   to = "https://wildonthefarm.com/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/fr/sejour/"
-  to = "https://wildonthefarm.com/stay/"
   status = 301
   force = true
 

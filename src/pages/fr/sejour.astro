@@ -1,0 +1,124 @@
+---
+import { getImage, Image } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PhotoHero from '../../components/PhotoHero.astro';
+import Section from '../../components/Section.astro';
+import ReserveCTA from '../../components/ReserveCTA.astro';
+import ReserveContactBlock from '../../components/ReserveContactBlock.astro';
+import { img } from '../../lib/images';
+import { pageAlternates } from '../../data/pageTranslations';
+
+const heroImage = img('stay/hero_cabin_exterior.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const cabins = [
+  {
+    slug: 'cabin-1',
+    label: 'Cabane Un',
+    heading: 'Au plus profond de la brume.',
+    description:
+      "La plus enveloppée des trois, nichée dans le bambou et la forêt, avec une salle de bain entièrement habillée de carreaux peints à la main à motifs de feuilles.",
+    image: img('cabin1/hero.jpg'),
+  },
+  {
+    slug: 'cabin-2',
+    label: 'Cabane Deux',
+    heading: 'Surélevée au-dessus de la vallée.',
+    description:
+      "Perchée sur pilotis au bord de la colline, avec la vue la plus large de la propriété — la vallée de Chiriquí et, par matin clair, le Volcán Barú.",
+    image: img('cabin2/hero.jpg'),
+  },
+  {
+    slug: 'cabin-3',
+    label: 'Cabane Trois',
+    heading: 'La plus travaillée des trois.',
+    description:
+      "Une tête de lit sculptée à la main, du linge à motifs botaniques, et une salle de bain habillée du sol au plafond de carreaux Art Nouveau peints à la main.",
+    image: img('cabin3/hero.jpg'),
+  },
+];
+
+const amenities = [
+  'Salle de bain privée',
+  'Literie haut de gamme',
+  'Terrasse privée',
+  'Toit végétalisé',
+  'Énergie solaire',
+  "Eau de source",
+  'Pas de wifi ni de TV en cabane, par choix',
+  'Wifi disponible dans les espaces communs',
+];
+---
+
+<PageLayout
+  title="Séjour — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Trois cabanes artisanales construites dans la forêt nuageuse de Boquete, Panama — toits végétalisés, terrasses privées, et vues sur le Parc National Amistad."
+  path="/fr/sejour/"
+  image={ogImage.src}
+  pullIntro="Chaque cabane a été enchâssée dans la colline plutôt que posée dessus — toits végétalisés, murs en bois noble, et verre tourné vers la forêt nuageuse, si bien que la frontière entre l'abri et la montagne disparaît presque."
+  locale="fr"
+  alternates={pageAlternates('stay')}
+>
+  <Fragment slot="hero">
+    <PhotoHero
+      image={heroImage}
+      alt="Extérieur d'une cabane nichée dans la forêt nuageuse à Wild on the Farm"
+      eyebrow="Séjour"
+    >
+      Trois cabanes, nichées dans la forêt.
+    </PhotoHero>
+  </Fragment>
+
+  <Section label="Où Que Vous Séjourniez" heading="Le confort hors réseau, sans compromis.">
+    <p>
+      Chaque cabane témoigne d'un artisanat durable, construit dans le plus grand respect de son
+      environnement. L'extérieur met en valeur la remarquable solidité de l'amargo-amargo, un bois
+      tropical exceptionnellement dur, tandis que l'intérieur est habillé de bois tropicaux plus
+      doux, créant une atmosphère chaleureuse et naturellement saine.
+    </p>
+    <div class="amenity-list">
+      {amenities.map((item) => <span>{item}</span>)}
+    </div>
+  </Section>
+
+  <Section noPadTop>
+    {
+      cabins.map((cabin, i) => (
+        <div class:list={['cabin-block', { reverse: i === 1 }]}>
+          <a href={`/${cabin.slug}/`} class="cabin-img">
+            <Image
+              src={cabin.image}
+              alt={`Extérieur de la ${cabin.label} à Wild on the Farm`}
+              widths={[400, 700, 1000]}
+              sizes="(min-width: 860px) 50vw, 100vw"
+              loading="lazy"
+            />
+          </a>
+          <div>
+            <div class="section-label">{cabin.label}</div>
+            <h2 class="lede">{cabin.heading}</h2>
+            <p>{cabin.description}</p>
+            <a href={`/${cabin.slug}/`} class="btn cabin-cta">
+              Découvrir la {cabin.label}
+            </a>
+          </div>
+        </div>
+      ))
+    }
+  </Section>
+
+  <ReserveCTA>
+    <Fragment slot="left">
+      <div class="section-label">Vous Hésitez ?</div>
+      <h2>Dites-nous comment vous aimeriez passer vos journées.</h2>
+      <p>Écrivez-nous et nous vous aiderons à choisir la cabane qui convient le mieux à votre séjour.</p>
+      <div class="contact-list">
+        <a href="/the-farm/">Retour à La Ferme →</a>
+        <a href="/kitchen/">La Cuisine →</a>
+      </div>
+    </Fragment>
+    <Fragment slot="right">
+      <ReserveContactBlock locale="fr" />
+    </Fragment>
+  </ReserveCTA>
+</PageLayout>

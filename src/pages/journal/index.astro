@@ -7,6 +7,7 @@ import ReserveCTA from '../../components/ReserveCTA.astro';
 import ReserveContactBlock from '../../components/ReserveContactBlock.astro';
 import { img } from '../../lib/images';
 import { getJournal, groupBySection, slugFromId } from '../../lib/journal';
+import { pageAlternates } from '../../data/pageTranslations';
 
 const heroImage = img('farm/overview_1.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
@@ -43,6 +44,7 @@ const sectionCopy = {
   path="/journal/"
   image={ogImage.src}
   pullIntro="Plant profiles from what we grow — their medicinal and culinary uses, and how to cultivate them — alongside seasonal notes on trail conditions, native species, and the health of this small mountain."
+  alternates={pageAlternates('journal')}
 >
   <Fragment slot="hero">
     <PageHero image={heroImage} alt="Overview of the farm property" eyebrow="The Journal">

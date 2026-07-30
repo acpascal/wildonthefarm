@@ -7,6 +7,7 @@ import ReserveCTA from '../../../components/ReserveCTA.astro';
 import ReserveContactBlock from '../../../components/ReserveContactBlock.astro';
 import { img } from '../../../lib/images';
 import { getJournal, groupBySection, slugFromId } from '../../../lib/journal';
+import { pageAlternates } from '../../../data/pageTranslations';
 
 const heroImage = img('farm/overview_1.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
@@ -44,6 +45,7 @@ const sectionCopy = {
   image={ogImage.src}
   pullIntro="Perfiles de las plantas que cultivamos — sus usos medicinales y culinarios, y cómo cultivarlas — junto con notas de temporada sobre senderos, especies nativas, y la vida de esta pequeña montaña."
   locale="es"
+  alternates={pageAlternates('journal')}
 >
   <Fragment slot="hero">
     <PageHero image={heroImage} alt="Vista general de la finca" eyebrow="El Diario">

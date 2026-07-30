@@ -2,7 +2,10 @@ import type { UiKey } from '../i18n/ui';
 
 export interface NavLink {
   key: UiKey;
-  href: string;
+  /** Resolved per-locale via pageTranslations.ts — use this for any real page. */
+  pageId?: string;
+  /** Raw href, used as-is regardless of locale — for links with no per-locale entry. */
+  href?: string;
 }
 
 export interface NavDropdown extends NavLink {
@@ -15,30 +18,28 @@ export function isDropdown(item: NavItem): item is NavDropdown {
   return 'items' in item;
 }
 
-// English (unprefixed, default locale) paths. Locale-aware hrefs land in
-// Phase 7 alongside pageTranslations.ts and the language switcher.
 export const navItems: NavItem[] = [
   {
     key: 'nav.farmAndStay',
-    href: '/the-farm/',
+    pageId: 'the-farm',
     items: [
-      { key: 'nav.theFarm', href: '/the-farm/' },
-      { key: 'nav.stay', href: '/stay/' },
-      { key: 'nav.kitchen', href: '/kitchen/' },
-      { key: 'nav.garden', href: '/garden/' },
+      { key: 'nav.theFarm', pageId: 'the-farm' },
+      { key: 'nav.stay', pageId: 'stay' },
+      { key: 'nav.kitchen', pageId: 'kitchen' },
+      { key: 'nav.garden', pageId: 'garden' },
       { key: 'nav.organicMacadamia', href: '/journal/french-visionary-of-boquete/' },
     ],
   },
-  { key: 'nav.wildlife', href: '/wildlife/' },
+  { key: 'nav.wildlife', pageId: 'wildlife' },
   {
     key: 'nav.experience',
-    href: '/hiking/',
+    pageId: 'hiking',
     items: [
-      { key: 'nav.birdwatching', href: '/birdwatching/' },
-      { key: 'nav.hiking', href: '/hiking/' },
+      { key: 'nav.birdwatching', pageId: 'birdwatching' },
+      { key: 'nav.hiking', pageId: 'hiking' },
     ],
   },
-  { key: 'nav.journal', href: '/journal/' },
-  { key: 'nav.shop', href: '/shop/' },
-  { key: 'nav.ratesRetreats', href: '/rates-retreats/' },
+  { key: 'nav.journal', pageId: 'journal' },
+  { key: 'nav.shop', pageId: 'shop' },
+  { key: 'nav.ratesRetreats', pageId: 'rates-retreats' },
 ];

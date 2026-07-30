@@ -1,16 +1,20 @@
 ---
 import { useTranslations } from '../i18n/utils';
 import { defaultLocale, type Locale } from '../i18n/ui';
-import { navItems, isDropdown } from '../data/nav';
+import { navItems, isDropdown, type NavLink } from '../data/nav';
+import { pageHref } from '../data/pageTranslations';
 import { business } from '../data/business';
+import LanguageSwitcher from './LanguageSwitcher.astro';
 
 interface Props {
   locale?: Locale;
+  alternates?: Partial<Record<Locale, string>>;
 }
 
-const { locale = defaultLocale } = Astro.props;
+const { locale = defaultLocale, alternates } = Astro.props;
 const t = useTranslations(locale);
-const home = locale === defaultLocale ? '/' : `/${locale}/`;
+const home = pageHref('home', locale);
+const resolveHref = (item: NavLink) => (item.pageId ? pageHref(item.pageId, locale) : item.href ?? '#');
 ---
 
 <nav class="nav" data-nav>
@@ -37,7 +41,7 @@ const home = locale === defaultLocale ? '/' : `/${locale}/`;
         navItems.map((item) =>
           isDropdown(item) ? (
             <div class="nav-dropdown">
-              <a href={item.href}>{t(item.key)}</a>
+              <a href={resolveHref(item)}>{t(item.key)}</a>
               <button
                 class="nav-dropdown-toggle"
                 type="button"
@@ -51,15 +55,16 @@ const home = locale === defaultLocale ? '/' : `/${locale}/`;
               </button>
               <div class="nav-dropdown-menu">
                 {item.items.map((sub) => (
-                  <a href={sub.href}>{t(sub.key)}</a>
+                  <a href={resolveHref(sub)}>{t(sub.key)}</a>
                 ))}
               </div>
             </div>
           ) : (
-            <a href={item.href}>{t(item.key)}</a>
+            <a href={resolveHref(item)}>{t(item.key)}</a>
           )
         )
       }
+      <LanguageSwitcher locale={locale} alternates={alternates} />
     </div>
 
     <a href="#reserve" class="btn btn-solid nav-reserve">{t('nav.reserve')}</a>

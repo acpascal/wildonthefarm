@@ -18,6 +18,7 @@ interface Props {
   dateDisplay: string;
   pullIntro: string;
   locale?: Locale;
+  alternates?: Partial<Record<Locale, string>>;
 }
 
 const {
@@ -30,6 +31,7 @@ const {
   dateDisplay,
   pullIntro,
   locale = defaultLocale,
+  alternates,
 } = Astro.props;
 const ogImage = await getImage({ src: cover, width: 1200, format: 'webp' });
 const t = useTranslations(locale);
@@ -43,6 +45,7 @@ const journalIndexHref = locale === defaultLocale ? '/journal/' : `/${locale}/jo
   image={ogImage.src}
   pullIntro={pullIntro}
   locale={locale}
+  alternates={alternates}
 >
   <Fragment slot="hero">
     <PageHero image={cover} alt={coverAlt} eyebrow={eyebrow}>

@@ -1,4 +1,5 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
+import { defaultLocale, type Locale } from '../i18n/ui';
 
 export type JournalEntry = CollectionEntry<'journal'>;
 export type JournalSection = JournalEntry['data']['section'];
@@ -18,6 +19,28 @@ export async function getJournal(locale: string): Promise<JournalEntry[]> {
   return all
     .filter((entry) => localeFromId(entry.id) === locale && !entry.data.draft)
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+}
+
+/** An entry's cross-locale grouping key — its own translationKey, or its own slug when unset (the default for English articles). */
+function translationKeyOf(entry: JournalEntry): string {
+  return entry.data.translationKey ?? slugFromId(entry.id);
+}
+
+function journalHref(locale: Locale, slug: string): string {
+  return locale === defaultLocale ? `/journal/${slug}/` : `/${locale}/journal/${slug}/`;
+}
+
+/** Every locale this article (or one of its translations) exists in, keyed by locale, valued by that page's path. */
+export async function getJournalTranslations(entry: JournalEntry): Promise<Partial<Record<Locale, string>>> {
+  const key = translationKeyOf(entry);
+  const all = await getCollection('journal', (e) => !e.data.draft);
+  const alternates: Partial<Record<Locale, string>> = {};
+  for (const e of all) {
+    if (translationKeyOf(e) !== key) continue;
+    const locale = localeFromId(e.id) as Locale;
+    alternates[locale] = journalHref(locale, slugFromId(e.id));
+  }
+  return alternates;
 }
 
 const SECTION_ORDER: JournalSection[] = ['what-we-grow', 'farm-notes', 'travel-panama'];
