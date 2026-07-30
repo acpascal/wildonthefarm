@@ -1044,6 +1044,18 @@ section.no-pad-bottom {
   margin-bottom: 0.4em;
 }
 
+.not-found {
+  text-align: center;
+  max-width: 32rem;
+  margin: 0 auto;
+  padding: var(--space-6) 0;
+}
+
+.not-found p {
+  color: var(--gray);
+  margin-bottom: var(--space-4);
+}
+
 /* ==========================================================================
    Lightbox
    ========================================================================== */

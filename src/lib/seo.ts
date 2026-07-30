@@ -10,6 +10,8 @@ export interface PageSeo {
   path: string;
   /** Relative path to an OG/Twitter image, e.g. '/images/stay/hero.jpg'. */
   image?: string;
+  /** True for pages that shouldn't be indexed (e.g. 404). */
+  noindex?: boolean;
 }
 
 export interface ResolvedSeo {
@@ -17,6 +19,7 @@ export interface ResolvedSeo {
   description: string;
   canonical: string;
   image?: string;
+  noindex: boolean;
 }
 
 /** Resolves a page's SEO fields to absolute URLs against astro.config.mjs's `site`. */
@@ -26,5 +29,6 @@ export function buildSeo(site: URL, page: PageSeo): ResolvedSeo {
     description: page.description,
     canonical: absoluteUrl(site, page.path),
     image: page.image ? absoluteUrl(site, page.image) : undefined,
+    noindex: page.noindex ?? false,
   };
 }

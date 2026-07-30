@@ -1,0 +1,78 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../layouts/PageLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Section from '../components/Section.astro';
+import PhotoGrid from '../components/PhotoGrid.astro';
+import NoteBox from '../components/NoteBox.astro';
+import ReserveCTA from '../components/ReserveCTA.astro';
+import ReserveContactBlock from '../components/ReserveContactBlock.astro';
+import { img } from '../lib/images';
+
+const heroImage = img('cabin3/hero.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const photos = [
+  { image: heroImage, alt: 'Cabin Three interior' },
+  { image: img('cabin3/gallery_1.jpg'), alt: 'Cabin Three hand-carved headboard' },
+  { image: img('cabin3/gallery_2.jpg'), alt: 'Cabin Three bathroom with hand-painted Art Nouveau tile' },
+  { image: img('cabin3/gallery_3.jpg'), alt: 'Cabin Three bedroom detail' },
+  { image: img('cabin3/gallery_4.jpg'), alt: 'Cabin Three interior detail' },
+  { image: img('cabin3/gallery_5.jpg'), alt: 'Cabin Three botanical linens' },
+];
+
+const amenities = [
+  'Private ensuite bathroom',
+  'Hand-painted Art Nouveau tile',
+  'Hand-carved headboard',
+  'High-end bedding',
+  'Living roof',
+  'No Wi-Fi or TV, by design',
+];
+
+const reserveHref =
+  "https://api.whatsapp.com/send?phone=50765699134&text=Hi%2C%20I%27d%20like%20to%20reserve%20Cabin%203%20at%20Wild%20on%20the%20Farm";
+---
+
+<PageLayout
+  title="Cabin Three — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Cabin Three at Wild on the Farm: a hand-carved headboard, botanical fabrics, and a hand-painted Art Nouveau tiled bathroom."
+  path="/cabin-3/"
+  image={ogImage.src}
+  pullIntro="Cabin Three leans into detail — a hand-carved wooden headboard, botanical linens, and a bathroom dressed floor to ceiling in hand-painted Art Nouveau tile. The most decorative of the three cabins, without losing any of the quiet."
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="Cabin Three interior" eyebrow="Stay — Cabin Three">
+      The most intricate of the three.
+    </PageHero>
+  </Fragment>
+
+  <Section noPadTop label="Every Corner" heading="All of Cabin Three.">
+    <PhotoGrid items={photos} groupId="cabin-3" />
+    <NoteBox variant="todo">
+      <p>No exterior or balcony shot identified for Cabin Three specifically yet.</p>
+    </NoteBox>
+  </Section>
+
+  <Section bg="cream">
+    <div class="amenity-list">
+      {amenities.map((item) => <span>{item}</span>)}
+    </div>
+    <a href={reserveHref} class="btn btn-solid cabin-cta">Reserve Cabin Three</a>
+  </Section>
+
+  <ReserveCTA>
+    <Fragment slot="left">
+      <div class="section-label">Compare</div>
+      <h2>See the other cabins.</h2>
+      <div class="contact-list">
+        <a href="/stay/">All Cabins →</a>
+        <a href="/cabin-1/">Cabin One →</a>
+        <a href="/cabin-2/">Cabin Two →</a>
+      </div>
+    </Fragment>
+    <Fragment slot="right">
+      <ReserveContactBlock />
+    </Fragment>
+  </ReserveCTA>
+</PageLayout>

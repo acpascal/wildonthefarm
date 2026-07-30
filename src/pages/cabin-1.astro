@@ -1,0 +1,76 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../layouts/PageLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Section from '../components/Section.astro';
+import PhotoGrid from '../components/PhotoGrid.astro';
+import NoteBox from '../components/NoteBox.astro';
+import ReserveCTA from '../components/ReserveCTA.astro';
+import ReserveContactBlock from '../components/ReserveContactBlock.astro';
+import { img } from '../lib/images';
+
+const heroImage = img('cabin1/hero.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const photos = [
+  { image: heroImage, alt: 'Cabin One exterior in the cloud forest' },
+  { image: img('cabin1/gallery_1.jpg'), alt: 'Interior of Cabin One' },
+  { image: img('cabin1/gallery_2.jpg'), alt: 'Cabin One balcony view' },
+  { image: img('cabin1/gallery_3.jpg'), alt: 'Cabin One bathroom with hand-painted leaf tile' },
+];
+
+const amenities = [
+  'Private ensuite bathroom',
+  'Leaf-tiled walk-in shower',
+  'High-end bedding',
+  'Private balcony',
+  'Living roof',
+  'No Wi-Fi or TV, by design',
+];
+
+const reserveHref =
+  "https://api.whatsapp.com/send?phone=50765699134&text=Hi%2C%20I%27d%20like%20to%20reserve%20Cabin%201%20at%20Wild%20on%20the%20Farm";
+---
+
+<PageLayout
+  title="Cabin One — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Cabin One at Wild on the Farm: a private terrace tucked into the misty cloud forest, with a leaf-tiled walk-in shower and warm hardwood interiors."
+  path="/cabin-1/"
+  image={ogImage.src}
+  pullIntro="Set closest to the tree line, Cabin One catches the cloud forest at its most intimate — a private balcony wrapped in bamboo and mist, and a bathroom finished entirely in hand-painted leaf tile."
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="Cabin One exterior in the cloud forest" eyebrow="Stay — Cabin One">
+      Deepest into the mist.
+    </PageHero>
+  </Fragment>
+
+  <Section noPadTop label="Every Corner" heading="All of Cabin One.">
+    <PhotoGrid items={photos} groupId="cabin-1" />
+    <NoteBox variant="todo">
+      <p>This cabin is missing a bedroom photo and a clearly-identified exterior shot.</p>
+    </NoteBox>
+  </Section>
+
+  <Section bg="cream">
+    <div class="amenity-list">
+      {amenities.map((item) => <span>{item}</span>)}
+    </div>
+    <a href={reserveHref} class="btn btn-solid cabin-cta">Reserve Cabin One</a>
+  </Section>
+
+  <ReserveCTA>
+    <Fragment slot="left">
+      <div class="section-label">Compare</div>
+      <h2>See the other cabins.</h2>
+      <div class="contact-list">
+        <a href="/stay/">All Cabins →</a>
+        <a href="/cabin-2/">Cabin Two →</a>
+        <a href="/cabin-3/">Cabin Three →</a>
+      </div>
+    </Fragment>
+    <Fragment slot="right">
+      <ReserveContactBlock />
+    </Fragment>
+  </ReserveCTA>
+</PageLayout>

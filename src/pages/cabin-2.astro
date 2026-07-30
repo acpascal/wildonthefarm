@@ -1,0 +1,77 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../layouts/PageLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Section from '../components/Section.astro';
+import PhotoGrid from '../components/PhotoGrid.astro';
+import ReserveCTA from '../components/ReserveCTA.astro';
+import ReserveContactBlock from '../components/ReserveContactBlock.astro';
+import { img } from '../lib/images';
+
+const heroImage = img('cabin2/hero.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const photos = [
+  { image: heroImage, alt: 'Cabin Two raised on stilts above the valley' },
+  { image: img('cabin2/gallery_1.jpg'), alt: 'Interior of Cabin Two' },
+  { image: img('cabin2/gallery_2.jpg'), alt: 'Cabin Two balcony and valley view' },
+  { image: img('cabin2/gallery_3.jpg'), alt: 'Cabin Two bedroom' },
+  { image: img('cabin2/gallery_4.jpg'), alt: 'Cabin Two bathroom' },
+  { image: img('cabin2/gallery_5.jpg'), alt: 'View over the Chiriquí valley from Cabin Two' },
+  { image: img('cabin2/gallery_6.jpg'), alt: 'Cabin Two exterior detail' },
+  { image: img('cabin2/gallery_7.jpg'), alt: 'Cabin Two deck' },
+];
+
+const amenities = [
+  'Private ensuite bathroom',
+  'Leaf-tiled walk-in shower',
+  'High-end bedding',
+  'Private balcony',
+  'Valley & Volcán Barú view',
+  'Raised, stilted structure',
+  'No Wi-Fi or TV, by design',
+];
+
+const reserveHref =
+  "https://api.whatsapp.com/send?phone=50765699134&text=Hi%2C%20I%27d%20like%20to%20reserve%20Cabin%202%20at%20Wild%20on%20the%20Farm";
+---
+
+<PageLayout
+  title="Cabin Two — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Cabin Two at Wild on the Farm: raised on stilts above the hillside, with sweeping views over the Chiriquí valley from the bed, the balcony, and the shower."
+  path="/cabin-2/"
+  image={ogImage.src}
+  pullIntro="Cabin Two stands on stilts at the edge of the hillside, its windows framing the widest view on the property — the Chiriquí valley falling away below, with Volcán Barú on the clearest mornings."
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="Cabin Two raised on stilts above the valley" eyebrow="Stay — Cabin Two">
+      Raised above the valley.
+    </PageHero>
+  </Fragment>
+
+  <Section noPadTop label="Every Corner" heading="All of Cabin Two.">
+    <PhotoGrid items={photos} groupId="cabin-2" />
+  </Section>
+
+  <Section bg="cream">
+    <div class="amenity-list">
+      {amenities.map((item) => <span>{item}</span>)}
+    </div>
+    <a href={reserveHref} class="btn btn-solid cabin-cta">Reserve Cabin Two</a>
+  </Section>
+
+  <ReserveCTA>
+    <Fragment slot="left">
+      <div class="section-label">Compare</div>
+      <h2>See the other cabins.</h2>
+      <div class="contact-list">
+        <a href="/stay/">All Cabins →</a>
+        <a href="/cabin-1/">Cabin One →</a>
+        <a href="/cabin-3/">Cabin Three →</a>
+      </div>
+    </Fragment>
+    <Fragment slot="right">
+      <ReserveContactBlock />
+    </Fragment>
+  </ReserveCTA>
+</PageLayout>
