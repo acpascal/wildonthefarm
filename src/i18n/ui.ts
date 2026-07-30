@@ -36,6 +36,11 @@ export const ui = {
     'lightbox.next': 'Next photo',
     'language.switch': 'Language',
     'reserve.defaultHeading': 'Plan your escape into the clouds.',
+    'journal.continueReading': 'Continue Reading',
+    'journal.moreFromJournal': 'More from the Journal.',
+    'journal.allPosts': 'All Journal Posts →',
+    'medicalDisclaimer':
+      'This information is for educational purposes only and reflects traditional and commonly documented uses of this plant. It is not medical advice and does not replace the guidance of a qualified healthcare professional. Always consult your doctor before using any plant medicinally, especially if pregnant, nursing, or taking medication.',
   },
   es: {
     'nav.farmAndStay': 'Finca y Estancia',
@@ -62,6 +67,11 @@ export const ui = {
     'lightbox.next': 'Foto siguiente',
     'language.switch': 'Idioma',
     'reserve.defaultHeading': 'Planifica tu escape hacia las nubes.',
+    'journal.continueReading': 'Seguir Leyendo',
+    'journal.moreFromJournal': 'Más del Diario.',
+    'journal.allPosts': 'Todas las Publicaciones del Diario →',
+    'medicalDisclaimer':
+      'Esta información tiene fines educativos únicamente y refleja usos tradicionales y comúnmente documentados de esta planta. No constituye consejo médico ni sustituye la orientación de un profesional de la salud calificado. Consulta siempre a tu médico antes de usar cualquier planta con fines medicinales, especialmente si estás embarazada, en periodo de lactancia o tomando medicamentos.',
   },
   fr: {
     'nav.farmAndStay': 'Ferme et Séjour',
@@ -88,6 +98,11 @@ export const ui = {
     'lightbox.next': 'Photo suivante',
     'language.switch': 'Langue',
     'reserve.defaultHeading': 'Planifiez votre évasion dans les nuages.',
+    'journal.continueReading': 'Continuer la Lecture',
+    'journal.moreFromJournal': 'Plus du Journal.',
+    'journal.allPosts': 'Tous les Articles du Journal →',
+    'medicalDisclaimer':
+      "Ces informations sont fournies à titre éducatif uniquement et reflètent des usages traditionnels et couramment documentés de cette plante. Elles ne constituent pas un avis médical et ne remplacent pas les conseils d'un professionnel de santé qualifié. Consultez toujours votre médecin avant d'utiliser une plante à des fins médicinales, en particulier en cas de grossesse, d'allaitement ou de prise de médicaments.",
   },
 } as const satisfies Record<Locale, Record<string, string>>;
 

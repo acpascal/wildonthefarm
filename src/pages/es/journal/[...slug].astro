@@ -1,0 +1,48 @@
+---
+import { getCollection, render } from 'astro:content';
+import ArticleLayout from '../../../layouts/ArticleLayout.astro';
+import { slugFromId, localeFromId, type JournalSection } from '../../../lib/journal';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('journal', (entry) => localeFromId(entry.id) === 'es' && !entry.data.draft);
+  return entries.map((entry) => ({
+    params: { slug: slugFromId(entry.id) },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const slug = slugFromId(entry.id);
+
+const eyebrowBySection: Record<JournalSection, string> = {
+  'what-we-grow': entry.data.kind === 'plant' ? 'Perfil de Planta' : 'Diario',
+  'farm-notes': 'Notas de la Finca',
+  'travel-panama': 'Viajes por Panamá',
+};
+
+// timeZone: 'UTC' matters here — frontmatter dates like `2026-02-02` parse
+// as UTC midnight, and without pinning the formatter to UTC too, a
+// negative-offset timezone (e.g. Panama, UTC-5) renders it as the day
+// before.
+const dateDisplay = entry.data.date.toLocaleDateString('es-PA', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  timeZone: 'UTC',
+});
+---
+
+<ArticleLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  path={`/es/journal/${slug}/`}
+  cover={entry.data.cover!}
+  coverAlt={entry.data.coverAlt ?? entry.data.title}
+  eyebrow={eyebrowBySection[entry.data.section]}
+  dateDisplay={dateDisplay}
+  pullIntro={entry.data.pullIntro}
+  locale="es"
+>
+  <Content />
+</ArticleLayout>

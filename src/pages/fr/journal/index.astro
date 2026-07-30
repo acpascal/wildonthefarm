@@ -1,0 +1,96 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../../layouts/PageLayout.astro';
+import PageHero from '../../../components/PageHero.astro';
+import Section from '../../../components/Section.astro';
+import ReserveCTA from '../../../components/ReserveCTA.astro';
+import ReserveContactBlock from '../../../components/ReserveContactBlock.astro';
+import { img } from '../../../lib/images';
+import { getJournal, groupBySection, slugFromId } from '../../../lib/journal';
+
+const heroImage = img('farm/overview_1.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const entries = await getJournal('fr');
+const sections = groupBySection(entries);
+
+const sectionCopy = {
+  'what-we-grow': {
+    label: 'Ce Que Nous Cultivons',
+    heading: 'Ce que nous cultivons, et à quoi ça sert.',
+    intro:
+      'Profils de plantes couvrant leurs propriétés médicinales et thérapeutiques, leurs usages culinaires, et comment les cultiver vous-même.',
+    bg: undefined as 'cream' | undefined,
+  },
+  'farm-notes': {
+    label: 'Notes de la Ferme',
+    heading: 'La vie sur la montagne, semaine après semaine.',
+    intro: 'Guides de voyage, état des sentiers, et tout ce qui vaut la peine d\'être partagé depuis la ferme.',
+    bg: 'cream' as const,
+  },
+  'travel-panama': {
+    label: 'Voyages au Panama',
+    heading: 'Histoires et guides au-delà de Boquete.',
+    intro: 'Expériences et notes de voyage à travers le pays — pas seulement la ferme, mais le reste du Panama sauvage.',
+    bg: undefined as 'cream' | undefined,
+  },
+};
+---
+
+<PageLayout
+  title="Journal — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Notes saisonnières et profils de plantes de Wild on the Farm, Boquete Cloud Forest Lodge — propriétés médicinales, usages culinaires, et comment nous cultivons ce qui pousse à 1 800m dans la forêt nuageuse du Panama."
+  path="/fr/journal/"
+  image={ogImage.src}
+  pullIntro="Profils des plantes que nous cultivons — leurs usages médicinaux et culinaires, et comment les cultiver — ainsi que des notes saisonnières sur les sentiers, les espèces natives, et la vie de cette petite montagne."
+  locale="fr"
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="Vue d'ensemble de la ferme" eyebrow="Le Journal">
+      Depuis la ferme, chaque semaine.
+    </PageHero>
+  </Fragment>
+
+  {
+    sections.map(([key, items], i) =>
+      items.length > 0 && (
+        <Section noPadTop={i === 0} bg={sectionCopy[key].bg} label={sectionCopy[key].label} heading={sectionCopy[key].heading}>
+          <p>{sectionCopy[key].intro}</p>
+          <div class="text-card-grid">
+            {items.map((entry) => (
+              <div class="text-card">
+                <h3><a href={`/fr/journal/${slugFromId(entry.id)}/`}>{entry.data.title}</a></h3>
+                <p>{entry.data.description}</p>
+              </div>
+            ))}
+          </div>
+        </Section>
+      )
+    )
+  }
+
+  <Section bg="cream" label="Suivez-nous" heading="Nouveaux articles, aussi sur Instagram.">
+    <p>
+      Chaque nouvel article du Journal est partagé sur Instagram dès sa publication — suivez-nous
+      là-bas pour être averti dès qu'un nouveau profil de plante ou une note de la ferme est en ligne.
+    </p>
+    <div class="contact-list">
+      <a href="https://www.instagram.com/wildonthefarm">@wildonthefarm sur Instagram →</a>
+    </div>
+  </Section>
+
+  <ReserveCTA>
+    <Fragment slot="left">
+      <div class="section-label">Près de la Ferme</div>
+      <h2>De nouvelles notes, chaque mercredi.</h2>
+      <p>Des plantes natives à l'état des sentiers — un registre continu de cette petite montagne.</p>
+      <div class="contact-list">
+        <a href="/the-farm/">La Ferme →</a>
+        <a href="/birdwatching/">Observation des Oiseaux →</a>
+      </div>
+    </Fragment>
+    <Fragment slot="right">
+      <ReserveContactBlock locale="fr" />
+    </Fragment>
+  </ReserveCTA>
+</PageLayout>

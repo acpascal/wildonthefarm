@@ -4,6 +4,8 @@ import PageLayout from './PageLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import ReserveCTA from '../components/ReserveCTA.astro';
 import ReserveContactBlock from '../components/ReserveContactBlock.astro';
+import { useTranslations } from '../i18n/utils';
+import { defaultLocale, type Locale } from '../i18n/ui';
 import type { ImageMetadata } from 'astro';
 
 interface Props {
@@ -15,10 +17,23 @@ interface Props {
   eyebrow: string;
   dateDisplay: string;
   pullIntro: string;
+  locale?: Locale;
 }
 
-const { title, description, path, cover, coverAlt, eyebrow, dateDisplay, pullIntro } = Astro.props;
+const {
+  title,
+  description,
+  path,
+  cover,
+  coverAlt,
+  eyebrow,
+  dateDisplay,
+  pullIntro,
+  locale = defaultLocale,
+} = Astro.props;
 const ogImage = await getImage({ src: cover, width: 1200, format: 'webp' });
+const t = useTranslations(locale);
+const journalIndexHref = locale === defaultLocale ? '/journal/' : `/${locale}/journal/`;
 ---
 
 <PageLayout
@@ -27,6 +42,7 @@ const ogImage = await getImage({ src: cover, width: 1200, format: 'webp' });
   path={path}
   image={ogImage.src}
   pullIntro={pullIntro}
+  locale={locale}
 >
   <Fragment slot="hero">
     <PageHero image={cover} alt={coverAlt} eyebrow={eyebrow}>
@@ -46,14 +62,14 @@ const ogImage = await getImage({ src: cover, width: 1200, format: 'webp' });
 
   <ReserveCTA>
     <Fragment slot="left">
-      <div class="section-label">Continue Reading</div>
-      <h2>More from the Journal.</h2>
+      <div class="section-label">{t('journal.continueReading')}</div>
+      <h2>{t('journal.moreFromJournal')}</h2>
       <div class="contact-list">
-        <a href="/journal/">All Journal Posts →</a>
+        <a href={journalIndexHref}>{t('journal.allPosts')}</a>
       </div>
     </Fragment>
     <Fragment slot="right">
-      <ReserveContactBlock />
+      <ReserveContactBlock locale={locale} />
     </Fragment>
   </ReserveCTA>
 </PageLayout>
