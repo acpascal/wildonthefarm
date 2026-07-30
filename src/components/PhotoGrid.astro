@@ -1,0 +1,20 @@
+---
+import PhotoTile from './PhotoTile.astro';
+import type { ImageMetadata } from 'astro';
+
+interface PhotoGridItem {
+  image: ImageMetadata;
+  alt: string;
+}
+
+interface Props {
+  items: PhotoGridItem[];
+  groupId?: string;
+}
+
+const { items, groupId } = Astro.props;
+---
+
+<div class="photo-grid">
+  {items.map((item) => <PhotoTile image={item.image} alt={item.alt} groupId={groupId} />)}
+</div>

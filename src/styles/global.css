@@ -864,6 +864,26 @@ section.no-pad-bottom {
   }
 }
 
+/* PhotoGrid — uniform grid, item count varies per page (2 to 10+ photos).
+   auto-fit + minmax means a 2-photo section fills the row evenly instead
+   of leaving empty tracks the way auto-fill would. */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 8px;
+}
+
+.photo-grid .photo-tile {
+  aspect-ratio: 4 / 3;
+}
+
+@media (min-width: 860px) {
+  .photo-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+  }
+}
+
 /* ==========================================================================
    Lightbox
    ========================================================================== */
