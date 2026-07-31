@@ -32,6 +32,16 @@
   /* Container */
   --container-max: 1180px;
   --container-pad: 1.25rem;
+
+  /* Nav height — fixed rather than intrinsic so full-bleed heroes can
+     reliably size themselves to "100dvh minus the nav" with pure CSS. */
+  --nav-h: 72px;
+}
+
+@media (min-width: 860px) {
+  :root {
+    --nav-h: 88px;
+  }
 }
 
 /*
@@ -193,6 +203,7 @@ button {
   align-items: center;
   justify-content: space-between;
   gap: var(--space-3);
+  min-height: var(--nav-h);
   padding: 0.9rem var(--container-pad);
   position: relative;
 }
@@ -588,8 +599,8 @@ footer {
 }
 
 .hero-eyebrow {
-  font-size: 0.72rem;
-  font-weight: 500;
+  font-size: 1.3rem;
+  font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--gold-bright);
@@ -649,19 +660,38 @@ section.no-pad-bottom {
    Heroes
    ========================================================================== */
 
-/* Photo hero — full uncropped image, caption band below it (not overlaid) */
-.photo-hero img {
+/* Stunning-view hero — full-bleed cover image, small bottom-left caption
+   over a gradient just dark enough to keep the text legible. */
+.photo-hero {
+  position: relative;
+  min-height: calc(100dvh - var(--nav-h));
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  color: var(--paper);
+}
+
+.photo-hero img,
+.photo-hero picture {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: auto;
-  max-height: 60vh;
+  height: 100%;
   object-fit: cover;
 }
 
+.photo-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgb(15 20 12 / 80%), rgba(15, 20, 12, 0) 30%);
+}
+
 .photo-hero-caption {
-  background: var(--green-deep);
-  color: var(--paper);
-  padding: var(--space-4) var(--container-pad);
-  text-align: center;
+  position: relative;
+  z-index: 1;
+  /* Clears the ScrollCue (bottom: space-4, 40px tall), plus breathing room under the title */
+  padding-bottom: calc(var(--space-5) + 48px + var(--space-3));
 }
 
 .photo-hero-caption h1 {
@@ -680,10 +710,11 @@ section.no-pad-bottom {
   }
 }
 
-/* Page hero — cropped background-image, overlaid text */
+/* Standard hero — cropped background-image, overlaid text. Tall enough
+   that nav + hero + pull-intro sit on one screen without scrolling. */
 .page-hero {
   position: relative;
-  min-height: 44vh;
+  min-height: 50vh;
   display: flex;
   align-items: flex-end;
   background-size: cover;
@@ -695,7 +726,7 @@ section.no-pad-bottom {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(15, 20, 12, 0.75), rgba(15, 20, 12, 0.05) 60%);
+  background: linear-gradient(to top, rgb(15 20 12 / 80%), rgba(15, 20, 12, 0) 30%);
 }
 
 .page-hero-content {
@@ -708,6 +739,7 @@ section.no-pad-bottom {
   color: var(--paper);
   font-size: 1.9rem;
   margin-top: 0.3em;
+  margin-bottom: 0;
 }
 
 .page-hero .hero-eyebrow {
@@ -716,11 +748,56 @@ section.no-pad-bottom {
 
 @media (min-width: 860px) {
   .page-hero {
-    min-height: 56vh;
+    min-height: 62vh;
   }
 
   .page-hero-content h1 {
     font-size: 2.8rem;
+  }
+}
+
+/* Scroll cue — used on full-bleed heroes (landing, stunning-view) that have
+   no other on-screen hint that content continues below. */
+.scroll-cue {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: var(--space-4);
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid rgba(247, 244, 236, 0.55);
+  border-radius: 50%;
+  background: rgba(15, 20, 12, 0.2);
+  color: var(--paper);
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  animation: scroll-cue-bounce 2s ease-in-out infinite;
+}
+
+.scroll-cue.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes scroll-cue-bounce {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue {
+    animation: none;
   }
 }
 
@@ -929,6 +1006,7 @@ section.no-pad-bottom {
 .photo-tile {
   display: block;
   overflow: hidden;
+  border: 3px solid var(--ink);
   border-radius: 4px;
   cursor: zoom-in;
 }
@@ -1041,6 +1119,7 @@ section.no-pad-bottom {
 .species-photo {
   display: block;
   aspect-ratio: 4 / 3;
+  border: 3px solid var(--ink);
   border-radius: 4px;
   overflow: hidden;
   cursor: zoom-in;
@@ -1304,32 +1383,31 @@ section.no-pad-bottom {
 }
 
 /* ==========================================================================
-   Homepage hero
+   Landing hero — no overlay, so text relies on text-shadow for contrast.
+   Mobile: full-height column, text at top, CTA pinned to the bottom via
+   margin-top:auto, empty center to keep the photo's focal point visible.
+   Desktop: collapses back to a normal top-left aligned block.
    ========================================================================== */
 
 .hero {
   position: relative;
-  min-height: 80vh;
+  min-height: calc(100dvh - var(--nav-h));
   display: flex;
-  align-items: center;
   background-size: cover;
   color: var(--paper);
-}
-
-.hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(15, 20, 12, 0.55), rgba(15, 20, 12, 0.35) 40%, rgba(15, 20, 12, 0.75));
 }
 
 .hero-content {
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   max-width: var(--container-max);
   margin: 0 auto;
-  padding: 0 var(--container-pad);
+  /* Bottom padding clears the ScrollCue (bottom: space-4, 40px tall) */
+  padding: var(--space-6) var(--container-pad) calc(var(--space-5) + 48px);
   text-align: center;
 }
 
@@ -1337,6 +1415,7 @@ section.no-pad-bottom {
   color: var(--paper);
   font-size: 2.4rem;
   margin-bottom: 0.2em;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
 }
 
 .hero-tagline {
@@ -1350,20 +1429,23 @@ section.no-pad-bottom {
 .hero-content .hero-eyebrow {
   margin-top: 0.9rem;
   color: var(--gold-bright);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
 }
 
 .hero-content > p:last-of-type {
   max-width: 34rem;
   margin: 1rem auto 0;
   color: rgba(247, 244, 236, 0.92);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
 }
 
 .hero-cta {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  margin-top: var(--space-4);
   align-items: center;
+  margin-top: auto;
+  padding-top: var(--space-4);
 }
 
 .hero-cta .btn {
@@ -1394,7 +1476,13 @@ section.no-pad-bottom {
 
 @media (min-width: 860px) {
   .hero {
-    min-height: 92vh;
+    align-items: flex-start; /* content no longer stretches to fill the full height */
+  }
+
+  .hero-content {
+    align-items: flex-start;
+    text-align: left;
+    padding-top: var(--space-7);
   }
 
   .hero-content h1 {
@@ -1403,6 +1491,16 @@ section.no-pad-bottom {
 
   .hero-tagline {
     font-size: 1.5rem;
+  }
+
+  .hero-content > p:last-of-type {
+    margin-left: 0;
+  }
+
+  .hero-cta {
+    align-items: flex-start;
+    margin-top: 0;
+    padding-top: var(--space-4);
   }
 }
 
@@ -1516,6 +1614,7 @@ section.no-pad-bottom {
   display: flex;
   align-items: flex-end;
   min-height: 320px;
+  border: 3px solid var(--ink);
   border-radius: 6px;
   overflow: hidden;
   background-size: cover;

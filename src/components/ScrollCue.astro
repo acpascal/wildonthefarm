@@ -1,0 +1,26 @@
+---
+---
+
+<button type="button" class="scroll-cue" data-scroll-cue aria-hidden="true" tabindex="-1">
+  <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+    <path d="M4 8l8 8 8-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  </svg>
+</button>
+
+<script>
+  const cues = document.querySelectorAll<HTMLElement>('[data-scroll-cue]');
+  if (cues.length) {
+    const onScroll = () => {
+      const hidden = window.scrollY > 40;
+      cues.forEach((cue) => cue.classList.toggle('is-hidden', hidden));
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    cues.forEach((cue) => {
+      cue.addEventListener('click', () => {
+        window.scrollBy({ top: window.innerHeight - 80, behavior: 'smooth' });
+      });
+    });
+  }
+</script>
