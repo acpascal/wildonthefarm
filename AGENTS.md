@@ -18,6 +18,20 @@ is a standing responsibility for every change, not a one-time cleanup:
   drift to resolve (pick one, apply it everywhere), not a precedent to
   extend.
 
+## Typography
+
+Fonts are loaded via Astro's `fonts` config in `astro.config.mjs`. Both
+`--font-display` (Fraunces) and `--font-body` (Jost) load the full
+`[300, 400, 500, 600, 700]` weight range, so any `font-weight` value in that
+set — including the browser's default `bold` (700) on `<strong>`/`<b>`/
+markdown `**bold**` — renders as a real downloaded cut.
+
+- Only use a `font-weight` value from `[300, 400, 500, 600, 700]`. Anything
+  outside that range (e.g. `800`/`900`) makes the browser synthesize
+  ("faux-bold") the text — thick and blurry instead of actually bold — so if
+  a design needs a weight outside the loaded set, add it to `weights` in
+  `astro.config.mjs` first, then use it in CSS.
+
 ## Development
 
 When starting the dev server, use background mode:
