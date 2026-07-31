@@ -819,59 +819,6 @@ section > .container :last-child {
 }
 
 /* ==========================================================================
-   Cabin block
-   ========================================================================== */
-
-.cabin-block {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-4);
-  padding: var(--space-5) 0;
-  border-bottom: 1px solid var(--border);
-}
-
-.cabin-block:last-child {
-  border-bottom: none;
-}
-
-.cabin-img {
-  display: block;
-  aspect-ratio: 4 / 3;
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.cabin-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.cabin-block p {
-  color: var(--gray);
-}
-
-.cabin-cta {
-  margin-top: var(--space-4);
-}
-
-@media (min-width: 860px) {
-  .cabin-block {
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: var(--space-5);
-  }
-
-  .cabin-block.reverse .cabin-img {
-    order: 2;
-  }
-
-  .cabin-img {
-    aspect-ratio: 3 / 4;
-  }
-}
-
-/* ==========================================================================
    Split (two-column text/image)
    ========================================================================== */
 
@@ -882,6 +829,34 @@ section > .container :last-child {
   align-items: center;
 }
 
+/* For a list of Split rows stacked inside one Section — padding plus a
+   hairline between rows, none after the last. */
+.split.divider {
+  padding: var(--space-5) 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.split.divider:last-child {
+  border-bottom: none;
+}
+
+.split-photo {
+  display: block;
+  aspect-ratio: 4 / 3;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.split-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.btn-spaced {
+  margin-top: var(--space-4);
+}
+
 @media (min-width: 860px) {
   .split {
     grid-template-columns: 1fr 1fr;
@@ -890,6 +865,10 @@ section > .container :last-child {
 
   .split.reverse > *:first-child {
     order: 2;
+  }
+
+  .split-photo {
+    aspect-ratio: 3 / 4;
   }
 }
 
@@ -1264,15 +1243,7 @@ a.text-card:hover .card-cta {
 
 .max-prose {
   max-width: 48rem;
-}
-
-.faq-item:not(:last-child) {
-  margin-bottom: var(--space-4);
-}
-
-.faq-item h3 {
-  font-size: 1.05rem;
-  margin-bottom: 0.4em;
+  margin-top: var(--space-3);
 }
 
 .not-found {
@@ -1299,54 +1270,54 @@ a.text-card:hover .card-cta {
   text-transform: uppercase;
 }
 
-.journal-article {
+.prose {
   padding: var(--space-4) 0 var(--space-6);
 }
 
 /* Individual text elements cap their reading width, not the whole
    container — so block content (photo grids, galleries, note boxes)
    can still use the full container width. */
-.journal-article h2,
-.journal-article h3,
-.journal-article p,
-.journal-article ul,
-.journal-article ol {
+.prose h2,
+.prose h3,
+.prose p,
+.prose ul,
+.prose ol {
   max-width: 42rem;
 }
 
-.journal-article h2 {
+.prose h2 {
   font-size: 1.5rem;
   margin-top: 1.8em;
   margin-bottom: 0.5em;
 }
 
-.journal-article h2:first-child {
+.prose h2:first-child {
   margin-top: 0;
 }
 
-.journal-article h3 {
+.prose h3 {
   font-size: 1.15rem;
   margin-top: 1.4em;
   margin-bottom: 0.4em;
 }
 
-.journal-article ul,
-.journal-article ol {
+.prose ul,
+.prose ol {
   margin: 0 0 1.2em;
   padding-left: 1.3em;
 }
 
-.journal-article li {
+.prose li {
   margin-bottom: 0.6em;
   color: var(--gray);
 }
 
-.journal-article .gallery,
-.journal-article .photo-grid {
+.prose .gallery,
+.prose .photo-grid {
   margin: var(--space-4) 0;
 }
 
-.journal-article .note-box {
+.prose .note-box {
   margin: 1.5em 0;
   max-width: 42rem;
 }

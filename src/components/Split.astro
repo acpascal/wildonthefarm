@@ -1,11 +1,13 @@
 ---
 interface Props {
   reverse?: boolean;
+  /** Padding + a bottom hairline, for a list of Split rows stacked inside one Section. */
+  divider?: boolean;
 }
 
-const { reverse = false } = Astro.props;
+const { reverse = false, divider = false } = Astro.props;
 ---
 
-<div class:list={['split', { reverse }]}>
+<div class:list={['split', { reverse, divider }]}>
   <slot />
 </div>

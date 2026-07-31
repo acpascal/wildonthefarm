@@ -3,6 +3,7 @@ import { Image, getImage } from 'astro:assets';
 import PageLayout from '../layouts/PageLayout.astro';
 import PhotoHero from '../components/PhotoHero.astro';
 import Section from '../components/Section.astro';
+import Split from '../components/Split.astro';
 import CardGrid from '../components/CardGrid.astro';
 import ImageTextCard from '../components/ImageTextCard.astro';
 import NoteBox from '../components/NoteBox.astro';
@@ -60,8 +61,8 @@ const species = [
   </Fragment>
 
   <Section>
-    <div class="cabin-block">
-      <div class="cabin-img">
+    <Split divider>
+      <div class="split-photo">
         <Image src={quetzalImage} alt="A Resplendent Quetzal in the canopy" widths={[400, 700, 1000]} sizes="(min-width: 860px) 50vw, 100vw" />
       </div>
       <div>
@@ -75,10 +76,10 @@ const species = [
           often seen.
         </p>
       </div>
-    </div>
+    </Split>
 
-    <div class="cabin-block reverse">
-      <div class="cabin-img">
+    <Split divider reverse>
+      <div class="split-photo">
         <Image src={chlorophoniaImage} alt="A Golden-browed Chlorophonia in the understory" widths={[400, 700, 1000]} sizes="(min-width: 860px) 50vw, 100vw" />
       </div>
       <div>
@@ -90,7 +91,7 @@ const species = [
           hear than to see: a soft, whistled call from deep in the cover.
         </p>
       </div>
-    </div>
+    </Split>
   </Section>
 
   <Section label="Seen On The Farm" heading="Twenty-six more species, photographed right here.">

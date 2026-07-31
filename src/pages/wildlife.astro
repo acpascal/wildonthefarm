@@ -329,7 +329,7 @@ const treesAndOrchids = [
     <CardGrid>
       {treesAndOrchids.map((t) => (
         <TextCard title={t.name} eyebrow={t.latin}>
-          {t.description}
+          <p>{t.description}</p>
         </TextCard>
       ))}
     </CardGrid>

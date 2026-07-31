@@ -3,7 +3,8 @@ import { getImage } from 'astro:assets';
 import PageLayout from '../layouts/PageLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import Section from '../components/Section.astro';
-import Split from '../components/Split.astro';
+import CardGrid from '../components/CardGrid.astro';
+import TextCard from '../components/TextCard.astro';
 import NoteBox from '../components/NoteBox.astro';
 import ReserveCTA from '../components/ReserveCTA.astro';
 import ReserveContactBlock from '../components/ReserveContactBlock.astro';
@@ -35,9 +36,8 @@ const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
   </Section>
 
   <Section label="Frequently Asked Questions" heading="Before you book.">
-    <Split>
-      <div class="faq-item">
-        <h3>How do I get to the farm?</h3>
+    <CardGrid cols={2}>
+      <TextCard lite title="How do I get to the farm?">
         <p>
           The last kilometre of the road is very steep and requires a 4x4. If you're arriving in a
           regular car, park at the bottom and we'll come get you. If you arrive on foot, we'll
@@ -47,38 +47,36 @@ const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
           Traveling from further afield? See our full guide on{' '}
           <a href="/journal/boquete-travel-guide/">getting to Boquete from Panama City</a>.
         </p>
-      </div>
-      <div class="faq-item">
-        <h3>Is there Wi-Fi?</h3>
+      </TextCard>
+      <TextCard lite title="Is there Wi-Fi?">
         <p>
           By design, there's no Wi-Fi or TV inside the cabins — the silence is part of the
           experience. Wi-Fi is available in the common areas for anyone who needs to check in with
           the outside world.
         </p>
-      </div>
-    </Split>
+      </TextCard>
+    </CardGrid>
 
-    <div class="faq-item max-prose">
-      <h3>What about electricity — can I bring a hairdryer?</h3>
-      <p>
-        We're entirely off-grid and generate our own solar power, so high-draw resistance
-        appliances like hairdryers aren't permitted. There's no shortage of power otherwise — we
-        just ask every guest to use only the lights they need, switch off what isn't in use, and
-        remember to turn off the bathroom light when you leave.
-      </p>
+    <div class="max-prose">
+      <TextCard lite title="What about electricity — can I bring a hairdryer?">
+        <p>
+          We're entirely off-grid and generate our own solar power, so high-draw resistance
+          appliances like hairdryers aren't permitted. There's no shortage of power otherwise — we
+          just ask every guest to use only the lights they need, switch off what isn't in use, and
+          remember to turn off the bathroom light when you leave.
+        </p>
+      </TextCard>
     </div>
 
-    <Split>
-      <div class="faq-item">
-        <h3>What's the weather like?</h3>
+    <CardGrid cols={2}>
+      <TextCard lite title="What's the weather like?">
         <p>
           Pleasant, thanks to the altitude — you escape the heavy, unbearable heat found lower
           down. Pack a fleece, a light rain jacket, and hiking boots if you plan on walking the
           trails.
         </p>
-      </div>
-      <div class="faq-item">
-        <h3>Will I definitely see the Quetzal, or the jaguar?</h3>
+      </TextCard>
+      <TextCard lite title="Will I definitely see the Quetzal, or the jaguar?">
         <p>
           The best window for birdwatching — and for Quetzal sightings especially — is between
           March 15 and May 15, when most birds are nesting and Quetzals are abundant in the area.
@@ -86,12 +84,11 @@ const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
           like the jaguar are genuinely rare, even here — this is a working cloud forest, not a
           zoo.
         </p>
-      </div>
-    </Split>
+      </TextCard>
+    </CardGrid>
 
-    <Split>
-      <div class="faq-item">
-        <h3>Is a guide required for hiking?</h3>
+    <CardGrid cols={2}>
+      <TextCard lite title="Is a guide required for hiking?">
         <p>
           Some sections are walkable without a guide if you're an experienced hiker comfortable
           navigating on your own. For hikes over 3 hours into the cloud forest, a guide is
@@ -100,70 +97,64 @@ const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
           are asked to sign a liability waiver beforehand, and guests should have their own travel
           or personal insurance.
         </p>
-      </div>
-      <div class="faq-item">
-        <h3>Do you accommodate dietary restrictions?</h3>
+      </TextCard>
+      <TextCard lite title="Do you accommodate dietary restrictions?">
         <p>Just let us know if you have a special diet or any allergies when you book, and we'll plan meals around it.</p>
-      </div>
-    </Split>
+      </TextCard>
+    </CardGrid>
 
-    <Split>
-      <div class="faq-item">
-        <h3>What are meals like?</h3>
+    <CardGrid cols={2}>
+      <TextCard lite title="What are meals like?">
         <p>
           Breakfast is included and generally hearty, served between 8 and 9am. Dinner can be
           reserved each evening — two appetizers, a main dish, and a dessert. We bake our own
           bread.
         </p>
-      </div>
-      <div class="faq-item">
-        <h3>Are pets welcome?</h3>
+      </TextCard>
+      <TextCard lite title="Are pets welcome?">
         <p>We're sorry, but we don't accept pets. We keep animals on the farm, and outside animals cause them a great deal of stress.</p>
-      </div>
-    </Split>
+      </TextCard>
+    </CardGrid>
 
-    <Split>
-      <div class="faq-item">
-        <h3>Are children welcome?</h3>
+    <CardGrid cols={2}>
+      <TextCard lite title="Are children welcome?">
         <p>For safety reasons, children under 12 aren't accepted, and there are no extra beds available in the cabins.</p>
-      </div>
-      <div class="faq-item">
-        <h3>What's your cancellation policy?</h3>
+      </TextCard>
+      <TextCard lite title="What's your cancellation policy?">
         <p>
           Free cancellation up to 1 month before arrival. From 1 month to 15 days out, 50% is
           refundable; from 15 days to 1 week out, 25% is refundable. Inside 1 week of arrival,
           bookings are non-refundable.
         </p>
-      </div>
-    </Split>
+      </TextCard>
+    </CardGrid>
 
-    <Split>
-      <div class="faq-item">
-        <h3>How do I book?</h3>
+    <CardGrid cols={2}>
+      <TextCard lite title="How do I book?">
         <p>
           Reach out directly by WhatsApp or email — tell us your dates and what you're hoping to
           experience, and we'll help you pick the right cabin and plan the stay.
         </p>
-      </div>
-      <div class="faq-item">
-        <h3>What payment methods do you accept?</h3>
+      </TextCard>
+      <TextCard lite title="What payment methods do you accept?">
         <NoteBox variant="todo">
           <p>
             Accepted payment methods not yet decided — cash, transfer, card, deposit vs. balance
             on arrival, etc.
           </p>
         </NoteBox>
-      </div>
-    </Split>
+      </TextCard>
+    </CardGrid>
 
-    <div class="faq-item max-prose">
-      <h3>Any apps you'd recommend bringing?</h3>
-      <p>
-        For birdwatching, we recommend downloading (and updating) the Merlin Bird ID app before
-        you arrive — it's a great help identifying what you're seeing. If you're into plants and
-        flowers, a specialized plant-identification app is useful too for putting a name to what's
-        growing around you.
-      </p>
+    <div class="max-prose">
+      <TextCard lite title="Any apps you'd recommend bringing?">
+        <p>
+          For birdwatching, we recommend downloading (and updating) the Merlin Bird ID app before
+          you arrive — it's a great help identifying what you're seeing. If you're into plants and
+          flowers, a specialized plant-identification app is useful too for putting a name to what's
+          growing around you.
+        </p>
+      </TextCard>
     </div>
   </Section>
 

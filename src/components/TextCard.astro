@@ -14,9 +14,12 @@ const { title, eyebrow, lite = false, href, cta } = Astro.props;
 const Tag = href ? 'a' : 'div';
 ---
 
+{/* No wrapping <p> around the slot — callers supply their own block content
+   (one or more <p>, or something else entirely like a <NoteBox>), since a
+   forced wrapper breaks the moment the content isn't plain text. */}
 <Tag href={href} class:list={['text-card', { lite }]}>
   <h3>{title}</h3>
   {eyebrow && <span class="card-eyebrow">{eyebrow}</span>}
-  <p><slot /></p>
+  <slot />
   {href && cta && <span class="card-cta">{cta}</span>}
 </Tag>

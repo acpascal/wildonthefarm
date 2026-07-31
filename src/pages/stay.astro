@@ -3,6 +3,7 @@ import { getImage, Image } from 'astro:assets';
 import PageLayout from '../layouts/PageLayout.astro';
 import PhotoHero from '../components/PhotoHero.astro';
 import Section from '../components/Section.astro';
+import Split from '../components/Split.astro';
 import ReserveCTA from '../components/ReserveCTA.astro';
 import ReserveContactBlock from '../components/ReserveContactBlock.astro';
 import { img } from '../lib/images';
@@ -74,8 +75,8 @@ const amenities = [
     </div>
     {
       cabins.map((cabin, i) => (
-        <div class:list={['cabin-block', { reverse: i === 1 }]}>
-          <a href={`/${cabin.slug}/`} class="cabin-img">
+        <Split divider reverse={i === 1}>
+          <a href={`/${cabin.slug}/`} class="split-photo">
             <Image
               src={cabin.image}
               alt={`${cabin.label} exterior at Wild on the Farm`}
@@ -88,11 +89,11 @@ const amenities = [
             <div class="section-label">{cabin.label}</div>
             <h2 class="lede">{cabin.heading}</h2>
             <p>{cabin.description}</p>
-            <a href={`/${cabin.slug}/`} class="btn cabin-cta">
+            <a href={`/${cabin.slug}/`} class="btn btn-spaced">
               See All of {cabin.label}
             </a>
           </div>
-        </div>
+        </Split>
       ))
     }
   </Section>
