@@ -22,7 +22,7 @@ export default defineConfig({
       provider: fontProviders.google(),
       name: 'Fraunces',
       cssVariable: '--font-display',
-      weights: [400, 500, 600],
+      weights: [400, 500],
       subsets: ['latin', 'latin-ext'],
       fallbacks: ['Georgia', 'serif'],
       // Fraunces' opsz axis reshapes the letterforms by rendered size — the
@@ -41,7 +41,7 @@ export default defineConfig({
       provider: fontProviders.google(),
       name: 'Jost',
       cssVariable: '--font-body',
-      weights: [300, 400, 500],
+      weights: [400, 500],
       subsets: ['latin', 'latin-ext'],
       fallbacks: ['Helvetica Neue', 'sans-serif'],
     },
