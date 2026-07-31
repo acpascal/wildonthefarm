@@ -15,10 +15,12 @@
   --gray: #6b6b62;
   --border: rgba(38, 48, 31, 0.12);
 
-  /* Type — --font-display / --font-body are injected by Astro's Fonts API
-     (astro.config.mjs) as Fraunces / Jost respectively. */
-  --font-display: 'Fraunces', Georgia, serif;
-  --font-body: 'Jost', 'Helvetica Neue', sans-serif;
+  /* Type — --font-display / --font-body are injected by the <Font> components
+     in BaseHead.astro (Fraunces / Jost, configured in astro.config.mjs).
+     Do NOT redeclare them here: BaseHead's injected :root rule lands earlier
+     in <head> than this stylesheet, so a static value here would win the
+     cascade and silently mask the real font — Fraunces isn't a real font
+     name (the hashed one is), so the result would fall through to Georgia. */
 
   /* Spacing scale */
   --space-1: 0.25rem;
@@ -629,27 +631,13 @@ section > .container :last-child {
   margin-bottom: 0;
 }
 
-section.no-pad-top {
-  padding-top: 0;
-}
-
-section.no-pad-bottom {
-  padding-bottom: 0;
-}
-
-@media (min-width: 860px) {
-  section {
-    padding: var(--space-7) 0;
-  }
-}
-
 /* ==========================================================================
    Pull intro
    ========================================================================== */
 
 .pull-intro {
   padding-top: var(--space-5);
-  padding-bottom: var(--space-3);
+  padding-bottom: var(--space-5);
 }
 
 .pull-intro .display {
@@ -982,13 +970,15 @@ section.no-pad-bottom {
 
 /* Automatic section rhythm — background alternates by a section's position
    among its <section> siblings (nth-of-type counts only same-tag siblings,
-   so divs/headers interleaved between sections — Story, Stats, Hero — don't
-   break the count). This is what keeps intro → section → section alternating
-   correctly no matter what's mixed in between, without every page having to
-   hand-pick bg="cream" and risk getting the parity wrong.
+   so divs/headers interleaved between sections — Stats, Hero — don't break
+   the count; Story and PullIntro are themselves <section>s and do count).
+   This is what keeps intro → section → section alternating correctly no
+   matter what's mixed in between, without every page having to hand-pick
+   bg="cream" and risk getting the parity wrong.
    .bg-cream / .bg-paper still force an override when a page needs to break
-   rhythm on purpose; .reserve keeps its fixed dark background always. */
-section:not(.reserve):not(.bg-cream):not(.bg-paper):nth-of-type(even) {
+   rhythm on purpose; .reserve and .story-dark keep their own fixed
+   background always. */
+section:not(.reserve):not(.story-dark):not(.bg-cream):not(.bg-paper):nth-of-type(even) {
   background: var(--cream);
 }
 
@@ -1533,6 +1523,11 @@ section:not(.reserve):not(.bg-cream):not(.bg-paper):nth-of-type(even) {
    Stats
    ========================================================================== */
 
+.stats-section {
+  background: var(--cream);
+  border-bottom: 1px solid var(--border);
+}
+
 .stats {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1689,6 +1684,9 @@ section:not(.reserve):not(.bg-cream):not(.bg-paper):nth-of-type(even) {
 .story {
   display: grid;
   grid-template-columns: 1fr;
+  /* Full-bleed image + its own internal text padding — no outer section
+     padding, same pattern as .pull-intro overriding the default. */
+  padding: 0;
 }
 
 .story-img {
@@ -1702,6 +1700,19 @@ section:not(.reserve):not(.bg-cream):not(.bg-paper):nth-of-type(even) {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.story-dark {
+  background: var(--green-deep);
+  color: var(--paper);
+}
+
+.story-dark .section-label {
+  color: var(--gold-bright);
+}
+
+.story-dark h2 {
+  color: var(--paper);
 }
 
 @media (min-width: 860px) {

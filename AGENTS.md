@@ -1,3 +1,23 @@
+## Consistency
+
+This site is not generated from a template — every page is hand-written .astro
+markup that composes shared components (`PageLayout`, `Section`, `PageHero`,
+etc.). Nothing enforces uniformity automatically except what's built into
+those shared components and global.css. That means consistency across pages
+is a standing responsibility for every change, not a one-time cleanup:
+
+- Never add a per-page spacing/style override (a new prop, inline style, or
+  one-off CSS rule) to solve a problem that's really about the shared
+  component or stylesheet. Fix it there so every page gets the fix.
+- Section top/bottom padding is fully automatic (see `Section.astro` and the
+  hero/pull-intro rules in `global.css`) — there is no padding prop. If
+  spacing looks wrong on some page, the shared rule is wrong; don't patch
+  around it locally.
+- Before copying a pattern from one page to write another, check whether
+  other pages already do the same thing differently. If they do, that's
+  drift to resolve (pick one, apply it everywhere), not a precedent to
+  extend.
+
 ## Development
 
 When starting the dev server, use background mode:

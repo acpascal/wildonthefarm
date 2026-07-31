@@ -2,20 +2,16 @@
 interface Props {
   label?: string;
   heading?: string;
-  noPadTop?: boolean;
-  noPadBottom?: boolean;
   /** Forces a background against the automatic paper/cream rhythm (see
    *  global.css). Leave unset in the common case — position alone decides. */
   bg?: 'cream' | 'paper';
 }
 
-const { label, heading, noPadTop = false, noPadBottom = false, bg } = Astro.props;
+const { label, heading, bg } = Astro.props;
 ---
 
 <section
   class:list={{
-    'no-pad-top': noPadTop,
-    'no-pad-bottom': noPadBottom,
     'bg-cream': bg === 'cream',
     'bg-paper': bg === 'paper',
   }}

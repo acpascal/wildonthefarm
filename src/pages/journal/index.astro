@@ -52,7 +52,7 @@ const sectionCopy = {
   {
     sections.map(([key, items], i) =>
       items.length > 0 && (
-        <Section noPadTop={i === 0} label={sectionCopy[key].label} heading={sectionCopy[key].heading}>
+        <Section label={sectionCopy[key].label} heading={sectionCopy[key].heading}>
           <p>{sectionCopy[key].intro}</p>
           <div class="text-card-grid">
             {items.map((entry) => (

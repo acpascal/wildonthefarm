@@ -7,17 +7,20 @@ interface Props {
   alt: string;
   label: string;
   heading: string;
+  /** Deep-green background/text, for a deliberate break from the section
+   *  color rhythm — see .story-dark in global.css. */
+  dark?: boolean;
 }
 
-const { image, alt, label, heading } = Astro.props;
+const { image, alt, label, heading, dark = false } = Astro.props;
 const optimized = await getImage({ src: image, width: 1200, format: 'webp' });
 ---
 
-<div class="story">
+<section class:list={['story', { 'story-dark': dark }]}>
   <div class="story-img" style={`background-image:url(${optimized.src})`} role="img" aria-label={alt} />
   <div class="story-text">
     <div class="section-label">{label}</div>
     <h2>{heading}</h2>
     <slot />
   </div>
-</div>
+</section>

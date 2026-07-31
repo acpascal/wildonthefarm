@@ -79,9 +79,6 @@ const amenities = [
     <div class="amenity-list">
       {amenities.map((item) => <span>{item}</span>)}
     </div>
-  </Section>
-
-  <Section noPadTop>
     {
       cabins.map((cabin, i) => (
         <div class:list={['cabin-block', { reverse: i === 1 }]}>
