@@ -169,7 +169,8 @@ button {
   border: 1px solid var(--green-deep);
   border-radius: 2px;
   font-size: 0.9rem;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--green-deep);
   transition: background-color 0.15s ease, color 0.15s ease;
 }
@@ -1197,7 +1198,9 @@ section:not(.story-dark):not(.bg-cream):not(.bg-paper):nth-of-type(even) {
    ========================================================================== */
 
 .text-card {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   background: var(--paper);
   border: 1px solid var(--border);
   border-top: 4px solid var(--gold);
@@ -1227,8 +1230,9 @@ a.text-card:hover {
 }
 
 .card-cta {
-  display: inline-block;
-  margin-top: var(--space-2);
+  display: block;
+  margin-top: auto;
+  padding-top: var(--space-2);
   font-size: 0.85rem;
   color: var(--gold);
   transition: color 0.15s ease;
