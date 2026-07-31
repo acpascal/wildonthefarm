@@ -5,8 +5,6 @@ import PageHero from '../../components/PageHero.astro';
 import Section from '../../components/Section.astro';
 import CardGrid from '../../components/CardGrid.astro';
 import TextCard from '../../components/TextCard.astro';
-import ReserveCTA from '../../components/ReserveCTA.astro';
-import ReserveContactBlock from '../../components/ReserveContactBlock.astro';
 import { img } from '../../lib/images';
 import { getJournal, groupBySection, slugFromId } from '../../lib/journal';
 import { pageAlternates } from '../../data/pageTranslations';
@@ -39,7 +37,7 @@ const sectionCopy = {
 
 <PageLayout
   title="Journal — Wild on the Farm | Boquete Cloud Forest Lodge"
-  description="Seasonal notes and plant profiles from Wild on the Farm, Boquete Cloud Forest Lodge — medicinal properties, culinary uses, and how to grow what we cultivate at 1,800m in Panama's cloud forest."
+  description="Articles from Wild on the Farm, Boquete Cloud Forest Lodge, on plant profiles, farm life, hiking and wildlife, wellness, and travel guides to Boquete and the rest of Panama."
   path="/journal/"
   image={ogImage.src}
   pullIntro="Plant profiles from what we grow — their medicinal and culinary uses, and how to cultivate them — alongside seasonal notes on trail conditions, native species, and the health of this small mountain."
@@ -78,18 +76,13 @@ const sectionCopy = {
     </div>
   </Section>
 
-  <ReserveCTA>
-    <Fragment slot="left">
-      <div class="section-label">Stay Close To The Farm</div>
-      <h2>New notes, every Wednesday.</h2>
-      <p>From native plants to trail conditions — a running record of this small mountain.</p>
-      <div class="contact-list">
-        <a href="/the-farm/">The Farm →</a>
-        <a href="/birdwatching/">Birdwatching →</a>
-      </div>
-    </Fragment>
-    <Fragment slot="right">
-      <ReserveContactBlock />
-    </Fragment>
-  </ReserveCTA>
+  <Fragment slot="footer">
+    <div class="section-label">Stay Close To The Farm</div>
+    <h2>New notes, every Wednesday.</h2>
+    <p>From native plants to trail conditions — a running record of this small mountain.</p>
+    <div class="contact-list">
+      <a href="/the-farm/">The Farm →</a>
+      <a href="/birdwatching/">Birdwatching →</a>
+    </div>
+  </Fragment>
 </PageLayout>

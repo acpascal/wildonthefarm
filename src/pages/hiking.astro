@@ -6,8 +6,6 @@ import Section from '../components/Section.astro';
 import Split from '../components/Split.astro';
 import PhotoGrid from '../components/PhotoGrid.astro';
 import NoteBox from '../components/NoteBox.astro';
-import ReserveCTA from '../components/ReserveCTA.astro';
-import ReserveContactBlock from '../components/ReserveContactBlock.astro';
 import { img } from '../lib/images';
 import type { PhotoItem } from '../lib/photos';
 
@@ -91,18 +89,13 @@ const trailPhotos: PhotoItem[] = [
     <PhotoGrid items={trailPhotos} groupId="hiking" variant="varied" />
   </Section>
 
-  <ReserveCTA>
-    <Fragment slot="left">
-      <div class="section-label">Pair It With</div>
-      <h2>Early mornings belong to the birds.</h2>
-      <p>Many guests combine a dawn birdwatching walk with a longer hike later in the day.</p>
-      <div class="contact-list">
-        <a href="/birdwatching/">Birdwatching →</a>
-        <a href="/the-farm/">Back to The Farm →</a>
-      </div>
-    </Fragment>
-    <Fragment slot="right">
-      <ReserveContactBlock />
-    </Fragment>
-  </ReserveCTA>
+  <Fragment slot="footer">
+    <div class="section-label">Pair It With</div>
+    <h2>Early mornings belong to the birds.</h2>
+    <p>Many guests combine a dawn birdwatching walk with a longer hike later in the day.</p>
+    <div class="contact-list">
+      <a href="/birdwatching/">Birdwatching →</a>
+      <a href="/the-farm/">Back to The Farm →</a>
+    </div>
+  </Fragment>
 </PageLayout>

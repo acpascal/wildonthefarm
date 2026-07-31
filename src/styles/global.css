@@ -346,21 +346,43 @@ button {
   }
 }
 
-.lang-switch {
+.lang-switch-toggle {
   display: flex;
   align-items: center;
-  gap: 0.7em;
+  gap: 0.4em;
+  width: 100%;
   padding: 0.85em 0;
-  border-bottom: 1px solid var(--border);
+  border: none;
+  background: none;
+  color: var(--ink);
+  font: inherit;
   font-size: 0.8rem;
   letter-spacing: 0.03em;
+  cursor: pointer;
 }
 
-.lang-switch a {
+.lang-switch-globe {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+.lang-switch-chevron {
+  width: 10px;
+  height: 7px;
+  margin-left: auto;
+  transition: transform 0.2s ease;
+}
+
+.lang-switch.is-open .lang-switch-chevron {
+  transform: rotate(180deg);
+}
+
+.lang-switch-menu a {
   color: var(--gray);
 }
 
-.lang-switch a.is-current {
+.lang-switch-menu a.is-current {
   color: var(--green-deep);
   font-weight: 600;
 }
@@ -539,17 +561,48 @@ button {
     color: var(--gold);
     background: var(--cream);
   }
+
+  .lang-switch-toggle {
+    width: auto;
+    padding: 0;
+  }
+
+  .lang-switch-toggle:hover {
+    color: var(--gold);
+  }
+
+  .lang-switch-menu {
+    left: auto;
+    right: 0;
+    min-width: 160px;
+    transform: translateY(4px);
+  }
+
+  .lang-switch-menu::before {
+    left: auto;
+  }
+
+  .lang-switch:hover .lang-switch-menu,
+  .lang-switch:focus-within .lang-switch-menu,
+  .lang-switch.is-open .lang-switch-menu {
+    transform: translateY(0);
+  }
 }
 
 /* ==========================================================================
    Footer
    ========================================================================== */
 
-footer {
-  border-top: 1px solid var(--border);
+.footer-bottom {
+  background: var(--green-deep);
+  border-top: 1px solid rgba(255, 253, 248, 0.15);
   padding: var(--space-4) 0;
   font-size: 0.85rem;
-  color: var(--gray);
+  color: rgba(255, 253, 248, 0.75);
+}
+
+.footer-links a {
+  color: var(--paper);
 }
 
 .footer-inner {
@@ -566,7 +619,7 @@ footer {
 }
 
 .footer-links a:hover {
-  color: var(--gold);
+  color: var(--gold-bright);
 }
 
 @media (min-width: 860px) {
@@ -895,23 +948,32 @@ section > .container :last-child {
 }
 
 /* ==========================================================================
-   Reserve CTA
+   Footer top band
    ========================================================================== */
 
-.reserve {
+.footer-top {
   background: var(--green-deep);
   color: var(--paper);
+  padding: var(--space-6) 0;
 }
 
-.reserve .section-label {
+.footer-top .container :last-child {
+  margin-bottom: 0;
+}
+
+.footer-top .section-label {
   color: var(--gold-bright);
 }
 
-.reserve h2 {
+.footer-top h2 {
   color: var(--paper);
 }
 
-.reserve-grid {
+.footer-top p {
+  color: rgba(255, 253, 248, 0.75);
+}
+
+.footer-top-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-5);
@@ -933,7 +995,7 @@ section > .container :last-child {
 }
 
 @media (min-width: 860px) {
-  .reserve-grid {
+  .footer-top-grid {
     grid-template-columns: 1fr 1fr;
     gap: var(--space-6);
   }
@@ -955,9 +1017,8 @@ section > .container :last-child {
    matter what's mixed in between, without every page having to hand-pick
    bg="cream" and risk getting the parity wrong.
    .bg-cream / .bg-paper still force an override when a page needs to break
-   rhythm on purpose; .reserve and .story-dark keep their own fixed
-   background always. */
-section:not(.reserve):not(.story-dark):not(.bg-cream):not(.bg-paper):nth-of-type(even) {
+   rhythm on purpose; .story-dark keeps its own fixed background always. */
+section:not(.story-dark):not(.bg-cream):not(.bg-paper):nth-of-type(even) {
   background: var(--cream);
 }
 

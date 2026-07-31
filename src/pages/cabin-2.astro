@@ -4,8 +4,6 @@ import PageLayout from '../layouts/PageLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import Section from '../components/Section.astro';
 import PhotoGrid from '../components/PhotoGrid.astro';
-import ReserveCTA from '../components/ReserveCTA.astro';
-import ReserveContactBlock from '../components/ReserveContactBlock.astro';
 import { img } from '../lib/images';
 
 const heroImage = img('cabin2/hero.jpg');
@@ -60,18 +58,13 @@ const reserveHref =
     <a href={reserveHref} class="btn btn-solid btn-spaced">Reserve Cabin Two</a>
   </Section>
 
-  <ReserveCTA>
-    <Fragment slot="left">
-      <div class="section-label">Compare</div>
-      <h2>See the other cabins.</h2>
-      <div class="contact-list">
-        <a href="/stay/">All Cabins →</a>
-        <a href="/cabin-1/">Cabin One →</a>
-        <a href="/cabin-3/">Cabin Three →</a>
-      </div>
-    </Fragment>
-    <Fragment slot="right">
-      <ReserveContactBlock />
-    </Fragment>
-  </ReserveCTA>
+  <Fragment slot="footer">
+    <div class="section-label">Compare</div>
+    <h2>See the other cabins.</h2>
+    <div class="contact-list">
+      <a href="/stay/">All Cabins →</a>
+      <a href="/cabin-1/">Cabin One →</a>
+      <a href="/cabin-3/">Cabin Three →</a>
+    </div>
+  </Fragment>
 </PageLayout>

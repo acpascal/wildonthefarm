@@ -9,8 +9,6 @@ import ImageTextCard from '../components/ImageTextCard.astro';
 import TextCard from '../components/TextCard.astro';
 import QuoteSection from '../components/QuoteSection.astro';
 import NoteBox from '../components/NoteBox.astro';
-import ReserveCTA from '../components/ReserveCTA.astro';
-import ReserveContactBlock from '../components/ReserveContactBlock.astro';
 import { img } from '../lib/images';
 
 const heroImage = img('hiking/gallery_05.jpg');
@@ -354,18 +352,13 @@ const treesAndOrchids = [
     </NoteBox>
   </Section>
 
-  <ReserveCTA>
-    <Fragment slot="left">
-      <div class="section-label">Plan Your Visit</div>
-      <h2>Quiet mornings, quiet trails.</h2>
-      <p>Most mammals here are shy and mainly active at dawn, dusk, or night — a guided walk improves the odds of an encounter.</p>
-      <div class="contact-list">
-        <a href="/hiking/">Hiking &amp; Trails →</a>
-        <a href="/birdwatching/">Birdwatching →</a>
-      </div>
-    </Fragment>
-    <Fragment slot="right">
-      <ReserveContactBlock />
-    </Fragment>
-  </ReserveCTA>
+  <Fragment slot="footer">
+    <div class="section-label">Plan Your Visit</div>
+    <h2>Quiet mornings, quiet trails.</h2>
+    <p>Most mammals here are shy and mainly active at dawn, dusk, or night — a guided walk improves the odds of an encounter.</p>
+    <div class="contact-list">
+      <a href="/hiking/">Hiking &amp; Trails →</a>
+      <a href="/birdwatching/">Birdwatching →</a>
+    </div>
+  </Fragment>
 </PageLayout>

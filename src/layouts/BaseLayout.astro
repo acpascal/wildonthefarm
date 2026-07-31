@@ -21,7 +21,15 @@ const { locale = defaultLocale, ...seo } = Astro.props;
   <body>
     <Nav locale={locale} alternates={seo.alternates} />
     <slot />
-    <Footer locale={locale} />
+    {
+      Astro.slots.has('footer') ? (
+        <Footer locale={locale}>
+          <slot name="footer" />
+        </Footer>
+      ) : (
+        <Footer locale={locale} />
+      )
+    }
     <script>
       import '../scripts/lightbox.js';
     </script>

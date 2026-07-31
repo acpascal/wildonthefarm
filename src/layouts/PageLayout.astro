@@ -17,4 +17,5 @@ const { locale = defaultLocale, pullIntro, ...seo } = Astro.props;
   <slot name="hero" />
   {pullIntro && <PullIntro>{pullIntro}</PullIntro>}
   <slot />
+  <slot name="footer" slot="footer" />
 </BaseLayout>

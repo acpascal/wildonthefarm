@@ -36,6 +36,8 @@ export const ui = {
     'lightbox.next': 'Next photo',
     'language.switch': 'Language',
     'reserve.defaultHeading': 'Plan your escape into the clouds.',
+    'reserve.pitch':
+      "Tell us when you'd like to arrive and what you're dreaming of — birdwatching, a digital detox, or simply the silence. We'll help you plan an unforgettable stay.",
     'journal.continueReading': 'Continue Reading',
     'journal.moreFromJournal': 'More from the Journal.',
     'journal.allPosts': 'All Journal Posts →',
@@ -67,6 +69,8 @@ export const ui = {
     'lightbox.next': 'Foto siguiente',
     'language.switch': 'Idioma',
     'reserve.defaultHeading': 'Planifica tu escape hacia las nubes.',
+    'reserve.pitch':
+      'Cuéntanos cuándo te gustaría llegar y qué estás buscando — observación de aves, un detox digital o simplemente el silencio. Te ayudaremos a planear una estancia inolvidable.',
     'journal.continueReading': 'Seguir Leyendo',
     'journal.moreFromJournal': 'Más del Diario.',
     'journal.allPosts': 'Todas las Publicaciones del Diario →',
@@ -98,6 +102,8 @@ export const ui = {
     'lightbox.next': 'Photo suivante',
     'language.switch': 'Langue',
     'reserve.defaultHeading': 'Planifiez votre évasion dans les nuages.',
+    'reserve.pitch':
+      "Dites-nous quand vous aimeriez arriver et ce dont vous rêvez — observation des oiseaux, une déconnexion numérique, ou simplement le silence. Nous vous aiderons à planifier un séjour inoubliable.",
     'journal.continueReading': 'Continuer la Lecture',
     'journal.moreFromJournal': 'Plus du Journal.',
     'journal.allPosts': 'Tous les Articles du Journal →',

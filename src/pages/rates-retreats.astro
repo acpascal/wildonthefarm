@@ -6,8 +6,6 @@ import Section from '../components/Section.astro';
 import Split from '../components/Split.astro';
 import CardGrid from '../components/CardGrid.astro';
 import TextCard from '../components/TextCard.astro';
-import ReserveCTA from '../components/ReserveCTA.astro';
-import ReserveContactBlock from '../components/ReserveContactBlock.astro';
 import { img } from '../lib/images';
 
 const heroImage = img('retreats/farm_animals.jpg');
@@ -217,18 +215,13 @@ const wholeFarmImage = await getImage({ src: img('retreats/owners_house.jpg'), w
     <p class="fine-print">À la carte, on request: massage, yoga class, additional hiking, hot spring visit.</p>
   </Section>
 
-  <ReserveCTA>
-    <Fragment slot="left">
-      <div class="section-label">Questions?</div>
-      <h2>See the FAQs, or write to us directly.</h2>
-      <p>Whether it's a single cabin or the whole farm, we'll help you find the right fit.</p>
-      <div class="contact-list">
-        <a href="/faqs-contact/">FAQs &amp; Contact →</a>
-        <a href="/stay/">See The Cabins →</a>
-      </div>
-    </Fragment>
-    <Fragment slot="right">
-      <ReserveContactBlock />
-    </Fragment>
-  </ReserveCTA>
+  <Fragment slot="footer">
+    <div class="section-label">Questions?</div>
+    <h2>See the FAQs, or write to us directly.</h2>
+    <p>Whether it's a single cabin or the whole farm, we'll help you find the right fit.</p>
+    <div class="contact-list">
+      <a href="/faqs-contact/">FAQs &amp; Contact →</a>
+      <a href="/stay/">See The Cabins →</a>
+    </div>
+  </Fragment>
 </PageLayout>

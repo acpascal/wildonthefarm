@@ -3,6 +3,7 @@ import { useTranslations } from '../i18n/utils';
 import { defaultLocale, type Locale } from '../i18n/ui';
 import { pageHref } from '../data/pageTranslations';
 import { business } from '../data/business';
+import ReserveContactBlock from './ReserveContactBlock.astro';
 
 interface Props {
   locale?: Locale;
@@ -14,13 +15,26 @@ const faqsHref = pageHref('faqs-contact', locale);
 ---
 
 <footer>
-  <div class="container footer-inner">
-    <div>{t('footer.copyright')}</div>
-    <div class="footer-links">
-      <a href={faqsHref}>{t('footer.faqsContact')}</a>
-      <a href={business.social.facebook}>{t('footer.facebook')}</a>
-      <a href={business.social.instagram}>{t('footer.instagram')}</a>
-      <a href={business.social.youtube}>{t('footer.youtube')}</a>
+  <div class="footer-top">
+    <div class="container footer-top-grid">
+      <div class="footer-left">
+        <slot />
+      </div>
+      <div class="footer-right">
+        <ReserveContactBlock locale={locale} description={t('reserve.pitch')} />
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container footer-inner">
+      <div>{t('footer.copyright')}</div>
+      <div class="footer-links">
+        <a href={faqsHref}>{t('footer.faqsContact')}</a>
+        <a href={business.social.facebook}>{t('footer.facebook')}</a>
+        <a href={business.social.instagram}>{t('footer.instagram')}</a>
+        <a href={business.social.youtube}>{t('footer.youtube')}</a>
+      </div>
     </div>
   </div>
 </footer>

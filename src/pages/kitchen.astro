@@ -6,8 +6,6 @@ import Section from '../components/Section.astro';
 import PhotoGrid from '../components/PhotoGrid.astro';
 import Split from '../components/Split.astro';
 import NoteBox from '../components/NoteBox.astro';
-import ReserveCTA from '../components/ReserveCTA.astro';
-import ReserveContactBlock from '../components/ReserveContactBlock.astro';
 import { img } from '../lib/images';
 
 const heroImage = img('kitchen/dining_room.jpg');
@@ -97,17 +95,12 @@ const foodPhotos = [
     </NoteBox>
   </Section>
 
-  <ReserveCTA>
-    <Fragment slot="left">
-      <div class="section-label">Plan Your Visit</div>
-      <h2>Hungry yet?</h2>
-      <div class="contact-list">
-        <a href="/the-farm/">The Farm →</a>
-        <a href="/stay/">Stay →</a>
-      </div>
-    </Fragment>
-    <Fragment slot="right">
-      <ReserveContactBlock />
-    </Fragment>
-  </ReserveCTA>
+  <Fragment slot="footer">
+    <div class="section-label">Plan Your Visit</div>
+    <h2>Hungry yet?</h2>
+    <div class="contact-list">
+      <a href="/the-farm/">The Farm →</a>
+      <a href="/stay/">Stay →</a>
+    </div>
+  </Fragment>
 </PageLayout>

@@ -7,14 +7,16 @@ interface Props {
   locale?: Locale;
   heading?: string;
   label?: string;
+  description?: string;
 }
 
-const { locale = defaultLocale, heading, label } = Astro.props;
+const { locale = defaultLocale, heading, label, description } = Astro.props;
 const t = useTranslations(locale);
 ---
 
 <div class="section-label">{label ?? t('nav.reserve')}</div>
 <h2>{heading ?? t('reserve.defaultHeading')}</h2>
+{description && <p>{description}</p>}
 <div class="contact-list">
   <a href={business.whatsappHref}>{business.phone} (WhatsApp)</a>
   <a href={`mailto:${business.email}`}>{business.email}</a>

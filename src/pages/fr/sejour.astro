@@ -4,8 +4,6 @@ import PageLayout from '../../layouts/PageLayout.astro';
 import PhotoHero from '../../components/PhotoHero.astro';
 import Section from '../../components/Section.astro';
 import Split from '../../components/Split.astro';
-import ReserveCTA from '../../components/ReserveCTA.astro';
-import ReserveContactBlock from '../../components/ReserveContactBlock.astro';
 import { img } from '../../lib/images';
 import { pageAlternates } from '../../data/pageTranslations';
 
@@ -105,18 +103,13 @@ const amenities = [
     }
   </Section>
 
-  <ReserveCTA>
-    <Fragment slot="left">
-      <div class="section-label">Vous Hésitez ?</div>
-      <h2>Dites-nous comment vous aimeriez passer vos journées.</h2>
-      <p>Écrivez-nous et nous vous aiderons à choisir la cabane qui convient le mieux à votre séjour.</p>
-      <div class="contact-list">
-        <a href="/the-farm/">Retour à La Ferme →</a>
-        <a href="/kitchen/">La Cuisine →</a>
-      </div>
-    </Fragment>
-    <Fragment slot="right">
-      <ReserveContactBlock locale="fr" />
-    </Fragment>
-  </ReserveCTA>
+  <Fragment slot="footer">
+    <div class="section-label">Vous Hésitez ?</div>
+    <h2>Dites-nous comment vous aimeriez passer vos journées.</h2>
+    <p>Écrivez-nous et nous vous aiderons à choisir la cabane qui convient le mieux à votre séjour.</p>
+    <div class="contact-list">
+      <a href="/the-farm/">Retour à La Ferme →</a>
+      <a href="/kitchen/">La Cuisine →</a>
+    </div>
+  </Fragment>
 </PageLayout>

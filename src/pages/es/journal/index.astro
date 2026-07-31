@@ -5,8 +5,6 @@ import PageHero from '../../../components/PageHero.astro';
 import Section from '../../../components/Section.astro';
 import CardGrid from '../../../components/CardGrid.astro';
 import TextCard from '../../../components/TextCard.astro';
-import ReserveCTA from '../../../components/ReserveCTA.astro';
-import ReserveContactBlock from '../../../components/ReserveContactBlock.astro';
 import { img } from '../../../lib/images';
 import { getJournal, groupBySection, slugFromId } from '../../../lib/journal';
 import { pageAlternates } from '../../../data/pageTranslations';
@@ -39,7 +37,7 @@ const sectionCopy = {
 
 <PageLayout
   title="Diario — Wild on the Farm | Boquete Cloud Forest Lodge"
-  description="Notas de temporada y perfiles de plantas de Wild on the Farm, Boquete Cloud Forest Lodge — propiedades medicinales, usos culinarios, y cómo cultivamos lo que crece a 1,800m en el bosque nuboso de Panamá."
+  description="Artículos de Wild on the Farm, Boquete Cloud Forest Lodge, sobre perfiles de plantas, vida en la finca, senderismo y vida silvestre, bienestar, y guías de viaje por Boquete y el resto de Panamá."
   path="/es/journal/"
   image={ogImage.src}
   pullIntro="Perfiles de las plantas que cultivamos — sus usos medicinales y culinarios, y cómo cultivarlas — junto con notas de temporada sobre senderos, especies nativas, y la vida de esta pequeña montaña."
@@ -79,18 +77,13 @@ const sectionCopy = {
     </div>
   </Section>
 
-  <ReserveCTA>
-    <Fragment slot="left">
-      <div class="section-label">Cerca de la Finca</div>
-      <h2>Nuevas notas, cada miércoles.</h2>
-      <p>Desde plantas nativas hasta el estado de los senderos — un registro continuo de esta pequeña montaña.</p>
-      <div class="contact-list">
-        <a href="/the-farm/">La Finca →</a>
-        <a href="/birdwatching/">Avistamiento de Aves →</a>
-      </div>
-    </Fragment>
-    <Fragment slot="right">
-      <ReserveContactBlock locale="es" />
-    </Fragment>
-  </ReserveCTA>
+  <Fragment slot="footer">
+    <div class="section-label">Cerca de la Finca</div>
+    <h2>Nuevas notas, cada miércoles.</h2>
+    <p>Desde plantas nativas hasta el estado de los senderos — un registro continuo de esta pequeña montaña.</p>
+    <div class="contact-list">
+      <a href="/the-farm/">La Finca →</a>
+      <a href="/birdwatching/">Avistamiento de Aves →</a>
+    </div>
+  </Fragment>
 </PageLayout>

@@ -5,8 +5,6 @@ import PageHero from '../../../components/PageHero.astro';
 import Section from '../../../components/Section.astro';
 import CardGrid from '../../../components/CardGrid.astro';
 import TextCard from '../../../components/TextCard.astro';
-import ReserveCTA from '../../../components/ReserveCTA.astro';
-import ReserveContactBlock from '../../../components/ReserveContactBlock.astro';
 import { img } from '../../../lib/images';
 import { getJournal, groupBySection, slugFromId } from '../../../lib/journal';
 import { pageAlternates } from '../../../data/pageTranslations';
@@ -39,7 +37,7 @@ const sectionCopy = {
 
 <PageLayout
   title="Journal — Wild on the Farm | Boquete Cloud Forest Lodge"
-  description="Notes saisonnières et profils de plantes de Wild on the Farm, Boquete Cloud Forest Lodge — propriétés médicinales, usages culinaires, et comment nous cultivons ce qui pousse à 1 800m dans la forêt nuageuse du Panama."
+  description="Articles de Wild on the Farm, Boquete Cloud Forest Lodge, sur les profils de plantes, la vie à la ferme, la randonnée et la faune, le bien-être, et des guides de voyage sur Boquete et le reste du Panama."
   path="/fr/journal/"
   image={ogImage.src}
   pullIntro="Profils des plantes que nous cultivons — leurs usages médicinaux et culinaires, et comment les cultiver — ainsi que des notes saisonnières sur les sentiers, les espèces natives, et la vie de cette petite montagne."
@@ -79,18 +77,13 @@ const sectionCopy = {
     </div>
   </Section>
 
-  <ReserveCTA>
-    <Fragment slot="left">
-      <div class="section-label">Près de la Ferme</div>
-      <h2>De nouvelles notes, chaque mercredi.</h2>
-      <p>Des plantes natives à l'état des sentiers — un registre continu de cette petite montagne.</p>
-      <div class="contact-list">
-        <a href="/the-farm/">La Ferme →</a>
-        <a href="/birdwatching/">Observation des Oiseaux →</a>
-      </div>
-    </Fragment>
-    <Fragment slot="right">
-      <ReserveContactBlock locale="fr" />
-    </Fragment>
-  </ReserveCTA>
+  <Fragment slot="footer">
+    <div class="section-label">Près de la Ferme</div>
+    <h2>De nouvelles notes, chaque mercredi.</h2>
+    <p>Des plantes natives à l'état des sentiers — un registre continu de cette petite montagne.</p>
+    <div class="contact-list">
+      <a href="/the-farm/">La Ferme →</a>
+      <a href="/birdwatching/">Observation des Oiseaux →</a>
+    </div>
+  </Fragment>
 </PageLayout>

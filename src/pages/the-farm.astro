@@ -6,8 +6,6 @@ import Section from '../components/Section.astro';
 import Split from '../components/Split.astro';
 import Gallery from '../components/Gallery.astro';
 import QuoteSection from '../components/QuoteSection.astro';
-import ReserveCTA from '../components/ReserveCTA.astro';
-import ReserveContactBlock from '../components/ReserveContactBlock.astro';
 import { img } from '../lib/images';
 
 const heroImage = img('farm/hero.jpg');
@@ -103,19 +101,14 @@ const galleryItems = [
     rooted — turning this working farm into a sanctuary for travelers drawn to the same quiet."
   </QuoteSection>
 
-  <ReserveCTA>
-    <Fragment slot="left">
-      <div class="section-label">Continue Exploring</div>
-      <h2>Where the farm leads next.</h2>
-      <p>See where you'll sleep, what's grown for your table, and the trails that start at our door.</p>
-      <div class="contact-list">
-        <a href="/stay/">The Cabins →</a>
-        <a href="/kitchen/">The Kitchen →</a>
-        <a href="/birdwatching/">Birdwatching &amp; Trails →</a>
-      </div>
-    </Fragment>
-    <Fragment slot="right">
-      <ReserveContactBlock />
-    </Fragment>
-  </ReserveCTA>
+  <Fragment slot="footer">
+    <div class="section-label">Continue Exploring</div>
+    <h2>Where the farm leads next.</h2>
+    <p>See where you'll sleep, what's grown for your table, and the trails that start at our door.</p>
+    <div class="contact-list">
+      <a href="/stay/">The Cabins →</a>
+      <a href="/kitchen/">The Kitchen →</a>
+      <a href="/birdwatching/">Birdwatching &amp; Trails →</a>
+    </div>
+  </Fragment>
 </PageLayout>

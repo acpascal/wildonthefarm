@@ -6,8 +6,6 @@ import Section from '../components/Section.astro';
 import CardGrid from '../components/CardGrid.astro';
 import TextCard from '../components/TextCard.astro';
 import NoteBox from '../components/NoteBox.astro';
-import ReserveCTA from '../components/ReserveCTA.astro';
-import ReserveContactBlock from '../components/ReserveContactBlock.astro';
 import { business } from '../data/business';
 import { img } from '../lib/images';
 
@@ -158,18 +156,13 @@ const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
     </div>
   </Section>
 
-  <ReserveCTA>
-    <Fragment slot="left">
-      <div class="section-label">Still Have Questions?</div>
-      <h2>We're happy to talk it through.</h2>
-      <p>Write to us directly and we'll help you plan your stay, whatever's still unclear.</p>
-      <div class="contact-list">
-        <a href="/rates-retreats/">Rates &amp; Retreats →</a>
-        <a href="/stay/">See The Cabins →</a>
-      </div>
-    </Fragment>
-    <Fragment slot="right">
-      <ReserveContactBlock />
-    </Fragment>
-  </ReserveCTA>
+  <Fragment slot="footer">
+    <div class="section-label">Still Have Questions?</div>
+    <h2>We're happy to talk it through.</h2>
+    <p>Write to us directly and we'll help you plan your stay, whatever's still unclear.</p>
+    <div class="contact-list">
+      <a href="/rates-retreats/">Rates &amp; Retreats →</a>
+      <a href="/stay/">See The Cabins →</a>
+    </div>
+  </Fragment>
 </PageLayout>

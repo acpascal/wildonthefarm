@@ -4,8 +4,6 @@ import PageLayout from '../layouts/PageLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import Section from '../components/Section.astro';
 import PhotoGrid from '../components/PhotoGrid.astro';
-import ReserveCTA from '../components/ReserveCTA.astro';
-import ReserveContactBlock from '../components/ReserveContactBlock.astro';
 import { img } from '../lib/images';
 
 const heroImage = img('journal/macadamia/macadamia_permaculture_01.jpg');
@@ -51,17 +49,12 @@ const gardenPhotos = [
     <p><a href="/journal/french-visionary-of-boquete/"><strong>Read the farm's permaculture story →</strong></a></p>
   </Section>
 
-  <ReserveCTA>
-    <Fragment slot="left">
-      <div class="section-label">Plan Your Visit</div>
-      <h2>See where it all comes from.</h2>
-      <div class="contact-list">
-        <a href="/kitchen/">The Kitchen →</a>
-        <a href="/the-farm/">The Farm →</a>
-      </div>
-    </Fragment>
-    <Fragment slot="right">
-      <ReserveContactBlock />
-    </Fragment>
-  </ReserveCTA>
+  <Fragment slot="footer">
+    <div class="section-label">Plan Your Visit</div>
+    <h2>See where it all comes from.</h2>
+    <div class="contact-list">
+      <a href="/kitchen/">The Kitchen →</a>
+      <a href="/the-farm/">The Farm →</a>
+    </div>
+  </Fragment>
 </PageLayout>

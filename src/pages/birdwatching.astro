@@ -7,8 +7,6 @@ import Split from '../components/Split.astro';
 import CardGrid from '../components/CardGrid.astro';
 import ImageTextCard from '../components/ImageTextCard.astro';
 import NoteBox from '../components/NoteBox.astro';
-import ReserveCTA from '../components/ReserveCTA.astro';
-import ReserveContactBlock from '../components/ReserveContactBlock.astro';
 import { img } from '../lib/images';
 
 const heroImage = img('birds/bird_00.jpg');
@@ -111,18 +109,13 @@ const species = [
     </NoteBox>
   </Section>
 
-  <ReserveCTA>
-    <Fragment slot="left">
-      <div class="section-label">Plan Your Visit</div>
-      <h2>Best at first light.</h2>
-      <p>Guided walks can be arranged for early morning, when the forest is at its most active. Tell us if birdwatching is the focus of your stay and we'll plan around it.</p>
-      <div class="contact-list">
-        <a href="/hiking/">Hiking &amp; Trails →</a>
-        <a href="/the-farm/">Back to The Farm →</a>
-      </div>
-    </Fragment>
-    <Fragment slot="right">
-      <ReserveContactBlock />
-    </Fragment>
-  </ReserveCTA>
+  <Fragment slot="footer">
+    <div class="section-label">Plan Your Visit</div>
+    <h2>Best at first light.</h2>
+    <p>Guided walks can be arranged for early morning, when the forest is at its most active. Tell us if birdwatching is the focus of your stay and we'll plan around it.</p>
+    <div class="contact-list">
+      <a href="/hiking/">Hiking &amp; Trails →</a>
+      <a href="/the-farm/">Back to The Farm →</a>
+    </div>
+  </Fragment>
 </PageLayout>

@@ -7,7 +7,6 @@ import Split from '../components/Split.astro';
 import CardGrid from '../components/CardGrid.astro';
 import TextCard from '../components/TextCard.astro';
 import NoteBox from '../components/NoteBox.astro';
-import ReserveCTA from '../components/ReserveCTA.astro';
 import ReserveContactBlock from '../components/ReserveContactBlock.astro';
 import { img } from '../lib/images';
 
@@ -148,18 +147,7 @@ const fertilizerSplitImage = await getImage({ src: img('garden/garden_harvest.jp
     </p>
   </Section>
 
-  <ReserveCTA>
-    <Fragment slot="left">
-      <div class="section-label">Taste The Farm</div>
-      <h2>Curious what else we grow?</h2>
-      <p>See the gardens and the kitchen behind everything we produce.</p>
-      <div class="contact-list">
-        <a href="/the-farm/">The Farm →</a>
-        <a href="/kitchen/">The Kitchen →</a>
-      </div>
-    </Fragment>
-    <Fragment slot="right">
-      <ReserveContactBlock label="Order" heading="Get in touch to place an order." />
-    </Fragment>
-  </ReserveCTA>
+  <Fragment slot="footer">
+    <ReserveContactBlock label="Order" heading="Get in touch to place an order." />
+  </Fragment>
 </PageLayout>
