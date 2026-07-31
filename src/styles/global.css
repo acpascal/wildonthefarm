@@ -579,10 +579,6 @@ button {
     transform: translateY(4px);
   }
 
-  .lang-switch-menu::before {
-    left: auto;
-  }
-
   .lang-switch:hover .lang-switch-menu,
   .lang-switch:focus-within .lang-switch-menu,
   .lang-switch.is-open .lang-switch-menu {
@@ -598,7 +594,7 @@ button {
   background: var(--ink);
   padding: var(--space-4) 0;
   font-size: 0.85rem;
-  color: rgba(255, 253, 248, 0.55);
+  color: #9da196;
 }
 
 .footer-inner {
@@ -966,7 +962,7 @@ section > .container :last-child {
 }
 
 .footer-top p {
-  color: rgba(255, 253, 248, 0.75);
+  color: #cbcfc7;
 }
 
 .footer-top-grid {
@@ -1038,9 +1034,10 @@ section:not(.story-dark):not(.bg-cream):not(.bg-paper):nth-of-type(even) {
 
 .quote-section cite {
   font-style: normal;
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: var(--gold);
   letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 @media (min-width: 860px) {
