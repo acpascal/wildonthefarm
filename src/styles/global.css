@@ -198,19 +198,45 @@ button {
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
   font-family: var(--font-display);
-  font-size: 1.1rem;
+  font-size: clamp(0.7rem, 3vw, 1rem);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--green-deep);
   line-height: 1.2;
 }
 
-.logo span {
-  display: block;
+.logo img {
+  height: 2.5em;
+  width: auto;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: fit-content;
+}
+
+.logo-line {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  white-space: nowrap;
+  gap: 0.35em;
+}
+
+.logo-name {
+  font-size: 1.3em;
+}
+
+.logo-tagline {
   font-family: var(--font-body);
-  font-size: 0.55rem;
-  letter-spacing: 0.16em;
+  font-size: 0.6em;
+  letter-spacing: 0.22em;
   color: var(--gold);
   text-transform: uppercase;
   margin-top: 2px;
@@ -274,7 +300,6 @@ button {
 .nav-links > a {
   padding: 0.85em 0;
   border-bottom: 1px solid var(--border);
-  font-size: 1rem;
 }
 
 .nav-reserve {

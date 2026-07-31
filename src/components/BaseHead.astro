@@ -36,7 +36,6 @@ const seo = buildSeo(Astro.site!, props);
     ))
 }
 {seo.alternates?.[defaultLocale] && <link rel="alternate" hreflang="x-default" href={seo.alternates[defaultLocale]} />}
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="icon" href="/favicon.ico" />
 
 <Font cssVariable="--font-display" preload />

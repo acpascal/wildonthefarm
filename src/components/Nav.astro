@@ -1,10 +1,12 @@
 ---
+import { Image } from 'astro:assets';
 import { useTranslations } from '../i18n/utils';
 import { defaultLocale, type Locale } from '../i18n/ui';
 import { navItems, isDropdown, type NavLink } from '../data/nav';
 import { pageHref } from '../data/pageTranslations';
 import { business } from '../data/business';
 import LanguageSwitcher from './LanguageSwitcher.astro';
+import logoMark from '../assets/brand/logo-notext.png';
 
 interface Props {
   locale?: Locale;
@@ -15,12 +17,22 @@ const { locale = defaultLocale, alternates } = Astro.props;
 const t = useTranslations(locale);
 const home = pageHref('home', locale);
 const resolveHref = (item: NavLink) => (item.pageId ? pageHref(item.pageId, locale) : item.href ?? '#');
+const nameWords = business.name.split(' ');
+const taglineWords = business.tagline.split(' ');
 ---
 
 <nav class="nav" data-nav>
   <div class="nav-inner container">
     <a href={home} class="logo">
-      {business.name}<span>{business.tagline}</span>
+      <Image src={logoMark} alt="" width={32} height={50} loading="eager" />
+      <span class="logo-text">
+        <span class="logo-line logo-name">
+          {nameWords.map((word) => <span>{word}</span>)}
+        </span>
+        <span class="logo-line logo-tagline">
+          {taglineWords.map((word) => <span>{word}</span>)}
+        </span>
+      </span>
     </a>
 
     <button
