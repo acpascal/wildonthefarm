@@ -25,6 +25,17 @@ export default defineConfig({
       weights: [400, 500, 600],
       subsets: ['latin', 'latin-ext'],
       fallbacks: ['Georgia', 'serif'],
+      // Fraunces' opsz axis reshapes the letterforms by rendered size — the
+      // compact text cut at small sizes, the more dramatic display cut at
+      // large ones. Without requesting it, Google Fonts freezes opsz at its
+      // default (compact) value, so headings render with text-cut glyphs
+      // scaled up instead of the intended display cut. 9..144 matches the
+      // draft's own request (`opsz,wght@9..144,...`).
+      options: {
+        experimental: {
+          variableAxis: { opsz: [[9, 144]] },
+        },
+      },
     },
     {
       provider: fontProviders.google(),
