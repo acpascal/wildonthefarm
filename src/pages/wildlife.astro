@@ -281,7 +281,7 @@ const treesAndOrchids = [
     </SpeciesGrid>
   </Section>
 
-  <Section bg="cream" label="Wild Cats" heading="All six of Central America's cats live in this park.">
+  <Section label="Wild Cats" heading="All six of Central America's cats live in this park.">
     <SpeciesGrid>
       {wildCats.map((s) => (
         <SpeciesCard image={s.image} alt={s.alt} name={s.name} latin={s.latin} groupId="wildlife-cats">
@@ -301,7 +301,7 @@ const treesAndOrchids = [
     </SpeciesGrid>
   </Section>
 
-  <Section bg="cream" label="Sloths & Small Mammals" heading="Slow movers and quiet residents.">
+  <Section label="Sloths & Small Mammals" heading="Slow movers and quiet residents.">
     <SpeciesGrid>
       {slothsAndSmallMammals.map((s) => (
         <SpeciesCard image={s.image} alt={s.alt} name={s.name} latin={s.latin} groupId="wildlife-sloths">
@@ -326,7 +326,7 @@ const treesAndOrchids = [
     </SpeciesGrid>
   </Section>
 
-  <Section bg="cream" label="Trees & Orchids of the Canopy" heading="One of the richest epiphyte forests on Earth.">
+  <Section label="Trees & Orchids of the Canopy" heading="One of the richest epiphyte forests on Earth.">
     <TextCardGrid>
       {treesAndOrchids.map((t) => (
         <TextCard name={t.name} latin={t.latin}>

@@ -21,19 +21,16 @@ const sectionCopy = {
     heading: 'Lo que cultivamos, y para qué sirve.',
     intro:
       'Perfiles de plantas con sus propiedades medicinales y terapéuticas, usos culinarios, y cómo cultivarlas tú mismo.',
-    bg: undefined as 'cream' | undefined,
   },
   'farm-notes': {
     label: 'Notas de la Finca',
     heading: 'La vida en la montaña, semana a semana.',
     intro: 'Guías de viaje, condiciones de senderos, y lo que valga la pena compartir desde la finca.',
-    bg: 'cream' as const,
   },
   'travel-panama': {
     label: 'Viajes por Panamá',
     heading: 'Historias y guías más allá de Boquete.',
     intro: 'Experiencias y notas de viaje por todo el país — no solo la finca, sino el resto del Panamá salvaje.',
-    bg: undefined as 'cream' | undefined,
   },
 };
 ---
@@ -56,7 +53,7 @@ const sectionCopy = {
   {
     sections.map(([key, items], i) =>
       items.length > 0 && (
-        <Section noPadTop={i === 0} bg={sectionCopy[key].bg} label={sectionCopy[key].label} heading={sectionCopy[key].heading}>
+        <Section noPadTop={i === 0} label={sectionCopy[key].label} heading={sectionCopy[key].heading}>
           <p>{sectionCopy[key].intro}</p>
           <div class="text-card-grid">
             {items.map((entry) => (
@@ -71,7 +68,7 @@ const sectionCopy = {
     )
   }
 
-  <Section bg="cream" label="Síguenos" heading="Nuevas publicaciones, también en Instagram.">
+  <Section label="Síguenos" heading="Nuevas publicaciones, también en Instagram.">
     <p>
       Cada nueva publicación del Diario se comparte en Instagram al publicarse — síguenos ahí para
       enterarte apenas un nuevo perfil de planta o nota de la finca esté disponible.

@@ -620,6 +620,15 @@ section {
   padding: var(--space-6) 0;
 }
 
+/* p/ul/etc. carry a trailing margin that stacks on top of the section's own
+   bottom padding, making the last line sit further from the edge than the
+   first. A plain wrapper div has no padding/border to stop a child's margin
+   from collapsing through it, so this has to zero every last-child down the
+   trailing chain, not just .container's direct child. */
+section > .container :last-child {
+  margin-bottom: 0;
+}
+
 section.no-pad-top {
   padding-top: 0;
 }
@@ -964,6 +973,22 @@ section.no-pad-bottom {
 }
 
 .bg-cream {
+  background: var(--cream);
+}
+
+.bg-paper {
+  background: var(--paper);
+}
+
+/* Automatic section rhythm — background alternates by a section's position
+   among its <section> siblings (nth-of-type counts only same-tag siblings,
+   so divs/headers interleaved between sections — Story, Stats, Hero — don't
+   break the count). This is what keeps intro → section → section alternating
+   correctly no matter what's mixed in between, without every page having to
+   hand-pick bg="cream" and risk getting the parity wrong.
+   .bg-cream / .bg-paper still force an override when a page needs to break
+   rhythm on purpose; .reserve keeps its fixed dark background always. */
+section:not(.reserve):not(.bg-cream):not(.bg-paper):nth-of-type(even) {
   background: var(--cream);
 }
 

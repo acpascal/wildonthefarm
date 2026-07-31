@@ -21,19 +21,16 @@ const sectionCopy = {
     heading: 'What we grow, and what it’s good for.',
     intro:
       'Plant profiles covering medicinal and therapeutic properties, culinary interest, and how to grow each one yourself — plus the bigger stories behind what comes out of this farm.',
-    bg: undefined as 'cream' | undefined,
   },
   'farm-notes': {
     label: 'Farm Notes',
     heading: 'Life on the mountain, week to week.',
     intro: 'Travel guides, trail conditions, Qi Gong and wellness, and whatever else is worth sharing from the farm.',
-    bg: 'cream' as const,
   },
   'travel-panama': {
     label: 'Travel Panama',
     heading: 'Stories and guides from beyond Boquete.',
     intro: 'Experiences and travel notes from across the country — not just the farm, but the rest of wild Panama.',
-    bg: undefined as 'cream' | undefined,
   },
 };
 ---
@@ -55,7 +52,7 @@ const sectionCopy = {
   {
     sections.map(([key, items], i) =>
       items.length > 0 && (
-        <Section noPadTop={i === 0} bg={sectionCopy[key].bg} label={sectionCopy[key].label} heading={sectionCopy[key].heading}>
+        <Section noPadTop={i === 0} label={sectionCopy[key].label} heading={sectionCopy[key].heading}>
           <p>{sectionCopy[key].intro}</p>
           <div class="text-card-grid">
             {items.map((entry) => (
@@ -70,7 +67,7 @@ const sectionCopy = {
     )
   }
 
-  <Section bg="cream" label="Follow Along" heading="New posts, shared on Instagram too.">
+  <Section label="Follow Along" heading="New posts, shared on Instagram too.">
     <p>
       Every new Journal post gets shared on Instagram when it's published — follow along there for
       a heads-up the moment a new plant profile or farm note goes live.
