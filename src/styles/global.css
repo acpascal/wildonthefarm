@@ -595,15 +595,10 @@ button {
    ========================================================================== */
 
 .footer-bottom {
-  background: var(--green-deep);
-  border-top: 1px solid rgba(255, 253, 248, 0.15);
+  background: var(--ink);
   padding: var(--space-4) 0;
   font-size: 0.85rem;
-  color: rgba(255, 253, 248, 0.75);
-}
-
-.footer-links a {
-  color: var(--paper);
+  color: rgba(255, 253, 248, 0.55);
 }
 
 .footer-inner {
@@ -1042,10 +1037,13 @@ section:not(.story-dark):not(.bg-cream):not(.bg-paper):nth-of-type(even) {
 }
 
 .quote-section cite {
+  display: block;
   font-style: normal;
-  font-size: 0.85rem;
+  font-size: 1rem;
+  font-weight: 600;
   color: var(--gold);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 @media (min-width: 860px) {

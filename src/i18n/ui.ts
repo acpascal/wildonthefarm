@@ -26,7 +26,6 @@ export const ui = {
     'nav.shop': 'Shop',
     'nav.ratesRetreats': 'Rates & Retreats',
     'nav.reserve': 'Reserve',
-    'footer.faqsContact': 'FAQs & Contact',
     'footer.facebook': 'Facebook',
     'footer.instagram': 'Instagram',
     'footer.youtube': 'YouTube',
@@ -38,6 +37,7 @@ export const ui = {
     'reserve.defaultHeading': 'Plan your escape into the clouds.',
     'reserve.pitch':
       "Tell us when you'd like to arrive and what you're dreaming of — birdwatching, a digital detox, or simply the silence. We'll help you plan an unforgettable stay.",
+    'reserve.contactForm': 'Send us a message',
     'journal.continueReading': 'Continue Reading',
     'journal.moreFromJournal': 'More from the Journal.',
     'journal.allPosts': 'All Journal Posts →',
@@ -59,7 +59,6 @@ export const ui = {
     'nav.shop': 'Tienda',
     'nav.ratesRetreats': 'Tarifas y Retiros',
     'nav.reserve': 'Reservar',
-    'footer.faqsContact': 'Preguntas Frecuentes y Contacto',
     'footer.facebook': 'Facebook',
     'footer.instagram': 'Instagram',
     'footer.youtube': 'YouTube',
@@ -71,6 +70,7 @@ export const ui = {
     'reserve.defaultHeading': 'Planifica tu escape hacia las nubes.',
     'reserve.pitch':
       'Cuéntanos cuándo te gustaría llegar y qué estás buscando — observación de aves, un detox digital o simplemente el silencio. Te ayudaremos a planear una estancia inolvidable.',
+    'reserve.contactForm': 'Envíanos un mensaje',
     'journal.continueReading': 'Seguir Leyendo',
     'journal.moreFromJournal': 'Más del Diario.',
     'journal.allPosts': 'Todas las Publicaciones del Diario →',
@@ -92,7 +92,6 @@ export const ui = {
     'nav.shop': 'Boutique',
     'nav.ratesRetreats': 'Tarifs et Retraites',
     'nav.reserve': 'Réserver',
-    'footer.faqsContact': 'FAQ et Contact',
     'footer.facebook': 'Facebook',
     'footer.instagram': 'Instagram',
     'footer.youtube': 'YouTube',
@@ -104,6 +103,7 @@ export const ui = {
     'reserve.defaultHeading': 'Planifiez votre évasion dans les nuages.',
     'reserve.pitch':
       "Dites-nous quand vous aimeriez arriver et ce dont vous rêvez — observation des oiseaux, une déconnexion numérique, ou simplement le silence. Nous vous aiderons à planifier un séjour inoubliable.",
+    'reserve.contactForm': 'Envoyez-nous un message',
     'journal.continueReading': 'Continuer la Lecture',
     'journal.moreFromJournal': 'Plus du Journal.',
     'journal.allPosts': 'Tous les Articles du Journal →',

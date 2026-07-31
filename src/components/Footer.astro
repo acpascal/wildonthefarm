@@ -1,7 +1,6 @@
 ---
 import { useTranslations } from '../i18n/utils';
 import { defaultLocale, type Locale } from '../i18n/ui';
-import { pageHref } from '../data/pageTranslations';
 import { business } from '../data/business';
 import ReserveContactBlock from './ReserveContactBlock.astro';
 
@@ -11,7 +10,6 @@ interface Props {
 
 const { locale = defaultLocale } = Astro.props;
 const t = useTranslations(locale);
-const faqsHref = pageHref('faqs-contact', locale);
 ---
 
 <footer>
@@ -30,7 +28,6 @@ const faqsHref = pageHref('faqs-contact', locale);
     <div class="container footer-inner">
       <div>{t('footer.copyright')}</div>
       <div class="footer-links">
-        <a href={faqsHref}>{t('footer.faqsContact')}</a>
         <a href={business.social.facebook}>{t('footer.facebook')}</a>
         <a href={business.social.instagram}>{t('footer.instagram')}</a>
         <a href={business.social.youtube}>{t('footer.youtube')}</a>
