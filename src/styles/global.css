@@ -200,9 +200,10 @@ button {
 .logo {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
   gap: 0.6em;
   font-family: var(--font-display);
-  font-size: clamp(0.7rem, 3vw, 1rem);
+  font-size: clamp(0.62rem, 1.7vw, 1rem);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--green-deep);
@@ -247,6 +248,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex-shrink: 0;
   gap: 5px;
   width: 34px;
   height: 34px;
@@ -304,8 +306,31 @@ button {
 
 .nav-reserve {
   order: 1;
+  flex-shrink: 0;
+  white-space: nowrap;
   padding: 0.6em 1.1em;
-  font-size: 0.8rem;
+  font-size: clamp(0.66rem, 3vw, 0.8rem);
+}
+
+/* Very narrow phones — free up room so logo, reserve button, and
+   hamburger never overlap or push each other off-screen (nothing here
+   is allowed to wrap; only shrinking, never wrapping, resolves width
+   pressure in this nav). */
+@media (max-width: 400px) {
+  .nav-inner {
+    gap: 0.5rem;
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+  }
+
+  .nav-toggle {
+    width: 28px;
+    height: 28px;
+  }
+
+  .nav-reserve {
+    padding: 0.55em 0.85em;
+  }
 }
 
 .lang-switch {
@@ -387,6 +412,7 @@ button {
   .nav-links {
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
     align-items: center;
     position: static;
     box-shadow: none;
@@ -395,10 +421,20 @@ button {
     padding: 0;
     max-height: none;
     overflow: visible;
-    gap: 1.9rem;
-    font-size: 0.92rem;
+    gap: clamp(0.6rem, 1.5vw, 1.9rem);
+    font-size: clamp(0.72rem, 1.2vw, 0.92rem);
     order: 2;
     width: auto;
+  }
+
+  .nav-links > a,
+  .nav-dropdown > a {
+    white-space: nowrap;
+  }
+
+  .nav-links > a,
+  .nav-links > .nav-dropdown {
+    flex-shrink: 0;
   }
 
   .nav-links > a {
@@ -413,7 +449,8 @@ button {
   .nav-reserve {
     order: 3;
     padding: 0.75em 1.5em;
-    font-size: 0.9rem;
+    font-size: clamp(0.75rem, 1.3vw, 0.9rem);
+    white-space: nowrap;
   }
 
   .lang-switch {
