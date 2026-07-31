@@ -1,0 +1,23 @@
+---
+import { getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  href: string;
+  image: ImageMetadata;
+  label: string;
+  title: string;
+  description: string;
+}
+
+const { href, image, label, title, description } = Astro.props;
+const bg = (await getImage({ src: image, width: 900, format: 'webp' })).src;
+---
+
+<a href={href} class="overlay-card" style={`background-image:url(${bg})`}>
+  <div class="overlay-card-label">
+    <div class="section-label">{label}</div>
+    <h3>{title}</h3>
+    <p>{description}</p>
+  </div>
+</a>

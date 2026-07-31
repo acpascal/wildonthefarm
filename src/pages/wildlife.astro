@@ -4,9 +4,8 @@ import PageLayout from '../layouts/PageLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import Section from '../components/Section.astro';
 import PhotoGrid from '../components/PhotoGrid.astro';
-import SpeciesGrid from '../components/SpeciesGrid.astro';
-import SpeciesCard from '../components/SpeciesCard.astro';
-import TextCardGrid from '../components/TextCardGrid.astro';
+import CardGrid from '../components/CardGrid.astro';
+import ImageTextCard from '../components/ImageTextCard.astro';
 import TextCard from '../components/TextCard.astro';
 import QuoteSection from '../components/QuoteSection.astro';
 import NoteBox from '../components/NoteBox.astro';
@@ -272,43 +271,43 @@ const treesAndOrchids = [
   </Section>
 
   <Section label="Primates" heading="Heard before they're seen.">
-    <SpeciesGrid>
+    <CardGrid>
       {primates.map((s) => (
-        <SpeciesCard image={s.image} alt={s.alt} name={s.name} latin={s.latin} groupId="wildlife-primates">
+        <ImageTextCard image={s.image} alt={s.alt} title={s.name} eyebrow={s.latin} groupId="wildlife-primates">
           {s.description}
-        </SpeciesCard>
+        </ImageTextCard>
       ))}
-    </SpeciesGrid>
+    </CardGrid>
   </Section>
 
   <Section label="Wild Cats" heading="All six of Central America's cats live in this park.">
-    <SpeciesGrid>
+    <CardGrid>
       {wildCats.map((s) => (
-        <SpeciesCard image={s.image} alt={s.alt} name={s.name} latin={s.latin} groupId="wildlife-cats">
+        <ImageTextCard image={s.image} alt={s.alt} title={s.name} eyebrow={s.latin} groupId="wildlife-cats">
           {s.description}
-        </SpeciesCard>
+        </ImageTextCard>
       ))}
-    </SpeciesGrid>
+    </CardGrid>
   </Section>
 
   <Section label="Herbivores & Peccaries" heading="The forest floor's grazers, browsers, and wild pigs.">
-    <SpeciesGrid>
+    <CardGrid>
       {herbivoresAndPeccaries.map((s) => (
-        <SpeciesCard image={s.image} alt={s.alt} name={s.name} latin={s.latin} groupId="wildlife-herbivores">
+        <ImageTextCard image={s.image} alt={s.alt} title={s.name} eyebrow={s.latin} groupId="wildlife-herbivores">
           {s.description}
-        </SpeciesCard>
+        </ImageTextCard>
       ))}
-    </SpeciesGrid>
+    </CardGrid>
   </Section>
 
   <Section label="Sloths & Small Mammals" heading="Slow movers and quiet residents.">
-    <SpeciesGrid>
+    <CardGrid>
       {slothsAndSmallMammals.map((s) => (
-        <SpeciesCard image={s.image} alt={s.alt} name={s.name} latin={s.latin} groupId="wildlife-sloths">
+        <ImageTextCard image={s.image} alt={s.alt} title={s.name} eyebrow={s.latin} groupId="wildlife-sloths">
           {s.description}
-        </SpeciesCard>
+        </ImageTextCard>
       ))}
-    </SpeciesGrid>
+    </CardGrid>
   </Section>
 
   <Section label="Reptiles & Amphibians" heading="Small, well-camouflaged, and mostly harmless.">
@@ -317,23 +316,23 @@ const treesAndOrchids = [
       Panama — that species keeps to Boquete town, some 700 metres lower. Up here, the pit vipers
       are smaller, greener, and live in the trees.
     </p>
-    <SpeciesGrid>
+    <CardGrid>
       {reptilesAndAmphibians.map((s) => (
-        <SpeciesCard image={s.image} alt={s.alt} name={s.name} latin={s.latin} groupId="wildlife-reptiles">
+        <ImageTextCard image={s.image} alt={s.alt} title={s.name} eyebrow={s.latin} groupId="wildlife-reptiles">
           {s.description}
-        </SpeciesCard>
+        </ImageTextCard>
       ))}
-    </SpeciesGrid>
+    </CardGrid>
   </Section>
 
   <Section label="Trees & Orchids of the Canopy" heading="One of the richest epiphyte forests on Earth.">
-    <TextCardGrid>
+    <CardGrid>
       {treesAndOrchids.map((t) => (
-        <TextCard name={t.name} latin={t.latin}>
+        <TextCard title={t.name} eyebrow={t.latin}>
           {t.description}
         </TextCard>
       ))}
-    </TextCardGrid>
+    </CardGrid>
     <NoteBox variant="todo">
       <p>
         This list covers what's documented for the Talamanca–Chiriquí highlands generally — not yet

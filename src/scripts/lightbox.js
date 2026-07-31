@@ -1,7 +1,7 @@
 // Lightbox for photo tiles. Any element with [data-lightbox] participates —
 // adding a new gallery-style component elsewhere on the site needs no
 // changes here, unlike the old version which had to enumerate container
-// class names (.gallery, .photo-grid, .species-grid, ...).
+// class names (.gallery, .photo-grid, .image-text-card, ...).
 //
 // Tiles sharing the same [data-gallery] value are grouped into one
 // continuous slideshow; a tile with no data-gallery shows alone.

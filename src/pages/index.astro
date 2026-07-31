@@ -6,8 +6,9 @@ import Stats from '../components/Stats.astro';
 import Section from '../components/Section.astro';
 import Split from '../components/Split.astro';
 import Story from '../components/Story.astro';
-import Pillars from '../components/Pillars.astro';
-import Cards from '../components/Cards.astro';
+import CardGrid from '../components/CardGrid.astro';
+import TextCard from '../components/TextCard.astro';
+import OverlayCard from '../components/OverlayCard.astro';
 import QuoteSection from '../components/QuoteSection.astro';
 import ReserveCTA from '../components/ReserveCTA.astro';
 import SchemaLodging from '../components/SchemaLodging.astro';
@@ -36,7 +37,6 @@ const cards = [
   {
     href: '/stay/',
     image: img('stay/card_cloud_forest_cabins.jpg'),
-    alt: 'A cloud forest cabin at Wild on the Farm',
     label: 'Stay',
     title: 'Cloud Forest Cabins',
     description: 'Warm timber, floor-to-ceiling views, and a silence built for rest.',
@@ -44,7 +44,6 @@ const cards = [
   {
     href: '/kitchen/',
     image: img('food/four_salads.jpg'),
-    alt: 'Four seasonal salads served at Wild on the Farm',
     label: 'Kitchen',
     title: 'From Our Garden',
     description: 'Organic, seasonal, harvested a few steps from the table.',
@@ -52,7 +51,6 @@ const cards = [
   {
     href: '/birdwatching/',
     image: img('birds/bird_14.jpg'),
-    alt: 'A bird species seen at Wild on the Farm',
     label: 'Experience',
     title: 'Birdwatching & Trails',
     description: 'Home to the Resplendent Quetzal and the trails of Amistad park.',
@@ -118,11 +116,19 @@ const mapsHref =
   </Story>
 
   <Section label="What Stays With You" heading="Five things we never compromise on.">
-    <Pillars pillars={pillars} />
+    <CardGrid cols={5}>
+      {pillars.map((p) => (
+        <TextCard lite title={p.title}>
+          {p.description}
+        </TextCard>
+      ))}
+    </CardGrid>
   </Section>
 
   <Section label="Explore" heading="Stay, eat, and wander — on the farm's own terms.">
-    <Cards items={cards} />
+    <CardGrid>
+      {cards.map((c) => <OverlayCard {...c} />)}
+    </CardGrid>
   </Section>
 
   <QuoteSection cite="— Charlotte Hamilton">

@@ -4,7 +4,7 @@ import PageLayout from '../layouts/PageLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import Section from '../components/Section.astro';
 import Split from '../components/Split.astro';
-import TextCardGrid from '../components/TextCardGrid.astro';
+import CardGrid from '../components/CardGrid.astro';
 import TextCard from '../components/TextCard.astro';
 import NoteBox from '../components/NoteBox.astro';
 import ReserveCTA from '../components/ReserveCTA.astro';
@@ -62,18 +62,18 @@ const fertilizerSplitImage = await getImage({ src: img('garden/garden_harvest.jp
       Curious about each ingredient? The Journal has a full profile on every plant in these
       blends, including its traditional uses.
     </p>
-    <TextCardGrid cols={2}>
-      <TextCard name="Morning Blend" latin="Jiaogulan, nettle & rosemary">
+    <CardGrid cols={2}>
+      <TextCard title="Morning Blend" eyebrow="Jiaogulan, nettle & rosemary">
         Grown and dried on the farm. Read about <a href="/journal/jiaogulan/">jiaogulan</a>,{' '}
         <a href="/journal/nettle/">nettle</a>, and <a href="/journal/rosemary/">rosemary</a> on
         the Journal.
       </TextCard>
-      <TextCard name="Evening Blend" latin="Jiaogulan, nettle & verbena">
+      <TextCard title="Evening Blend" eyebrow="Jiaogulan, nettle & verbena">
         Grown and dried on the farm. Read about <a href="/journal/jiaogulan/">jiaogulan</a>,{' '}
         <a href="/journal/nettle/">nettle</a>, and <a href="/journal/verbena/">verbena</a> on the
         Journal.
       </TextCard>
-    </TextCardGrid>
+    </CardGrid>
     <NoteBox variant="todo">
       <p>Needed: prices, package sizes, and whether these ship or are pickup/on-site only.</p>
     </NoteBox>
@@ -81,18 +81,18 @@ const fertilizerSplitImage = await getImage({ src: img('garden/garden_harvest.jp
 
   <Section label="Preserves & Ferments" heading="Jams, soups, and lacto-fermented vegetables.">
     <p>Small-batch preserves made from the garden's own harvest, and traditional lacto-fermentation.</p>
-    <TextCardGrid>
-      <TextCard name="Tree Tomato Jam" latin="Tamarillo">
+    <CardGrid>
+      <TextCard title="Tree Tomato Jam" eyebrow="Tamarillo">
         A tangy, slightly tart jam made from the farm's tree tomatoes.
       </TextCard>
-      <TextCard name="Nettle Soup" latin="Ortie">
+      <TextCard title="Nettle Soup" eyebrow="Ortie">
         A simple, earthy soup made from farm-grown <a href="/journal/nettle/">nettle</a>.
       </TextCard>
-      <TextCard name="Kimchi & Ferments" latin="Lacto-fermentation">
+      <TextCard title="Kimchi & Ferments" eyebrow="Lacto-fermentation">
         Our <a href="/journal/garden-kimchi/">Garden Kimchi</a> and other lacto-fermented
         vegetables from the garden.
       </TextCard>
-    </TextCardGrid>
+    </CardGrid>
     <NoteBox variant="todo">
       <p>
         Needed: the rest of the preserves list, plus prices, jar/container sizes, and shipping vs.

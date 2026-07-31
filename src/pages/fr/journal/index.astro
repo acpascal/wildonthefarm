@@ -3,6 +3,8 @@ import { getImage } from 'astro:assets';
 import PageLayout from '../../../layouts/PageLayout.astro';
 import PageHero from '../../../components/PageHero.astro';
 import Section from '../../../components/Section.astro';
+import CardGrid from '../../../components/CardGrid.astro';
+import TextCard from '../../../components/TextCard.astro';
 import ReserveCTA from '../../../components/ReserveCTA.astro';
 import ReserveContactBlock from '../../../components/ReserveContactBlock.astro';
 import { img } from '../../../lib/images';
@@ -55,14 +57,13 @@ const sectionCopy = {
       items.length > 0 && (
         <Section label={sectionCopy[key].label} heading={sectionCopy[key].heading}>
           <p>{sectionCopy[key].intro}</p>
-          <div class="text-card-grid">
+          <CardGrid>
             {items.map((entry) => (
-              <div class="text-card">
-                <h3><a href={`/fr/journal/${slugFromId(entry.id)}/`}>{entry.data.title}</a></h3>
-                <p>{entry.data.description}</p>
-              </div>
+              <TextCard title={entry.data.title} href={`/fr/journal/${slugFromId(entry.id)}/`} cta="Lire la suite →">
+                {entry.data.description}
+              </TextCard>
             ))}
-          </div>
+          </CardGrid>
         </Section>
       )
     )

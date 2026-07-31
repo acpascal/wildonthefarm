@@ -1115,23 +1115,107 @@ section:not(.reserve):not(.story-dark):not(.bg-cream):not(.bg-paper):nth-of-type
 }
 
 /* ==========================================================================
-   Species / text cards — used for wildlife, birdwatching listings
+   Card grid — shared responsive grid for TextCard / ImageTextCard / OverlayCard
    ========================================================================== */
 
-.species-grid,
-.text-card-grid {
+.card-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-4);
   margin-top: var(--space-3);
 }
 
-.species-card {
+@media (min-width: 640px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 860px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+  }
+
+  .card-grid.cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card-grid.cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .card-grid.cols-5 {
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-3);
+  }
+}
+
+/* ==========================================================================
+   Text card — pure text, no image. Default is a full box (paper bg, thin
+   border, gold top rule); .lite drops everything but the gold top rule.
+   ========================================================================== */
+
+.text-card {
+  display: block;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--gold);
+  border-radius: 4px;
+  padding: var(--space-4) var(--space-3);
+  transition: border-color 0.15s ease;
+}
+
+.text-card.lite {
+  border-color: transparent;
+  border-top-color: var(--gold);
+}
+
+a.text-card:hover {
+  border-color: var(--gold);
+}
+
+.text-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.2em;
+}
+
+.text-card p {
+  font-size: 0.88rem;
+  color: var(--gray);
+  margin-bottom: 0;
+}
+
+.card-cta {
+  display: inline-block;
+  margin-top: var(--space-2);
+  font-size: 0.85rem;
+  color: var(--gold);
+  transition: color 0.15s ease;
+}
+
+a.text-card:hover .card-cta {
+  color: var(--gold-bright);
+}
+
+.card-eyebrow {
+  display: block;
+  font-style: italic;
+  font-size: 0.78rem;
+  color: var(--gold);
+  margin-bottom: 0.5em;
+}
+
+/* ==========================================================================
+   Image-text card — image above, text below (wildlife, birdwatching listings)
+   ========================================================================== */
+
+.image-text-card {
   display: flex;
   flex-direction: column;
 }
 
-.species-photo {
+.image-text-card-photo {
   display: block;
   aspect-ratio: 4 / 3;
   border: 3px solid var(--ink);
@@ -1141,55 +1225,22 @@ section:not(.reserve):not(.story-dark):not(.bg-cream):not(.bg-paper):nth-of-type
   margin-bottom: var(--space-2);
 }
 
-.species-photo img {
+.image-text-card-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.species-body h3,
-.text-card h3 {
+.image-text-card h3 {
   font-size: 1.05rem;
   margin-bottom: 0.2em;
 }
 
-.species-latin {
-  display: block;
-  font-style: italic;
-  font-size: 0.78rem;
-  color: var(--gold);
-  margin-bottom: 0.5em;
-}
-
-.species-body p,
-.text-card p {
+.image-text-card p {
   font-size: 0.88rem;
   color: var(--gray);
   margin-bottom: 0;
-}
-
-@media (min-width: 640px) {
-  .species-grid,
-  .text-card-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 860px) {
-  .species-grid,
-  .text-card-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-4);
-  }
-
-  .text-card-grid.cols-2 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .text-card-grid.cols-4 {
-    grid-template-columns: repeat(4, 1fr);
-  }
 }
 
 .price {
@@ -1588,48 +1639,11 @@ section:not(.reserve):not(.story-dark):not(.bg-cream):not(.bg-paper):nth-of-type
    Pillars
    ========================================================================== */
 
-.pillars {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-4);
-  margin-top: var(--space-4);
-}
-
-.pillar h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.3em;
-}
-
-.pillar p {
-  color: var(--gray);
-  font-size: 0.92rem;
-}
-
-@media (min-width: 640px) {
-  .pillars {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 860px) {
-  .pillars {
-    grid-template-columns: repeat(5, 1fr);
-    gap: var(--space-3);
-  }
-}
-
 /* ==========================================================================
-   Cards
+   Overlay card — image as background, text overlaid with a gradient
    ========================================================================== */
 
-.cards {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-3);
-  margin-top: var(--space-4);
-}
-
-.card {
+.overlay-card {
   position: relative;
   display: flex;
   align-items: flex-end;
@@ -1642,39 +1656,32 @@ section:not(.reserve):not(.story-dark):not(.bg-cream):not(.bg-paper):nth-of-type
   color: var(--paper);
 }
 
-.card::after {
+.overlay-card::after {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(to top, rgba(15, 20, 12, 0.85), rgba(15, 20, 12, 0.05) 55%);
 }
 
-.card-label {
+.overlay-card-label {
   position: relative;
   z-index: 1;
   padding: var(--space-4);
 }
 
-.card-label .section-label {
+.overlay-card-label .section-label {
   color: var(--gold-bright);
 }
 
-.card-label h3 {
+.overlay-card-label h3 {
   color: var(--paper);
   margin-bottom: 0.3em;
 }
 
-.card-label p {
+.overlay-card-label p {
   font-size: 0.88rem;
   color: rgba(247, 244, 236, 0.9);
   margin-bottom: 0;
-}
-
-@media (min-width: 860px) {
-  .cards {
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-4);
-  }
 }
 
 /* ==========================================================================

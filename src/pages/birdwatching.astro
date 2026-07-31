@@ -3,8 +3,8 @@ import { Image, getImage } from 'astro:assets';
 import PageLayout from '../layouts/PageLayout.astro';
 import PhotoHero from '../components/PhotoHero.astro';
 import Section from '../components/Section.astro';
-import SpeciesGrid from '../components/SpeciesGrid.astro';
-import SpeciesCard from '../components/SpeciesCard.astro';
+import CardGrid from '../components/CardGrid.astro';
+import ImageTextCard from '../components/ImageTextCard.astro';
 import NoteBox from '../components/NoteBox.astro';
 import ReserveCTA from '../components/ReserveCTA.astro';
 import ReserveContactBlock from '../components/ReserveContactBlock.astro';
@@ -94,13 +94,13 @@ const species = [
   </Section>
 
   <Section label="Seen On The Farm" heading="Twenty-six more species, photographed right here.">
-    <SpeciesGrid>
+    <CardGrid>
       {species.map((s) => (
-        <SpeciesCard image={s.image} alt={s.alt} name={s.name} latin={s.latin} groupId="birdwatching-species">
+        <ImageTextCard image={s.image} alt={s.alt} title={s.name} eyebrow={s.latin} groupId="birdwatching-species">
           {s.description}
-        </SpeciesCard>
+        </ImageTextCard>
       ))}
-    </SpeciesGrid>
+    </CardGrid>
     <NoteBox variant="todo">
       <p>
         Species are identified from source filenames, trusted as accurate. A handful of additional

@@ -4,7 +4,7 @@ import PageLayout from '../layouts/PageLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import Section from '../components/Section.astro';
 import Split from '../components/Split.astro';
-import TextCardGrid from '../components/TextCardGrid.astro';
+import CardGrid from '../components/CardGrid.astro';
 import TextCard from '../components/TextCard.astro';
 import ReserveCTA from '../components/ReserveCTA.astro';
 import ReserveContactBlock from '../components/ReserveContactBlock.astro';
@@ -34,24 +34,24 @@ const wholeFarmImage = await getImage({ src: img('retreats/owners_house.jpg'), w
   </Fragment>
 
   <Section label="Cabin Rates" heading="One rate across all three cabins, breakfast included.">
-    <TextCardGrid cols={4}>
-      <TextCard name="Jan 1 – Jan 31" latin="High season">
+    <CardGrid cols={4}>
+      <TextCard title="Jan 1 – Jan 31" eyebrow="High season">
         <p class="price">$250 / night</p>
         <p>Breakfast included.</p>
       </TextCard>
-      <TextCard name="Feb 1 – Mar 31" latin="Peak season">
+      <TextCard title="Feb 1 – Mar 31" eyebrow="Peak season">
         <p class="price">$350 / night</p>
         <p>Breakfast included.</p>
       </TextCard>
-      <TextCard name="Apr 1 – Dec 20" latin="Green season">
+      <TextCard title="Apr 1 – Dec 20" eyebrow="Green season">
         <p class="price">$250 / night</p>
         <p>Breakfast included.</p>
       </TextCard>
-      <TextCard name="Dec 20 – Dec 31" latin="Holiday season">
+      <TextCard title="Dec 20 – Dec 31" eyebrow="Holiday season">
         <p class="price">$350 / night</p>
         <p>Breakfast included.</p>
       </TextCard>
-    </TextCardGrid>
+    </CardGrid>
     <p class="fine-print">
       Rate is per cabin. Minimum stay: 3 nights. Dinner can be reserved separately each evening —
       see What's Included below.
@@ -63,16 +63,16 @@ const wholeFarmImage = await getImage({ src: img('retreats/owners_house.jpg'), w
       If a cabin is still available close to your arrival date, it's offered at a reduced rate —
       non-refundable, since it's priced for that specific date.
     </p>
-    <TextCardGrid cols={2}>
-      <TextCard name="15 days before arrival" latin="If the cabin is still free">
+    <CardGrid cols={2}>
+      <TextCard title="15 days before arrival" eyebrow="If the cabin is still free">
         <p class="price">20% off</p>
         <p>Non-refundable.</p>
       </TextCard>
-      <TextCard name="7 days before arrival" latin="If the cabin is still free">
+      <TextCard title="7 days before arrival" eyebrow="If the cabin is still free">
         <p class="price">30% off</p>
         <p>Non-refundable.</p>
       </TextCard>
-    </TextCardGrid>
+    </CardGrid>
   </Section>
 
   <Section label="What's Included" heading="Simple, all-in pricing.">

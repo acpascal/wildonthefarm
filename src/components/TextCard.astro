@@ -1,14 +1,22 @@
 ---
 interface Props {
-  name: string;
-  latin: string;
+  title: string;
+  eyebrow?: string;
+  /** Thin gold top rule only, no surrounding box — see .text-card.lite in global.css. */
+  lite?: boolean;
+  /** Makes the whole card a link. Pair with `cta` so it reads as clickable. */
+  href?: string;
+  /** Shown as a "read more"-style cue; only rendered when `href` is set. Caller-supplied so each locale can pass its own copy. */
+  cta?: string;
 }
 
-const { name, latin } = Astro.props;
+const { title, eyebrow, lite = false, href, cta } = Astro.props;
+const Tag = href ? 'a' : 'div';
 ---
 
-<div class="text-card">
-  <h3>{name}</h3>
-  <span class="species-latin">{latin}</span>
+<Tag href={href} class:list={['text-card', { lite }]}>
+  <h3>{title}</h3>
+  {eyebrow && <span class="card-eyebrow">{eyebrow}</span>}
   <p><slot /></p>
-</div>
+  {href && cta && <span class="card-cta">{cta}</span>}
+</Tag>
