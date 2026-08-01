@@ -30,11 +30,11 @@ export const navItems: NavItem[] = [
       { key: 'nav.ourStory', pageId: 'story' },
     ],
   },
-  { key: 'nav.wildlife', pageId: 'wildlife' },
   {
     key: 'nav.experience',
     pageId: 'hiking',
     items: [
+      { key: 'nav.wildlife', pageId: 'wildlife' },
       { key: 'nav.birdwatching', pageId: 'birdwatching' },
       { key: 'nav.hiking', pageId: 'hiking' },
     ],
