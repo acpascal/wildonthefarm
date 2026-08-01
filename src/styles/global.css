@@ -1364,19 +1364,15 @@ a.text-card:hover .card-cta {
   text-transform: uppercase;
 }
 
-.prose {
-  padding: var(--space-4) 0 var(--space-6);
+/* Article body reuses the standard centered .container — just narrower,
+   for a readable line length. Applied to .article-meta too so the byline
+   lines up with the text below it. */
+.container-article {
+  max-width: 48rem;
 }
 
-/* Individual text elements cap their reading width, not the whole
-   container — so block content (photo grids, galleries, note boxes)
-   can still use the full container width. */
-.prose h2,
-.prose h3,
-.prose p,
-.prose ul,
-.prose ol {
-  max-width: 42rem;
+.prose {
+  padding: var(--space-4) 0 var(--space-6);
 }
 
 .prose h2 {
@@ -1413,7 +1409,6 @@ a.text-card:hover .card-cta {
 
 .prose .note-box {
   margin: 1.5em 0;
-  max-width: 42rem;
 }
 
 .map-embed {

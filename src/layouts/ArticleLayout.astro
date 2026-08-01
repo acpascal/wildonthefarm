@@ -51,12 +51,11 @@ const journalIndexHref = locale === defaultLocale ? '/journal/' : `/${locale}/jo
     </PageHero>
   </Fragment>
 
-  <div class="article-meta container">
-    <time>{dateDisplay}</time>
-  </div>
-
   <article class="prose">
-    <div class="container">
+    <div class="article-meta container container-article">
+      <time>{dateDisplay}</time>
+    </div>
+    <div class="container container-article">
       <slot />
     </div>
   </article>
