@@ -1,0 +1,106 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../layouts/PageLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Section from '../components/Section.astro';
+import PhotoGrid from '../components/PhotoGrid.astro';
+import Split from '../components/Split.astro';
+import NoteBox from '../components/NoteBox.astro';
+import { img } from '../lib/images';
+
+const heroImage = img('kitchen/dining_room.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+const gardenTeaserImage = img('garden/garden_view.jpg');
+const gardenTeaserOptimized = await getImage({ src: gardenTeaserImage, width: 800, format: 'webp' });
+
+const diningPhotos = [
+  { image: img('kitchen/dining_room.jpg'), alt: 'The dining room at Wild on the Farm, set for a meal' },
+  { image: img('kitchen/dining_room_detail.jpg'), alt: "Detail of the dining room's timber furnishings" },
+];
+
+const kitchenPhotos = [
+  { image: img('kitchen/kitchen_wide.jpg'), alt: 'Wide view of the farm kitchen' },
+  { image: img('kitchen/cook_at_work.jpg'), alt: 'The cook preparing a meal in the farm kitchen' },
+];
+
+const tablePhotos = [
+  { image: img('kitchen/table_guests_1.jpg'), alt: 'Guests sharing a meal at the communal table' },
+  { image: img('kitchen/table_guests_2.jpg'), alt: 'Guests seated together at the communal table' },
+];
+
+const foodPhotos = [
+  { image: img('food/chicken_stew.jpg'), alt: 'A chicken stew made with farm-grown vegetables' },
+  { image: img('food/roasted_tomatoes.jpg'), alt: 'Roasted tomatoes from the garden' },
+  { image: img('food/plated_dish.jpg'), alt: 'A plated dish served at Wild on the Farm' },
+  { image: img('food/four_salads.jpg'), alt: 'Four seasonal salads made from garden produce' },
+  { image: img('food/salad_with_view.jpg'), alt: 'A fresh salad served with a view over the cloud forest' },
+];
+---
+
+<PageLayout
+  title="The Food — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="A working farm kitchen at Wild on the Farm, Boquete: organic produce from our own terraced gardens, cooked simply and shared around one long table."
+  path="/food/"
+  image={ogImage.src}
+  pullIntro="Everything served at Wild on the Farm starts a few steps away — in the terraced beds behind the kitchen, not in a delivery truck. The dining room, the kitchen, and the long table where it all comes together."
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="The dining room at Wild on the Farm" eyebrow="The Food">
+      From the garden, to the pan, to the table.
+    </PageHero>
+  </Fragment>
+
+  <Section label="The Dining Room" heading="Where the day ends.">
+    <PhotoGrid items={diningPhotos} groupId="kitchen-dining" />
+  </Section>
+
+  <Section label="The Kitchen" heading="Small, professional, and always in use.">
+    <PhotoGrid items={kitchenPhotos} groupId="kitchen-kitchen" />
+  </Section>
+
+  <Section label="Around The Table" heading="Everyone eats together.">
+    <PhotoGrid items={tablePhotos} groupId="kitchen-table" />
+  </Section>
+
+  <Section label="From Our Garden" heading="Organic, seasonal, a few steps from the stove.">
+    <p>
+      The farm's own terraced beds supply most of what's cooked here — chard, kale, fennel,
+      artichokes, carrots, tomatoes, and herbs, grown without chemical inputs and picked the same
+      day they're eaten.
+    </p>
+    <Split>
+      <div class="story-img" style={`background-image:url(${gardenTeaserOptimized.src})`} role="img" aria-label="View over the terraced garden beds" />
+      <div>
+        <p>
+          The Garden now has its own page — full terrace-to-table photos, and the permaculture
+          story behind it.
+        </p>
+        <p><a href="/garden/"><strong>Visit The Garden →</strong></a></p>
+      </div>
+    </Split>
+  </Section>
+
+  <Section label="What We Cook" heading="Simple food, cooked to nourish.">
+    <p>
+      Meals here follow the garden rather than a fixed menu — hearty stews, roasted vegetables,
+      and fresh salads built around whatever's ready to pick that morning. The goal is food that
+      tastes like where it grew, and that leaves guests feeling better than when they arrived.
+    </p>
+    <PhotoGrid items={foodPhotos} groupId="kitchen-food" />
+    <NoteBox variant="todo">
+      <p>
+        Placeholder frame for the "cultures and health" angle — replace with real words on why we
+        grow and cook this way (organic practices, permaculture, health philosophy).
+      </p>
+    </NoteBox>
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">Plan Your Visit</div>
+    <h2>Hungry yet?</h2>
+    <div class="contact-list">
+      <a href="/farm/">The Farm →</a>
+      <a href="/lodge/">The Lodge →</a>
+    </div>
+  </Fragment>
+</PageLayout>

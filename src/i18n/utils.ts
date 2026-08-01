@@ -2,7 +2,7 @@ import { defaultLocale, ui, type Locale, type UiKey } from './ui';
 
 export function getLocaleFromUrl(url: URL): Locale {
   const [, maybeLocale] = url.pathname.split('/');
-  if (maybeLocale === 'es' || maybeLocale === 'fr') return maybeLocale;
+  if (maybeLocale === 'es') return maybeLocale;
   return defaultLocale;
 }
 

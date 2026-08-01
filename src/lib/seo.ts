@@ -8,13 +8,19 @@ export function absoluteUrl(site: URL | string, path: string): string {
 export interface PageSeo {
   title: string;
   description: string;
-  /** Page path, e.g. '/stay/' — must match the site's trailingSlash config. */
+  /** Page path, e.g. '/lodge/' — must match the site's trailingSlash config. */
   path: string;
   /** Relative path to an OG/Twitter image, e.g. '/images/stay/hero.jpg'. */
   image?: string;
   /** True for pages that shouldn't be indexed (e.g. 404). */
   noindex?: boolean;
-  /** Every locale this page has a real translation for, keyed by locale, valued by that page's path. */
+  /**
+   * Every locale this page has a real translation for, keyed by locale,
+   * valued by that page's path. Only needed when `path` isn't a static
+   * entry in `pageTranslations.ts` (e.g. a journal article) — otherwise
+   * `BaseLayout` derives this automatically from `path`. Leave unset unless
+   * you have a genuinely dynamic per-page translation set.
+   */
   alternates?: Partial<Record<Locale, string>>;
 }
 

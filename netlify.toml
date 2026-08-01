@@ -179,9 +179,9 @@
   status = 301
   force = true
 
-# --- FR: top-level pages. /fr/sejour/ has a real translated v3 page
-# (see src/pages/fr/sejour.astro) so it's excluded here — same situation
-# as /es/estancia/ above. Everything else has no translation yet. ---
+# --- FR: French was dropped as a site locale entirely (no /fr/ pages
+# exist anymore), so every old French URL below lands on the matching EN
+# v3 page rather than 404. ---
 [[redirects]]
   from = "/fr/"
   to = "https://wildonthefarm.com/"
@@ -224,46 +224,46 @@
   status = 301
   force = true
 
-# --- FR: blog -> real /fr/journal/ pages (recovered in Phase 5) ---
+# --- FR: blog -> EN /journal/ pages (French journal was never kept) ---
 [[redirects]]
   from = "/fr/blog/"
-  to = "https://wildonthefarm.com/fr/journal/"
+  to = "https://wildonthefarm.com/journal/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/fr/blog/allergies-et-asthme/"
-  to = "https://wildonthefarm.com/fr/journal/allergies-et-asthme/"
+  to = "https://wildonthefarm.com/journal/allergies-and-asthma/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/fr/blog/guide-observation-oiseaux-boquete/"
-  to = "https://wildonthefarm.com/fr/journal/guide-observation-oiseaux-boquete/"
+  to = "https://wildonthefarm.com/journal/boquete-bird-watching-guide/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/fr/blog/jiaogulan-herbe-immortalite/"
-  to = "https://wildonthefarm.com/fr/journal/jiaogulan/"
+  to = "https://wildonthefarm.com/journal/jiaogulan/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/fr/blog/proprietes-ortie/"
-  to = "https://wildonthefarm.com/fr/journal/ortie/"
+  to = "https://wildonthefarm.com/journal/nettle/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/fr/blog/quetzal-joyau-foret-nuageuse/"
-  to = "https://wildonthefarm.com/fr/journal/quetzal-joyau-foret-nuageuse/"
+  to = "https://wildonthefarm.com/journal/quetzal-cloudforest-jewel/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/fr/blog/romarin-bienfaits-proprietes/"
-  to = "https://wildonthefarm.com/fr/journal/romarin/"
+  to = "https://wildonthefarm.com/journal/rosemary/"
   status = 301
   force = true
 

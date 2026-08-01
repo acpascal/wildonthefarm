@@ -21,13 +21,13 @@ export function isDropdown(item: NavItem): item is NavDropdown {
 export const navItems: NavItem[] = [
   {
     key: 'nav.farmAndStay',
-    pageId: 'the-farm',
+    pageId: 'farm',
     items: [
-      { key: 'nav.theFarm', pageId: 'the-farm' },
-      { key: 'nav.stay', pageId: 'stay' },
-      { key: 'nav.kitchen', pageId: 'kitchen' },
+      { key: 'nav.theFarm', pageId: 'farm' },
+      { key: 'nav.stay', pageId: 'lodge' },
+      { key: 'nav.kitchen', pageId: 'food' },
       { key: 'nav.garden', pageId: 'garden' },
-      { key: 'nav.organicMacadamia', href: '/journal/french-visionary-of-boquete/' },
+      { key: 'nav.ourStory', pageId: 'story' },
     ],
   },
   { key: 'nav.wildlife', pageId: 'wildlife' },

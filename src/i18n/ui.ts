@@ -1,7 +1,6 @@
 export const languages = {
   en: 'English',
   es: 'Español',
-  fr: 'Français',
 } as const;
 
 export type Locale = keyof typeof languages;
@@ -12,12 +11,12 @@ export const defaultLocale: Locale = 'en';
 // Page body copy is NOT here; it lives in the page/article files themselves.
 export const ui = {
   en: {
-    'nav.farmAndStay': 'Farm & Stay',
+    'nav.farmAndStay': 'Discover',
     'nav.theFarm': 'The Farm',
-    'nav.stay': 'Stay',
-    'nav.kitchen': 'Kitchen',
-    'nav.garden': 'Garden',
-    'nav.organicMacadamia': 'Organic Macadamia',
+    'nav.stay': 'The Lodge',
+    'nav.kitchen': 'The Food',
+    'nav.garden': 'The Garden',
+    'nav.ourStory': 'Our Story',
     'nav.wildlife': 'Wildlife & Biodiversity',
     'nav.experience': 'Experience',
     'nav.birdwatching': 'Birdwatching',
@@ -45,12 +44,12 @@ export const ui = {
       'This information is for educational purposes only and reflects traditional and commonly documented uses of this plant. It is not medical advice and does not replace the guidance of a qualified healthcare professional. Always consult your doctor before using any plant medicinally, especially if pregnant, nursing, or taking medication.',
   },
   es: {
-    'nav.farmAndStay': 'Finca y Estancia',
+    'nav.farmAndStay': 'Descubrir',
     'nav.theFarm': 'La Finca',
-    'nav.stay': 'Estancia',
-    'nav.kitchen': 'Cocina',
-    'nav.garden': 'Jardín',
-    'nav.organicMacadamia': 'Macadamia Orgánica',
+    'nav.stay': 'El Lodge',
+    'nav.kitchen': 'La Comida',
+    'nav.garden': 'El Jardín',
+    'nav.ourStory': 'Nuestra Historia',
     'nav.wildlife': 'Fauna y Biodiversidad',
     'nav.experience': 'Experiencia',
     'nav.birdwatching': 'Avistamiento de Aves',
@@ -76,39 +75,6 @@ export const ui = {
     'journal.allPosts': 'Todas las Publicaciones del Diario →',
     'medicalDisclaimer':
       'Esta información tiene fines educativos únicamente y refleja usos tradicionales y comúnmente documentados de esta planta. No constituye consejo médico ni sustituye la orientación de un profesional de la salud calificado. Consulta siempre a tu médico antes de usar cualquier planta con fines medicinales, especialmente si estás embarazada, en periodo de lactancia o tomando medicamentos.',
-  },
-  fr: {
-    'nav.farmAndStay': 'Ferme et Séjour',
-    'nav.theFarm': 'La Ferme',
-    'nav.stay': 'Séjour',
-    'nav.kitchen': 'Cuisine',
-    'nav.garden': 'Jardin',
-    'nav.organicMacadamia': 'Macadamia Biologique',
-    'nav.wildlife': 'Faune et Biodiversité',
-    'nav.experience': 'Expérience',
-    'nav.birdwatching': 'Observation des Oiseaux',
-    'nav.hiking': 'Randonnée',
-    'nav.journal': 'Journal',
-    'nav.shop': 'Boutique',
-    'nav.ratesRetreats': 'Tarifs et Retraites',
-    'nav.reserve': 'Réserver',
-    'footer.facebook': 'Facebook',
-    'footer.instagram': 'Instagram',
-    'footer.youtube': 'YouTube',
-    'footer.copyright': '© 2026 Wild on the Farm — Boquete Cloud Forest Lodge, Panama',
-    'lightbox.close': 'Fermer',
-    'lightbox.previous': 'Photo précédente',
-    'lightbox.next': 'Photo suivante',
-    'language.switch': 'Langue',
-    'reserve.defaultHeading': 'Planifiez votre évasion dans les nuages.',
-    'reserve.pitch':
-      "Dites-nous quand vous aimeriez arriver et ce dont vous rêvez — observation des oiseaux, une déconnexion numérique, ou simplement le silence. Nous vous aiderons à planifier un séjour inoubliable.",
-    'reserve.contactForm': 'Envoyez-nous un message',
-    'journal.continueReading': 'Continuer la Lecture',
-    'journal.moreFromJournal': 'Plus du Journal.',
-    'journal.allPosts': 'Tous les Articles du Journal →',
-    'medicalDisclaimer':
-      "Ces informations sont fournies à titre éducatif uniquement et reflètent des usages traditionnels et couramment documentés de cette plante. Elles ne constituent pas un avis médical et ne remplacent pas les conseils d'un professionnel de santé qualifié. Consultez toujours votre médecin avant d'utiliser une plante à des fins médicinales, en particulier en cas de grossesse, d'allaitement ou de prise de médicaments.",
   },
 } as const satisfies Record<Locale, Record<string, string>>;
 

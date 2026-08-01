@@ -5,21 +5,26 @@ import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 import type { PageSeo } from '../lib/seo';
 import { defaultLocale, type Locale } from '../i18n/ui';
+import { pageAlternatesForPath } from '../data/pageTranslations';
 
 interface Props extends PageSeo {
   locale?: Locale;
 }
 
 const { locale = defaultLocale, ...seo } = Astro.props;
+// Explicit `alternates` (e.g. a journal article's per-entry translations)
+// wins; otherwise derive it from `path` so a page can never forget to wire
+// up its own language switcher.
+const alternates = seo.alternates ?? pageAlternatesForPath(seo.path);
 ---
 
 <!doctype html>
 <html lang={locale}>
   <head>
-    <BaseHead {...seo} />
+    <BaseHead {...seo} alternates={alternates} />
   </head>
   <body>
-    <Nav locale={locale} alternates={seo.alternates} />
+    <Nav locale={locale} alternates={alternates} />
     <slot />
     {
       Astro.slots.has('footer') ? (

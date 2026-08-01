@@ -5,7 +5,6 @@ import PhotoHero from '../../components/PhotoHero.astro';
 import Section from '../../components/Section.astro';
 import Split from '../../components/Split.astro';
 import { img } from '../../lib/images';
-import { pageAlternates } from '../../data/pageTranslations';
 
 const heroImage = img('stay/hero_cabin_exterior.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
@@ -52,11 +51,10 @@ const amenities = [
 <PageLayout
   title="Estancia — Wild on the Farm | Boquete Cloud Forest Lodge"
   description="Tres cabañas artesanales construidas en el bosque nuboso de Boquete, Panamá — techos vivos, terrazas privadas, y vistas sobre el Parque Nacional La Amistad."
-  path="/es/estancia/"
+  path="/es/lodge/"
   image={ogImage.src}
   pullIntro="Cada cabaña fue enclavada en la ladera, no simplemente colocada sobre ella — techos vivos, paredes de madera noble, y vidrio orientado hacia el bosque nuboso, para que la línea entre refugio y montaña casi desaparezca."
   locale="es"
-  alternates={pageAlternates('stay')}
 >
   <Fragment slot="hero">
     <PhotoHero
@@ -108,8 +106,8 @@ const amenities = [
     <h2>Cuéntanos cómo te gustaría pasar tus días.</h2>
     <p>Escríbenos y te ayudaremos a elegir la cabaña que mejor se adapte a tu estancia.</p>
     <div class="contact-list">
-      <a href="/the-farm/">Volver a La Finca →</a>
-      <a href="/kitchen/">La Cocina →</a>
+      <a href="/es/finca/">Volver a La Finca →</a>
+      <a href="/es/comida/">La Comida →</a>
     </div>
   </Fragment>
 </PageLayout>

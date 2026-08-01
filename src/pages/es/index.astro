@@ -1,0 +1,153 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Stats from '../../components/Stats.astro';
+import Section from '../../components/Section.astro';
+import Split from '../../components/Split.astro';
+import Story from '../../components/Story.astro';
+import CardGrid from '../../components/CardGrid.astro';
+import TextCard from '../../components/TextCard.astro';
+import OverlayCard from '../../components/OverlayCard.astro';
+import QuoteSection from '../../components/QuoteSection.astro';
+import SchemaLodging from '../../components/SchemaLodging.astro';
+import { business } from '../../data/business';
+import { img } from '../../lib/images';
+
+const heroImage = img('home/hero.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const stats = [
+  { num: "5,905'", label: 'Elevación' },
+  { num: 'Tres', label: 'Cabañas en el Bosque Nuboso' },
+  { num: 'Desde 2008', label: 'Finca Orgánica y de Macadamia' },
+  { num: 'Amistad', label: 'Parque Nacional' },
+];
+
+const pillars = [
+  { title: 'Autenticidad', description: 'Dieciocho años de agricultura orgánica real, no un decorado construido para la hospitalidad.' },
+  { title: 'Intimidad', description: 'Solo tres cabañas, siempre. Una elección, no una limitación.' },
+  { title: 'Silencio sensorial', description: 'Nubes, altitud, y un silencio que tiene textura.' },
+  { title: 'Confort honesto', description: 'Estar fuera de la red no significa pasar penurias — ropa de cama de alta calidad, baños privados, madera cálida.' },
+  { title: 'Una mesa viva', description: 'Comidas cultivadas a pocos pasos de donde se sirven.' },
+];
+
+const cards = [
+  {
+    href: '/es/lodge/',
+    image: img('stay/card_cloud_forest_cabins.jpg'),
+    label: 'El Lodge',
+    title: 'Cabañas en el Bosque Nuboso',
+    description: 'Madera cálida, vistas de suelo a techo, y un silencio construido para el descanso.',
+  },
+  {
+    href: '/es/comida/',
+    image: img('food/four_salads.jpg'),
+    label: 'La Comida',
+    title: 'De Nuestro Jardín',
+    description: 'Orgánica, de temporada, cosechada a pocos pasos de la mesa.',
+  },
+  {
+    href: '/birdwatching/',
+    image: img('birds/bird_14.jpg'),
+    label: 'Experiencia',
+    title: 'Avistamiento de Aves y Senderos',
+    description: 'Hogar del Quetzal Resplandeciente y los senderos del Parque Amistad.',
+  },
+];
+---
+
+<PageLayout
+  title={`${business.name} — ${business.tagline}`}
+  description={business.description}
+  path="/es/"
+  image={ogImage.src}
+  locale="es"
+>
+  <Fragment slot="hero">
+    <Hero
+      image={heroImage}
+      alt="Cabaña con vista al bosque nuboso en Wild on the Farm"
+      title={business.name}
+      tagline={business.tagline}
+      eyebrow="Finca de Permacultura y Macadamia Orgánica desde 2008"
+      focalPosition="center 78%"
+    >
+      <p>
+        Tres cabañas artesanales en una finca orgánica y de permacultura de macadamia en Panamá —
+        a la que se llega por un camino de montaña que deja atrás el mundo ordinario, para que el
+        silencio de aquí arriba permanezca intacto.
+      </p>
+      <div class="hero-cta">
+        <a href="/faqs-contact/" class="btn btn-inverted">Reserva Tu Estancia</a>
+        <a href="/es/finca/" class="btn btn-transparent">Descubre La Finca</a>
+      </div>
+    </Hero>
+  </Fragment>
+
+  <Stats stats={stats} />
+
+  <Section>
+    <Split>
+      <div>
+        <div class="section-label">La Finca</div>
+        <h2 class="lede">Dieciocho años de tierra orgánica, antes de que llegara el primer huésped.</h2>
+      </div>
+      <div>
+        <p>
+          Wild on the Farm nunca se construyó para parecer una finca. Lo ha sido desde 2008 — una
+          finca orgánica certificada y plantación de macadamia, cultivada en armonía paciente con
+          el bosque nuboso que la rodea.
+        </p>
+        <p>
+          En 2025, tres cabañas artesanales abrieron sus puertas por primera vez. Todo lo demás —
+          la tierra, los árboles, el ritmo — ya estaba aquí, dieciocho años en construcción.
+        </p>
+      </div>
+    </Split>
+  </Section>
+
+  <Story dark image={img('home/story.jpg')} alt="Un techo vivo en Wild on the Farm" label="Una Obra Maestra de Sinergia" heading="Techos nacidos de la ladera.">
+    <p>
+      Los techos vivos difuminan la línea entre refugio y ladera, construidos con madera tropical
+      sostenible y enclavados en la montaña en lugar de sobre ella. La energía solar, el agua de
+      manantial y el suelo orgánico mantienen el santuario autosuficiente — confort y
+      sostenibilidad, como una sola cosa.
+    </p>
+  </Story>
+
+  <Section label="Lo Que Permanece Contigo" heading="Cinco cosas en las que nunca transigimos.">
+    <CardGrid cols={5}>
+      {pillars.map((p) => (
+        <TextCard lite title={p.title}>
+          <p>{p.description}</p>
+        </TextCard>
+      ))}
+    </CardGrid>
+  </Section>
+
+  <Section label="Explora" heading="Alójate, come y explora — según los propios términos de la finca.">
+    <CardGrid>
+      {cards.map((c) => <OverlayCard {...c} />)}
+    </CardGrid>
+  </Section>
+
+  <QuoteSection cite="— Charlotte Hamilton">
+    "Me alojé en Wild on the Farm y realmente reconecté con lo que importa. El silencio de aquí
+    tiene una textura que no se olvida."
+  </QuoteSection>
+
+  <Fragment slot="footer">
+    <div class="section-label">Diario</div>
+    <h2>Desde la finca, cada semana.</h2>
+    <p>
+      Notas de temporada sobre plantas nativas, condiciones de los senderos, permacultura y la
+      salud de esta pequeña montaña — actualizadas a medida que la finca misma cambia.
+    </p>
+    <div class="contact-list">
+      <a href="/es/journal/">Leer El Diario →</a>
+    </div>
+  </Fragment>
+
+  <SchemaLodging imageUrl={ogImage.src} />
+</PageLayout>

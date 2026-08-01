@@ -1,12 +1,12 @@
 ---
 import { getImage } from 'astro:assets';
-import PageLayout from '../layouts/PageLayout.astro';
-import PageHero from '../components/PageHero.astro';
-import Section from '../components/Section.astro';
-import PhotoGrid from '../components/PhotoGrid.astro';
-import Split from '../components/Split.astro';
-import NoteBox from '../components/NoteBox.astro';
-import { img } from '../lib/images';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Section from '../../components/Section.astro';
+import PhotoGrid from '../../components/PhotoGrid.astro';
+import Split from '../../components/Split.astro';
+import NoteBox from '../../components/NoteBox.astro';
+import { img } from '../../lib/images';
 
 const heroImage = img('kitchen/dining_room.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
@@ -38,14 +38,15 @@ const foodPhotos = [
 ---
 
 <PageLayout
-  title="The Kitchen — Wild on the Farm | Boquete Cloud Forest Lodge"
+  title="The Food — Wild on the Farm | Boquete Cloud Forest Lodge"
   description="A working farm kitchen at Wild on the Farm, Boquete: organic produce from our own terraced gardens, cooked simply and shared around one long table."
-  path="/kitchen/"
+  path="/es/comida/"
   image={ogImage.src}
   pullIntro="Everything served at Wild on the Farm starts a few steps away — in the terraced beds behind the kitchen, not in a delivery truck. The dining room, the kitchen, and the long table where it all comes together."
+  locale="es"
 >
   <Fragment slot="hero">
-    <PageHero image={heroImage} alt="The dining room at Wild on the Farm" eyebrow="The Kitchen">
+    <PageHero image={heroImage} alt="The dining room at Wild on the Farm" eyebrow="The Food">
       From the garden, to the pan, to the table.
     </PageHero>
   </Fragment>
@@ -75,7 +76,7 @@ const foodPhotos = [
           The Garden now has its own page — full terrace-to-table photos, and the permaculture
           story behind it.
         </p>
-        <p><a href="/garden/"><strong>Visit The Garden →</strong></a></p>
+        <p><a href="/es/jardin/"><strong>Visit The Garden →</strong></a></p>
       </div>
     </Split>
   </Section>
@@ -99,8 +100,8 @@ const foodPhotos = [
     <div class="section-label">Plan Your Visit</div>
     <h2>Hungry yet?</h2>
     <div class="contact-list">
-      <a href="/the-farm/">The Farm →</a>
-      <a href="/stay/">Stay →</a>
+      <a href="/es/finca/">The Farm →</a>
+      <a href="/es/lodge/">The Lodge →</a>
     </div>
   </Fragment>
 </PageLayout>

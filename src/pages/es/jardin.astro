@@ -1,10 +1,10 @@
 ---
 import { getImage } from 'astro:assets';
-import PageLayout from '../layouts/PageLayout.astro';
-import PageHero from '../components/PageHero.astro';
-import Section from '../components/Section.astro';
-import PhotoGrid from '../components/PhotoGrid.astro';
-import { img } from '../lib/images';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Section from '../../components/Section.astro';
+import PhotoGrid from '../../components/PhotoGrid.astro';
+import { img } from '../../lib/images';
 
 const heroImage = img('journal/macadamia/macadamia_permaculture_01.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
@@ -26,9 +26,10 @@ const gardenPhotos = [
 <PageLayout
   title="The Garden — Wild on the Farm | Boquete Cloud Forest Lodge"
   description="Terraced organic gardens at Wild on the Farm, Boquete Cloud Forest Lodge — chard, kale, fennel, artichokes, and herbs, grown without chemical inputs on a permaculture farm in Panama's cloud forest."
-  path="/garden/"
+  path="/es/jardin/"
   image={ogImage.src}
   pullIntro="The farm's own terraced beds supply most of what's cooked here — chard, kale, fennel, artichokes, carrots, tomatoes, and herbs, grown without chemical inputs and picked the same day they're eaten."
+  locale="es"
 >
   <Fragment slot="hero">
     <PageHero image={heroImage} alt="Permaculture terraces beneath the macadamia trees" eyebrow="The Garden">
@@ -53,8 +54,8 @@ const gardenPhotos = [
     <div class="section-label">Plan Your Visit</div>
     <h2>See where it all comes from.</h2>
     <div class="contact-list">
-      <a href="/food/">The Food →</a>
-      <a href="/farm/">The Farm →</a>
+      <a href="/es/comida/">The Food →</a>
+      <a href="/es/finca/">The Farm →</a>
     </div>
   </Fragment>
 </PageLayout>

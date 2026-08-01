@@ -1,0 +1,132 @@
+---
+import { getImage, Image } from 'astro:assets';
+import PageLayout from '../layouts/PageLayout.astro';
+import PhotoHero from '../components/PhotoHero.astro';
+import Section from '../components/Section.astro';
+import Split from '../components/Split.astro';
+import Gallery from '../components/Gallery.astro';
+import QuoteSection from '../components/QuoteSection.astro';
+import { img } from '../lib/images';
+
+const heroImage = img('farm/hero.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const permacultureImage = img('retreats/farm_animals.jpg');
+
+const galleryItems = [
+  { image: img('farm/property_overview.jpg'), alt: 'Aerial view of the farm property in the cloud forest', size: 'lg' as const },
+  { image: img('farm/gallery_1.jpg'), alt: 'Farm landscape at Wild on the Farm' },
+  { image: img('farm/gallery_2.jpg'), alt: 'Farm landscape at Wild on the Farm', size: 'tall' as const },
+  { image: img('farm/overview_1.jpg'), alt: 'Overview of the cloud forest farm', size: 'wide' as const },
+  { image: img('farm/gallery_4.jpg'), alt: 'Farm landscape at Wild on the Farm' },
+  { image: img('farm/pergola.jpg'), alt: 'Pergola on the farm property' },
+];
+---
+
+<PageLayout
+  title="The Farm — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Eighteen years of organic, permaculture farming at 5,900 feet in Panama's cloud forest, on the edge of Amistad National Park."
+  path="/farm/"
+  image={ogImage.src}
+  pullIntro="Nestled at 5,900 feet in the cloud forest of Amistad National Park, our farm is a haven of peace, silence, and cool mountain air. Its stillness is almost monastic — secluded in wild nature, it invites regeneration, a reconnection with life's most essential elements."
+>
+  <Fragment slot="hero">
+    <PhotoHero image={heroImage} alt="The farm at Wild on the Farm, Boquete" eyebrow="The Farm">
+      Eighteen years in the ground, before the first guest ever arrived.
+    </PhotoHero>
+  </Fragment>
+
+  <Section label="In Photographs" heading="A landscape that was here long before we were.">
+    <Gallery items={galleryItems} groupId="the-farm" />
+  </Section>
+
+  <Section>
+    <Split>
+      <div>
+        <div class="section-label">Since 2008</div>
+        <h2 class="lede">A working farm, long before it was a place to stay.</h2>
+      </div>
+      <div>
+        <p>
+          Wild on the Farm was never built to look like a farm. It has been one since 2008 — a
+          certified organic farm and macadamia plantation, cultivated in patient harmony with the
+          cloud forest that surrounds it.
+        </p>
+        <p>
+          In 2025, three handcrafted cabins opened their doors for the first time. Everything
+          else — the soil, the trees, the rhythm of the seasons — was already here, eighteen years
+          in the making.
+        </p>
+      </div>
+    </Split>
+  </Section>
+
+  <Section>
+    <Split>
+      <div>
+        <div class="section-label">A Life Built on Permaculture</div>
+        <h2 class="lede">Working with the mountain, not against it.</h2>
+        <p>
+          The farm runs entirely off the grid. Solar panels provide our electricity, and our
+          water is carried from a spring that rises straight out of the rock, a mile and a half
+          inside Amistad National Park.
+        </p>
+        <p>
+          Over the years, we've shaped the hillside into brick-lined terraces where vegetables,
+          aromatic herbs, and medicinal plants grow in rotation. A small flock of sheep grazes
+          beneath the macadamia and fruit trees by day — clearing undergrowth and fertilizing the
+          soil as they go — before returning each evening to the safety of their fold, away from
+          predators. Their manure, along with that of our hens, is composted and returned to the
+          land.
+        </p>
+        <p>
+          We make our own liquid plant feeds, too: nettle, comfrey, and tithonia, fermented into
+          natural fertilizers that keep the terraces fed without anything brought in from outside.
+          The same nettle finds its way into our kitchen — in soups, and in the teas served at the
+          table.
+        </p>
+      </div>
+      <div class="split-photo">
+        <Image
+          src={permacultureImage}
+          alt="Sheep and hens grazing together beneath the macadamia trees"
+          widths={[400, 700, 1000]}
+          sizes="(min-width: 860px) 50vw, 100vw"
+          loading="lazy"
+        />
+      </div>
+    </Split>
+  </Section>
+
+  <Section>
+    <Split>
+      <div>
+        <div class="section-label">More Than a Retreat</div>
+        <h2 class="lede">A living farm first, a sanctuary for many kinds of travelers.</h2>
+      </div>
+      <div>
+        <p>
+          The stillness here isn't reserved for one kind of guest. It's the same silence that
+          sharpens a birder's ear at dawn, that makes a hiking trail feel longer and better, and
+          that turns a simple meal from the garden into something worth slowing down for.
+        </p>
+      </div>
+    </Split>
+  </Section>
+
+  <QuoteSection cite="— Pascal, Founder">
+    "After years spent running a hotel in Quito, Pascal chose to return to something slower and
+    rooted — turning this working farm into a sanctuary for travelers drawn to the same quiet."
+  </QuoteSection>
+
+  <Fragment slot="footer">
+    <div class="section-label">Continue Exploring</div>
+    <h2>Where the farm leads next.</h2>
+    <p>See where you'll sleep, what's grown for your table, and the trails that start at our door.</p>
+    <div class="contact-list">
+      <a href="/lodge/">The Cabins →</a>
+      <a href="/food/">The Food →</a>
+      <a href="/birdwatching/">Birdwatching &amp; Trails →</a>
+    </div>
+  </Fragment>
+</PageLayout>

@@ -1,0 +1,119 @@
+---
+import { getImage, Image } from 'astro:assets';
+import PageLayout from '../layouts/PageLayout.astro';
+import PhotoHero from '../components/PhotoHero.astro';
+import Section from '../components/Section.astro';
+import Split from '../components/Split.astro';
+import QuoteSection from '../components/QuoteSection.astro';
+import { img } from '../lib/images';
+
+const heroImage = img('home/story.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const houseImage = img('retreats/owners_house.jpg');
+const terracesImage = img('farm/pergola.jpg');
+---
+
+<PageLayout
+  title="Our Story — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="How a hotelier from Quito traded the hospitality business for a mountainside in Boquete, and spent eighteen years building an organic farm before ever opening its doors to guests."
+  path="/story/"
+  image={ogImage.src}
+  pullIntro="This place wasn't designed as a retreat and grown into a farm around it. It happened the other way — the farm came first, and it took eighteen patient years before anyone else was invited in."
+>
+  <Fragment slot="hero">
+    <PhotoHero image={heroImage} alt="A living roof grown into the hillside at Wild on the Farm" eyebrow="Our Story">
+      One traveler's decision to stop moving.
+    </PhotoHero>
+  </Fragment>
+
+  <Section>
+    <Split>
+      <div>
+        <div class="section-label">Before The Farm</div>
+        <h2 class="lede">A hotelier who'd had enough of cities.</h2>
+      </div>
+      <div>
+        <p>
+          Pascal spent years running a hotel in Quito, learning hospitality from the inside —
+          what makes a stay forgettable, and what makes it the opposite. It was work he was good
+          at, in a city he'd come to know well. But the longer he stayed, the more he found
+          himself thinking about the mountains he'd only ever visited between guests.
+        </p>
+        <p>
+          Eventually the choice became simple: keep building someone else's idea of a good stay,
+          or go find a piece of ground quiet enough to build his own.
+        </p>
+      </div>
+    </Split>
+  </Section>
+
+  <Section label="Finding This Mountain" heading="A slope nobody wanted, at the edge of a national park.">
+    <Split>
+      <div class="split-photo">
+        <Image
+          src={houseImage}
+          alt="The original house on the property that would become Wild on the Farm"
+          widths={[400, 700, 1000]}
+          sizes="(min-width: 860px) 50vw, 100vw"
+          loading="lazy"
+        />
+      </div>
+      <div>
+        <p>
+          The land he found in 2008 sat on the edge of Amistad National Park, cool and quiet at
+          5,900 feet, with a spring running straight out of the rock. It wasn't set up for
+          guests, or for much of anything — just steep, forested ground and a house that needed
+          almost as much work as the land around it.
+        </p>
+        <p>
+          That was the point. Pascal wasn't looking for a hospitality project. He was looking for
+          somewhere to plant something real and let it take as long as it needed to.
+        </p>
+      </div>
+    </Split>
+  </Section>
+
+  <Section label="Built Slowly, On Purpose" heading="Eighteen years before the first guest ever arrived.">
+    <Split reverse>
+      <div class="split-photo">
+        <Image
+          src={terracesImage}
+          alt="A pergola on the terraced farm property at Wild on the Farm"
+          widths={[400, 700, 1000]}
+          sizes="(min-width: 860px) 50vw, 100vw"
+          loading="lazy"
+        />
+      </div>
+      <div>
+        <p>
+          What followed wasn't a renovation — it was a farm, built one terrace at a time. Solar
+          panels went up before there was anyone to power them for. The macadamia trees were
+          planted knowing they wouldn't bear fruit for fifteen years. Sheep and hens moved in to
+          work the ground long before there was a dining room to feed from it.
+        </p>
+        <p>
+          It wasn't until 2025 — eighteen years in — that three handcrafted cabins opened their
+          doors, built into the hillside the same patient way everything else here was: with time,
+          rather than around a deadline.
+        </p>
+      </div>
+    </Split>
+  </Section>
+
+  <QuoteSection cite="— Pascal, Founder">
+    "I didn't want to build a place that looked like it belonged on this mountain. I wanted to
+    build one that actually did — and that meant letting the farm come first, guests second."
+  </QuoteSection>
+
+  <Fragment slot="footer">
+    <div class="section-label">Continue Exploring</div>
+    <h2>See what that patience built.</h2>
+    <p>Eighteen years of farming, three cabins, and a kitchen that starts a few steps from the door.</p>
+    <div class="contact-list">
+      <a href="/farm/">The Farm →</a>
+      <a href="/lodge/">The Lodge →</a>
+      <a href="/food/">The Food →</a>
+    </div>
+  </Fragment>
+</PageLayout>

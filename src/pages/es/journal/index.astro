@@ -7,7 +7,6 @@ import CardGrid from '../../../components/CardGrid.astro';
 import TextCard from '../../../components/TextCard.astro';
 import { img } from '../../../lib/images';
 import { getJournal, groupBySection, slugFromId } from '../../../lib/journal';
-import { pageAlternates } from '../../../data/pageTranslations';
 
 const heroImage = img('farm/overview_1.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
@@ -42,7 +41,6 @@ const sectionCopy = {
   image={ogImage.src}
   pullIntro="Perfiles de las plantas que cultivamos — sus usos medicinales y culinarios, y cómo cultivarlas — junto con notas de temporada sobre senderos, especies nativas, y la vida de esta pequeña montaña."
   locale="es"
-  alternates={pageAlternates('journal')}
 >
   <Fragment slot="hero">
     <PageHero image={heroImage} alt="Vista general de la finca" eyebrow="El Diario">
@@ -82,7 +80,7 @@ const sectionCopy = {
     <h2>Nuevas notas, cada miércoles.</h2>
     <p>Desde plantas nativas hasta el estado de los senderos — un registro continuo de esta pequeña montaña.</p>
     <div class="contact-list">
-      <a href="/the-farm/">La Finca →</a>
+      <a href="/es/finca/">La Finca →</a>
       <a href="/birdwatching/">Avistamiento de Aves →</a>
     </div>
   </Fragment>

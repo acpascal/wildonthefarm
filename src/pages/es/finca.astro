@@ -1,12 +1,12 @@
 ---
 import { getImage, Image } from 'astro:assets';
-import PageLayout from '../layouts/PageLayout.astro';
-import PhotoHero from '../components/PhotoHero.astro';
-import Section from '../components/Section.astro';
-import Split from '../components/Split.astro';
-import Gallery from '../components/Gallery.astro';
-import QuoteSection from '../components/QuoteSection.astro';
-import { img } from '../lib/images';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PhotoHero from '../../components/PhotoHero.astro';
+import Section from '../../components/Section.astro';
+import Split from '../../components/Split.astro';
+import Gallery from '../../components/Gallery.astro';
+import QuoteSection from '../../components/QuoteSection.astro';
+import { img } from '../../lib/images';
 
 const heroImage = img('farm/hero.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
@@ -26,9 +26,10 @@ const galleryItems = [
 <PageLayout
   title="The Farm — Wild on the Farm | Boquete Cloud Forest Lodge"
   description="Eighteen years of organic, permaculture farming at 5,900 feet in Panama's cloud forest, on the edge of Amistad National Park."
-  path="/the-farm/"
+  path="/es/finca/"
   image={ogImage.src}
   pullIntro="Nestled at 5,900 feet in the cloud forest of Amistad National Park, our farm is a haven of peace, silence, and cool mountain air. Its stillness is almost monastic — secluded in wild nature, it invites regeneration, a reconnection with life's most essential elements."
+  locale="es"
 >
   <Fragment slot="hero">
     <PhotoHero image={heroImage} alt="The farm at Wild on the Farm, Boquete" eyebrow="The Farm">
@@ -124,8 +125,8 @@ const galleryItems = [
     <h2>Where the farm leads next.</h2>
     <p>See where you'll sleep, what's grown for your table, and the trails that start at our door.</p>
     <div class="contact-list">
-      <a href="/stay/">The Cabins →</a>
-      <a href="/kitchen/">The Kitchen →</a>
+      <a href="/es/lodge/">The Cabins →</a>
+      <a href="/es/comida/">The Food →</a>
       <a href="/birdwatching/">Birdwatching &amp; Trails →</a>
     </div>
   </Fragment>
