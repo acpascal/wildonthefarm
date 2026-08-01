@@ -1,5 +1,5 @@
 ---
-import { getImage } from 'astro:assets';
+import { getImage, Image } from 'astro:assets';
 import PageLayout from '../layouts/PageLayout.astro';
 import PhotoHero from '../components/PhotoHero.astro';
 import Section from '../components/Section.astro';
@@ -10,6 +10,8 @@ import { img } from '../lib/images';
 
 const heroImage = img('farm/hero.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const permacultureImage = img('retreats/farm_animals.jpg');
 
 const galleryItems = [
   { image: img('farm/property_overview.jpg'), alt: 'Aerial view of the farm property in the cloud forest', size: 'lg' as const },
@@ -84,9 +86,25 @@ const galleryItems = [
           table.
         </p>
       </div>
+      <div class="split-photo">
+        <Image
+          src={permacultureImage}
+          alt="Sheep and hens grazing together beneath the macadamia trees"
+          widths={[400, 700, 1000]}
+          sizes="(min-width: 860px) 50vw, 100vw"
+          loading="lazy"
+        />
+      </div>
+    </Split>
+  </Section>
+
+  <Section>
+    <Split>
       <div>
         <div class="section-label">More Than a Retreat</div>
         <h2 class="lede">A living farm first, a sanctuary for many kinds of travelers.</h2>
+      </div>
+      <div>
         <p>
           The stillness here isn't reserved for one kind of guest. It's the same silence that
           sharpens a birder's ear at dawn, that makes a hiking trail feel longer and better, and
