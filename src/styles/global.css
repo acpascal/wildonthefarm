@@ -897,7 +897,7 @@ section > .container :last-child {
 .amenity-list span {
   font-size: 0.82rem;
   color: var(--green-deep);
-  background: var(--cream);
+  background: var(--pill-bg, var(--cream));
   border: 1px solid var(--border);
   border-radius: 999px;
   padding: 0.5em 1.1em;
@@ -1035,10 +1035,12 @@ section > .container :last-child {
 
 .bg-cream {
   background: var(--cream);
+  --pill-bg: var(--paper);
 }
 
 .bg-paper {
   background: var(--paper);
+  --pill-bg: var(--cream);
 }
 
 /* Automatic section rhythm — background alternates by a section's position
@@ -1049,9 +1051,13 @@ section > .container :last-child {
    matter what's mixed in between, without every page having to hand-pick
    bg="cream" and risk getting the parity wrong.
    .bg-cream / .bg-paper still force an override when a page needs to break
-   rhythm on purpose; .story-dark keeps its own fixed background always. */
+   rhythm on purpose; .story-dark keeps its own fixed background always.
+   --pill-bg rides along with each background so .amenity-list pills (see
+   above) always contrast against whichever background they land on,
+   instead of a fixed color that can match the section and disappear. */
 section:not(.story-dark):not(.bg-cream):not(.bg-paper):nth-of-type(even) {
   background: var(--cream);
+  --pill-bg: var(--paper);
 }
 
 /* ==========================================================================
@@ -1767,6 +1773,7 @@ a.text-card:hover .card-cta {
 .story-dark {
   background: var(--green-deep);
   color: var(--paper);
+  --pill-bg: var(--paper);
 }
 
 .story-dark .section-label {
