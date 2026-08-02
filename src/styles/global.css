@@ -928,6 +928,7 @@ section > .container :last-child {
 .split-photo {
   display: block;
   aspect-ratio: 4 / 3;
+  border: 3px solid var(--ink);
   border-radius: 4px;
   overflow: hidden;
 }
@@ -1610,6 +1611,9 @@ a.text-card:hover .card-cta {
     align-items: flex-start;
     text-align: left;
     padding-top: var(--space-7);
+    /* Nudges the text block left of center so it clears the cabin visible
+       in the homepage hero photo instead of sitting on top of it. */
+    transform: translateX(-3.25rem);
   }
 
   .hero-content h1 {

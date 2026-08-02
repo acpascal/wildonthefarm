@@ -12,6 +12,7 @@ const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
 
 const houseImage = img('retreats/owners_house.jpg');
 const terracesImage = img('farm/pergola.jpg');
+const harmonyImage = img('story/roof_construction.jpg');
 ---
 
 <PageLayout
@@ -19,31 +20,50 @@ const terracesImage = img('farm/pergola.jpg');
   description="How a hotelier from Quito traded the hospitality business for a mountainside in Boquete, and spent eighteen years building an organic farm before ever opening its doors to guests."
   path="/story/"
   image={ogImage.src}
-  pullIntro="This place wasn't designed as a retreat and grown into a farm around it. It happened the other way — the farm came first, and it took eighteen patient years before anyone else was invited in."
+  pullIntro="Wild on the Farm was born from a deep journey through Panama's wildest places. After years of exploration, the founder discovered this untouched land — and saw in it the perfect setting for a self-sustaining haven, where peace, nature and the art of living harmonise."
 >
   <Fragment slot="hero">
-    <PhotoHero image={heroImage} alt="A living roof grown into the hillside at Wild on the Farm" eyebrow="Our Story">
-      One traveler's decision to stop moving.
+    <PhotoHero image={heroImage} alt="A living roof grown into the hillside at Wild on the Farm" eyebrow="Our History">
+      Born from a journey through the wild.
     </PhotoHero>
   </Fragment>
 
-  <Section>
+  <Section label="A Journey to Harmony" heading="In the arms of this great nature">
     <Split>
-      <div>
-        <div class="section-label">Before The Farm</div>
-        <h2 class="lede">A hotelier who'd had enough of cities.</h2>
+      <div class="split-photo">
+        <Image
+          src={harmonyImage}
+          alt="Building the living roof at Wild on the Farm, high above the terraced hillside"
+          widths={[400, 700, 1000]}
+          sizes="(min-width: 860px) 50vw, 100vw"
+          loading="lazy"
+        />
       </div>
       <div>
+        <p>Born from exploration, built with love and vision.</p>
         <p>
-          Pascal spent years running a hotel in Quito, learning hospitality from the inside —
-          what makes a stay forgettable, and what makes it the opposite. It was work he was good
-          at, in a city he'd come to know well. But the longer he stayed, the more he found
-          himself thinking about the mountains he'd only ever visited between guests.
+          Sixteen years ago, I travelled the jungles, mountains and national parks of Panama for
+          three years — camping in my hammock and voluntarily losing myself in these spaces
+          which, from a life lived around the world, represent my cozy nest: the place where I
+          feel finally in complete harmony.
         </p>
         <p>
-          Eventually the choice became simple: keep building someone else's idea of a good stay,
-          or go find a piece of ground quiet enough to build his own.
+          So when, by the greatest of chances, coming out of the cloud forest, I discovered this
+          place abandoned for eight years, I immediately saw what I had always been looking for —
+          to settle, and realise the most beautiful work a person can create: an autonomous place
+          in perfect synergy with wild nature.
         </p>
+        <p>
+          What first fascinated me was the microclimate. Like wrapping myself in the arms of this
+          great nature, the place was completely monastic, and corresponded to a much-sought-after
+          peace — while opening onto a grandiose view of the Barú volcano and the extraordinary
+          dance of the clouds. The soil was virgin, ready to welcome a work of life.
+        </p>
+        <p>
+          I had before me the time and the means — and I could let my mind experiment again with
+          the art of living.
+        </p>
+        <p>— The Founder, Wild on the Farm</p>
       </div>
     </Split>
   </Section>
