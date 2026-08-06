@@ -1,0 +1,34 @@
+---
+title: "Herpetology in Panama"
+description: "A few striking snake photographs, taken during solo escapades deep in the jungles of Panama — Chagres National Park, the Darién, the Cordillera Central."
+pullIntro: "A few striking snake photographs, taken during my escapades deep in the jungles of Panama — Chagres National Park, the Darién, the Cordillera Central…"
+date: 2026-06-15
+kind: note
+section: travel-panama
+cover: ../../../assets/journal/serpents/vine_snake_anole.jpg
+coverAlt: A brown vine snake swallowing an anole lizard in the Panamanian jungle
+---
+
+import PhotoGrid from '../../../components/PhotoGrid.astro';
+import { img } from '../../../lib/images';
+
+export const serpentPhotos = [
+  { image: img('journal/serpents/vine_snake_anole.jpg'), alt: 'A vine snake with prey caught in its jaws' },
+  { image: img('journal/serpents/tree_snake_branch.jpg'), alt: 'A patterned snake resting along a branch' },
+  { image: img('journal/serpents/parrot_snake_frog_01.jpg'), alt: 'A green snake gripping a frog in dense undergrowth' },
+  { image: img('journal/serpents/parrot_snake_frog_02.jpg'), alt: 'A green snake with a frog held fast among river stones' },
+  { image: img('journal/serpents/parrot_snake_frog_03.jpg'), alt: 'Close-up of a green snake mid-strike on a frog' },
+  { image: img('journal/serpents/parrot_snake_portrait.jpg'), alt: 'A green snake threading through dry bamboo and forest litter' },
+  { image: img('journal/serpents/eyelash_viper_coiled.jpg'), alt: 'A viper coiled on wet, moss-covered bark' },
+  { image: img('journal/serpents/eyelash_viper_head.jpg'), alt: 'Close-up of a viper\'s head' },
+  { image: img('journal/serpents/coral_snake_riverbank.jpg'), alt: 'A snake banded in red, black, and white, among riverbed stones' },
+  { image: img('journal/serpents/vine_snake_lizard.jpg'), alt: 'A snake with a lizard caught in its jaws, tangled in low branches' },
+  { image: img('journal/serpents/vine_snake_hummingbird_01.jpg'), alt: 'A snake that has caught a hummingbird, its wings still spread' },
+  { image: img('journal/serpents/vine_snake_hummingbird_02.jpg'), alt: 'A green snake swallowing a hummingbird headfirst among green leaves' },
+  { image: img('journal/serpents/vine_snake_hummingbird_03.jpg'), alt: 'A green snake with a hummingbird held in its jaws' },
+  { image: img('journal/serpents/tree_snake_deadwood_01.jpg'), alt: 'A pale, dark-blotched snake coiled beside a fallen log' },
+  { image: img('journal/serpents/tree_snake_deadwood_02.jpg'), alt: 'A pale, dark-blotched snake stretched along sun-dappled leaf litter' },
+  { image: img('journal/serpents/tree_snake_deadwood_03.jpg'), alt: 'A pale, dark-blotched snake gliding over a weathered log' },
+];
+
+<PhotoGrid items={serpentPhotos} groupId="serpents" />

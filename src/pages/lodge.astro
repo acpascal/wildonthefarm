@@ -4,10 +4,21 @@ import PageLayout from '../layouts/PageLayout.astro';
 import PhotoHero from '../components/PhotoHero.astro';
 import Section from '../components/Section.astro';
 import Split from '../components/Split.astro';
+import PhotoGrid from '../components/PhotoGrid.astro';
 import { img } from '../lib/images';
 
 const heroImage = img('stay/hero_cabin_exterior.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const ownerHouseBanner = img('farm/overview_1.jpg');
+const ownerHousePhotos = [
+  { image: img('owner-house/living_room.jpg'), alt: 'Living room and kitchen inside the Owner House' },
+  { image: img('owner-house/kitchen_stairs.jpg'), alt: 'Handcrafted staircase inside the Owner House' },
+  { image: img('owner-house/office_loft.jpg'), alt: 'Loft office under the roof beams of the Owner House' },
+  { image: img('owner-house/bedroom_loft.jpg'), alt: 'Loft bedroom inside the Owner House' },
+  { image: img('owner-house/attic_corridor.jpg'), alt: 'Upstairs corridor beneath the living roof of the Owner House' },
+  { image: img('owner-house/bathroom.jpg'), alt: 'Stone-tiled bathroom inside the Owner House' },
+];
 
 const cabins = [
   {
@@ -92,6 +103,25 @@ const amenities = [
         </Split>
       ))
     }
+  </Section>
+
+  <Section label="A Rare Addition" heading="The Owner House">
+    <div class="wide-photo">
+      <Image
+        src={ownerHouseBanner}
+        alt="Overview of Wild on the Farm, home to the Owner House"
+        widths={[480, 900, 1600, 2000]}
+        sizes="100vw"
+        loading="lazy"
+      />
+    </div>
+    <p>
+      Built with seven tropical hardwoods and raised without a single nail, using the old
+      techniques of the French Compagnons du Devoir, this small but supremely comfortable
+      house — tucked away in this remote corner — is a little masterpiece. As one American
+      visitor put it: a billionaire's cabin!!
+    </p>
+    <PhotoGrid items={ownerHousePhotos} groupId="owner-house" />
   </Section>
 
   <Fragment slot="footer">

@@ -1094,6 +1094,26 @@ section:not(.story-dark):not(.bg-cream):not(.bg-paper):nth-of-type(even) {
 }
 
 /* ==========================================================================
+   Wide photo — a full-width, uncropped banner image (natural aspect
+   ratio, no object-fit crop), for a photo that needs to read as a
+   single unbroken frame rather than a cropped tile.
+   ========================================================================== */
+
+.wide-photo {
+  display: block;
+  border: 3px solid var(--ink);
+  border-radius: 4px;
+  overflow: hidden;
+  margin: var(--space-3) 0;
+}
+
+.wide-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ==========================================================================
    Photo tile / Gallery — explicit per-tile size (lg/wide/tall/normal),
    never inferred from list position (see PhotoTile.astro).
    ========================================================================== */
