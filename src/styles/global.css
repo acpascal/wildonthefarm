@@ -1631,9 +1631,6 @@ a.text-card:hover .card-cta {
     align-items: flex-start;
     text-align: left;
     padding-top: var(--space-7);
-    /* Nudges the text block left of center so it clears the cabin visible
-       in the homepage hero photo instead of sitting on top of it. */
-    transform: translateX(-3.25rem);
   }
 
   .hero-content h1 {
@@ -1652,6 +1649,18 @@ a.text-card:hover .card-cta {
     align-items: flex-start;
     margin-top: 0;
     padding-top: var(--space-4);
+  }
+}
+
+@media (min-width: 1300px) {
+  .hero-content {
+    /* Nudges the text block left of center so it clears the cabin visible
+       in the homepage hero photo instead of sitting on top of it. Gated to
+       a wide breakpoint: below this, hero-content is still at its
+       max-width with no slack outside it, so the shift would push the
+       text past the left edge of the viewport (only ~2rem of container
+       padding to absorb it). */
+    transform: translateX(-3.25rem);
   }
 }
 
