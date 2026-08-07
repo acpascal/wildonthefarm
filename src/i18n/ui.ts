@@ -39,7 +39,7 @@ export const ui = {
     'reserve.contactForm': 'Send us a message',
     'reserve.emailSubject': 'Stay Enquiry — Wild on the Farm',
     'reserve.emailBody':
-      'Hi,\n\nI would like to stay at Wild on the Farm.\n\nDates: from ___ to ___\nNumber of guests:\nChildren over 12:\nActivities of interest:\nSpecial diet:\nAllergies:\n\nThank you,',
+      'Hi,\n\nI would like to stay at Wild on the Farm.\n\nDates: from ___ to ___\nNumber of guests:\nNationality:\nChildren over 12:\nActivities of interest:\nSpecial diet:\nAllergies:\n\nThank you,',
     'journal.continueReading': 'Continue Reading',
     'journal.moreFromJournal': 'More from the Journal.',
     'journal.allPosts': 'All Journal Posts →',
@@ -75,7 +75,7 @@ export const ui = {
     'reserve.contactForm': 'Envíanos un mensaje',
     'reserve.emailSubject': 'Consulta de Estadía — Wild on the Farm',
     'reserve.emailBody':
-      'Hola,\n\nMe gustaría hospedarme en Wild on the Farm.\n\nFechas: desde ___ hasta ___\nNúmero de huéspedes:\nNiños mayores de 12 años:\nActividades de interés:\nDieta especial:\nAlergias:\n\nGracias,',
+      'Hola,\n\nMe gustaría hospedarme en Wild on the Farm.\n\nFechas: desde ___ hasta ___\nNúmero de huéspedes:\nNacionalidad:\nNiños mayores de 12 años:\nActividades de interés:\nDieta especial:\nAlergias:\n\nGracias,',
     'journal.continueReading': 'Seguir Leyendo',
     'journal.moreFromJournal': 'Más del Diario.',
     'journal.allPosts': 'Todas las Publicaciones del Diario →',
