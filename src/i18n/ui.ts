@@ -37,6 +37,9 @@ export const ui = {
     'reserve.pitch':
       "Tell us when you'd like to arrive and what you're dreaming of — birdwatching, a digital detox, or simply the silence. We'll help you plan an unforgettable stay.",
     'reserve.contactForm': 'Send us a message',
+    'reserve.emailSubject': 'Stay Enquiry — Wild on the Farm',
+    'reserve.emailBody':
+      'Hi,\n\nI would like to stay at Wild on the Farm.\n\nDates: from ___ to ___\nNumber of guests:\nChildren over 12:\nActivities of interest:\nSpecial diet:\nAllergies:\n\nThank you,',
     'journal.continueReading': 'Continue Reading',
     'journal.moreFromJournal': 'More from the Journal.',
     'journal.allPosts': 'All Journal Posts →',
@@ -70,6 +73,9 @@ export const ui = {
     'reserve.pitch':
       'Cuéntanos cuándo te gustaría llegar y qué estás buscando — observación de aves, un detox digital o simplemente el silencio. Te ayudaremos a planear una estancia inolvidable.',
     'reserve.contactForm': 'Envíanos un mensaje',
+    'reserve.emailSubject': 'Consulta de Estadía — Wild on the Farm',
+    'reserve.emailBody':
+      'Hola,\n\nMe gustaría hospedarme en Wild on the Farm.\n\nFechas: desde ___ hasta ___\nNúmero de huéspedes:\nNiños mayores de 12 años:\nActividades de interés:\nDieta especial:\nAlergias:\n\nGracias,',
     'journal.continueReading': 'Seguir Leyendo',
     'journal.moreFromJournal': 'Más del Diario.',
     'journal.allPosts': 'Todas las Publicaciones del Diario →',

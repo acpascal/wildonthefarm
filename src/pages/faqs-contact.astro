@@ -8,6 +8,7 @@ import TextCard from '../components/TextCard.astro';
 import NoteBox from '../components/NoteBox.astro';
 import { business } from '../data/business';
 import { img } from '../lib/images';
+import { mailtoHref } from '../i18n/utils';
 
 const heroImage = img('farm/property_overview.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
@@ -29,7 +30,7 @@ const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
   <Section label="Get In Touch" heading="We answer WhatsApp faster than email.">
     <div class="contact-list contact-list-lg">
       <a href={business.whatsappHref}>{business.phone} (WhatsApp)</a>
-      <a href={`mailto:${business.email}`}>{business.email}</a>
+      <a href={mailtoHref(business.email, 'en')}>{business.email}</a>
     </div>
   </Section>
 

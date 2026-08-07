@@ -1,5 +1,5 @@
 ---
-import { useTranslations } from '../i18n/utils';
+import { useTranslations, mailtoHref } from '../i18n/utils';
 import { defaultLocale, type Locale } from '../i18n/ui';
 import { pageHref } from '../data/pageTranslations';
 import { business } from '../data/business';
@@ -21,6 +21,6 @@ const faqsHref = pageHref('faqs-contact', locale);
 {description && <p>{description}</p>}
 <div class="contact-list">
   <a href={business.whatsappHref}>{business.phone} (WhatsApp)</a>
-  <a href={`mailto:${business.email}`}>{business.email}</a>
+  <a href={mailtoHref(business.email, locale)}>{business.email}</a>
   <a href={faqsHref}>{t('reserve.contactForm')}</a>
 </div>
