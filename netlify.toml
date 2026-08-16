@@ -88,50 +88,56 @@
   status = 301
   force = true
 
-# --- ES: top-level pages. /es/estancia/ has a real translated v3 page
-# (see src/pages/es/estancia.astro) so it's excluded here — it's a live
-# page now, not a redirect. Everything else below has no translation yet
-# (future work beyond this plan), so it lands on the matching EN v3 page
-# rather than 404 — update each one as its real /es/ page ships. ---
-[[redirects]]
-  from = "/es/"
-  to = "https://wildonthefarm.com/"
-  status = 301
-  force = true
-
+# --- ES: top-level pages. /es/la-finca/ -> /es/finca/, /es/cocina/ ->
+# /es/comida/, /es/estancia/ -> /es/lodge/, and /es/avistamiento-de-aves/
+# all have real translated v3 pages (see src/pages/es/{index,finca,comida,
+# lodge,avistamiento-de-aves}.astro) so those land on the matching /es/ v3
+# page, not the EN one. The three below that don't have a real page yet
+# anticipate its /es/ slug rather than falling back to EN — see the
+# comment further down. ---
 [[redirects]]
   from = "/es/la-finca/"
-  to = "https://wildonthefarm.com/the-farm/"
+  to = "https://wildonthefarm.com/es/finca/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/es/cocina/"
-  to = "https://wildonthefarm.com/kitchen/"
+  to = "https://wildonthefarm.com/es/comida/"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/es/avistamiento-de-aves/"
-  to = "https://wildonthefarm.com/birdwatching/"
+  from = "/es/estancia/"
+  to = "https://wildonthefarm.com/es/lodge/"
   status = 301
   force = true
 
+# These three /es/ pages don't exist yet — a separate session is translating
+# the rest of the site. Rather than bounce Spanish visitors to the English
+# page in the meantime, these anticipate the /es/ slug that translation is
+# expected to land on, following the naming convention already established
+# by the real /es/ pages (finca, comida, jardin, historia, avistamiento-de-
+# aves — short, single Spanish words) and the nav labels in src/i18n/ui.ts
+# ("Fauna y Biodiversidad", "Senderismo", "Tarifas y Retiros"). Each
+# redirect 404s until its target page ships — verify the guessed slug
+# against whatever the translation session actually publishes, and fix
+# here if it differs.
 [[redirects]]
   from = "/es/retiro-detox/"
-  to = "https://wildonthefarm.com/rates-retreats/"
+  to = "https://wildonthefarm.com/es/tarifas-y-retiros/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/es/experiencias/"
-  to = "https://wildonthefarm.com/hiking/"
+  to = "https://wildonthefarm.com/es/senderismo/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/es/preguntas-frecuentes/"
-  to = "https://wildonthefarm.com/faqs-contact/"
+  to = "https://wildonthefarm.com/es/preguntas-contacto/"
   status = 301
   force = true
 

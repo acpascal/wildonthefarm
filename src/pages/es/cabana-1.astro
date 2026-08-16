@@ -1,0 +1,70 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Section from '../../components/Section.astro';
+import PhotoGrid from '../../components/PhotoGrid.astro';
+import NoteBox from '../../components/NoteBox.astro';
+import { img } from '../../lib/images';
+
+const heroImage = img('cabin1/hero.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const photos = [
+  { image: heroImage, alt: 'Exterior de la Cabaña Uno en el bosque nuboso' },
+  { image: img('cabin1/gallery_1.jpg'), alt: 'Interior de la Cabaña Uno' },
+  { image: img('cabin1/gallery_2.jpg'), alt: 'Vista desde el balcón de la Cabaña Uno' },
+  { image: img('cabin1/gallery_3.jpg'), alt: 'Baño de la Cabaña Uno con azulejo de hojas pintado a mano' },
+];
+
+const amenities = [
+  'Baño privado en suite',
+  'Ducha con azulejo de hojas',
+  'Ropa de cama de alta calidad',
+  'Balcón privado',
+  'Techo vivo',
+  'Sin wifi ni TV, por diseño',
+];
+
+const reserveHref =
+  "https://api.whatsapp.com/send?phone=50765699134&text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20la%20Caba%C3%B1a%201%20en%20Wild%20on%20the%20Farm";
+---
+
+<PageLayout
+  title="Cabaña Uno — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Cabaña Uno en Wild on the Farm: una terraza privada enclavada en el bosque nuboso neblinoso, con una ducha de azulejo de hojas e interiores cálidos de madera."
+  path="/es/cabana-1/"
+  image={ogImage.src}
+  pullIntro="Ubicada más cerca de la línea de árboles, la Cabaña Uno captura el bosque nuboso en su forma más íntima — un balcón privado envuelto en bambú y niebla, y un baño terminado enteramente en azulejo de hojas pintado a mano."
+  locale="es"
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="Exterior de la Cabaña Uno en el bosque nuboso" eyebrow="Estancia — Cabaña Uno">
+      Lo más profundo de la niebla.
+    </PageHero>
+  </Fragment>
+
+  <Section label="Cada Rincón" heading="Toda la Cabaña Uno.">
+    <PhotoGrid items={photos} groupId="cabin-1" />
+    <NoteBox variant="todo">
+      <p>This cabin is missing a bedroom photo and a clearly-identified exterior shot.</p>
+    </NoteBox>
+  </Section>
+
+  <Section>
+    <div class="amenity-list">
+      {amenities.map((item) => <span>{item}</span>)}
+    </div>
+    <a href={reserveHref} class="btn btn-normal btn-spaced">Reservar Cabaña Uno</a>
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">Comparar</div>
+    <h2>Ver las otras cabañas.</h2>
+    <div class="contact-list">
+      <a href="/es/lodge/">Todas Las Cabañas →</a>
+      <a href="/es/cabana-2/">Cabaña Dos →</a>
+      <a href="/es/cabana-3/">Cabaña Tres →</a>
+    </div>
+  </Fragment>
+</PageLayout>

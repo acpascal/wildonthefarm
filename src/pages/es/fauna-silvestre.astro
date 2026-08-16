@@ -1,0 +1,366 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Section from '../../components/Section.astro';
+import PhotoGrid from '../../components/PhotoGrid.astro';
+import CardGrid from '../../components/CardGrid.astro';
+import ImageTextCard from '../../components/ImageTextCard.astro';
+import TextCard from '../../components/TextCard.astro';
+import QuoteSection from '../../components/QuoteSection.astro';
+import NoteBox from '../../components/NoteBox.astro';
+import { img } from '../../lib/images';
+
+const heroImage = img('hiking/gallery_05.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const trackPhotos = [
+  { image: img('wildlife/jaguar_track_terrace_1.jpg'), alt: 'Huella de pata de jaguar en la terraza' },
+  { image: img('wildlife/jaguar_track_terrace_2.jpg'), alt: 'Una segunda huella de pata de jaguar en la terraza' },
+  { image: img('wildlife/jaguar_track_cabin1_1.jpg'), alt: 'Huella de pata de jaguar en tierra blanda detrás de la Cabaña Uno' },
+  { image: img('wildlife/jaguar_track_cabin1_2.jpg'), alt: 'Una segunda huella de pata de jaguar detrás de la Cabaña Uno' },
+];
+
+const primates = [
+  {
+    image: img('wildlife/mantled_howler_monkey.jpg'),
+    alt: 'Una madre mono aullador con una cría aferrada, avistada en la finca',
+    name: 'Mono Aullador',
+    latin: 'Alouatta palliata',
+    description:
+      'Su rugido característico se escucha por kilómetros a través del dosel al amanecer y al atardecer, un anuncio territorial más que una amenaza. Las tropas se mueven lentamente por las copas de los árboles, alimentándose principalmente de hojas, y descansan gran parte del día para digerir. Esta madre con su cría aferrada fue avistada justo en la finca.',
+  },
+  {
+    image: img('wildlife/white_faced_capuchin.jpg'),
+    alt: 'Un mono cara blanca forrajeando en la propiedad',
+    name: 'Mono Cara Blanca',
+    latin: 'Cebus capucinus',
+    description:
+      'Fácilmente el primate más curioso de la finca — sociable, ruidoso, y forrajeando constantemente por el sotobosque medio en busca de fruta, insectos, y algún vertebrado pequeño ocasional. Las tropas son matriarcales y rara vez se alejan del mismo territorio central. Fotografiado justo en la propiedad.',
+  },
+];
+
+const wildCats = [
+  {
+    image: img('wildlife/jaguar.jpg'),
+    alt: 'Una hembra de jaguar fotografiada cerca de la finca',
+    name: 'Jaguar',
+    latin: 'Panthera onca',
+    description:
+      'El felino más grande de América y el depredador tope del parque — solitario, mayormente nocturno, y que necesita un vasto territorio para cazar pecaríes y venados. Avistamientos tan cerca de una cabaña, como Pascal puede atestiguar, son excepcionalmente raros incluso aquí.',
+  },
+  {
+    image: img('wildlife/puma.jpg'),
+    alt: 'Un puma en las tierras altas de Talamanca',
+    name: 'Puma',
+    latin: 'Puma concolor',
+    description:
+      'Un felino poderoso y adaptable que se encuentra desde el bosque bajo hasta estas tierras altas, cazando solo en un amplio territorio. Más a menudo confirmado por huellas o una cámara trampa que por avistamiento directo.',
+  },
+  {
+    image: img('wildlife/ocelot.jpg'),
+    alt: 'Un ocelote mostrando su pelaje moteado en rosetas',
+    name: 'Ocelote',
+    latin: 'Leopardus pardalis',
+    description:
+      'Un felino llamativo de tamaño mediano que caza principalmente de noche en el suelo del bosque, tan cómodo acechando pequeños mamíferos como aves o reptiles. Su patrón de rosetas le da un excelente camuflaje en la luz moteada.',
+  },
+  {
+    image: img('wildlife/margay.jpg'),
+    alt: 'Un margay, uno de los felinos pequeños silvestres más acrobáticos',
+    name: 'Margay',
+    latin: 'Leopardus wiedii',
+    description:
+      'El más acrobático de los felinos pequeños, con tobillos que rotan casi 180 grados, lo que le permite bajar de los árboles de cabeza como una ardilla. Casi enteramente arborícola y nocturno.',
+  },
+  {
+    image: img('wildlife/oncilla.jpg'),
+    alt: 'Una oncilla melánica (negra)',
+    name: 'Oncilla',
+    latin: 'Leopardus tigrinus',
+    description:
+      'Uno de los felinos silvestres más pequeños de América, apenas más grande que un gato doméstico, que caza pequeños roedores y aves por el sotobosque de las tierras altas. En poblaciones de bosque nuboso como esta, un morfo de color completamente negro (melánico) es inusualmente común — el individuo aquí fotografiado es uno de ellos.',
+  },
+  {
+    image: img('wildlife/jaguarundi.jpg'),
+    alt: 'Un yaguarundí, un felino pequeño de forma inusual',
+    name: 'Yaguarundí',
+    latin: 'Herpailurus yagouaroundi',
+    description:
+      'Un felino de forma inusual — cuerpo alargado, patas cortas, cabeza pequeña — a menudo confundido a primera vista con una comadreja grande. A diferencia de la mayoría de los felinos de aquí, suele estar activo durante el día.',
+  },
+];
+
+const herbivoresAndPeccaries = [
+  {
+    image: img('wildlife/tapir.jpg'),
+    alt: 'Una danta centroamericana, el mamífero terrestre más grande de Centroamérica',
+    name: 'Danta Centroamericana',
+    latin: 'Tapirus bairdii',
+    description:
+      'El mamífero terrestre más grande de Centroamérica, que usa su hocico corto y flexible para alcanzar hojas y frutas. Mayormente nocturna, depende de bosque denso y húmedo y de agua cercana para revolcarse y refrescarse. Ahora en peligro en toda su área de distribución.',
+  },
+  {
+    image: img('wildlife/coati.jpg'),
+    alt: 'Un pizote de nariz blanca forrajeando entre la hojarasca',
+    name: 'Pizote',
+    latin: 'Nasua narica',
+    description:
+      'Un pariente del mapache que viaja de día en bandas ruidosas y activas de hembras y crías, hurgando la hojarasca con un hocico largo y flexible. Los machos adultos son mayormente solitarios — uno de los mamíferos que se encuentran con más frecuencia en los bordes del bosque y las tierras de cultivo.',
+  },
+  {
+    image: img('wildlife/agouti.jpg'),
+    alt: 'Un ñeque centroamericano',
+    name: 'Ñeque',
+    latin: 'Dasyprocta punctata',
+    description:
+      'Un roedor grande y de patas largas, activo de día, que entierra semillas y nueces para más tarde — incluidas muchas que nunca recupera, convirtiéndolo en uno de los sembradores de árboles más importantes del bosque.',
+  },
+  {
+    image: img('wildlife/brocket_deer.jpg'),
+    alt: 'Un venado corzo rojo en el sotobosque',
+    name: 'Venado Corzo Rojo',
+    latin: 'Mazama temama',
+    description:
+      'Un venado forestal pequeño y solitario que se mueve en silencio por el sotobosque denso en vez de terreno abierto, quedándose inmóvil en lugar de huir cuando se sobresalta — lo que lo hace fácil de pasar por alto incluso de cerca.',
+  },
+  {
+    image: img('wildlife/white_lipped_peccary.jpg'),
+    alt: 'Una manada de pecaríes de labios blancos',
+    name: 'Pecarí de Labios Blancos',
+    latin: 'Tayassu pecari',
+    description:
+      'El pariente silvestre del cerdo más social de Panamá, que se mueve por el bosque en manadas apretadas que pueden contar por decenas, chasqueando los dientes y gruñendo constantemente para mantenerse en contacto.',
+  },
+  {
+    image: img('wildlife/collared_peccary.jpg'),
+    alt: 'Un pecarí de collar cerca de la finca',
+    name: 'Pecarí de Collar',
+    latin: 'Pecari tajacu',
+    description:
+      'Más pequeño y mucho más adaptable que su primo de labios blancos, se mueve en grupos familiares modestos y forrajea cómodamente cerca de los bordes de la finca — el pecarí que con más probabilidad se ve cerca de las cabañas.',
+  },
+];
+
+const slothsAndSmallMammals = [
+  {
+    image: img('wildlife/three_toed_sloth.jpg'),
+    alt: 'Un perezoso de tres dedos de garganta café',
+    name: 'Perezoso de Tres Dedos',
+    latin: 'Bradypus variegatus',
+    description:
+      'Un folívoro casi exclusivamente arborícola, que se mueve tan lentamente que le crecen algas en el pelaje. Desciende al suelo aproximadamente una vez por semana, únicamente para defecar — uno de los rituales más curiosos del reino animal.',
+  },
+  {
+    image: img('wildlife/two_toed_sloth.jpg'),
+    alt: 'Un perezoso de dos dedos de Hoffmann',
+    name: 'Perezoso de Dos Dedos de Hoffmann',
+    latin: 'Choloepus hoffmanni',
+    description:
+      'Más rápido y más nocturno que su primo de tres dedos, con una dieta más amplia que incluye fruta, flores, y hasta algún insecto o lagartija pequeña ocasional.',
+  },
+  {
+    image: img('wildlife/tamandua.jpg'),
+    alt: 'Un oso hormiguero trepando un árbol',
+    name: 'Oso Hormiguero (Tamandúa)',
+    latin: 'Tamandua mexicana',
+    description:
+      'Un oso hormiguero trepador, solitario y mayormente nocturno, que desgarra nidos de hormigas y termitas con poderosas garras curvas y atrae a sus presas con una lengua larga y pegajosa.',
+  },
+  {
+    image: img('wildlife/alstons_mouse_opossum.jpg'),
+    alt: 'Marmosa lanuda de Alston',
+    name: 'Marmosa Lanuda de Alston',
+    latin: 'Marmosa alstoni',
+    description:
+      'Un pequeño marsupial nocturno que anida en huecos de árboles y densos enredos de bejucos, forrajeando solo por el sotobosque medio. Rara vez visto de día — detectado más a menudo por cámara trampa que por encuentro casual.',
+  },
+];
+
+const reptilesAndAmphibians = [
+  {
+    image: img('wildlife/la_lora.jpg'),
+    alt: 'La Lora, la víbora de pestañas de costados rayados, fotografiada en la propiedad',
+    name: 'La Lora (Víbora de Costados Rayados)',
+    latin: 'Bothriechis lateralis',
+    description:
+      'La víbora de fosetas de las tierras altas locales, nombrada por su coloración verde loro. Usualmente arborícola, enroscada en el follaje bien por encima del suelo, aunque sí baja — venenosa, pero tímida, y rara vez encontrada de cerca.',
+  },
+  {
+    image: img('wildlife/bothriechis_nubestris.jpg'),
+    alt: 'La víbora de pestañas talamanqueña, fotografiada en la propiedad',
+    name: 'Víbora de Pestañas Talamanqueña',
+    latin: 'Bothriechis nubestris',
+    description:
+      'Una especialista del bosque nuboso descrita solo recientemente, encontrada en los tramos más altos y neblinosos de la cordillera de Talamanca. Pequeña, verde, y arborícola como sus parientes de tierras bajas — Pascal ha fotografiado una en la propiedad.',
+  },
+  {
+    image: img('wildlife/bothriechis_nigroadspersus_01.jpg'),
+    alt: 'La víbora de pestañas centroamericana, fotografiada en la propiedad',
+    name: 'Víbora de Pestañas Centroamericana',
+    latin: 'Bothriechis nigroadspersus',
+    description:
+      'Una pariente cercana de la conocida víbora de pestañas, reconocida como su propia especie solo en una revisión taxonómica de 2024. Moteada de verde y crema, enroscada e inmóvil contra el musgo y la corteza, está hecha para pasar completamente desapercibida — hasta que notas que no se ha movido. Fotografiada justo en la propiedad.',
+  },
+  {
+    image: img('wildlife/bothriechis_nigroadspersus_02.jpg'),
+    alt: 'Una segunda foto de la víbora de pestañas centroamericana en la propiedad',
+    name: 'Víbora de Pestañas Centroamericana',
+    latin: 'Bothriechis nigroadspersus',
+    description:
+      'Un segundo individuo, fotografiado en el mismo tramo de bosque — moteado de verde y crema, enroscado e inmóvil contra el musgo y la corteza.',
+  },
+  {
+    image: img('wildlife/anole.jpg'),
+    alt: 'Un anolis mostrando su papada',
+    name: 'Anolis',
+    latin: 'Anolis spp.',
+    description:
+      'Lagartijas pequeñas y rápidas, comunes en árboles, paredes, y barandas por toda la finca, donde los machos despliegan una colorida papada gular para defender territorio o atraer pareja.',
+  },
+  {
+    image: img('wildlife/glass_frog.jpg'),
+    alt: 'Una rana de cristal con piel translúcida',
+    name: 'Ranas de Cristal',
+    latin: 'Centrolenidae',
+    description:
+      'Ranas de piel translúcida y verde pálido propias de los arroyos del bosque — algunas especies famosamente transparentes al punto de ver sus órganos internos desde abajo. Sus llamados se escuchan de noche desde la vegetación sobre el agua.',
+  },
+  {
+    image: img('wildlife/highland_tree_frog.jpg'),
+    alt: 'Una rana arborícola de tierras altas posada en una hoja de helecho de noche',
+    name: 'Ranas Arborícolas de Tierras Altas',
+    latin: 'varias especies',
+    description:
+      'El coro nocturno del bosque nuboso — ranas pequeñas y vistosamente moteadas que llaman desde bromelias y hojarasca húmeda después de la lluvia, más activas en las horas frescas y neblinosas después del anochecer. Esta fue encontrada posada en una hoja de helecho de noche, justo en la propiedad.',
+  },
+];
+
+const treesAndOrchids = [
+  { name: 'Robles de Altura', latin: 'Quercus costaricensis y Q. copeyensis', description: 'Robles endémicos que dominan el dosel superior, algunos alcanzando 50 metros — la columna estructural de este bosque nuboso, cuyas ramas son el andamiaje principal para el musgo y las epífitas de arriba.' },
+  { name: 'Aguacatillos Silvestres', latin: 'Familia Lauraceae', description: 'La familia del laurel, rica en pequeñas especies de aguacate silvestre, forma gran parte del dosel medio — y es la razón por la que el Quetzal Resplandeciente elige este bosque, ya que el fruto del aguacatillo silvestre compone casi toda su dieta.' },
+  { name: 'Bambú Enano', latin: 'Chusquea spp.', description: 'Un bambú de sotobosque enredado y tolerante a la sombra que se encuentra en gran parte del terreno más silvestre de la propiedad, dando cobertura a aves y pequeños mamíferos que se mueven bajo por el bosque.' },
+  { name: 'Orquídeas', latin: 'Familia Orchidaceae', description: 'Las tierras altas de Talamanca-Chiriquí albergan aproximadamente 300 especies de orquídeas — una de las concentraciones más densas del mundo, la mayoría creciendo como epífitas en ramas musgosas en vez de en el suelo.' },
+  { name: 'Helechos Arborescentes', latin: 'Cyatheaceae', description: 'Helechos antiguos y de crecimiento lento que forman una capa distintiva de sub-dosel, con sus báculos desenrollándose en amplias frondas — una silueta característica del bosque nuboso talamanqueño.' },
+  { name: 'Musgos y Epífitas', latin: 'varias familias', description: 'La neblina constante mantiene ramas, troncos, e incluso postes de cerca cubiertos de musgo, líquenes, y bromelias — la misma carga de epífitas que le da a los árboles más viejos de la finca su aspecto peludo y de otro mundo.' },
+];
+---
+
+<PageLayout
+  title="Fauna Silvestre en la Finca — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Monos, felinos silvestres, dantas, perezosos, pecaríes, y víboras de bosque nuboso que comparten el Parque Nacional La Amistad con Wild on the Farm, Boquete Cloud Forest Lodge."
+  path="/es/fauna-silvestre/"
+  image={ogImage.src}
+  pullIntro="La finca se encuentra dentro de las tierras altas del Parque Internacional La Amistad — una de las áreas protegidas más grandes y silvestres de Centroamérica, y hogar de monos, felinos silvestres, y mamíferos rara vez vistos tan cerca de un lugar donde alojarse."
+  locale="es"
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="Vista del bosque nuboso hogar de la fauna silvestre de la finca" eyebrow="Fauna Silvestre En La Finca">
+      Más que aves comparten este bosque.
+    </PageHero>
+  </Fragment>
+
+  <QuoteSection label="Un Encuentro Poco Común" cite="— Pascal, Fundador (relato en borrador — detalles reales por venir)">
+    "Una hembra de jaguar y sus dos crías, descansando en nuestra propia terraza — uno de esos momentos que te recuerda exactamente de quién es realmente este bosque."
+  </QuoteSection>
+
+  <Section label="La Prueba" heading="Sus huellas, a la mañana siguiente.">
+    <p>Huellas de pata dejadas por la jaguar y sus crías, en la terraza y en tierra blanda detrás de la Cabaña Uno.</p>
+    <PhotoGrid items={trackPhotos} groupId="wildlife-tracks" />
+  </Section>
+
+  <Section label="Primates" heading="Escuchados antes de ser vistos.">
+    <CardGrid>
+      {primates.map((s) => (
+        <ImageTextCard image={s.image} alt={s.alt} title={s.name} eyebrow={s.latin} groupId="wildlife-primates">
+          {s.description}
+        </ImageTextCard>
+      ))}
+    </CardGrid>
+  </Section>
+
+  <Section label="Felinos Silvestres" heading="Los seis felinos de Centroamérica viven en este parque.">
+    <CardGrid>
+      {wildCats.map((s) => (
+        <ImageTextCard image={s.image} alt={s.alt} title={s.name} eyebrow={s.latin} groupId="wildlife-cats">
+          {s.description}
+        </ImageTextCard>
+      ))}
+    </CardGrid>
+  </Section>
+
+  <Section label="Herbívoros y Pecaríes" heading="Los pastores, ramoneadores, y cerdos silvestres del suelo del bosque.">
+    <CardGrid>
+      {herbivoresAndPeccaries.map((s) => (
+        <ImageTextCard image={s.image} alt={s.alt} title={s.name} eyebrow={s.latin} groupId="wildlife-herbivores">
+          {s.description}
+        </ImageTextCard>
+      ))}
+    </CardGrid>
+  </Section>
+
+  <Section label="Perezosos y Pequeños Mamíferos" heading="Movimientos lentos y residentes discretos.">
+    <CardGrid>
+      {slothsAndSmallMammals.map((s) => (
+        <ImageTextCard image={s.image} alt={s.alt} title={s.name} eyebrow={s.latin} groupId="wildlife-sloths">
+          {s.description}
+        </ImageTextCard>
+      ))}
+    </CardGrid>
+  </Section>
+
+  <Section label="Reptiles y Anfibios" heading="Pequeños, bien camuflados, y en su mayoría inofensivos.">
+    <p>
+      A esta altitud hace demasiado frío para la terciopelo, la serpiente venenosa más asociada con
+      Panamá — esa especie se mantiene en el pueblo de Boquete, unos 700 metros más abajo. Aquí
+      arriba, las víboras de fosetas son más pequeñas, más verdes, y viven en los árboles.
+    </p>
+    <CardGrid>
+      {reptilesAndAmphibians.map((s) => (
+        <ImageTextCard image={s.image} alt={s.alt} title={s.name} eyebrow={s.latin} groupId="wildlife-reptiles">
+          {s.description}
+        </ImageTextCard>
+      ))}
+    </CardGrid>
+  </Section>
+
+  <Section label="Árboles y Orquídeas del Dosel" heading="Uno de los bosques de epífitas más ricos de la Tierra.">
+    <CardGrid>
+      {treesAndOrchids.map((t) => (
+        <TextCard title={t.name} eyebrow={t.latin}>
+          <p>{t.description}</p>
+        </TextCard>
+      ))}
+    </CardGrid>
+    <NoteBox variant="todo">
+      <p>
+        This list covers what's documented for the Talamanca–Chiriquí highlands generally — not yet
+        a confirmed inventory specific to the farm's own trees and orchids. Particular species
+        growing on the property (especially in the gardens or terraces) can be folded in alongside
+        these.
+      </p>
+    </NoteBox>
+  </Section>
+
+  <Section>
+    <NoteBox>
+      <p>
+        Créditos de fotos: los felinos silvestres, la danta, el pizote, el ñeque, el venado, los
+        pecaríes, los perezosos, el tamandúa, la marmosa, el anolis, y la rana de cristal son fotos
+        Creative Commons vía Wikimedia Commons; la víbora de pestañas talamanqueña, el mono cara
+        blanca, el mono aullador, La Lora, y la rana arborícola de tierras altas son fotos propias
+        de la finca, al igual que las cuatro fotos de huellas de jaguar de arriba.
+      </p>
+    </NoteBox>
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">Planifica Tu Visita</div>
+    <h2>Mañanas tranquilas, senderos tranquilos.</h2>
+    <p>La mayoría de los mamíferos aquí son tímidos y están activos principalmente al amanecer, al atardecer, o de noche — una caminata guiada mejora las probabilidades de un encuentro.</p>
+    <div class="contact-list">
+      <a href="/es/senderismo/">Senderismo →</a>
+      <a href="/es/avistamiento-de-aves/">Avistamiento de Aves →</a>
+    </div>
+  </Fragment>
+</PageLayout>

@@ -1,0 +1,230 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Section from '../../components/Section.astro';
+import Split from '../../components/Split.astro';
+import CardGrid from '../../components/CardGrid.astro';
+import TextCard from '../../components/TextCard.astro';
+import { img } from '../../lib/images';
+
+const heroImage = img('retreats/farm_animals.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const detoxImage = await getImage({ src: img('garden/garden_harvest.jpg'), width: 800, format: 'webp' });
+const sisterhoodImage = await getImage({ src: img('retreats/qigong.jpg'), width: 800, format: 'webp' });
+const friendsImage = await getImage({ src: img('kitchen/table_guests_2.jpg'), width: 800, format: 'webp' });
+const businessImage = await getImage({ src: img('retreats/landscape.jpg'), width: 800, format: 'webp' });
+const wholeFarmImage = await getImage({ src: img('retreats/owners_house.jpg'), width: 800, format: 'webp' });
+---
+
+<PageLayout
+  title="Tarifas y Retiros — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Tarifas nocturnas de cabañas y paquetes de retiro para toda la propiedad en Wild on the Farm, Boquete Cloud Forest Lodge — retiros de detox y hermandad, escapadas de amigos, retiros de negocios, y alquiler de toda la finca."
+  path="/es/tarifas-y-retiros/"
+  image={ogImage.src}
+  pullIntro="Una sola cabaña para una pareja, o toda la propiedad para un retiro grupal — esto es lo que cuesta cada opción y qué incluye."
+  locale="es"
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="Ovejas y gallinas en la finca" eyebrow="Planifica Tu Estancia">
+      Tarifas de cabañas, y el alquiler de toda la finca.
+    </PageHero>
+  </Fragment>
+
+  <Section label="Tarifas de Cabañas" heading="Una sola tarifa en las tres cabañas, desayuno incluido.">
+    <CardGrid cols={4}>
+      <TextCard title="1 ene – 31 ene" eyebrow="Temporada alta">
+        <p class="price">$250 / noche</p>
+        <p>Desayuno incluido.</p>
+      </TextCard>
+      <TextCard title="1 feb – 31 mar" eyebrow="Temporada pico">
+        <p class="price">$350 / noche</p>
+        <p>Desayuno incluido.</p>
+      </TextCard>
+      <TextCard title="1 abr – 20 dic" eyebrow="Temporada verde">
+        <p class="price">$250 / noche</p>
+        <p>Desayuno incluido.</p>
+      </TextCard>
+      <TextCard title="20 dic – 31 dic" eyebrow="Temporada festiva">
+        <p class="price">$350 / noche</p>
+        <p>Desayuno incluido.</p>
+      </TextCard>
+    </CardGrid>
+    <p class="fine-print">
+      La tarifa es por cabaña. Estancia mínima: 3 noches. La cena se puede reservar por separado
+      cada noche — ver Qué Incluye más abajo.
+    </p>
+  </Section>
+
+  <Section label="Tarifas de Último Momento" heading="Una cabaña vacía es una cabaña con descuento.">
+    <p>
+      Si una cabaña sigue disponible cerca de tu fecha de llegada, se ofrece a una tarifa
+      reducida — no reembolsable, ya que está tarifada para esa fecha específica.
+    </p>
+    <CardGrid cols={2}>
+      <TextCard title="15 días antes de la llegada" eyebrow="Si la cabaña sigue libre">
+        <p class="price">20% de descuento</p>
+        <p>No reembolsable.</p>
+      </TextCard>
+      <TextCard title="7 días antes de la llegada" eyebrow="Si la cabaña sigue libre">
+        <p class="price">30% de descuento</p>
+        <p>No reembolsable.</p>
+      </TextCard>
+    </CardGrid>
+  </Section>
+
+  <Section label="Qué Incluye" heading="Precios simples, todo incluido.">
+    <div class="amenity-list">
+      <span>Desayuno incluido, de la finca a la mesa</span>
+      <span>Cena disponible cada noche (reservar con anticipación)</span>
+      <span>Baño privado en suite</span>
+      <span>Ropa de cama de alta calidad</span>
+      <span>Terraza privada</span>
+      <span>Energía solar y agua de manantial</span>
+      <span>Wifi en áreas comunes</span>
+      <span>Acceso autoguiado a los senderos de la finca</span>
+      <span>Recogida al pie del camino</span>
+    </div>
+  </Section>
+
+  <Section label="Alquila Toda La Finca" heading="Toma toda la propiedad para un retiro grupal.">
+    <p>
+      Más allá de una sola cabaña, toda la propiedad está disponible para estancias grupales
+      especiales — una semana completa mínimo (6 noches), con o sin cenas preparadas, con o sin la
+      casa del propietario. Cinco formas de reunirse aquí, construidas en torno a lo que une a tu
+      grupo.
+    </p>
+  </Section>
+
+  <Section label="Retiro de Detox" heading="Mañanas tranquilas, comida limpia, y un reinicio completo.">
+    <Split>
+      <div>
+        <p>
+          Una semana completa enfocada en el descanso y el reinicio — tés de hierbas y una dieta
+          especial construida en torno a la propia producción de la finca, jugo fresco, una clase
+          de cocina, dos caminatas guiadas, y una hora de Qi Gong cada mañana. Mínimo 3 personas,
+          una persona por cabaña.
+        </p>
+        <div class="amenity-list">
+          <span>Desayuno y cena incluidos</span>
+          <span>Té de hierbas y dieta especial</span>
+          <span>Jugo fresco</span>
+          <span>Clase de cocina</span>
+          <span>2 caminatas guiadas</span>
+          <span>1 hora de Qi Gong cada mañana</span>
+        </div>
+      </div>
+      <div>
+        <div class="story-img" style={`background-image:url(${detoxImage.src})`} role="img" aria-label="Cosecha fresca del huerto" />
+      </div>
+    </Split>
+    <p class="price">$2.000 / semana / persona <span class="price-note">— mínimo 3 personas</span></p>
+    <p class="fine-print">A la carta, bajo pedido: masaje, clase de yoga, senderismo adicional, visita a aguas termales.</p>
+  </Section>
+
+  <Section label="Retiro de Hermandad" heading="Una semana de conexión, movimiento, y compañía tranquila.">
+    <Split>
+      <div>
+        <p>
+          Construido en torno al mismo ritmo que el Retiro de Detox — tés de hierbas y una dieta
+          especial de la propia producción de la finca, jugo fresco, una clase de cocina, dos
+          caminatas guiadas, y una hora de Qi Gong cada mañana — realizado para un grupo que se
+          reúne. Mínimo 3 personas, una persona por cabaña.
+        </p>
+        <div class="amenity-list">
+          <span>Desayuno y cena incluidos</span>
+          <span>Té de hierbas y dieta especial</span>
+          <span>Jugo fresco</span>
+          <span>Clase de cocina</span>
+          <span>2 caminatas guiadas</span>
+          <span>1 hora de Qi Gong cada mañana</span>
+        </div>
+      </div>
+      <div>
+        <div class="story-img" style={`background-image:url(${sisterhoodImage.src})`} role="img" aria-label="Práctica de Qi Gong en la finca" />
+      </div>
+    </Split>
+    <p class="price">$2.000 / semana / persona <span class="price-note">— mínimo 3 personas</span></p>
+    <p class="fine-print">A la carta, bajo pedido: masaje, clase de yoga, senderismo adicional, visita a aguas termales.</p>
+  </Section>
+
+  <Section label="Encuentro de Amigos" heading="Tres parejas, una finca, sin más horario que el propio.">
+    <Split>
+      <div>
+        <p>
+          Trae a tus amigos más cercanos y toma toda la propiedad por la semana — dos por cabaña,
+          comidas resueltas, dos caminatas guiadas para sacar a todos juntos al bosque nuboso.
+          Mínimo 3 parejas.
+        </p>
+        <div class="amenity-list">
+          <span>Desayuno y cena especial incluidos</span>
+          <span>2 caminatas guiadas</span>
+          <span>2 personas por cabaña</span>
+        </div>
+      </div>
+      <div>
+        <div class="story-img" style={`background-image:url(${friendsImage.src})`} role="img" aria-label="Huéspedes compartiendo una comida juntos" />
+      </div>
+    </Split>
+    <p class="price">$2.300 / semana / pareja <span class="price-note">— mínimo 3 parejas</span></p>
+    <p class="fine-print">A la carta, bajo pedido: masaje, clase de yoga, senderismo adicional, visita a aguas termales.</p>
+  </Section>
+
+  <Section label="Retiro de Negocios" heading="Lleva al equipo a un lugar donde realmente se desconecten.">
+    <Split>
+      <div>
+        <p>
+          Sin wifi en las cabañas, sin distracciones, solo el equipo y la montaña. Tres personas,
+          una por cabaña, con las comidas resueltas y dos caminatas guiadas incluidas para sacar a
+          todos juntos.
+        </p>
+        <div class="amenity-list">
+          <span>Desayuno y cena especial incluidos</span>
+          <span>2 caminatas guiadas</span>
+          <span>1 persona por cabaña</span>
+        </div>
+      </div>
+      <div>
+        <div class="story-img" style={`background-image:url(${businessImage.src})`} role="img" aria-label="Vista del paisaje desde la finca" />
+      </div>
+    </Split>
+    <p class="price">$2.000 / semana / cabaña <span class="price-note">— 3 personas</span></p>
+    <p class="fine-print">A la carta, bajo pedido: masaje, clase de yoga, senderismo adicional, visita a aguas termales.</p>
+  </Section>
+
+  <Section label="Toda La Finca" heading="Todo, incluyendo la casa del propietario.">
+    <Split>
+      <div>
+        <p>
+          La propiedad completa para hasta 8 personas — las tres cabañas más la casa y cocina del
+          propietario. Una ayudante de cocina y un ayudante general están disponibles en el sitio,
+          y el huerto orgánico propio de la finca y los huevos frescos son tuyos para cocinar. Una
+          semana mínimo (6 noches).
+        </p>
+        <div class="amenity-list">
+          <span>Casa y cocina del propietario incluidas</span>
+          <span>Ayudante de cocina disponible</span>
+          <span>Ayudante general disponible</span>
+          <span>Huerto orgánico y huevos frescos en el sitio</span>
+          <span>Hasta 8 personas</span>
+        </div>
+      </div>
+      <div>
+        <div class="story-img" style={`background-image:url(${wholeFarmImage.src})`} role="img" aria-label="La casa del propietario en la finca" />
+      </div>
+    </Split>
+    <p class="price">$7.200 / semana <span class="price-note">— hasta 8 personas, mínimo 1 semana (6 noches)</span></p>
+    <p class="fine-print">A la carta, bajo pedido: masaje, clase de yoga, senderismo adicional, visita a aguas termales.</p>
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">¿Preguntas?</div>
+    <h2>Consulta las preguntas frecuentes, o escríbenos directamente.</h2>
+    <p>Ya sea una sola cabaña o toda la finca, te ayudaremos a encontrar la opción adecuada.</p>
+    <div class="contact-list">
+      <a href="/es/preguntas-contacto/">Preguntas Frecuentes y Contacto →</a>
+      <a href="/es/lodge/">Ver Las Cabañas →</a>
+    </div>
+  </Fragment>
+</PageLayout>

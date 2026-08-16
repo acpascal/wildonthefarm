@@ -1,0 +1,72 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Section from '../../components/Section.astro';
+import PhotoGrid from '../../components/PhotoGrid.astro';
+import NoteBox from '../../components/NoteBox.astro';
+import { img } from '../../lib/images';
+
+const heroImage = img('cabin3/hero.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const photos = [
+  { image: heroImage, alt: 'Interior de la Cabaña Tres' },
+  { image: img('cabin3/gallery_1.jpg'), alt: 'Cabecero tallado a mano de la Cabaña Tres' },
+  { image: img('cabin3/gallery_2.jpg'), alt: 'Baño de la Cabaña Tres con azulejo Art Nouveau pintado a mano' },
+  { image: img('cabin3/gallery_3.jpg'), alt: 'Detalle del dormitorio de la Cabaña Tres' },
+  { image: img('cabin3/gallery_4.jpg'), alt: 'Detalle interior de la Cabaña Tres' },
+  { image: img('cabin3/gallery_5.jpg'), alt: 'Ropa de cama botánica de la Cabaña Tres' },
+];
+
+const amenities = [
+  'Baño privado en suite',
+  'Azulejo Art Nouveau pintado a mano',
+  'Cabecero tallado a mano',
+  'Ropa de cama de alta calidad',
+  'Techo vivo',
+  'Sin wifi ni TV, por diseño',
+];
+
+const reserveHref =
+  "https://api.whatsapp.com/send?phone=50765699134&text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20la%20Caba%C3%B1a%203%20en%20Wild%20on%20the%20Farm";
+---
+
+<PageLayout
+  title="Cabaña Tres — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Cabaña Tres en Wild on the Farm: un cabecero tallado a mano, telas botánicas, y un baño de azulejo Art Nouveau pintado a mano."
+  path="/es/cabana-3/"
+  image={ogImage.src}
+  pullIntro="La Cabaña Tres se inclina hacia el detalle — un cabecero de madera tallado a mano, ropa de cama botánica, y un baño vestido de suelo a techo en azulejo Art Nouveau pintado a mano. La más decorativa de las tres cabañas, sin perder nada de la tranquilidad."
+  locale="es"
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="Interior de la Cabaña Tres" eyebrow="Estancia — Cabaña Tres">
+      La más intrincada de las tres.
+    </PageHero>
+  </Fragment>
+
+  <Section label="Cada Rincón" heading="Toda la Cabaña Tres.">
+    <PhotoGrid items={photos} groupId="cabin-3" />
+    <NoteBox variant="todo">
+      <p>No exterior or balcony shot identified for Cabin Three specifically yet.</p>
+    </NoteBox>
+  </Section>
+
+  <Section>
+    <div class="amenity-list">
+      {amenities.map((item) => <span>{item}</span>)}
+    </div>
+    <a href={reserveHref} class="btn btn-normal btn-spaced">Reservar Cabaña Tres</a>
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">Comparar</div>
+    <h2>Ver las otras cabañas.</h2>
+    <div class="contact-list">
+      <a href="/es/lodge/">Todas Las Cabañas →</a>
+      <a href="/es/cabana-1/">Cabaña Uno →</a>
+      <a href="/es/cabana-2/">Cabaña Dos →</a>
+    </div>
+  </Fragment>
+</PageLayout>

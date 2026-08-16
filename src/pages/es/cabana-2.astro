@@ -1,0 +1,71 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Section from '../../components/Section.astro';
+import PhotoGrid from '../../components/PhotoGrid.astro';
+import { img } from '../../lib/images';
+
+const heroImage = img('cabin2/hero.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const photos = [
+  { image: heroImage, alt: 'Cabaña Dos elevada sobre pilotes sobre el valle' },
+  { image: img('cabin2/gallery_1.jpg'), alt: 'Interior de la Cabaña Dos' },
+  { image: img('cabin2/gallery_2.jpg'), alt: 'Balcón y vista al valle de la Cabaña Dos' },
+  { image: img('cabin2/gallery_3.jpg'), alt: 'Dormitorio de la Cabaña Dos' },
+  { image: img('cabin2/gallery_4.jpg'), alt: 'Baño de la Cabaña Dos' },
+  { image: img('cabin2/gallery_5.jpg'), alt: 'Vista sobre el valle de Chiriquí desde la Cabaña Dos' },
+  { image: img('cabin2/gallery_6.jpg'), alt: 'Detalle exterior de la Cabaña Dos' },
+  { image: img('cabin2/gallery_7.jpg'), alt: 'Terraza de la Cabaña Dos' },
+];
+
+const amenities = [
+  'Baño privado en suite',
+  'Ducha con azulejo de hojas',
+  'Ropa de cama de alta calidad',
+  'Balcón privado',
+  'Vista al valle y al Volcán Barú',
+  'Estructura elevada sobre pilotes',
+  'Sin wifi ni TV, por diseño',
+];
+
+const reserveHref =
+  "https://api.whatsapp.com/send?phone=50765699134&text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20la%20Caba%C3%B1a%202%20en%20Wild%20on%20the%20Farm";
+---
+
+<PageLayout
+  title="Cabaña Dos — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Cabaña Dos en Wild on the Farm: elevada sobre pilotes en la ladera, con vistas amplias sobre el valle de Chiriquí desde la cama, el balcón, y la ducha."
+  path="/es/cabana-2/"
+  image={ogImage.src}
+  pullIntro="Entra en esta cabaña y un '¡Wow!' de asombro es la única respuesta adecuada a su atmósfera y su vista única. Esta es la cabaña para seguir el ballet de las nubes y bailar con las estrellas..."
+  locale="es"
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="Cabaña Dos elevada sobre pilotes sobre el valle" eyebrow="Estancia — Cabaña Dos">
+      Suspendida entre el cielo y la tierra.
+    </PageHero>
+  </Fragment>
+
+  <Section label="Cada Rincón" heading="Toda la Cabaña Dos.">
+    <PhotoGrid items={photos} groupId="cabin-2" />
+  </Section>
+
+  <Section>
+    <div class="amenity-list">
+      {amenities.map((item) => <span>{item}</span>)}
+    </div>
+    <a href={reserveHref} class="btn btn-normal btn-spaced">Reservar Cabaña Dos</a>
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">Comparar</div>
+    <h2>Ver las otras cabañas.</h2>
+    <div class="contact-list">
+      <a href="/es/lodge/">Todas Las Cabañas →</a>
+      <a href="/es/cabana-1/">Cabaña Uno →</a>
+      <a href="/es/cabana-3/">Cabaña Tres →</a>
+    </div>
+  </Fragment>
+</PageLayout>

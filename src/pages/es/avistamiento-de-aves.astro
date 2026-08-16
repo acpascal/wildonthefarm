@@ -1,0 +1,123 @@
+---
+import { Image, getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PhotoHero from '../../components/PhotoHero.astro';
+import Section from '../../components/Section.astro';
+import Split from '../../components/Split.astro';
+import CardGrid from '../../components/CardGrid.astro';
+import ImageTextCard from '../../components/ImageTextCard.astro';
+import NoteBox from '../../components/NoteBox.astro';
+import { img } from '../../lib/images';
+
+const heroImage = img('birds/bird_00.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const quetzalImage = img('birds/bird_01.jpg');
+const chlorophoniaImage = img('birds/bird_02.jpg');
+
+const species = [
+  { image: img('birds/bird_03.jpg'), alt: 'Un Quetzal Resplandeciente posado, mostrando su cresta verde iridiscente', name: 'Quetzal Resplandeciente', latin: 'Pharomachrus mocinno', description: 'Posado en quietud, la cresta verde iridiscente y el pecho carmesí del macho capturan la luz — el residente más legendario de la finca, visto aquí en reposo en lugar de en vuelo.' },
+  { image: img('birds/bird_04.jpg'), alt: 'Una Tangara Flama', name: 'Tangara Flama', latin: 'Piranga bidentata', description: 'Los machos lucen un intenso naranja-rojo con alas blanquinegras; las hembras, un ocre más suave. Forrajea en parejas, mezclándose a menudo con bandadas de paso.' },
+  { image: img('birds/bird_05.jpg'), alt: 'Una Reinita Trepadora forrajeando en una rama', name: 'Reinita Trepadora', latin: 'Mniotilta varia', description: 'Un migrante de larga distancia desde Norteamérica, que pasa sus inviernos trepando por troncos y ramas como un sitasí, sondeando la corteza en busca de insectos.' },
+  { image: img('birds/bird_06.jpg'), alt: 'Una Reinita Coroninaranja en el sotobosque', name: 'Reinita Coroninaranja', latin: 'Basileuterus culicivorus', description: 'Una reinita tranquila, oliva y amarilla, del sotobosque, más a menudo escuchada que vista mientras recolecta insectos del follaje bajo.' },
+  { image: img('birds/bird_07.jpg'), alt: 'Un Carpintero Velloso en un tronco', name: 'Carpintero Velloso', latin: 'Dryobates villosus', description: 'Tamborilea sobre madera muerta a toda hora, cincelando insectos con un pico hecho para el trabajo — busca el destello blanco a lo largo de su espalda.' },
+  { image: img('birds/bird_08.jpg'), alt: 'Un Hojarasquero Mexicano en el suelo del bosque', name: 'Hojarasquero Mexicano', latin: 'Sclerurus mexicanus', description: 'Un ave del suelo del bosque que hace honor a su nombre, lanzando la hojarasca a los lados con rápidas patadas para descubrir los insectos debajo.' },
+  { image: img('birds/bird_09.jpg'), alt: 'Un Mosquerito de Montaña', name: 'Mosquerito de Montaña', latin: 'Elaenia frantzii', description: 'Un modesto mosquerito de las tierras altas, más fácil de notar por su llamado áspero y ascendente desde el sotobosque medio.' },
+  { image: img('birds/bird_10.jpg'), alt: 'Un Soterrey Ocráceo en una rama musgosa', name: 'Soterrey Ocráceo', latin: 'Troglodytes ochraceus', description: 'Un soterrey de color canela que habita ramas musgosas, trabajando a menudo solo entre extremidades cargadas de epífitas, con la cola erguida.' },
+  { image: img('birds/bird_11.jpg'), alt: 'Un colibrí Chispitas Gorgimorada', name: 'Chispitas Gorgimorada', latin: 'Lampornis calolaimus', description: 'Uno de los colibríes emblemáticos de la finca — los machos destellan una garganta violeta iridiscente y una corona turquesa cuando la luz los ilumina justo.' },
+  { image: img('birds/bird_12.jpg'), alt: 'Un Amazilia Colirrufa', name: 'Amazilia Colirrufa', latin: 'Amazilia tzacatl', description: 'Común y aguerrido, este colibrí defiende los arbustos en flor con auténtica determinación, ahuyentando rivales muchas veces su tamaño.' },
+  { image: img('birds/bird_13.jpg'), alt: 'Un Chispita Centellante', name: 'Chispita Centellante', latin: 'Selasphorus scintilla', description: 'Una de las aves más pequeñas del planeta, apenas más grande que un abejorro, que prefiere los bordes abiertos y floridos al bosque cerrado.' },
+  { image: img('birds/bird_14.jpg'), alt: 'Un Amazilia Vientriblanco', name: 'Amazilia Vientriblanco', latin: 'Amazilia edward', description: 'Una especialidad de las tierras altas con un vientre blanco impecable contra un verde iridiscente — un habitual en los setos florecidos de la finca.' },
+  { image: img('birds/bird_15.jpg'), alt: 'Una Tangara Moteada', name: 'Tangara Moteada', latin: 'Tangara dowii', description: 'Una especialidad de las tierras altas de Talamanca, con la cabeza azul-negra finamente moteada como estrellas dispersas, moviéndose en pequeñas bandadas mixtas por el dosel.' },
+  { image: img('birds/bird_16.jpg'), alt: 'Un Zorzalito de Swainson en el suelo del bosque', name: 'Zorzalito de Swainson', latin: 'Catharus ustulatus', description: 'Un zorzal migrante de pecho moteado que pasa de camino entre Norte y Sudamérica, forrajeando en silencio en el suelo del bosque.' },
+  { image: img('birds/bird_17.jpg'), alt: 'Un colibrí Chispitas Gorgiblanca', name: 'Chispitas Gorgiblanca', latin: 'Lampornis castaneoventris', description: 'Se encuentra solo en este tramo de las tierras altas de Talamanca, con una llamativa franja blanca en la garganta y partes inferiores rufas en la hembra.' },
+  { image: img('birds/bird_18.jpg'), alt: 'Un Zorzal Cara Blanca', name: 'Zorzal Cara Blanca', latin: 'Turdus assimilis', description: 'Un zorzal de voz suave del borde del bosque, con su brillante anillo ocular y pico anaranjados destacando sobre un plumaje por lo demás discreto.' },
+  { image: img('birds/bird_19.jpg'), alt: 'Una Reinita de Wilson', name: 'Reinita de Wilson', latin: 'Cardellina pusilla', description: 'Una migrante de un amarillo brillante con una nítida gorra negra, revoloteando inquieta entre ramas bajas en busca de insectos.' },
+  { image: img('birds/bird_20.jpg'), alt: 'Un Jilguero Carinegro', name: 'Jilguero Carinegro', latin: 'Myadestes melanops', description: 'Su canto de flauta, casi de otro mundo, es uno de los sonidos definitorios del bosque nuboso, incluso cuando el ave misma permanece oculta.' },
+  { image: img('birds/bird_21.jpg'), alt: 'Una pareja de Barbudos Collarejos', name: 'Barbudo Collarejo', latin: 'Semnornis frantzii', description: 'Un ave robusta de collar anaranjado propia de las tierras altas, normalmente en parejas, llamándose en dueto de ida y vuelta que resuena entre los árboles.' },
+  { image: img('birds/bird_22.jpg'), alt: 'Un Gavilán Colirrojo planeando sobre una térmica', name: 'Gavilán Colirrojo', latin: 'Buteo jamaicensis', description: 'El gavilán de alas anchas residente de la finca, visto a menudo planeando sobre térmicas encima del valle o posado vigilando desde una rama seca.' },
+  { image: img('birds/bird_23.jpg'), alt: 'Una Candelita Gorgiplomiza forrajeando', name: 'Candelita Gorgiplomiza', latin: 'Myioborus miniatus', description: 'Una reinita activa que abre la cola y destella las alas casi constantemente mientras forrajea, un hábito que ayuda a espantar insectos escondidos.' },
+  { image: img('birds/bird_24.jpg'), alt: 'Un Zorzalito Pechigrís', name: 'Zorzalito Pechigrís', latin: 'Catharus fuscater', description: 'Un tímido zorzal del sotobosque con un pico y anillo ocular anaranjados penetrantes, más conocido por su canto claro y evocador que por dejarse ver.' },
+  { image: img('birds/bird_25.jpg'), alt: 'Un Trepador Corona Moteada en un tronco', name: 'Trepador Corona Moteada', latin: 'Lepidocolaptes affinis', description: 'Sube en espiral por los troncos sondeando las grietas de la corteza con su pico largo y curvo, parte de las bandadas mixtas que se mueven juntas por el bosque.' },
+  { image: img('birds/bird_26.jpg'), alt: 'Un Elanio Tijereta en vuelo', name: 'Elanio Tijereta', latin: 'Elanoides forficatus', description: 'Inconfundible en el aire, con una cola profundamente ahorquillada y un vuelo planeador sin esfuerzo mientras caza insectos y presas pequeñas al vuelo.' },
+  { image: img('birds/bird_27.jpg'), alt: 'Un Tucancillo Verde', name: 'Tucancillo Verde', latin: 'Aulacorhynchus prasinus', description: 'Un tucán pequeño de plumaje verde brillante con un pico de dos tonos, escuchado a menudo croando desde el dosel antes de ser visto.' },
+  { image: img('birds/bird_28.jpg'), alt: 'Un Ticotico Coroniveteado', name: 'Ticotico Coroniveteado', latin: 'Anabacerthia variegaticeps', description: 'Un forrajero del sotobosque que trabaja metódicamente entre grupos de hojas muertas, sondeando en busca de insectos escondidos.' },
+];
+---
+
+<PageLayout
+  title="Avistamiento de Aves — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Avistamiento de aves en Wild on the Farm: hogar del Quetzal Resplandeciente y el Clorofonia Cejidorada, al borde del Parque Nacional La Amistad, Panamá."
+  path="/es/avistamiento-de-aves/"
+  image={ogImage.src}
+  pullIntro="Al borde del Parque Nacional La Amistad, el bosque nuboso alberga algunas de las aves más buscadas de Centroamérica — silenciosas, pacientes, y mejor encontradas con la primera luz."
+  locale="es"
+>
+  <Fragment slot="hero">
+    <PhotoHero image={heroImage} alt="Quetzal Resplandeciente en vuelo en Wild on the Farm" eyebrow="Experiencia — Avistamiento de Aves">
+      Donde el Quetzal Resplandeciente todavía anida.
+    </PhotoHero>
+  </Fragment>
+
+  <Section>
+    <Split divider>
+      <div class="split-photo">
+        <Image src={quetzalImage} alt="Un Quetzal Resplandeciente en el dosel" widths={[400, 700, 1000]} sizes="(min-width: 860px) 50vw, 100vw" />
+      </div>
+      <div>
+        <div class="section-label">Especie Destacada</div>
+        <h2 class="lede">Quetzal Resplandeciente</h2>
+        <p>
+          El ave más legendaria de Panamá, y la razón por la que muchos viajeros miran por primera
+          vez hacia las tierras altas. Los machos arrastran plumas de cola verde iridiscentes de
+          casi un metro de largo, moviéndose en silencio por el dosel en busca de aguacatillos
+          silvestres — casi la única fruta de la que dependen. El amanecer y el atardecer, en los
+          tramos tranquilos cerca de la línea de árboles, son cuando más se les ve.
+        </p>
+      </div>
+    </Split>
+
+    <Split divider reverse>
+      <div class="split-photo">
+        <Image src={chlorophoniaImage} alt="Un Clorofonia Cejidorada en el sotobosque" widths={[400, 700, 1000]} sizes="(min-width: 860px) 50vw, 100vw" />
+      </div>
+      <div>
+        <div class="section-label">Especie Destacada</div>
+        <h2 class="lede">Clorofonia Cejidorada</h2>
+        <p>
+          Un ave pequeña, de colores casi imposibles — verde musgo, oro, y azul cielo — que se
+          mueve por el sotobosque musgoso en busca de bayas de muérdago y frutos pequeños. Más
+          fácil de escuchar que de ver: un llamado suave y silbado desde lo profundo de la
+          cobertura.
+        </p>
+      </div>
+    </Split>
+  </Section>
+
+  <Section label="Vistas En La Finca" heading="Veintiséis especies más, fotografiadas aquí mismo.">
+    <CardGrid>
+      {species.map((s) => (
+        <ImageTextCard image={s.image} alt={s.alt} title={s.name} eyebrow={s.latin} groupId="birdwatching-species">
+          {s.description}
+        </ImageTextCard>
+      ))}
+    </CardGrid>
+    <NoteBox variant="todo">
+      <p>
+        Species are identified from source filenames, trusted as accurate. A handful of additional
+        photos couldn't be confidently identified and aren't included yet — worth a second pass if
+        an ID becomes available.
+      </p>
+    </NoteBox>
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">Planifica Tu Visita</div>
+    <h2>Mejor con la primera luz.</h2>
+    <p>Se pueden organizar caminatas guiadas temprano en la mañana, cuando el bosque está más activo. Cuéntanos si el avistamiento de aves es el enfoque de tu estancia y planificaremos en torno a ello.</p>
+    <div class="contact-list">
+      <a href="/es/senderismo/">Senderismo →</a>
+      <a href="/es/finca/">Volver a La Finca →</a>
+    </div>
+  </Fragment>
+</PageLayout>

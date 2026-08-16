@@ -1,0 +1,172 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Section from '../../components/Section.astro';
+import CardGrid from '../../components/CardGrid.astro';
+import TextCard from '../../components/TextCard.astro';
+import NoteBox from '../../components/NoteBox.astro';
+import { business } from '../../data/business';
+import { img } from '../../lib/images';
+import { mailtoHref } from '../../i18n/utils';
+
+const heroImage = img('farm/property_overview.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+---
+
+<PageLayout
+  title="Preguntas Frecuentes y Contacto — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Respuestas a preguntas comunes sobre alojarse en Wild on the Farm, Boquete Cloud Forest Lodge, y cómo contactarnos directamente."
+  path="/es/preguntas-contacto/"
+  image={ogImage.src}
+  pullIntro="Todo lo que los huéspedes suelen preguntar antes de llegar — y si no está aquí, simplemente escríbenos directamente."
+  locale="es"
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="Vista aérea de la propiedad de la finca" eyebrow="Planifica Tu Estancia">
+      Preguntas, respondidas. Y cómo contactarnos.
+    </PageHero>
+  </Fragment>
+
+  <Section label="Ponte En Contacto" heading="Respondemos WhatsApp más rápido que el correo.">
+    <div class="contact-list contact-list-lg">
+      <a href={business.whatsappHref}>{business.phone} (WhatsApp)</a>
+      <a href={mailtoHref(business.email, 'es')}>{business.email}</a>
+    </div>
+  </Section>
+
+  <Section label="Preguntas Frecuentes" heading="Antes de reservar.">
+    <CardGrid cols={2}>
+      <TextCard lite title="¿Cómo llego a la finca?">
+        <p>
+          El último kilómetro del camino es muy empinado y requiere 4x4. Si llegas en un auto
+          normal, estaciona al pie del camino y te iremos a buscar. Si llegas a pie, te
+          recogeremos y te dejaremos de vuelta en Boquete (a 5 km) al final de tu estancia. Si te
+          gustaría ir a Boquete durante tu estancia, puedes reservar un taxi 4x4 por $25 — o,
+          cuando nosotros mismos vayamos al pueblo, eres bienvenido a acompañarnos gratis. ¿Viajas
+          desde más lejos? Consulta nuestra guía completa sobre{' '}
+          <a href="/es/journal/guia-de-viaje-a-boquete/">cómo llegar a Boquete desde la Ciudad de Panamá</a>.
+        </p>
+      </TextCard>
+      <TextCard lite title="¿Hay wifi?">
+        <p>
+          Por diseño, no hay wifi ni TV dentro de las cabañas — el silencio es parte de la
+          experiencia. Hay wifi disponible en las áreas comunes para quien necesite conectarse con
+          el mundo exterior.
+        </p>
+      </TextCard>
+    </CardGrid>
+
+    <div class="max-prose">
+      <TextCard lite title="¿Y la electricidad — puedo traer una secadora de pelo?">
+        <p>
+          Estamos completamente fuera de la red y generamos nuestra propia energía solar, así que
+          los electrodomésticos de alta resistencia como las secadoras de pelo no están
+          permitidos. Por lo demás no falta energía — solo pedimos a cada huésped usar únicamente
+          las luces que necesita, apagar lo que no esté en uso, y recordar apagar la luz del baño
+          al salir.
+        </p>
+      </TextCard>
+    </div>
+
+    <CardGrid cols={2}>
+      <TextCard lite title="¿Cómo es el clima?">
+        <p>
+          Agradable, gracias a la altitud — escapas del calor pesado e insoportable que se
+          encuentra más abajo. Trae un forro polar, una chaqueta de lluvia ligera, y botas de
+          senderismo si planeas caminar los senderos.
+        </p>
+      </TextCard>
+      <TextCard lite title="¿Veré seguro al Quetzal, o al jaguar?">
+        <p>
+          La mejor ventana para el avistamiento de aves — y para avistamientos del Quetzal en
+          especial — es entre el 15 de marzo y el 15 de mayo, cuando la mayoría de las aves están
+          anidando y los Quetzales abundan en la zona. Fuera de esa ventana los avistamientos
+          siguen siendo posibles, solo menos confiables. Avistamientos más raros como el del
+          jaguar son genuinamente poco comunes, incluso aquí — este es un bosque nuboso de
+          trabajo, no un zoológico.
+        </p>
+      </TextCard>
+    </CardGrid>
+
+    <CardGrid cols={2}>
+      <TextCard lite title="¿Se necesita guía para el senderismo?">
+        <p>
+          Algunos tramos se pueden caminar sin guía si eres un excursionista experimentado y
+          cómodo orientándote solo. Para caminatas de más de 3 horas hacia el bosque nuboso, se
+          recomienda encarecidamente un guía — los senderos desde la finca son tenues y remotos —
+          aunque los excursionistas experimentados que quieran su independencia son libres de ir
+          sin uno. A todos los excursionistas se les pide firmar una exención de responsabilidad
+          previamente, y los huéspedes deben contar con su propio seguro de viaje o personal.
+        </p>
+      </TextCard>
+      <TextCard lite title="¿Atienden restricciones alimentarias?">
+        <p>Solo avísanos si tienes una dieta especial o alguna alergia al reservar, y planificaremos las comidas en torno a ello.</p>
+      </TextCard>
+    </CardGrid>
+
+    <CardGrid cols={2}>
+      <TextCard lite title="¿Cómo son las comidas?">
+        <p>
+          El desayuno está incluido y suele ser abundante, servido entre las 8 y las 9am. La cena
+          se puede reservar cada noche — dos entradas, un plato principal, y un postre. Horneamos
+          nuestro propio pan.
+        </p>
+      </TextCard>
+      <TextCard lite title="¿Se aceptan mascotas?">
+        <p>Lo sentimos, pero no aceptamos mascotas. Tenemos animales en la finca, y los animales externos les causan mucho estrés.</p>
+      </TextCard>
+    </CardGrid>
+
+    <CardGrid cols={2}>
+      <TextCard lite title="¿Se aceptan niños?">
+        <p>Por razones de seguridad, no se aceptan niños menores de 12 años, y no hay camas adicionales disponibles en las cabañas.</p>
+      </TextCard>
+      <TextCard lite title="¿Cuál es su política de cancelación?">
+        <p>
+          Cancelación gratuita hasta 1 mes antes de la llegada. De 1 mes a 15 días antes, el 50%
+          es reembolsable; de 15 días a 1 semana antes, el 25% es reembolsable. Dentro de 1 semana
+          de la llegada, las reservas no son reembolsables.
+        </p>
+      </TextCard>
+    </CardGrid>
+
+    <CardGrid cols={2}>
+      <TextCard lite title="¿Cómo reservo?">
+        <p>
+          Contáctanos directamente por WhatsApp o correo electrónico — cuéntanos tus fechas y lo
+          que esperas vivir, y te ayudaremos a elegir la cabaña adecuada y planificar la estancia.
+        </p>
+      </TextCard>
+      <TextCard lite title="¿Qué métodos de pago aceptan?">
+        <NoteBox variant="todo">
+          <p>
+            Accepted payment methods not yet decided — cash, transfer, card, deposit vs. balance
+            on arrival, etc.
+          </p>
+        </NoteBox>
+      </TextCard>
+    </CardGrid>
+
+    <div class="max-prose">
+      <TextCard lite title="¿Alguna aplicación que recomienden traer?">
+        <p>
+          Para el avistamiento de aves, recomendamos descargar (y actualizar) la app Merlin Bird ID
+          antes de llegar — es de gran ayuda para identificar lo que estás viendo. Si te interesan
+          las plantas y flores, una app especializada de identificación de plantas también es útil
+          para ponerle nombre a lo que crece a tu alrededor.
+        </p>
+      </TextCard>
+    </div>
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">¿Aún Tienes Preguntas?</div>
+    <h2>Con gusto lo conversamos.</h2>
+    <p>Escríbenos directamente y te ayudaremos a planificar tu estancia, lo que sea que aún no esté claro.</p>
+    <div class="contact-list">
+      <a href="/es/tarifas-y-retiros/">Tarifas y Retiros →</a>
+      <a href="/es/lodge/">Ver Las Cabañas →</a>
+    </div>
+  </Fragment>
+</PageLayout>

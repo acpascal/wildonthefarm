@@ -17,13 +17,16 @@ export const pageTranslations: PageTranslation[] = [
   { id: 'lodge', en: '/lodge/', es: '/es/lodge/' },
   { id: 'food', en: '/food/', es: '/es/comida/' },
   { id: 'garden', en: '/garden/', es: '/es/jardin/' },
-  { id: 'wildlife', en: '/wildlife/' },
-  { id: 'hiking', en: '/hiking/' },
-  { id: 'birdwatching', en: '/birdwatching/' },
+  { id: 'wildlife', en: '/wildlife/', es: '/es/fauna-silvestre/' },
+  { id: 'hiking', en: '/hiking/', es: '/es/senderismo/' },
+  { id: 'birdwatching', en: '/birdwatching/', es: '/es/avistamiento-de-aves/' },
   { id: 'journal', en: '/journal/', es: '/es/journal/' },
-  { id: 'shop', en: '/shop/' },
-  { id: 'rates-retreats', en: '/rates-retreats/' },
-  { id: 'faqs-contact', en: '/faqs-contact/' },
+  { id: 'shop', en: '/shop/', es: '/es/tienda/' },
+  { id: 'rates-retreats', en: '/rates-retreats/', es: '/es/tarifas-y-retiros/' },
+  { id: 'faqs-contact', en: '/faqs-contact/', es: '/es/preguntas-contacto/' },
+  { id: 'cabin-1', en: '/cabin-1/', es: '/es/cabana-1/' },
+  { id: 'cabin-2', en: '/cabin-2/', es: '/es/cabana-2/' },
+  { id: 'cabin-3', en: '/cabin-3/', es: '/es/cabana-3/' },
 ];
 
 const locales = Object.keys(languages) as Locale[];

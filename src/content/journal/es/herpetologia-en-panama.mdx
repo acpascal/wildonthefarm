@@ -1,0 +1,35 @@
+---
+title: "Herpetología en Panamá"
+description: "Algunas fotografías llamativas de serpientes, tomadas durante escapadas en solitario en lo profundo de las selvas de Panamá — el Parque Nacional Chagres, el Darién, la Cordillera Central."
+pullIntro: "Algunas fotografías llamativas de serpientes, tomadas durante mis escapadas en lo profundo de las selvas de Panamá — el Parque Nacional Chagres, el Darién, la Cordillera Central…"
+date: 2026-06-15
+kind: note
+section: travel-panama
+translationKey: herpetology-in-panama
+cover: ../../../assets/journal/serpents/vine_snake_anole.jpg
+coverAlt: Una bejuquilla parda tragando un anolis en la selva panameña
+---
+
+import PhotoGrid from '../../../components/PhotoGrid.astro';
+import { img } from '../../../lib/images';
+
+export const serpentPhotos = [
+  { image: img('journal/serpents/vine_snake_anole.jpg'), alt: 'Una bejuquilla con una presa atrapada en sus fauces' },
+  { image: img('journal/serpents/tree_snake_branch.jpg'), alt: 'Una serpiente moteada descansando sobre una rama' },
+  { image: img('journal/serpents/parrot_snake_frog_01.jpg'), alt: 'Una serpiente verde sujetando una rana en la maleza densa' },
+  { image: img('journal/serpents/parrot_snake_frog_02.jpg'), alt: 'Una serpiente verde con una rana sujeta entre piedras del río' },
+  { image: img('journal/serpents/parrot_snake_frog_03.jpg'), alt: 'Primer plano de una serpiente verde atacando a una rana' },
+  { image: img('journal/serpents/parrot_snake_portrait.jpg'), alt: 'Una serpiente verde deslizándose entre bambú seco y hojarasca' },
+  { image: img('journal/serpents/eyelash_viper_coiled.jpg'), alt: 'Una víbora enroscada sobre corteza húmeda cubierta de musgo' },
+  { image: img('journal/serpents/eyelash_viper_head.jpg'), alt: 'Primer plano de la cabeza de una víbora' },
+  { image: img('journal/serpents/coral_snake_riverbank.jpg'), alt: 'Una serpiente con bandas rojas, negras y blancas, entre piedras del lecho del río' },
+  { image: img('journal/serpents/vine_snake_lizard.jpg'), alt: 'Una serpiente con una lagartija atrapada en sus fauces, enredada en ramas bajas' },
+  { image: img('journal/serpents/vine_snake_hummingbird_01.jpg'), alt: 'Una serpiente que ha atrapado un colibrí, con las alas todavía extendidas' },
+  { image: img('journal/serpents/vine_snake_hummingbird_02.jpg'), alt: 'Una serpiente verde tragando un colibrí de cabeza entre hojas verdes' },
+  { image: img('journal/serpents/vine_snake_hummingbird_03.jpg'), alt: 'Una serpiente verde con un colibrí sujeto en sus fauces' },
+  { image: img('journal/serpents/tree_snake_deadwood_01.jpg'), alt: 'Una serpiente pálida de manchas oscuras enroscada junto a un tronco caído' },
+  { image: img('journal/serpents/tree_snake_deadwood_02.jpg'), alt: 'Una serpiente pálida de manchas oscuras extendida sobre hojarasca moteada de sol' },
+  { image: img('journal/serpents/tree_snake_deadwood_03.jpg'), alt: 'Una serpiente pálida de manchas oscuras deslizándose sobre un tronco desgastado' },
+];
+
+<PhotoGrid items={serpentPhotos} groupId="serpents" />

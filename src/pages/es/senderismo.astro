@@ -1,0 +1,102 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PhotoHero from '../../components/PhotoHero.astro';
+import Section from '../../components/Section.astro';
+import Split from '../../components/Split.astro';
+import PhotoGrid from '../../components/PhotoGrid.astro';
+import NoteBox from '../../components/NoteBox.astro';
+import { img } from '../../lib/images';
+import type { PhotoItem } from '../../lib/photos';
+
+const heroImage = img('hiking/hero.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const amenities = [
+  'Guiado o autoguiado',
+  'Acceso directo al Parque Amistad',
+  'Bosque nuboso primario',
+  'Monos y aves en el camino',
+  'Se recomiendan botas resistentes',
+];
+
+const trailPhotos: PhotoItem[] = [
+  { image: img('hiking/gallery_01.jpg'), alt: 'El sendero entrando al bosque nuboso', size: 'lg' },
+  { image: img('hiking/gallery_02.jpg'), alt: 'Árboles cubiertos de musgo a lo largo del sendero' },
+  { image: img('hiking/gallery_03.jpg'), alt: 'Un sendero estrecho a través del denso bosque nuboso', size: 'tall' },
+  { image: img('hiking/gallery_04.jpg'), alt: 'Helechos y maleza junto al sendero' },
+  { image: img('hiking/gallery_05.jpg'), alt: 'Vista sobre el dosel del bosque nuboso desde el sendero', size: 'wide' },
+  { image: img('hiking/gallery_06.jpg'), alt: 'Luz solar filtrándose a través del bosque nuboso' },
+  { image: img('hiking/gallery_07.jpg'), alt: 'Un tramo neblinoso del sendero', size: 'lg' },
+  { image: img('hiking/gallery_08.jpg'), alt: 'Bromelias creciendo en un árbol junto al sendero' },
+  { image: img('hiking/gallery_09.jpg'), alt: 'El sendero serpenteando por el bosque', size: 'tall' },
+  { image: img('hiking/gallery_10.jpg'), alt: 'Raíces de árboles cruzando el sendero' },
+  { image: img('hiking/gallery_11.jpg'), alt: 'Un tramo tranquilo del sendero en el bosque nuboso' },
+  { image: img('hiking/gallery_12.jpg'), alt: 'Vista amplia del bosque desde el sendero', size: 'wide' },
+  { image: img('hiking/gallery_13.jpg'), alt: 'Musgo y epífitas en una rama junto al sendero' },
+  { image: img('hiking/gallery_14.jpg'), alt: 'El sendero bajo el dosel del bosque', size: 'lg' },
+  { image: img('hiking/gallery_15.jpg'), alt: 'Un tramo empinado del sendero' },
+  { image: img('hiking/gallery_16.jpg'), alt: 'Helechos arborescentes a lo largo del sendero', size: 'tall' },
+  { image: img('hiking/gallery_17.jpg'), alt: 'Cruce de un arroyo en el sendero' },
+  { image: img('hiking/gallery_18.jpg'), alt: 'Vista sobre las tierras altas de Chiriquí desde el sendero', size: 'wide' },
+  { image: img('hiking/gallery_19.jpg'), alt: 'Sotobosque denso junto al sendero' },
+  { image: img('hiking/gallery_20.jpg'), alt: 'El sendero desapareciendo entre la niebla' },
+  { image: img('hiking/gallery_21.jpg'), alt: 'Un tronco cubierto de musgo junto al sendero', size: 'tall' },
+  { image: img('wildlife/mantled_howler_monkey.jpg'), alt: 'Un mono aullador avistado en el sendero' },
+  { image: img('hiking/gallery_22.jpg'), alt: 'El sendero internándose más en el bosque nuboso', size: 'lg' },
+];
+---
+
+<PageLayout
+  title="Senderismo en el Bosque Nuboso — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Senderos hacia el Parque Nacional La Amistad, desde la puerta de la finca — bosque nuboso cubierto de musgo, monos, y vistas sobre las tierras altas de Chiriquí."
+  path="/es/senderismo/"
+  image={ogImage.src}
+  pullIntro="Senderismo en el bosque nuboso de Boquete, lejos de las multitudes. Sin transporte, sin estacionamiento en el sendero — solo un portón, y luego musgo, niebla, y el sonido del bosque despertando."
+  locale="es"
+>
+  <Fragment slot="hero">
+    <PhotoHero image={heroImage} alt="Senderismo en el bosque nuboso en Wild on the Farm" eyebrow="Senderismo — Lejos de las Multitudes">
+      Senderos que empiezan en nuestra puerta y terminan dentro de las nubes.
+    </PhotoHero>
+  </Fragment>
+
+  <Section label="En El Sendero" heading="Lo que caminarás.">
+    <Split>
+      <div>
+        <p>
+          Los senderos ascienden por bosque nuboso primario — troncos envueltos en musgo,
+          bromelias, helechos arborescentes — con el tipo de silencio que hace imposible ignorar
+          cualquier llamado lejano o crujido en el dosel. Los monos cara blanca y los monos
+          aulladores se mueven por el mismo territorio, avistados a menudo justo encima.
+        </p>
+        <NoteBox variant="todo">
+          <p>
+            Practical details needed here: names of the main trails, approximate distances and
+            duration, difficulty level, and whether a guide is required or optional.
+          </p>
+        </NoteBox>
+      </div>
+      <div>
+        <div class="amenity-list">
+          {amenities.map((item) => <span>{item}</span>)}
+        </div>
+      </div>
+    </Split>
+    <p><a href="/es/journal/senderismo-en-boquete/"><strong>Los senderos de Boquete, su historia, y nuestro propio mapa →</strong></a></p>
+  </Section>
+
+  <Section label="En El Campo" heading="Un bosque que se conoce mejor a pie.">
+    <PhotoGrid items={trailPhotos} groupId="hiking" variant="varied" />
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">Combínalo Con</div>
+    <h2>Las mañanas temprano son de las aves.</h2>
+    <p>Muchos huéspedes combinan una caminata de avistamiento de aves al amanecer con una caminata más larga más tarde en el día.</p>
+    <div class="contact-list">
+      <a href="/es/avistamiento-de-aves/">Avistamiento de Aves →</a>
+      <a href="/es/finca/">Volver a La Finca →</a>
+    </div>
+  </Fragment>
+</PageLayout>

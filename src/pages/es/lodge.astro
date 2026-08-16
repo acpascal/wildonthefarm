@@ -6,20 +6,20 @@ import Section from '../../components/Section.astro';
 import Split from '../../components/Split.astro';
 import { img } from '../../lib/images';
 
-const heroImage = img('stay/hero_cabin_exterior.jpg');
+const heroImage = img('cabin2/gallery_1.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
 
 const cabins = [
   {
-    slug: 'cabin-1',
+    slug: 'cabana-1',
     label: 'Cabaña Uno',
     heading: 'Lo más profundo de la niebla.',
     description:
       'La más cerrada de las tres, envuelta en bambú y bosque, con un baño terminado enteramente en azulejo pintado a mano con motivos de hojas.',
-    image: img('cabin1/hero.jpg'),
+    image: img('stay/hero_cabin_exterior.jpg'),
   },
   {
-    slug: 'cabin-2',
+    slug: 'cabana-2',
     label: 'Cabaña Dos',
     heading: 'Elevada sobre el valle.',
     description:
@@ -27,7 +27,7 @@ const cabins = [
     image: img('cabin2/hero.jpg'),
   },
   {
-    slug: 'cabin-3',
+    slug: 'cabana-3',
     label: 'Cabaña Tres',
     heading: 'La más intrincada de las tres.',
     description:
@@ -79,7 +79,7 @@ const amenities = [
     {
       cabins.map((cabin, i) => (
         <Split divider reverse={i === 1}>
-          <a href={`/${cabin.slug}/`} class="split-photo">
+          <a href={`/es/${cabin.slug}/`} class="split-photo">
             <Image
               src={cabin.image}
               alt={`Exterior de ${cabin.label} en Wild on the Farm`}
@@ -92,7 +92,7 @@ const amenities = [
             <div class="section-label">{cabin.label}</div>
             <h2 class="lede">{cabin.heading}</h2>
             <p>{cabin.description}</p>
-            <a href={`/${cabin.slug}/`} class="btn btn-spaced">
+            <a href={`/es/${cabin.slug}/`} class="btn btn-spaced">
               Ver Toda la {cabin.label}
             </a>
           </div>

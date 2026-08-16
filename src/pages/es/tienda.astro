@@ -1,0 +1,154 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Section from '../../components/Section.astro';
+import Split from '../../components/Split.astro';
+import CardGrid from '../../components/CardGrid.astro';
+import TextCard from '../../components/TextCard.astro';
+import NoteBox from '../../components/NoteBox.astro';
+import ReserveContactBlock from '../../components/ReserveContactBlock.astro';
+import { img } from '../../lib/images';
+
+const heroImage = img('products/macadamia_harvest.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+const macadamiaSplitImage = await getImage({ src: heroImage, width: 800, format: 'webp' });
+const fertilizerSplitImage = await getImage({ src: img('garden/garden_harvest.jpg'), width: 800, format: 'webp' });
+---
+
+<PageLayout
+  title="Productos de la Finca — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Nueces de macadamia orgánicas y productos de la finca, cultivados y cosechados en Wild on the Farm, Boquete Cloud Forest Lodge, Panamá — pide directamente desde la finca."
+  path="/es/tienda/"
+  image={ogImage.src}
+  pullIntro="Nueces de macadamia, tés de hierbas, conservas, fermentos, y un fertilizante de jardín perfeccionado a lo largo de 18 años — todo cultivado y hecho a mano en la finca, a 1.800 metros en el bosque nuboso de Panamá."
+  locale="es"
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="Nueces de macadamia recién cosechadas de la finca" eyebrow="Productos de la Finca">
+      Todo lo que cultivamos, parte de lo cual puedes llevarte a casa.
+    </PageHero>
+  </Fragment>
+
+  <Section label="Nueces de Macadamia" heading="Cultivadas en la finca, cosechadas a mano.">
+    <Split>
+      <div>
+        <p>
+          Nuestros árboles de macadamia han sido parte de la finca por años, cultivados
+          orgánicamente junto a los huertos y el bosque nuboso. Cada cosecha se recoge, se
+          descascara, y se prepara en el sitio.
+        </p>
+        <div class="amenity-list">
+          <span>Cultivadas orgánicamente</span>
+          <span>Cosechadas a mano</span>
+          <span>De la finca a tu puerta</span>
+        </div>
+        <NoteBox variant="todo">
+          <p>
+            Needed: which formats are sold (raw / roasted, shell-on / shelled), bag sizes, prices,
+            and whether orders ship beyond Panama or are pickup/on-site only.
+          </p>
+        </NoteBox>
+      </div>
+      <div>
+        <div class="story-img" style={`background-image:url(${macadamiaSplitImage.src})`} role="img" aria-label="Nueces de macadamia recién cosechadas" />
+      </div>
+    </Split>
+  </Section>
+
+  <Section label="Tés de Hierbas" heading="Dos mezclas, cultivadas y secadas en la finca.">
+    <p>
+      Mezclas de té de hierbas hechas con lo que crece en la finca — una mezcla matutina y una
+      mezcla vespertina. ¿Curiosidad por cada ingrediente? El Diario tiene un perfil completo de
+      cada planta en estas mezclas, incluyendo sus usos tradicionales.
+    </p>
+    <CardGrid cols={2}>
+      <TextCard title="Mezcla Matutina" eyebrow="Jiaogulan, ortiga y romero">
+        <p>
+          Cultivada y secada en la finca. Lee sobre el <a href="/es/journal/jiaogulan/">jiaogulan</a>,{' '}
+          la <a href="/es/journal/ortiga/">ortiga</a>, y el <a href="/es/journal/romero/">romero</a> en
+          el Diario.
+        </p>
+      </TextCard>
+      <TextCard title="Mezcla Vespertina" eyebrow="Jiaogulan, ortiga y verbena">
+        <p>
+          Cultivada y secada en la finca. Lee sobre el <a href="/es/journal/jiaogulan/">jiaogulan</a>,{' '}
+          la <a href="/es/journal/ortiga/">ortiga</a>, y la <a href="/es/journal/verbena/">verbena</a> en
+          el Diario.
+        </p>
+      </TextCard>
+    </CardGrid>
+    <NoteBox variant="todo">
+      <p>Needed: prices, package sizes, and whether these ship or are pickup/on-site only.</p>
+    </NoteBox>
+  </Section>
+
+  <Section label="Conservas y Fermentos" heading="Mermeladas, sopas, y vegetales lacto-fermentados.">
+    <p>Conservas artesanales hechas con la propia cosecha del huerto, y lacto-fermentación tradicional.</p>
+    <CardGrid>
+      <TextCard title="Mermelada de Tomate de Árbol" eyebrow="Tamarillo">
+        <p>Una mermelada ligeramente ácida hecha con los tomates de árbol de la finca.</p>
+      </TextCard>
+      <TextCard title="Sopa de Ortiga" eyebrow="Ortie">
+        <p>Una sopa sencilla y terrosa hecha con <a href="/es/journal/ortiga/">ortiga</a> cultivada en la finca.</p>
+      </TextCard>
+      <TextCard title="Kimchi y Fermentos" eyebrow="Lacto-fermentación">
+        <p>
+          Nuestro <a href="/es/journal/kimchi-del-huerto/">Kimchi del Huerto</a> y otros vegetales
+          lacto-fermentados del huerto.
+        </p>
+      </TextCard>
+    </CardGrid>
+    <NoteBox variant="todo">
+      <p>
+        Needed: the rest of the preserves list, plus prices, jar/container sizes, and shipping vs.
+        pickup for this section.
+      </p>
+    </NoteBox>
+  </Section>
+
+  <Section label="Fertilizante de Jardín" heading="18 años de experimentar, en una sola mezcla.">
+    <Split>
+      <div>
+        <p>
+          Un fertilizante líquido para plantas ("purín") hecho fermentando ortiga, consuelda, y
+          tithonia — una mezcla perfeccionada a lo largo de 18 años cultivando en esta finca. Solo
+          para uso en el jardín, no para consumo.
+        </p>
+        <div class="amenity-list">
+          <span>Ortiga</span>
+          <span>Consuelda</span>
+          <span>Tithonia</span>
+          <span>18 años en desarrollo</span>
+        </div>
+      </div>
+      <div>
+        <div class="story-img" style={`background-image:url(${fertilizerSplitImage.src})`} role="img" aria-label="Vegetales cosechados del huerto orgánico" />
+      </div>
+    </Split>
+    <NoteBox variant="todo">
+      <p>Needed: prices, bottle/container sizes, and shipping vs. pickup for the fertilizer too.</p>
+    </NoteBox>
+  </Section>
+
+  <Section label="Mira La Última Cosecha" heading="Síguenos en Instagram.">
+    <p>
+      Para fotos de la cosecha actual, disponibilidad de productos, y lo más fresco de la finca en
+      este momento, síguenos en Instagram.
+    </p>
+    <div class="contact-list">
+      <a href="https://www.instagram.com/wildonthefarm">@wildonthefarm en Instagram →</a>
+    </div>
+  </Section>
+
+  <Section label="Cómo Pedir" heading="Escríbenos directamente — sin pago en línea.">
+    <p>
+      Escríbenos por WhatsApp o correo electrónico con lo que te gustaría, y confirmaremos
+      disponibilidad, precio, y cómo recibir tu pedido.
+    </p>
+  </Section>
+
+  <Fragment slot="footer">
+    <ReserveContactBlock locale="es" label="Pedir" heading="Ponte en contacto para hacer un pedido." />
+  </Fragment>
+</PageLayout>
