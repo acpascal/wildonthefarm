@@ -88,13 +88,9 @@
   status = 301
   force = true
 
-# --- ES: top-level pages. /es/la-finca/ -> /es/finca/, /es/cocina/ ->
-# /es/comida/, /es/estancia/ -> /es/lodge/, and /es/avistamiento-de-aves/
-# all have real translated v3 pages (see src/pages/es/{index,finca,comida,
-# lodge,avistamiento-de-aves}.astro) so those land on the matching /es/ v3
-# page, not the EN one. The three below that don't have a real page yet
-# anticipate its /es/ slug rather than falling back to EN — see the
-# comment further down. ---
+# --- ES: top-level pages. Every old ES slug below now has a real
+# translated v3 page (see src/pages/es/*.astro), so each lands on its
+# matching /es/ page rather than the EN one. ---
 [[redirects]]
   from = "/es/la-finca/"
   to = "https://wildonthefarm.com/es/finca/"
@@ -113,16 +109,6 @@
   status = 301
   force = true
 
-# These three /es/ pages don't exist yet — a separate session is translating
-# the rest of the site. Rather than bounce Spanish visitors to the English
-# page in the meantime, these anticipate the /es/ slug that translation is
-# expected to land on, following the naming convention already established
-# by the real /es/ pages (finca, comida, jardin, historia, avistamiento-de-
-# aves — short, single Spanish words) and the nav labels in src/i18n/ui.ts
-# ("Fauna y Biodiversidad", "Senderismo", "Tarifas y Retiros"). Each
-# redirect 404s until its target page ships — verify the guessed slug
-# against whatever the translation session actually publishes, and fix
-# here if it differs.
 [[redirects]]
   from = "/es/retiro-detox/"
   to = "https://wildonthefarm.com/es/tarifas-y-retiros/"
