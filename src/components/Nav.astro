@@ -98,18 +98,56 @@ const taglineWords = business.tagline.split(' ');
       toggle.setAttribute('aria-expanded', String(isOpen));
     });
 
-    nav.querySelectorAll<HTMLButtonElement>('[data-dropdown-toggle]').forEach((btn) => {
-      btn.addEventListener('click', () => {
+    const dropdownToggles = nav.querySelectorAll<HTMLButtonElement>('[data-dropdown-toggle]');
+
+    const closeDropdowns = (except?: Element) => {
+      dropdownToggles.forEach((btn) => {
         const dropdown = btn.closest('.nav-dropdown');
-        const isOpen = dropdown?.classList.toggle('is-open') ?? false;
-        btn.setAttribute('aria-expanded', String(isOpen));
+        if (dropdown && dropdown !== except) {
+          dropdown.classList.remove('is-open');
+          btn.setAttribute('aria-expanded', 'false');
+        }
       });
+    };
+
+    // Desktop already reveals dropdowns via CSS :hover/:focus-within — clicking
+    // there should do nothing, same as the rest of the page. Click-to-toggle
+    // only applies inside the mobile drawer, where hover doesn't exist.
+    const isDesktop = () => window.matchMedia('(min-width: 860px)').matches;
+
+    dropdownToggles.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        if (isDesktop()) {
+          // Clicking focuses the button, which alone reveals the menu via
+          // CSS :focus-within — and since this button never navigates,
+          // nothing else would ever remove that focus. Blur it so a click
+          // has no lasting effect, matching plain hover-only behavior.
+          btn.blur();
+          return;
+        }
+        const dropdown = btn.closest('.nav-dropdown');
+        const isOpen = dropdown?.classList.contains('is-open') ?? false;
+        closeDropdowns(isOpen ? undefined : dropdown ?? undefined);
+        if (dropdown) {
+          dropdown.classList.toggle('is-open', !isOpen);
+          btn.setAttribute('aria-expanded', String(!isOpen));
+        }
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!isDesktop() && !nav.contains(e.target as Node)) closeDropdowns();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!isDesktop() && e.key === 'Escape') closeDropdowns();
     });
 
     links?.querySelectorAll('a').forEach((a) => {
       a.addEventListener('click', () => {
         nav.classList.remove('is-open');
         toggle?.setAttribute('aria-expanded', 'false');
+        closeDropdowns();
       });
     });
   }
