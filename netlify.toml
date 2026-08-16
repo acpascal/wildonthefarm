@@ -1,3 +1,26 @@
+# This site (boquetecloudforestlodge.com) has been retired in favor of
+# wildonthefarm.com. It no longer builds the Next.js app — there's nothing
+# left to build for a site whose only job now is to redirect every request
+# to the new domain. `publish = "public"` just serves the repo's existing
+# static `public/` folder (harmless — the wildcard redirect below fires
+# before any of those files would ever be served).
+#
+# Path-specific old->new mappings live in wildonthefarm.com's own
+# netlify.toml (single source of truth, kept in sync with its content).
+# This wildcard sends every request there with the same path; that site's
+# own redirect rules then correct the path on a second hop (e.g.
+# /blog/nettle-properties/ -> wildonthefarm.com/blog/nettle-properties/ ->
+# wildonthefarm.com/journal/nettle/). Two 301 hops is a fine trade for not
+# having to maintain the same 40+ line redirect map in two repos — and once
+# boquetecloudforestlodge.com's DNS is ever pointed directly at the
+# wildonthefarm.com Netlify site, this whole file becomes moot and every
+# hop collapses to one anyway.
 [build]
-  command = "npm run build"
-  publish = ".next"
+  command = "true"
+  publish = "public"
+
+[[redirects]]
+  from = "/*"
+  to = "https://wildonthefarm.com/:splat"
+  status = 301
+  force = true
