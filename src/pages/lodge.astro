@@ -7,7 +7,7 @@ import Split from '../components/Split.astro';
 import PhotoGrid from '../components/PhotoGrid.astro';
 import { img } from '../lib/images';
 
-const heroImage = img('stay/hero_cabin_exterior.jpg');
+const heroImage = img('cabin2/gallery_1.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
 
 const ownerHouseBanner = img('farm/overview_1.jpg');
@@ -27,7 +27,7 @@ const cabins = [
     heading: 'Deepest into the mist.',
     description:
       'The most enclosed of the three, wrapped in bamboo and forest, with a bathroom finished entirely in hand-painted leaf tile.',
-    image: img('cabin1/hero.jpg'),
+    image: img('stay/hero_cabin_exterior.jpg'),
   },
   {
     slug: 'cabin-2',
