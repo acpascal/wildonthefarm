@@ -19,8 +19,27 @@
 # boquetecloudforestlodge.com, once that domain is eventually pointed
 # at this site.
 
-# --- EN: top-level pages (only ones whose slug actually changed —
-# /stay/, /the-farm/, /kitchen/, and / carried over unchanged) ---
+# --- EN: top-level pages (only / carried over unchanged — every other
+# slug changed, confirmed against the real src/pages/*.astro files on
+# main, not assumed) ---
+[[redirects]]
+  from = "/stay/"
+  to = "https://wildonthefarm.com/lodge/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/the-farm/"
+  to = "https://wildonthefarm.com/farm/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/kitchen/"
+  to = "https://wildonthefarm.com/food/"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/bird-watching/"
   to = "https://wildonthefarm.com/birdwatching/"
@@ -182,13 +201,13 @@
 
 [[redirects]]
   from = "/fr/la-ferme/"
-  to = "https://wildonthefarm.com/the-farm/"
+  to = "https://wildonthefarm.com/farm/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/fr/cuisine/"
-  to = "https://wildonthefarm.com/kitchen/"
+  to = "https://wildonthefarm.com/food/"
   status = 301
   force = true
 
