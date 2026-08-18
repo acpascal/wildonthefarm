@@ -22,7 +22,11 @@ function loadRedirects(): Map<string, string> {
   return rules;
 }
 
-const redirects = loadRedirects();
+// Astro's static build also runs middleware while prerendering pages (e.g.
+// to generate 404.html), and inside the bundled build output netlify.toml
+// isn't at the same relative path as it is under `astro dev` -- so this
+// must never attempt the file read outside of dev, or the build crashes.
+const redirects = import.meta.env.DEV ? loadRedirects() : new Map<string, string>();
 
 export const onRequest = defineMiddleware((context, next) => {
   const to = redirects.get(context.url.pathname);
