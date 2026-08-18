@@ -12,17 +12,31 @@
 #
 # Every `to` here is a host-relative path, not an absolute URL — Netlify
 # matches these `from` paths against any hostname serving this site
-# (wildonthefarm.com, wildonthefarm.netlify.app, deploy previews,
-# `netlify dev` on localhost, and boquetecloudforestlodge.com, which is
-# configured as a domain alias of this same site). Domain canonicalization
-# for that alias is handled natively by Netlify's alias feature — these
-# rules only need to fix the path, not force a domain, so they behave the
-# same wherever they're evaluated instead of always jumping to production.
+# (wildonthefarm.com, wildonthefarm.netlify.app, deploy previews, and
+# `netlify dev` on localhost), so a bare path stays correct no matter
+# which of those actually receives the request.
 #
-# Path-specific rules are listed before the more general ones (blog index
-# before individual posts, etc.) so the most specific match wins first —
-# every redirect here is a single hop, none of them chain through another
-# rule in this file.
+# boquetecloudforestlodge.com is added as a domain alias of this site, but
+# a domain alias does NOT auto-redirect to the primary domain — confirmed
+# by checking what adding one actually does: it just creates DNS records
+# pointing that domain at this Netlify site, and the alias domain then
+# serves the exact same content directly, with no canonicalization at
+# all. (The www.wildonthefarm.com -> wildonthefarm.com redirect is a
+# different, narrower feature — Netlify auto-manages the www/apex
+# relationship for a site's own primary domain, not for unrelated
+# secondary domains like this one.) So the two domain-scoped rules at the
+# bottom of this file are the only thing that actually sends
+# boquetecloudforestlodge.com traffic to wildonthefarm.com — they're load
+# bearing, not redundant with anything Netlify does natively.
+#
+# Path-specific rules are listed before those domain-scoped rules so the
+# most specific match wins first: for a legacy path requested via the
+# alias domain, the path rule fires first (fixing the path, staying on
+# the alias domain for that hop), then the resulting request re-evaluates
+# every rule again and the domain-scoped rule catches it (fixing the
+# domain) — two hops total to the final canonical URL. Anything not in
+# the legacy-path list resolves in a single hop straight to the matching
+# wildonthefarm.com path.
 
 # --- EN: top-level pages (only / carried over unchanged — every other
 # slug changed, confirmed against the real src/pages/*.astro files on
@@ -280,5 +294,20 @@
 [[redirects]]
   from = "/fr/blog/romarin-bienfaits-proprietes/"
   to = "/journal/rosemary/"
+  status = 301
+  force = true
+
+# --- boquetecloudforestlodge.com is a domain alias with no automatic
+# redirect (see the note at the top of this file) — these two rules are
+# what actually send its traffic to wildonthefarm.com. ---
+[[redirects]]
+  from = "https://boquetecloudforestlodge.com/*"
+  to = "https://wildonthefarm.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.boquetecloudforestlodge.com/*"
+  to = "https://wildonthefarm.com/:splat"
   status = 301
   force = true
