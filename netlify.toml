@@ -10,100 +10,105 @@
 # `getPageUrl()` in `src/utils/page-utils.js` prefixing blog posts with
 # `/blog`). Goal: zero 404s for any URL that was ever live.
 #
-# Path-specific rules are listed before the domain catch-alls further
-# below so they win first (Netlify matches top-to-bottom, first rule
-# wins) — this keeps every redirect a single hop instead of chaining
-# through the catch-all first. Every `to` here is an absolute
-# https://wildonthefarm.com URL for the same reason: these rules must
-# land on the new domain even when matched via a request to
-# boquetecloudforestlodge.com, once that domain is eventually pointed
-# at this site.
+# Every `to` here is a host-relative path, not an absolute URL — Netlify
+# matches these `from` paths against any hostname serving this site
+# (wildonthefarm.com, wildonthefarm.netlify.app, deploy previews,
+# `netlify dev` on localhost, and boquetecloudforestlodge.com, which is
+# configured as a domain alias of this same site). Domain canonicalization
+# for that alias is handled natively by Netlify's alias feature — these
+# rules only need to fix the path, not force a domain, so they behave the
+# same wherever they're evaluated instead of always jumping to production.
+#
+# Path-specific rules are listed before the more general ones (blog index
+# before individual posts, etc.) so the most specific match wins first —
+# every redirect here is a single hop, none of them chain through another
+# rule in this file.
 
 # --- EN: top-level pages (only / carried over unchanged — every other
 # slug changed, confirmed against the real src/pages/*.astro files on
 # main, not assumed) ---
 [[redirects]]
   from = "/stay/"
-  to = "https://wildonthefarm.com/lodge/"
+  to = "/lodge/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/the-farm/"
-  to = "https://wildonthefarm.com/farm/"
+  to = "/farm/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/kitchen/"
-  to = "https://wildonthefarm.com/food/"
+  to = "/food/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/bird-watching/"
-  to = "https://wildonthefarm.com/birdwatching/"
+  to = "/birdwatching/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/detox-retreat/"
-  to = "https://wildonthefarm.com/rates-retreats/"
+  to = "/rates-retreats/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/experience/"
-  to = "https://wildonthefarm.com/hiking/"
+  to = "/hiking/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/faq/"
-  to = "https://wildonthefarm.com/faqs-contact/"
+  to = "/faqs-contact/"
   status = 301
   force = true
 
 # --- EN: blog -> journal ---
 [[redirects]]
   from = "/blog/"
-  to = "https://wildonthefarm.com/journal/"
+  to = "/journal/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/allergies-and-asthma/"
-  to = "https://wildonthefarm.com/journal/allergies-and-asthma/"
+  to = "/journal/allergies-and-asthma/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/boquete-bird-watching-guide/"
-  to = "https://wildonthefarm.com/journal/boquete-bird-watching-guide/"
+  to = "/journal/boquete-bird-watching-guide/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/jiaogulan-herb-of-immortality/"
-  to = "https://wildonthefarm.com/journal/jiaogulan/"
+  to = "/journal/jiaogulan/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/nettle-properties/"
-  to = "https://wildonthefarm.com/journal/nettle/"
+  to = "/journal/nettle/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/quetzal-cloudforest-jewel/"
-  to = "https://wildonthefarm.com/journal/quetzal-cloudforest-jewel/"
+  to = "/journal/quetzal-cloudforest-jewel/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/rosemary-benefits-and-properties/"
-  to = "https://wildonthefarm.com/journal/rosemary/"
+  to = "/journal/rosemary/"
   status = 301
   force = true
 
@@ -112,37 +117,37 @@
 # matching /es/ page rather than the EN one. ---
 [[redirects]]
   from = "/es/la-finca/"
-  to = "https://wildonthefarm.com/es/finca/"
+  to = "/es/finca/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/es/cocina/"
-  to = "https://wildonthefarm.com/es/comida/"
+  to = "/es/comida/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/es/estancia/"
-  to = "https://wildonthefarm.com/es/lodge/"
+  to = "/es/lodge/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/es/retiro-detox/"
-  to = "https://wildonthefarm.com/es/tarifas-y-retiros/"
+  to = "/es/tarifas-y-retiros/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/es/experiencias/"
-  to = "https://wildonthefarm.com/es/senderismo/"
+  to = "/es/senderismo/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/es/preguntas-frecuentes/"
-  to = "https://wildonthefarm.com/es/preguntas-contacto/"
+  to = "/es/preguntas-contacto/"
   status = 301
   force = true
 
@@ -150,43 +155,43 @@
 # Phase 5) ---
 [[redirects]]
   from = "/es/blog/"
-  to = "https://wildonthefarm.com/es/journal/"
+  to = "/es/journal/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/es/blog/alergias-y-asma/"
-  to = "https://wildonthefarm.com/es/journal/alergias-y-asma/"
+  to = "/es/journal/alergias-y-asma/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/es/blog/guia-de-avistamiento-de-aves-en-boquete/"
-  to = "https://wildonthefarm.com/es/journal/guia-de-avistamiento-de-aves-en-boquete/"
+  to = "/es/journal/guia-de-avistamiento-de-aves-en-boquete/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/es/blog/jiaogulan-hierba-de-la-inmortalidad/"
-  to = "https://wildonthefarm.com/es/journal/jiaogulan/"
+  to = "/es/journal/jiaogulan/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/es/blog/propiedades-de-la-ortiga/"
-  to = "https://wildonthefarm.com/es/journal/ortiga/"
+  to = "/es/journal/ortiga/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/es/blog/quetzal-joya-del-bosque-nuboso/"
-  to = "https://wildonthefarm.com/es/journal/quetzal-joya-del-bosque-nuboso/"
+  to = "/es/journal/quetzal-joya-del-bosque-nuboso/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/es/blog/romero-beneficios-y-propiedades/"
-  to = "https://wildonthefarm.com/es/journal/romero/"
+  to = "/es/journal/romero/"
   status = 301
   force = true
 
@@ -195,108 +200,85 @@
 # v3 page rather than 404. ---
 [[redirects]]
   from = "/fr/"
-  to = "https://wildonthefarm.com/"
+  to = "/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/fr/la-ferme/"
-  to = "https://wildonthefarm.com/farm/"
+  to = "/farm/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/fr/cuisine/"
-  to = "https://wildonthefarm.com/food/"
+  to = "/food/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/fr/observation-des-oiseaux/"
-  to = "https://wildonthefarm.com/birdwatching/"
+  to = "/birdwatching/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/fr/retraite-detox/"
-  to = "https://wildonthefarm.com/rates-retreats/"
+  to = "/rates-retreats/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/fr/experience/"
-  to = "https://wildonthefarm.com/hiking/"
+  to = "/hiking/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/fr/qfp/"
-  to = "https://wildonthefarm.com/faqs-contact/"
+  to = "/faqs-contact/"
   status = 301
   force = true
 
 # --- FR: blog -> EN /journal/ pages (French journal was never kept) ---
 [[redirects]]
   from = "/fr/blog/"
-  to = "https://wildonthefarm.com/journal/"
+  to = "/journal/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/fr/blog/allergies-et-asthme/"
-  to = "https://wildonthefarm.com/journal/allergies-and-asthma/"
+  to = "/journal/allergies-and-asthma/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/fr/blog/guide-observation-oiseaux-boquete/"
-  to = "https://wildonthefarm.com/journal/boquete-bird-watching-guide/"
+  to = "/journal/boquete-bird-watching-guide/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/fr/blog/jiaogulan-herbe-immortalite/"
-  to = "https://wildonthefarm.com/journal/jiaogulan/"
+  to = "/journal/jiaogulan/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/fr/blog/proprietes-ortie/"
-  to = "https://wildonthefarm.com/journal/nettle/"
+  to = "/journal/nettle/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/fr/blog/quetzal-joyau-foret-nuageuse/"
-  to = "https://wildonthefarm.com/journal/quetzal-cloudforest-jewel/"
+  to = "/journal/quetzal-cloudforest-jewel/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/fr/blog/romarin-bienfaits-proprietes/"
-  to = "https://wildonthefarm.com/journal/rosemary/"
-  status = 301
-  force = true
-
-# --- Domain-level catch-alls. Inert until DNS for these domains is
-# pointed at this Netlify site (deferred, out of scope for this plan) —
-# safe to ship now as forward-looking config. Listed last so the
-# path-specific rules above always win first and redirects stay a
-# single hop. ---
-[[redirects]]
-  from = "https://www.wildonthefarm.com/*"
-  to = "https://wildonthefarm.com/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "https://boquetecloudforestlodge.com/*"
-  to = "https://wildonthefarm.com/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "https://www.boquetecloudforestlodge.com/*"
-  to = "https://wildonthefarm.com/:splat"
+  to = "/journal/rosemary/"
   status = 301
   force = true
