@@ -241,6 +241,12 @@
   force = true
 
 [[redirects]]
+  from = "/fr/sejour/"
+  to = "/lodge/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/fr/observation-des-oiseaux/"
   to = "/birdwatching/"
   status = 301
