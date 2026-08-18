@@ -29,14 +29,24 @@
 # boquetecloudforestlodge.com traffic to wildonthefarm.com — they're load
 # bearing, not redundant with anything Netlify does natively.
 #
-# Path-specific rules are listed before those domain-scoped rules so the
-# most specific match wins first: for a legacy path requested via the
-# alias domain, the path rule fires first (fixing the path, staying on
-# the alias domain for that hop), then the resulting request re-evaluates
-# every rule again and the domain-scoped rule catches it (fixing the
-# domain) — two hops total to the final canonical URL. Anything not in
-# the legacy-path list resolves in a single hop straight to the matching
-# wildonthefarm.com path.
+# These two are listed FIRST, before the path-specific rules, as a test:
+# with them below the path rules, requests to boquetecloudforestlodge.com
+# were observed serving content directly / 404ing instead of redirecting
+# at all (verified with curl against a path with no matching rule and no
+# real content — it 404'd instead of hitting this force=true catch-all).
+# Netlify matches top to bottom, first match wins, so moving these first
+# tests whether something below was shadowing them.
+[[redirects]]
+  from = "https://boquetecloudforestlodge.com/*"
+  to = "https://wildonthefarm.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.boquetecloudforestlodge.com/*"
+  to = "https://wildonthefarm.com/:splat"
+  status = 301
+  force = true
 
 # --- EN: top-level pages (only / carried over unchanged — every other
 # slug changed, confirmed against the real src/pages/*.astro files on
@@ -294,20 +304,5 @@
 [[redirects]]
   from = "/fr/blog/romarin-bienfaits-proprietes/"
   to = "/journal/rosemary/"
-  status = 301
-  force = true
-
-# --- boquetecloudforestlodge.com is a domain alias with no automatic
-# redirect (see the note at the top of this file) — these two rules are
-# what actually send its traffic to wildonthefarm.com. ---
-[[redirects]]
-  from = "https://boquetecloudforestlodge.com/*"
-  to = "https://wildonthefarm.com/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "https://www.boquetecloudforestlodge.com/*"
-  to = "https://wildonthefarm.com/:splat"
   status = 301
   force = true
