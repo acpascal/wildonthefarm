@@ -18,6 +18,8 @@ const t = useTranslations(locale);
 const home = pageHref('home', locale);
 const contactHref = pageHref('faqs-contact', locale);
 const resolveHref = (item: NavLink) => (item.pageId ? pageHref(item.pageId, locale) : item.href ?? '#');
+const currentPath = Astro.url.pathname;
+const isCurrent = (item: NavLink) => resolveHref(item) === currentPath;
 const nameWords = business.name.split(' ');
 const taglineWords = business.tagline.split(' ');
 ---
@@ -55,7 +57,7 @@ const taglineWords = business.tagline.split(' ');
           isDropdown(item) ? (
             <div class="nav-dropdown">
               <button
-                class="nav-dropdown-toggle"
+                class={item.items.some(isCurrent) || isCurrent(item) ? 'nav-dropdown-toggle is-current' : 'nav-dropdown-toggle'}
                 type="button"
                 aria-haspopup="true"
                 aria-expanded="false"
@@ -68,12 +70,24 @@ const taglineWords = business.tagline.split(' ');
               </button>
               <div class="nav-dropdown-menu">
                 {item.items.map((sub) => (
-                  <a href={resolveHref(sub)}>{t(sub.key)}</a>
+                  <a
+                    href={resolveHref(sub)}
+                    class={isCurrent(sub) ? 'is-current' : undefined}
+                    aria-current={isCurrent(sub) ? 'page' : undefined}
+                  >
+                    {t(sub.key)}
+                  </a>
                 ))}
               </div>
             </div>
           ) : (
-            <a href={resolveHref(item)}>{t(item.key)}</a>
+            <a
+              href={resolveHref(item)}
+              class={isCurrent(item) ? 'is-current' : undefined}
+              aria-current={isCurrent(item) ? 'page' : undefined}
+            >
+              {t(item.key)}
+            </a>
           )
         )
       }

@@ -362,6 +362,13 @@ button {
   border-bottom: 1px solid var(--border);
 }
 
+.nav-links > a.is-current,
+.nav-dropdown-toggle.is-current,
+.nav-dropdown-menu a.is-current {
+  color: var(--gold);
+  font-weight: 600;
+}
+
 .nav-reserve {
   order: 1;
   flex-shrink: 0;
