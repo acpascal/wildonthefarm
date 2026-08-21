@@ -261,7 +261,7 @@ button {
      a cqw-based size is proportional to the available width, so it can
      never outgrow it — it shrinks toward 0 rather than pinning to a
      fixed size that eventually overflows. */
-  font-size: clamp(0rem, 3cqw, 1rem);
+  font-size: clamp(0rem, 3.5cqw, 1rem);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--green-deep);
@@ -375,7 +375,7 @@ button {
   white-space: nowrap;
   padding: 0.6em 1.1em;
   /* Same cap and formula as .logo — see there for why. */
-  font-size: clamp(0rem, 3cqw, 1rem);
+  font-size: clamp(0rem, 3.5cqw, 1rem);
 }
 
 /* Very narrow phones — free up room so logo, reserve button, and
