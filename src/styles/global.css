@@ -241,10 +241,13 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-3);
+  /* Shrinks before the logo/reserve font sizes do, so the row tightens
+     up before anything needs to get smaller to fit. */
+  gap: clamp(0.25rem, 1cqw, 1rem);
   min-height: var(--nav-h);
   padding: 0.9rem var(--container-pad);
   position: relative;
+  container-type: inline-size;
 }
 
 .logo {
@@ -253,7 +256,12 @@ button {
   flex-shrink: 0;
   gap: 0.6em;
   font-family: var(--font-display);
-  font-size: clamp(0.62rem, 1.7vw, 1rem);
+  /* Same formula as .nav-reserve (shared cap) so both shrink in lockstep
+     once the gap above is fully compressed — see .nav-reserve. No floor:
+     a cqw-based size is proportional to the available width, so it can
+     never outgrow it — it shrinks toward 0 rather than pinning to a
+     fixed size that eventually overflows. */
+  font-size: clamp(0rem, 3cqw, 1rem);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--green-deep);
@@ -359,16 +367,17 @@ button {
   flex-shrink: 0;
   white-space: nowrap;
   padding: 0.6em 1.1em;
-  font-size: clamp(0.66rem, 3vw, 0.8rem);
+  /* Same cap and formula as .logo — see there for why. */
+  font-size: clamp(0rem, 3cqw, 1rem);
 }
 
 /* Very narrow phones — free up room so logo, reserve button, and
    hamburger never overlap or push each other off-screen (nothing here
    is allowed to wrap; only shrinking, never wrapping, resolves width
-   pressure in this nav). */
+   pressure in this nav). Gap is handled by the fluid .nav-inner rule
+   above (already at its floor well before this breakpoint). */
 @media (max-width: 400px) {
   .nav-inner {
-    gap: 0.5rem;
     padding-left: 0.85rem;
     padding-right: 0.85rem;
   }
@@ -772,6 +781,7 @@ section > .container :last-child {
 .photo-hero-caption {
   position: relative;
   z-index: 1;
+  container-type: inline-size;
   /* Clears the ScrollCue (bottom: space-4, 40px tall), plus breathing room under the title */
   padding-bottom: calc(var(--space-5) + 48px + var(--space-3));
 }
@@ -779,17 +789,25 @@ section > .container :last-child {
 .photo-hero-caption h1 {
   color: var(--paper);
   margin: 0.3em 0 0;
-  font-size: 1.6rem;
+  font-size: 2.25rem;
+}
+
+/* Lines split at a fixed point (eg. a comma) via <span class="hero-line">.
+   All lines share one size so the split reads as one headline, not two
+   different sizes. It's a share of the caption's own width (cqw, not vw)
+   so it scales with the actual space available, never wraps internally,
+   and is capped at the h1's base size on wide screens. No floor: since
+   cqw is directly proportional to the available width, a floor-less
+   value can never outgrow it — it keeps shrinking toward 0 instead of
+   pinning to a fixed size that eventually overflows. */
+.photo-hero-caption h1 .hero-line {
+  display: block;
+  white-space: nowrap;
+  font-size: clamp(0rem, 5.5cqw, 2.5rem);
 }
 
 .photo-hero-caption .hero-eyebrow {
   color: var(--gold-bright);
-}
-
-@media (min-width: 860px) {
-  .photo-hero-caption h1 {
-    font-size: 2.4rem;
-  }
 }
 
 /* Standard hero — cropped background-image, overlaid text. Tall enough
