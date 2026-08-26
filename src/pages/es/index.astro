@@ -96,7 +96,7 @@ const cards = [
       <div>
         <p>
           Wild on the Farm nunca se construyó para parecer una finca. Lo ha sido desde 2008 — una
-          finca orgánica certificada y plantación de macadamia, cultivada en armonía paciente con
+          finca orgánica y plantación de macadamia, cultivada en armonía paciente con
           el bosque nuboso que la rodea.
         </p>
         <p>
@@ -130,6 +130,21 @@ const cards = [
     <CardGrid>
       {cards.map((c) => <OverlayCard {...c} />)}
     </CardGrid>
+    <div class="map-embed">
+      <iframe
+        title="Ubicación de Wild on the Farm en Google Maps"
+        width="100%"
+        height="450"
+        style="border:0"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="strict-origin-when-cross-origin"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3942.6012169702753!2d-82.45058332498353!3d8.823481391229862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa5edd18b24f369%3A0x11b58604931f7e19!2sWild%20on%20the%20farm!5e0!3m2!1sfr!2spa!4v1787767091890!5m2!1sfr!2spa"
+      />
+    </div>
+    <div class="contact-list">
+      <a href="https://www.google.com/maps?cid=1276073423635709465">Ver nuestras reseñas en Google →</a>
+    </div>
   </Section>
 
   <QuoteSection cite="— Charlotte Hamilton">
