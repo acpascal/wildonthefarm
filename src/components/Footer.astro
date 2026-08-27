@@ -12,6 +12,7 @@ interface Props {
 const { locale = defaultLocale } = Astro.props;
 const t = useTranslations(locale);
 const contactHref = pageHref('faqs-contact', locale);
+const legalHref = pageHref('legal-notice', locale);
 ---
 
 <footer>
@@ -31,6 +32,7 @@ const contactHref = pageHref('faqs-contact', locale);
       <div>{t('footer.copyright')}</div>
       <div class="footer-links">
         <a href={contactHref}>{t('footer.faqsContact')}</a>
+        <a href={legalHref}>{t('footer.legalNotice')}</a>
         <a href={business.social.facebook}>{t('footer.facebook')}</a>
         <a href={business.social.instagram}>{t('footer.instagram')}</a>
         <a href={business.social.youtube}>{t('footer.youtube')}</a>

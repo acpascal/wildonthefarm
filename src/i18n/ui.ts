@@ -29,7 +29,8 @@ export const ui = {
     'footer.facebook': 'Facebook',
     'footer.instagram': 'Instagram',
     'footer.youtube': 'YouTube',
-    'footer.copyright': '© 2026 Wild on the Farm — Boquete Cloud Forest Lodge, Panama',
+    'footer.copyright': '© 2026 Wild on the Farm — Boquete Cloud Forest Lodge, Panama. All rights reserved.',
+    'footer.legalNotice': 'Legal Notice',
     'lightbox.close': 'Close',
     'lightbox.previous': 'Previous photo',
     'lightbox.next': 'Next photo',
@@ -44,6 +45,9 @@ export const ui = {
     'journal.continueReading': 'Continue Reading',
     'journal.moreFromJournal': 'More from the Journal.',
     'journal.allPosts': 'All Journal Posts →',
+    'journal.copyrightNotice':
+      'This article is © Wild on the Farm, Boquete Cloud Forest Lodge. All rights reserved — it may not be reproduced, republished, or redistributed without prior written permission.',
+    'journal.legalNoticeLink': 'Read our full legal notice →',
     'medicalDisclaimer':
       'This information is for educational purposes only and reflects traditional and commonly documented uses of this plant. It is not medical advice and does not replace the guidance of a qualified healthcare professional. Always consult your doctor before using any plant medicinally, especially if pregnant, nursing, or taking medication.',
   },
@@ -66,7 +70,8 @@ export const ui = {
     'footer.facebook': 'Facebook',
     'footer.instagram': 'Instagram',
     'footer.youtube': 'YouTube',
-    'footer.copyright': '© 2026 Wild on the Farm — Boquete Cloud Forest Lodge, Panamá',
+    'footer.copyright': '© 2026 Wild on the Farm — Boquete Cloud Forest Lodge, Panamá. Todos los derechos reservados.',
+    'footer.legalNotice': 'Aviso Legal',
     'lightbox.close': 'Cerrar',
     'lightbox.previous': 'Foto anterior',
     'lightbox.next': 'Foto siguiente',
@@ -81,6 +86,9 @@ export const ui = {
     'journal.continueReading': 'Seguir Leyendo',
     'journal.moreFromJournal': 'Más del Diario.',
     'journal.allPosts': 'Todas las Publicaciones del Diario →',
+    'journal.copyrightNotice':
+      'Este artículo es © Wild on the Farm, Boquete Cloud Forest Lodge. Todos los derechos reservados — no puede reproducirse, republicarse ni redistribuirse sin autorización previa por escrito.',
+    'journal.legalNoticeLink': 'Lee nuestro aviso legal completo →',
     'medicalDisclaimer':
       'Esta información tiene fines educativos únicamente y refleja usos tradicionales y comúnmente documentados de esta planta. No constituye consejo médico ni sustituye la orientación de un profesional de la salud calificado. Consulta siempre a tu médico antes de usar cualquier planta con fines medicinales, especialmente si estás embarazada, en periodo de lactancia o tomando medicamentos.',
   },

@@ -24,6 +24,7 @@ export const pageTranslations: PageTranslation[] = [
   { id: 'shop', en: '/shop/', es: '/es/tienda/' },
   { id: 'rates-retreats', en: '/rates-retreats/', es: '/es/tarifas-y-retiros/' },
   { id: 'faqs-contact', en: '/faqs-contact/', es: '/es/preguntas-contacto/' },
+  { id: 'legal-notice', en: '/legal-notice/', es: '/es/aviso-legal/' },
   { id: 'cabin-1', en: '/cabin-1/', es: '/es/cabana-1/' },
   { id: 'cabin-2', en: '/cabin-2/', es: '/es/cabana-2/' },
   { id: 'cabin-3', en: '/cabin-3/', es: '/es/cabana-3/' },

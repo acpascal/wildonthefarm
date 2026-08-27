@@ -1419,6 +1419,18 @@ a.text-card:hover .card-cta {
   text-transform: uppercase;
 }
 
+.article-copyright {
+  margin-top: var(--space-5);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--border);
+}
+
+.article-copyright p {
+  color: var(--gray);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
 /* Article body reuses the standard centered .container — just narrower,
    for a readable line length. Applied to .article-meta too so the byline
    lines up with the text below it. */

@@ -1,0 +1,43 @@
+---
+import { business } from '../data/business';
+import { absoluteUrl } from '../lib/seo';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Root-relative image path (e.g. an astro:assets getImage() .src). */
+  imageUrl: string;
+  /** Page path, e.g. '/journal/nettle/'. */
+  path: string;
+  /** ISO 8601 date string. */
+  publishedTime: string;
+}
+
+const { title, description, imageUrl, path, publishedTime } = Astro.props;
+const site = Astro.site!;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: title,
+  description,
+  image: absoluteUrl(site, imageUrl),
+  datePublished: publishedTime,
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': absoluteUrl(site, path),
+  },
+  author: {
+    '@type': 'Organization',
+    name: business.name,
+    url: absoluteUrl(site, '/'),
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: `${business.name} — ${business.tagline}`,
+    url: absoluteUrl(site, '/'),
+  },
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

@@ -14,6 +14,10 @@ export interface PageSeo {
   image?: string;
   /** True for pages that shouldn't be indexed (e.g. 404). */
   noindex?: boolean;
+  /** 'article' for journal posts (drives og:type + article:published_time); defaults to 'website'. */
+  type?: 'website' | 'article';
+  /** ISO 8601 date string — required when `type` is 'article'. */
+  publishedTime?: string;
   /**
    * Every locale this page has a real translation for, keyed by locale,
    * valued by that page's path. Only needed when `path` isn't a static
@@ -30,6 +34,8 @@ export interface ResolvedSeo {
   canonical: string;
   image?: string;
   noindex: boolean;
+  type: 'website' | 'article';
+  publishedTime?: string;
   alternates?: Partial<Record<Locale, string>>;
 }
 
@@ -47,6 +53,8 @@ export function buildSeo(site: URL, page: PageSeo): ResolvedSeo {
     canonical: absoluteUrl(site, page.path),
     image: page.image ? absoluteUrl(site, page.image) : undefined,
     noindex: page.noindex ?? false,
+    type: page.type ?? 'website',
+    publishedTime: page.publishedTime,
     alternates,
   };
 }
