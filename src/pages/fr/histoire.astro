@@ -1,0 +1,193 @@
+---
+import { getImage, Image } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PhotoHero from '../../components/PhotoHero.astro';
+import Section from '../../components/Section.astro';
+import Split from '../../components/Split.astro';
+import QuoteSection from '../../components/QuoteSection.astro';
+import { img } from '../../lib/images';
+
+const heroImage = img('home/story.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const houseImage = img('retreats/owners_house.jpg');
+const terracesImage = img('farm/pergola.jpg');
+const harmonyImage = img('story/roof_construction.jpg');
+---
+
+<PageLayout
+  title="Notre Histoire — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Comment un hôtelier de Quito a échangé le métier de l'hôtellerie contre un versant de montagne à Boquete, et a passé dix-huit ans à construire une ferme biologique avant d'en ouvrir les portes aux hôtes."
+  path="/fr/histoire/"
+  image={ogImage.src}
+  pullIntro="Wild on the Farm est né d'un voyage profond à travers les lieux les plus sauvages du Panama. Après des années d'exploration, le fondateur a découvert cette terre intacte — et y a vu le cadre parfait pour un havre autosuffisant, où la paix, la nature et l'art de vivre s'harmonisent."
+  locale="fr"
+>
+  <Fragment slot="hero">
+    <PhotoHero image={heroImage} alt="Un toit végétalisé intégré à la colline à Wild on the Farm" eyebrow="Notre Histoire">
+      Né d'un voyage à travers le sauvage.
+    </PhotoHero>
+  </Fragment>
+
+  <Section label="Un Voyage vers l'Harmonie" heading="L'Histoire derrière le Mythe">
+    <Split>
+      <div class="split-photo">
+        <Image
+          src={harmonyImage}
+          alt="Construction du toit végétalisé à Wild on the Farm, haut au-dessus des terrasses"
+          widths={[400, 700, 1000]}
+          sizes="(min-width: 860px) 50vw, 100vw"
+          loading="lazy"
+        />
+      </div>
+      <div>
+        <p>Né d'une boussole perdue, bâti avec passion et vision.</p>
+        <p>
+          Il y a vingt ans, j'ai passé trois ans à arpenter les jungles et les montagnes du
+          Panama. Mon quotidien ? Un hamac, des parcs nationaux et la ferme intention de me
+          perdre volontairement. Après avoir parcouru les espaces sauvages du globe avec mes
+          jambes migratrices, je suis arrivé là, chez moi…
+        </p>
+        <p>
+          En sortant de la forêt nébuleuse, après une semaine complète perdu dans le parc
+          national de La Amistad, je suis tombé sur cette terre, abandonnée depuis huit ans. Là
+          où d'autres auraient vu des ronces, j'ai vu mon chef-d'œuvre : l'endroit parfait pour
+          m'installer (enfin !) et créer un refuge autonome en totale synergie avec la nature
+          sauvage.
+        </p>
+        <p>
+          Ce qui m'a tout de suite fasciné ? Le microclimat. Un calme presque monastique,
+          enveloppé par la jungle, qui offrait pourtant un spectacle grandiose : une vue plongeante
+          sur le volcan Barú et le ballet incessant des nuages. La terre était vierge, et mon
+          esprit, prêt à expérimenter une nouvelle façon de vivre.
+        </p>
+        <p>
+          J'avais du temps devant moi, les fonds nécessaires puisque je venais de vendre mon petit
+          hôtel et centre de plongée de Roatán, et une folle envie de redéfinir l'art de vivre au
+          sommet.
+        </p>
+        <p>— Le Fondateur, Wild on the Farm</p>
+      </div>
+    </Split>
+  </Section>
+
+  <Section label="Trouver Cette Montagne" heading="L'Art d'Apprivoiser les Tropiques">
+    <Split>
+      <div class="split-photo">
+        <Image
+          src={houseImage}
+          alt="La maison d'origine sur la propriété qui deviendrait Wild on the Farm"
+          widths={[400, 700, 1000]}
+          sizes="(min-width: 860px) 50vw, 100vw"
+          loading="lazy"
+        />
+      </div>
+      <div>
+        <p>
+          Vivre sous les tropiques, c'est un métier. Et après quelques décennies de pratique, je
+          crois pouvoir dire que j'ai obtenu mon diplôme.
+        </p>
+        <p>
+          Ma première leçon commença dans les années soixante-dix, en Afrique. Trois ans parmi
+          les chasseurs-cueilleurs, à user ma jeunesse dans des huttes traditionnelles sous une
+          chaleur à faire fondre le bon sens. Éjecté de ce continent pour excès d'adaptation au
+          primitivisme, me voilà jeté sur les routes, filant depuis le Nord canadien de
+          Chicoutimi jusqu'aux confins de la Patagonie. C'était une Amérique latine en sursis,
+          déchirée par les guerres civiles et les dictatures, encore vierge de touristes mais
+          vibrante de ses traditions et de ses cultures indiennes préservées.
+        </p>
+        <p>
+          J'ai passé des années à fouiller chaque blessure et chaque beauté de ce continent. J'ai
+          habité des plages désertes au Mexique ; j'ai partagé le quotidien des Lacandons et des
+          Shuars en Amazonie équatorienne. C'est là, sur le Río Napo en 1981, qu'on m'arrêta pour
+          espionnage à la frontière péruvienne, au milieu d'une guerre locale absurde pour
+          quelques gouttes de pétrole. Puis vinrent les années d'art et d'artisanat, marquées par
+          des incursions sur l'altiplano péruvien alors que le Sentier Lumineux ensanglantait le
+          pays ; je voyageais alors caché sous les bâches des camions de marchandises pour
+          atteindre San Pedro de Cajas. J'ai traversé la Patagonie en solitaire, chargé d'eau,
+          sans boussole, et j'ai collectionné les bêtises dangereuses pour courir à des
+          rendez-vous galants dans le Chili de Pinochet. Plus tard, je me suis fixé au lac
+          Atitlán, fasciné par la merveilleuse culture des indiens Kakchikels au Guatemala. Je me
+          suis passionné pour leurs tisserands et leurs huipils, ces vêtements traditionnels que
+          toutes les communautés portaient fièrement avant que les fripes de la charité
+          occidentale ne viennent ruiner ce savoir-faire millénaire.
+        </p>
+        <p>
+          Le tour du monde des tropiques m'a appris une vérité fondamentale : pour vraiment les
+          apprécier, il faut prendre de la hauteur. Les tropiques ne deviennent parfaits que dans
+          la fraîcheur de l'altitude. Aujourd'hui, devant l'hégémonie culturelle d'un monde devenu
+          trop accessible et mortellement ennuyeux, j'ai choisi de me retirer dans un pli
+          difficile d'accès de la Terre. La piste cahoteuse qui mène jusqu'ici ressemble
+          peut-être à une attraction de Disney World, mais c'est l'unique chemin pour s'isoler,
+          expérimenter les connaissances glanées le long d'une vie, et générer un peu d'harmonie
+          dans l'aboutissement d'une existence sans chaînes…
+        </p>
+        <p>Bienvenue dans mon paradis ultime.</p>
+        <p>— Le Fondateur, Wild on the Farm</p>
+      </div>
+    </Split>
+  </Section>
+
+  <Section label="Construit Lentement, Par Choix" heading="Le Manifeste du Temps Long">
+    <Split reverse>
+      <div class="split-photo">
+        <Image
+          src={terracesImage}
+          alt="Une pergola sur les terrasses de la propriété de Wild on the Farm"
+          widths={[400, 700, 1000]}
+          sizes="(min-width: 860px) 50vw, 100vw"
+          loading="lazy"
+        />
+      </div>
+      <div>
+        <p>
+          Ce qui a suivi n'était pas une rénovation. C'était la naissance d'une terre, façonnée
+          une terrasse à la fois.
+        </p>
+        <p>
+          Planter des arbres en sachant que le temps passe, c'est recevoir la plus belle des
+          leçons : celle de la persévérance. Le profit immédiat n'est que le vide d'une époque
+          éphémère, une course sans substance et sans joie qui ne fabrique que des êtres désertés
+          de sens. À l'heure du dérèglement climatique et de ses catastrophes annoncées, j'ai
+          choisi de parier sur la lenteur. Je préfère sculpter avec les années la beauté d'un
+          paysage, faire éclore une nourriture saine en nourrissant d'abord la terre, et cultiver
+          l'harmonie avec ce monde sauvage avec lequel je partage le secret de la vie. C'est
+          exactement cette philosophie que je tends comme un miroir à ceux qui décident, le temps
+          d'un séjour, de s'isoler avec nous.
+        </p>
+        <p>
+          Ici, les panneaux solaires ont été installés bien avant qu'il n'y ait quiconque à
+          éclairer. Les macadamias ont été plantés en terre avec la certitude qu'ils ne
+          donneraient aucun fruit avant quinze ans. Les moutons et les poules ont pris possession
+          des lieux pour travailler le sol, des années avant qu'il n'existe une seule table
+          d'hôtes à nourrir. C'est l'œuvre d'une vie de paysan, le legs d'un savoir et d'un acquis
+          patiemment mûris.
+        </p>
+        <p>
+          Ce n'est qu'en 2025, dix-huit ans après le premier coup de pioche, que nos trois cabanes
+          artisanales ont enfin ouvert leurs portes. Accrochées à la colline, elles ont été
+          bâties avec la même patience obstinée que tout le reste : avec la complicité du temps,
+          plutôt que dans l'urgence d'un calendrier.
+        </p>
+        <p>— Le Fondateur, Wild on the Farm</p>
+      </div>
+    </Split>
+  </Section>
+
+  <QuoteSection cite="— Pascal, Fondateur">
+    "Je ne voulais pas construire un lieu qui donnait l'impression d'appartenir à cette montagne.
+    Je voulais en construire un qui lui appartienne réellement — et cela signifiait laisser la
+    ferme passer en premier, les hôtes en second."
+  </QuoteSection>
+
+  <Fragment slot="footer">
+    <div class="section-label">Continuer l'Exploration</div>
+    <h2>Découvrez ce que cette patience a construit.</h2>
+    <p>Dix-huit ans de culture, trois cabanes, et une cuisine qui commence à quelques pas de la porte.</p>
+    <div class="contact-list">
+      <a href="/fr/ferme/">La Ferme →</a>
+      <a href="/fr/lodge/">Le Lodge →</a>
+      <a href="/fr/cuisine/">La Cuisine →</a>
+    </div>
+  </Fragment>
+</PageLayout>

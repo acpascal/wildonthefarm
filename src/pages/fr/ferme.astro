@@ -1,0 +1,154 @@
+---
+import { getImage, Image } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PhotoHero from '../../components/PhotoHero.astro';
+import Section from '../../components/Section.astro';
+import Split from '../../components/Split.astro';
+import Gallery from '../../components/Gallery.astro';
+import QuoteSection from '../../components/QuoteSection.astro';
+import { img } from '../../lib/images';
+
+const heroImage = img('farm/hero.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const permacultureImage = img('retreats/farm_animals.jpg');
+
+const galleryItems = [
+  { image: img('farm/property_overview.jpg'), alt: 'Vue aérienne de la propriété dans la forêt nuageuse', size: 'lg' as const },
+  { image: img('farm/gallery_1.jpg'), alt: 'Paysage de la ferme à Wild on the Farm' },
+  { image: img('farm/gallery_2.jpg'), alt: 'Paysage de la ferme à Wild on the Farm', size: 'tall' as const },
+  { image: img('farm/overview_1.jpg'), alt: 'Vue d’ensemble de la ferme en forêt nuageuse', size: 'wide' as const },
+  { image: img('farm/gallery_4.jpg'), alt: 'Paysage de la ferme à Wild on the Farm' },
+  { image: img('farm/pergola.jpg'), alt: 'Pergola sur la propriété' },
+];
+---
+
+<PageLayout
+  title="La Ferme — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Dix-huit années d'agriculture biologique et de permaculture à 1 800 mètres d'altitude, dans la forêt nuageuse du Panama, à la lisière du parc national La Amistad."
+  path="/fr/ferme/"
+  image={ogImage.src}
+  pullIntro="Nichée à 1 800 mètres d'altitude, au cœur du parc national La Amistad, notre ferme est un refuge de paix, de silence et d'air pur de montagne. Sa quiétude est presque monacale — retirée en pleine nature sauvage, elle invite à se régénérer, à renouer avec l'essentiel."
+  locale="fr"
+>
+  <Fragment slot="hero">
+    <PhotoHero image={heroImage} alt="La ferme de Wild on the Farm, Boquete" eyebrow="La Ferme">
+      Dix-huit années de terre nourricière, avant même l'arrivée du premier hôte.
+    </PhotoHero>
+  </Fragment>
+
+  <Section label="En Images" heading="Un paysage qui existait bien avant nous.">
+    <Gallery items={galleryItems} groupId="the-farm" />
+  </Section>
+
+  <Section>
+    <Split>
+      <div>
+        <div class="section-label">Depuis 2008</div>
+        <h2 class="lede">Une ferme en activité, longtemps avant de devenir un lieu de séjour.</h2>
+      </div>
+      <div>
+        <p>
+          Wild on the Farm n'a jamais été pensée pour ressembler à une ferme : elle en est une,
+          depuis 2008, biologique et plantée de macadamias, façonnée avec patience au rythme de la
+          forêt nuageuse qui l'enveloppe.
+        </p>
+        <p>
+          Ce n'est qu'en 2025 que trois cabanes artisanales ont, pour la première fois, ouvert
+          leurs portes. Tout le reste — la terre, les arbres, le rythme des saisons — était déjà
+          là, fruit de dix-huit années de patience.
+        </p>
+      </div>
+    </Split>
+  </Section>
+
+  <Section>
+    <Split>
+      <div>
+        <div class="section-label">Une Vie Fondée sur la Permaculture</div>
+        <h2 class="lede">Travailler avec la montagne, non contre elle.</h2>
+        <p>
+          La ferme fonctionne entièrement hors réseau. Des panneaux solaires nous fournissent
+          l'électricité, et notre eau provient d'une source qui jaillit directement de la roche, à
+          plus de deux kilomètres à l'intérieur du parc national La Amistad.
+        </p>
+        <p>
+          Au fil des années, nous avons façonné la colline en terrasses de brique où poussent, en
+          rotation, légumes, herbes aromatiques et plantes médicinales. Un petit troupeau de
+          moutons pâture le jour sous les macadamias et les arbres fruitiers — désherbant et
+          fertilisant le sol à mesure — avant de regagner chaque soir l'abri de son enclos, à
+          l'écart des prédateurs. Leur fumier, comme celui de nos poules, est composté puis rendu
+          à la terre.
+        </p>
+        <p>
+          Nous préparons aussi nos propres purins : ortie, consoude et tithonia, fermentés en
+          engrais naturels qui nourrissent les terrasses sans rien faire venir de l'extérieur.
+          Cette même ortie retrouve ensuite le chemin de notre cuisine — dans les soupes, et dans
+          les tisanes servies à table.
+        </p>
+      </div>
+      <div class="split-photo">
+        <Image
+          src={permacultureImage}
+          alt="Moutons et poules pâturant ensemble sous les macadamias"
+          widths={[400, 700, 1000]}
+          sizes="(min-width: 860px) 50vw, 100vw"
+          loading="lazy"
+        />
+      </div>
+    </Split>
+  </Section>
+
+  <Section>
+    <Split>
+      <div>
+        <div class="section-label">Plus Qu'une Retraite</div>
+        <h2 class="lede">Avant tout une ferme vivante ; un sanctuaire pour toutes sortes de voyageurs.</h2>
+      </div>
+      <div>
+        <p>
+          Le calme, ici, n'est réservé à aucun profil d'hôte en particulier. C'est le même silence
+          qui aiguise l'oreille de l'ornithologue amateur à l'aube, qui rend un sentier plus long
+          et plus beau, et qui transforme un simple repas du jardin en un moment que l'on prend le
+          temps de savourer.
+        </p>
+      </div>
+    </Split>
+  </Section>
+
+  <QuoteSection cite="— Pascal, Fondateur">
+    "Après quarante ans passés à parcourir le monde sauvage à pied et à apprendre auprès de
+    personnalités extraordinaires sur plusieurs continents, Pascal a trouvé le lieu idéal pour
+    mettre ce savoir en pratique — transformant cette ferme bien vivante en un sanctuaire pour les
+    voyageurs attirés par ce même silence."
+  </QuoteSection>
+
+  <Section label="Nous Trouver" heading="Découvrez la ferme, et ce qu'en disent nos visiteurs.">
+    <div class="map-embed">
+      <iframe
+        title="Emplacement de Wild on the Farm sur Google Maps"
+        width="100%"
+        height="450"
+        style="border:0"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="strict-origin-when-cross-origin"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3942.6012169702753!2d-82.45058332498353!3d8.823481391229862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa5edd18b24f369%3A0x11b58604931f7e19!2sWild%20on%20the%20farm!5e0!3m2!1sfr!2spa!4v1787767091890!5m2!1sfr!2spa"
+      />
+    </div>
+    <div class="contact-list">
+      <a href="https://www.google.com/maps?cid=1276073423635709465">Voir nos avis sur Google →</a>
+    </div>
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">Continuer l'Exploration</div>
+    <h2>Où la ferme vous mène ensuite.</h2>
+    <p>Découvrez où vous dormirez, ce qui est cultivé pour votre table, et les sentiers qui commencent à notre porte.</p>
+    <div class="contact-list">
+      <a href="/fr/lodge/">Les Cabanes →</a>
+      <a href="/fr/cuisine/">La Cuisine →</a>
+      <a href="/fr/observation-des-oiseaux/">Observation des Oiseaux et Sentiers →</a>
+    </div>
+  </Fragment>
+</PageLayout>

@@ -219,61 +219,45 @@
   status = 301
   force = true
 
-# --- FR: French was dropped as a site locale entirely (no /fr/ pages
-# exist anymore), so every old French URL below lands on the matching EN
-# v3 page rather than 404. ---
-[[redirects]]
-  from = "/fr/"
-  to = "/"
-  status = 301
-  force = true
-
+# --- FR: French is back as a real site locale (src/pages/fr/**). Only
+# old French URLs that don't have a current FR equivalent still redirect
+# to the matching EN v3 page — anything with a live /fr/ page today is
+# left alone so the real page serves instead of bouncing to EN. ---
 [[redirects]]
   from = "/fr/la-ferme/"
-  to = "/farm/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/fr/cuisine/"
-  to = "/food/"
+  to = "/fr/ferme/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/fr/sejour/"
-  to = "/lodge/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/fr/observation-des-oiseaux/"
-  to = "/birdwatching/"
+  to = "/fr/lodge/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/fr/retraite-detox/"
-  to = "/rates-retreats/"
+  to = "/fr/tarifs-et-retraites/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/fr/experience/"
-  to = "/hiking/"
+  to = "/fr/randonnee/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/fr/qfp/"
-  to = "/faqs-contact/"
+  to = "/fr/faq-contact/"
   status = 301
   force = true
 
-# --- FR: blog -> EN /journal/ pages (French journal was never kept) ---
+# --- FR: old blog URLs -> current /fr/journal/ articles, once each has a
+# real French translation. Until then they fall back to the EN article. ---
 [[redirects]]
   from = "/fr/blog/"
-  to = "/journal/"
+  to = "/fr/journal/"
   status = 301
   force = true
 

@@ -1,0 +1,35 @@
+---
+title: "Herpétologie au Panama"
+description: "Quelques photographies saisissantes de serpents, prises au fil d'escapades en solitaire au cœur des jungles du Panama — le parc national de Chagres, le Darién, la Cordillère Centrale."
+pullIntro: "Quelques photographies saisissantes de serpents, prises au fil de mes escapades au cœur des jungles du Panama — le parc national de Chagres, le Darién, la Cordillère Centrale…"
+date: 2026-06-15
+kind: note
+section: travel-panama
+translationKey: herpetology-in-panama
+cover: ../../../assets/journal/serpents/vine_snake_anole.jpg
+coverAlt: Une couresse liane avalant un anolis dans la jungle panaméenne
+---
+
+import PhotoGrid from '../../../components/PhotoGrid.astro';
+import { img } from '../../../lib/images';
+
+export const serpentPhotos = [
+  { image: img('journal/serpents/vine_snake_anole.jpg'), alt: 'Une couresse liane, une proie entre les mâchoires' },
+  { image: img('journal/serpents/tree_snake_branch.jpg'), alt: 'Un serpent aux motifs marqués, immobile sur une branche' },
+  { image: img('journal/serpents/parrot_snake_frog_01.jpg'), alt: 'Un serpent vert tenant une grenouille dans un sous-bois dense' },
+  { image: img('journal/serpents/parrot_snake_frog_02.jpg'), alt: 'Un serpent vert tenant fermement une grenouille parmi des galets de rivière' },
+  { image: img('journal/serpents/parrot_snake_frog_03.jpg'), alt: "Gros plan sur un serpent vert en pleine attaque d'une grenouille" },
+  { image: img('journal/serpents/parrot_snake_portrait.jpg'), alt: 'Un serpent vert se faufilant à travers du bambou sec et de la litière forestière' },
+  { image: img('journal/serpents/eyelash_viper_coiled.jpg'), alt: 'Une vipère lovée sur une écorce humide couverte de mousse' },
+  { image: img('journal/serpents/eyelash_viper_head.jpg'), alt: "Gros plan sur la tête d'une vipère" },
+  { image: img('journal/serpents/coral_snake_riverbank.jpg'), alt: 'Un serpent aux anneaux rouges, noirs et blancs, parmi les pierres du lit de la rivière' },
+  { image: img('journal/serpents/vine_snake_lizard.jpg'), alt: 'Un serpent tenant un lézard entre ses mâchoires, emmêlé dans des branches basses' },
+  { image: img('journal/serpents/vine_snake_hummingbird_01.jpg'), alt: 'Un serpent ayant capturé un colibri, les ailes encore déployées' },
+  { image: img('journal/serpents/vine_snake_hummingbird_02.jpg'), alt: 'Un serpent vert avalant un colibri par la tête, parmi des feuilles vertes' },
+  { image: img('journal/serpents/vine_snake_hummingbird_03.jpg'), alt: 'Un serpent vert tenant un colibri entre ses mâchoires' },
+  { image: img('journal/serpents/tree_snake_deadwood_01.jpg'), alt: 'Un serpent pâle tacheté de sombre, lové près d\'un tronc tombé' },
+  { image: img('journal/serpents/tree_snake_deadwood_02.jpg'), alt: 'Un serpent pâle tacheté de sombre, étiré sur une litière de feuilles tachetée de soleil' },
+  { image: img('journal/serpents/tree_snake_deadwood_03.jpg'), alt: 'Un serpent pâle tacheté de sombre, glissant sur un tronc érodé' },
+];
+
+<PhotoGrid items={serpentPhotos} groupId="serpents" />

@@ -1,0 +1,79 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Section from '../../components/Section.astro';
+import { business } from '../../data/business';
+import { img } from '../../lib/images';
+import { mailtoHref } from '../../i18n/utils';
+
+const heroImage = img('farm/property_overview.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+---
+
+<PageLayout
+  title="Mentions Légales et Droits d'Auteur — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Titularité des droits d'auteur et conditions de reproduction des textes, photographies et articles du Journal publiés sur wildonthefarm.com."
+  path="/fr/mentions-legales/"
+  image={ogImage.src}
+  pullIntro="Les textes, photographies et articles de ce site sont des créations originales — voici ce que cela implique pour quiconque souhaiterait les réutiliser."
+  locale="fr"
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="Vue aérienne de la propriété" eyebrow="Mentions Légales">
+      Mentions Légales &amp; Droits d'Auteur
+    </PageHero>
+  </Fragment>
+
+  <Section label="Droits d'Auteur" heading="Tout le contenu est protégé par le droit d'auteur.">
+    <div class="max-prose">
+      <p>
+        Sauf mention contraire, tous les textes, photographies et autres contenus originaux
+        publiés sur wildonthefarm.com — y compris chaque article du Journal — sont la propriété
+        de <strong>{business.name}, {business.tagline}</strong>, et sont protégés par le droit
+        d'auteur dès leur création. Aucun dépôt distinct n'est nécessaire pour que cette
+        protection s'applique.
+      </p>
+      <p>
+        Un petit nombre d'images utilisées pour illustrer un contexte historique ou scientifique
+        dans le Journal sont reproduites sous licence domaine public ou Creative Commons plutôt
+        qu'en photographie originale — le cas échéant, la source et la licence sont créditées
+        directement sous l'article.
+      </p>
+    </div>
+  </Section>
+
+  <Section label="Reproduction" heading="Ce que vous pouvez — et ne pouvez pas — faire avec ce contenu.">
+    <div class="max-prose">
+      <p>
+        Vous êtes libre de lire, de partager un lien vers, ou de citer un court extrait de tout
+        article à des fins personnelles, éditoriales ou de critique, à condition de créditer{' '}
+        {business.name} et de renvoyer vers la page d'origine.
+      </p>
+      <p>
+        Ce qui n'est pas autorisé sans notre consentement écrit préalable : republier un article
+        dans son intégralité ou en grande partie sur un autre site, une publication imprimée ou
+        une infolettre ; utiliser notre texte ou notre photographie dans un support marketing pour
+        une autre entreprise ; ou utiliser ce contenu, en tout ou en partie, pour entraîner,
+        affiner ou développer de toute autre manière un modèle d'intelligence artificielle ou
+        d'apprentissage automatique.
+      </p>
+      <p>
+        Si vous souhaitez reproduire davantage qu'une courte citation, ou obtenir une licence pour
+        une photographie, écrivez-nous simplement — nous sommes généralement heureux d'en
+        discuter.
+      </p>
+      <p>
+        <a href={mailtoHref(business.email, 'fr')}>{business.email}</a>
+      </p>
+    </div>
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">Des Questions ?</div>
+    <h2>Contactez-nous.</h2>
+    <div class="contact-list">
+      <a href="/fr/faq-contact/">FAQ et Contact →</a>
+    </div>
+  </Fragment>
+</PageLayout>

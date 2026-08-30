@@ -1,0 +1,108 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Section from '../../components/Section.astro';
+import PhotoGrid from '../../components/PhotoGrid.astro';
+import Split from '../../components/Split.astro';
+import NoteBox from '../../components/NoteBox.astro';
+import { img } from '../../lib/images';
+
+const heroImage = img('kitchen/dining_room.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+const gardenTeaserImage = img('garden/garden_view.jpg');
+const gardenTeaserOptimized = await getImage({ src: gardenTeaserImage, width: 800, format: 'webp' });
+
+const diningPhotos = [
+  { image: img('kitchen/dining_room.jpg'), alt: 'The dining room at Wild on the Farm, set for a meal' },
+  { image: img('kitchen/dining_room_detail.jpg'), alt: "Detail of the dining room's timber furnishings" },
+];
+
+const kitchenPhotos = [
+  { image: img('kitchen/kitchen_wide.jpg'), alt: 'Wide view of the farm kitchen' },
+  { image: img('kitchen/cook_at_work.jpg'), alt: 'The cook preparing a meal in the farm kitchen' },
+];
+
+const tablePhotos = [
+  { image: img('kitchen/table_guests_1.jpg'), alt: 'Guests sharing a meal at the communal table' },
+  { image: img('kitchen/table_guests_2.jpg'), alt: 'Guests seated together at the communal table' },
+];
+
+const foodPhotos = [
+  { image: img('food/chicken_stew.jpg'), alt: 'A chicken stew made with farm-grown vegetables' },
+  { image: img('food/roasted_tomatoes.jpg'), alt: 'Roasted tomatoes from the garden' },
+  { image: img('food/plated_dish.jpg'), alt: 'A plated dish served at Wild on the Farm' },
+  { image: img('food/four_salads.jpg'), alt: 'Four seasonal salads made from garden produce' },
+  { image: img('food/salad_with_view.jpg'), alt: 'A fresh salad served with a view over the cloud forest' },
+];
+---
+
+<PageLayout
+  title="La Cuisine — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Une cuisine de ferme bien vivante à Wild on the Farm, Boquete : des produits biologiques de nos propres jardins en terrasses, cuisinés simplement et partagés autour d'une longue table."
+  path="/fr/cuisine/"
+  image={ogImage.src}
+  pullIntro="Partager un repas autour d'une longue table — mêlant langues et cultures en un petit et bel instant d'humanité — est la plus belle chose que cette montagne ait à offrir. Le feu crépite, et les plats que nous aimons cuisiner cherchent l'équilibre entre plaisir, santé et diversité. L'ortie et le pourpier sont exquises, d'une force discrète — vous le comprendrez dès que leur parfum vous parviendra par la porte de la cuisine. J'aime cuisiner. Pour moi, c'est une nouvelle aventure chaque jour, façonnée par le jardin, le temps qu'il fait, et ce qui m'inspire ce matin-là. Voici la cuisine de Pachapapa…."
+  locale="fr"
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="Le coin repas à Wild on the Farm" eyebrow="La Cuisine">
+      La cuisine de Pachapapa.
+    </PageHero>
+  </Fragment>
+
+  <Section label="Le Coin Repas" heading="Là où finit la journée.">
+    <PhotoGrid items={diningPhotos} groupId="kitchen-dining" />
+  </Section>
+
+  <Section label="La Cuisine" heading="Petite, professionnelle, et toujours en activité.">
+    <PhotoGrid items={kitchenPhotos} groupId="kitchen-kitchen" />
+  </Section>
+
+  <Section label="Autour de la Table" heading="Tout le monde mange ensemble.">
+    <PhotoGrid items={tablePhotos} groupId="kitchen-table" />
+  </Section>
+
+  <Section label="De Notre Jardin" heading="Biologique, de saison, à quelques pas du fourneau.">
+    <p>
+      Son cœur battant jusqu'au dernier souffle, le jardin garde dix-huit ans d'expérimentation et
+      d'expérience. Nous nourrissons la terre, et la terre à son tour nourrit les plantes qui vous
+      transmettent leur vitalité. Tout autre chemin nuit à votre santé.
+    </p>
+    <Split>
+      <div class="story-img" style={`background-image:url(${gardenTeaserOptimized.src})`} role="img" aria-label="Vue sur les jardins en terrasses" />
+      <div>
+        <p>
+          Le Jardin a désormais sa propre page — photos complètes de la terrasse à la table, et
+          l'histoire de permaculture qui se cache derrière.
+        </p>
+        <p><a href="/fr/jardin/"><strong>Visiter le Jardin →</strong></a></p>
+      </div>
+    </Split>
+  </Section>
+
+  <Section label="Ce Que Nous Cuisinons" heading="Une cuisine simple, pensée pour nourrir.">
+    <p>
+      Ici, les repas suivent le jardin plutôt qu'un menu fixe — ragoûts généreux, légumes rôtis, et
+      salades fraîches composées de ce qui est prêt à cueillir ce matin-là. L'objectif est une
+      cuisine qui a le goût de l'endroit où elle a poussé, et qui laisse les hôtes se sentir mieux
+      qu'à leur arrivée.
+    </p>
+    <PhotoGrid items={foodPhotos} groupId="kitchen-food" />
+    <NoteBox variant="todo">
+      <p>
+        Placeholder frame for the "cultures and health" angle — replace with real words on why we
+        grow and cook this way (organic practices, permaculture, health philosophy).
+      </p>
+    </NoteBox>
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">Préparez Votre Visite</div>
+    <h2>Déjà faim ?</h2>
+    <div class="contact-list">
+      <a href="/fr/ferme/">La Ferme →</a>
+      <a href="/fr/lodge/">Le Lodge →</a>
+    </div>
+  </Fragment>
+</PageLayout>

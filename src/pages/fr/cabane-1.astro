@@ -1,0 +1,70 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Section from '../../components/Section.astro';
+import PhotoGrid from '../../components/PhotoGrid.astro';
+import NoteBox from '../../components/NoteBox.astro';
+import { img } from '../../lib/images';
+
+const heroImage = img('cabin1/hero.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const photos = [
+  { image: heroImage, alt: 'Extérieur de la Cabane Un dans la forêt nuageuse' },
+  { image: img('cabin1/gallery_1.jpg'), alt: 'Intérieur de la Cabane Un' },
+  { image: img('cabin1/gallery_2.jpg'), alt: 'Vue depuis le balcon de la Cabane Un' },
+  { image: img('cabin1/gallery_3.jpg'), alt: 'Salle de bain de la Cabane Un, carreaux à motifs de feuilles peints à la main' },
+];
+
+const amenities = [
+  'Salle de bain privée en suite',
+  "Douche à l'italienne, carreaux à motifs de feuilles",
+  'Literie haut de gamme',
+  'Balcon privé',
+  'Toit végétalisé',
+  'Pas de Wi-Fi ni de télévision, par choix',
+];
+
+const reserveHref =
+  "https://api.whatsapp.com/send?phone=50765699134&text=Bonjour%2C%20je%20souhaiterais%20r%C3%A9server%20la%20Cabane%201%20%C3%A0%20Wild%20on%20the%20Farm";
+---
+
+<PageLayout
+  title="Cabane Un — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="La Cabane Un à Wild on the Farm : une terrasse privée nichée dans la forêt nuageuse embrumée, avec une douche habillée de carreaux à motifs de feuilles et des intérieurs chaleureux en bois massif."
+  path="/fr/cabane-1/"
+  image={ogImage.src}
+  pullIntro="Installée au plus près de la lisière forestière, la Cabane Un capture la forêt nuageuse dans ce qu'elle a de plus intime — un balcon privé enveloppé de bambou et de brume, et une salle de bain entièrement habillée de carreaux à motifs de feuilles peints à la main."
+  locale="fr"
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="Extérieur de la Cabane Un dans la forêt nuageuse" eyebrow="Séjour — Cabane Un">
+      Au plus profond de la brume.
+    </PageHero>
+  </Fragment>
+
+  <Section label="Chaque Recoin" heading="Toute la Cabane Un.">
+    <PhotoGrid items={photos} groupId="cabin-1" />
+    <NoteBox variant="todo">
+      <p>This cabin is missing a bedroom photo and a clearly-identified exterior shot.</p>
+    </NoteBox>
+  </Section>
+
+  <Section>
+    <div class="amenity-list">
+      {amenities.map((item) => <span>{item}</span>)}
+    </div>
+    <a href={reserveHref} class="btn btn-normal btn-spaced">Réserver la Cabane Un</a>
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">Comparer</div>
+    <h2>Voir les autres cabanes.</h2>
+    <div class="contact-list">
+      <a href="/fr/lodge/">Toutes Les Cabanes →</a>
+      <a href="/fr/cabane-2/">Cabane Deux →</a>
+      <a href="/fr/cabane-3/">Cabane Trois →</a>
+    </div>
+  </Fragment>
+</PageLayout>

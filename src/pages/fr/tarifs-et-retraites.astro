@@ -1,0 +1,230 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Section from '../../components/Section.astro';
+import Split from '../../components/Split.astro';
+import CardGrid from '../../components/CardGrid.astro';
+import TextCard from '../../components/TextCard.astro';
+import { img } from '../../lib/images';
+
+const heroImage = img('retreats/farm_animals.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const detoxImage = await getImage({ src: img('garden/garden_harvest.jpg'), width: 800, format: 'webp' });
+const sisterhoodImage = await getImage({ src: img('retreats/qigong.jpg'), width: 800, format: 'webp' });
+const friendsImage = await getImage({ src: img('kitchen/table_guests_2.jpg'), width: 800, format: 'webp' });
+const businessImage = await getImage({ src: img('retreats/landscape.jpg'), width: 800, format: 'webp' });
+const wholeFarmImage = await getImage({ src: img('retreats/owners_house.jpg'), width: 800, format: 'webp' });
+---
+
+<PageLayout
+  title="Tarifs et Retraites — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Tarifs des cabanes et forfaits de retraite pour toute la propriété à Wild on the Farm, Boquete Cloud Forest Lodge — retraites détox et entre femmes, escapades entre amis, séminaires d'entreprise, et location de toute la ferme."
+  path="/fr/tarifs-et-retraites/"
+  image={ogImage.src}
+  pullIntro="Une seule cabane pour un couple, ou toute la propriété pour une retraite de groupe — voici ce que coûte chaque option et ce qui est inclus."
+  locale="fr"
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="Moutons et poules sur la ferme" eyebrow="Préparez Votre Séjour">
+      Tarifs des cabanes, et location de toute la ferme.
+    </PageHero>
+  </Fragment>
+
+  <Section label="Tarifs des Cabanes" heading="Un tarif unique pour les trois cabanes, petit-déjeuner inclus.">
+    <CardGrid cols={4}>
+      <TextCard title="1er – 31 janvier" eyebrow="Haute saison">
+        <p class="price">250 $ / nuit</p>
+        <p>Petit-déjeuner inclus.</p>
+      </TextCard>
+      <TextCard title="1er février – 31 mars" eyebrow="Saison la plus demandée">
+        <p class="price">350 $ / nuit</p>
+        <p>Petit-déjeuner inclus.</p>
+      </TextCard>
+      <TextCard title="1er avril – 20 décembre" eyebrow="Saison verte">
+        <p class="price">250 $ / nuit</p>
+        <p>Petit-déjeuner inclus.</p>
+      </TextCard>
+      <TextCard title="20 – 31 décembre" eyebrow="Fêtes de fin d'année">
+        <p class="price">350 $ / nuit</p>
+        <p>Petit-déjeuner inclus.</p>
+      </TextCard>
+    </CardGrid>
+    <p class="fine-print">
+      Tarif par cabane. Séjour minimum : 3 nuits. Le dîner peut être réservé séparément chaque
+      soir — voir Ce Qui Est Inclus ci-dessous.
+    </p>
+  </Section>
+
+  <Section label="Tarifs de Dernière Minute" heading="Une cabane inoccupée devient une cabane à prix réduit.">
+    <p>
+      Si une cabane est encore disponible proche de votre date d'arrivée, elle est proposée à
+      tarif réduit — non remboursable, puisque le prix est fixé pour cette date précise.
+    </p>
+    <CardGrid cols={2}>
+      <TextCard title="15 jours avant l'arrivée" eyebrow="Si la cabane est encore libre">
+        <p class="price">-20 %</p>
+        <p>Non remboursable.</p>
+      </TextCard>
+      <TextCard title="7 jours avant l'arrivée" eyebrow="Si la cabane est encore libre">
+        <p class="price">-30 %</p>
+        <p>Non remboursable.</p>
+      </TextCard>
+    </CardGrid>
+  </Section>
+
+  <Section label="Ce Qui Est Inclus" heading="Une tarification simple, tout compris.">
+    <div class="amenity-list">
+      <span>Petit-déjeuner inclus, du jardin à la table</span>
+      <span>Dîner disponible chaque soir (sur réservation)</span>
+      <span>Salle de bain privée en suite</span>
+      <span>Literie haut de gamme</span>
+      <span>Terrasse privée</span>
+      <span>Énergie solaire et eau de source</span>
+      <span>Wi-Fi dans les espaces communs</span>
+      <span>Accès libre aux sentiers de la ferme</span>
+      <span>Prise en charge au bas de la route</span>
+    </div>
+  </Section>
+
+  <Section label="Louer Toute la Ferme" heading="Prenez possession de toute la propriété pour une retraite de groupe.">
+    <p>
+      Au-delà d'une simple cabane, la propriété entière est disponible pour des séjours de groupe
+      particuliers — une semaine complète minimum (6 nuits), avec ou sans dîners préparés, avec
+      ou sans la maison du propriétaire. Cinq façons de se réunir ici, pensées autour de ce qui
+      rassemble votre groupe.
+    </p>
+  </Section>
+
+  <Section label="Retraite Détox" heading="Matinées lentes, alimentation saine, et une remise à zéro complète.">
+    <Split>
+      <div>
+        <p>
+          Une semaine entière consacrée au repos et à la remise à zéro — tisanes et régime
+          spécial construits autour des produits de la ferme, jus frais, un atelier de cuisine,
+          deux randonnées guidées, et une heure de qi gong chaque matin. Minimum 3 personnes, une
+          personne par cabane.
+        </p>
+        <div class="amenity-list">
+          <span>Petit-déjeuner et dîner inclus</span>
+          <span>Tisanes et régime spécial</span>
+          <span>Jus frais</span>
+          <span>Atelier de cuisine</span>
+          <span>2 randonnées guidées</span>
+          <span>1 heure de qi gong chaque matin</span>
+        </div>
+      </div>
+      <div>
+        <div class="story-img" style={`background-image:url(${detoxImage.src})`} role="img" aria-label="Récolte fraîche du jardin" />
+      </div>
+    </Split>
+    <p class="price">2 000 $ / semaine / personne <span class="price-note">— minimum 3 personnes</span></p>
+    <p class="fine-print">À la carte, sur demande : massage, cours de yoga, randonnée supplémentaire, visite des sources chaudes.</p>
+  </Section>
+
+  <Section label="Retraite Entre Femmes" heading="Une semaine de connexion, de mouvement, et de présence tranquille.">
+    <Split>
+      <div>
+        <p>
+          Construite sur le même rythme que la Retraite Détox — tisanes et régime spécial issus
+          des produits de la ferme, jus frais, un atelier de cuisine, deux randonnées guidées, et
+          une heure de qi gong chaque matin — pensée pour un groupe qui se retrouve ensemble.
+          Minimum 3 personnes, une personne par cabane.
+        </p>
+        <div class="amenity-list">
+          <span>Petit-déjeuner et dîner inclus</span>
+          <span>Tisanes et régime spécial</span>
+          <span>Jus frais</span>
+          <span>Atelier de cuisine</span>
+          <span>2 randonnées guidées</span>
+          <span>1 heure de qi gong chaque matin</span>
+        </div>
+      </div>
+      <div>
+        <div class="story-img" style={`background-image:url(${sisterhoodImage.src})`} role="img" aria-label="Séance de qi gong sur la ferme" />
+      </div>
+    </Split>
+    <p class="price">2 000 $ / semaine / personne <span class="price-note">— minimum 3 personnes</span></p>
+    <p class="fine-print">À la carte, sur demande : massage, cours de yoga, randonnée supplémentaire, visite des sources chaudes.</p>
+  </Section>
+
+  <Section label="Entre Amis" heading="Trois couples, une ferme, aucun horaire sinon le vôtre.">
+    <Split>
+      <div>
+        <p>
+          Emmenez vos amis les plus proches et prenez toute la propriété pour la semaine — deux
+          par cabane, repas pris en charge, deux randonnées guidées pour emmener tout le monde
+          ensemble dans la forêt nuageuse. Minimum 3 couples.
+        </p>
+        <div class="amenity-list">
+          <span>Petit-déjeuner et dîner spécial inclus</span>
+          <span>2 randonnées guidées</span>
+          <span>2 personnes par cabane</span>
+        </div>
+      </div>
+      <div>
+        <div class="story-img" style={`background-image:url(${friendsImage.src})`} role="img" aria-label="Des hôtes partageant un repas" />
+      </div>
+    </Split>
+    <p class="price">2 300 $ / semaine / couple <span class="price-note">— minimum 3 couples</span></p>
+    <p class="fine-print">À la carte, sur demande : massage, cours de yoga, randonnée supplémentaire, visite des sources chaudes.</p>
+  </Section>
+
+  <Section label="Séminaire d'Entreprise" heading="Emmenez l'équipe quelque part où elle décrochera vraiment.">
+    <Split>
+      <div>
+        <p>
+          Pas de Wi-Fi dans les cabanes, aucune distraction, seulement l'équipe et la montagne.
+          Trois personnes, une par cabane, repas pris en charge, et deux randonnées guidées
+          intégrées pour faire sortir tout le monde ensemble.
+        </p>
+        <div class="amenity-list">
+          <span>Petit-déjeuner et dîner spécial inclus</span>
+          <span>2 randonnées guidées</span>
+          <span>1 personne par cabane</span>
+        </div>
+      </div>
+      <div>
+        <div class="story-img" style={`background-image:url(${businessImage.src})`} role="img" aria-label="Vue sur le paysage depuis la ferme" />
+      </div>
+    </Split>
+    <p class="price">2 000 $ / semaine / cabane <span class="price-note">— 3 personnes</span></p>
+    <p class="fine-print">À la carte, sur demande : massage, cours de yoga, randonnée supplémentaire, visite des sources chaudes.</p>
+  </Section>
+
+  <Section label="Toute la Ferme" heading="Tout, y compris la maison du propriétaire.">
+    <Split>
+      <div>
+        <p>
+          La propriété complète pour 8 personnes maximum — les trois cabanes, plus la maison et
+          la cuisine du propriétaire. Une aide de cuisine et une aide générale sont disponibles
+          sur place, et le potager biologique de la ferme ainsi que les œufs frais sont à votre
+          disposition pour cuisiner. Une semaine minimum (6 nuits).
+        </p>
+        <div class="amenity-list">
+          <span>Maison et cuisine du propriétaire incluses</span>
+          <span>Aide de cuisine disponible</span>
+          <span>Aide générale disponible</span>
+          <span>Potager biologique et œufs frais sur place</span>
+          <span>Jusqu'à 8 personnes</span>
+        </div>
+      </div>
+      <div>
+        <div class="story-img" style={`background-image:url(${wholeFarmImage.src})`} role="img" aria-label="La maison du propriétaire sur la ferme" />
+      </div>
+    </Split>
+    <p class="price">7 200 $ / semaine <span class="price-note">— jusqu'à 8 personnes, minimum 1 semaine (6 nuits)</span></p>
+    <p class="fine-print">À la carte, sur demande : massage, cours de yoga, randonnée supplémentaire, visite des sources chaudes.</p>
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">Des Questions ?</div>
+    <h2>Consultez la FAQ, ou écrivez-nous directement.</h2>
+    <p>Qu'il s'agisse d'une seule cabane ou de toute la ferme, nous vous aiderons à trouver la formule qui vous convient.</p>
+    <div class="contact-list">
+      <a href="/fr/faq-contact/">FAQ et Contact →</a>
+      <a href="/fr/lodge/">Voir Les Cabanes →</a>
+    </div>
+  </Fragment>
+</PageLayout>

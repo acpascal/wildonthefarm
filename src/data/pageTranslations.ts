@@ -4,30 +4,46 @@ export interface PageTranslation {
   id: string;
   en: string;
   es?: string;
+  fr?: string;
 }
 
-// One entry per top-level page. Only `en` is required — `es` is added once
-// that page actually has a translated route. A page with no es entry here
-// simply has no translation yet; Nav and LanguageSwitcher both fall back to
-// the English page rather than link to a 404.
+// One entry per top-level page. Only `en` is required — `es`/`fr` are added
+// once that page actually has a translated route. A page with no es/fr entry
+// here simply has no translation yet; Nav and LanguageSwitcher both fall back
+// to the English page rather than link to a 404.
 export const pageTranslations: PageTranslation[] = [
-  { id: 'home', en: '/', es: '/es/' },
-  { id: 'farm', en: '/farm/', es: '/es/finca/' },
-  { id: 'story', en: '/story/', es: '/es/historia/' },
-  { id: 'lodge', en: '/lodge/', es: '/es/lodge/' },
-  { id: 'food', en: '/food/', es: '/es/comida/' },
-  { id: 'garden', en: '/garden/', es: '/es/jardin/' },
-  { id: 'wildlife', en: '/wildlife/', es: '/es/fauna-silvestre/' },
-  { id: 'hiking', en: '/hiking/', es: '/es/senderismo/' },
-  { id: 'birdwatching', en: '/birdwatching/', es: '/es/avistamiento-de-aves/' },
-  { id: 'journal', en: '/journal/', es: '/es/journal/' },
-  { id: 'shop', en: '/shop/', es: '/es/tienda/' },
-  { id: 'rates-retreats', en: '/rates-retreats/', es: '/es/tarifas-y-retiros/' },
-  { id: 'faqs-contact', en: '/faqs-contact/', es: '/es/preguntas-contacto/' },
-  { id: 'legal-notice', en: '/legal-notice/', es: '/es/aviso-legal/' },
-  { id: 'cabin-1', en: '/cabin-1/', es: '/es/cabana-1/' },
-  { id: 'cabin-2', en: '/cabin-2/', es: '/es/cabana-2/' },
-  { id: 'cabin-3', en: '/cabin-3/', es: '/es/cabana-3/' },
+  { id: 'home', en: '/', es: '/es/', fr: '/fr/' },
+  { id: 'farm', en: '/farm/', es: '/es/finca/', fr: '/fr/ferme/' },
+  { id: 'story', en: '/story/', es: '/es/historia/', fr: '/fr/histoire/' },
+  { id: 'lodge', en: '/lodge/', es: '/es/lodge/', fr: '/fr/lodge/' },
+  { id: 'food', en: '/food/', es: '/es/comida/', fr: '/fr/cuisine/' },
+  { id: 'garden', en: '/garden/', es: '/es/jardin/', fr: '/fr/jardin/' },
+  { id: 'wildlife', en: '/wildlife/', es: '/es/fauna-silvestre/', fr: '/fr/faune-sauvage/' },
+  { id: 'hiking', en: '/hiking/', es: '/es/senderismo/', fr: '/fr/randonnee/' },
+  {
+    id: 'birdwatching',
+    en: '/birdwatching/',
+    es: '/es/avistamiento-de-aves/',
+    fr: '/fr/observation-des-oiseaux/',
+  },
+  { id: 'journal', en: '/journal/', es: '/es/journal/', fr: '/fr/journal/' },
+  { id: 'shop', en: '/shop/', es: '/es/tienda/', fr: '/fr/boutique/' },
+  {
+    id: 'rates-retreats',
+    en: '/rates-retreats/',
+    es: '/es/tarifas-y-retiros/',
+    fr: '/fr/tarifs-et-retraites/',
+  },
+  {
+    id: 'faqs-contact',
+    en: '/faqs-contact/',
+    es: '/es/preguntas-contacto/',
+    fr: '/fr/faq-contact/',
+  },
+  { id: 'legal-notice', en: '/legal-notice/', es: '/es/aviso-legal/', fr: '/fr/mentions-legales/' },
+  { id: 'cabin-1', en: '/cabin-1/', es: '/es/cabana-1/', fr: '/fr/cabane-1/' },
+  { id: 'cabin-2', en: '/cabin-2/', es: '/es/cabana-2/', fr: '/fr/cabane-2/' },
+  { id: 'cabin-3', en: '/cabin-3/', es: '/es/cabana-3/', fr: '/fr/cabane-3/' },
 ];
 
 const locales = Object.keys(languages) as Locale[];

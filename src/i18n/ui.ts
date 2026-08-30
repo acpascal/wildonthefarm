@@ -1,6 +1,7 @@
 export const languages = {
   en: 'English',
   es: 'Español',
+  fr: 'Français',
 } as const;
 
 export type Locale = keyof typeof languages;
@@ -91,6 +92,47 @@ export const ui = {
     'journal.legalNoticeLink': 'Lee nuestro aviso legal completo →',
     'medicalDisclaimer':
       'Esta información tiene fines educativos únicamente y refleja usos tradicionales y comúnmente documentados de esta planta. No constituye consejo médico ni sustituye la orientación de un profesional de la salud calificado. Consulta siempre a tu médico antes de usar cualquier planta con fines medicinales, especialmente si estás embarazada, en periodo de lactancia o tomando medicamentos.',
+  },
+  fr: {
+    'nav.farmAndStay': 'Découvrir',
+    'nav.theFarm': 'La Ferme',
+    'nav.stay': 'Le Lodge',
+    'nav.kitchen': 'La Cuisine',
+    'nav.garden': 'Le Jardin',
+    'nav.ourStory': 'Notre Histoire',
+    'nav.wildlife': 'Faune et Biodiversité',
+    'nav.experience': 'Expérience',
+    'nav.birdwatching': 'Observation des Oiseaux',
+    'nav.hiking': 'Randonnée',
+    'nav.journal': 'Journal',
+    'nav.shop': 'Boutique',
+    'nav.ratesRetreats': 'Tarifs et Retraites',
+    'nav.reserve': 'Réserver',
+    'footer.faqsContact': 'FAQ et Contact',
+    'footer.facebook': 'Facebook',
+    'footer.instagram': 'Instagram',
+    'footer.youtube': 'YouTube',
+    'footer.copyright': '© 2026 Wild on the Farm — Boquete Cloud Forest Lodge, Panama. Tous droits réservés.',
+    'footer.legalNotice': 'Mentions Légales',
+    'lightbox.close': 'Fermer',
+    'lightbox.previous': 'Photo précédente',
+    'lightbox.next': 'Photo suivante',
+    'language.switch': 'Langue',
+    'reserve.defaultHeading': 'Planifiez votre évasion dans les nuages.',
+    'reserve.pitch':
+      "Dites-nous quand vous aimeriez arriver et ce dont vous rêvez — observation des oiseaux, une déconnexion numérique, ou tout simplement le silence. Nous vous aiderons à organiser un séjour inoubliable.",
+    'reserve.contactForm': 'Envoyez-nous un message',
+    'reserve.emailSubject': 'Demande de Séjour — Wild on the Farm',
+    'reserve.emailBody':
+      'Bonjour,\n\nJe souhaiterais séjourner à Wild on the Farm.\n\nDates : du ___ au ___\nNombre de personnes :\nNationalité :\nEnfants de plus de 12 ans :\nActivités qui vous intéressent :\nRégime alimentaire particulier :\nAllergies :\n\nMerci,',
+    'journal.continueReading': 'Continuer la Lecture',
+    'journal.moreFromJournal': "Plus d'articles du Journal.",
+    'journal.allPosts': 'Tous les Articles du Journal →',
+    'journal.copyrightNotice':
+      "Cet article est © Wild on the Farm, Boquete Cloud Forest Lodge. Tous droits réservés — il ne peut être reproduit, republié ou redistribué sans autorisation préalable écrite.",
+    'journal.legalNoticeLink': 'Lire nos mentions légales complètes →',
+    'medicalDisclaimer':
+      "Ces informations sont fournies à titre éducatif uniquement et reflètent des usages traditionnels et communément documentés de cette plante. Elles ne constituent pas un avis médical et ne remplacent pas les conseils d'un professionnel de santé qualifié. Consultez toujours votre médecin avant d'utiliser une plante à des fins médicinales, en particulier en cas de grossesse, d'allaitement ou de prise de médicaments.",
   },
 } as const satisfies Record<Locale, Record<string, string>>;
 

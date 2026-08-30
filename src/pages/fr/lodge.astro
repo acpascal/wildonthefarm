@@ -1,0 +1,138 @@
+---
+import { getImage, Image } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PhotoHero from '../../components/PhotoHero.astro';
+import Section from '../../components/Section.astro';
+import Split from '../../components/Split.astro';
+import PhotoGrid from '../../components/PhotoGrid.astro';
+import { img } from '../../lib/images';
+
+const heroImage = img('cabin2/gallery_1.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const ownerHouseBanner = img('farm/overview_1.jpg');
+const ownerHousePhotos = [
+  { image: img('owner-house/living_room.jpg'), alt: "Salon et cuisine à l'intérieur de la Maison du Propriétaire" },
+  { image: img('owner-house/kitchen_stairs.jpg'), alt: "Escalier artisanal à l'intérieur de la Maison du Propriétaire" },
+  { image: img('owner-house/office_loft.jpg'), alt: 'Bureau en mezzanine sous la charpente de la Maison du Propriétaire' },
+  { image: img('owner-house/bedroom_loft.jpg'), alt: "Chambre en mezzanine à l'intérieur de la Maison du Propriétaire" },
+  { image: img('owner-house/attic_corridor.jpg'), alt: 'Couloir à l\'étage sous le toit végétalisé de la Maison du Propriétaire' },
+  { image: img('owner-house/bathroom.jpg'), alt: "Salle de bain carrelée en pierre à l'intérieur de la Maison du Propriétaire" },
+];
+
+const cabins = [
+  {
+    slug: 'cabane-1',
+    label: 'Cabane Un',
+    heading: 'Au plus profond de la brume.',
+    description:
+      'La plus intime des trois, enveloppée de bambou et de forêt, avec une salle de bain entièrement habillée de carreaux à motifs de feuilles peints à la main.',
+    image: img('stay/hero_cabin_exterior.jpg'),
+  },
+  {
+    slug: 'cabane-2',
+    label: 'Cabane Deux',
+    heading: 'Surélevée au-dessus de la vallée.',
+    description:
+      'Perchée sur pilotis au bord de la colline, avec la vue la plus large de la propriété — la vallée de Chiriquí et le Volcán Barú.',
+    image: img('cabin2/hero.jpg'),
+  },
+  {
+    slug: 'cabane-3',
+    label: 'Cabane Trois',
+    heading: 'La plus raffinée des trois.',
+    description:
+      'Un parquet Versailles unique en son genre, marqueté de bois différents, associé à une salle de bain en superbe carrelage artisanal.',
+    image: img('cabin3/hero.jpg'),
+  },
+];
+
+const amenities = [
+  'Salle de bain privée en suite',
+  'Literie haut de gamme',
+  'Terrasse privée',
+  'Toit végétalisé',
+  'Énergie solaire',
+  'Eau de source',
+  'Pas de Wi-Fi ni de télévision en cabane, par choix',
+  'Wi-Fi disponible dans les espaces communs',
+];
+---
+
+<PageLayout
+  title="Le Lodge — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Trois cabanes artisanales bâties au cœur de la forêt nuageuse de Boquete, Panama — toits végétalisés, terrasses privées, et vues sur le parc national Amistad."
+  path="/fr/lodge/"
+  image={ogImage.src}
+  pullIntro="J'ai conçu cette architecture avec une préoccupation avant toutes les autres : fondre chaque bâtiment dans le paysage. Mais ce sont mes années passées dans des habitations traditionnelles qui m'ont appris qu'un toit végétalisé n'est pas seulement beau — il protège aussi des intempéries et adoucit le bruit de la pluie."
+  locale="fr"
+>
+  <Fragment slot="hero">
+    <PhotoHero
+      image={heroImage}
+      alt="Extérieur de cabane intégré à la forêt nuageuse à Wild on the Farm"
+      eyebrow="Le Lodge"
+    >
+      <span class="hero-line">Suspendues au-dessus de la forêt nuageuse,</span>
+      <span class="hero-line">une vue à vol d'oiseau sur le paradis.</span>
+    </PhotoHero>
+  </Fragment>
+
+  <Section label="Où Que Vous Séjourniez" heading="Un confort hors réseau, sans aucune concession.">
+    <div class="amenity-list">
+      {amenities.map((item) => <span>{item}</span>)}
+    </div>
+    {
+      cabins.map((cabin, i) => (
+        <Split divider reverse={i === 1}>
+          <a href={`/fr/${cabin.slug}/`} class="split-photo">
+            <Image
+              src={cabin.image}
+              alt={`Extérieur de la ${cabin.label} à Wild on the Farm`}
+              widths={[400, 700, 1000]}
+              sizes="(min-width: 860px) 50vw, 100vw"
+              loading="lazy"
+            />
+          </a>
+          <div>
+            <div class="section-label">{cabin.label}</div>
+            <h2 class="lede">{cabin.heading}</h2>
+            <p>{cabin.description}</p>
+            <a href={`/fr/${cabin.slug}/`} class="btn btn-spaced">
+              Voir Toute la {cabin.label}
+            </a>
+          </div>
+        </Split>
+      ))
+    }
+  </Section>
+
+  <Section label="Une Rareté" heading="La Maison du Propriétaire">
+    <div class="wide-photo">
+      <Image
+        src={ownerHouseBanner}
+        alt="Vue d'ensemble de Wild on the Farm, où se trouve la Maison du Propriétaire"
+        widths={[480, 900, 1600, 2000]}
+        sizes="100vw"
+        loading="lazy"
+      />
+    </div>
+    <p>
+      Construite avec sept essences de bois tropical et montée sans un seul clou, selon les
+      techniques ancestrales des Compagnons du Devoir, cette petite maison est un véritable
+      ouvrage de charpentier — un raffinement discret, niché dans le coin le plus reculé du
+      domaine, loin des regards.
+    </p>
+    <PhotoGrid items={ownerHousePhotos} groupId="owner-house" />
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">Vous Hésitez ?</div>
+    <h2>Dites-nous comment vous aimeriez passer vos journées.</h2>
+    <p>Écrivez-nous et nous vous aiderons à choisir la cabane la mieux adaptée à votre séjour.</p>
+    <div class="contact-list">
+      <a href="/fr/ferme/">Retour à La Ferme →</a>
+      <a href="/fr/cuisine/">La Cuisine →</a>
+    </div>
+  </Fragment>
+</PageLayout>

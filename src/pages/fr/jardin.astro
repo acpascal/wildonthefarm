@@ -1,0 +1,62 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Section from '../../components/Section.astro';
+import PhotoGrid from '../../components/PhotoGrid.astro';
+import { img } from '../../lib/images';
+
+const heroImage = img('journal/macadamia/macadamia_permaculture_01.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const gardenPhotos = [
+  { image: heroImage, alt: 'Terrasses de permaculture sous les macadamias' },
+  { image: img('garden/garden_harvest.jpg'), alt: 'Un panier de légumes fraîchement récoltés au jardin' },
+  { image: img('garden/garden_artichokes.jpg'), alt: 'Des artichauts poussant dans le jardin en terrasses' },
+  { image: img('garden/garden_chard.jpg'), alt: 'Des rangées de blettes poussant au jardin' },
+  { image: img('garden/garden_kale.jpg'), alt: 'Du chou kale poussant dans les bancs en terrasses' },
+  { image: img('garden/garden_rows.jpg'), alt: 'Des rangées de légumes dans le jardin en terrasses' },
+  { image: img('garden/garden_terrace_trellis.jpg'), alt: "Un treillis sur l'une des terrasses du jardin" },
+  { image: img('garden/garden_peas.jpg'), alt: 'Des plants de pois poussant au jardin' },
+  { image: img('garden/garden_herb_bed.jpg'), alt: "Un bancal d'herbes aromatiques aux murs de pierre" },
+  { image: img('garden/garden_terraces_flowers.jpg'), alt: 'Des terrasses fleuries au jardin' },
+];
+---
+
+<PageLayout
+  title="Le Jardin — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Jardins biologiques en terrasses à Wild on the Farm, Boquete Cloud Forest Lodge — blettes, chou kale, fenouil, artichauts et herbes aromatiques, cultivés sans intrants chimiques sur une ferme de permaculture dans la forêt nuageuse du Panama."
+  path="/fr/jardin/"
+  image={ogImage.src}
+  pullIntro="Son cœur battant jusqu'au dernier souffle, le jardin garde dix-huit ans d'expérimentation et d'expérience. Nous nourrissons la terre, et la terre à son tour nourrit les plantes qui vous transmettent leur vitalité. Tout autre chemin nuit à votre santé."
+  locale="fr"
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="Terrasses de permaculture sous les macadamias" eyebrow="Le Jardin">
+      Biologique, de saison, à quelques pas du fourneau.
+    </PageHero>
+  </Fragment>
+
+  <Section label="De Notre Jardin" heading="Les terrasses derrière la cuisine.">
+    <PhotoGrid items={gardenPhotos} groupId="garden" />
+  </Section>
+
+  <Section label="Fondé sur la Permaculture" heading="Les mêmes principes qui régissent les macadamias.">
+    <p>
+      Ces terrasses fonctionnent selon la même philosophie « zéro intrant » que le reste de la
+      ferme — pas d'engrais ni de pesticides de synthèse, seulement du compost, nos propres
+      extraits fermentés de plantes, et dix-huit ans de travail avec la montagne plutôt que contre
+      elle.
+    </p>
+    <p><a href="/fr/journal/le-visionnaire-francais-de-boquete/"><strong>Lire l'histoire de permaculture de la ferme →</strong></a></p>
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">Préparez Votre Visite</div>
+    <h2>Découvrez d'où vient vraiment tout ça.</h2>
+    <div class="contact-list">
+      <a href="/fr/cuisine/">La Cuisine →</a>
+      <a href="/fr/ferme/">La Ferme →</a>
+    </div>
+  </Fragment>
+</PageLayout>

@@ -1,0 +1,397 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Section from '../../components/Section.astro';
+import PhotoGrid from '../../components/PhotoGrid.astro';
+import CardGrid from '../../components/CardGrid.astro';
+import ImageTextCard from '../../components/ImageTextCard.astro';
+import TextCard from '../../components/TextCard.astro';
+import NoteBox from '../../components/NoteBox.astro';
+import { img } from '../../lib/images';
+
+const heroImage = img('hiking/gallery_05.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const trackPhotos = [
+  { image: img('wildlife/jaguar_track_terrace_1.jpg'), alt: 'Empreinte de patte de jaguar sur le platelage de la terrasse' },
+  { image: img('wildlife/jaguar_track_terrace_2.jpg'), alt: 'Une deuxième empreinte de jaguar sur le platelage de la terrasse' },
+  { image: img('wildlife/jaguar_track_cabin1_1.jpg'), alt: 'Empreinte de jaguar dans la terre meuble derrière la Cabane Un' },
+  { image: img('wildlife/jaguar_track_cabin1_2.jpg'), alt: 'Une deuxième empreinte de jaguar derrière la Cabane Un' },
+];
+
+const primates = [
+  {
+    image: img('wildlife/mantled_howler_monkey.jpg'),
+    alt: 'Une femelle singe hurleur à manteau avec son petit accroché à elle, aperçue sur la ferme',
+    name: 'Singe Hurleur à Manteau',
+    latin: 'Alouatta palliata',
+    description:
+      "Son rugissement porte sur des kilomètres à travers la canopée, à l'aube et au crépuscule — une déclaration territoriale, non une menace. Les troupes se déplacent lentement dans les cimes, se nourrissant surtout de feuilles, et passent une grande partie de la journée à digérer, immobiles. Cette femelle et son petit ont été aperçues directement sur la ferme.",
+  },
+  {
+    image: img('wildlife/white_faced_capuchin.jpg'),
+    alt: 'Un capucin à face blanche cherchant sa nourriture sur la propriété',
+    name: 'Capucin à Face Blanche',
+    latin: 'Cebus capucinus',
+    description:
+      "De loin le primate le plus curieux de la ferme — sociable, bruyant, et sans cesse en quête de fruits, d'insectes, ou d'un petit vertébré, dans les strates moyennes de la forêt. Les troupes sont matriarcales et s'éloignent rarement de leur territoire habituel. Photographié directement sur la propriété.",
+  },
+];
+
+const wildCats = [
+  {
+    image: img('wildlife/jaguar.jpg'),
+    alt: 'Une jaguar femelle photographiée près de la ferme',
+    name: 'Jaguar',
+    latin: 'Panthera onca',
+    description:
+      "Le plus grand félin des Amériques, et le grand prédateur du parc — solitaire, surtout nocturne, et nécessitant un vaste territoire pour chasser pécaris et cerfs. Des observations d'aussi près d'une cabane, comme Pascal peut en témoigner, restent exceptionnellement rares, même ici.",
+  },
+  {
+    image: img('wildlife/puma.jpg'),
+    alt: 'Un puma dans les hauteurs de la Talamanca',
+    name: 'Puma',
+    latin: 'Puma concolor',
+    description:
+      'Un félin puissant et adaptable que l\'on trouve depuis la forêt de basse altitude jusqu\'à ces hauteurs, chassant seul sur un vaste territoire. Plus souvent confirmé par des empreintes ou un piège photographique que par une observation directe.',
+  },
+  {
+    image: img('wildlife/ocelot.jpg'),
+    alt: 'Un ocelot montrant son pelage tacheté',
+    name: 'Ocelot',
+    latin: 'Leopardus pardalis',
+    description:
+      "Un félin de taille moyenne au pelage saisissant, chassant surtout la nuit au sol de la forêt, aussi à l'aise à traquer un petit mammifère, un oiseau ou un reptile. Ses taches en rosettes lui offrent un camouflage remarquable sous la lumière tachetée du sous-bois.",
+  },
+  {
+    image: img('wildlife/margay.jpg'),
+    alt: 'Un margay, l\'un des petits félins sauvages les plus acrobatiques',
+    name: 'Margay',
+    latin: 'Leopardus wiedii',
+    description:
+      "Le plus acrobatique des petits félins : ses chevilles pivotent presque à 180 degrés, ce qui lui permet de descendre des arbres tête la première, comme un écureuil. Presque exclusivement arboricole et nocturne.",
+  },
+  {
+    image: img('wildlife/oncilla.jpg'),
+    alt: 'Une oncille mélanique (noire)',
+    name: 'Oncille',
+    latin: 'Leopardus tigrinus',
+    description:
+      "L'un des plus petits félins sauvages des Amériques, à peine plus grand qu'un chat domestique, chassant petits rongeurs et oiseaux dans le sous-bois des hauteurs. Dans les populations de forêt nuageuse comme celle-ci, une forme entièrement noire (mélanique) est étonnamment fréquente — l'individu photographié ici en est un exemple.",
+  },
+  {
+    image: img('wildlife/jaguarundi.jpg'),
+    alt: 'Un jaguarondi, petit félin à la silhouette inhabituelle',
+    name: 'Jaguarondi',
+    latin: 'Herpailurus yagouaroundi',
+    description:
+      "Un félin à la silhouette étonnante — corps allongé, pattes courtes, petite tête — souvent pris au premier regard pour une grande belette. Contrairement à la plupart des félins d'ici, il est fréquemment actif de jour.",
+  },
+];
+
+const herbivoresAndPeccaries = [
+  {
+    image: img('wildlife/tapir.jpg'),
+    alt: "Un tapir de Baird, le plus grand mammifère terrestre d'Amérique centrale",
+    name: 'Tapir de Baird',
+    latin: 'Tapirus bairdii',
+    description:
+      "Le plus grand mammifère terrestre d'Amérique centrale, utilisant sa trompe courte et flexible pour attraper feuilles et fruits. Surtout nocturne, il dépend d'une forêt dense et humide, avec un point d'eau à proximité pour se vautrer et se rafraîchir. Aujourd'hui menacé sur l'ensemble de son aire de répartition.",
+  },
+  {
+    image: img('wildlife/coati.jpg'),
+    alt: 'Un coati à nez blanc fouillant la litière de feuilles',
+    name: 'Coati à Nez Blanc',
+    latin: 'Nasua narica',
+    description:
+      "Un cousin du raton laveur qui voyage de jour en bandes bruyantes de femelles et de jeunes, fouinant la litière de feuilles de son long museau flexible. Les mâles adultes sont surtout solitaires — l'un des mammifères les plus fréquemment croisés en lisière de forêt et sur les terres cultivées.",
+  },
+  {
+    image: img('wildlife/agouti.jpg'),
+    alt: "Un agouti d'Amérique centrale",
+    name: "Agouti d'Amérique Centrale",
+    latin: 'Dasyprocta punctata',
+    description:
+      "Un grand rongeur aux longues pattes, actif de jour, qui enterre graines et noix pour plus tard — dont beaucoup qu'il n'ira jamais déterrer, ce qui en fait l'un des principaux planteurs d'arbres de la forêt.",
+  },
+  {
+    image: img('wildlife/brocket_deer.jpg'),
+    alt: 'Un daguet rouge dans le sous-bois',
+    name: 'Daguet Rouge',
+    latin: 'Mazama temama',
+    description:
+      "Un petit cerf de forêt, solitaire, qui se déplace en silence à travers le sous-bois dense plutôt qu'en terrain découvert, se figeant plutôt que de fuir lorsqu'il est surpris — ce qui le rend facile à manquer, même de près.",
+  },
+  {
+    image: img('wildlife/white_lipped_peccary.jpg'),
+    alt: 'Un troupeau de pécaris à lèvres blanches',
+    name: 'Pécari à Lèvres Blanches',
+    latin: 'Tayassu pecari',
+    description:
+      "Le plus social des cousins du cochon sauvage au Panama, se déplaçant en forêt dans des troupeaux pouvant compter plusieurs dizaines d'individus, claquant des dents et grognant sans relâche pour rester en contact.",
+  },
+  {
+    image: img('wildlife/collared_peccary.jpg'),
+    alt: 'Un pécari à collier près de la ferme',
+    name: 'Pécari à Collier',
+    latin: 'Pecari tajacu',
+    description:
+      "Plus petit et bien plus adaptable que son cousin à lèvres blanches, se déplaçant en petits groupes familiaux et à l'aise pour chercher sa nourriture près des lisières cultivées — le pécari qu'il y a le plus de chances d'apercevoir près des cabanes.",
+  },
+];
+
+const slothsAndSmallMammals = [
+  {
+    image: img('wildlife/three_toed_sloth.jpg'),
+    alt: 'Un paresseux à gorge brune',
+    name: 'Paresseux à Gorge Brune',
+    latin: 'Bradypus variegatus',
+    description:
+      "Un feuillivore presque exclusivement arboricole, se déplaçant si lentement que des algues poussent dans son pelage. Il descend au sol environ une fois par semaine, uniquement pour déféquer — l'un des rituels les plus étranges du règne animal.",
+  },
+  {
+    image: img('wildlife/two_toed_sloth.jpg'),
+    alt: 'Un paresseux de Hoffmann',
+    name: 'Paresseux de Hoffmann',
+    latin: 'Choloepus hoffmanni',
+    description:
+      "Plus rapide et plus nocturne que son cousin à trois doigts, avec un régime plus varié comprenant fruits, fleurs, et parfois même un insecte ou un petit lézard.",
+  },
+  {
+    image: img('wildlife/tamandua.jpg'),
+    alt: 'Un tamandua grimpant à un arbre',
+    name: 'Tamandua du Mexique',
+    latin: 'Tamandua mexicana',
+    description:
+      "Un fourmilier grimpeur, solitaire et surtout nocturne, qui déchire les nids de fourmis et de termites de ses puissantes griffes recourbées avant d'attraper ses proies avec une longue langue collante.",
+  },
+  {
+    image: img('wildlife/alstons_mouse_opossum.jpg'),
+    alt: "L'opossum-souris laineux d'Alston",
+    name: "Opossum-Souris Laineux d'Alston",
+    latin: 'Marmosa alstoni',
+    description:
+      "Un petit marsupial nocturne qui niche dans les cavités d'arbres et les enchevêtrements de lianes, cherchant sa nourriture seul dans les strates moyennes de la forêt. Rarement vu de jour — plus souvent détecté par piège photographique que par hasard.",
+  },
+];
+
+const reptilesAndAmphibians = [
+  {
+    image: img('wildlife/la_lora.jpg'),
+    alt: 'La Lora, la vipère de palmier à flancs rayés, photographiée sur la propriété',
+    name: 'La Lora (Vipère de Palmier à Flancs Rayés)',
+    latin: 'Bothriechis lateralis',
+    description:
+      "La vipère des hauteurs locale, nommée pour sa couleur vert perroquet. Généralement arboricole, lovée dans le feuillage bien au-dessus du sol, bien qu'elle descende parfois — venimeuse, mais discrète, et rarement croisée de près.",
+  },
+  {
+    image: img('wildlife/bothriechis_nubestris.jpg'),
+    alt: 'La vipère de palmier de Talamanca, photographiée sur la propriété',
+    name: 'Vipère de Palmier de Talamanca',
+    latin: 'Bothriechis nubestris',
+    description:
+      "Une spécialiste de la forêt nuageuse décrite scientifiquement il y a peu, trouvée dans les zones les plus hautes et les plus brumeuses de la cordillère de Talamanca. Petite, verte et arboricole comme ses cousines de basse altitude — Pascal en a photographié une sur la propriété.",
+  },
+  {
+    image: img('wildlife/bothriechis_nigroadspersus_01.jpg'),
+    alt: "La vipère aux cils d'Amérique centrale, photographiée sur la propriété",
+    name: "Vipère aux Cils d'Amérique Centrale",
+    latin: 'Bothriechis nigroadspersus',
+    description:
+      "Proche parente de la célèbre vipère aux cils, reconnue comme espèce à part entière seulement lors d'une révision taxonomique de 2024. Mouchetée de vert et de crème, immobile contre la mousse et l'écorce, elle est conçue pour passer inaperçue — jusqu'à ce qu'on remarque qu'elle n'a pas bougé. Photographiée directement sur la propriété.",
+  },
+  {
+    image: img('wildlife/bothriechis_nigroadspersus_02.jpg'),
+    alt: "Une deuxième photo de la vipère aux cils d'Amérique centrale sur la propriété",
+    name: "Vipère aux Cils d'Amérique Centrale",
+    latin: 'Bothriechis nigroadspersus',
+    description:
+      "Un second individu, photographié dans la même portion de forêt — mouchetée de vert et de crème, immobile contre la mousse et l'écorce.",
+  },
+  {
+    image: img('wildlife/anole.jpg'),
+    alt: 'Un anolis déployant son fanon',
+    name: 'Anolis',
+    latin: 'Anolis spp.',
+    description:
+      "De petits lézards rapides, communs sur les arbres, les murs et les rambardes de toute la ferme, les mâles déployant un fanon gulaire coloré pour défendre leur territoire ou séduire une femelle.",
+  },
+  {
+    image: img('wildlife/glass_frog.jpg'),
+    alt: 'Une grenouille de verre à la peau translucide',
+    name: 'Grenouilles de Verre',
+    latin: 'Centrolenidae',
+    description:
+      "Des grenouilles vert pâle, à la peau translucide, des ruisseaux de forêt — certaines espèces sont si transparentes qu'on distingue leurs organes internes par en dessous. Leurs chants s'élèvent la nuit depuis la végétation surplombant l'eau.",
+  },
+  {
+    image: img('wildlife/highland_tree_frog.jpg'),
+    alt: 'Une rainette des hauteurs perchée sur une fronde de fougère, la nuit',
+    name: 'Rainettes des Hauteurs',
+    latin: 'diverses espèces',
+    description:
+      "Le chœur nocturne de la forêt nuageuse — de petites grenouilles aux couleurs vives, chantant depuis les broméliacées et la litière humide après la pluie, surtout actives dans les heures fraîches et brumeuses après la tombée de la nuit. Celle-ci a été trouvée perchée sur une fougère, de nuit, directement sur la propriété.",
+  },
+];
+
+const treesAndOrchids = [
+  { name: 'Chênes des Hauteurs', latin: 'Quercus costaricensis & Q. copeyensis', description: "Des chênes endémiques qui dominent la strate supérieure, certains atteignant 50 mètres — la colonne vertébrale de cette forêt nuageuse, dont les branches servent d'échafaudage principal aux mousses et épiphytes qui les recouvrent." },
+  { name: 'Avocatiers Sauvages', latin: 'Famille Lauraceae', description: "La famille des lauracées, riche en petites espèces d'avocatiers sauvages, forme une grande partie de la strate moyenne — et c'est la raison pour laquelle le quetzal resplendissant choisit cette forêt, puisque les fruits d'avocatier sauvage constituent presque tout son régime." },
+  { name: 'Bambou Nain', latin: 'Chusquea spp.', description: "Un bambou de sous-bois tolérant à l'ombre, formant des fourrés denses sur une grande partie des zones sauvages de la propriété, offrant un abri aux oiseaux et petits mammifères qui se déplacent bas dans la forêt." },
+  { name: 'Orchidées', latin: 'Famille Orchidaceae', description: "Les hauteurs de la Talamanca-Chiriquí abritent environ 300 espèces d'orchidées — l'une des concentrations les plus denses au monde, la plupart poussant en épiphytes sur des branches moussues plutôt qu'en pleine terre." },
+  { name: 'Fougères Arborescentes', latin: 'Cyatheaceae', description: "D'anciennes fougères à croissance lente formant une strate sous-boisée distincte, leurs jeunes crosses se déployant en larges frondes — une silhouette emblématique de la forêt nuageuse de Talamanca." },
+  { name: 'Mousses et Épiphytes', latin: 'diverses familles', description: "La brume constante recouvre branches, troncs et même piquets de clôture de mousse, de lichen et de broméliacées — la même charge épiphyte qui donne aux arbres les plus anciens de la ferme leur allure hirsute et presque irréelle." },
+];
+---
+
+<PageLayout
+  title="La Faune Autour de la Ferme — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Singes, félins sauvages, tapirs, paresseux, pécaris et vipères de forêt nuageuse partageant le parc national La Amistad avec Wild on the Farm, Boquete Cloud Forest Lodge."
+  path="/fr/faune-sauvage/"
+  image={ogImage.src}
+  pullIntro="La ferme se trouve dans les hauteurs du parc international La Amistad — l'une des plus vastes et sauvages aires protégées d'Amérique centrale, refuge de singes, de félins et de mammifères rarement observés aussi près d'un lieu de séjour."
+  locale="fr"
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="Vue sur la forêt nuageuse abritant la faune de la ferme" eyebrow="La Faune Autour de la Ferme">
+      Cette forêt n'abrite pas que des oiseaux.
+    </PageHero>
+  </Fragment>
+
+  <Section label="Une Rencontre Rare" heading="Le Jaguar, ou la Beauté d'une Nuit">
+    <p>
+      Wild on the Farm fait corps avec le parc national de La Amistad. Ici, la frontière avec la
+      vie sauvage n'existe pas ; les rencontres y sont souveraines.
+    </p>
+    <p>
+      Il n'est pas rare de croiser sur nos sentiers les empreintes fraîches de jaguars,
+      d'ocelots, de jaguarundis, de cerfs ou de pécaris. En vingt ans, le seigneur des lieux, le
+      jaguar, m'a fait l'honneur de sa présence à trois reprises. La dernière fois, c'était au
+      cœur de la dernière lune.
+    </p>
+    <p>
+      À trois heures du matin, un vacarme insolite parmi mes meubles de terrasse m'extirpe du
+      sommeil. Ma première pensée va vers un chien errant. Ma merveilleuse chienne, Jaya, nous a
+      quittés il y a deux mois, et depuis son départ, plus rien ne dissuade les visiteurs
+      opportunistes. Je m'approche de la fenêtre. La lune jette une clarté presque indécente sur
+      le paysage. J'aperçois d'abord une masse noire et mouvante. Persuadé d'avoir affaire à un
+      bâtard égaré, je pousse un cri pour le chasser.
+    </p>
+    <p>
+      C'est alors que la masse noire se sépare en deux petits ronds de fourrure, tandis
+      qu'émerge sur la terrasse la silhouette longue, lourde et majestueuse de la mère. Pas de
+      panique. Mère et petits reprennent leur déambulation tranquille, glissant à pas feutrés
+      pour une inspection nocturne de la ferme. Au matin, nous retrouverons leurs empreintes
+      fraîches serpentant entre les cabanes, juste avant leur retour vers le secret de la forêt.
+    </p>
+    <p>
+      J'ai passé l'essentiel de mon existence dans la nature brute. Pourtant, sentir cette vie
+      sauvage palpiter si près, presque à portée de souffle, reste pour moi un miracle absolu. Un
+      moment de grâce essentiel à ma propre respiration.
+    </p>
+    <p>— Le Fondateur, Wild on the Farm</p>
+  </Section>
+
+  <Section label="La Preuve" heading="Ses empreintes, le lendemain matin.">
+    <p>Empreintes de la jaguar et de ses petits, laissées sur le platelage de la terrasse et dans la terre meuble derrière la Cabane Un.</p>
+    <PhotoGrid items={trackPhotos} groupId="wildlife-tracks" />
+  </Section>
+
+  <Section label="Primates" heading="Entendus avant d'être vus.">
+    <CardGrid>
+      {primates.map((s) => (
+        <ImageTextCard image={s.image} alt={s.alt} title={s.name} eyebrow={s.latin} groupId="wildlife-primates">
+          {s.description}
+        </ImageTextCard>
+      ))}
+    </CardGrid>
+  </Section>
+
+  <Section label="Félins Sauvages" heading="Les six félins d'Amérique centrale vivent dans ce parc.">
+    <CardGrid>
+      {wildCats.map((s) => (
+        <ImageTextCard image={s.image} alt={s.alt} title={s.name} eyebrow={s.latin} groupId="wildlife-cats">
+          {s.description}
+        </ImageTextCard>
+      ))}
+    </CardGrid>
+  </Section>
+
+  <Section label="Herbivores et Pécaris" heading="Les brouteurs, glaneurs et cochons sauvages du sol forestier.">
+    <CardGrid>
+      {herbivoresAndPeccaries.map((s) => (
+        <ImageTextCard image={s.image} alt={s.alt} title={s.name} eyebrow={s.latin} groupId="wildlife-herbivores">
+          {s.description}
+        </ImageTextCard>
+      ))}
+    </CardGrid>
+  </Section>
+
+  <Section label="Paresseux et Petits Mammifères" heading="Des habitants lents et discrets.">
+    <CardGrid>
+      {slothsAndSmallMammals.map((s) => (
+        <ImageTextCard image={s.image} alt={s.alt} title={s.name} eyebrow={s.latin} groupId="wildlife-sloths">
+          {s.description}
+        </ImageTextCard>
+      ))}
+    </CardGrid>
+  </Section>
+
+  <Section label="Reptiles et Amphibiens" heading="Petits, bien camouflés, et presque tous inoffensifs.">
+    <p>
+      À cette altitude, il fait trop froid pour le fer-de-lance, le serpent venimeux le plus
+      associé au Panama — cette espèce reste plutôt du côté de Boquete-ville, quelque 700 mètres
+      plus bas. Ici, les vipères de palmier sont plus petites, plus vertes, et vivent dans les
+      arbres.
+    </p>
+    <CardGrid>
+      {reptilesAndAmphibians.map((s) => (
+        <ImageTextCard image={s.image} alt={s.alt} title={s.name} eyebrow={s.latin} groupId="wildlife-reptiles">
+          {s.description}
+        </ImageTextCard>
+      ))}
+    </CardGrid>
+  </Section>
+
+  <Section label="Arbres et Orchidées de la Canopée" heading="L'une des forêts à épiphytes les plus riches au monde.">
+    <CardGrid>
+      {treesAndOrchids.map((t) => (
+        <TextCard title={t.name} eyebrow={t.latin}>
+          <p>{t.description}</p>
+        </TextCard>
+      ))}
+    </CardGrid>
+    <NoteBox variant="todo">
+      <p>
+        This list covers what's documented for the Talamanca–Chiriquí highlands generally — not yet
+        a confirmed inventory specific to the farm's own trees and orchids. Particular species
+        growing on the property (especially in the gardens or terraces) can be folded in alongside
+        these.
+      </p>
+    </NoteBox>
+  </Section>
+
+  <Section>
+    <NoteBox>
+      <p>
+        Crédits photo : les félins sauvages, le tapir, le coati, l'agouti, le daguet, les pécaris,
+        les paresseux, le tamandua, l'opossum-souris et l'anolis, ainsi que la grenouille de verre,
+        sont des photos Creative Commons via Wikimedia Commons ; la vipère de palmier de Talamanca,
+        le capucin à face blanche, le singe hurleur à manteau, La Lora, et la rainette des hauteurs
+        sont des photos prises par la ferme, tout comme les quatre clichés d'empreintes de jaguar
+        ci-dessus.
+      </p>
+    </NoteBox>
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">Préparez Votre Visite</div>
+    <h2>Matins tranquilles, sentiers tranquilles.</h2>
+    <p>La plupart des mammifères d'ici sont discrets et surtout actifs à l'aube, au crépuscule, ou la nuit — une sortie guidée augmente les chances d'une rencontre.</p>
+    <div class="contact-list">
+      <a href="/fr/randonnee/">Randonnée et Sentiers →</a>
+      <a href="/fr/observation-des-oiseaux/">Observation des Oiseaux →</a>
+    </div>
+  </Fragment>
+</PageLayout>

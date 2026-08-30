@@ -43,10 +43,12 @@ const t = useTranslations(locale);
 const journalIndexHref = locale === defaultLocale ? '/journal/' : `/${locale}/journal/`;
 const legalHref = pageHref('legal-notice', locale);
 const canonicalUrl = absoluteUrl(Astro.site!, path);
-const copyAttribution =
-  locale === 'es'
-    ? `— Extracto de ${business.name} (${canonicalUrl}). Reproducción no autorizada.`
-    : `— Excerpt from ${business.name} (${canonicalUrl}). Unauthorized reproduction prohibited.`;
+const copyAttributionByLocale: Record<Locale, string> = {
+  en: `— Excerpt from ${business.name} (${canonicalUrl}). Unauthorized reproduction prohibited.`,
+  es: `— Extracto de ${business.name} (${canonicalUrl}). Reproducción no autorizada.`,
+  fr: `— Extrait de ${business.name} (${canonicalUrl}). Reproduction non autorisée.`,
+};
+const copyAttribution = copyAttributionByLocale[locale];
 ---
 
 <PageLayout

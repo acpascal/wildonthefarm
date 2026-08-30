@@ -1,9 +1,10 @@
-import { defaultLocale, ui, type Locale, type UiKey } from './ui';
+import { defaultLocale, languages, ui, type Locale, type UiKey } from './ui';
+
+const locales = Object.keys(languages) as Locale[];
 
 export function getLocaleFromUrl(url: URL): Locale {
   const [, maybeLocale] = url.pathname.split('/');
-  if (maybeLocale === 'es') return maybeLocale;
-  return defaultLocale;
+  return locales.includes(maybeLocale as Locale) ? (maybeLocale as Locale) : defaultLocale;
 }
 
 export function useTranslations(locale: Locale) {

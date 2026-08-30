@@ -1,0 +1,72 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Section from '../../components/Section.astro';
+import PhotoGrid from '../../components/PhotoGrid.astro';
+import NoteBox from '../../components/NoteBox.astro';
+import { img } from '../../lib/images';
+
+const heroImage = img('cabin3/hero.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const photos = [
+  { image: heroImage, alt: 'Intérieur de la Cabane Trois' },
+  { image: img('cabin3/gallery_1.jpg'), alt: 'Tête de lit sculptée à la main dans la Cabane Trois' },
+  { image: img('cabin3/gallery_2.jpg'), alt: 'Salle de bain de la Cabane Trois, carrelage Art Nouveau peint à la main' },
+  { image: img('cabin3/gallery_3.jpg'), alt: 'Détail de la chambre de la Cabane Trois' },
+  { image: img('cabin3/gallery_4.jpg'), alt: "Détail de l'intérieur de la Cabane Trois" },
+  { image: img('cabin3/gallery_5.jpg'), alt: 'Linge de lit à motifs botaniques de la Cabane Trois' },
+];
+
+const amenities = [
+  'Salle de bain privée en suite',
+  'Carrelage Art Nouveau peint à la main',
+  'Tête de lit sculptée à la main',
+  'Literie haut de gamme',
+  'Toit végétalisé',
+  'Pas de Wi-Fi ni de télévision, par choix',
+];
+
+const reserveHref =
+  "https://api.whatsapp.com/send?phone=50765699134&text=Bonjour%2C%20je%20souhaiterais%20r%C3%A9server%20la%20Cabane%203%20%C3%A0%20Wild%20on%20the%20Farm";
+---
+
+<PageLayout
+  title="Cabane Trois — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="La Cabane Trois à Wild on the Farm : une tête de lit sculptée à la main, des tissus botaniques, et une salle de bain habillée de carrelage Art Nouveau peint à la main."
+  path="/fr/cabane-3/"
+  image={ogImage.src}
+  pullIntro="La Cabane Trois cultive le détail — une tête de lit en bois sculptée à la main, du linge de lit à motifs botaniques, et une salle de bain habillée du sol au plafond de carrelage Art Nouveau peint à la main. La plus raffinée des trois cabanes, sans rien perdre de leur quiétude commune."
+  locale="fr"
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="Intérieur de la Cabane Trois" eyebrow="Séjour — Cabane Trois">
+      La plus raffinée des trois.
+    </PageHero>
+  </Fragment>
+
+  <Section label="Chaque Recoin" heading="Toute la Cabane Trois.">
+    <PhotoGrid items={photos} groupId="cabin-3" />
+    <NoteBox variant="todo">
+      <p>No exterior or balcony shot identified for Cabin Three specifically yet.</p>
+    </NoteBox>
+  </Section>
+
+  <Section>
+    <div class="amenity-list">
+      {amenities.map((item) => <span>{item}</span>)}
+    </div>
+    <a href={reserveHref} class="btn btn-normal btn-spaced">Réserver la Cabane Trois</a>
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">Comparer</div>
+    <h2>Voir les autres cabanes.</h2>
+    <div class="contact-list">
+      <a href="/fr/lodge/">Toutes Les Cabanes →</a>
+      <a href="/fr/cabane-1/">Cabane Un →</a>
+      <a href="/fr/cabane-2/">Cabane Deux →</a>
+    </div>
+  </Fragment>
+</PageLayout>

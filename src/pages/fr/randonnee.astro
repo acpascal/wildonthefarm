@@ -1,0 +1,103 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PhotoHero from '../../components/PhotoHero.astro';
+import Section from '../../components/Section.astro';
+import Split from '../../components/Split.astro';
+import PhotoGrid from '../../components/PhotoGrid.astro';
+import NoteBox from '../../components/NoteBox.astro';
+import { img } from '../../lib/images';
+import type { PhotoItem } from '../../lib/photos';
+
+const heroImage = img('hiking/hero.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const amenities = [
+  'Guidée ou en autonomie',
+  'Accès direct au parc La Amistad',
+  'Forêt nuageuse primaire',
+  'Singes et oiseaux sur le chemin',
+  'Chaussures de marche solides recommandées',
+];
+
+const trailPhotos: PhotoItem[] = [
+  { image: img('hiking/gallery_01.jpg'), alt: 'Le sentier entrant dans la forêt nuageuse', size: 'lg' },
+  { image: img('hiking/gallery_02.jpg'), alt: 'Arbres couverts de mousse le long du sentier' },
+  { image: img('hiking/gallery_03.jpg'), alt: 'Un sentier étroit à travers la forêt nuageuse dense', size: 'tall' },
+  { image: img('hiking/gallery_04.jpg'), alt: 'Fougères et sous-bois en bordure du sentier' },
+  { image: img('hiking/gallery_05.jpg'), alt: 'Vue sur la canopée de la forêt nuageuse depuis le sentier', size: 'wide' },
+  { image: img('hiking/gallery_06.jpg'), alt: 'La lumière filtrant à travers la forêt nuageuse' },
+  { image: img('hiking/gallery_07.jpg'), alt: 'Une portion brumeuse du sentier', size: 'lg' },
+  { image: img('hiking/gallery_08.jpg'), alt: 'Des broméliacées sur un arbre en bordure du sentier' },
+  { image: img('hiking/gallery_09.jpg'), alt: 'Le sentier serpentant à travers la forêt', size: 'tall' },
+  { image: img('hiking/gallery_10.jpg'), alt: 'Des racines d\'arbres traversant le sentier' },
+  { image: img('hiking/gallery_11.jpg'), alt: 'Une portion paisible du sentier en forêt nuageuse' },
+  { image: img('hiking/gallery_12.jpg'), alt: 'Vue large de la forêt depuis le sentier', size: 'wide' },
+  { image: img('hiking/gallery_13.jpg'), alt: 'Mousse et épiphytes sur une branche en bordure du sentier' },
+  { image: img('hiking/gallery_14.jpg'), alt: 'Le sentier sous la canopée', size: 'lg' },
+  { image: img('hiking/gallery_15.jpg'), alt: 'Une portion escarpée du sentier' },
+  { image: img('hiking/gallery_16.jpg'), alt: 'Des fougères arborescentes le long du sentier', size: 'tall' },
+  { image: img('hiking/gallery_17.jpg'), alt: 'Une traversée de ruisseau sur le sentier' },
+  { image: img('hiking/gallery_18.jpg'), alt: 'Vue sur les hauteurs du Chiriquí depuis le sentier', size: 'wide' },
+  { image: img('hiking/gallery_19.jpg'), alt: 'Sous-bois dense en bordure du sentier' },
+  { image: img('hiking/gallery_20.jpg'), alt: 'Le sentier disparaissant dans la brume' },
+  { image: img('hiking/gallery_21.jpg'), alt: 'Un tronc moussu en bordure du sentier', size: 'tall' },
+  { image: img('wildlife/mantled_howler_monkey.jpg'), alt: 'Un singe hurleur à manteau aperçu sur le sentier' },
+  { image: img('hiking/gallery_22.jpg'), alt: 'Le sentier s\'enfonçant plus profondément dans la forêt nuageuse', size: 'lg' },
+];
+---
+
+<PageLayout
+  title="Randonnée en Forêt Nuageuse — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Des sentiers vers le parc national La Amistad, dès la porte de la ferme — forêt nuageuse drapée de mousse, singes, et vues sur les hauteurs du Chiriquí."
+  path="/fr/randonnee/"
+  image={ogImage.src}
+  pullIntro="Randonner dans la forêt nuageuse de Boquete, loin de la foule. Pas de navette, pas de parking de départ — juste un portail, puis la mousse, la brume, et le bruit de la forêt qui s'éveille."
+  locale="fr"
+>
+  <Fragment slot="hero">
+    <PhotoHero image={heroImage} alt="Randonnée en forêt nuageuse à Wild on the Farm" eyebrow="Randonnée — Loin de la Foule">
+      Des sentiers qui partent de notre porte et se perdent dans les nuages.
+    </PhotoHero>
+  </Fragment>
+
+  <Section label="Sur le Sentier" heading="Ce que vous traverserez.">
+    <Split>
+      <div>
+        <p>
+          Les sentiers grimpent à travers la forêt nuageuse primaire — troncs enveloppés de
+          mousse, broméliacées, fougères arborescentes — dans un silence tel qu'aucun cri lointain
+          ni bruissement dans la canopée ne passe inaperçu. Capucins à face blanche et singes
+          hurleurs à manteau partagent ce même territoire, souvent aperçus juste au-dessus de la
+          tête.
+        </p>
+        <NoteBox variant="todo">
+          <p>
+            Practical details needed here: names of the main trails, approximate distances and
+            duration, difficulty level, and whether a guide is required or optional.
+          </p>
+        </NoteBox>
+      </div>
+      <div>
+        <div class="amenity-list">
+          {amenities.map((item) => <span>{item}</span>)}
+        </div>
+      </div>
+    </Split>
+    <p><a href="/fr/journal/randonnee-a-boquete/"><strong>Les sentiers de Boquete, leur histoire, et notre propre carte →</strong></a></p>
+  </Section>
+
+  <Section label="Sur le Terrain" heading="Une forêt qui se découvre avant tout à pied.">
+    <PhotoGrid items={trailPhotos} groupId="hiking" variant="varied" />
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">À Associer Avec</div>
+    <h2>Les matins appartiennent aux oiseaux.</h2>
+    <p>Beaucoup de nos hôtes associent une sortie d'observation des oiseaux à l'aube à une randonnée plus longue dans la journée.</p>
+    <div class="contact-list">
+      <a href="/fr/observation-des-oiseaux/">Observation des Oiseaux →</a>
+      <a href="/fr/ferme/">Retour à La Ferme →</a>
+    </div>
+  </Fragment>
+</PageLayout>

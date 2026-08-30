@@ -1,0 +1,176 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Section from '../../components/Section.astro';
+import CardGrid from '../../components/CardGrid.astro';
+import TextCard from '../../components/TextCard.astro';
+import NoteBox from '../../components/NoteBox.astro';
+import { business } from '../../data/business';
+import { img } from '../../lib/images';
+import { mailtoHref } from '../../i18n/utils';
+
+const heroImage = img('farm/property_overview.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+---
+
+<PageLayout
+  title="FAQ et Contact — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Réponses aux questions fréquentes sur un séjour à Wild on the Farm, Boquete Cloud Forest Lodge, et comment nous joindre directement."
+  path="/fr/faq-contact/"
+  image={ogImage.src}
+  pullIntro="Tout ce que nos hôtes demandent généralement avant d'arriver — et si la réponse n'y est pas, écrivez-nous directement."
+  locale="fr"
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="Vue aérienne de la propriété" eyebrow="Préparez Votre Séjour">
+      Vos questions, nos réponses. Et comment nous joindre.
+    </PageHero>
+  </Fragment>
+
+  <Section label="Nous Contacter" heading="Nous répondons plus vite sur WhatsApp que par e-mail.">
+    <div class="contact-list contact-list-lg">
+      <a href={business.whatsappHref}>{business.phone} (WhatsApp)</a>
+      <a href={mailtoHref(business.email, 'fr')}>{business.email}</a>
+    </div>
+  </Section>
+
+  <Section label="Questions Fréquentes" heading="Avant de réserver.">
+    <CardGrid cols={2}>
+      <TextCard lite title="Comment se rendre à la ferme ?">
+        <p>
+          Le dernier kilomètre de la route est très raide et nécessite un 4x4. Si vous arrivez en
+          voiture classique, garez-vous en bas et nous viendrons vous chercher. Si vous arrivez à
+          pied, nous vous récupérons et vous redéposons à Boquete (à 5 km) à la fin de votre
+          séjour. Si vous souhaitez vous rendre à Boquete pendant votre séjour, vous pouvez
+          réserver un taxi 4x4 pour 25 $ — ou, lorsque nous descendons nous-mêmes en ville, vous
+          êtes les bienvenus pour nous accompagner gratuitement. Vous venez de plus loin ?
+          Consultez notre guide complet pour{' '}
+          <a href="/fr/journal/guide-de-voyage-a-boquete/">rejoindre Boquete depuis Panama City</a>.
+        </p>
+      </TextCard>
+      <TextCard lite title="Y a-t-il le Wi-Fi ?">
+        <p>
+          Par choix, il n'y a ni Wi-Fi ni télévision dans les cabanes — le silence fait partie de
+          l'expérience. Le Wi-Fi est disponible dans les espaces communs pour qui a besoin de
+          rester joignable.
+        </p>
+      </TextCard>
+    </CardGrid>
+
+    <div class="max-prose">
+      <TextCard lite title="Et l'électricité — puis-je apporter un sèche-cheveux ?">
+        <p>
+          Nous sommes entièrement hors réseau et produisons notre propre énergie solaire ; les
+          appareils très gourmands en électricité comme les sèche-cheveux ne sont donc pas
+          autorisés. L'électricité ne manque pas pour le reste — nous demandons simplement à
+          chaque hôte de n'allumer que les lumières nécessaires, d'éteindre ce qui n'est pas
+          utilisé, et de penser à éteindre la lumière de la salle de bain en sortant.
+        </p>
+      </TextCard>
+    </div>
+
+    <CardGrid cols={2}>
+      <TextCard lite title="Quel temps fait-il ?">
+        <p>
+          Agréable, grâce à l'altitude — vous échappez à la chaleur lourde et étouffante des
+          terres plus basses. Prévoyez une polaire, une veste de pluie légère, et des chaussures
+          de randonnée si vous comptez marcher.
+        </p>
+      </TextCard>
+      <TextCard lite title="Verrai-je à coup sûr le quetzal, ou le jaguar ?">
+        <p>
+          La meilleure période pour l'observation des oiseaux — et pour apercevoir le quetzal en
+          particulier — se situe entre le 15 mars et le 15 mai, quand la plupart des oiseaux
+          nichent et que les quetzals sont nombreux dans la région. En dehors de cette période,
+          les observations restent possibles, simplement moins fréquentes. Les observations plus
+          rares, comme celle du jaguar, restent réellement exceptionnelles, même ici — ceci est
+          une véritable forêt nuageuse sauvage, pas un zoo.
+        </p>
+      </TextCard>
+    </CardGrid>
+
+    <CardGrid cols={2}>
+      <TextCard lite title="Un guide est-il nécessaire pour la randonnée ?">
+        <p>
+          Certains tronçons peuvent se parcourir sans guide si vous êtes un randonneur
+          expérimenté, à l'aise pour vous orienter seul. Pour les randonnées de plus de 3 heures
+          en forêt nuageuse, un guide est vivement recommandé — les sentiers depuis la ferme sont
+          peu marqués et isolés — même si les randonneurs expérimentés qui tiennent à leur
+          indépendance restent libres de partir seuls. Il est demandé à chacun de signer une
+          décharge de responsabilité au préalable, et nous recommandons à nos hôtes de disposer
+          de leur propre assurance voyage ou personnelle.
+        </p>
+      </TextCard>
+      <TextCard lite title="Prenez-vous en compte les restrictions alimentaires ?">
+        <p>Signalez-nous simplement un régime particulier ou une allergie au moment de la réservation, et nous adapterons les repas en conséquence.</p>
+      </TextCard>
+    </CardGrid>
+
+    <CardGrid cols={2}>
+      <TextCard lite title="Comment sont les repas ?">
+        <p>
+          Le petit-déjeuner est inclus et généralement copieux, servi entre 8h et 9h. Le dîner
+          peut être réservé chaque soir — deux entrées, un plat principal, et un dessert. Nous
+          faisons notre propre pain.
+        </p>
+      </TextCard>
+      <TextCard lite title="Les animaux sont-ils acceptés ?">
+        <p>Nous en sommes désolés, mais nous n'acceptons pas les animaux de compagnie. Nous avons nos propres animaux sur la ferme, et la présence d'animaux extérieurs leur cause beaucoup de stress.</p>
+      </TextCard>
+    </CardGrid>
+
+    <CardGrid cols={2}>
+      <TextCard lite title="Les enfants sont-ils acceptés ?">
+        <p>Pour des raisons de sécurité, les enfants de moins de 12 ans ne sont pas acceptés, et aucun lit d'appoint n'est disponible dans les cabanes.</p>
+      </TextCard>
+      <TextCard lite title="Quelle est votre politique d'annulation ?">
+        <p>
+          Annulation gratuite jusqu'à 1 mois avant l'arrivée. Entre 1 mois et 15 jours avant, 50 %
+          sont remboursés ; entre 15 jours et 1 semaine avant, 25 % sont remboursés. À moins d'une
+          semaine de l'arrivée, les réservations ne sont plus remboursables.
+        </p>
+      </TextCard>
+    </CardGrid>
+
+    <CardGrid cols={2}>
+      <TextCard lite title="Comment réserver ?">
+        <p>
+          Contactez-nous directement par WhatsApp ou e-mail — indiquez-nous vos dates et ce que
+          vous espérez vivre ici, et nous vous aiderons à choisir la bonne cabane et à organiser
+          votre séjour.
+        </p>
+      </TextCard>
+      <TextCard lite title="Quels moyens de paiement acceptez-vous ?">
+        <NoteBox variant="todo">
+          <p>
+            Accepted payment methods not yet decided — cash, transfer, card, deposit vs. balance
+            on arrival, etc.
+          </p>
+        </NoteBox>
+      </TextCard>
+    </CardGrid>
+
+    <div class="max-prose">
+      <TextCard lite title="Une application à recommander ?">
+        <p>
+          Pour l'observation des oiseaux, nous recommandons de télécharger (et mettre à jour)
+          l'application Merlin Bird ID avant votre arrivée — elle est d'une grande aide pour
+          identifier ce que vous observez. Si les plantes et les fleurs vous intéressent, une
+          application spécialisée d'identification végétale est également utile pour mettre un
+          nom sur ce qui pousse autour de vous.
+        </p>
+      </TextCard>
+    </div>
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">Encore Des Questions ?</div>
+    <h2>Nous serons heureux d'en discuter.</h2>
+    <p>Écrivez-nous directement et nous vous aiderons à organiser votre séjour, quoi qu'il reste à éclaircir.</p>
+    <div class="contact-list">
+      <a href="/fr/tarifs-et-retraites/">Tarifs et Retraites →</a>
+      <a href="/fr/lodge/">Voir Les Cabanes →</a>
+    </div>
+  </Fragment>
+</PageLayout>

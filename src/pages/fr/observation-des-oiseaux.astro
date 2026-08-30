@@ -1,0 +1,123 @@
+---
+import { Image, getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PhotoHero from '../../components/PhotoHero.astro';
+import Section from '../../components/Section.astro';
+import Split from '../../components/Split.astro';
+import CardGrid from '../../components/CardGrid.astro';
+import ImageTextCard from '../../components/ImageTextCard.astro';
+import NoteBox from '../../components/NoteBox.astro';
+import { img } from '../../lib/images';
+
+const heroImage = img('birds/bird_00.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const quetzalImage = img('birds/bird_01.jpg');
+const chlorophoniaImage = img('birds/bird_02.jpg');
+
+const species = [
+  { image: img('birds/bird_03.jpg'), alt: 'Un quetzal resplendissant perché, laissant voir sa huppe vert irisé', name: 'Quetzal Resplendissant', latin: 'Pharomachrus mocinno', description: "Perché et immobile, le mâle révèle sa huppe vert irisé et son plastron cramoisi accrochant la lumière — le résident le plus légendaire de la ferme, ici saisi au repos plutôt qu'en vol." },
+  { image: img('birds/bird_04.jpg'), alt: 'Un tangara flamboyant', name: 'Tangara Flamboyant', latin: 'Piranga bidentata', description: "Les mâles arborent un rouge-orangé éclatant sur des ailes noir et blanc ; les femelles, un ocre plus doux. Cherche sa nourriture en couple, se mêlant souvent aux bandes mixtes de passage." },
+  { image: img('birds/bird_05.jpg'), alt: 'Une paruline noir et blanc cherchant sa nourriture sur une branche', name: 'Paruline Noir et Blanc', latin: 'Mniotilta varia', description: "Une migratrice au long cours venue d'Amérique du Nord, qui passe l'hiver à parcourir troncs et branches comme une sittelle, sondant l'écorce à la recherche d'insectes." },
+  { image: img('birds/bird_06.jpg'), alt: 'Une paruline à couronne dorée dans le sous-bois', name: 'Paruline à Couronne Dorée', latin: 'Basileuterus culicivorus', description: "Une paruline discrète, olive et jaune, du sous-bois — plus souvent entendue que vue, glanant des insectes dans le feuillage bas." },
+  { image: img('birds/bird_07.jpg'), alt: 'Un pic chevelu sur un tronc d\'arbre', name: 'Pic Chevelu', latin: 'Dryobates villosus', description: "Tambourine sur le bois mort à toute heure, taillant les insectes à coups de bec — repérable à l'éclat blanc qui strie son dos." },
+  { image: img('birds/bird_08.jpg'), alt: 'Un gratteur d\'Amérique centrale au sol de la forêt', name: "Gratteur d'Amérique Centrale", latin: 'Sclerurus mexicanus', description: "Un oiseau forestier terrestre qui porte bien son nom, projetant la litière de feuilles d'un coup de patte vif pour découvrir les insectes en dessous." },
+  { image: img('birds/bird_09.jpg'), alt: 'Un élénie montagnarde, un moucherolle', name: 'Élénie Montagnarde', latin: 'Elaenia frantzii', description: "Un modeste moucherolle des hauteurs, plus facile à repérer à son cri rauque et ascendant qu'à sa silhouette dans la strate moyenne." },
+  { image: img('birds/bird_10.jpg'), alt: 'Un troglodyte ocré sur une branche moussue', name: 'Troglodyte Ocré', latin: 'Troglodytes ochraceus', description: "Un troglodyte couleur cannelle des branches moussues, travaillant souvent seul à travers les rameaux chargés d'épiphytes, queue relevée." },
+  { image: img('birds/bird_11.jpg'), alt: 'Un colibri à gorge violette', name: 'Colibri à Gorge Violette', latin: 'Lampornis calolaimus', description: "L'un des colibris emblématiques de la ferme — les mâles laissent éclater une gorge violette irisée et une calotte turquoise quand la lumière tombe juste comme il faut." },
+  { image: img('birds/bird_12.jpg'), alt: 'Un colibri à queue rousse', name: 'Colibri à Queue Rousse', latin: 'Amazilia tzacatl', description: "Commun et bagarreur, ce colibri défend les arbustes en fleurs avec une détermination réelle, chassant des rivaux bien plus gros que lui." },
+  { image: img('birds/bird_13.jpg'), alt: 'Un colibri scintillant', name: 'Colibri Scintillant', latin: 'Selasphorus scintilla', description: "L'un des plus petits oiseaux au monde, à peine plus grand qu'un bourdon, préférant les lisières fleuries et ouvertes à la forêt dense." },
+  { image: img('birds/bird_14.jpg'), alt: 'Un colibri à ventre blanc', name: 'Colibri à Ventre Blanc', latin: 'Amazilia edward', description: "Une spécialité des hauteurs, au ventre d'un blanc net contrastant avec un vert irisé — un habitué des haies fleuries de la ferme." },
+  { image: img('birds/bird_15.jpg'), alt: 'Un tangara pailleté', name: 'Tangara Pailleté', latin: 'Tangara dowii', description: "Une spécialité des hauteurs de la Talamanca, sa tête bleu-noir finement mouchetée comme semée d'étoiles, se déplaçant en petites bandes mixtes dans la canopée." },
+  { image: img('birds/bird_16.jpg'), alt: 'Une grive à dos olive au sol de la forêt', name: 'Grive à Dos Olive', latin: 'Catharus ustulatus', description: "Une grive migratrice tachetée, de passage entre l'Amérique du Nord et du Sud, cherchant sa nourriture en silence au sol de la forêt." },
+  { image: img('birds/bird_17.jpg'), alt: 'Un colibri à gorge blanche', name: 'Colibri à Gorge Blanche', latin: 'Lampornis castaneoventris', description: "Présent uniquement dans cette portion des hauteurs de la Talamanca, avec une bande gulaire blanche marquée et des dessous roux chez la femelle." },
+  { image: img('birds/bird_18.jpg'), alt: 'Une grive à gorge blanche', name: 'Grive à Gorge Blanche', latin: 'Turdus assimilis', description: "Une grive à la voix douce, des lisières forestières, dont le cercle oculaire et le bec orange vif tranchent sur un plumage par ailleurs discret." },
+  { image: img('birds/bird_19.jpg'), alt: 'Une paruline à calotte noire', name: 'Paruline à Calotte Noire', latin: 'Cardellina pusilla', description: "Une migratrice jaune vif à la calotte noire nette, voletant sans relâche dans les branches basses en quête d'insectes." },
+  { image: img('birds/bird_20.jpg'), alt: 'Un solitaire sombre', name: 'Solitaire Sombre', latin: 'Myadestes melanops', description: "Son chant flûté, presque irréel, est l'un des sons les plus caractéristiques de la forêt nuageuse — même quand l'oiseau lui-même reste invisible." },
+  { image: img('birds/bird_21.jpg'), alt: 'Un couple de cabézons à bec courbe', name: 'Cabézon à Bec Courbe', latin: 'Semnornis frantzii', description: "Un oiseau trapu des hauteurs, au collier orangé, généralement en couple, échangeant un duo sonore qui porte loin dans les arbres." },
+  { image: img('birds/bird_22.jpg'), alt: 'Une buse à queue rousse planant sur un thermique', name: 'Buse à Queue Rousse', latin: 'Buteo jamaicensis', description: "Le grand rapace résident de la ferme, souvent vu planant sur les courants ascendants au-dessus de la vallée, ou posté en observation sur une branche morte." },
+  { image: img('birds/bird_23.jpg'), alt: 'Une paruline flamboyante cherchant sa nourriture', name: 'Paruline Flamboyante', latin: 'Myioborus miniatus', description: "Une petite paruline vive, qui étale sa queue et fait claquer ses ailes presque sans arrêt en cherchant sa nourriture — une habitude qui aide à débusquer les insectes cachés." },
+  { image: img('birds/bird_24.jpg'), alt: 'Une grive-rossignol à dos ardoisé', name: 'Grive-Rossignol à Dos Ardoisé', latin: 'Catharus fuscater', description: "Une grive discrète du sous-bois, au bec et au cercle oculaire orange perçants, plus connue pour son chant clair et lancinant que pour se montrer." },
+  { image: img('birds/bird_25.jpg'), alt: 'Un grimpar tacheté sur un tronc d\'arbre', name: 'Grimpar Tacheté', latin: 'Lepidocolaptes affinis', description: "Grimpe en spirale le long des troncs, sondant les crevasses de l'écorce de son long bec courbe, membre des bandes mixtes qui se déplacent ensemble dans la forêt." },
+  { image: img('birds/bird_26.jpg'), alt: 'Un élanion à queue fourchue en vol', name: 'Élanion à Queue Fourchue', latin: 'Elanoides forficatus', description: "Impossible à confondre dans le ciel, avec sa queue profondément fourchue et son vol plané tout en aisance, chassant insectes et petites proies en vol." },
+  { image: img('birds/bird_27.jpg'), alt: 'Un toucanet à bec sillonné', name: 'Toucanet à Bec Sillonné', latin: 'Aulacorhynchus prasinus', description: "Un petit toucan au plumage vert vif et au bec bicolore, souvent entendu croasser depuis la canopée avant d'être vu." },
+  { image: img('birds/bird_28.jpg'), alt: 'Un synallaxe à gorge écailleuse', name: 'Synallaxe à Gorge Écailleuse', latin: 'Anabacerthia variegaticeps', description: "Un glaneur de sous-bois qui travaille méthodiquement les amas de feuilles mortes, à la recherche d'insectes cachés." },
+];
+---
+
+<PageLayout
+  title="Observation des Oiseaux — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Observation des oiseaux à Wild on the Farm : refuge du quetzal resplendissant et de la chlorophonie dorée, à la lisière du parc national La Amistad, Panama."
+  path="/fr/observation-des-oiseaux/"
+  image={ogImage.src}
+  pullIntro="À la lisière du parc national La Amistad, la forêt nuageuse abrite quelques-uns des oiseaux les plus recherchés d'Amérique centrale — silencieux, patients, et à observer de préférence aux premières lueurs du jour."
+  locale="fr"
+>
+  <Fragment slot="hero">
+    <PhotoHero image={heroImage} alt="Quetzal resplendissant en vol à Wild on the Farm" eyebrow="Expérience — Observation des Oiseaux">
+      Là où niche encore le quetzal resplendissant.
+    </PhotoHero>
+  </Fragment>
+
+  <Section>
+    <Split divider>
+      <div class="split-photo">
+        <Image src={quetzalImage} alt="Un quetzal resplendissant dans la canopée" widths={[400, 700, 1000]} sizes="(min-width: 860px) 50vw, 100vw" />
+      </div>
+      <div>
+        <div class="section-label">Espèce Vedette</div>
+        <h2 class="lede">Quetzal Resplendissant</h2>
+        <p>
+          L'oiseau le plus légendaire du Panama, celui qui pousse tant de voyageurs à regarder
+          vers les hauteurs. Les mâles traînent des plumes caudales vert irisé de près d'un mètre,
+          se déplaçant en silence dans la canopée à la recherche d'avocats sauvages — presque leur
+          seule source de nourriture. C'est à l'aube et au crépuscule, dans le calme près de la
+          limite forestière, qu'on les aperçoit le plus souvent.
+        </p>
+      </div>
+    </Split>
+
+    <Split divider reverse>
+      <div class="split-photo">
+        <Image src={chlorophoniaImage} alt="Une chlorophonie dorée dans le sous-bois" widths={[400, 700, 1000]} sizes="(min-width: 860px) 50vw, 100vw" />
+      </div>
+      <div>
+        <div class="section-label">Espèce Vedette</div>
+        <h2 class="lede">Chlorophonie Dorée</h2>
+        <p>
+          Un petit oiseau aux couleurs presque improbables — vert mousse, or et bleu ciel — qui
+          parcourt le sous-bois moussu à la recherche de baies de gui et de petits fruits. Plus
+          facile à entendre qu'à voir : un doux chant sifflé, venu du plus profond du couvert
+          végétal.
+        </p>
+      </div>
+    </Split>
+  </Section>
+
+  <Section label="Observées Sur La Ferme" heading="Vingt-six espèces de plus, photographiées ici même.">
+    <CardGrid>
+      {species.map((s) => (
+        <ImageTextCard image={s.image} alt={s.alt} title={s.name} eyebrow={s.latin} groupId="birdwatching-species">
+          {s.description}
+        </ImageTextCard>
+      ))}
+    </CardGrid>
+    <NoteBox variant="todo">
+      <p>
+        Species are identified from source filenames, trusted as accurate. A handful of additional
+        photos couldn't be confidently identified and aren't included yet — worth a second pass if
+        an ID becomes available.
+      </p>
+    </NoteBox>
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">Préparez Votre Visite</div>
+    <h2>Idéal aux premières lueurs.</h2>
+    <p>Des sorties guidées peuvent être organisées tôt le matin, quand la forêt est la plus animée. Dites-nous si l'observation des oiseaux est au cœur de votre séjour, et nous l'organiserons autour de cela.</p>
+    <div class="contact-list">
+      <a href="/fr/randonnee/">Randonnée et Sentiers →</a>
+      <a href="/fr/ferme/">Retour à La Ferme →</a>
+    </div>
+  </Fragment>
+</PageLayout>

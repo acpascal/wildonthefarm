@@ -1,0 +1,71 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Section from '../../components/Section.astro';
+import PhotoGrid from '../../components/PhotoGrid.astro';
+import { img } from '../../lib/images';
+
+const heroImage = img('cabin2/hero.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const photos = [
+  { image: heroImage, alt: 'La Cabane Deux, perchée sur pilotis au-dessus de la vallée' },
+  { image: img('cabin2/gallery_1.jpg'), alt: 'Intérieur de la Cabane Deux' },
+  { image: img('cabin2/gallery_2.jpg'), alt: 'Balcon et vue sur la vallée depuis la Cabane Deux' },
+  { image: img('cabin2/gallery_3.jpg'), alt: 'Chambre de la Cabane Deux' },
+  { image: img('cabin2/gallery_4.jpg'), alt: 'Salle de bain de la Cabane Deux' },
+  { image: img('cabin2/gallery_5.jpg'), alt: 'Vue sur la vallée du Chiriquí depuis la Cabane Deux' },
+  { image: img('cabin2/gallery_6.jpg'), alt: 'Détail extérieur de la Cabane Deux' },
+  { image: img('cabin2/gallery_7.jpg'), alt: 'Terrasse de la Cabane Deux' },
+];
+
+const amenities = [
+  'Salle de bain privée en suite',
+  "Douche à l'italienne, carreaux à motifs de feuilles",
+  'Literie haut de gamme',
+  'Balcon privé',
+  'Vue sur la vallée et le Volcán Barú',
+  'Structure surélevée sur pilotis',
+  'Pas de Wi-Fi ni de télévision, par choix',
+];
+
+const reserveHref =
+  "https://api.whatsapp.com/send?phone=50765699134&text=Bonjour%2C%20je%20souhaiterais%20r%C3%A9server%20la%20Cabane%202%20%C3%A0%20Wild%20on%20the%20Farm";
+---
+
+<PageLayout
+  title="Cabane Deux — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="La Cabane Deux à Wild on the Farm : perchée sur pilotis au-dessus de la colline, avec une vue dégagée sur la vallée du Chiriquí, depuis le lit, le balcon, et la douche."
+  path="/fr/cabane-2/"
+  image={ogImage.src}
+  pullIntro="Franchir le seuil de cette cabane, et un « Wow ! » d'émerveillement est la seule réponse possible face à son atmosphère et à sa vue sans pareille. C'est la cabane où suivre le ballet des nuages, et danser avec les étoiles…"
+  locale="fr"
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="La Cabane Deux, perchée sur pilotis au-dessus de la vallée" eyebrow="Séjour — Cabane Deux">
+      Suspendue entre ciel et terre.
+    </PageHero>
+  </Fragment>
+
+  <Section label="Chaque Recoin" heading="Toute la Cabane Deux.">
+    <PhotoGrid items={photos} groupId="cabin-2" />
+  </Section>
+
+  <Section>
+    <div class="amenity-list">
+      {amenities.map((item) => <span>{item}</span>)}
+    </div>
+    <a href={reserveHref} class="btn btn-normal btn-spaced">Réserver la Cabane Deux</a>
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">Comparer</div>
+    <h2>Voir les autres cabanes.</h2>
+    <div class="contact-list">
+      <a href="/fr/lodge/">Toutes Les Cabanes →</a>
+      <a href="/fr/cabane-1/">Cabane Un →</a>
+      <a href="/fr/cabane-3/">Cabane Trois →</a>
+    </div>
+  </Fragment>
+</PageLayout>
