@@ -25,11 +25,11 @@ const stats = [
 ];
 
 const pillars = [
-  { title: 'Authenticity', description: 'Eighteen years of real organic farming, not a backdrop built for hospitality.' },
-  { title: 'Intimacy', description: 'Only three cabins, ever. A choice, not a limitation.' },
-  { title: 'Sensory silence', description: 'Clouds, altitude, and a quiet that has texture.' },
-  { title: 'Honest comfort', description: "Off-grid doesn't mean roughing it — high-end bedding, private baths, warm timber." },
-  { title: 'A living table', description: "Meals grown a few steps from where they're served." },
+  { title: 'Authenticity', description: 'Eighteen years of real organic farming — nothing here is a backdrop staged for tourists.' },
+  { title: 'Intimacy', description: 'Three cabins, not one more. A deliberate choice, not a limitation.' },
+  { title: 'Silence', description: 'The clouds, the altitude, and a silence you can almost feel on your skin.' },
+  { title: 'Comfort Without Artifice', description: "Living off-grid doesn't mean giving up comfort — considered bedding, a private bath, warm timber." },
+  { title: 'A Living Table', description: "Meals born just steps from where they're served." },
 ];
 
 const cards = [
@@ -66,12 +66,10 @@ const cards = [
       title={business.name}
       tagline={business.tagline}
       eyebrow="Permaculture & Organic Macadamia Farm since 2008"
-      focalPosition="center 78%"
+      focalPosition="center 50%"
     >
       <p>
-        Three handcrafted cabins on an organic &amp; permaculture macadamia farm in Panama —
-        reached by a mountain road that leaves the ordinary world behind, so the silence up here
-        stays whole.
+        Three secret cabins. One organic farm. Facing Volcán Barú, live luxury in the wild.
       </p>
       <div class="hero-cta">
         <a href="/faqs-contact/" class="btn btn-inverted">Reserve Your Stay</a>
@@ -86,33 +84,29 @@ const cards = [
     <Split>
       <div>
         <div class="section-label">The Farm</div>
-        <h2 class="lede">Eighteen years of organic ground, before the first guest ever arrived.</h2>
+        <h2 class="lede">Eighteen years of nourishing ground, long before the first guest ever arrived.</h2>
       </div>
       <div>
         <p>
-          Wild on the Farm was never built to look like a farm. It has been one since 2008 — an
-          organic farm and macadamia plantation, cultivated in patient harmony with the
-          cloud forest that surrounds it.
-        </p>
-        <p>
-          In 2025, three handcrafted cabins opened their doors for the first time. Everything
-          else — the soil, the trees, the rhythm — was already here, eighteen years in the
-          making.
+          Where the mists of the cloud forest cloak the secrets of the earth, the hushed elegance
+          of our refuge becomes the eternal mirror of the wild. At the heart of our organic farm,
+          the prestige of absolute comfort unites with organic authenticity to reinvent the art
+          of living at the summit.
         </p>
       </div>
     </Split>
   </Section>
 
-  <Story dark image={img('home/story.jpg')} alt="A living roof at Wild on the Farm" label="A Masterpiece of Synergy" heading="Roofs grown from the hillside.">
+  <Story dark image={img('home/story.jpg')} alt="A living roof at Wild on the Farm" label="An Architecture That Listens to the Land" heading="Roofs born from the hillside itself.">
     <p>
-      Living roofs blur the line between shelter and slope, built from sustainable tropical
-      hardwood and set into the mountain rather than onto it. Solar power, spring water, and
-      organic soil keep the sanctuary self-sufficient — comfort and sustainability, held as one
-      and the same.
+      Living roofs erase the line between shelter and slope: built from sustainable tropical
+      hardwood, they root into the mountain rather than merely resting on it. Solar power,
+      spring water, and living soil make this refuge self-sufficient — here, comfort and
+      reverence for the living world are one and the same.
     </p>
   </Story>
 
-  <Section label="What Stays With You" heading="Five things we never compromise on.">
+  <Section label="What Matters Most" heading="Five principles we never sacrifice.">
     <CardGrid cols={5}>
       {pillars.map((p) => (
         <TextCard lite title={p.title}>
@@ -122,7 +116,7 @@ const cards = [
     </CardGrid>
   </Section>
 
-  <Section label="Explore" heading="Stay, eat, and wander — on the farm's own terms.">
+  <Section label="Explore" heading="Stay, eat, and explore — at the farm's own pace.">
     <CardGrid>
       {cards.map((c) => <OverlayCard {...c} />)}
     </CardGrid>
@@ -152,8 +146,8 @@ const cards = [
     <div class="section-label">Journal</div>
     <h2>From the farm, every week.</h2>
     <p>
-      Seasonal notes on native plants, trail conditions, permaculture, and the health of this
-      small mountain — updated as the farm itself changes.
+      Seasonal notes on native plants, trail conditions, permaculture, and the life of this
+      small mountain — updated with its own changing seasons.
     </p>
     <div class="contact-list">
       <a href="/journal/">Read The Journal →</a>

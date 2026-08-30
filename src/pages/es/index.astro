@@ -25,11 +25,11 @@ const stats = [
 ];
 
 const pillars = [
-  { title: 'Autenticidad', description: 'Dieciocho años de agricultura orgánica real, no un decorado construido para la hospitalidad.' },
-  { title: 'Intimidad', description: 'Solo tres cabañas, siempre. Una elección, no una limitación.' },
-  { title: 'Silencio sensorial', description: 'Nubes, altitud, y un silencio que tiene textura.' },
-  { title: 'Confort honesto', description: 'Estar fuera de la red no significa pasar penurias — ropa de cama de alta calidad, baños privados, madera cálida.' },
-  { title: 'Una mesa viva', description: 'Comidas cultivadas a pocos pasos de donde se sirven.' },
+  { title: 'Autenticidad', description: 'Dieciocho años de agricultura orgánica bien real — aquí, nada es un decorado pensado para los turistas.' },
+  { title: 'Intimidad', description: 'Tres cabañas, ni una más. Una elección asumida, no una limitación.' },
+  { title: 'Silencio', description: 'Las nubes, la altitud, y un silencio que casi se siente físicamente.' },
+  { title: 'Confort Sin Artificios', description: 'Vivir fuera de la red no significa renunciar al confort — ropa de cama cuidada, baño privado, madera cálida.' },
+  { title: 'Una Mesa Viva', description: 'Comidas nacidas a pocos pasos de donde se sirven.' },
 ];
 
 const cards = [
@@ -71,12 +71,11 @@ const cards = [
       title={business.name}
       tagline={business.tagline}
       eyebrow="Finca de Permacultura y Macadamia Orgánica desde 2008"
-      focalPosition="center 78%"
+      focalPosition="center 50%"
     >
       <p>
-        Tres cabañas artesanales en una finca orgánica y de permacultura de macadamia en Panamá —
-        a la que se llega por un camino de montaña que deja atrás el mundo ordinario, para que el
-        silencio de aquí arriba permanezca intacto.
+        Tres cabañas secretas. Una finca orgánica. Frente al volcán Barú, vive el lujo en estado
+        salvaje.
       </p>
       <div class="hero-cta">
         <a href="/es/preguntas-contacto/" class="btn btn-inverted">Reserva Tu Estancia</a>
@@ -91,32 +90,29 @@ const cards = [
     <Split>
       <div>
         <div class="section-label">La Finca</div>
-        <h2 class="lede">Dieciocho años de tierra orgánica, antes de que llegara el primer huésped.</h2>
+        <h2 class="lede">Dieciocho años de tierra nutricia, mucho antes de que llegara el primer huésped.</h2>
       </div>
       <div>
         <p>
-          Wild on the Farm nunca se construyó para parecer una finca. Lo ha sido desde 2008 — una
-          finca orgánica y plantación de macadamia, cultivada en armonía paciente con
-          el bosque nuboso que la rodea.
-        </p>
-        <p>
-          En 2025, tres cabañas artesanales abrieron sus puertas por primera vez. Todo lo demás —
-          la tierra, los árboles, el ritmo — ya estaba aquí, dieciocho años en construcción.
+          Donde las brumas del bosque nuboso envuelven los secretos de la tierra, la elegancia
+          discreta de nuestro refugio se convierte en el espejo eterno de la naturaleza salvaje.
+          En el corazón de nuestra finca orgánica, el prestigio de un confort absoluto se une a la
+          autenticidad orgánica para reinventar el arte de vivir en la cumbre.
         </p>
       </div>
     </Split>
   </Section>
 
-  <Story dark image={img('home/story.jpg')} alt="Un techo vivo en Wild on the Farm" label="Una Obra Maestra de Sinergia" heading="Techos nacidos de la ladera.">
+  <Story dark image={img('home/story.jpg')} alt="Un techo vivo en Wild on the Farm" label="Una Arquitectura Que Escucha la Tierra" heading="Techos nacidos de la propia ladera.">
     <p>
-      Los techos vivos difuminan la línea entre refugio y ladera, construidos con madera tropical
-      sostenible y enclavados en la montaña en lugar de sobre ella. La energía solar, el agua de
-      manantial y el suelo orgánico mantienen el santuario autosuficiente — confort y
-      sostenibilidad, como una sola cosa.
+      Los techos vivos borran la frontera entre el refugio y la pendiente: construidos en madera
+      tropical sostenible, se anclan en la montaña en lugar de simplemente posarse sobre ella. La
+      energía solar, el agua de manantial y un suelo vivo hacen de este refugio algo
+      autosuficiente — aquí, el confort y el respeto por lo vivo son una sola cosa.
     </p>
   </Story>
 
-  <Section label="Lo Que Permanece Contigo" heading="Cinco cosas en las que nunca transigimos.">
+  <Section label="Lo Esencial" heading="Cinco principios que nunca sacrificamos.">
     <CardGrid cols={5}>
       {pillars.map((p) => (
         <TextCard lite title={p.title}>
@@ -126,7 +122,7 @@ const cards = [
     </CardGrid>
   </Section>
 
-  <Section label="Explora" heading="Alójate, come y explora — según los propios términos de la finca.">
+  <Section label="Explora" heading="Alójate, come y explora — al ritmo de la finca.">
     <CardGrid>
       {cards.map((c) => <OverlayCard {...c} />)}
     </CardGrid>
@@ -156,8 +152,8 @@ const cards = [
     <div class="section-label">Diario</div>
     <h2>Desde la finca, cada semana.</h2>
     <p>
-      Notas de temporada sobre plantas nativas, condiciones de los senderos, permacultura y la
-      salud de esta pequeña montaña — actualizadas a medida que la finca misma cambia.
+      Notas de temporada sobre las plantas del país, el estado de los senderos, la permacultura y
+      la vida de esta pequeña montaña — actualizadas al ritmo de sus propias estaciones.
     </p>
     <div class="contact-list">
       <a href="/es/journal/">Leer El Diario →</a>

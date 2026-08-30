@@ -12,46 +12,65 @@ const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
 
 const houseImage = img('retreats/owners_house.jpg');
 const terracesImage = img('farm/pergola.jpg');
+const harmonyImage = img('story/roof_construction.jpg');
 ---
 
 <PageLayout
   title="Nuestra Historia — Wild on the Farm | Boquete Cloud Forest Lodge"
-  description="Cómo un hotelero de Quito cambió el negocio de la hospitalidad por una ladera en Boquete, y pasó dieciocho años construyendo una finca orgánica antes de abrir sus puertas a los huéspedes."
+  description="Cómo el dueño de un hotel y centro de buceo en Roatán lo vendió todo por una ladera en Boquete, y pasó dieciocho años construyendo una finca orgánica antes de abrir sus puertas a los huéspedes."
   path="/es/historia/"
   image={ogImage.src}
-  pullIntro="Este lugar no se diseñó como un retiro al que después le creció una finca alrededor. Fue al revés — la finca llegó primero, y hicieron falta dieciocho años de paciencia antes de invitar a alguien más."
+  pullIntro="Wild on the Farm nació de un viaje profundo a través de los lugares más salvajes de Panamá. Tras años de exploración, el fundador descubrió esta tierra intacta — y vio en ella el escenario perfecto para un refugio autosuficiente, donde la paz, la naturaleza y el arte de vivir se armonizan."
   locale="es"
 >
   <Fragment slot="hero">
     <PhotoHero image={heroImage} alt="Un techo vivo integrado en la ladera de Wild on the Farm" eyebrow="Nuestra Historia">
-      La decisión de un viajero de dejar de moverse.
+      Nacido de un viaje a través de lo salvaje.
     </PhotoHero>
   </Fragment>
 
-  <Section>
+  <Section label="Un Viaje Hacia la Armonía" heading="La Historia Detrás del Mito">
     <Split>
-      <div>
-        <div class="section-label">Antes De La Finca</div>
-        <h2 class="lede">Un hotelero cansado de las ciudades.</h2>
+      <div class="split-photo">
+        <Image
+          src={harmonyImage}
+          alt="Construcción del techo vivo en Wild on the Farm, en lo alto de las terrazas"
+          widths={[400, 700, 1000]}
+          sizes="(min-width: 860px) 50vw, 100vw"
+          loading="lazy"
+        />
       </div>
       <div>
+        <p>Nacido de una brújula perdida, construido con pasión y visión.</p>
         <p>
-          Pascal pasó años dirigiendo un hotel en Quito, aprendiendo la hospitalidad desde
-          adentro — qué hace que una estancia sea olvidable, y qué hace todo lo contrario. Era un
-          trabajo que se le daba bien, en una ciudad que había llegado a conocer bien. Pero cuanto
-          más tiempo pasaba allí, más se sorprendía pensando en las montañas que solo había
-          visitado entre huésped y huésped.
+          Hace veinte años, pasé tres años recorriendo las selvas y montañas de Panamá. ¿Mi
+          rutina diaria? Una hamaca, parques nacionales y la firme intención de perderme a
+          propósito. Después de recorrer los rincones salvajes del planeta con mis piernas
+          migratorias, llegué allí, a casa…
         </p>
         <p>
-          Con el tiempo, la decisión se volvió sencilla: seguir construyendo la idea de otra
-          persona sobre una buena estancia, o ir a buscar un pedazo de tierra lo bastante
-          tranquilo para construir la suya propia.
+          Al salir del bosque nuboso, tras una semana entera perdido en el Parque Nacional La
+          Amistad, me topé con esta tierra, abandonada desde hacía ocho años. Donde otros habrían
+          visto zarzas, yo vi mi obra maestra: el lugar perfecto para instalarme (¡por fin!) y
+          crear un refugio autónomo en total sinergia con la naturaleza salvaje.
         </p>
+        <p>
+          ¿Qué me fascinó de inmediato? El microclima. Una calma casi monástica, envuelta por la
+          selva, que sin embargo ofrecía un espectáculo grandioso: una vista privilegiada sobre el
+          volcán Barú y el incesante ballet de las nubes. La tierra estaba virgen, y mi mente,
+          lista para experimentar una nueva forma de vivir.
+        </p>
+        <p>
+          Tenía tiempo por delante, los fondos necesarios pues acababa de vender mi pequeño hotel
+          y centro de buceo en Roatán, y unas ganas locas de redefinir el arte de vivir en la
+          cumbre.
+        </p>
+        <p>— El Fundador, Wild on the Farm</p>
       </div>
     </Split>
   </Section>
 
-  <Section label="Encontrando Esta Montaña" heading="Una ladera que nadie quería, al borde de un parque nacional.">
+  <Section label="Encontrar Esta Montaña" heading="El Arte de Domesticar los Trópicos">
     <Split>
       <div class="split-photo">
         <Image
@@ -64,20 +83,50 @@ const terracesImage = img('farm/pergola.jpg');
       </div>
       <div>
         <p>
-          El terreno que encontró en 2008 estaba al borde del Parque Nacional La Amistad, fresco
-          y tranquilo a 1.800 metros de altura, con un manantial que brotaba directamente de la
-          roca. No estaba preparado para huéspedes, ni para casi nada — solo tierra empinada y
-          boscosa, y una casa que necesitaba casi tanto trabajo como el terreno que la rodeaba.
+          Vivir en los trópicos es un oficio. Y tras algunas décadas de práctica, creo poder decir
+          que me he graduado.
         </p>
         <p>
-          Ese era justo el punto. Pascal no buscaba un proyecto de hospitalidad. Buscaba un lugar
-          donde plantar algo real y dejar que tomara todo el tiempo que necesitara.
+          Mi primera lección comenzó en los años setenta, en África. Tres años entre
+          cazadores-recolectores, gastando mi juventud en chozas tradicionales bajo un calor capaz
+          de derretir el sentido común. Expulsado de ese continente por exceso de adaptación al
+          primitivismo, heme aquí lanzado a los caminos, corriendo desde el norte canadiense de
+          Chicoutimi hasta los confines de la Patagonia. Era una América Latina en suspenso,
+          desgarrada por guerras civiles y dictaduras, todavía virgen de turistas pero vibrante de
+          sus tradiciones y sus culturas indígenas preservadas.
         </p>
+        <p>
+          Pasé años escarbando en cada herida y cada belleza de ese continente. Viví en playas
+          desiertas de México; compartí el día a día de los lacandones y los shuar en la Amazonía
+          ecuatoriana. Fue allí, en el Río Napo, en 1981, donde me detuvieron por espionaje en la
+          frontera peruana, en medio de una guerra local absurda por unas gotas de petróleo. Luego
+          llegaron los años del arte y la artesanía, marcados por incursiones en el altiplano
+          peruano mientras Sendero Luminoso ensangrentaba el país; viajaba entonces escondido bajo
+          las lonas de los camiones de carga para llegar a San Pedro de Cajas. Crucé la Patagonia
+          en solitario, cargado de agua, sin brújula, y coleccioné tonterías peligrosas por correr
+          a citas románticas en el Chile de Pinochet. Más tarde, me establecí junto al lago
+          Atitlán, fascinado por la maravillosa cultura de los indígenas kaqchikeles de Guatemala.
+          Me apasioné por sus tejedoras y sus huipiles, esas prendas tradicionales que todas las
+          comunidades lucían con orgullo antes de que la ropa de segunda mano de la caridad
+          occidental viniera a arruinar ese saber milenario.
+        </p>
+        <p>
+          Mi vuelta al mundo por los trópicos me enseñó una verdad fundamental: para apreciarlos
+          de verdad, hay que tomar altura. Los trópicos solo se vuelven perfectos en el frescor de
+          la altitud. Hoy, frente a la hegemonía cultural de un mundo que se ha vuelto demasiado
+          accesible y mortalmente aburrido, he elegido retirarme a un pliegue de la Tierra de
+          difícil acceso. La pista llena de baches que lleva hasta aquí quizá se parezca a una
+          atracción de Disney World, pero es el único camino para aislarse, poner en práctica los
+          conocimientos reunidos a lo largo de una vida, y generar algo de armonía en el desenlace
+          de una existencia sin cadenas…
+        </p>
+        <p>Bienvenidos a mi paraíso definitivo.</p>
+        <p>— El Fundador, Wild on the Farm</p>
       </div>
     </Split>
   </Section>
 
-  <Section label="Construida Con Calma, A Propósito" heading="Dieciocho años antes de que llegara el primer huésped.">
+  <Section label="Construido Lentamente, Por Elección" heading="El Manifiesto del Tiempo Largo">
     <Split reverse>
       <div class="split-photo">
         <Image
@@ -90,17 +139,34 @@ const terracesImage = img('farm/pergola.jpg');
       </div>
       <div>
         <p>
-          Lo que vino después no fue una renovación — fue una finca, construida una terraza a la
-          vez. Los paneles solares se instalaron antes de que hubiera nadie para quien darles
-          electricidad. Los árboles de macadamia se plantaron sabiendo que no darían fruto hasta
-          pasados quince años. Ovejas y gallinas se instalaron para trabajar la tierra mucho antes
-          de que existiera un comedor al que alimentar.
+          Lo que vino después no fue una renovación. Fue el nacimiento de una tierra, moldeada
+          terraza a terraza.
         </p>
         <p>
-          No fue hasta 2025 — dieciocho años después — que tres cabañas artesanales abrieron sus
-          puertas, construidas en la ladera con la misma paciencia con la que se hizo todo lo
-          demás aquí: con tiempo, en lugar de contra un plazo.
+          Plantar árboles sabiendo que el tiempo pasa es recibir la más hermosa de las lecciones:
+          la de la perseverancia. El beneficio inmediato no es más que el vacío de una época
+          efímera, una carrera sin sustancia ni alegría que solo fabrica seres desprovistos de
+          sentido. En tiempos de crisis climática y de sus catástrofes anunciadas, elegí apostar
+          por la lentitud. Prefiero esculpir con los años la belleza de un paisaje, hacer florecer
+          un alimento sano nutriendo primero la tierra, y cultivar la armonía con este mundo
+          salvaje con el que comparto el secreto de la vida. Es exactamente esa filosofía la que
+          tiendo como un espejo a quienes deciden, durante una estancia, aislarse con nosotros.
         </p>
+        <p>
+          Aquí, los paneles solares se instalaron mucho antes de que hubiera alguien a quien
+          darle luz. Las macadamias se plantaron en tierra con la certeza de que no darían un
+          solo fruto antes de quince años. Ovejas y gallinas tomaron posesión del lugar para
+          trabajar el suelo, años antes de que existiera una sola mesa de huéspedes que
+          alimentar. Es la obra de toda una vida de campesino, el legado de un saber y una
+          experiencia pacientemente madurados.
+        </p>
+        <p>
+          No fue sino hasta 2025, dieciocho años después del primer golpe de azadón, que nuestras
+          tres cabañas artesanales abrieron por fin sus puertas. Aferradas a la ladera, fueron
+          construidas con la misma paciencia obstinada que todo lo demás: con la complicidad del
+          tiempo, en lugar de la urgencia de un calendario.
+        </p>
+        <p>— El Fundador, Wild on the Farm</p>
       </div>
     </Split>
   </Section>
