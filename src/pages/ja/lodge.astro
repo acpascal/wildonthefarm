@@ -1,0 +1,138 @@
+---
+import { getImage, Image } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PhotoHero from '../../components/PhotoHero.astro';
+import Section from '../../components/Section.astro';
+import Split from '../../components/Split.astro';
+import PhotoGrid from '../../components/PhotoGrid.astro';
+import { img } from '../../lib/images';
+
+const heroImage = img('cabin2/gallery_1.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const ownerHouseBanner = img('farm/overview_1.jpg');
+const ownerHousePhotos = [
+  { image: img('owner-house/living_room.jpg'), alt: 'オーナーズハウスの中にあるリビングとキッチン' },
+  { image: img('owner-house/kitchen_stairs.jpg'), alt: 'オーナーズハウスの中の、手作りの階段' },
+  { image: img('owner-house/office_loft.jpg'), alt: 'オーナーズハウスの梁の下にある、ロフトの書斎' },
+  { image: img('owner-house/bedroom_loft.jpg'), alt: 'オーナーズハウスの中の、ロフトの寝室' },
+  { image: img('owner-house/attic_corridor.jpg'), alt: 'オーナーズハウスの緑の屋根の下にある、二階の廊下' },
+  { image: img('owner-house/bathroom.jpg'), alt: 'オーナーズハウスの中の、石タイル張りのバスルーム' },
+];
+
+const cabins = [
+  {
+    slug: 'cabin-1',
+    label: 'コテージ1',
+    heading: '霧の、いちばん奥へ。',
+    description:
+      '三棟の中でもっとも奥まった一棟。竹と森に包まれ、バスルームは手描きの葉模様タイルで仕上げられています。',
+    image: img('stay/hero_cabin_exterior.jpg'),
+  },
+  {
+    slug: 'cabin-2',
+    label: 'コテージ2',
+    heading: '谷を見下ろす高みに。',
+    description:
+      '丘の縁に高床式で建ち、敷地の中でもっとも広い眺めを誇ります——チリキ渓谷とバルー火山を望んで。',
+    image: img('cabin2/hero.jpg'),
+  },
+  {
+    slug: 'cabin-3',
+    label: 'コテージ3',
+    heading: '三棟の中で、もっとも精緻な一棟。',
+    description:
+      '異なる木材を組み合わせた、唯一無二のヴェルサイユ張りの床。そこに、見事な手作りの陶器タイルを施したバスルームが寄り添います。',
+    image: img('cabin3/hero.jpg'),
+  },
+];
+
+const amenities = [
+  '専用のバスルーム',
+  '上質な寝具',
+  '専用テラス',
+  '緑の屋根',
+  'ソーラー発電',
+  '湧き水',
+  'あえてWi-Fiもテレビも置かないコテージ',
+  '共用エリアではWi-Fiをご利用いただけます',
+];
+---
+
+<PageLayout
+  title="ロッジ — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="パナマ、ボケテの雲霧林に建つ、三棟の手作りのコテージ——緑の屋根、専用テラス、そしてアミスタッド国立公園を望む眺め。"
+  path="/ja/lodge/"
+  image={ogImage.src}
+  pullIntro="この建築を設計するにあたり、私が何よりも心を砕いたのは、それぞれの建物を風景に溶け込ませることでした。しかし、緑の屋根がただ美しいだけでなく、風雨から守り、雨音をやわらげてくれるものだと教えてくれたのは、伝統的な住まいで暮らした長い年月でした。"
+  locale="ja"
+>
+  <Fragment slot="hero">
+    <PhotoHero
+      image={heroImage}
+      alt="Wild on the Farm、雲霧林に溶け込むコテージの外観"
+      eyebrow="ロッジ"
+    >
+      <span class="hero-line">雲霧林の上に浮かび、</span>
+      <span class="hero-line">楽園を見下ろす、鳥の視点。</span>
+    </PhotoHero>
+  </Fragment>
+
+  <Section label="どのコテージに泊まっても" heading="妥協のない、オフグリッドの快適さ。">
+    <div class="amenity-list">
+      {amenities.map((item) => <span>{item}</span>)}
+    </div>
+    {
+      cabins.map((cabin, i) => (
+        <Split divider reverse={i === 1}>
+          <a href={`/ja/${cabin.slug}/`} class="split-photo">
+            <Image
+              src={cabin.image}
+              alt={`Wild on the Farm、${cabin.label}の外観`}
+              widths={[400, 700, 1000]}
+              sizes="(min-width: 860px) 50vw, 100vw"
+              loading="lazy"
+            />
+          </a>
+          <div>
+            <div class="section-label">{cabin.label}</div>
+            <h2 class="lede">{cabin.heading}</h2>
+            <p>{cabin.description}</p>
+            <a href={`/ja/${cabin.slug}/`} class="btn btn-spaced">
+              {cabin.label}をすべて見る
+            </a>
+          </div>
+        </Split>
+      ))
+    }
+  </Section>
+
+  <Section label="特別な一棟" heading="オーナーズハウス">
+    <div class="wide-photo">
+      <Image
+        src={ownerHouseBanner}
+        alt="オーナーズハウスが佇む、Wild on the Farmの全景"
+        widths={[480, 900, 1600, 2000]}
+        sizes="100vw"
+        loading="lazy"
+      />
+    </div>
+    <p>
+      七種類の熱帯産の銘木を用い、釘を一本も使わずに——フランスの職人組合「コンパニョン・デュ・ドゥヴォワー
+      ル」に伝わる伝統技法によって建てられたこの小さな、しかしこの上なく快適な家は、人里離れたこの片隅にひ
+      っそりと佇む、小さな傑作です。あるアメリカ人のお客様は、こう評しました——「まるで億万長者のコテージ
+      だ！」
+    </p>
+    <PhotoGrid items={ownerHousePhotos} groupId="owner-house" />
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">どれにしようか迷ったら</div>
+    <h2>どんな一日を過ごしたいか、聞かせてください。</h2>
+    <p>メッセージをお送りください。ご滞在にぴったりのコテージ選びを、私たちがお手伝いします。</p>
+    <div class="contact-list">
+      <a href="/ja/farm/">農園に戻る →</a>
+      <a href="/ja/food/">お料理を見る →</a>
+    </div>
+  </Fragment>
+</PageLayout>

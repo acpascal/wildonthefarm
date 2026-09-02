@@ -1,0 +1,161 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Stats from '../../components/Stats.astro';
+import Section from '../../components/Section.astro';
+import Split from '../../components/Split.astro';
+import Story from '../../components/Story.astro';
+import CardGrid from '../../components/CardGrid.astro';
+import TextCard from '../../components/TextCard.astro';
+import OverlayCard from '../../components/OverlayCard.astro';
+import QuoteSection from '../../components/QuoteSection.astro';
+import SchemaLodging from '../../components/SchemaLodging.astro';
+import { business } from '../../data/business';
+import { img } from '../../lib/images';
+
+const heroImage = img('home/hero.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const stats = [
+  { num: "5,905'", label: '標高' },
+  { num: '三棟', label: '雲霧林のコテージ' },
+  { num: '2008年創業', label: 'オーガニック・マカダミア農園' },
+  { num: 'アミスタッド', label: '国立公園' },
+];
+
+const pillars = [
+  { title: '本物であること', description: '十八年にわたる正真正銘のオーガニック農業——ここには、観光客のために作られた書き割りなど何ひとつありません。' },
+  { title: '親密であること', description: 'コテージは三棟、それ以上は増やしません。制約ではなく、私たちが選び取った意志です。' },
+  { title: '静寂', description: '雲、標高、そして肌で感じられるほどの静けさ。' },
+  { title: '飾らない快適さ', description: 'オフグリッドの暮らしだからといって、快適さを諦める必要はありません——心を配った寝具、専用のバスルーム、温もりある木の質感。' },
+  { title: '生きた食卓', description: '供される場所から、ほんの数歩のところで生まれる料理。' },
+];
+
+const cards = [
+  {
+    href: '/ja/lodge/',
+    image: img('stay/card_cloud_forest_cabins.jpg'),
+    label: 'ロッジ',
+    title: '雲霧林のコテージ',
+    description: '温もりある木の質感、床から天井まで広がる眺め、そして安らぎのための静けさ。',
+  },
+  {
+    href: '/ja/food/',
+    image: img('food/four_salads.jpg'),
+    label: 'お料理',
+    title: '菜園から食卓へ',
+    description: 'オーガニックで、旬を味わう——食卓からほんの数歩の場所で収穫される恵み。',
+  },
+  {
+    href: '/ja/birdwatching/',
+    image: img('birds/bird_14.jpg'),
+    label: '体験',
+    title: '野鳥観察と山道',
+    description: 'ケツァールが暮らす森、そしてアミスタッド国立公園へと続く山道。',
+  },
+];
+---
+
+<PageLayout
+  title={`${business.name} — ${business.tagline}`}
+  description={business.description}
+  path="/ja/"
+  image={ogImage.src}
+  locale="ja"
+>
+  <Fragment slot="hero">
+    <Hero
+      image={heroImage}
+      alt="Wild on the Farmの雲霧林を見下ろすコテージ"
+      title={business.name}
+      tagline={business.tagline}
+      eyebrow="2008年創業 パーマカルチャー・オーガニックマカダミア農園"
+      focalPosition="center 50%"
+    >
+      <p>
+        三つの隠れ家的コテージ。ひとつのオーガニック農園。バルー火山を望み、大自然の中で贅沢なひとときを。
+      </p>
+      <div class="hero-cta">
+        <a href="/ja/faqs-contact/" class="btn btn-inverted">ご宿泊のご予約</a>
+        <a href="/ja/farm/" class="btn btn-transparent">農園を知る</a>
+      </div>
+    </Hero>
+  </Fragment>
+
+  <Stats stats={stats} />
+
+  <Section>
+    <Split>
+      <div>
+        <div class="section-label">農園</div>
+        <h2 class="lede">最初のお客様をお迎えするよりずっと前から、十八年にわたって育まれてきた大地。</h2>
+      </div>
+      <div>
+        <p>
+          雲霧林の霧が大地の秘密を包み込む場所で、この隠れ家の静謐な佇まいは、大自然を映す永遠の鏡となる。
+          オーガニック農園の中心で、この上ない快適さの気品と、有機栽培がもたらす本物の実感がひとつに溶け合い、
+          山の頂での暮らしの美学を、新たに描き出す。
+        </p>
+      </div>
+    </Split>
+  </Section>
+
+  <Story dark image={img('home/story.jpg')} alt="Wild on the Farmの緑の屋根" label="大地の声に耳を澄ます建築" heading="丘そのものから生まれた屋根。">
+    <p>
+      緑の屋根は、住処と斜面との境界を消し去る——持続可能な熱帯材で建てられたその屋根は、山にただ乗っているの
+      ではなく、山そのものに根を下ろしている。太陽光発電、湧き水、そして生きた土壌が、この隠れ家を自給自足たら
+      しめる。ここでは、快適さと生命への敬意は、ひとつの同じものなのだ。
+    </p>
+  </Story>
+
+  <Section label="私たちが大切にすること" heading="決して譲らない、五つの原則。">
+    <CardGrid cols={5}>
+      {pillars.map((p) => (
+        <TextCard lite title={p.title}>
+          <p>{p.description}</p>
+        </TextCard>
+      ))}
+    </CardGrid>
+  </Section>
+
+  <Section label="探索" heading="滞在し、味わい、そして歩く——農園の時間に身をゆだねて。">
+    <CardGrid>
+      {cards.map((c) => <OverlayCard {...c} />)}
+    </CardGrid>
+    <div class="map-embed">
+      <iframe
+        title="Wild on the Farmの所在地（Googleマップ）"
+        width="100%"
+        height="450"
+        style="border:0"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="strict-origin-when-cross-origin"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3942.6012169702753!2d-82.45058332498353!3d8.823481391229862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa5edd18b24f369%3A0x11b58604931f7e19!2sWild%20on%20the%20farm!5e0!3m2!1sfr!2spa!4v1787767091890!5m2!1sfr!2spa"
+      />
+    </div>
+    <div class="contact-list">
+      <a href="https://www.google.com/maps?cid=1276073423635709465">Googleでの口コミを見る →</a>
+    </div>
+  </Section>
+
+  <QuoteSection cite="— Charlotte Hamilton">
+    "Wild on the Farmに滞在し、本当に大切なものと、心から向き合うことができました。ここにある静けさには、忘れ
+    られない手触りがあります。"
+  </QuoteSection>
+
+  <Fragment slot="footer">
+    <div class="section-label">日誌</div>
+    <h2>農園から、毎週届く便り。</h2>
+    <p>
+      在来植物についての季節の便り、山道の様子、パーマカルチャー、そしてこの小さな山の暮らし——移りゆく季節と
+      ともに更新されています。
+    </p>
+    <div class="contact-list">
+      <a href="/ja/journal/">日誌を読む →</a>
+    </div>
+  </Fragment>
+
+  <SchemaLodging imageUrl={ogImage.src} />
+</PageLayout>

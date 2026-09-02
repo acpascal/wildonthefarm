@@ -1,0 +1,225 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Section from '../../components/Section.astro';
+import Split from '../../components/Split.astro';
+import CardGrid from '../../components/CardGrid.astro';
+import TextCard from '../../components/TextCard.astro';
+import { img } from '../../lib/images';
+
+const heroImage = img('retreats/farm_animals.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const detoxImage = await getImage({ src: img('garden/garden_harvest.jpg'), width: 800, format: 'webp' });
+const sisterhoodImage = await getImage({ src: img('retreats/qigong.jpg'), width: 800, format: 'webp' });
+const friendsImage = await getImage({ src: img('kitchen/table_guests_2.jpg'), width: 800, format: 'webp' });
+const businessImage = await getImage({ src: img('retreats/landscape.jpg'), width: 800, format: 'webp' });
+const wholeFarmImage = await getImage({ src: img('retreats/owners_house.jpg'), width: 800, format: 'webp' });
+---
+
+<PageLayout
+  title="料金・リトリート — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Wild on the Farm、Boquete Cloud Forest Lodgeの、コテージの一泊料金と、敷地全体を使ったリトリートプラン——デトックスリトリート、女性限定リトリート、友人同士の休暇、企業リトリート、そして農園全体の貸し切り。"
+  path="/ja/rates-retreats/"
+  image={ogImage.src}
+  pullIntro="カップルのための一棟のコテージから、グループでのリトリートのための敷地全体まで——それぞれの料金と、含まれる内容をご案内します。"
+  locale="ja"
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="農園にいる羊と鶏" eyebrow="ご滞在の計画を">
+      コテージの料金、そして農園全体の貸し切り。
+    </PageHero>
+  </Fragment>
+
+  <Section label="コテージの料金" heading="三棟すべて共通の料金、朝食付き。">
+    <CardGrid cols={4}>
+      <TextCard title="1月1日〜1月31日" eyebrow="ハイシーズン">
+        <p class="price">$250 / 泊</p>
+        <p>朝食付き。</p>
+      </TextCard>
+      <TextCard title="2月1日〜3月31日" eyebrow="最繁忙期">
+        <p class="price">$350 / 泊</p>
+        <p>朝食付き。</p>
+      </TextCard>
+      <TextCard title="4月1日〜12月20日" eyebrow="グリーンシーズン">
+        <p class="price">$250 / 泊</p>
+        <p>朝食付き。</p>
+      </TextCard>
+      <TextCard title="12月20日〜12月31日" eyebrow="ホリデーシーズン">
+        <p class="price">$350 / 泊</p>
+        <p>朝食付き。</p>
+      </TextCard>
+    </CardGrid>
+    <p class="fine-print">
+      料金はコテージ一棟あたりです。最低宿泊日数：3泊。夕食は毎晩、別途ご予約いただけます——詳細は下記
+      「含まれるもの」をご覧ください。
+    </p>
+  </Section>
+
+  <Section label="直前割引" heading="空いているコテージは、割引価格のコテージ。">
+    <p>
+      ご到着日が近づいてもコテージに空きがある場合、割引価格でご提供いたします——その日付限定の価格となる
+      ため、返金はできません。
+    </p>
+    <CardGrid cols={2}>
+      <TextCard title="到着の15日前" eyebrow="コテージに空きがある場合">
+        <p class="price">20％オフ</p>
+        <p>返金不可。</p>
+      </TextCard>
+      <TextCard title="到着の7日前" eyebrow="コテージに空きがある場合">
+        <p class="price">30％オフ</p>
+        <p>返金不可。</p>
+      </TextCard>
+    </CardGrid>
+  </Section>
+
+  <Section label="含まれるもの" heading="シンプルな、オールインクルーシブの料金。">
+    <div class="amenity-list">
+      <span>朝食付き、農園から食卓へ</span>
+      <span>毎晩、夕食のご用意も可能（要予約）</span>
+      <span>専用のバスルーム</span>
+      <span>上質な寝具</span>
+      <span>専用テラス</span>
+      <span>ソーラー発電と湧き水</span>
+      <span>共用エリアのWi-Fi</span>
+      <span>農園の小道へ自由にアクセス可能</span>
+      <span>麓の道までのお迎え</span>
+    </div>
+  </Section>
+
+  <Section label="農園全体の貸し切り" heading="グループでのリトリートのために、敷地全体を。">
+    <p>
+      一棟のコテージにとどまらず、敷地全体を特別なグループ滞在のためにご利用いただけます——最低一週間
+      （6泊）から、夕食の手配あり・なし、オーナーズハウスあり・なしをお選びいただけます。皆さまを結びつ
+      けるものに合わせた、五つの集い方をご用意しています。
+    </p>
+  </Section>
+
+  <Section label="デトックスリトリート" heading="ゆるやかな朝、清らかな食事、そして完全なリセット。">
+    <Split>
+      <div>
+        <p>
+          休息とリセットに焦点を当てた、まる一週間——農園自身の恵みを中心に組み立てられたハーブティーと特
+          別な食事、フレッシュジュース、料理教室、ガイド付きハイキング二回、そして毎朝一時間の気功。最少3
+          名、コテージ一棟につき一名。
+        </p>
+        <div class="amenity-list">
+          <span>朝食・夕食付き</span>
+          <span>特別なハーブティーと食事</span>
+          <span>フレッシュジュース</span>
+          <span>料理教室</span>
+          <span>ガイド付きハイキング二回</span>
+          <span>毎朝一時間の気功</span>
+        </div>
+      </div>
+      <div>
+        <div class="story-img" style={`background-image:url(${detoxImage.src})`} role="img" aria-label="菜園の新鮮な収穫" />
+      </div>
+    </Split>
+    <p class="price">$2,000 / 週 / 1名 <span class="price-note">— 最少3名</span></p>
+    <p class="fine-print">ご希望に応じて追加可能：マッサージ、ヨガクラス、追加のハイキング、温泉への訪問。</p>
+  </Section>
+
+  <Section label="女性限定リトリート" heading="つながりと、動きと、静かな時間をともにする一週間。">
+    <Split>
+      <div>
+        <p>
+          デトックスリトリートと同じリズムのもとに——農園自身の恵みからなるハーブティーと特別な食事、フレ
+          ッシュジュース、料理教室、ガイド付きハイキング二回、そして毎朝一時間の気功——共に集うグループの
+          ために開かれます。最少3名、コテージ一棟につき一名。
+        </p>
+        <div class="amenity-list">
+          <span>朝食・夕食付き</span>
+          <span>特別なハーブティーと食事</span>
+          <span>フレッシュジュース</span>
+          <span>料理教室</span>
+          <span>ガイド付きハイキング二回</span>
+          <span>毎朝一時間の気功</span>
+        </div>
+      </div>
+      <div>
+        <div class="story-img" style={`background-image:url(${sisterhoodImage.src})`} role="img" aria-label="農園での気功の実践" />
+      </div>
+    </Split>
+    <p class="price">$2,000 / 週 / 1名 <span class="price-note">— 最少3名</span></p>
+    <p class="fine-print">ご希望に応じて追加可能：マッサージ、ヨガクラス、追加のハイキング、温泉への訪問。</p>
+  </Section>
+
+  <Section label="友人同士の集い" heading="三組のカップル、一つの農園、決められた予定はなく、自分たちのペースで。">
+    <Split>
+      <div>
+        <p>
+          もっとも親しい友人たちと共に、一週間、敷地全体を独り占めしてください——コテージ一棟につき二名、
+          お食事の心配は不要、そして皆で雲霧林へと繰り出すガイド付きハイキング二回。最少3組。
+        </p>
+        <div class="amenity-list">
+          <span>朝食・特別な夕食付き</span>
+          <span>ガイド付きハイキング二回</span>
+          <span>コテージ一棟につき二名</span>
+        </div>
+      </div>
+      <div>
+        <div class="story-img" style={`background-image:url(${friendsImage.src})`} role="img" aria-label="共に食事を分かち合うお客様たち" />
+      </div>
+    </Split>
+    <p class="price">$2,300 / 週 / 1組 <span class="price-note">— 最少3組</span></p>
+    <p class="fine-print">ご希望に応じて追加可能：マッサージ、ヨガクラス、追加のハイキング、温泉への訪問。</p>
+  </Section>
+
+  <Section label="企業リトリート" heading="チームを、本当に日常から切り離せる場所へ。">
+    <Split>
+      <div>
+        <p>
+          コテージにWi-Fiはなく、気を散らすものは何もありません——あるのは、チームと山だけです。三名、コ
+          テージ一棟につき一名、お食事の心配は不要、そして皆で外に出るためのガイド付きハイキング二回が組
+          み込まれています。
+        </p>
+        <div class="amenity-list">
+          <span>朝食・特別な夕食付き</span>
+          <span>ガイド付きハイキング二回</span>
+          <span>コテージ一棟につき一名</span>
+        </div>
+      </div>
+      <div>
+        <div class="story-img" style={`background-image:url(${businessImage.src})`} role="img" aria-label="農園から望む風景" />
+      </div>
+    </Split>
+    <p class="price">$2,000 / 週 / コテージ一棟 <span class="price-note">— 3名</span></p>
+    <p class="fine-print">ご希望に応じて追加可能：マッサージ、ヨガクラス、追加のハイキング、温泉への訪問。</p>
+  </Section>
+
+  <Section label="農園まるごと" heading="オーナーズハウスまで含む、そのすべて。">
+    <Split>
+      <div>
+        <p>
+          最大8名まで、敷地全体をご利用いただけます——三棟すべてのコテージに加え、オーナーズハウスとその
+          キッチンも。厨房スタッフと、身の回りをお手伝いするスタッフが常駐し、農園自身のオーガニック菜園
+          と新鮮な卵も、自由にお使いいただけます。最低一週間（6泊）から。
+        </p>
+        <div class="amenity-list">
+          <span>オーナーズハウスとキッチン付き</span>
+          <span>厨房スタッフが常駐</span>
+          <span>身の回りのお手伝いスタッフが常駐</span>
+          <span>敷地内のオーガニック菜園と新鮮な卵</span>
+          <span>最大8名まで</span>
+        </div>
+      </div>
+      <div>
+        <div class="story-img" style={`background-image:url(${wholeFarmImage.src})`} role="img" aria-label="農園にあるオーナーズハウス" />
+      </div>
+    </Split>
+    <p class="price">$7,200 / 週 <span class="price-note">— 最大8名まで、最低一週間（6泊）から</span></p>
+    <p class="fine-print">ご希望に応じて追加可能：マッサージ、ヨガクラス、追加のハイキング、温泉への訪問。</p>
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">ご質問はありますか？</div>
+    <h2>よくある質問をご覧いただくか、直接お問い合わせください。</h2>
+    <p>一棟のコテージでも、農園全体でも——ぴったりのプランを見つけるお手伝いをいたします。</p>
+    <div class="contact-list">
+      <a href="/ja/faqs-contact/">よくある質問・お問い合わせ →</a>
+      <a href="/ja/lodge/">コテージを見る →</a>
+    </div>
+  </Fragment>
+</PageLayout>

@@ -2,6 +2,7 @@ export const languages = {
   en: 'English',
   es: 'Español',
   fr: 'Français',
+  ja: '日本語',
 } as const;
 
 export type Locale = keyof typeof languages;
@@ -133,6 +134,47 @@ export const ui = {
     'journal.legalNoticeLink': 'Lire nos mentions légales complètes →',
     'medicalDisclaimer':
       "Ces informations sont fournies à titre éducatif uniquement et reflètent des usages traditionnels et communément documentés de cette plante. Elles ne constituent pas un avis médical et ne remplacent pas les conseils d'un professionnel de santé qualifié. Consultez toujours votre médecin avant d'utiliser une plante à des fins médicinales, en particulier en cas de grossesse, d'allaitement ou de prise de médicaments.",
+  },
+  ja: {
+    'nav.farmAndStay': 'ご案内',
+    'nav.theFarm': '農園',
+    'nav.stay': 'ロッジ',
+    'nav.kitchen': 'お料理',
+    'nav.garden': '菜園',
+    'nav.ourStory': '私たちの物語',
+    'nav.wildlife': '野生生物と生物多様性',
+    'nav.experience': '体験',
+    'nav.birdwatching': '野鳥観察',
+    'nav.hiking': 'ハイキング',
+    'nav.journal': '日誌',
+    'nav.shop': 'ショップ',
+    'nav.ratesRetreats': '料金・リトリート',
+    'nav.reserve': 'ご予約',
+    'footer.faqsContact': 'よくあるご質問・お問い合わせ',
+    'footer.facebook': 'Facebook',
+    'footer.instagram': 'Instagram',
+    'footer.youtube': 'YouTube',
+    'footer.copyright': '© 2026 Wild on the Farm — Boquete Cloud Forest Lodge, パナマ。無断複写・転載を禁じます。',
+    'footer.legalNotice': '法的表示',
+    'lightbox.close': '閉じる',
+    'lightbox.previous': '前の写真',
+    'lightbox.next': '次の写真',
+    'language.switch': '言語',
+    'reserve.defaultHeading': '雲の彼方へ、静かな旅の計画を。',
+    'reserve.pitch':
+      'ご到着のご希望日と、思い描いていらっしゃることをお聞かせください——野鳥観察、デジタルデトックス、あるいはただ静けさそのものを。忘れられないご滞在となるよう、私たちがお手伝いいたします。',
+    'reserve.contactForm': 'メッセージをお送りください',
+    'reserve.emailSubject': 'ご宿泊のお問い合わせ — Wild on the Farm',
+    'reserve.emailBody':
+      'こんにちは。\n\nWild on the Farmへの宿泊を希望いたします。\n\n宿泊日程：___ から ___ まで\n宿泊人数：\n国籍：\n12歳以上のお子様の人数：\nご希望のアクティビティ：\n特別な食事のご希望：\nアレルギー：\n\nよろしくお願いいたします。',
+    'journal.continueReading': '続きを読む',
+    'journal.moreFromJournal': '日誌から、その他の記事。',
+    'journal.allPosts': 'すべての記事を見る →',
+    'journal.copyrightNotice':
+      '本記事の著作権は Wild on the Farm（Boquete Cloud Forest Lodge）に帰属します。事前の書面による許可なく、複製、再掲載、再配布することを禁じます。',
+    'journal.legalNoticeLink': '法的表示の全文を読む →',
+    'medicalDisclaimer':
+      'この情報は教育を目的としたものであり、この植物の伝統的かつ一般的に知られている利用法をご紹介するものです。医学的な助言ではなく、資格を持つ医療専門家の指導に代わるものでもありません。薬用として植物をお使いになる前には、必ず医師にご相談ください。特に妊娠中・授乳中の方、お薬を服用中の方はご注意ください。',
   },
 } as const satisfies Record<Locale, Record<string, string>>;
 

@@ -1,0 +1,34 @@
+---
+title: "パナマの爬虫類学"
+description: "パナマのジャングルの奥深く、単独での小旅行の途中に撮影した、印象的な蛇の写真の数々——チャグレス国立公園、ダリエン、コルディジェラ・セントラル。"
+pullIntro: "パナマのジャングルの奥深く、私の小旅行の途中に撮影した、印象的な蛇の写真の数々——チャグレス国立公園、ダリエン、コルディジェラ・セントラル……"
+date: 2026-06-15
+kind: note
+section: travel-panama
+cover: ../../../assets/journal/serpents/vine_snake_anole.jpg
+coverAlt: パナマのジャングルで、アノールトカゲを飲み込む茶色のツルヘビ
+---
+
+import PhotoGrid from '../../../components/PhotoGrid.astro';
+import { img } from '../../../lib/images';
+
+export const serpentPhotos = [
+  { image: img('journal/serpents/vine_snake_anole.jpg'), alt: '獲物を顎にとらえたツルヘビ' },
+  { image: img('journal/serpents/tree_snake_branch.jpg'), alt: '模様のある蛇が枝の上で休んでいる' },
+  { image: img('journal/serpents/parrot_snake_frog_01.jpg'), alt: '密生した下草の中で、カエルをとらえた緑色の蛇' },
+  { image: img('journal/serpents/parrot_snake_frog_02.jpg'), alt: '川石のあいだで、カエルをしっかりととらえた緑色の蛇' },
+  { image: img('journal/serpents/parrot_snake_frog_03.jpg'), alt: 'カエルに襲いかかる緑色の蛇のクローズアップ' },
+  { image: img('journal/serpents/parrot_snake_portrait.jpg'), alt: '乾いた竹と森の落ち葉の中を進む緑色の蛇' },
+  { image: img('journal/serpents/eyelash_viper_coiled.jpg'), alt: '湿った苔むす樹皮の上でとぐろを巻くクサリヘビ' },
+  { image: img('journal/serpents/eyelash_viper_head.jpg'), alt: 'クサリヘビの頭部のクローズアップ' },
+  { image: img('journal/serpents/coral_snake_riverbank.jpg'), alt: '川底の石のあいだにいる、赤・黒・白の帯模様の蛇' },
+  { image: img('journal/serpents/vine_snake_lizard.jpg'), alt: '低い枝に絡まりながら、トカゲを顎にとらえた蛇' },
+  { image: img('journal/serpents/vine_snake_hummingbird_01.jpg'), alt: 'ハチドリを捕らえた蛇、翼はまだ広がったまま' },
+  { image: img('journal/serpents/vine_snake_hummingbird_02.jpg'), alt: '緑の葉のあいだで、ハチドリを頭から飲み込む緑色の蛇' },
+  { image: img('journal/serpents/vine_snake_hummingbird_03.jpg'), alt: 'ハチドリを顎にとらえた緑色の蛇' },
+  { image: img('journal/serpents/tree_snake_deadwood_01.jpg'), alt: '倒木のそばでとぐろを巻く、淡い色に暗い斑紋のある蛇' },
+  { image: img('journal/serpents/tree_snake_deadwood_02.jpg'), alt: '木漏れ日の落ち葉の上に伸びる、淡い色に暗い斑紋のある蛇' },
+  { image: img('journal/serpents/tree_snake_deadwood_03.jpg'), alt: '風化した丸太の上を滑る、淡い色に暗い斑紋のある蛇' },
+];
+
+<PhotoGrid items={serpentPhotos} groupId="serpents" />

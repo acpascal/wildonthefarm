@@ -1,0 +1,392 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Section from '../../components/Section.astro';
+import PhotoGrid from '../../components/PhotoGrid.astro';
+import CardGrid from '../../components/CardGrid.astro';
+import ImageTextCard from '../../components/ImageTextCard.astro';
+import TextCard from '../../components/TextCard.astro';
+import NoteBox from '../../components/NoteBox.astro';
+import { img } from '../../lib/images';
+
+const heroImage = img('hiking/gallery_05.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const trackPhotos = [
+  { image: img('wildlife/jaguar_track_terrace_1.jpg'), alt: 'テラスのウッドデッキに残るジャガーの足跡' },
+  { image: img('wildlife/jaguar_track_terrace_2.jpg'), alt: 'テラスのウッドデッキに残る、二つ目のジャガーの足跡' },
+  { image: img('wildlife/jaguar_track_cabin1_1.jpg'), alt: 'コテージ1の裏の柔らかな地面に残るジャガーの足跡' },
+  { image: img('wildlife/jaguar_track_cabin1_2.jpg'), alt: 'コテージ1の裏に残る、二つ目のジャガーの足跡' },
+];
+
+const primates = [
+  {
+    image: img('wildlife/mantled_howler_monkey.jpg'),
+    alt: '農園で目撃された、赤ちゃんを抱くマントホエザルの母親',
+    name: 'マントホエザル',
+    latin: 'Alouatta palliata',
+    description:
+      'その轟くような鳴き声は、夜明けと夕暮れに、林冠を越えて何キロメートルも響き渡ります——それは脅しではなく、縄張りを知らせる宣言です。群れは木々の梢をゆっくりと移動しながら、主に葉を食べ、一日の大半を消化のために休んで過ごします。この母子は、農園でまさに目撃されたものです。',
+  },
+  {
+    image: img('wildlife/white_faced_capuchin.jpg'),
+    alt: '敷地内で餌を探すノドジロオマキザル',
+    name: 'ノドジロオマキザル',
+    latin: 'Cebus capucinus',
+    description:
+      '農園でもっとも好奇心旺盛な霊長類といえば、間違いなくこの種です——社会的で、賑やかで、絶えず森の中層を果物や昆虫、時には小さな脊椎動物を求めて動き回っています。群れは母系制で、決まった中心的な縄張りから遠く離れることはめったにありません。敷地内で撮影されたものです。',
+  },
+];
+
+const wildCats = [
+  {
+    image: img('wildlife/jaguar.jpg'),
+    alt: '農園の近くで撮影された、雌のジャガー',
+    name: 'ジャガー',
+    latin: 'Panthera onca',
+    description:
+      'アメリカ大陸最大のネコ科動物であり、この公園の頂点に立つ捕食者——単独性で、主に夜行性、ペッカリーや鹿を狩るために広大な縄張りを必要とします。コテージのこれほど近くでの目撃は、パスカル自身が証言できる通り、ここでさえ極めて稀なことです。',
+  },
+  {
+    image: img('wildlife/puma.jpg'),
+    alt: 'タラマンカの高地に生息するピューマ',
+    name: 'ピューマ',
+    latin: 'Puma concolor',
+    description:
+      '低地の森からこの高地まで、幅広い環境に適応する力強いネコ科動物で、広範囲を単独で狩りをして回ります。直接の目撃よりも、足跡やカメラトラップによって確認されることの方が多い動物です。',
+  },
+  {
+    image: img('wildlife/ocelot.jpg'),
+    alt: 'バラ状の斑紋模様を見せるオセロット',
+    name: 'オセロット',
+    latin: 'Leopardus pardalis',
+    description:
+      '印象的な模様を持つ中型のネコ科動物で、主に夜、森の地表で狩りをします。小型哺乳類、鳥、爬虫類、どれを狙うのも得意です。バラ状の斑紋模様は、木漏れ日の下で見事な迷彩となります。',
+  },
+  {
+    image: img('wildlife/margay.jpg'),
+    alt: 'もっとも軽業師的な小型の野生ネコ、マーゲイ',
+    name: 'マーゲイ',
+    latin: 'Leopardus wiedii',
+    description:
+      '小型のネコ科動物の中でもっとも軽業師的な種で、足首がほぼ180度回転するため、リスのように頭から木を降りることができます。ほぼ完全に樹上性かつ夜行性です。',
+  },
+  {
+    image: img('wildlife/oncilla.jpg'),
+    alt: '黒色型（メラニズム）のオンシラ',
+    name: 'オンシラ',
+    latin: 'Leopardus tigrinus',
+    description:
+      'アメリカ大陸でもっとも小さな野生ネコの一種で、家猫とほとんど変わらない大きさをしています。高地の森の下層で、小型のげっ歯類や鳥を狩ります。ここのような雲霧林の個体群では、全身が黒い（メラニズムの）色彩型が異例なほど多く見られます——ここに写っている個体も、そのひとつです。',
+  },
+  {
+    image: img('wildlife/jaguarundi.jpg'),
+    alt: '珍しい体型を持つ小型の野生ネコ、ジャガランディ',
+    name: 'ジャガランディ',
+    latin: 'Herpailurus yagouaroundi',
+    description:
+      '細長い胴体、短い脚、小さな頭という、ネコ科動物としては珍しい体型をしており、一見すると大きなイタチと見間違えられることもしばしばです。ここに生息する他のネコ科動物とは異なり、昼間にも頻繁に活動します。',
+  },
+];
+
+const herbivoresAndPeccaries = [
+  {
+    image: img('wildlife/tapir.jpg'),
+    alt: '中央アメリカ最大の陸生哺乳類、ベアードバク',
+    name: 'ベアードバク',
+    latin: 'Tapirus bairdii',
+    description:
+      '中央アメリカ最大の陸生哺乳類で、短く柔軟な鼻先を使って葉や果実を手繰り寄せます。主に夜行性で、体を浸して涼を取るための、密生した湿潤な森と近くの水場を必要とします。現在、生息域全体で絶滅が危惧されています。',
+  },
+  {
+    image: img('wildlife/coati.jpg'),
+    alt: '落ち葉の中で餌を探すシロハナグマ',
+    name: 'シロハナグマ',
+    latin: 'Nasua narica',
+    description:
+      'アライグマの仲間で、昼間、メスと子どもたちからなる賑やかで活発な群れで移動し、長く柔軟な鼻先で落ち葉の中を鼻を鳴らしながら探ります。成獣のオスはほぼ単独で行動します——森の縁や農地の周辺で、比較的よく出会う哺乳類のひとつです。',
+  },
+  {
+    image: img('wildlife/agouti.jpg'),
+    alt: 'チュウベイアグーチ',
+    name: 'チュウベイアグーチ',
+    latin: 'Dasyprocta punctata',
+    description:
+      '脚の長い大型のげっ歯類で、昼間に活動し、種子や木の実を後のために埋めます——その多くは二度と掘り返されることがなく、森にとってもっとも重要な「木を植える者」のひとつとなっています。',
+  },
+  {
+    image: img('wildlife/brocket_deer.jpg'),
+    alt: '森の下層植生にたたずむアカブロケットジカ',
+    name: 'アカブロケットジカ',
+    latin: 'Mazama temama',
+    description:
+      '小型で単独性の森の鹿で、開けた場所ではなく、密生した下層植生を静かに移動します。驚いても逃げるのではなくその場で固まるため、すぐ近くにいても見過ごされがちです。',
+  },
+  {
+    image: img('wildlife/white_lipped_peccary.jpg'),
+    alt: 'シロクチペッカリーの群れ',
+    name: 'シロクチペッカリー',
+    latin: 'Tayassu pecari',
+    description:
+      'パナマにおいてもっとも社会性の高い野生豚の仲間で、数十頭にもなる密集した群れで森を移動し、互いに連絡を取り合うために絶えず歯を鳴らし、うなり声をあげます。',
+  },
+  {
+    image: img('wildlife/collared_peccary.jpg'),
+    alt: '農園の近くにいるクビワペッカリー',
+    name: 'クビワペッカリー',
+    latin: 'Pecari tajacu',
+    description:
+      'シロクチペッカリーの近縁種よりも小柄で、はるかに適応力が高く、小規模な家族群で移動し、農地の縁近くでの採食にもためらいがありません——コテージの近くでもっとも目にする機会の多いペッカリーです。',
+  },
+];
+
+const slothsAndSmallMammals = [
+  {
+    image: img('wildlife/three_toed_sloth.jpg'),
+    alt: 'ノドチャミユビナマケモノ',
+    name: 'ノドチャミユビナマケモノ',
+    latin: 'Bradypus variegatus',
+    description:
+      'ほぼ完全に樹上で葉を食べて暮らし、あまりにゆっくりと動くため、毛の中に藻類が生えるほどです。地上に降りるのはおよそ週に一度、それも排泄のためだけ——動物界でもとりわけ奇妙な習性のひとつです。',
+  },
+  {
+    image: img('wildlife/two_toed_sloth.jpg'),
+    alt: 'ホフマンフタユビナマケモノ',
+    name: 'ホフマンフタユビナマケモノ',
+    latin: 'Choloepus hoffmanni',
+    description:
+      'ミユビナマケモノの近縁種より動きが速く、より夜行性で、果実や花、時には昆虫や小さなトカゲまでも含む幅広い食性を持ちます。',
+  },
+  {
+    image: img('wildlife/tamandua.jpg'),
+    alt: '木に登るキタコアリクイ',
+    name: 'キタコアリクイ',
+    latin: 'Tamandua mexicana',
+    description:
+      '木に登るアリクイの一種で、単独性、主に夜行性。力強い鉤爪でアリやシロアリの巣を引き裂き、長く粘着質の舌で獲物を引き寄せます。',
+  },
+  {
+    image: img('wildlife/alstons_mouse_opossum.jpg'),
+    alt: 'アルストンケナガネズミオポッサム',
+    name: 'アルストンケナガネズミオポッサム',
+    latin: 'Marmosa alstoni',
+    description:
+      '小型の夜行性有袋類で、樹洞やつるが密生した茂みに巣を作り、森の中層をひとりで採食して回ります。昼間に見かけることは稀で、偶然の遭遇よりもカメラトラップによって発見されることの方が多い動物です。',
+  },
+];
+
+const reptilesAndAmphibians = [
+  {
+    image: img('wildlife/la_lora.jpg'),
+    alt: '敷地内で撮影された、側条ヤシクサリヘビ「ラ・ロラ」',
+    name: 'ラ・ロラ（側条ヤシクサリヘビ）',
+    latin: 'Bothriechis lateralis',
+    description:
+      'この高地に生息するクサリヘビで、オウムのような緑色にちなんでその名がつけられました。通常は樹上性で、地面よりずっと高い葉群の中でとぐろを巻いていますが、地上に降りてくることもあります——毒を持ちますが臆病で、間近で遭遇することは稀です。',
+  },
+  {
+    image: img('wildlife/bothriechis_nubestris.jpg'),
+    alt: '敷地内で撮影された、タラマンカヤシクサリヘビ',
+    name: 'タラマンカヤシクサリヘビ',
+    latin: 'Bothriechis nubestris',
+    description:
+      '近年になってようやく記載された、雲霧林に特化した種で、タラマンカ山脈のもっとも高く霧深い一帯に生息します。低地の近縁種と同じく小さく、緑色で、樹上性です——パスカルは敷地内でその一匹を撮影しました。',
+  },
+  {
+    image: img('wildlife/bothriechis_nigroadspersus_01.jpg'),
+    alt: '敷地内で撮影された、チュウベイマツゲクサリヘビ',
+    name: 'チュウベイマツゲクサリヘビ',
+    latin: 'Bothriechis nigroadspersus',
+    description:
+      'よく知られるマツゲクサリヘビの近縁種で、2024年の分類学的再検討によって初めて独立した種として認められました。緑とクリーム色がまだらに入り混じり、苔や樹皮の上でじっと動かずにとぐろを巻いているその姿は、まったく見過ごされるようにできています——それが一度も動いていないと気づくまでは。敷地内で撮影されたものです。',
+  },
+  {
+    image: img('wildlife/bothriechis_nigroadspersus_02.jpg'),
+    alt: '敷地内のチュウベイマツゲクサリヘビ、二枚目の写真',
+    name: 'チュウベイマツゲクサリヘビ',
+    latin: 'Bothriechis nigroadspersus',
+    description:
+      '同じ一帯の森で撮影された、もう一匹の個体——緑とクリーム色がまだらに入り混じり、苔や樹皮の上でじっと動かずにとぐろを巻いています。',
+  },
+  {
+    image: img('wildlife/anole.jpg'),
+    alt: '喉袋を広げるアノールトカゲ',
+    name: 'アノールトカゲ',
+    latin: 'Anolis spp.',
+    description:
+      '農園のいたるところ、木や壁、手すりでよく見かける、小さくすばしこいトカゲです。オスは色鮮やかな喉袋（ディユーラップ）を広げて、縄張りを守ったり、メスを惹きつけたりします。',
+  },
+  {
+    image: img('wildlife/glass_frog.jpg'),
+    alt: '半透明の肌を持つガラスガエル',
+    name: 'ガラスガエル',
+    latin: 'Centrolenidae',
+    description:
+      '森の渓流に暮らす、淡い緑色で半透明の肌を持つカエルたち——種によっては、下から見ると内臓が透けて見えるほど有名な透明さを誇ります。鳴き声は、夜、水の上に張り出した植物のあいだから聞こえてきます。',
+  },
+  {
+    image: img('wildlife/highland_tree_frog.jpg'),
+    alt: '夜、シダの葉にとまる高地アマガエル',
+    name: '高地アマガエル',
+    latin: 'various species',
+    description:
+      '雲霧林の夜の合唱団——小さく鮮やかな模様を持つカエルたちが、雨上がりにブロメリアや湿った落ち葉の中から鳴き声をあげます。もっとも活発になるのは、日が沈んだ後の涼しく霧深い時間帯です。この一匹は、夜、敷地内のシダの葉にとまっているところを見つけられました。',
+  },
+];
+
+const treesAndOrchids = [
+  { name: '高地カシ類', latin: 'Quercus costaricensis & Q. copeyensis', description: '上層の林冠を占める固有種のカシで、なかには50メートルに達するものもあります——この雲霧林を支える骨格そのものであり、その枝は、上に広がる苔や着生植物を支える主要な足場となっています。' },
+  { name: '野生アボカド類', latin: 'クスノキ科', description: '小さな野生アボカドの仲間を豊富に含むクスノキ科は、林冠の中層の多くを占めています——そして、それこそが、ケツァールがこの森を選ぶ理由でもあります。野生アボカドの実は、その食事のほとんどすべてを占めているのです。' },
+  { name: '矮性バンブー', latin: 'Chusquea spp.', description: '日陰に強い、入り組んだ下層のササで、敷地の野生の残る一帯の多くに見られ、森の低い場所を移動する鳥や小型哺乳類に隠れ場所を提供しています。' },
+  { name: 'ラン', latin: 'ラン科', description: 'タラマンカ・チリキ高地には、およそ300種のランが生育しています——世界でも屈指の密度であり、そのほとんどは地面ではなく、苔むした枝の上に着生して育ちます。' },
+  { name: 'ヘゴ', latin: 'ヘゴ科', description: '太古から続く、ゆっくりと成長するシダの仲間で、独自の亜林冠層を形づくります。渦を巻いた若葉が大きな葉へとほどけていく様子は、タラマンカの雲霧林を象徴する光景のひとつです。' },
+  { name: 'コケと着生植物', latin: '複数の科', description: '絶え間なく漂う霧が、枝や幹、フェンスの支柱までも、苔や地衣類、ブロメリアで覆い続けています——それは、農園の古木たちに、あの毛羽立った、この世のものとは思えない姿を与えている着生植物そのものです。' },
+];
+---
+
+<PageLayout
+  title="農園を取り巻く野生生物 — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="サル、野生のネコ科動物、バク、ナマケモノ、ペッカリー、そして雲霧林のクサリヘビたちが、Wild on the Farm、Boquete Cloud Forest Lodgeとともにアミスタッド国立公園を分かち合っています。"
+  path="/ja/wildlife/"
+  image={ogImage.src}
+  pullIntro="この農園は、アミスタッド国際公園の高地に抱かれています——中央アメリカ屈指の広大さと野生を誇るこの保護区は、サルや野生のネコ科動物、そして宿泊施設のすぐそばで目にすることなど滅多にない哺乳類たちの住処です。"
+  locale="ja"
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="農園の野生生物が暮らす雲霧林の眺め" eyebrow="農園を取り巻く野生生物">
+      この森を分かち合うのは、鳥たちだけではありません。
+    </PageHero>
+  </Fragment>
+
+  <Section label="稀な出会い" heading="ジャガー、あるいはある夜の美しさ">
+    <p>
+      Wild on the Farmは、ラ・アミスタッド国立公園とひとつになっています。ここには、野生との境界線など
+      存在しません——出会いは、常に野生のものです。
+    </p>
+    <p>
+      私たちの小道で、真新しい足跡に出くわすことは珍しくありません——ジャガー、オセロット、ジャガランディ、
+      鹿、ペッカリー。この二十年のあいだに、この土地の王であるジャガーは、三度その姿を私に見せてくれました。
+      最後は、満月の光の下でのことでした。
+    </p>
+    <p>
+      午前三時、テラスの家具のあいだで起こった尋常でない物音が、私を眠りから引き離しました。最初に頭に浮
+      かんだのは、野良犬でした。私の素晴らしい愛犬、ジャヤは二ヶ月前に旅立ち、それ以来、日和見な訪問者た
+      ちを遠ざけるものは何もなくなっていました。私は窓へと近づきます。月は、ほとんど不謹慎なほどの明るさ
+      で、風景を照らし出していました。最初に見えたのは、闇の中で動く、ひとつの塊でした。野良の雑種犬だろ
+      うと思い込み、私は追い払おうと声を張り上げました。
+    </p>
+    <p>
+      そのとき、闇の塊がふたつの小さな毛玉に分かれ、代わりに、長く、重々しく、堂々とした母親の影がテラス
+      に現れました。パニックはありません。母と子どもたちは、静かな徘徊を再開し、柔らかな足取りで農園を夜
+      の視察をするかのように滑るように進んでいきました。朝になれば、森の秘密の中へと帰っていく直前、コテ
+      ージのあいだを縫うように続くその真新しい足跡を、私たちは見つけることになるでしょう。
+    </p>
+    <p>
+      私は、人生の大半を手つかずの自然の中で過ごしてきました。それでもなお、この野生の命がこれほど近くで、
+      まるで息の届く距離で脈打つのを感じることは、私にとって絶対的な奇跡であり続けています。それは、私自
+      身が息をするために欠かせない、恩寵のひとときなのです。
+    </p>
+    <p>— 創設者、Wild on the Farm</p>
+  </Section>
+
+  <Section label="その証拠" heading="翌朝に残された、彼女の足跡。">
+    <p>テラスのウッドデッキと、コテージ1の裏の柔らかな地面に残された、ジャガーとその子どもたちの足跡。</p>
+    <PhotoGrid items={trackPhotos} groupId="wildlife-tracks" />
+  </Section>
+
+  <Section label="霊長類" heading="姿を見る前に、まず声が聞こえる。">
+    <CardGrid>
+      {primates.map((s) => (
+        <ImageTextCard image={s.image} alt={s.alt} title={s.name} eyebrow={s.latin} groupId="wildlife-primates">
+          {s.description}
+        </ImageTextCard>
+      ))}
+    </CardGrid>
+  </Section>
+
+  <Section label="野生のネコ科動物" heading="中央アメリカに生息する六種のネコ科動物、そのすべてがこの公園に。">
+    <CardGrid>
+      {wildCats.map((s) => (
+        <ImageTextCard image={s.image} alt={s.alt} title={s.name} eyebrow={s.latin} groupId="wildlife-cats">
+          {s.description}
+        </ImageTextCard>
+      ))}
+    </CardGrid>
+  </Section>
+
+  <Section label="草食動物とペッカリー" heading="森の地表で草を食み、木の葉を食べる者たち、そして野生の豚。">
+    <CardGrid>
+      {herbivoresAndPeccaries.map((s) => (
+        <ImageTextCard image={s.image} alt={s.alt} title={s.name} eyebrow={s.latin} groupId="wildlife-herbivores">
+          {s.description}
+        </ImageTextCard>
+      ))}
+    </CardGrid>
+  </Section>
+
+  <Section label="ナマケモノと小型哺乳類" heading="ゆっくりと動く者たち、静かな住人たち。">
+    <CardGrid>
+      {slothsAndSmallMammals.map((s) => (
+        <ImageTextCard image={s.image} alt={s.alt} title={s.name} eyebrow={s.latin} groupId="wildlife-sloths">
+          {s.description}
+        </ImageTextCard>
+      ))}
+    </CardGrid>
+  </Section>
+
+  <Section label="爬虫類と両生類" heading="小さく、巧みに姿を隠し、そのほとんどが無害。">
+    <p>
+      この標高では、パナマといえば真っ先に連想される毒蛇、フェルデランス（ヤジリハブ）が生きるには寒すぎ
+      ます——この種は、700メートルほど低いボケテの町にとどまっています。ここより高い場所にいるクサリヘビ
+      たちは、より小さく、より緑色で、木の上で暮らしています。
+    </p>
+    <CardGrid>
+      {reptilesAndAmphibians.map((s) => (
+        <ImageTextCard image={s.image} alt={s.alt} title={s.name} eyebrow={s.latin} groupId="wildlife-reptiles">
+          {s.description}
+        </ImageTextCard>
+      ))}
+    </CardGrid>
+  </Section>
+
+  <Section label="林冠の木々とラン" heading="地球上でもっとも豊かな着生植物の森のひとつ。">
+    <CardGrid>
+      {treesAndOrchids.map((t) => (
+        <TextCard title={t.name} eyebrow={t.latin}>
+          <p>{t.description}</p>
+        </TextCard>
+      ))}
+    </CardGrid>
+    <NoteBox variant="todo">
+      <p>
+        This list covers what's documented for the Talamanca–Chiriquí highlands generally — not yet
+        a confirmed inventory specific to the farm's own trees and orchids. Particular species
+        growing on the property (especially in the gardens or terraces) can be folded in alongside
+        these.
+      </p>
+    </NoteBox>
+  </Section>
+
+  <Section>
+    <NoteBox>
+      <p>
+        写真クレジット：野生のネコ科動物、バク、ハナグマ、アグーチ、鹿、ペッカリー、ナマケモノ、コアリクイ、
+        ネズミオポッサム、アノールトカゲ、そしてガラスガエルの写真は、Wikimedia Commons経由のクリエイテ
+        ィブ・コモンズ写真です。タラマンカヤシクサリヘビ、ノドジロオマキザル、マントホエザル、ラ・ロラ、
+        そして高地アマガエルの写真、また上記の四枚のジャガーの足跡の写真は、いずれも農園自身が撮影したも
+        のです。
+      </p>
+    </NoteBox>
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">ご滞在の計画を</div>
+    <h2>静かな朝、静かな小道。</h2>
+    <p>ここに暮らす哺乳類の多くは臆病で、主に夜明け、夕暮れ、夜間に活動します——ガイド付きの散策なら、出会える可能性がぐっと高まります。</p>
+    <div class="contact-list">
+      <a href="/ja/hiking/">ハイキングと小道 →</a>
+      <a href="/ja/birdwatching/">野鳥観察 →</a>
+    </div>
+  </Fragment>
+</PageLayout>

@@ -1,0 +1,71 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Section from '../../components/Section.astro';
+import PhotoGrid from '../../components/PhotoGrid.astro';
+import { img } from '../../lib/images';
+
+const heroImage = img('cabin2/hero.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const photos = [
+  { image: heroImage, alt: '谷の上に高床式で建つ、コテージ2' },
+  { image: img('cabin2/gallery_1.jpg'), alt: 'コテージ2の内部' },
+  { image: img('cabin2/gallery_2.jpg'), alt: 'コテージ2のバルコニーと、谷の眺め' },
+  { image: img('cabin2/gallery_3.jpg'), alt: 'コテージ2の寝室' },
+  { image: img('cabin2/gallery_4.jpg'), alt: 'コテージ2のバスルーム' },
+  { image: img('cabin2/gallery_5.jpg'), alt: 'コテージ2から見渡す、チリキ渓谷の眺め' },
+  { image: img('cabin2/gallery_6.jpg'), alt: 'コテージ2の外観のディテール' },
+  { image: img('cabin2/gallery_7.jpg'), alt: 'コテージ2のデッキ' },
+];
+
+const amenities = [
+  '専用のバスルーム',
+  '葉模様タイルのウォークインシャワー',
+  '上質な寝具',
+  '専用バルコニー',
+  '渓谷とバルー火山の眺め',
+  '高床式の構造',
+  'あえてWi-Fiもテレビも置いていません',
+];
+
+const reserveHref =
+  "https://api.whatsapp.com/send?phone=50765699134&text=%E3%81%93%E3%82%93%E3%81%AB%E3%81%A1%E3%81%AF%E3%80%81Wild%20on%20the%20Farm%E3%81%AE%E3%82%B3%E3%83%86%E3%83%BC%E3%82%B82%E3%82%92%E4%BA%88%E7%B4%84%E3%81%97%E3%81%9F%E3%81%84%E3%81%AE%E3%81%A7%E3%81%99%E3%81%8C%E3%80%82";
+---
+
+<PageLayout
+  title="コテージ2 — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Wild on the Farmのコテージ2：丘の斜面に高床式で建ち、ベッドからも、バルコニーからも、シャワーからも、チリキ渓谷を見渡す壮大な眺めが広がります。"
+  path="/ja/cabin-2/"
+  image={ogImage.src}
+  pullIntro="このコテージに足を踏み入れれば、その雰囲気と唯一無二の眺めに、思わず「わあ！」という驚きの声がこぼれるはずです。雲のバレエを追いかけ、星々と踊るための一棟——それが、このコテージです……"
+  locale="ja"
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="谷の上に高床式で建つ、コテージ2" eyebrow="ご滞在——コテージ2">
+      空と大地のあいだに浮かんで。
+    </PageHero>
+  </Fragment>
+
+  <Section label="隅々まで" heading="コテージ2のすべて。">
+    <PhotoGrid items={photos} groupId="cabin-2" />
+  </Section>
+
+  <Section>
+    <div class="amenity-list">
+      {amenities.map((item) => <span>{item}</span>)}
+    </div>
+    <a href={reserveHref} class="btn btn-normal btn-spaced">コテージ2を予約する</a>
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">見比べる</div>
+    <h2>他のコテージも見る。</h2>
+    <div class="contact-list">
+      <a href="/ja/lodge/">すべてのコテージ →</a>
+      <a href="/ja/cabin-1/">コテージ1 →</a>
+      <a href="/ja/cabin-3/">コテージ3 →</a>
+    </div>
+  </Fragment>
+</PageLayout>

@@ -1,0 +1,121 @@
+---
+import { Image, getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PhotoHero from '../../components/PhotoHero.astro';
+import Section from '../../components/Section.astro';
+import Split from '../../components/Split.astro';
+import CardGrid from '../../components/CardGrid.astro';
+import ImageTextCard from '../../components/ImageTextCard.astro';
+import NoteBox from '../../components/NoteBox.astro';
+import { img } from '../../lib/images';
+
+const heroImage = img('birds/bird_00.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const quetzalImage = img('birds/bird_01.jpg');
+const chlorophoniaImage = img('birds/bird_02.jpg');
+
+const species = [
+  { image: img('birds/bird_03.jpg'), alt: '虹色に輝く緑の冠羽を見せて止まるケツァール', name: 'ケツァール', latin: 'Pharomachrus mocinno', description: 'じっと止まったオスの、虹色に輝く緑の冠羽と深紅の胸元が光をとらえます——農園でもっとも伝説的な住人を、飛翔中ではなく静止した姿でとらえた一枚です。' },
+  { image: img('birds/bird_04.jpg'), alt: 'ホノオイロフウキンチョウ', name: 'ホノオイロフウキンチョウ', latin: 'Piranga bidentata', description: 'オスは燃えるようなオレンジ赤の体に、白黒の翼をまとい、メスはより柔らかな黄土色をしています。つがいで採食し、通りかかった混群に加わることもしばしばです。' },
+  { image: img('birds/bird_05.jpg'), alt: '枝で餌を探すシロクロムシクイ', name: 'シロクロムシクイ', latin: 'Mniotilta varia', description: '北アメリカから飛来する長距離の渡り鳥で、冬のあいだ、ゴジュウカラのように幹や枝を這い回りながら、樹皮の中の昆虫を探ります。' },
+  { image: img('birds/bird_06.jpg'), alt: '下層植生にいるキガシラムシクイ', name: 'キガシラムシクイ', latin: 'Basileuterus culicivorus', description: 'オリーブ色と黄色をまとった、下層植生の物静かなムシクイ。低木の葉から昆虫を拾い集めながら、姿を見せるよりも声を聞かせることの方が多い鳥です。' },
+  { image: img('birds/bird_07.jpg'), alt: '木の幹にとまるケブカアカゲラ', name: 'ケブカアカゲラ', latin: 'Dryobates villosus', description: '一日中、枯れ木にドラミングを響かせ、そのために作られたような嘴で昆虫を削り出します——背中に走る白い筋を探してみてください。' },
+  { image: img('birds/bird_08.jpg'), alt: '森の地面にいるチュウベイオチバメクリ', name: 'チュウベイオチバメクリ', latin: 'Sclerurus mexicanus', description: 'その名にふさわしい、地上で暮らす森の鳥で、素早く横に蹴るようにして落ち葉をはね除け、その下に隠れた昆虫を見つけ出します。' },
+  { image: img('birds/bird_09.jpg'), alt: '高地エレーニア', name: '高地エレーニア', latin: 'Elaenia frantzii', description: '目立たない高地のハエトリの仲間で、森の中層から聞こえる、かすれた尻上がりの鳴き声でもっとも気づきやすい鳥です。' },
+  { image: img('birds/bird_10.jpg'), alt: '苔むした枝にいるオウドイロミソサザイ', name: 'オウドイロミソサザイ', latin: 'Troglodytes ochraceus', description: '苔むした枝に暮らす、シナモン色のミソサザイ。尾を立てながら、着生植物に覆われた枝々をひとりで動き回ることがよくあります。' },
+  { image: img('birds/bird_11.jpg'), alt: 'ムラサキノド・マウンテンジェムのハチドリ', name: 'ムラサキノド・マウンテンジェム', latin: 'Lampornis calolaimus', description: '農園を象徴するハチドリの一種——オスは、光の角度が合ったとき、虹色に輝く紫の喉と、ターコイズ色の頭冠をきらめかせます。' },
+  { image: img('birds/bird_12.jpg'), alt: 'アカオハチドリ', name: 'アカオハチドリ', latin: 'Amazilia tzacatl', description: 'よく見かける、気の強いハチドリで、花咲く低木を本気で守り抜き、自分よりはるかに大きなライバルさえも追い払います。' },
+  { image: img('birds/bird_13.jpg'), alt: 'キラメキハチドリ', name: 'キラメキハチドリ', latin: 'Selasphorus scintilla', description: '地球上でもっとも小さな鳥の一種で、マルハナバチとほとんど変わらない大きさをしています。深い森よりも、花の咲く開けた縁を好みます。' },
+  { image: img('birds/bird_14.jpg'), alt: 'ユキハラハチドリ', name: 'ユキハラハチドリ', latin: 'Amazilia edward', description: '虹色に輝く緑と、汚れのない白い腹のコントラストが美しい、高地特有のハチドリ——農園の花咲く生垣の常連です。' },
+  { image: img('birds/bird_15.jpg'), alt: 'キラボシフウキンチョウ', name: 'キラボシフウキンチョウ', latin: 'Tangara dowii', description: 'タラマンカ高地特有の種で、青黒い頭には、まるで星をまき散らしたような細かな斑点があります。林冠を、小さな混群で移動します。' },
+  { image: img('birds/bird_16.jpg'), alt: '森の地面にいるコツグミ', name: 'コツグミ', latin: 'Catharus ustulatus', description: '胸に斑点のある渡りのツグミで、北アメリカと南アメリカのあいだを行き来する途中、ここに立ち寄ります。森の地面で、静かに餌を探します。' },
+  { image: img('birds/bird_17.jpg'), alt: 'シロノド・マウンテンジェムのハチドリ', name: 'シロノド・マウンテンジェム', latin: 'Lampornis castaneoventris', description: 'タラマンカ高地のこの一帯にのみ生息し、はっきりとした白い喉の筋と、メスは赤褐色の下面を持っています。' },
+  { image: img('birds/bird_18.jpg'), alt: 'シロノドツグミ', name: 'シロノドツグミ', latin: 'Turdus assimilis', description: '森の縁に暮らす、柔らかな声のツグミ。鮮やかなオレンジ色の目の輪と嘴が、控えめな羽色の中で際立ちます。' },
+  { image: img('birds/bird_19.jpg'), alt: 'キムネクロズキンムシクイ', name: 'キムネクロズキンムシクイ', latin: 'Cardellina pusilla', description: '鮮やかな黄色の体に、きちんとした黒い帽子をかぶったような姿の渡り鳥。昆虫を探して、低い枝のあいだをせわしなく飛び回ります。' },
+  { image: img('birds/bird_20.jpg'), alt: 'クロガオソリテア', name: 'クロガオソリテア', latin: 'Myadestes melanops', description: 'その笛のような、この世のものとは思えない歌声は、鳥自身が姿を隠していても、雲霧林を象徴する音のひとつです。' },
+  { image: img('birds/bird_21.jpg'), alt: 'フォークバシゴシキドリのつがい', name: 'フォークバシゴシキドリ', latin: 'Semnornis frantzii', description: 'がっしりとした体に、オレンジ色の襟を持つ高地の鳥。たいていつがいでおり、木々のあいだに響き渡るデュエットで鳴き交わします。' },
+  { image: img('birds/bird_22.jpg'), alt: '上昇気流に乗るアカオノスリ', name: 'アカオノスリ', latin: 'Buteo jamaicensis', description: '農園に暮らす、幅広の翼を持つタカで、谷の上空で上昇気流に乗る姿や、枯れ木にとまって見張る姿がよく見られます。' },
+  { image: img('birds/bird_23.jpg'), alt: '餌を探すネズミノドムシクイ', name: 'ネズミノドムシクイ', latin: 'Myioborus miniatus', description: '活発な小さなムシクイで、餌を探しながら、ほとんど絶え間なく尾を広げ翼をひらめかせます——この仕草が、隠れた昆虫を追い出す助けになっています。' },
+  { image: img('birds/bird_24.jpg'), alt: 'ネズミイロツグミ', name: 'ネズミイロツグミ', latin: 'Catharus fuscater', description: '下層植生に暮らす臆病なツグミで、鋭いオレンジ色の嘴と目の輪を持ちます。姿を見せることよりも、澄んだ、心に残る歌声で知られています。' },
+  { image: img('birds/bird_25.jpg'), alt: '木の幹にいるブチガシラキバシリ', name: 'ブチガシラキバシリ', latin: 'Lepidocolaptes affinis', description: '長く湾曲した嘴で樹皮の割れ目を探りながら、幹をらせん状に登っていきます。森を共に移動する混群の一員です。' },
+  { image: img('birds/bird_26.jpg'), alt: '飛翔するツバメオトビ', name: 'ツバメオトビ', latin: 'Elanoides forficatus', description: '深く二つに割れた尾と、いともたやすい滑空飛行で、空を見上げればひと目で分かります。飛びながら昆虫や小さな獲物を狩ります。' },
+  { image: img('birds/bird_27.jpg'), alt: 'キタミドリオオハシ', name: 'キタミドリオオハシ', latin: 'Aulacorhynchus prasinus', description: '鮮やかな緑の羽をまとった小さなオオハシで、二色の嘴を持ちます。姿を見る前に、林冠からしわがれた鳴き声が聞こえてくることがよくあります。' },
+  { image: img('birds/bird_28.jpg'), alt: 'ウロコノドハアサリ', name: 'ウロコノドハアサリ', latin: 'Anabacerthia variegaticeps', description: '下層植生で餌を探す鳥で、枯れ葉の塊を丹念に調べながら、隠れた昆虫を探し出します。' },
+];
+---
+
+<PageLayout
+  title="野鳥観察 — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Wild on the Farmでの野鳥観察——ケツァールとキンマユクロロフォニアが暮らす、パナマ、アミスタッド国立公園の縁にある地。"
+  path="/ja/birdwatching/"
+  image={ogImage.src}
+  pullIntro="アミスタッド国立公園の縁で、雲霧林は中央アメリカでもっとも人気の高い鳥たちを抱いています——静かに、辛抱強く、そして夜明けの最初の光の中で出会うのが一番です。"
+  locale="ja"
+>
+  <Fragment slot="hero">
+    <PhotoHero image={heroImage} alt="Wild on the Farmで飛翔するケツァール" eyebrow="体験——野鳥観察">
+      ケツァールが、いまも巣を作る場所。
+    </PhotoHero>
+  </Fragment>
+
+  <Section>
+    <Split divider>
+      <div class="split-photo">
+        <Image src={quetzalImage} alt="林冠にいるケツァール" widths={[400, 700, 1000]} sizes="(min-width: 860px) 50vw, 100vw" />
+      </div>
+      <div>
+        <div class="section-label">注目の種</div>
+        <h2 class="lede">ケツァール</h2>
+        <p>
+          パナマでもっとも伝説的な鳥であり、多くの旅人が高地へと目を向ける最初のきっかけとなる存在です。オ
+          スは、90センチ近くにもなる虹色に輝く緑の尾羽を引きながら、野生アボカドを求めて林冠を静かに移動し
+          ます——それは、彼らがほとんど唯一頼りにしている果実です。夜明けと夕暮れ、樹林限界近くの静かな一
+          帯が、もっとも姿を見られる時間帯です。
+        </p>
+      </div>
+    </Split>
+
+    <Split divider reverse>
+      <div class="split-photo">
+        <Image src={chlorophoniaImage} alt="下層植生にいるキンマユクロロフォニア" widths={[400, 700, 1000]} sizes="(min-width: 860px) 50vw, 100vw" />
+      </div>
+      <div>
+        <div class="section-label">注目の種</div>
+        <h2 class="lede">キンマユクロロフォニア</h2>
+        <p>
+          苔のような緑、金色、そして空色——ほとんど信じがたいほど鮮やかな色をまとった小さな鳥で、ヤドリギの
+          実や小さな果実を求めて、苔むした下層植生を移動します。姿を見るよりも、声を聞く方が簡単です——茂
+          みの奥から響く、柔らかな口笛のような鳴き声。
+        </p>
+      </div>
+    </Split>
+  </Section>
+
+  <Section label="農園で見られた鳥たち" heading="さらに二十六種、まさにここで撮影されたもの。">
+    <CardGrid>
+      {species.map((s) => (
+        <ImageTextCard image={s.image} alt={s.alt} title={s.name} eyebrow={s.latin} groupId="birdwatching-species">
+          {s.description}
+        </ImageTextCard>
+      ))}
+    </CardGrid>
+    <NoteBox variant="todo">
+      <p>
+        Species are identified from source filenames, trusted as accurate. A handful of additional
+        photos couldn't be confidently identified and aren't included yet — worth a second pass if
+        an ID becomes available.
+      </p>
+    </NoteBox>
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">ご滞在の計画を</div>
+    <h2>夜明けの光が、いちばん。</h2>
+    <p>森がもっとも活気づく早朝には、ガイド付きの散策を手配することができます。ご滞在の中心を野鳥観察に据えたい場合は、ぜひお知らせください——それに合わせて計画いたします。</p>
+    <div class="contact-list">
+      <a href="/ja/hiking/">ハイキングと小道 →</a>
+      <a href="/ja/farm/">農園に戻る →</a>
+    </div>
+  </Fragment>
+</PageLayout>

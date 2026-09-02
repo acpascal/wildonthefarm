@@ -1,0 +1,70 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Section from '../../components/Section.astro';
+import PhotoGrid from '../../components/PhotoGrid.astro';
+import NoteBox from '../../components/NoteBox.astro';
+import { img } from '../../lib/images';
+
+const heroImage = img('cabin1/hero.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const photos = [
+  { image: heroImage, alt: '雲霧林に佇む、コテージ1の外観' },
+  { image: img('cabin1/gallery_1.jpg'), alt: 'コテージ1の内部' },
+  { image: img('cabin1/gallery_2.jpg'), alt: 'コテージ1のバルコニーからの眺め' },
+  { image: img('cabin1/gallery_3.jpg'), alt: '手描きの葉模様タイルを使った、コテージ1のバスルーム' },
+];
+
+const amenities = [
+  '専用のバスルーム',
+  '葉模様タイルのウォークインシャワー',
+  '上質な寝具',
+  '専用バルコニー',
+  '緑の屋根',
+  'あえてWi-Fiもテレビも置いていません',
+];
+
+const reserveHref =
+  "https://api.whatsapp.com/send?phone=50765699134&text=%E3%81%93%E3%82%93%E3%81%AB%E3%81%A1%E3%81%AF%E3%80%81Wild%20on%20the%20Farm%E3%81%AE%E3%82%B3%E3%83%86%E3%83%BC%E3%82%B81%E3%82%92%E4%BA%88%E7%B4%84%E3%81%97%E3%81%9F%E3%81%84%E3%81%AE%E3%81%A7%E3%81%99%E3%81%8C%E3%80%82";
+---
+
+<PageLayout
+  title="コテージ1 — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Wild on the Farmのコテージ1：霧に包まれた雲霧林にひっそりと佇む専用テラス、葉模様タイルのウォークインシャワー、そして温もりある無垢材の内装。"
+  path="/ja/cabin-1/"
+  image={ogImage.src}
+  pullIntro="樹林限界にもっとも近い場所に建つコテージ1は、雲霧林のもっとも親密な表情をとらえています——竹と霧に包まれた専用バルコニー、そして手描きの葉模様タイルで一面を仕上げたバスルーム。"
+  locale="ja"
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="雲霧林に佇む、コテージ1の外観" eyebrow="ご滞在——コテージ1">
+      霧の、いちばん奥へ。
+    </PageHero>
+  </Fragment>
+
+  <Section label="隅々まで" heading="コテージ1のすべて。">
+    <PhotoGrid items={photos} groupId="cabin-1" />
+    <NoteBox variant="todo">
+      <p>This cabin is missing a bedroom photo and a clearly-identified exterior shot.</p>
+    </NoteBox>
+  </Section>
+
+  <Section>
+    <div class="amenity-list">
+      {amenities.map((item) => <span>{item}</span>)}
+    </div>
+    <a href={reserveHref} class="btn btn-normal btn-spaced">コテージ1を予約する</a>
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">見比べる</div>
+    <h2>他のコテージも見る。</h2>
+    <div class="contact-list">
+      <a href="/ja/lodge/">すべてのコテージ →</a>
+      <a href="/ja/cabin-2/">コテージ2 →</a>
+      <a href="/ja/cabin-3/">コテージ3 →</a>
+    </div>
+  </Fragment>
+</PageLayout>

@@ -1,0 +1,74 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Section from '../../components/Section.astro';
+import { business } from '../../data/business';
+import { img } from '../../lib/images';
+import { mailtoHref } from '../../i18n/utils';
+
+const heroImage = img('farm/property_overview.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+---
+
+<PageLayout
+  title="法的表示・著作権について — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="wildonthefarm.comに掲載されている文章、写真、および日誌の記事における著作権の帰属と、その複製に関する条件について。"
+  path="/ja/legal-notice/"
+  image={ogImage.src}
+  pullIntro="このサイトに掲載されている文章、写真、記事はすべてオリジナルの著作物です——それらの再利用をお考えの方に向けて、その意味するところをご説明いたします。"
+  locale="ja"
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="農園の敷地を空から望む" eyebrow="法的事項">
+      法的表示・著作権について
+    </PageHero>
+  </Fragment>
+
+  <Section label="著作権について" heading="すべてのコンテンツは、著作権によって保護されています。">
+    <div class="max-prose">
+      <p>
+        特に明記のない限り、wildonthefarm.comに掲載されているすべての文章、写真、その他のオリジナルコンテ
+        ンツ——日誌のすべての記事を含む——は、<strong>{business.name}、{business.tagline}</strong>の所有物
+        であり、その創作の時点から著作権法によって保護されています。この保護が適用されるにあたって、別途
+        の登録は必要ありません。
+      </p>
+      <p>
+        日誌において、歴史的・科学的な背景を説明するために使用されているごく一部の画像は、オリジナルの写
+        真ではなく、パブリックドメインまたはクリエイティブ・コモンズ・ライセンスのもとで転載されています
+        ——該当する場合には、その出典とライセンスを、各記事の直下に明記しています。
+      </p>
+    </div>
+  </Section>
+
+  <Section label="複製について" heading="できること、できないこと。">
+    <div class="max-prose">
+      <p>
+        個人的な利用、編集目的、レビュー目的であれば、どの記事についても、お読みいただく、リンクを共有し
+        ていただく、短い抜粋を引用していただくことは自由です。ただし、その際は{business.name}の名を明記
+        し、元のページへのリンクを付けていただくようお願いいたします。
+      </p>
+      <p>
+        事前の書面による同意なしには、以下を行うことはできません：記事の全文、または相当な部分を、他のウ
+        ェブサイト、印刷物、ニュースレターに再掲載すること。私たちの文章や写真を、他の事業のマーケティン
+        グ資料に使用すること。またはこのコンテンツの全部、もしくは一部を、人工知能や機械学習モデルの学習、
+        調整、その他の開発に使用すること。
+      </p>
+      <p>
+        短い引用を超える形での転載や、写真のライセンス利用をご希望の場合は、どうぞご連絡ください——ほと
+        んどの場合、喜んでご相談に応じます。
+      </p>
+      <p>
+        <a href={mailtoHref(business.email, 'ja')}>{business.email}</a>
+      </p>
+    </div>
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">ご質問はありますか？</div>
+    <h2>お問い合わせください。</h2>
+    <div class="contact-list">
+      <a href="/ja/faqs-contact/">よくある質問・お問い合わせ →</a>
+    </div>
+  </Fragment>
+</PageLayout>

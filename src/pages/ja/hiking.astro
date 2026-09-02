@@ -1,0 +1,94 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PhotoHero from '../../components/PhotoHero.astro';
+import Section from '../../components/Section.astro';
+import Split from '../../components/Split.astro';
+import PhotoGrid from '../../components/PhotoGrid.astro';
+import { img } from '../../lib/images';
+import type { PhotoItem } from '../../lib/photos';
+
+const heroImage = img('hiking/hero.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const amenities = [
+  'ガイド付き、または自由散策',
+  'アミスタッド国立公園への直接アクセス',
+  '原生の雲霧林',
+  '道中で出会うサルと野鳥',
+  '丈夫な登山靴を推奨',
+];
+
+const trailPhotos: PhotoItem[] = [
+  { image: img('hiking/gallery_01.jpg'), alt: '雲霧林へと入っていく小道', size: 'lg' },
+  { image: img('hiking/gallery_02.jpg'), alt: '小道沿いに並ぶ、苔に覆われた木々' },
+  { image: img('hiking/gallery_03.jpg'), alt: '密生した雲霧林を抜ける、細い小道', size: 'tall' },
+  { image: img('hiking/gallery_04.jpg'), alt: '小道の脇に広がる、シダと下草' },
+  { image: img('hiking/gallery_05.jpg'), alt: '小道から望む、雲霧林の林冠の眺め', size: 'wide' },
+  { image: img('hiking/gallery_06.jpg'), alt: '雲霧林に差し込む陽の光' },
+  { image: img('hiking/gallery_07.jpg'), alt: 'ハイキングコースの、霧に包まれた一区間', size: 'lg' },
+  { image: img('hiking/gallery_08.jpg'), alt: '小道脇の木に着生するブロメリア' },
+  { image: img('hiking/gallery_09.jpg'), alt: '森の中を縫うように続く小道', size: 'tall' },
+  { image: img('hiking/gallery_10.jpg'), alt: '小道を横切る木の根' },
+  { image: img('hiking/gallery_11.jpg'), alt: '雲霧林の小道、静かな一区間' },
+  { image: img('hiking/gallery_12.jpg'), alt: '小道から見渡す、森の広い眺め', size: 'wide' },
+  { image: img('hiking/gallery_13.jpg'), alt: '小道脇の枝に見られる、苔と着生植物' },
+  { image: img('hiking/gallery_14.jpg'), alt: '森の林冠の下を通る小道', size: 'lg' },
+  { image: img('hiking/gallery_15.jpg'), alt: 'ハイキングコースの、急な一区間' },
+  { image: img('hiking/gallery_16.jpg'), alt: '小道沿いに立つヘゴの木々', size: 'tall' },
+  { image: img('hiking/gallery_17.jpg'), alt: '小道にある、渓流の渡り場' },
+  { image: img('hiking/gallery_18.jpg'), alt: '小道から見渡す、チリキ高地の眺め', size: 'wide' },
+  { image: img('hiking/gallery_19.jpg'), alt: '小道脇に広がる、密生した下層植生' },
+  { image: img('hiking/gallery_20.jpg'), alt: '霧の中へと消えていく小道' },
+  { image: img('hiking/gallery_21.jpg'), alt: '小道脇にある、苔むした木の幹', size: 'tall' },
+  { image: img('wildlife/mantled_howler_monkey.jpg'), alt: '小道沿いで見かけた、マントホエザル' },
+  { image: img('hiking/gallery_22.jpg'), alt: '雲霧林の奥へと分け入っていく小道', size: 'lg' },
+];
+---
+
+<PageLayout
+  title="雲霧林をハイキングする — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="農園の入り口から続く、アミスタッド国立公園へと至る小道——苔に覆われた雲霧林、サルたち、そしてチリキ高地を望む眺め。"
+  path="/ja/hiking/"
+  image={ogImage.src}
+  pullIntro="人混みから遠く離れた、ボケテの雲霧林でのハイキング。シャトルバスも、登山口の駐車場もありません——あるのは一つの門、そしてその先に広がる、苔と霧、目覚めていく森の音だけです。"
+  locale="ja"
+>
+  <Fragment slot="hero">
+    <PhotoHero image={heroImage} alt="Wild on the Farmで雲霧林をハイキングする" eyebrow="ハイキング——人混みから遠く離れて">
+      私たちの扉から始まり、雲の中へと消えていく小道。
+    </PhotoHero>
+  </Fragment>
+
+  <Section label="小道の上で" heading="そこで出会う風景。">
+    <Split>
+      <div>
+        <p>
+          小道は、原生の雲霧林の中を登っていきます——苔に包まれた幹、ブロメリア、ヘゴの木々。ここに満ちる
+          静けさは、遠くの鳴き声も、林冠のかすかな葉擦れの音も、聞き逃すことを許しません。ノドジロオマキ
+          ザルとマントホエザルが同じ縄張りを行き来しており、しばしば頭上の真上で見かけることができます。
+        </p>
+      </div>
+      <div>
+        <div class="amenity-list">
+          {amenities.map((item) => <span>{item}</span>)}
+        </div>
+      </div>
+    </Split>
+    <p><a href="/ja/journal/hiking-in-boquete/"><strong>ボケテの小道、その歴史、そして私たち自身が描いた地図 →</strong></a></p>
+  </Section>
+
+  <Section label="現地にて" heading="この森と出会う、いちばんの方法は、歩くこと。">
+    <PhotoGrid items={trailPhotos} groupId="hiking" variant="varied" />
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">組み合わせるなら</div>
+    <h2>早朝は、鳥たちのもの。</h2>
+    <p>多くのお客様が、夜明けの野鳥観察を、その日の後半に行う長めのハイキングと組み合わせています。</p>
+    <div class="contact-list">
+      <a href="/ja/birdwatching/">野鳥観察 →</a>
+      <a href="/ja/farm/">農園に戻る →</a>
+    </div>
+  </Fragment>
+</PageLayout>

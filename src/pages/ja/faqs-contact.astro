@@ -1,0 +1,162 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Section from '../../components/Section.astro';
+import CardGrid from '../../components/CardGrid.astro';
+import TextCard from '../../components/TextCard.astro';
+import NoteBox from '../../components/NoteBox.astro';
+import { business } from '../../data/business';
+import { img } from '../../lib/images';
+import { mailtoHref } from '../../i18n/utils';
+
+const heroImage = img('farm/property_overview.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+---
+
+<PageLayout
+  title="よくある質問・お問い合わせ — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Wild on the Farm、Boquete Cloud Forest Lodgeでのご滞在に関するよくあるご質問への回答と、直接のお問い合わせ方法。"
+  path="/ja/faqs-contact/"
+  image={ogImage.src}
+  pullIntro="ご到着前によく寄せられるご質問のすべて——ここに載っていないことがあれば、どうぞ直接お問い合わせください。"
+  locale="ja"
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="農園の敷地を空から望む" eyebrow="ご滞在の計画を">
+      ご質問への答えと、私たちへの連絡方法。
+    </PageHero>
+  </Fragment>
+
+  <Section label="お問い合わせ" heading="メールよりも、WhatsAppの方が早くお返事できます。">
+    <div class="contact-list contact-list-lg">
+      <a href={business.whatsappHref}>{business.phone} (WhatsApp)</a>
+      <a href={mailtoHref(business.email, 'ja')}>{business.email}</a>
+    </div>
+  </Section>
+
+  <Section label="よくあるご質問" heading="ご予約の前に。">
+    <CardGrid cols={2}>
+      <TextCard lite title="農園への行き方は？">
+        <p>
+          最後の1キロメートルはとても急な坂道で、四輪駆動車が必要です。普通車でお越しの場合は、麓に駐車し
+          ていただければ、私たちがお迎えにあがります。徒歩でお越しの場合も、お迎えにあがり、ご滞在の最後
+          にはボケテの町（5キロメートル先）までお送りします。ご滞在中にボケテの町へ出かけたい場合は、$25
+          で四輪駆動タクシーをご予約いただけます——また、私たち自身が町へ向かうタイミングがあれば、無料
+          で同乗していただくことも可能です。もっと遠方からお越しの方は、パナマシティからボケテへの{' '}
+          <a href="/ja/journal/boquete-travel-guide/">行き方についての完全ガイド</a>をご覧ください。
+        </p>
+      </TextCard>
+      <TextCard lite title="Wi-Fiはありますか？">
+        <p>
+          あえて、コテージの中にはWi-Fiもテレビも置いていません——静けさも、この体験の一部だからです。外
+          の世界と連絡を取る必要がある方のために、共用エリアではWi-Fiをご利用いただけます。
+        </p>
+      </TextCard>
+    </CardGrid>
+
+    <div class="max-prose">
+      <TextCard lite title="電気について——ヘアドライヤーは持ち込めますか？">
+        <p>
+          私たちは完全にオフグリッドで、自家発電のソーラー電力を使用しているため、ヘアドライヤーのような
+          消費電力の大きい機器はご遠慮いただいています。それ以外では電力に不足はありません——ただ、必要
+          な照明だけをお使いいただき、使わないものはお消しいただくこと、そしてバスルームを出る際は明かり
+          を消し忘れないようお願いしています。
+        </p>
+      </TextCard>
+    </div>
+
+    <CardGrid cols={2}>
+      <TextCard lite title="気候はどうですか？">
+        <p>
+          標高のおかげで、快適な気候です——低地の重く耐えがたい暑さとは無縁です。フリース、軽めのレインジ
+          ャケット、そして小道を歩く予定があれば登山靴もご用意ください。
+        </p>
+      </TextCard>
+      <TextCard lite title="ケツァールやジャガーには、必ず出会えますか？">
+        <p>
+          野鳥観察に、特にケツァールとの出会いに最適な時期は、3月15日から5月15日のあいだです。ほとんどの
+          鳥が営巣し、この地域にケツァールが多く見られる時期です。この期間外でも観察は可能ですが、確率は
+          下がります。ジャガーのようなより稀な出会いは、ここでも文字通り稀なことです——ここは動物園では
+          なく、実際に営まれている雲霧林なのです。
+        </p>
+      </TextCard>
+    </CardGrid>
+
+    <CardGrid cols={2}>
+      <TextCard lite title="ハイキングにガイドは必要ですか？">
+        <p>
+          経験豊富で自力での道案内に慣れているハイカーであれば、ガイドなしで歩ける区間もあります。雲霧林
+          の中を3時間を超えて歩くハイキングには、ガイドの同行を強くお勧めします——農園からの小道はかすか
+          で、人里離れているためです——とはいえ、自立した行動を望む経験豊富なハイカーは、ガイドなしで出
+          発することも自由です。すべてのハイカーには、事前に免責同意書へのご署名をお願いしており、お客様
+          ご自身の旅行保険または個人保険への加入をお勧めしています。
+        </p>
+      </TextCard>
+      <TextCard lite title="食事制限には対応していますか？">
+        <p>ご予約の際に、特別な食事のご希望やアレルギーについてお知らせください。それに合わせてお食事を計画いたします。</p>
+      </TextCard>
+    </CardGrid>
+
+    <CardGrid cols={2}>
+      <TextCard lite title="お食事はどのような内容ですか？">
+        <p>
+          朝食は付いており、たっぷりとした内容で、午前8時から9時のあいだにお出しします。夕食は毎晩ご予約
+          いただけます——二品の前菜、メイン料理、そしてデザート。パンも自家製です。
+        </p>
+      </TextCard>
+      <TextCard lite title="ペットは受け入れていますか？">
+        <p>申し訳ございませんが、ペットはお受けしておりません。農園では私たち自身の動物を飼っており、外部の動物が来ると、大きなストレスを与えてしまうためです。</p>
+      </TextCard>
+    </CardGrid>
+
+    <CardGrid cols={2}>
+      <TextCard lite title="子どもは受け入れていますか？">
+        <p>安全上の理由により、12歳未満のお子様はお受けしておらず、コテージには追加のベッドもご用意がありません。</p>
+      </TextCard>
+      <TextCard lite title="キャンセルポリシーについて教えてください。">
+        <p>
+          ご到着の1ヶ月前までは無料でキャンセルいただけます。1ヶ月前から15日前までは50％、15日前から1週
+          間前までは25％を返金いたします。ご到着の1週間を切ってからのご予約は、返金の対象外となります。
+        </p>
+      </TextCard>
+    </CardGrid>
+
+    <CardGrid cols={2}>
+      <TextCard lite title="どのように予約すればよいですか？">
+        <p>
+          WhatsAppまたはメールで直接ご連絡ください——ご希望の日程と、体験したいことをお知らせいただければ、
+          ぴったりのコテージ選びとご滞在の計画をお手伝いいたします。
+        </p>
+      </TextCard>
+      <TextCard lite title="どのようなお支払い方法に対応していますか？">
+        <NoteBox variant="todo">
+          <p>
+            Accepted payment methods not yet decided — cash, transfer, card, deposit vs. balance
+            on arrival, etc.
+          </p>
+        </NoteBox>
+      </TextCard>
+    </CardGrid>
+
+    <div class="max-prose">
+      <TextCard lite title="お持ちいただくとよいアプリはありますか？">
+        <p>
+          野鳥観察には、ご到着前にMerlin Bird IDアプリをダウンロード（そして最新版に更新）しておくことを
+          お勧めします——目にした鳥を特定するのにとても役立ちます。植物や花にご興味がある方には、周囲に
+          生えているものの名前を知るために、植物特定専用のアプリも便利です。
+        </p>
+      </TextCard>
+    </div>
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">まだご質問がありますか？</div>
+    <h2>どんなことでも、喜んでお話しします。</h2>
+    <p>直接お問い合わせください。まだ分からないことがあれば、ご滞在の計画をお手伝いします。</p>
+    <div class="contact-list">
+      <a href="/ja/rates-retreats/">料金・リトリート →</a>
+      <a href="/ja/lodge/">コテージを見る →</a>
+    </div>
+  </Fragment>
+</PageLayout>

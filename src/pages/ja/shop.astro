@@ -1,0 +1,152 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Section from '../../components/Section.astro';
+import Split from '../../components/Split.astro';
+import CardGrid from '../../components/CardGrid.astro';
+import TextCard from '../../components/TextCard.astro';
+import NoteBox from '../../components/NoteBox.astro';
+import ReserveContactBlock from '../../components/ReserveContactBlock.astro';
+import { img } from '../../lib/images';
+
+const heroImage = img('products/macadamia_harvest.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+const macadamiaSplitImage = await getImage({ src: heroImage, width: 800, format: 'webp' });
+const fertilizerSplitImage = await getImage({ src: img('garden/garden_harvest.jpg'), width: 800, format: 'webp' });
+---
+
+<PageLayout
+  title="農園の産物 — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="パナマ、Wild on the Farm、Boquete Cloud Forest Lodgeで栽培・収穫される、オーガニックマカダミアナッツと農園の産物——農園から直接ご注文いただけます。"
+  path="/ja/shop/"
+  image={ogImage.src}
+  pullIntro="マカダミアナッツ、ハーブティー、保存食、発酵食品、そして十八年をかけて完成させた菜園用の肥料——そのすべてが、パナマの雲霧林、標高1,800メートルのこの農園で、手ずから育てられ、作られています。"
+  locale="ja"
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="農園で収穫されたばかりのマカダミアナッツ" eyebrow="農園の産物">
+      私たちが育てるすべてのもの、その一部を、あなたのお持ち帰りに。
+    </PageHero>
+  </Fragment>
+
+  <Section label="マカダミアナッツ" heading="農園で育ち、手で収穫される。">
+    <Split>
+      <div>
+        <p>
+          私たちのマカダミアの木々は、長年にわたって農園の一部であり続け、菜園や雲霧林とともにオーガニック
+          で育てられています。収穫のたびに、その場で摘み取り、殻を割り、仕上げています。
+        </p>
+        <div class="amenity-list">
+          <span>オーガニック栽培</span>
+          <span>手摘み収穫</span>
+          <span>農園から、あなたの元へ</span>
+        </div>
+        <NoteBox variant="todo">
+          <p>
+            Needed: which formats are sold (raw / roasted, shell-on / shelled), bag sizes, prices,
+            and whether orders ship beyond Panama or are pickup/on-site only.
+          </p>
+        </NoteBox>
+      </div>
+      <div>
+        <div class="story-img" style={`background-image:url(${macadamiaSplitImage.src})`} role="img" aria-label="収穫されたばかりのマカダミアナッツ" />
+      </div>
+    </Split>
+  </Section>
+
+  <Section label="ハーブティー" heading="二つのブレンド、農園で育て、農園で乾燥させて。">
+    <p>
+      農園で育つものから作られるハーブティーのブレンド——朝のブレンドと、夜のブレンド。それぞれの材料が気
+      になりますか？ 日誌には、これらのブレンドに使われるすべての植物について、その伝統的な使い方も含めた
+      詳しい記事があります。
+    </p>
+    <CardGrid cols={2}>
+      <TextCard title="朝のブレンド" eyebrow="ジアオグラン、イラクサ、ローズマリー">
+        <p>
+          農園で育て、乾燥させています。<a href="/ja/journal/jiaogulan/">ジアオグラン</a>、{' '}
+          <a href="/ja/journal/nettle/">イラクサ</a>、<a href="/ja/journal/rosemary/">ローズマリー</a>について
+          は、日誌でお読みいただけます。
+        </p>
+      </TextCard>
+      <TextCard title="夜のブレンド" eyebrow="ジアオグラン、イラクサ、バーベナ">
+        <p>
+          農園で育て、乾燥させています。<a href="/ja/journal/jiaogulan/">ジアオグラン</a>、{' '}
+          <a href="/ja/journal/nettle/">イラクサ</a>、<a href="/ja/journal/verbena/">バーベナ</a>については、
+          日誌でお読みいただけます。
+        </p>
+      </TextCard>
+    </CardGrid>
+    <NoteBox variant="todo">
+      <p>Needed: prices, package sizes, and whether these ship or are pickup/on-site only.</p>
+    </NoteBox>
+  </Section>
+
+  <Section label="保存食と発酵食品" heading="ジャム、スープ、そして乳酸発酵させた野菜。">
+    <p>菜園そのものの収穫から作られる、少量仕込みの保存食と、伝統的な乳酸発酵。</p>
+    <CardGrid>
+      <TextCard title="木立トマトのジャム" eyebrow="タマリロ">
+        <p>農園の木立トマトから作る、爽やかで少し酸味のあるジャム。</p>
+      </TextCard>
+      <TextCard title="イラクサのスープ" eyebrow="イラクサ">
+        <p>農園で育てた<a href="/ja/journal/nettle/">イラクサ</a>から作る、素朴で土の香りのするスープ。</p>
+      </TextCard>
+      <TextCard title="キムチと発酵食品" eyebrow="乳酸発酵">
+        <p>
+          私たちの「<a href="/ja/journal/garden-kimchi/">菜園のキムチ</a>」をはじめ、菜園から生まれるその
+          他の乳酸発酵野菜。
+        </p>
+      </TextCard>
+    </CardGrid>
+    <NoteBox variant="todo">
+      <p>
+        Needed: the rest of the preserves list, plus prices, jar/container sizes, and shipping vs.
+        pickup for this section.
+      </p>
+    </NoteBox>
+  </Section>
+
+  <Section label="菜園用肥料" heading="十八年の試行錯誤が、ひとつのブレンドに。">
+    <Split>
+      <div>
+        <p>
+          イラクサ、コンフリー、チトニアを発酵させて作る液体肥料（「プラン」）——この農園での十八年の栽培
+          を経て磨き上げられたブレンドです。菜園用にのみお使いください、食用ではありません。
+        </p>
+        <div class="amenity-list">
+          <span>イラクサ</span>
+          <span>コンフリー</span>
+          <span>チトニア</span>
+          <span>十八年をかけて</span>
+        </div>
+      </div>
+      <div>
+        <div class="story-img" style={`background-image:url(${fertilizerSplitImage.src})`} role="img" aria-label="オーガニック菜園で収穫された野菜" />
+      </div>
+    </Split>
+    <NoteBox variant="todo">
+      <p>Needed: prices, bottle/container sizes, and shipping vs. pickup for the fertilizer too.</p>
+    </NoteBox>
+  </Section>
+
+  <Section label="最新の収穫の様子を" heading="Instagramでフォローする。">
+    <p>
+      今の収穫の写真、商品の在庫状況、そして農園から届いたばかりの旬の恵みについては、Instagramでご覧いた
+      だけます。
+    </p>
+    <div class="contact-list">
+      <a href="https://www.instagram.com/wildonthefarm">Instagramの@wildonthefarm →</a>
+    </div>
+  </Section>
+
+  <Section label="ご注文方法" heading="直接メッセージをお送りください——オンライン決済はございません。">
+    <p>
+      ご希望の品をWhatsAppまたはメールでお知らせください。在庫状況、価格、そしてお受け取り方法について、
+      こちらからご案内いたします。
+    </p>
+  </Section>
+
+  <Fragment slot="footer">
+    <ReserveContactBlock label="ご注文" heading="ご注文は、お問い合わせから。" locale="ja" />
+  </Fragment>
+</PageLayout>

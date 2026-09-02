@@ -1,0 +1,107 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Section from '../../components/Section.astro';
+import PhotoGrid from '../../components/PhotoGrid.astro';
+import Split from '../../components/Split.astro';
+import NoteBox from '../../components/NoteBox.astro';
+import { img } from '../../lib/images';
+
+const heroImage = img('kitchen/dining_room.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+const gardenTeaserImage = img('garden/garden_view.jpg');
+const gardenTeaserOptimized = await getImage({ src: gardenTeaserImage, width: 800, format: 'webp' });
+
+const diningPhotos = [
+  { image: img('kitchen/dining_room.jpg'), alt: '食事の準備が整った、Wild on the Farmのダイニングルーム' },
+  { image: img('kitchen/dining_room_detail.jpg'), alt: 'ダイニングルームの木製家具のディテール' },
+];
+
+const kitchenPhotos = [
+  { image: img('kitchen/kitchen_wide.jpg'), alt: '農園の厨房を広く見渡す' },
+  { image: img('kitchen/cook_at_work.jpg'), alt: '農園の厨房で料理を仕込む料理人' },
+];
+
+const tablePhotos = [
+  { image: img('kitchen/table_guests_1.jpg'), alt: '共用の食卓で食事を分かち合うお客様たち' },
+  { image: img('kitchen/table_guests_2.jpg'), alt: '共用の食卓に共に座るお客様たち' },
+];
+
+const foodPhotos = [
+  { image: img('food/chicken_stew.jpg'), alt: '農園で育った野菜で作るチキンシチュー' },
+  { image: img('food/roasted_tomatoes.jpg'), alt: '菜園のトマトのロースト' },
+  { image: img('food/plated_dish.jpg'), alt: 'Wild on the Farmで供される一皿' },
+  { image: img('food/four_salads.jpg'), alt: '菜園の恵みで作る、四種の季節のサラダ' },
+  { image: img('food/salad_with_view.jpg'), alt: '雲霧林を望みながら味わう、摘みたてのサラダ' },
+];
+---
+
+<PageLayout
+  title="お料理 — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="パナマ、ボケテのWild on the Farmにある、実際に稼働する農園の厨房——段々畑の菜園で育つオーガニックの恵みを、シンプルに調理し、ひとつの長い食卓で分かち合う。"
+  path="/ja/food/"
+  image={ogImage.src}
+  pullIntro="ひとつの長い食卓を囲んで食事を分かち合うこと——言葉も文化も溶け合わせながら、人と人とのささやかで美しいひとときを紡ぐこと——それこそが、この山がもたらしてくれる最高の贈り物です。火はぱちぱちと爆ぜ、私たちが心を込めて作る料理は、楽しみと健康と多様性のあいだで、絶妙な均衡を保っています。イラクサとスベリヒユは、静かな力を秘めた、この上なく美味しいもの——その香りが厨房の扉から漂ってきた瞬間、きっとお分かりいただけるはずです。私は料理をすることが大好きです。私にとって、それは毎日新しい冒険——菜園と、その日の天気と、その朝ふと心に浮かんだひらめきによって形づくられていく冒険なのです。ここは、パチャパパの厨房……"
+  locale="ja"
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="Wild on the Farmのダイニングルーム" eyebrow="お料理">
+      パチャパパの料理。
+    </PageHero>
+  </Fragment>
+
+  <Section label="ダイニングルーム" heading="一日が、ここで終わる。">
+    <PhotoGrid items={diningPhotos} groupId="kitchen-dining" />
+  </Section>
+
+  <Section label="厨房" heading="小さく、本格的で、いつも動いている。">
+    <PhotoGrid items={kitchenPhotos} groupId="kitchen-kitchen" />
+  </Section>
+
+  <Section label="食卓を囲んで" heading="誰もが、共に食べる。">
+    <PhotoGrid items={tablePhotos} groupId="kitchen-table" />
+  </Section>
+
+  <Section label="私たちの菜園から" heading="オーガニックで、旬を味わう——コンロからほんの数歩。">
+    <p>
+      最後の鼓動まで脈打ち続けるその心臓は、十八年にわたる試行錯誤と経験を守り続けています。私たちが土を
+      養えば、土はその見返りに、命の力を宿した植物を育て、それをあなたのもとへと届けてくれます。それ以外
+      の道は、あなたの健康を損なうものでしかありません。
+    </p>
+    <Split>
+      <div class="story-img" style={`background-image:url(${gardenTeaserOptimized.src})`} role="img" aria-label="段々畑の菜園を見渡す眺め" />
+      <div>
+        <p>
+          菜園には、いま独自のページがあります——段々畑から食卓までを追った写真の数々と、その裏にあるパー
+          マカルチャーの物語を。
+        </p>
+        <p><a href="/ja/garden/"><strong>菜園を訪れる →</strong></a></p>
+      </div>
+    </Split>
+  </Section>
+
+  <Section label="私たちが作るもの" heading="シンプルな料理を、心と体を養うために。">
+    <p>
+      ここでの食事は、決まったメニューではなく、菜園に従います——その朝収穫できるものを中心に、体の温まる
+      シチュー、ローストした野菜、そして摘みたてのサラダが並びます。目指すのは、育った場所の味がする料理、
+      そしてお客様が到着したときよりも、よい心持ちで過ごしていただけること。
+    </p>
+    <PhotoGrid items={foodPhotos} groupId="kitchen-food" />
+    <NoteBox variant="todo">
+      <p>
+        Placeholder frame for the "cultures and health" angle — replace with real words on why we
+        grow and cook this way (organic practices, permaculture, health philosophy).
+      </p>
+    </NoteBox>
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">ご滞在の計画を</div>
+    <h2>もうお腹が空いてきましたか？</h2>
+    <div class="contact-list">
+      <a href="/ja/farm/">農園を見る →</a>
+      <a href="/ja/lodge/">ロッジを見る →</a>
+    </div>
+  </Fragment>
+</PageLayout>

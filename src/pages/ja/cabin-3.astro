@@ -1,0 +1,72 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Section from '../../components/Section.astro';
+import PhotoGrid from '../../components/PhotoGrid.astro';
+import NoteBox from '../../components/NoteBox.astro';
+import { img } from '../../lib/images';
+
+const heroImage = img('cabin3/hero.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const photos = [
+  { image: heroImage, alt: 'コテージ3の内部' },
+  { image: img('cabin3/gallery_1.jpg'), alt: 'コテージ3の、手彫りのヘッドボード' },
+  { image: img('cabin3/gallery_2.jpg'), alt: '手描きのアール・ヌーヴォー・タイルを施した、コテージ3のバスルーム' },
+  { image: img('cabin3/gallery_3.jpg'), alt: 'コテージ3の寝室のディテール' },
+  { image: img('cabin3/gallery_4.jpg'), alt: 'コテージ3の内部のディテール' },
+  { image: img('cabin3/gallery_5.jpg'), alt: 'コテージ3の、植物模様のリネン' },
+];
+
+const amenities = [
+  '専用のバスルーム',
+  '手描きのアール・ヌーヴォー・タイル',
+  '手彫りのヘッドボード',
+  '上質な寝具',
+  '緑の屋根',
+  'あえてWi-Fiもテレビも置いていません',
+];
+
+const reserveHref =
+  "https://api.whatsapp.com/send?phone=50765699134&text=%E3%81%93%E3%82%93%E3%81%AB%E3%81%A1%E3%81%AF%E3%80%81Wild%20on%20the%20Farm%E3%81%AE%E3%82%B3%E3%83%86%E3%83%BC%E3%82%B83%E3%82%92%E4%BA%88%E7%B4%84%E3%81%97%E3%81%9F%E3%81%84%E3%81%AE%E3%81%A7%E3%81%99%E3%81%8C%E3%80%82";
+---
+
+<PageLayout
+  title="コテージ3 — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Wild on the Farmのコテージ3：手彫りのヘッドボード、植物模様のファブリック、そして手描きのアール・ヌーヴォー・タイルを施したバスルーム。"
+  path="/ja/cabin-3/"
+  image={ogImage.src}
+  pullIntro="コテージ3は、細部にこだわり抜いた一棟です——手彫りの木製ヘッドボード、植物模様のリネン、そして床から天井まで手描きのアール・ヌーヴォー・タイルで彩られたバスルーム。三棟の中でもっとも装飾的でありながら、その静けさは少しも損なわれていません。"
+  locale="ja"
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="コテージ3の内部" eyebrow="ご滞在——コテージ3">
+      三棟の中で、もっとも精緻な一棟。
+    </PageHero>
+  </Fragment>
+
+  <Section label="隅々まで" heading="コテージ3のすべて。">
+    <PhotoGrid items={photos} groupId="cabin-3" />
+    <NoteBox variant="todo">
+      <p>No exterior or balcony shot identified for Cabin Three specifically yet.</p>
+    </NoteBox>
+  </Section>
+
+  <Section>
+    <div class="amenity-list">
+      {amenities.map((item) => <span>{item}</span>)}
+    </div>
+    <a href={reserveHref} class="btn btn-normal btn-spaced">コテージ3を予約する</a>
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">見比べる</div>
+    <h2>他のコテージも見る。</h2>
+    <div class="contact-list">
+      <a href="/ja/lodge/">すべてのコテージ →</a>
+      <a href="/ja/cabin-1/">コテージ1 →</a>
+      <a href="/ja/cabin-2/">コテージ2 →</a>
+    </div>
+  </Fragment>
+</PageLayout>

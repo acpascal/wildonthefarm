@@ -1,0 +1,61 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Section from '../../components/Section.astro';
+import PhotoGrid from '../../components/PhotoGrid.astro';
+import { img } from '../../lib/images';
+
+const heroImage = img('journal/macadamia/macadamia_permaculture_01.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const gardenPhotos = [
+  { image: heroImage, alt: 'マカダミアの木々の下に広がるパーマカルチャーの段々畑' },
+  { image: img('garden/garden_harvest.jpg'), alt: '菜園で摘みたての野菜が入ったかご' },
+  { image: img('garden/garden_artichokes.jpg'), alt: '段々畑で育つアーティチョーク' },
+  { image: img('garden/garden_chard.jpg'), alt: '菜園に並ぶスイスチャードの畝' },
+  { image: img('garden/garden_kale.jpg'), alt: '段々畑で育つケール' },
+  { image: img('garden/garden_rows.jpg'), alt: '段々畑に並ぶ野菜の畝' },
+  { image: img('garden/garden_terrace_trellis.jpg'), alt: '菜園の段々畑にあるトレリス（支柱棚）' },
+  { image: img('garden/garden_peas.jpg'), alt: '菜園で育つエンドウ豆のつる' },
+  { image: img('garden/garden_herb_bed.jpg'), alt: '菜園にある、石垣に囲まれたハーブ畑' },
+  { image: img('garden/garden_terraces_flowers.jpg'), alt: '花咲く菜園の段々畑' },
+];
+---
+
+<PageLayout
+  title="菜園 — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Wild on the Farm、Boquete Cloud Forest Lodgeの段々畑にあるオーガニック菜園——スイスチャード、ケール、フェンネル、アーティチョーク、そしてハーブの数々を、パナマの雲霧林にあるパーマカルチャー農園で、化学資材を一切使わずに育てています。"
+  path="/ja/garden/"
+  image={ogImage.src}
+  pullIntro="最後の鼓動まで脈打ち続けるその心臓は、十八年にわたる試行錯誤と経験を守り続けています。私たちが土を養えば、土はその見返りに、命の力を宿した植物を育て、それをあなたのもとへと届けてくれます。それ以外の道は、あなたの健康を損なうものでしかありません。"
+  locale="ja"
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="マカダミアの木々の下に広がるパーマカルチャーの段々畑" eyebrow="菜園">
+      オーガニックで、旬を味わう——コンロからほんの数歩。
+    </PageHero>
+  </Fragment>
+
+  <Section label="私たちの菜園から" heading="厨房の裏に広がる段々畑。">
+    <PhotoGrid items={gardenPhotos} groupId="garden" />
+  </Section>
+
+  <Section label="パーマカルチャーに根ざして" heading="マカダミアの木々を支えるのと、同じ原則。">
+    <p>
+      これらの段々畑は、農園の他の場所と同じ「外部資材ゼロ」の哲学のもとで営まれています——合成肥料も農薬
+      も使わず、あるのはコンポストと、自家製の発酵液肥、そして山に逆らうのではなく、山とともに歩んできた
+      十八年の歳月だけです。
+    </p>
+    <p><a href="/ja/journal/french-visionary-of-boquete/"><strong>農園のパーマカルチャーの物語を読む →</strong></a></p>
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">ご滞在の計画を</div>
+    <h2>すべての始まりの場所をご覧ください。</h2>
+    <div class="contact-list">
+      <a href="/ja/food/">お料理を見る →</a>
+      <a href="/ja/farm/">農園を見る →</a>
+    </div>
+  </Fragment>
+</PageLayout>
