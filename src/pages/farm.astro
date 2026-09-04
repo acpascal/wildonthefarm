@@ -11,7 +11,7 @@ import { img } from '../lib/images';
 const heroImage = img('farm/hero.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
 
-const permacultureImage = img('retreats/farm_animals.jpg');
+const permacultureImage = img('retreats/goats_permaculture_2.jpg');
 
 const galleryItems = [
   { image: img('farm/property_overview.jpg'), alt: 'Aerial view of the farm property in the cloud forest', size: 'lg' as const },
@@ -89,7 +89,7 @@ const galleryItems = [
       <div class="split-photo">
         <Image
           src={permacultureImage}
-          alt="Sheep and hens grazing together beneath the macadamia trees"
+          alt="Goats on the farm hillside, with Volcán Barú in the distance"
           widths={[400, 700, 1000]}
           sizes="(min-width: 860px) 50vw, 100vw"
           loading="lazy"
