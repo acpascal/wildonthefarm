@@ -7,7 +7,7 @@ import Split from '../components/Split.astro';
 import PhotoGrid from '../components/PhotoGrid.astro';
 import { img } from '../lib/images';
 
-const heroImage = img('cabin2/gallery_1.jpg');
+const heroImage = img('stay/hero_balcony_view.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
 
 const ownerHouseBanner = img('farm/overview_1.jpg');
@@ -69,7 +69,7 @@ const amenities = [
   <Fragment slot="hero">
     <PhotoHero
       image={heroImage}
-      alt="Cabin exterior grown into the cloud forest at Wild on the Farm"
+      alt="View from a cabin balcony over the living roofs and the Chiriquí valley"
       eyebrow="The Lodge"
     >
       <span class="hero-line">Suspended above the cloud forest,</span>
