@@ -7,7 +7,7 @@ import PhotoGrid from '../components/PhotoGrid.astro';
 import NoteBox from '../components/NoteBox.astro';
 import { img } from '../lib/images';
 
-const heroImage = img('cabin3/hero_view_2.jpg');
+const heroImage = img('cabin3/hero_view_3.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
 
 const photos = [
@@ -39,7 +39,7 @@ const reserveHref =
   pullIntro="Cabin Three leans into detail — a hand-carved wooden headboard, botanical linens, and a bathroom dressed floor to ceiling in hand-painted Art Nouveau tile. The most decorative of the three cabins, without losing any of the quiet."
 >
   <Fragment slot="hero">
-    <PageHero image={heroImage} alt="Cabin Three's living roof with a view of Volcán Barú" eyebrow="Stay — Cabin Three">
+    <PageHero image={heroImage} alt="Cabin Three's hand-carved headboard and botanical linens" eyebrow="Stay — Cabin Three">
       The most intricate of the three.
     </PageHero>
   </Fragment>
