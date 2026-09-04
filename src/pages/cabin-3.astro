@@ -4,7 +4,6 @@ import PageLayout from '../layouts/PageLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import Section from '../components/Section.astro';
 import PhotoGrid from '../components/PhotoGrid.astro';
-import NoteBox from '../components/NoteBox.astro';
 import { img } from '../lib/images';
 
 const heroImage = img('cabin3/hero_view_3.jpg');
@@ -16,6 +15,9 @@ const photos = [
   { image: img('cabin3/gallery_6.jpg'), alt: 'Cabin Three bedroom with wood stove and forest view' },
   { image: img('cabin3/gallery_7.jpg'), alt: 'Cabin Three hand-carved headboard detail' },
   { image: img('cabin3/gallery_8.jpg'), alt: 'Cabin Three wood stove' },
+  { image: img('cabin3/gallery_9.jpg'), alt: 'Cabin Three exterior with living roof, seen from the cloud forest above' },
+  { image: img('cabin3/gallery_10.jpg'), alt: 'Cabin Three living roof and wooden facade' },
+  { image: img('cabin3/gallery_11.jpg'), alt: 'Cabin Three bedroom with carved bed and patterned tile floor' },
 ];
 
 const amenities = [
@@ -46,9 +48,6 @@ const reserveHref =
 
   <Section label="Every Corner" heading="All of Cabin Three.">
     <PhotoGrid items={photos} groupId="cabin-3" />
-    <NoteBox variant="todo">
-      <p>No exterior or balcony shot identified for Cabin Three specifically yet.</p>
-    </NoteBox>
   </Section>
 
   <Section>
