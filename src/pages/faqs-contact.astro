@@ -34,6 +34,19 @@ const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
     </div>
   </Section>
 
+  <Section label="Book Your Stay" heading="Check availability and book directly.">
+    <div id="apartmentIframeAll">
+      <script is:inline type="text/javascript" src="https://login.smoobu.com/js/Settings/BookingToolIframe.js"></script>
+      <script is:inline>
+        BookingToolIframe.initialize({
+          url: 'https://login.smoobu.com/en/booking-tool/iframe/1880246',
+          baseUrl: 'https://login.smoobu.com',
+          target: '#apartmentIframeAll',
+        });
+      </script>
+    </div>
+  </Section>
+
   <Section label="Frequently Asked Questions" heading="Before you book.">
     <CardGrid cols={2}>
       <TextCard lite title="How do I get to the farm?">
