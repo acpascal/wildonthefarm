@@ -8,12 +8,30 @@ interface Props extends PageSeo {
   locale?: Locale;
   /** Italic centered lede paragraph shown right below the hero, if any. */
   pullIntro?: string;
+  /** Overrides for the footer's ReserveContactBlock — use when the default
+   *  "Reserve" copy would repeat something already said on the page. */
+  reserveLabel?: string;
+  reserveHeading?: string;
+  reserveDescription?: string;
 }
 
-const { locale = defaultLocale, pullIntro, ...seo } = Astro.props;
+const {
+  locale = defaultLocale,
+  pullIntro,
+  reserveLabel,
+  reserveHeading,
+  reserveDescription,
+  ...seo
+} = Astro.props;
 ---
 
-<BaseLayout locale={locale} {...seo}>
+<BaseLayout
+  locale={locale}
+  reserveLabel={reserveLabel}
+  reserveHeading={reserveHeading}
+  reserveDescription={reserveDescription}
+  {...seo}
+>
   <slot name="hero" />
   {pullIntro && <PullIntro>{pullIntro}</PullIntro>}
   <slot />

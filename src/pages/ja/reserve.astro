@@ -1,0 +1,53 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Section from '../../components/Section.astro';
+import { img } from '../../lib/images';
+import { pageHref } from '../../data/pageTranslations';
+
+const heroImage = img('farm/property_overview.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+const faqHref = pageHref('faq', 'ja');
+---
+
+<PageLayout
+  title="ご予約 — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Wild on the Farmでのご滞在の空室状況の確認とご予約はオンラインで直接、またはWhatsAppやメールでもお問い合わせいただけます。"
+  path="/ja/reserve/"
+  image={ogImage.src}
+  locale="ja"
+  reserveLabel="お問い合わせ"
+  reserveHeading="メールよりも、WhatsAppの方が早くお返事できます。"
+  reserveDescription=""
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="農園の敷地を空から望む" eyebrow="ご宿泊のご予約">
+      雲の彼方へ、静かな旅の計画を。
+    </PageHero>
+  </Fragment>
+
+  <Section heading="空室状況を確認し、直接ご予約いただけます。">
+    <div id="apartmentIframeAll">
+      <script is:inline type="text/javascript" src="https://login.smoobu.com/js/Settings/BookingToolIframe.js"></script>
+      <script is:inline>
+        BookingToolIframe.initialize({
+          url: 'https://login.smoobu.com/en/booking-tool/iframe/1880246',
+          baseUrl: 'https://login.smoobu.com',
+          target: '#apartmentIframeAll',
+        });
+      </script>
+    </div>
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">関連リンク</div>
+    <h2>ご予約の前に、もっと見る。</h2>
+    <div class="contact-list">
+      <a href={faqHref}>よくあるご質問 →</a>
+      <a href={pageHref('cabin-1', 'ja')}>コテージ1 →</a>
+      <a href={pageHref('cabin-2', 'ja')}>コテージ2 →</a>
+      <a href={pageHref('cabin-3', 'ja')}>コテージ3 →</a>
+    </div>
+  </Fragment>
+</PageLayout>

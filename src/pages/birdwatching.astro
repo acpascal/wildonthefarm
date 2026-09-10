@@ -6,7 +6,6 @@ import Section from '../components/Section.astro';
 import Split from '../components/Split.astro';
 import CardGrid from '../components/CardGrid.astro';
 import ImageTextCard from '../components/ImageTextCard.astro';
-import NoteBox from '../components/NoteBox.astro';
 import { img } from '../lib/images';
 
 const heroImage = img('birds/bird_00.jpg');
@@ -100,13 +99,6 @@ const species = [
         </ImageTextCard>
       ))}
     </CardGrid>
-    <NoteBox variant="todo">
-      <p>
-        Species are identified from source filenames, trusted as accurate. A handful of additional
-        photos couldn't be confidently identified and aren't included yet — worth a second pass if
-        an ID becomes available.
-      </p>
-    </NoteBox>
   </Section>
 
   <Fragment slot="footer">

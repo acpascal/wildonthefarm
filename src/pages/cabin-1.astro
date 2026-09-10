@@ -4,8 +4,8 @@ import PageLayout from '../layouts/PageLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import Section from '../components/Section.astro';
 import PhotoGrid from '../components/PhotoGrid.astro';
-import NoteBox from '../components/NoteBox.astro';
 import { img } from '../lib/images';
+import { pageHref } from '../data/pageTranslations';
 
 const heroImage = img('cabin1/hero.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
@@ -26,8 +26,7 @@ const amenities = [
   'No Wi-Fi or TV, by design',
 ];
 
-const reserveHref =
-  "https://api.whatsapp.com/send?phone=50765699134&text=Hi%2C%20I%27d%20like%20to%20reserve%20Cabin%201%20at%20Wild%20on%20the%20Farm";
+const reserveHref = pageHref('reserve', 'en');
 ---
 
 <PageLayout
@@ -45,9 +44,6 @@ const reserveHref =
 
   <Section label="Every Corner" heading="All of Cabin One.">
     <PhotoGrid items={photos} groupId="cabin-1" />
-    <NoteBox variant="todo">
-      <p>This cabin is missing a bedroom photo and a clearly-identified exterior shot.</p>
-    </NoteBox>
   </Section>
 
   <Section>
@@ -69,6 +65,7 @@ const reserveHref =
       </div>
       <script is:inline type="text/javascript" src="https://login.smoobu.com/js/Apartment/CalendarWidget.js"></script>
     </div>
+    <p>Not available? Try <a href="/cabin-2/">Cabin Two</a> or <a href="/cabin-3/">Cabin Three</a>.</p>
   </Section>
 
   <Fragment slot="footer">

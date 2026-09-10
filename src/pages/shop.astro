@@ -6,7 +6,6 @@ import Section from '../components/Section.astro';
 import Split from '../components/Split.astro';
 import CardGrid from '../components/CardGrid.astro';
 import TextCard from '../components/TextCard.astro';
-import NoteBox from '../components/NoteBox.astro';
 import ReserveContactBlock from '../components/ReserveContactBlock.astro';
 import { img } from '../lib/images';
 
@@ -42,12 +41,6 @@ const fertilizerSplitImage = await getImage({ src: img('garden/garden_harvest.jp
           <span>Hand-harvested</span>
           <span>From the farm to your door</span>
         </div>
-        <NoteBox variant="todo">
-          <p>
-            Needed: which formats are sold (raw / roasted, shell-on / shelled), bag sizes, prices,
-            and whether orders ship beyond Panama or are pickup/on-site only.
-          </p>
-        </NoteBox>
       </div>
       <div>
         <div class="story-img" style={`background-image:url(${macadamiaSplitImage.src})`} role="img" aria-label="Freshly harvested macadamia nuts" />
@@ -77,9 +70,6 @@ const fertilizerSplitImage = await getImage({ src: img('garden/garden_harvest.jp
         </p>
       </TextCard>
     </CardGrid>
-    <NoteBox variant="todo">
-      <p>Needed: prices, package sizes, and whether these ship or are pickup/on-site only.</p>
-    </NoteBox>
   </Section>
 
   <Section label="Preserves & Ferments" heading="Jams, soups, and lacto-fermented vegetables.">
@@ -98,12 +88,6 @@ const fertilizerSplitImage = await getImage({ src: img('garden/garden_harvest.jp
         </p>
       </TextCard>
     </CardGrid>
-    <NoteBox variant="todo">
-      <p>
-        Needed: the rest of the preserves list, plus prices, jar/container sizes, and shipping vs.
-        pickup for this section.
-      </p>
-    </NoteBox>
   </Section>
 
   <Section label="Garden Fertilizer" heading="18 years of experimenting, in one blend.">
@@ -125,9 +109,6 @@ const fertilizerSplitImage = await getImage({ src: img('garden/garden_harvest.jp
         <div class="story-img" style={`background-image:url(${fertilizerSplitImage.src})`} role="img" aria-label="Harvested vegetables from the organic garden" />
       </div>
     </Split>
-    <NoteBox variant="todo">
-      <p>Needed: prices, bottle/container sizes, and shipping vs. pickup for the fertilizer too.</p>
-    </NoteBox>
   </Section>
 
   <Section label="See The Latest Harvest" heading="Follow along on Instagram.">

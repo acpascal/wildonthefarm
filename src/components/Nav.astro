@@ -16,7 +16,7 @@ interface Props {
 const { locale = defaultLocale, alternates } = Astro.props;
 const t = useTranslations(locale);
 const home = pageHref('home', locale);
-const contactHref = pageHref('faqs-contact', locale);
+const reserveHref = pageHref('reserve', locale);
 const resolveHref = (item: NavLink) => (item.pageId ? pageHref(item.pageId, locale) : item.href ?? '#');
 const currentPath = Astro.url.pathname;
 const isCurrent = (item: NavLink) => resolveHref(item) === currentPath;
@@ -94,7 +94,7 @@ const taglineWords = business.tagline.split(' ');
       <LanguageSwitcher locale={locale} alternates={alternates} />
     </div>
 
-    <a href={contactHref} class="btn btn-normal nav-reserve">{t('nav.reserve')}</a>
+    <a href={reserveHref} class="btn btn-normal nav-reserve">{t('nav.reserve')}</a>
   </div>
 </nav>
 

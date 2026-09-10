@@ -5,7 +5,6 @@ import PageHero from '../../components/PageHero.astro';
 import Section from '../../components/Section.astro';
 import PhotoGrid from '../../components/PhotoGrid.astro';
 import Split from '../../components/Split.astro';
-import NoteBox from '../../components/NoteBox.astro';
 import { img } from '../../lib/images';
 
 const heroImage = img('kitchen/dining_room.jpg');
@@ -88,12 +87,6 @@ const foodPhotos = [
       そしてお客様が到着したときよりも、よい心持ちで過ごしていただけること。
     </p>
     <PhotoGrid items={foodPhotos} groupId="kitchen-food" />
-    <NoteBox variant="todo">
-      <p>
-        Placeholder frame for the "cultures and health" angle — replace with real words on why we
-        grow and cook this way (organic practices, permaculture, health philosophy).
-      </p>
-    </NoteBox>
   </Section>
 
   <Fragment slot="footer">

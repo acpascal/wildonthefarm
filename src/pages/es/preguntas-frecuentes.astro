@@ -5,35 +5,25 @@ import PageHero from '../../components/PageHero.astro';
 import Section from '../../components/Section.astro';
 import CardGrid from '../../components/CardGrid.astro';
 import TextCard from '../../components/TextCard.astro';
-import NoteBox from '../../components/NoteBox.astro';
-import { business } from '../../data/business';
 import { img } from '../../lib/images';
-import { mailtoHref } from '../../i18n/utils';
 
 const heroImage = img('farm/property_overview.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
 ---
 
 <PageLayout
-  title="Preguntas Frecuentes y Contacto — Wild on the Farm | Boquete Cloud Forest Lodge"
-  description="Respuestas a preguntas comunes sobre alojarse en Wild on the Farm, Boquete Cloud Forest Lodge, y cómo contactarnos directamente."
-  path="/es/preguntas-contacto/"
+  title="Preguntas Frecuentes — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Respuestas a preguntas comunes sobre alojarse en Wild on the Farm, Boquete Cloud Forest Lodge."
+  path="/es/preguntas-frecuentes/"
   image={ogImage.src}
   pullIntro="Todo lo que los huéspedes suelen preguntar antes de llegar — y si no está aquí, simplemente escríbenos directamente."
   locale="es"
 >
   <Fragment slot="hero">
     <PageHero image={heroImage} alt="Vista aérea de la propiedad de la finca" eyebrow="Planifica Tu Estancia">
-      Preguntas, respondidas. Y cómo contactarnos.
+      Preguntas, respondidas.
     </PageHero>
   </Fragment>
-
-  <Section label="Ponte En Contacto" heading="Respondemos WhatsApp más rápido que el correo.">
-    <div class="contact-list contact-list-lg">
-      <a href={business.whatsappHref}>{business.phone} (WhatsApp)</a>
-      <a href={mailtoHref(business.email, 'es')}>{business.email}</a>
-    </div>
-  </Section>
 
   <Section label="Preguntas Frecuentes" heading="Antes de reservar.">
     <CardGrid cols={2}>
@@ -139,12 +129,6 @@ const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
         </p>
       </TextCard>
       <TextCard lite title="¿Qué métodos de pago aceptan?">
-        <NoteBox variant="todo">
-          <p>
-            Accepted payment methods not yet decided — cash, transfer, card, deposit vs. balance
-            on arrival, etc.
-          </p>
-        </NoteBox>
       </TextCard>
     </CardGrid>
 
@@ -165,6 +149,7 @@ const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
     <h2>Con gusto lo conversamos.</h2>
     <p>Escríbenos directamente y te ayudaremos a planificar tu estancia, lo que sea que aún no esté claro.</p>
     <div class="contact-list">
+      <a href="/es/contacto/">Contáctanos →</a>
       <a href="/es/tarifas-y-retiros/">Tarifas y Retiros →</a>
       <a href="/es/lodge/">Ver Las Cabañas →</a>
     </div>

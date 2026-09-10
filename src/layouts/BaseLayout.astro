@@ -9,9 +9,18 @@ import { pageAlternatesForPath } from '../data/pageTranslations';
 
 interface Props extends PageSeo {
   locale?: Locale;
+  reserveLabel?: string;
+  reserveHeading?: string;
+  reserveDescription?: string;
 }
 
-const { locale = defaultLocale, ...seo } = Astro.props;
+const {
+  locale = defaultLocale,
+  reserveLabel,
+  reserveHeading,
+  reserveDescription,
+  ...seo
+} = Astro.props;
 // Explicit `alternates` (e.g. a journal article's per-entry translations)
 // wins; otherwise derive it from `path` so a page can never forget to wire
 // up its own language switcher.
@@ -28,11 +37,11 @@ const alternates = seo.alternates ?? pageAlternatesForPath(seo.path);
     <slot />
     {
       Astro.slots.has('footer') ? (
-        <Footer locale={locale}>
+        <Footer locale={locale} reserveLabel={reserveLabel} reserveHeading={reserveHeading} reserveDescription={reserveDescription}>
           <slot name="footer" />
         </Footer>
       ) : (
-        <Footer locale={locale} />
+        <Footer locale={locale} reserveLabel={reserveLabel} reserveHeading={reserveHeading} reserveDescription={reserveDescription} />
       )
     }
     <script>

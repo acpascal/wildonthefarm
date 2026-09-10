@@ -1,0 +1,62 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Section from '../../components/Section.astro';
+import { business } from '../../data/business';
+import { img } from '../../lib/images';
+import { mailtoHref } from '../../i18n/utils';
+
+const heroImage = img('farm/property_overview.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+---
+
+<PageLayout
+  title="お問い合わせ — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Wild on the Farm、Boquete Cloud Forest LodgeへのWhatsAppまたはメールでの直接のお問い合わせ方法。"
+  path="/ja/contact/"
+  image={ogImage.src}
+  pullIntro="よくあるご質問に載っていないことがあれば、どうぞ直接お問い合わせください。"
+  locale="ja"
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="農園の敷地を空から望む" eyebrow="お問い合わせ">
+      私たちへの連絡方法。
+    </PageHero>
+  </Fragment>
+
+  <Section label="お問い合わせ" heading="メールよりも、WhatsAppの方が早くお返事できます。">
+    <div class="contact-list contact-list-lg">
+      <a href={business.whatsappHref}>{business.phone} (WhatsApp)</a>
+      <a href={mailtoHref(business.email, 'ja')}>{business.email}</a>
+    </div>
+  </Section>
+
+  <Section label="私たちの場所" heading="ボケテでの当農園の場所。">
+    <div class="map-embed">
+      <iframe
+        title="Wild on the Farmの所在地（Googleマップ）"
+        width="100%"
+        height="450"
+        style="border:0"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="strict-origin-when-cross-origin"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3942.6012169702753!2d-82.45058332498353!3d8.823481391229862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa5edd18b24f369%3A0x11b58604931f7e19!2sWild%20on%20the%20farm!5e0!3m2!1sfr!2spa!4v1787767091890!5m2!1sfr!2spa"
+      />
+    </div>
+    <div class="contact-list">
+      <a href="https://www.google.com/maps?cid=1276073423635709465">Googleでの口コミを見る →</a>
+    </div>
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">お問い合わせの前に</div>
+    <h2>よくあるご質問もご確認ください。</h2>
+    <div class="contact-list">
+      <a href="/ja/faq/">よくあるご質問 →</a>
+      <a href="/ja/rates-retreats/">料金・リトリート →</a>
+      <a href="/ja/lodge/">コテージを見る →</a>
+    </div>
+  </Fragment>
+</PageLayout>

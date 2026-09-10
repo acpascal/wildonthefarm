@@ -6,7 +6,6 @@ import Section from '../../components/Section.astro';
 import Split from '../../components/Split.astro';
 import CardGrid from '../../components/CardGrid.astro';
 import TextCard from '../../components/TextCard.astro';
-import NoteBox from '../../components/NoteBox.astro';
 import ReserveContactBlock from '../../components/ReserveContactBlock.astro';
 import { img } from '../../lib/images';
 
@@ -42,12 +41,6 @@ const fertilizerSplitImage = await getImage({ src: img('garden/garden_harvest.jp
           <span>手摘み収穫</span>
           <span>農園から、あなたの元へ</span>
         </div>
-        <NoteBox variant="todo">
-          <p>
-            Needed: which formats are sold (raw / roasted, shell-on / shelled), bag sizes, prices,
-            and whether orders ship beyond Panama or are pickup/on-site only.
-          </p>
-        </NoteBox>
       </div>
       <div>
         <div class="story-img" style={`background-image:url(${macadamiaSplitImage.src})`} role="img" aria-label="収穫されたばかりのマカダミアナッツ" />
@@ -77,9 +70,6 @@ const fertilizerSplitImage = await getImage({ src: img('garden/garden_harvest.jp
         </p>
       </TextCard>
     </CardGrid>
-    <NoteBox variant="todo">
-      <p>Needed: prices, package sizes, and whether these ship or are pickup/on-site only.</p>
-    </NoteBox>
   </Section>
 
   <Section label="保存食と発酵食品" heading="ジャム、スープ、そして乳酸発酵させた野菜。">
@@ -98,12 +88,6 @@ const fertilizerSplitImage = await getImage({ src: img('garden/garden_harvest.jp
         </p>
       </TextCard>
     </CardGrid>
-    <NoteBox variant="todo">
-      <p>
-        Needed: the rest of the preserves list, plus prices, jar/container sizes, and shipping vs.
-        pickup for this section.
-      </p>
-    </NoteBox>
   </Section>
 
   <Section label="菜園用肥料" heading="十八年の試行錯誤が、ひとつのブレンドに。">
@@ -124,9 +108,6 @@ const fertilizerSplitImage = await getImage({ src: img('garden/garden_harvest.jp
         <div class="story-img" style={`background-image:url(${fertilizerSplitImage.src})`} role="img" aria-label="オーガニック菜園で収穫された野菜" />
       </div>
     </Split>
-    <NoteBox variant="todo">
-      <p>Needed: prices, bottle/container sizes, and shipping vs. pickup for the fertilizer too.</p>
-    </NoteBox>
   </Section>
 
   <Section label="最新の収穫の様子を" heading="Instagramでフォローする。">

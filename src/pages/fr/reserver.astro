@@ -1,0 +1,53 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Section from '../../components/Section.astro';
+import { img } from '../../lib/images';
+import { pageHref } from '../../data/pageTranslations';
+
+const heroImage = img('farm/property_overview.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+const faqHref = pageHref('faq', 'fr');
+---
+
+<PageLayout
+  title="Réserver — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Consultez les disponibilités et réservez votre séjour à Wild on the Farm directement, ou contactez-nous par WhatsApp ou e-mail pour organiser votre visite."
+  path="/fr/reserver/"
+  image={ogImage.src}
+  locale="fr"
+  reserveLabel="Contact"
+  reserveHeading="Nous répondons plus vite sur WhatsApp que par e-mail."
+  reserveDescription=""
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="Vue aérienne de la propriété" eyebrow="Réservez Votre Séjour">
+      Planifiez votre évasion dans les nuages.
+    </PageHero>
+  </Fragment>
+
+  <Section heading="Consultez les disponibilités et réservez directement.">
+    <div id="apartmentIframeAll">
+      <script is:inline type="text/javascript" src="https://login.smoobu.com/js/Settings/BookingToolIframe.js"></script>
+      <script is:inline>
+        BookingToolIframe.initialize({
+          url: 'https://login.smoobu.com/en/booking-tool/iframe/1880246',
+          baseUrl: 'https://login.smoobu.com',
+          target: '#apartmentIframeAll',
+        });
+      </script>
+    </div>
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">Liens Rapides</div>
+    <h2>Explorez davantage avant de réserver.</h2>
+    <div class="contact-list">
+      <a href={faqHref}>FAQ →</a>
+      <a href={pageHref('cabin-1', 'fr')}>Cabane Un →</a>
+      <a href={pageHref('cabin-2', 'fr')}>Cabane Deux →</a>
+      <a href={pageHref('cabin-3', 'fr')}>Cabane Trois →</a>
+    </div>
+  </Fragment>
+</PageLayout>

@@ -1,0 +1,52 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../layouts/PageLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Section from '../components/Section.astro';
+import { img } from '../lib/images';
+import { pageHref } from '../data/pageTranslations';
+
+const heroImage = img('farm/property_overview.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+const faqHref = pageHref('faq', 'en');
+---
+
+<PageLayout
+  title="Reserve — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Check availability and book your stay at Wild on the Farm directly, or reach out by WhatsApp or email to plan your visit."
+  path="/reserve/"
+  image={ogImage.src}
+  reserveLabel="Contact"
+  reserveHeading="We answer WhatsApp faster than email."
+  reserveDescription=""
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="Aerial view of the farm property" eyebrow="Book Your Stay">
+      Plan your escape into the clouds.
+    </PageHero>
+  </Fragment>
+
+  <Section heading="Check availability and book directly.">
+    <div id="apartmentIframeAll">
+      <script is:inline type="text/javascript" src="https://login.smoobu.com/js/Settings/BookingToolIframe.js"></script>
+      <script is:inline>
+        BookingToolIframe.initialize({
+          url: 'https://login.smoobu.com/en/booking-tool/iframe/1880246',
+          baseUrl: 'https://login.smoobu.com',
+          target: '#apartmentIframeAll',
+        });
+      </script>
+    </div>
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">Quick Links</div>
+    <h2>Explore more before you book.</h2>
+    <div class="contact-list">
+      <a href={faqHref}>FAQs →</a>
+      <a href={pageHref('cabin-1', 'en')}>Cabin One →</a>
+      <a href={pageHref('cabin-2', 'en')}>Cabin Two →</a>
+      <a href={pageHref('cabin-3', 'en')}>Cabin Three →</a>
+    </div>
+  </Fragment>
+</PageLayout>

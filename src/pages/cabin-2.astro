@@ -5,6 +5,7 @@ import PageHero from '../components/PageHero.astro';
 import Section from '../components/Section.astro';
 import PhotoGrid from '../components/PhotoGrid.astro';
 import { img } from '../lib/images';
+import { pageHref } from '../data/pageTranslations';
 
 const heroImage = img('cabin2/hero.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
@@ -30,8 +31,7 @@ const amenities = [
   'No Wi-Fi or TV, by design',
 ];
 
-const reserveHref =
-  "https://api.whatsapp.com/send?phone=50765699134&text=Hi%2C%20I%27d%20like%20to%20reserve%20Cabin%202%20at%20Wild%20on%20the%20Farm";
+const reserveHref = pageHref('reserve', 'en');
 ---
 
 <PageLayout
@@ -70,6 +70,7 @@ const reserveHref =
       </div>
       <script is:inline type="text/javascript" src="https://login.smoobu.com/js/Apartment/CalendarWidget.js"></script>
     </div>
+    <p>Not available? Try <a href="/cabin-1/">Cabin One</a> or <a href="/cabin-3/">Cabin Three</a>.</p>
   </Section>
 
   <Fragment slot="footer">

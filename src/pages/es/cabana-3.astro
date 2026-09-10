@@ -4,8 +4,8 @@ import PageLayout from '../../layouts/PageLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import Section from '../../components/Section.astro';
 import PhotoGrid from '../../components/PhotoGrid.astro';
-import NoteBox from '../../components/NoteBox.astro';
 import { img } from '../../lib/images';
+import { pageHref } from '../../data/pageTranslations';
 
 const heroImage = img('cabin3/hero.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
@@ -28,8 +28,7 @@ const amenities = [
   'Sin wifi ni TV, por diseño',
 ];
 
-const reserveHref =
-  "https://api.whatsapp.com/send?phone=50765699134&text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20la%20Caba%C3%B1a%203%20en%20Wild%20on%20the%20Farm";
+const reserveHref = pageHref('reserve', 'es');
 ---
 
 <PageLayout
@@ -48,9 +47,6 @@ const reserveHref =
 
   <Section label="Cada Rincón" heading="Toda la Cabaña Tres.">
     <PhotoGrid items={photos} groupId="cabin-3" />
-    <NoteBox variant="todo">
-      <p>No exterior or balcony shot identified for Cabin Three specifically yet.</p>
-    </NoteBox>
   </Section>
 
   <Section>

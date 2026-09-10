@@ -5,35 +5,25 @@ import PageHero from '../../components/PageHero.astro';
 import Section from '../../components/Section.astro';
 import CardGrid from '../../components/CardGrid.astro';
 import TextCard from '../../components/TextCard.astro';
-import NoteBox from '../../components/NoteBox.astro';
-import { business } from '../../data/business';
 import { img } from '../../lib/images';
-import { mailtoHref } from '../../i18n/utils';
 
 const heroImage = img('farm/property_overview.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
 ---
 
 <PageLayout
-  title="よくある質問・お問い合わせ — Wild on the Farm | Boquete Cloud Forest Lodge"
-  description="Wild on the Farm、Boquete Cloud Forest Lodgeでのご滞在に関するよくあるご質問への回答と、直接のお問い合わせ方法。"
-  path="/ja/faqs-contact/"
+  title="よくあるご質問 — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Wild on the Farm、Boquete Cloud Forest Lodgeでのご滞在に関するよくあるご質問への回答。"
+  path="/ja/faq/"
   image={ogImage.src}
   pullIntro="ご到着前によく寄せられるご質問のすべて——ここに載っていないことがあれば、どうぞ直接お問い合わせください。"
   locale="ja"
 >
   <Fragment slot="hero">
     <PageHero image={heroImage} alt="農園の敷地を空から望む" eyebrow="ご滞在の計画を">
-      ご質問への答えと、私たちへの連絡方法。
+      ご質問への答え。
     </PageHero>
   </Fragment>
-
-  <Section label="お問い合わせ" heading="メールよりも、WhatsAppの方が早くお返事できます。">
-    <div class="contact-list contact-list-lg">
-      <a href={business.whatsappHref}>{business.phone} (WhatsApp)</a>
-      <a href={mailtoHref(business.email, 'ja')}>{business.email}</a>
-    </div>
-  </Section>
 
   <Section label="よくあるご質問" heading="ご予約の前に。">
     <CardGrid cols={2}>
@@ -130,12 +120,6 @@ const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
         </p>
       </TextCard>
       <TextCard lite title="どのようなお支払い方法に対応していますか？">
-        <NoteBox variant="todo">
-          <p>
-            Accepted payment methods not yet decided — cash, transfer, card, deposit vs. balance
-            on arrival, etc.
-          </p>
-        </NoteBox>
       </TextCard>
     </CardGrid>
 
@@ -155,6 +139,7 @@ const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
     <h2>どんなことでも、喜んでお話しします。</h2>
     <p>直接お問い合わせください。まだ分からないことがあれば、ご滞在の計画をお手伝いします。</p>
     <div class="contact-list">
+      <a href="/ja/contact/">お問い合わせ →</a>
       <a href="/ja/rates-retreats/">料金・リトリート →</a>
       <a href="/ja/lodge/">コテージを見る →</a>
     </div>

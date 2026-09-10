@@ -5,6 +5,7 @@ import PageHero from '../../components/PageHero.astro';
 import Section from '../../components/Section.astro';
 import PhotoGrid from '../../components/PhotoGrid.astro';
 import { img } from '../../lib/images';
+import { pageHref } from '../../data/pageTranslations';
 
 const heroImage = img('cabin2/hero.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
@@ -30,8 +31,7 @@ const amenities = [
   'Pas de Wi-Fi ni de télévision, par choix',
 ];
 
-const reserveHref =
-  "https://api.whatsapp.com/send?phone=50765699134&text=Bonjour%2C%20je%20souhaiterais%20r%C3%A9server%20la%20Cabane%202%20%C3%A0%20Wild%20on%20the%20Farm";
+const reserveHref = pageHref('reserve', 'fr');
 ---
 
 <PageLayout

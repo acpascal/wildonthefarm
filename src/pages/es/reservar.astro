@@ -1,0 +1,53 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import Section from '../../components/Section.astro';
+import { img } from '../../lib/images';
+import { pageHref } from '../../data/pageTranslations';
+
+const heroImage = img('farm/property_overview.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+const faqHref = pageHref('faq', 'es');
+---
+
+<PageLayout
+  title="Reservar — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Consulta disponibilidad y reserva tu estancia en Wild on the Farm directamente, o contáctanos por WhatsApp o correo para planificar tu visita."
+  path="/es/reservar/"
+  image={ogImage.src}
+  locale="es"
+  reserveLabel="Contacto"
+  reserveHeading="Respondemos WhatsApp más rápido que el correo."
+  reserveDescription=""
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="Vista aérea de la propiedad de la finca" eyebrow="Reserva Tu Estancia">
+      Planifica tu escape hacia las nubes.
+    </PageHero>
+  </Fragment>
+
+  <Section heading="Consulta disponibilidad y reserva directamente.">
+    <div id="apartmentIframeAll">
+      <script is:inline type="text/javascript" src="https://login.smoobu.com/js/Settings/BookingToolIframe.js"></script>
+      <script is:inline>
+        BookingToolIframe.initialize({
+          url: 'https://login.smoobu.com/en/booking-tool/iframe/1880246',
+          baseUrl: 'https://login.smoobu.com',
+          target: '#apartmentIframeAll',
+        });
+      </script>
+    </div>
+  </Section>
+
+  <Fragment slot="footer">
+    <div class="section-label">Enlaces Rápidos</div>
+    <h2>Explora más antes de reservar.</h2>
+    <div class="contact-list">
+      <a href={faqHref}>Preguntas Frecuentes →</a>
+      <a href={pageHref('cabin-1', 'es')}>Cabaña Uno →</a>
+      <a href={pageHref('cabin-2', 'es')}>Cabaña Dos →</a>
+      <a href={pageHref('cabin-3', 'es')}>Cabaña Tres →</a>
+    </div>
+  </Fragment>
+</PageLayout>

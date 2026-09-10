@@ -87,9 +87,12 @@
   status = 301
   force = true
 
+# --- EN: the old combined FAQs & Contact page was split into /faq/ and
+# /contact/ — /faq/ is now itself a real page (its old Next.js slug happens
+# to match), so this old v3 page URL redirects to it. ---
 [[redirects]]
-  from = "/faq/"
-  to = "/faqs-contact/"
+  from = "/faqs-contact/"
+  to = "/faq/"
   status = 301
   force = true
 
@@ -169,9 +172,13 @@
   status = 301
   force = true
 
+# --- ES: the old combined page was split into /es/preguntas-frecuentes/
+# and /es/contacto/ — /es/preguntas-frecuentes/ is now itself a real page
+# (its old Next.js slug happens to match), so this old v3 page URL
+# redirects to it. ---
 [[redirects]]
-  from = "/es/preguntas-frecuentes/"
-  to = "/es/preguntas-contacto/"
+  from = "/es/preguntas-contacto/"
+  to = "/es/preguntas-frecuentes/"
   status = 301
   force = true
 
@@ -249,7 +256,14 @@
 
 [[redirects]]
   from = "/fr/qfp/"
-  to = "/fr/faq-contact/"
+  to = "/fr/faq/"
+  status = 301
+  force = true
+
+# --- FR: the old combined page was split into /fr/faq/ and /fr/contact/. ---
+[[redirects]]
+  from = "/fr/faq-contact/"
+  to = "/fr/faq/"
   status = 301
   force = true
 
@@ -294,5 +308,12 @@
 [[redirects]]
   from = "/fr/blog/romarin-bienfaits-proprietes/"
   to = "/journal/rosemary/"
+  status = 301
+  force = true
+
+# --- JA: the old combined page was split into /ja/faq/ and /ja/contact/. ---
+[[redirects]]
+  from = "/ja/faqs-contact/"
+  to = "/ja/faq/"
   status = 301
   force = true

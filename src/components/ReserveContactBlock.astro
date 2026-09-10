@@ -13,7 +13,7 @@ interface Props {
 
 const { locale = defaultLocale, heading, label, description } = Astro.props;
 const t = useTranslations(locale);
-const faqsHref = pageHref('faqs-contact', locale);
+const contactHref = pageHref('contact', locale);
 ---
 
 <div class="section-label">{label ?? t('nav.reserve')}</div>
@@ -22,5 +22,5 @@ const faqsHref = pageHref('faqs-contact', locale);
 <div class="contact-list">
   <a href={business.whatsappHref}>{business.phone} (WhatsApp)</a>
   <a href={mailtoHref(business.email, locale)}>{business.email}</a>
-  <a href={faqsHref}>{t('reserve.contactForm')}</a>
+  <a href={contactHref}>{t('reserve.contactForm')}</a>
 </div>

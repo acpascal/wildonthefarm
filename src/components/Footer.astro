@@ -7,11 +7,15 @@ import ReserveContactBlock from './ReserveContactBlock.astro';
 
 interface Props {
   locale?: Locale;
+  reserveLabel?: string;
+  reserveHeading?: string;
+  reserveDescription?: string;
 }
 
-const { locale = defaultLocale } = Astro.props;
+const { locale = defaultLocale, reserveLabel, reserveHeading, reserveDescription } = Astro.props;
 const t = useTranslations(locale);
-const contactHref = pageHref('faqs-contact', locale);
+const faqHref = pageHref('faq', locale);
+const contactHref = pageHref('contact', locale);
 const legalHref = pageHref('legal-notice', locale);
 ---
 
@@ -22,7 +26,12 @@ const legalHref = pageHref('legal-notice', locale);
         <slot />
       </div>
       <div class="footer-right">
-        <ReserveContactBlock locale={locale} description={t('reserve.pitch')} />
+        <ReserveContactBlock
+          locale={locale}
+          label={reserveLabel}
+          heading={reserveHeading}
+          description={reserveDescription ?? t('reserve.pitch')}
+        />
       </div>
     </div>
   </div>
@@ -31,7 +40,8 @@ const legalHref = pageHref('legal-notice', locale);
     <div class="container footer-inner">
       <div>{t('footer.copyright')}</div>
       <div class="footer-links">
-        <a href={contactHref}>{t('footer.faqsContact')}</a>
+        <a href={faqHref}>{t('footer.faq')}</a>
+        <a href={contactHref}>{t('footer.contact')}</a>
         <a href={legalHref}>{t('footer.legalNotice')}</a>
         <a href={business.social.facebook}>{t('footer.facebook')}</a>
         <a href={business.social.instagram}>{t('footer.instagram')}</a>
