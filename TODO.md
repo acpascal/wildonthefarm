@@ -1,9 +1,5 @@
 # TODOs
 
-### Content
-
-- **`src/content/journal/en/allergies-and-asthma.mdx`** (and its ES translation): this article encourages guests to try consuming an unidentified wild plant on-site as a home remedy for allergies/asthma. Migrated as-is per an explicit decision during the v3 rebuild, but it carries real liability exposure beyond the standard plant-profile medical disclaimer (an unstudied, unidentified plant rather than a documented traditional-use herb). Worth a legal/content review before this gets meaningful traffic.
-
 ### Notes left on-page (NoteBox placeholders)
 
 These are content gaps that were surfaced directly on the live site via the
