@@ -919,6 +919,10 @@ section > .container :last-child {
   margin-top: var(--space-3);
 }
 
+.amenity-list.centered {
+  justify-content: center;
+}
+
 .amenity-list span {
   font-size: 0.82rem;
   color: var(--green-deep);
@@ -1809,6 +1813,11 @@ a.text-card:hover .card-cta {
   background-size: cover;
   background-position: center;
   color: var(--paper);
+  transition: border-color 0.15s ease;
+}
+
+.overlay-card:hover {
+  border-color: var(--gold-bright);
 }
 
 .overlay-card::after {

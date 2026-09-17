@@ -5,7 +5,6 @@ import PageHero from '../../components/PageHero.astro';
 import Section from '../../components/Section.astro';
 import PhotoGrid from '../../components/PhotoGrid.astro';
 import { img } from '../../lib/images';
-import { pageHref } from '../../data/pageTranslations';
 
 const heroImage = img('cabin3/hero.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
@@ -27,8 +26,6 @@ const amenities = [
   '緑の屋根',
   'あえてWi-Fiもテレビも置いていません',
 ];
-
-const reserveHref = pageHref('reserve', 'ja');
 ---
 
 <PageLayout
@@ -47,13 +44,22 @@ const reserveHref = pageHref('reserve', 'ja');
 
   <Section label="隅々まで" heading="コテージ3のすべて。">
     <PhotoGrid items={photos} groupId="cabin-3" />
-  </Section>
-
-  <Section>
-    <div class="amenity-list">
+    <div class="amenity-list centered">
       {amenities.map((item) => <span>{item}</span>)}
     </div>
-    <a href={reserveHref} class="btn btn-normal btn-spaced">コテージ3を予約する</a>
+  </Section>
+
+  <Section label="ご宿泊のご予約">
+    <div id="apartmentIframeAll">
+      <script is:inline type="text/javascript" src="https://login.smoobu.com/js/Settings/BookingToolIframe.js"></script>
+      <script is:inline>
+        BookingToolIframe.initialize({
+          url: 'https://login.smoobu.com/en/booking-tool/iframe/1880246',
+          baseUrl: 'https://login.smoobu.com',
+          target: '#apartmentIframeAll',
+        });
+      </script>
+    </div>
   </Section>
 
   <Fragment slot="footer">

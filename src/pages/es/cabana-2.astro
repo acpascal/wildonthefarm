@@ -5,7 +5,6 @@ import PageHero from '../../components/PageHero.astro';
 import Section from '../../components/Section.astro';
 import PhotoGrid from '../../components/PhotoGrid.astro';
 import { img } from '../../lib/images';
-import { pageHref } from '../../data/pageTranslations';
 
 const heroImage = img('cabin2/hero.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
@@ -30,8 +29,6 @@ const amenities = [
   'Estructura elevada sobre pilotes',
   'Sin wifi ni TV, por diseño',
 ];
-
-const reserveHref = pageHref('reserve', 'es');
 ---
 
 <PageLayout
@@ -50,13 +47,22 @@ const reserveHref = pageHref('reserve', 'es');
 
   <Section label="Cada Rincón" heading="Toda la Cabaña Dos.">
     <PhotoGrid items={photos} groupId="cabin-2" />
-  </Section>
-
-  <Section>
-    <div class="amenity-list">
+    <div class="amenity-list centered">
       {amenities.map((item) => <span>{item}</span>)}
     </div>
-    <a href={reserveHref} class="btn btn-normal btn-spaced">Reservar Cabaña Dos</a>
+  </Section>
+
+  <Section label="Reserva Tu Estancia">
+    <div id="apartmentIframeAll">
+      <script is:inline type="text/javascript" src="https://login.smoobu.com/js/Settings/BookingToolIframe.js"></script>
+      <script is:inline>
+        BookingToolIframe.initialize({
+          url: 'https://login.smoobu.com/en/booking-tool/iframe/1880246',
+          baseUrl: 'https://login.smoobu.com',
+          target: '#apartmentIframeAll',
+        });
+      </script>
+    </div>
   </Section>
 
   <Fragment slot="footer">

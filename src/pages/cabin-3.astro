@@ -5,7 +5,6 @@ import PageHero from '../components/PageHero.astro';
 import Section from '../components/Section.astro';
 import PhotoGrid from '../components/PhotoGrid.astro';
 import { img } from '../lib/images';
-import { pageHref } from '../data/pageTranslations';
 
 const heroImage = img('cabin3/hero_view_3.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
@@ -29,8 +28,6 @@ const amenities = [
   'Living roof',
   'No Wi-Fi or TV, by design',
 ];
-
-const reserveHref = pageHref('reserve', 'en');
 ---
 
 <PageLayout
@@ -48,28 +45,22 @@ const reserveHref = pageHref('reserve', 'en');
 
   <Section label="Every Corner" heading="All of Cabin Three.">
     <PhotoGrid items={photos} groupId="cabin-3" />
-  </Section>
-
-  <Section>
-    <div class="amenity-list">
+    <div class="amenity-list centered">
       {amenities.map((item) => <span>{item}</span>)}
     </div>
-    <a href={reserveHref} class="btn btn-normal btn-spaced">Reserve Cabin Three</a>
   </Section>
 
-  <Section label="Availability" heading="See what's open.">
-    <div id="smoobuApartment3499501en" class="calendarWidget">
-      <div
-        class="calendarContent"
-        data-load-calendar-url="https://login.smoobu.com/en/cockpit/widget/single-calendar/3499501"
-        data-verification="cea07d80331e239bb8fe3c4f9f67771c044e2f9edcc4baeee4ed209805b1e0e9"
-        data-baseUrl="https://login.smoobu.com"
-        data-disable-css="false"
-      >
-      </div>
-      <script is:inline type="text/javascript" src="https://login.smoobu.com/js/Apartment/CalendarWidget.js"></script>
+  <Section label="Book Your Stay">
+    <div id="apartmentIframeAll">
+      <script is:inline type="text/javascript" src="https://login.smoobu.com/js/Settings/BookingToolIframe.js"></script>
+      <script is:inline>
+        BookingToolIframe.initialize({
+          url: 'https://login.smoobu.com/en/booking-tool/iframe/1880246',
+          baseUrl: 'https://login.smoobu.com',
+          target: '#apartmentIframeAll',
+        });
+      </script>
     </div>
-    <p>Not available? Try <a href="/cabin-1/">Cabin One</a> or <a href="/cabin-2/">Cabin Two</a>.</p>
   </Section>
 
   <Fragment slot="footer">
