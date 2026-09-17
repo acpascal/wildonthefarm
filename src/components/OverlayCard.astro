@@ -7,7 +7,8 @@ interface Props {
   image: ImageMetadata;
   label: string;
   title: string;
-  description: string;
+  /** Omit for an image + title only card (e.g. a simple link grid). */
+  description?: string;
 }
 
 const { href, image, label, title, description } = Astro.props;
@@ -18,6 +19,6 @@ const bg = (await getImage({ src: image, width: 900, format: 'webp' })).src;
   <div class="overlay-card-label">
     <div class="section-label">{label}</div>
     <h3>{title}</h3>
-    <p>{description}</p>
+    {description && <p>{description}</p>}
   </div>
 </a>

@@ -3,12 +3,20 @@ import { getImage } from 'astro:assets';
 import PageLayout from '../layouts/PageLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import Section from '../components/Section.astro';
+import CardGrid from '../components/CardGrid.astro';
+import OverlayCard from '../components/OverlayCard.astro';
 import { img } from '../lib/images';
 import { pageHref } from '../data/pageTranslations';
 
 const heroImage = img('farm/property_overview.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
 const faqHref = pageHref('faq', 'en');
+
+const cabinCards = [
+  { href: pageHref('cabin-1', 'en'), image: img('cabin1/hero.jpg'), label: 'Discover →', title: 'Cabin One' },
+  { href: pageHref('cabin-2', 'en'), image: img('cabin2/hero.jpg'), label: 'Discover →', title: 'Cabin Two' },
+  { href: pageHref('cabin-3', 'en'), image: img('cabin3/hero_view_3.jpg'), label: 'Discover →', title: 'Cabin Three' },
+];
 ---
 
 <PageLayout
@@ -37,6 +45,12 @@ const faqHref = pageHref('faq', 'en');
         });
       </script>
     </div>
+  </Section>
+
+  <Section label="Which Cabin" heading="Three cabins, each its own.">
+    <CardGrid>
+      {cabinCards.map((c) => <OverlayCard {...c} />)}
+    </CardGrid>
   </Section>
 
   <Fragment slot="footer">
