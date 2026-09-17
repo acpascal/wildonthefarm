@@ -10,14 +10,14 @@ const heroImage = img('cabin2/hero.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
 
 const photos = [
-  { image: heroImage, alt: 'La Cabane Deux, perchée sur pilotis au-dessus de la vallée' },
-  { image: img('cabin2/gallery_1.jpg'), alt: 'Intérieur de la Cabane Deux' },
-  { image: img('cabin2/gallery_2.jpg'), alt: 'Balcon et vue sur la vallée depuis la Cabane Deux' },
-  { image: img('cabin2/gallery_3.jpg'), alt: 'Chambre de la Cabane Deux' },
-  { image: img('cabin2/gallery_4.jpg'), alt: 'Salle de bain de la Cabane Deux' },
-  { image: img('cabin2/gallery_5.jpg'), alt: 'Vue sur la vallée du Chiriquí depuis la Cabane Deux' },
-  { image: img('cabin2/gallery_6.jpg'), alt: 'Détail extérieur de la Cabane Deux' },
-  { image: img('cabin2/gallery_7.jpg'), alt: 'Terrasse de la Cabane Deux' },
+  { image: heroImage, alt: 'La Cabane Hummingbird, perchée sur pilotis au-dessus de la vallée' },
+  { image: img('cabin2/gallery_1.jpg'), alt: 'Intérieur de la Cabane Hummingbird' },
+  { image: img('cabin2/gallery_2.jpg'), alt: 'Balcon et vue sur la vallée depuis la Cabane Hummingbird' },
+  { image: img('cabin2/gallery_3.jpg'), alt: 'Chambre de la Cabane Hummingbird' },
+  { image: img('cabin2/gallery_4.jpg'), alt: 'Salle de bain de la Cabane Hummingbird' },
+  { image: img('cabin2/gallery_5.jpg'), alt: 'Vue sur la vallée du Chiriquí depuis la Cabane Hummingbird' },
+  { image: img('cabin2/gallery_6.jpg'), alt: 'Détail extérieur de la Cabane Hummingbird' },
+  { image: img('cabin2/gallery_7.jpg'), alt: 'Terrasse de la Cabane Hummingbird' },
 ];
 
 const amenities = [
@@ -32,20 +32,20 @@ const amenities = [
 ---
 
 <PageLayout
-  title="Cabane Deux — Wild on the Farm | Boquete Cloud Forest Lodge"
-  description="La Cabane Deux à Wild on the Farm : perchée sur pilotis au-dessus de la colline, avec une vue dégagée sur la vallée du Chiriquí, depuis le lit, le balcon, et la douche."
+  title="Cabane Hummingbird — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="La Cabane Hummingbird à Wild on the Farm : perchée sur pilotis au-dessus de la colline, avec une vue dégagée sur la vallée du Chiriquí, depuis le lit, le balcon, et la douche."
   path="/fr/cabane-2/"
   image={ogImage.src}
   pullIntro="Franchir le seuil de cette cabane, et un « Wow ! » d'émerveillement est la seule réponse possible face à son atmosphère et à sa vue sans pareille. C'est la cabane où suivre le ballet des nuages, et danser avec les étoiles…"
   locale="fr"
 >
   <Fragment slot="hero">
-    <PageHero image={heroImage} alt="La Cabane Deux, perchée sur pilotis au-dessus de la vallée" eyebrow="Séjour — Cabane Deux">
+    <PageHero image={heroImage} alt="La Cabane Hummingbird, perchée sur pilotis au-dessus de la vallée" eyebrow="Séjour — Cabane Hummingbird">
       Suspendue entre ciel et terre.
     </PageHero>
   </Fragment>
 
-  <Section label="Chaque Recoin" heading="Toute la Cabane Deux.">
+  <Section label="Chaque Recoin" heading="Toute la Cabane Hummingbird.">
     <PhotoGrid items={photos} groupId="cabin-2" />
     <div class="amenity-list centered">
       {amenities.map((item) => <span>{item}</span>)}
@@ -70,8 +70,8 @@ const amenities = [
     <h2>Voir les autres cabanes.</h2>
     <div class="contact-list">
       <a href="/fr/lodge/">Toutes Les Cabanes →</a>
-      <a href="/fr/cabane-1/">Cabane Un →</a>
-      <a href="/fr/cabane-3/">Cabane Trois →</a>
+      <a href="/fr/cabane-1/">Cabane Quetzal →</a>
+      <a href="/fr/cabane-3/">Cabane Jaguar →</a>
     </div>
   </Fragment>
 </PageLayout>

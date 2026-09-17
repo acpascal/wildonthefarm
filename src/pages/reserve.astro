@@ -13,9 +13,9 @@ const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
 const faqHref = pageHref('faq', 'en');
 
 const cabinCards = [
-  { href: pageHref('cabin-1', 'en'), image: img('cabin1/hero.jpg'), label: 'Discover →', title: 'Cabin One' },
-  { href: pageHref('cabin-2', 'en'), image: img('cabin2/hero.jpg'), label: 'Discover →', title: 'Cabin Two' },
-  { href: pageHref('cabin-3', 'en'), image: img('cabin3/hero_view_3.jpg'), label: 'Discover →', title: 'Cabin Three' },
+  { href: pageHref('cabin-1', 'en'), image: img('cabin1/hero.jpg'), label: 'Discover →', title: 'Cabin Quetzal' },
+  { href: pageHref('cabin-2', 'en'), image: img('cabin2/hero.jpg'), label: 'Discover →', title: 'Cabin Hummingbird' },
+  { href: pageHref('cabin-3', 'en'), image: img('cabin3/hero_view_3.jpg'), label: 'Discover →', title: 'Cabin Jaguar' },
 ];
 ---
 
@@ -58,9 +58,9 @@ const cabinCards = [
     <h2>Explore more before you book.</h2>
     <div class="contact-list">
       <a href={faqHref}>FAQs →</a>
-      <a href={pageHref('cabin-1', 'en')}>Cabin One →</a>
-      <a href={pageHref('cabin-2', 'en')}>Cabin Two →</a>
-      <a href={pageHref('cabin-3', 'en')}>Cabin Three →</a>
+      <a href={pageHref('cabin-1', 'en')}>Cabin Quetzal →</a>
+      <a href={pageHref('cabin-2', 'en')}>Cabin Hummingbird →</a>
+      <a href={pageHref('cabin-3', 'en')}>Cabin Jaguar →</a>
     </div>
   </Fragment>
 </PageLayout>

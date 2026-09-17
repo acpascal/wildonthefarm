@@ -10,14 +10,14 @@ const heroImage = img('cabin3/hero_view_3.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
 
 const photos = [
-  { image: img('cabin3/gallery_3.jpg'), alt: 'Cabin Three bedroom detail' },
-  { image: img('cabin3/gallery_4.jpg'), alt: 'Cabin Three interior detail' },
-  { image: img('cabin3/gallery_6.jpg'), alt: 'Cabin Three bedroom with wood stove and forest view' },
-  { image: img('cabin3/gallery_7.jpg'), alt: 'Cabin Three hand-carved headboard detail' },
-  { image: img('cabin3/gallery_8.jpg'), alt: 'Cabin Three wood stove' },
-  { image: img('cabin3/gallery_9.jpg'), alt: 'Cabin Three exterior with living roof, seen from the cloud forest above' },
-  { image: img('cabin3/gallery_10.jpg'), alt: 'Cabin Three living roof and wooden facade' },
-  { image: img('cabin3/gallery_11.jpg'), alt: 'Cabin Three bedroom with carved bed and patterned tile floor' },
+  { image: img('cabin3/gallery_3.jpg'), alt: 'Cabin Jaguar bedroom detail' },
+  { image: img('cabin3/gallery_4.jpg'), alt: 'Cabin Jaguar interior detail' },
+  { image: img('cabin3/gallery_6.jpg'), alt: 'Cabin Jaguar bedroom with wood stove and forest view' },
+  { image: img('cabin3/gallery_7.jpg'), alt: 'Cabin Jaguar hand-carved headboard detail' },
+  { image: img('cabin3/gallery_8.jpg'), alt: 'Cabin Jaguar wood stove' },
+  { image: img('cabin3/gallery_9.jpg'), alt: 'Cabin Jaguar exterior with living roof, seen from the cloud forest above' },
+  { image: img('cabin3/gallery_10.jpg'), alt: 'Cabin Jaguar living roof and wooden facade' },
+  { image: img('cabin3/gallery_11.jpg'), alt: 'Cabin Jaguar bedroom with carved bed and patterned tile floor' },
 ];
 
 const amenities = [
@@ -31,19 +31,19 @@ const amenities = [
 ---
 
 <PageLayout
-  title="Cabin Three — Wild on the Farm | Boquete Cloud Forest Lodge"
-  description="Cabin Three at Wild on the Farm: a hand-carved headboard, botanical fabrics, and a hand-painted Art Nouveau tiled bathroom."
+  title="Cabin Jaguar — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Cabin Jaguar at Wild on the Farm: a hand-carved headboard, botanical fabrics, and a hand-painted Art Nouveau tiled bathroom."
   path="/cabin-3/"
   image={ogImage.src}
-  pullIntro="Cabin Three leans into detail — a hand-carved wooden headboard, botanical linens, and a bathroom dressed floor to ceiling in hand-painted Art Nouveau tile. The most decorative of the three cabins, without losing any of the quiet."
+  pullIntro="Cabin Jaguar leans into detail — a hand-carved wooden headboard, botanical linens, and a bathroom dressed floor to ceiling in hand-painted Art Nouveau tile. The most decorative of the three cabins, without losing any of the quiet."
 >
   <Fragment slot="hero">
-    <PageHero image={heroImage} alt="Cabin Three's hand-carved headboard and botanical linens" eyebrow="Stay — Cabin Three">
+    <PageHero image={heroImage} alt="Cabin Jaguar's hand-carved headboard and botanical linens" eyebrow="Stay — Cabin Jaguar">
       The most intricate of the three.
     </PageHero>
   </Fragment>
 
-  <Section label="Every Corner" heading="All of Cabin Three.">
+  <Section label="Every Corner" heading="All of Cabin Jaguar.">
     <PhotoGrid items={photos} groupId="cabin-3" />
     <div class="amenity-list centered">
       {amenities.map((item) => <span>{item}</span>)}
@@ -68,8 +68,8 @@ const amenities = [
     <h2>See the other cabins.</h2>
     <div class="contact-list">
       <a href="/lodge/">All Cabins →</a>
-      <a href="/cabin-1/">Cabin One →</a>
-      <a href="/cabin-2/">Cabin Two →</a>
+      <a href="/cabin-1/">Cabin Quetzal →</a>
+      <a href="/cabin-2/">Cabin Hummingbird →</a>
     </div>
   </Fragment>
 </PageLayout>

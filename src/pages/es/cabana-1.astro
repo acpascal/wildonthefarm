@@ -10,10 +10,10 @@ const heroImage = img('cabin1/hero.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
 
 const photos = [
-  { image: heroImage, alt: 'Exterior de la Cabaña Uno en el bosque nuboso' },
-  { image: img('cabin1/gallery_1.jpg'), alt: 'Interior de la Cabaña Uno' },
-  { image: img('cabin1/gallery_2.jpg'), alt: 'Vista desde el balcón de la Cabaña Uno' },
-  { image: img('cabin1/gallery_3.jpg'), alt: 'Baño de la Cabaña Uno con azulejo de hojas pintado a mano' },
+  { image: heroImage, alt: 'Exterior de la Cabaña Quetzal en el bosque nuboso' },
+  { image: img('cabin1/gallery_1.jpg'), alt: 'Interior de la Cabaña Quetzal' },
+  { image: img('cabin1/gallery_2.jpg'), alt: 'Vista desde el balcón de la Cabaña Quetzal' },
+  { image: img('cabin1/gallery_3.jpg'), alt: 'Baño de la Cabaña Quetzal con azulejo de hojas pintado a mano' },
 ];
 
 const amenities = [
@@ -27,20 +27,20 @@ const amenities = [
 ---
 
 <PageLayout
-  title="Cabaña Uno — Wild on the Farm | Boquete Cloud Forest Lodge"
-  description="Cabaña Uno en Wild on the Farm: una terraza privada enclavada en el bosque nuboso neblinoso, con una ducha de azulejo de hojas e interiores cálidos de madera."
+  title="Cabaña Quetzal — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Cabaña Quetzal en Wild on the Farm: una terraza privada enclavada en el bosque nuboso neblinoso, con una ducha de azulejo de hojas e interiores cálidos de madera."
   path="/es/cabana-1/"
   image={ogImage.src}
-  pullIntro="Ubicada más cerca de la línea de árboles, la Cabaña Uno captura el bosque nuboso en su forma más íntima — un balcón privado envuelto en bambú y niebla, y un baño terminado enteramente en azulejo de hojas pintado a mano."
+  pullIntro="Ubicada más cerca de la línea de árboles, la Cabaña Quetzal captura el bosque nuboso en su forma más íntima — un balcón privado envuelto en bambú y niebla, y un baño terminado enteramente en azulejo de hojas pintado a mano."
   locale="es"
 >
   <Fragment slot="hero">
-    <PageHero image={heroImage} alt="Exterior de la Cabaña Uno en el bosque nuboso" eyebrow="Estancia — Cabaña Uno">
+    <PageHero image={heroImage} alt="Exterior de la Cabaña Quetzal en el bosque nuboso" eyebrow="Estancia — Cabaña Quetzal">
       Lo más profundo de la niebla.
     </PageHero>
   </Fragment>
 
-  <Section label="Cada Rincón" heading="Toda la Cabaña Uno.">
+  <Section label="Cada Rincón" heading="Toda la Cabaña Quetzal.">
     <PhotoGrid items={photos} groupId="cabin-1" />
     <div class="amenity-list centered">
       {amenities.map((item) => <span>{item}</span>)}
@@ -65,8 +65,8 @@ const amenities = [
     <h2>Ver las otras cabañas.</h2>
     <div class="contact-list">
       <a href="/es/lodge/">Todas Las Cabañas →</a>
-      <a href="/es/cabana-2/">Cabaña Dos →</a>
-      <a href="/es/cabana-3/">Cabaña Tres →</a>
+      <a href="/es/cabana-2/">Cabaña Hummingbird →</a>
+      <a href="/es/cabana-3/">Cabaña Jaguar →</a>
     </div>
   </Fragment>
 </PageLayout>

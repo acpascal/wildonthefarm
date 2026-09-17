@@ -10,10 +10,10 @@ const heroImage = img('cabin1/hero.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
 
 const photos = [
-  { image: heroImage, alt: 'Cabin One exterior in the cloud forest' },
-  { image: img('cabin1/gallery_1.jpg'), alt: 'Interior of Cabin One' },
-  { image: img('cabin1/gallery_2.jpg'), alt: 'Cabin One balcony view' },
-  { image: img('cabin1/gallery_3.jpg'), alt: 'Cabin One bathroom with hand-painted leaf tile' },
+  { image: heroImage, alt: 'Cabin Quetzal exterior in the cloud forest' },
+  { image: img('cabin1/gallery_1.jpg'), alt: 'Interior of Cabin Quetzal' },
+  { image: img('cabin1/gallery_2.jpg'), alt: 'Cabin Quetzal balcony view' },
+  { image: img('cabin1/gallery_3.jpg'), alt: 'Cabin Quetzal bathroom with hand-painted leaf tile' },
 ];
 
 const amenities = [
@@ -27,19 +27,19 @@ const amenities = [
 ---
 
 <PageLayout
-  title="Cabin One — Wild on the Farm | Boquete Cloud Forest Lodge"
-  description="Cabin One at Wild on the Farm: a private terrace tucked into the misty cloud forest, with a leaf-tiled walk-in shower and warm hardwood interiors."
+  title="Cabin Quetzal — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Cabin Quetzal at Wild on the Farm: a private terrace tucked into the misty cloud forest, with a leaf-tiled walk-in shower and warm hardwood interiors."
   path="/cabin-1/"
   image={ogImage.src}
-  pullIntro="Set closest to the tree line, Cabin One catches the cloud forest at its most intimate — a private balcony wrapped in bamboo and mist, and a bathroom finished entirely in hand-painted leaf tile."
+  pullIntro="Set closest to the tree line, Cabin Quetzal catches the cloud forest at its most intimate — a private balcony wrapped in bamboo and mist, and a bathroom finished entirely in hand-painted leaf tile."
 >
   <Fragment slot="hero">
-    <PageHero image={heroImage} alt="Cabin One exterior in the cloud forest" eyebrow="Stay — Cabin One">
+    <PageHero image={heroImage} alt="Cabin Quetzal exterior in the cloud forest" eyebrow="Stay — Cabin Quetzal">
       Deepest into the mist.
     </PageHero>
   </Fragment>
 
-  <Section label="Every Corner" heading="All of Cabin One.">
+  <Section label="Every Corner" heading="All of Cabin Quetzal.">
     <PhotoGrid items={photos} groupId="cabin-1" />
     <div class="amenity-list centered">
       {amenities.map((item) => <span>{item}</span>)}
@@ -64,8 +64,8 @@ const amenities = [
     <h2>See the other cabins.</h2>
     <div class="contact-list">
       <a href="/lodge/">All Cabins →</a>
-      <a href="/cabin-2/">Cabin Two →</a>
-      <a href="/cabin-3/">Cabin Three →</a>
+      <a href="/cabin-2/">Cabin Hummingbird →</a>
+      <a href="/cabin-3/">Cabin Jaguar →</a>
     </div>
   </Fragment>
 </PageLayout>

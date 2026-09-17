@@ -10,12 +10,12 @@ const heroImage = img('cabin3/hero.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
 
 const photos = [
-  { image: heroImage, alt: 'Interior de la Cabaña Tres' },
-  { image: img('cabin3/gallery_1.jpg'), alt: 'Cabecero tallado a mano de la Cabaña Tres' },
-  { image: img('cabin3/gallery_2.jpg'), alt: 'Baño de la Cabaña Tres con azulejo Art Nouveau pintado a mano' },
-  { image: img('cabin3/gallery_3.jpg'), alt: 'Detalle del dormitorio de la Cabaña Tres' },
-  { image: img('cabin3/gallery_4.jpg'), alt: 'Detalle interior de la Cabaña Tres' },
-  { image: img('cabin3/gallery_5.jpg'), alt: 'Ropa de cama botánica de la Cabaña Tres' },
+  { image: heroImage, alt: 'Interior de la Cabaña Jaguar' },
+  { image: img('cabin3/gallery_1.jpg'), alt: 'Cabecero tallado a mano de la Cabaña Jaguar' },
+  { image: img('cabin3/gallery_2.jpg'), alt: 'Baño de la Cabaña Jaguar con azulejo Art Nouveau pintado a mano' },
+  { image: img('cabin3/gallery_3.jpg'), alt: 'Detalle del dormitorio de la Cabaña Jaguar' },
+  { image: img('cabin3/gallery_4.jpg'), alt: 'Detalle interior de la Cabaña Jaguar' },
+  { image: img('cabin3/gallery_5.jpg'), alt: 'Ropa de cama botánica de la Cabaña Jaguar' },
 ];
 
 const amenities = [
@@ -29,20 +29,20 @@ const amenities = [
 ---
 
 <PageLayout
-  title="Cabaña Tres — Wild on the Farm | Boquete Cloud Forest Lodge"
-  description="Cabaña Tres en Wild on the Farm: un cabecero tallado a mano, telas botánicas, y un baño de azulejo Art Nouveau pintado a mano."
+  title="Cabaña Jaguar — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Cabaña Jaguar en Wild on the Farm: un cabecero tallado a mano, telas botánicas, y un baño de azulejo Art Nouveau pintado a mano."
   path="/es/cabana-3/"
   image={ogImage.src}
-  pullIntro="La Cabaña Tres se inclina hacia el detalle — un cabecero de madera tallado a mano, ropa de cama botánica, y un baño vestido de suelo a techo en azulejo Art Nouveau pintado a mano. La más decorativa de las tres cabañas, sin perder nada de la tranquilidad."
+  pullIntro="La Cabaña Jaguar se inclina hacia el detalle — un cabecero de madera tallado a mano, ropa de cama botánica, y un baño vestido de suelo a techo en azulejo Art Nouveau pintado a mano. La más decorativa de las tres cabañas, sin perder nada de la tranquilidad."
   locale="es"
 >
   <Fragment slot="hero">
-    <PageHero image={heroImage} alt="Interior de la Cabaña Tres" eyebrow="Estancia — Cabaña Tres">
+    <PageHero image={heroImage} alt="Interior de la Cabaña Jaguar" eyebrow="Estancia — Cabaña Jaguar">
       La más intrincada de las tres.
     </PageHero>
   </Fragment>
 
-  <Section label="Cada Rincón" heading="Toda la Cabaña Tres.">
+  <Section label="Cada Rincón" heading="Toda la Cabaña Jaguar.">
     <PhotoGrid items={photos} groupId="cabin-3" />
     <div class="amenity-list centered">
       {amenities.map((item) => <span>{item}</span>)}
@@ -67,8 +67,8 @@ const amenities = [
     <h2>Ver las otras cabañas.</h2>
     <div class="contact-list">
       <a href="/es/lodge/">Todas Las Cabañas →</a>
-      <a href="/es/cabana-1/">Cabaña Uno →</a>
-      <a href="/es/cabana-2/">Cabaña Dos →</a>
+      <a href="/es/cabana-1/">Cabaña Quetzal →</a>
+      <a href="/es/cabana-2/">Cabaña Hummingbird →</a>
     </div>
   </Fragment>
 </PageLayout>

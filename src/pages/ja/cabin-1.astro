@@ -10,10 +10,10 @@ const heroImage = img('cabin1/hero.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
 
 const photos = [
-  { image: heroImage, alt: '雲霧林に佇む、コテージ1の外観' },
-  { image: img('cabin1/gallery_1.jpg'), alt: 'コテージ1の内部' },
-  { image: img('cabin1/gallery_2.jpg'), alt: 'コテージ1のバルコニーからの眺め' },
-  { image: img('cabin1/gallery_3.jpg'), alt: '手描きの葉模様タイルを使った、コテージ1のバスルーム' },
+  { image: heroImage, alt: '雲霧林に佇む、コテージ Quetzalの外観' },
+  { image: img('cabin1/gallery_1.jpg'), alt: 'コテージ Quetzalの内部' },
+  { image: img('cabin1/gallery_2.jpg'), alt: 'コテージ Quetzalのバルコニーからの眺め' },
+  { image: img('cabin1/gallery_3.jpg'), alt: '手描きの葉模様タイルを使った、コテージ Quetzalのバスルーム' },
 ];
 
 const amenities = [
@@ -27,20 +27,20 @@ const amenities = [
 ---
 
 <PageLayout
-  title="コテージ1 — Wild on the Farm | Boquete Cloud Forest Lodge"
-  description="Wild on the Farmのコテージ1：霧に包まれた雲霧林にひっそりと佇む専用テラス、葉模様タイルのウォークインシャワー、そして温もりある無垢材の内装。"
+  title="コテージ Quetzal — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Wild on the Farmのコテージ Quetzal：霧に包まれた雲霧林にひっそりと佇む専用テラス、葉模様タイルのウォークインシャワー、そして温もりある無垢材の内装。"
   path="/ja/cabin-1/"
   image={ogImage.src}
-  pullIntro="樹林限界にもっとも近い場所に建つコテージ1は、雲霧林のもっとも親密な表情をとらえています——竹と霧に包まれた専用バルコニー、そして手描きの葉模様タイルで一面を仕上げたバスルーム。"
+  pullIntro="樹林限界にもっとも近い場所に建つコテージ Quetzalは、雲霧林のもっとも親密な表情をとらえています——竹と霧に包まれた専用バルコニー、そして手描きの葉模様タイルで一面を仕上げたバスルーム。"
   locale="ja"
 >
   <Fragment slot="hero">
-    <PageHero image={heroImage} alt="雲霧林に佇む、コテージ1の外観" eyebrow="ご滞在——コテージ1">
+    <PageHero image={heroImage} alt="雲霧林に佇む、コテージ Quetzalの外観" eyebrow="ご滞在——コテージ Quetzal">
       霧の、いちばん奥へ。
     </PageHero>
   </Fragment>
 
-  <Section label="隅々まで" heading="コテージ1のすべて。">
+  <Section label="隅々まで" heading="コテージ Quetzalのすべて。">
     <PhotoGrid items={photos} groupId="cabin-1" />
     <div class="amenity-list centered">
       {amenities.map((item) => <span>{item}</span>)}
@@ -65,8 +65,8 @@ const amenities = [
     <h2>他のコテージも見る。</h2>
     <div class="contact-list">
       <a href="/ja/lodge/">すべてのコテージ →</a>
-      <a href="/ja/cabin-2/">コテージ2 →</a>
-      <a href="/ja/cabin-3/">コテージ3 →</a>
+      <a href="/ja/cabin-2/">コテージ Hummingbird →</a>
+      <a href="/ja/cabin-3/">コテージ Jaguar →</a>
     </div>
   </Fragment>
 </PageLayout>

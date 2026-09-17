@@ -10,12 +10,12 @@ const heroImage = img('cabin3/hero.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
 
 const photos = [
-  { image: heroImage, alt: 'コテージ3の内部' },
-  { image: img('cabin3/gallery_1.jpg'), alt: 'コテージ3の、手彫りのヘッドボード' },
-  { image: img('cabin3/gallery_2.jpg'), alt: '手描きのアール・ヌーヴォー・タイルを施した、コテージ3のバスルーム' },
-  { image: img('cabin3/gallery_3.jpg'), alt: 'コテージ3の寝室のディテール' },
-  { image: img('cabin3/gallery_4.jpg'), alt: 'コテージ3の内部のディテール' },
-  { image: img('cabin3/gallery_5.jpg'), alt: 'コテージ3の、植物模様のリネン' },
+  { image: heroImage, alt: 'コテージ Jaguarの内部' },
+  { image: img('cabin3/gallery_1.jpg'), alt: 'コテージ Jaguarの、手彫りのヘッドボード' },
+  { image: img('cabin3/gallery_2.jpg'), alt: '手描きのアール・ヌーヴォー・タイルを施した、コテージ Jaguarのバスルーム' },
+  { image: img('cabin3/gallery_3.jpg'), alt: 'コテージ Jaguarの寝室のディテール' },
+  { image: img('cabin3/gallery_4.jpg'), alt: 'コテージ Jaguarの内部のディテール' },
+  { image: img('cabin3/gallery_5.jpg'), alt: 'コテージ Jaguarの、植物模様のリネン' },
 ];
 
 const amenities = [
@@ -29,20 +29,20 @@ const amenities = [
 ---
 
 <PageLayout
-  title="コテージ3 — Wild on the Farm | Boquete Cloud Forest Lodge"
-  description="Wild on the Farmのコテージ3：手彫りのヘッドボード、植物模様のファブリック、そして手描きのアール・ヌーヴォー・タイルを施したバスルーム。"
+  title="コテージ Jaguar — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Wild on the Farmのコテージ Jaguar：手彫りのヘッドボード、植物模様のファブリック、そして手描きのアール・ヌーヴォー・タイルを施したバスルーム。"
   path="/ja/cabin-3/"
   image={ogImage.src}
-  pullIntro="コテージ3は、細部にこだわり抜いた一棟です——手彫りの木製ヘッドボード、植物模様のリネン、そして床から天井まで手描きのアール・ヌーヴォー・タイルで彩られたバスルーム。三棟の中でもっとも装飾的でありながら、その静けさは少しも損なわれていません。"
+  pullIntro="コテージ Jaguarは、細部にこだわり抜いた一棟です——手彫りの木製ヘッドボード、植物模様のリネン、そして床から天井まで手描きのアール・ヌーヴォー・タイルで彩られたバスルーム。三棟の中でもっとも装飾的でありながら、その静けさは少しも損なわれていません。"
   locale="ja"
 >
   <Fragment slot="hero">
-    <PageHero image={heroImage} alt="コテージ3の内部" eyebrow="ご滞在——コテージ3">
+    <PageHero image={heroImage} alt="コテージ Jaguarの内部" eyebrow="ご滞在——コテージ Jaguar">
       三棟の中で、もっとも精緻な一棟。
     </PageHero>
   </Fragment>
 
-  <Section label="隅々まで" heading="コテージ3のすべて。">
+  <Section label="隅々まで" heading="コテージ Jaguarのすべて。">
     <PhotoGrid items={photos} groupId="cabin-3" />
     <div class="amenity-list centered">
       {amenities.map((item) => <span>{item}</span>)}
@@ -67,8 +67,8 @@ const amenities = [
     <h2>他のコテージも見る。</h2>
     <div class="contact-list">
       <a href="/ja/lodge/">すべてのコテージ →</a>
-      <a href="/ja/cabin-1/">コテージ1 →</a>
-      <a href="/ja/cabin-2/">コテージ2 →</a>
+      <a href="/ja/cabin-1/">コテージ Quetzal →</a>
+      <a href="/ja/cabin-2/">コテージ Hummingbird →</a>
     </div>
   </Fragment>
 </PageLayout>

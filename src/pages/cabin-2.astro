@@ -10,14 +10,14 @@ const heroImage = img('cabin2/hero.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
 
 const photos = [
-  { image: heroImage, alt: 'Cabin Two raised on stilts above the valley' },
-  { image: img('cabin2/gallery_1.jpg'), alt: 'Interior of Cabin Two' },
-  { image: img('cabin2/gallery_2.jpg'), alt: 'Cabin Two balcony and valley view' },
-  { image: img('cabin2/gallery_3.jpg'), alt: 'Cabin Two bedroom' },
-  { image: img('cabin2/gallery_4.jpg'), alt: 'Cabin Two bathroom' },
-  { image: img('cabin2/gallery_5.jpg'), alt: 'View over the Chiriquí valley from Cabin Two' },
-  { image: img('cabin2/gallery_6.jpg'), alt: 'Cabin Two exterior detail' },
-  { image: img('cabin2/gallery_7.jpg'), alt: 'Cabin Two deck' },
+  { image: heroImage, alt: 'Cabin Hummingbird raised on stilts above the valley' },
+  { image: img('cabin2/gallery_1.jpg'), alt: 'Interior of Cabin Hummingbird' },
+  { image: img('cabin2/gallery_2.jpg'), alt: 'Cabin Hummingbird balcony and valley view' },
+  { image: img('cabin2/gallery_3.jpg'), alt: 'Cabin Hummingbird bedroom' },
+  { image: img('cabin2/gallery_4.jpg'), alt: 'Cabin Hummingbird bathroom' },
+  { image: img('cabin2/gallery_5.jpg'), alt: 'View over the Chiriquí valley from Cabin Hummingbird' },
+  { image: img('cabin2/gallery_6.jpg'), alt: 'Cabin Hummingbird exterior detail' },
+  { image: img('cabin2/gallery_7.jpg'), alt: 'Cabin Hummingbird deck' },
 ];
 
 const amenities = [
@@ -32,19 +32,19 @@ const amenities = [
 ---
 
 <PageLayout
-  title="Cabin Two — Wild on the Farm | Boquete Cloud Forest Lodge"
-  description="Cabin Two at Wild on the Farm: raised on stilts above the hillside, with sweeping views over the Chiriquí valley from the bed, the balcony, and the shower."
+  title="Cabin Hummingbird — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Cabin Hummingbird at Wild on the Farm: raised on stilts above the hillside, with sweeping views over the Chiriquí valley from the bed, the balcony, and the shower."
   path="/cabin-2/"
   image={ogImage.src}
   pullIntro="Step into this cabin and a 'Wow!' of wonder is the only fitting response to its atmosphere and one-of-a-kind view. This is the cabin for following the ballet of the clouds and dancing with the stars..."
 >
   <Fragment slot="hero">
-    <PageHero image={heroImage} alt="Cabin Two raised on stilts above the valley" eyebrow="Stay — Cabin Two">
+    <PageHero image={heroImage} alt="Cabin Hummingbird raised on stilts above the valley" eyebrow="Stay — Cabin Hummingbird">
       Suspended between sky and earth.
     </PageHero>
   </Fragment>
 
-  <Section label="Every Corner" heading="All of Cabin Two.">
+  <Section label="Every Corner" heading="All of Cabin Hummingbird.">
     <PhotoGrid items={photos} groupId="cabin-2" />
     <div class="amenity-list centered">
       {amenities.map((item) => <span>{item}</span>)}
@@ -69,8 +69,8 @@ const amenities = [
     <h2>See the other cabins.</h2>
     <div class="contact-list">
       <a href="/lodge/">All Cabins →</a>
-      <a href="/cabin-1/">Cabin One →</a>
-      <a href="/cabin-3/">Cabin Three →</a>
+      <a href="/cabin-1/">Cabin Quetzal →</a>
+      <a href="/cabin-3/">Cabin Jaguar →</a>
     </div>
   </Fragment>
 </PageLayout>

@@ -10,14 +10,14 @@ const heroImage = img('cabin2/hero.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
 
 const photos = [
-  { image: heroImage, alt: '谷の上に高床式で建つ、コテージ2' },
-  { image: img('cabin2/gallery_1.jpg'), alt: 'コテージ2の内部' },
-  { image: img('cabin2/gallery_2.jpg'), alt: 'コテージ2のバルコニーと、谷の眺め' },
-  { image: img('cabin2/gallery_3.jpg'), alt: 'コテージ2の寝室' },
-  { image: img('cabin2/gallery_4.jpg'), alt: 'コテージ2のバスルーム' },
-  { image: img('cabin2/gallery_5.jpg'), alt: 'コテージ2から見渡す、チリキ渓谷の眺め' },
-  { image: img('cabin2/gallery_6.jpg'), alt: 'コテージ2の外観のディテール' },
-  { image: img('cabin2/gallery_7.jpg'), alt: 'コテージ2のデッキ' },
+  { image: heroImage, alt: '谷の上に高床式で建つ、コテージ Hummingbird' },
+  { image: img('cabin2/gallery_1.jpg'), alt: 'コテージ Hummingbirdの内部' },
+  { image: img('cabin2/gallery_2.jpg'), alt: 'コテージ Hummingbirdのバルコニーと、谷の眺め' },
+  { image: img('cabin2/gallery_3.jpg'), alt: 'コテージ Hummingbirdの寝室' },
+  { image: img('cabin2/gallery_4.jpg'), alt: 'コテージ Hummingbirdのバスルーム' },
+  { image: img('cabin2/gallery_5.jpg'), alt: 'コテージ Hummingbirdから見渡す、チリキ渓谷の眺め' },
+  { image: img('cabin2/gallery_6.jpg'), alt: 'コテージ Hummingbirdの外観のディテール' },
+  { image: img('cabin2/gallery_7.jpg'), alt: 'コテージ Hummingbirdのデッキ' },
 ];
 
 const amenities = [
@@ -32,20 +32,20 @@ const amenities = [
 ---
 
 <PageLayout
-  title="コテージ2 — Wild on the Farm | Boquete Cloud Forest Lodge"
-  description="Wild on the Farmのコテージ2：丘の斜面に高床式で建ち、ベッドからも、バルコニーからも、シャワーからも、チリキ渓谷を見渡す壮大な眺めが広がります。"
+  title="コテージ Hummingbird — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="Wild on the Farmのコテージ Hummingbird：丘の斜面に高床式で建ち、ベッドからも、バルコニーからも、シャワーからも、チリキ渓谷を見渡す壮大な眺めが広がります。"
   path="/ja/cabin-2/"
   image={ogImage.src}
   pullIntro="このコテージに足を踏み入れれば、その雰囲気と唯一無二の眺めに、思わず「わあ！」という驚きの声がこぼれるはずです。雲のバレエを追いかけ、星々と踊るための一棟——それが、このコテージです……"
   locale="ja"
 >
   <Fragment slot="hero">
-    <PageHero image={heroImage} alt="谷の上に高床式で建つ、コテージ2" eyebrow="ご滞在——コテージ2">
+    <PageHero image={heroImage} alt="谷の上に高床式で建つ、コテージ Hummingbird" eyebrow="ご滞在——コテージ Hummingbird">
       空と大地のあいだに浮かんで。
     </PageHero>
   </Fragment>
 
-  <Section label="隅々まで" heading="コテージ2のすべて。">
+  <Section label="隅々まで" heading="コテージ Hummingbirdのすべて。">
     <PhotoGrid items={photos} groupId="cabin-2" />
     <div class="amenity-list centered">
       {amenities.map((item) => <span>{item}</span>)}
@@ -70,8 +70,8 @@ const amenities = [
     <h2>他のコテージも見る。</h2>
     <div class="contact-list">
       <a href="/ja/lodge/">すべてのコテージ →</a>
-      <a href="/ja/cabin-1/">コテージ1 →</a>
-      <a href="/ja/cabin-3/">コテージ3 →</a>
+      <a href="/ja/cabin-1/">コテージ Quetzal →</a>
+      <a href="/ja/cabin-3/">コテージ Jaguar →</a>
     </div>
   </Fragment>
 </PageLayout>

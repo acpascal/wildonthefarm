@@ -10,12 +10,12 @@ const heroImage = img('cabin3/hero.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
 
 const photos = [
-  { image: heroImage, alt: 'Intérieur de la Cabane Trois' },
-  { image: img('cabin3/gallery_1.jpg'), alt: 'Tête de lit sculptée à la main dans la Cabane Trois' },
-  { image: img('cabin3/gallery_2.jpg'), alt: 'Salle de bain de la Cabane Trois, carrelage Art Nouveau peint à la main' },
-  { image: img('cabin3/gallery_3.jpg'), alt: 'Détail de la chambre de la Cabane Trois' },
-  { image: img('cabin3/gallery_4.jpg'), alt: "Détail de l'intérieur de la Cabane Trois" },
-  { image: img('cabin3/gallery_5.jpg'), alt: 'Linge de lit à motifs botaniques de la Cabane Trois' },
+  { image: heroImage, alt: 'Intérieur de la Cabane Jaguar' },
+  { image: img('cabin3/gallery_1.jpg'), alt: 'Tête de lit sculptée à la main dans la Cabane Jaguar' },
+  { image: img('cabin3/gallery_2.jpg'), alt: 'Salle de bain de la Cabane Jaguar, carrelage Art Nouveau peint à la main' },
+  { image: img('cabin3/gallery_3.jpg'), alt: 'Détail de la chambre de la Cabane Jaguar' },
+  { image: img('cabin3/gallery_4.jpg'), alt: "Détail de l'intérieur de la Cabane Jaguar" },
+  { image: img('cabin3/gallery_5.jpg'), alt: 'Linge de lit à motifs botaniques de la Cabane Jaguar' },
 ];
 
 const amenities = [
@@ -29,20 +29,20 @@ const amenities = [
 ---
 
 <PageLayout
-  title="Cabane Trois — Wild on the Farm | Boquete Cloud Forest Lodge"
-  description="La Cabane Trois à Wild on the Farm : une tête de lit sculptée à la main, des tissus botaniques, et une salle de bain habillée de carrelage Art Nouveau peint à la main."
+  title="Cabane Jaguar — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="La Cabane Jaguar à Wild on the Farm : une tête de lit sculptée à la main, des tissus botaniques, et une salle de bain habillée de carrelage Art Nouveau peint à la main."
   path="/fr/cabane-3/"
   image={ogImage.src}
-  pullIntro="La Cabane Trois cultive le détail — une tête de lit en bois sculptée à la main, du linge de lit à motifs botaniques, et une salle de bain habillée du sol au plafond de carrelage Art Nouveau peint à la main. La plus raffinée des trois cabanes, sans rien perdre de leur quiétude commune."
+  pullIntro="La Cabane Jaguar cultive le détail — une tête de lit en bois sculptée à la main, du linge de lit à motifs botaniques, et une salle de bain habillée du sol au plafond de carrelage Art Nouveau peint à la main. La plus raffinée des trois cabanes, sans rien perdre de leur quiétude commune."
   locale="fr"
 >
   <Fragment slot="hero">
-    <PageHero image={heroImage} alt="Intérieur de la Cabane Trois" eyebrow="Séjour — Cabane Trois">
+    <PageHero image={heroImage} alt="Intérieur de la Cabane Jaguar" eyebrow="Séjour — Cabane Jaguar">
       La plus raffinée des trois.
     </PageHero>
   </Fragment>
 
-  <Section label="Chaque Recoin" heading="Toute la Cabane Trois.">
+  <Section label="Chaque Recoin" heading="Toute la Cabane Jaguar.">
     <PhotoGrid items={photos} groupId="cabin-3" />
     <div class="amenity-list centered">
       {amenities.map((item) => <span>{item}</span>)}
@@ -67,8 +67,8 @@ const amenities = [
     <h2>Voir les autres cabanes.</h2>
     <div class="contact-list">
       <a href="/fr/lodge/">Toutes Les Cabanes →</a>
-      <a href="/fr/cabane-1/">Cabane Un →</a>
-      <a href="/fr/cabane-2/">Cabane Deux →</a>
+      <a href="/fr/cabane-1/">Cabane Quetzal →</a>
+      <a href="/fr/cabane-2/">Cabane Hummingbird →</a>
     </div>
   </Fragment>
 </PageLayout>

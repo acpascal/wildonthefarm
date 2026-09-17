@@ -10,10 +10,10 @@ const heroImage = img('cabin1/hero.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
 
 const photos = [
-  { image: heroImage, alt: 'Extérieur de la Cabane Un dans la forêt nuageuse' },
-  { image: img('cabin1/gallery_1.jpg'), alt: 'Intérieur de la Cabane Un' },
-  { image: img('cabin1/gallery_2.jpg'), alt: 'Vue depuis le balcon de la Cabane Un' },
-  { image: img('cabin1/gallery_3.jpg'), alt: 'Salle de bain de la Cabane Un, carreaux à motifs de feuilles peints à la main' },
+  { image: heroImage, alt: 'Extérieur de la Cabane Quetzal dans la forêt nuageuse' },
+  { image: img('cabin1/gallery_1.jpg'), alt: 'Intérieur de la Cabane Quetzal' },
+  { image: img('cabin1/gallery_2.jpg'), alt: 'Vue depuis le balcon de la Cabane Quetzal' },
+  { image: img('cabin1/gallery_3.jpg'), alt: 'Salle de bain de la Cabane Quetzal, carreaux à motifs de feuilles peints à la main' },
 ];
 
 const amenities = [
@@ -27,20 +27,20 @@ const amenities = [
 ---
 
 <PageLayout
-  title="Cabane Un — Wild on the Farm | Boquete Cloud Forest Lodge"
-  description="La Cabane Un à Wild on the Farm : une terrasse privée nichée dans la forêt nuageuse embrumée, avec une douche habillée de carreaux à motifs de feuilles et des intérieurs chaleureux en bois massif."
+  title="Cabane Quetzal — Wild on the Farm | Boquete Cloud Forest Lodge"
+  description="La Cabane Quetzal à Wild on the Farm : une terrasse privée nichée dans la forêt nuageuse embrumée, avec une douche habillée de carreaux à motifs de feuilles et des intérieurs chaleureux en bois massif."
   path="/fr/cabane-1/"
   image={ogImage.src}
-  pullIntro="Installée au plus près de la lisière forestière, la Cabane Un capture la forêt nuageuse dans ce qu'elle a de plus intime — un balcon privé enveloppé de bambou et de brume, et une salle de bain entièrement habillée de carreaux à motifs de feuilles peints à la main."
+  pullIntro="Installée au plus près de la lisière forestière, la Cabane Quetzal capture la forêt nuageuse dans ce qu'elle a de plus intime — un balcon privé enveloppé de bambou et de brume, et une salle de bain entièrement habillée de carreaux à motifs de feuilles peints à la main."
   locale="fr"
 >
   <Fragment slot="hero">
-    <PageHero image={heroImage} alt="Extérieur de la Cabane Un dans la forêt nuageuse" eyebrow="Séjour — Cabane Un">
+    <PageHero image={heroImage} alt="Extérieur de la Cabane Quetzal dans la forêt nuageuse" eyebrow="Séjour — Cabane Quetzal">
       Au plus profond de la brume.
     </PageHero>
   </Fragment>
 
-  <Section label="Chaque Recoin" heading="Toute la Cabane Un.">
+  <Section label="Chaque Recoin" heading="Toute la Cabane Quetzal.">
     <PhotoGrid items={photos} groupId="cabin-1" />
     <div class="amenity-list centered">
       {amenities.map((item) => <span>{item}</span>)}
@@ -65,8 +65,8 @@ const amenities = [
     <h2>Voir les autres cabanes.</h2>
     <div class="contact-list">
       <a href="/fr/lodge/">Toutes Les Cabanes →</a>
-      <a href="/fr/cabane-2/">Cabane Deux →</a>
-      <a href="/fr/cabane-3/">Cabane Trois →</a>
+      <a href="/fr/cabane-2/">Cabane Hummingbird →</a>
+      <a href="/fr/cabane-3/">Cabane Jaguar →</a>
     </div>
   </Fragment>
 </PageLayout>
