@@ -735,23 +735,34 @@ section > .container :last-child {
    Pull intro
    ========================================================================== */
 
+/* The pull intro's centered italic passage. Also usable as a plain
+   paragraph with class "display" inside any Section, so a section's text can be set
+   "in the same hand" as the page's opening lede. */
 .pull-intro {
   text-align: center;
 }
 
-.pull-intro .display {
+p.display {
   font-size: 1.25rem;
   line-height: 1.5;
   max-width: 46rem;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
   color: var(--green-deep);
 }
 
 @media (min-width: 860px) {
-  .pull-intro .display {
+  p.display {
     font-size: 1.6rem;
   }
+}
+
+/* A section built around a display passage centers its label, heading and
+   any plain paragraphs too, so the whole block reads on one axis instead of
+   left-over-center. */
+section > .container:has(> p.display) > :is(.section-label, .lede, p) {
+  text-align: center;
 }
 
 /* ==========================================================================

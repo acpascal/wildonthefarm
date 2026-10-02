@@ -4,13 +4,10 @@ import PageLayout from '../layouts/PageLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import Section from '../components/Section.astro';
 import PhotoGrid from '../components/PhotoGrid.astro';
-import Split from '../components/Split.astro';
 import { img } from '../lib/images';
 
 const heroImage = img('kitchen/dining_room.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
-const gardenTeaserImage = img('garden/garden_view.jpg');
-const gardenTeaserOptimized = await getImage({ src: gardenTeaserImage, width: 800, format: 'webp' });
 
 const diningPhotos = [
   { image: img('kitchen/dining_room.jpg'), alt: 'The dining room at Wild on the Farm, set for a meal' },
@@ -41,7 +38,11 @@ const foodPhotos = [
   description="A working farm kitchen at Wild on the Farm, Boquete: organic produce from our own terraced gardens, cooked simply and shared around one long table."
   path="/food/"
   image={ogImage.src}
-  pullIntro="Sharing a meal around one long table — blending languages and cultures into a small, beautiful moment of humanity — is the finest thing this mountain has to offer. The fire crackles, and the dishes we love to cook strike a balance between pleasure, health, and diversity. Nettle and purslane are exquisite, quietly powerful things — you'll understand as soon as their scent reaches you through the kitchen door. I love to cook. For me, it's a new adventure every day, shaped by the garden, the weather, and whatever inspires me that morning. This is Pachapapa's kitchen…."
+  pullIntro="
+    Sitting around one long table, blending languages and cultures into a precious moment of humanity: this is the most beautiful gift our mountain has to offer. Welcome to Pachapapa's kitchen.
+    Here, the fire crackles and flavors find their harmony between indulgence, health, and diversity. Wild plants hold a place of honor — exquisite, and full of quiet strength.
+    Every day is a fresh blank page. My cooking is free, shaped by the rhythm of the garden's harvests, the weather, and the morning's inspiration.
+  "
 >
   <Fragment slot="hero">
     <PageHero image={heroImage} alt="The dining room at Wild on the Farm" eyebrow="The Food">
@@ -49,41 +50,39 @@ const foodPhotos = [
     </PageHero>
   </Fragment>
 
-  <Section label="The Dining Room" heading="Where the day ends.">
+  <Section label="The Dining Room">
+    <p class="display">
+      Welcome to Pachapapa's home.
+    </p>
     <PhotoGrid items={diningPhotos} groupId="kitchen-dining" />
   </Section>
 
-  <Section label="The Kitchen" heading="Small, professional, and always in use.">
+  <Section label="The Kitchen">
+    <p class="display">
+      Where the magician of taste juggles the flavors of the farm.
+    </p>
     <PhotoGrid items={kitchenPhotos} groupId="kitchen-kitchen" />
   </Section>
 
-  <Section label="Around The Table" heading="Everyone eats together.">
+  <Section label="Around The Table">
+    <p class="display">
+      Around our table, borders fade away, making room for the flavors of sharing, the joy of good food, and the magic of a universal encounter.
+    </p>
     <PhotoGrid items={tablePhotos} groupId="kitchen-table" />
   </Section>
 
   <Section label="From Our Garden" heading="Organic, seasonal, a few steps from the stove.">
-    <p>
+    <p class="display">
       Its heart beating to the very last pulse, the garden guards eighteen years of
       experimentation and experience. We nourish the soil, and the soil in turn nourishes the
       plants that carry their vitality to you. Any other path does harm to your health.
     </p>
-    <Split>
-      <div class="story-img" style={`background-image:url(${gardenTeaserOptimized.src})`} role="img" aria-label="View over the terraced garden beds" />
-      <div>
-        <p>
-          The Garden now has its own page — full terrace-to-table photos, and the permaculture
-          story behind it.
-        </p>
-        <p><a href="/garden/"><strong>Visit The Garden →</strong></a></p>
-      </div>
-    </Split>
+    <p><a href="/garden/"><strong>Visit The Garden →</strong></a></p>
   </Section>
 
-  <Section label="What We Cook" heading="Simple food, cooked to nourish.">
-    <p>
-      Meals here follow the garden rather than a fixed menu — hearty stews, roasted vegetables,
-      and fresh salads built around whatever's ready to pick that morning. The goal is food that
-      tastes like where it grew, and that leaves guests feeling better than when they arrived.
+  <Section label="What We Cook">
+    <p class="display">
+      Our cooking tells the story of the land around us, and the unique taste of our climate. Around this generous, convivial table, every plate becomes a reflection of the place we call home — and of the bond that brings us together.
     </p>
     <PhotoGrid items={foodPhotos} groupId="kitchen-food" />
   </Section>

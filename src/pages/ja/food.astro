@@ -4,13 +4,10 @@ import PageLayout from '../../layouts/PageLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import Section from '../../components/Section.astro';
 import PhotoGrid from '../../components/PhotoGrid.astro';
-import Split from '../../components/Split.astro';
 import { img } from '../../lib/images';
 
 const heroImage = img('kitchen/dining_room.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
-const gardenTeaserImage = img('garden/garden_view.jpg');
-const gardenTeaserOptimized = await getImage({ src: gardenTeaserImage, width: 800, format: 'webp' });
 
 const diningPhotos = [
   { image: img('kitchen/dining_room.jpg'), alt: '食事の準備が整った、Wild on the Farmのダイニングルーム' },
@@ -41,7 +38,11 @@ const foodPhotos = [
   description="パナマ、ボケテのWild on the Farmにある、実際に稼働する農園の厨房——段々畑の菜園で育つオーガニックの恵みを、シンプルに調理し、ひとつの長い食卓で分かち合う。"
   path="/ja/food/"
   image={ogImage.src}
-  pullIntro="ひとつの長い食卓を囲んで食事を分かち合うこと——言葉も文化も溶け合わせながら、人と人とのささやかで美しいひとときを紡ぐこと——それこそが、この山がもたらしてくれる最高の贈り物です。火はぱちぱちと爆ぜ、私たちが心を込めて作る料理は、楽しみと健康と多様性のあいだで、絶妙な均衡を保っています。イラクサとスベリヒユは、静かな力を秘めた、この上なく美味しいもの——その香りが厨房の扉から漂ってきた瞬間、きっとお分かりいただけるはずです。私は料理をすることが大好きです。私にとって、それは毎日新しい冒険——菜園と、その日の天気と、その朝ふと心に浮かんだひらめきによって形づくられていく冒険なのです。ここは、パチャパパの厨房……"
+  pullIntro="
+    ひとつの長い食卓を囲み、言葉と文化を溶け合わせて、かけがえのない人と人とのひとときを紡ぐ——それこそが、私たちの山が贈る、いちばん美しい贈り物です。パチャパパのキッチンへ、ようこそ。
+    ここでは火がぱちぱちとはぜ、味わいは、おいしさと健やかさと多様さのあいだで、美しく響き合います。野草は特等席に。繊細で、静かな力を秘めた存在です。
+    毎日が、まっさらな新しいページ。私の料理は自由です。菜園の実りのリズム、その日の空模様、そして朝のひらめきに合わせて、かたちを変えていきます。
+  "
   locale="ja"
 >
   <Fragment slot="hero">
@@ -50,41 +51,39 @@ const foodPhotos = [
     </PageHero>
   </Fragment>
 
-  <Section label="ダイニングルーム" heading="一日が、ここで終わる。">
+  <Section label="ダイニングルーム">
+    <p class="display">
+      パチャパパの家へ、ようこそ。
+    </p>
     <PhotoGrid items={diningPhotos} groupId="kitchen-dining" />
   </Section>
 
-  <Section label="厨房" heading="小さく、本格的で、いつも動いている。">
+  <Section label="厨房">
+    <p class="display">
+      味の魔法使いが、農園の恵みを自在に踊らせる場所。
+    </p>
     <PhotoGrid items={kitchenPhotos} groupId="kitchen-kitchen" />
   </Section>
 
-  <Section label="食卓を囲んで" heading="誰もが、共に食べる。">
+  <Section label="食卓を囲んで">
+    <p class="display">
+      私たちの食卓では、国境はそっと溶けてゆき、分かち合う味わいと、食べるよろこび、そして世界がひとつになる出会いの魔法が広がります。
+    </p>
     <PhotoGrid items={tablePhotos} groupId="kitchen-table" />
   </Section>
 
   <Section label="私たちの菜園から" heading="オーガニックで、旬を味わう——コンロからほんの数歩。">
-    <p>
+    <p class="display">
       最後の鼓動まで脈打ち続けるその心臓は、十八年にわたる試行錯誤と経験を守り続けています。私たちが土を
       養えば、土はその見返りに、命の力を宿した植物を育て、それをあなたのもとへと届けてくれます。それ以外
       の道は、あなたの健康を損なうものでしかありません。
     </p>
-    <Split>
-      <div class="story-img" style={`background-image:url(${gardenTeaserOptimized.src})`} role="img" aria-label="段々畑の菜園を見渡す眺め" />
-      <div>
-        <p>
-          菜園には、いま独自のページがあります——段々畑から食卓までを追った写真の数々と、その裏にあるパー
-          マカルチャーの物語を。
-        </p>
-        <p><a href="/ja/garden/"><strong>菜園を訪れる →</strong></a></p>
-      </div>
-    </Split>
+    <p><a href="/ja/garden/"><strong>菜園を訪れる →</strong></a></p>
   </Section>
 
-  <Section label="私たちが作るもの" heading="シンプルな料理を、心と体を養うために。">
-    <p>
-      ここでの食事は、決まったメニューではなく、菜園に従います——その朝収穫できるものを中心に、体の温まる
-      シチュー、ローストした野菜、そして摘みたてのサラダが並びます。目指すのは、育った場所の味がする料理、
-      そしてお客様が到着したときよりも、よい心持ちで過ごしていただけること。
+  <Section label="私たちが作るもの">
+    <p class="display">
+      私たちの料理は、この地をとりまく大地と、ここにしかない気候の味わいを物語ります。惜しみなく分かち合う、あたたかな食卓。その一皿一皿に、この土地の風土が映し出され、私たちをつなぐ絆となります。
     </p>
     <PhotoGrid items={foodPhotos} groupId="kitchen-food" />
   </Section>

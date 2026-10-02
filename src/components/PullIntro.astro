@@ -1,8 +1,15 @@
 ---
+interface Props {
+  /** Each entry renders as its own centered italic paragraph. Falls back to
+   *  the slot (one paragraph) when omitted. */
+  paragraphs?: string[];
+}
+
+const { paragraphs } = Astro.props;
 ---
 
 <section class="pull-intro">
   <div class="container">
-    <p class="display"><slot /></p>
+    {paragraphs ? paragraphs.map((p) => <p class="display">{p}</p>) : <p class="display"><slot /></p>}
   </div>
 </section>

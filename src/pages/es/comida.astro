@@ -4,13 +4,10 @@ import PageLayout from '../../layouts/PageLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import Section from '../../components/Section.astro';
 import PhotoGrid from '../../components/PhotoGrid.astro';
-import Split from '../../components/Split.astro';
 import { img } from '../../lib/images';
 
 const heroImage = img('kitchen/dining_room.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
-const gardenTeaserImage = img('garden/garden_view.jpg');
-const gardenTeaserOptimized = await getImage({ src: gardenTeaserImage, width: 800, format: 'webp' });
 
 const diningPhotos = [
   { image: img('kitchen/dining_room.jpg'), alt: 'The dining room at Wild on the Farm, set for a meal' },
@@ -41,7 +38,11 @@ const foodPhotos = [
   description="Una cocina de finca en funcionamiento en Wild on the Farm, Boquete: productos orgánicos de nuestros propios huertos en terrazas, cocinados con sencillez y compartidos en una larga mesa."
   path="/es/comida/"
   image={ogImage.src}
-  pullIntro="Compartir una comida alrededor de una larga mesa —mezclando idiomas y culturas en un pequeño y hermoso instante de humanidad— es lo mejor que esta montaña tiene para ofrecer. El fuego crepita, y los platos que nos encanta cocinar buscan el equilibrio entre el placer, la salud y la diversidad. La ortiga y la verdolaga son exquisitas, de una fuerza silenciosa: lo entenderás en cuanto su aroma te llegue por la puerta de la cocina. Me encanta cocinar. Para mí es una aventura nueva cada día, moldeada por el huerto, el clima y lo que sea que me inspire esa mañana. Esta es la cocina de Pachapapa…."
+  pullIntro="
+    Sentarse alrededor de una larga mesa, mezclar idiomas y culturas en un precioso instante de humanidad: ese es el regalo más hermoso de nuestra montaña. Bienvenidos a la cocina de Pachapapa.
+    Aquí crepita el fuego y los sabores se armonizan entre el placer del buen comer, la salud y la diversidad. Las plantas silvestres ocupan un lugar de honor, exquisitas y de una fuerza serena.
+    Cada día es una nueva página en blanco. Mi cocina es libre: se moldea al ritmo de las cosechas del huerto, del tiempo que hace y de la inspiración de la mañana.
+  "
   locale="es"
 >
   <Fragment slot="hero">
@@ -50,42 +51,39 @@ const foodPhotos = [
     </PageHero>
   </Fragment>
 
-  <Section label="El Comedor" heading="Donde termina el día.">
+  <Section label="El Comedor">
+    <p class="display">
+      Bienvenidos a casa de Pachapapa.
+    </p>
     <PhotoGrid items={diningPhotos} groupId="kitchen-dining" />
   </Section>
 
-  <Section label="La Cocina" heading="Pequeña, profesional, y siempre en uso.">
+  <Section label="La Cocina">
+    <p class="display">
+      Donde el mago del gusto hace malabares con los sabores de la finca.
+    </p>
     <PhotoGrid items={kitchenPhotos} groupId="kitchen-kitchen" />
   </Section>
 
-  <Section label="Alrededor De La Mesa" heading="Todos comen juntos.">
+  <Section label="Alrededor De La Mesa">
+    <p class="display">
+      Alrededor de nuestra mesa, las fronteras se desvanecen y dejan paso a los sabores del encuentro, a la dicha del buen comer y a la magia de una cita universal.
+    </p>
     <PhotoGrid items={tablePhotos} groupId="kitchen-table" />
   </Section>
 
   <Section label="Desde Nuestro Huerto" heading="Orgánico, de temporada, a pocos pasos de la estufa.">
-    <p>
+    <p class="display">
       Con el corazón latiendo hasta el último pulso, el huerto guarda dieciocho años de
       experimentación y experiencia. Nutrimos la tierra, y la tierra a su vez nutre las plantas
       que te llevan su vitalidad. Cualquier otro camino le hace daño a tu salud.
     </p>
-    <Split>
-      <div class="story-img" style={`background-image:url(${gardenTeaserOptimized.src})`} role="img" aria-label="Vista sobre los huertos en terrazas" />
-      <div>
-        <p>
-          El Huerto ahora tiene su propia página — fotos completas de la terraza a la mesa, y la
-          historia de permacultura detrás de todo.
-        </p>
-        <p><a href="/es/jardin/"><strong>Visita El Huerto →</strong></a></p>
-      </div>
-    </Split>
+    <p><a href="/es/jardin/"><strong>Visita El Huerto →</strong></a></p>
   </Section>
 
-  <Section label="Lo Que Cocinamos" heading="Comida sencilla, cocinada para nutrir.">
-    <p>
-      Aquí las comidas siguen al huerto en lugar de un menú fijo — guisos abundantes, verduras
-      asadas, y ensaladas frescas armadas con lo que esté listo para cosechar esa mañana. El
-      objetivo es una comida que sepa al lugar donde creció, y que haga que los huéspedes se
-      sientan mejor de lo que llegaron.
+  <Section label="Lo Que Cocinamos">
+    <p class="display">
+      Nuestra cocina cuenta la historia de la tierra que nos rodea y el sabor único de nuestro clima. En esta mesa generosa y acogedora, cada plato se convierte en el reflejo de nuestra tierra y en el lazo que nos une.
     </p>
     <PhotoGrid items={foodPhotos} groupId="kitchen-food" />
   </Section>

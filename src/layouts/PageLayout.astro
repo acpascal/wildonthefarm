@@ -6,7 +6,8 @@ import { defaultLocale, type Locale } from '../i18n/ui';
 
 interface Props extends PageSeo {
   locale?: Locale;
-  /** Italic centered lede paragraph shown right below the hero, if any. */
+  /** Italic centered lede shown right below the hero, if any. Line breaks
+   *  in the string start a new paragraph. */
   pullIntro?: string;
   /** Overrides for the footer's ReserveContactBlock — use when the default
    *  "Reserve" copy would repeat something already said on the page. */
@@ -33,7 +34,16 @@ const {
   {...seo}
 >
   <slot name="hero" />
-  {pullIntro && <PullIntro>{pullIntro}</PullIntro>}
+  {
+    pullIntro && (
+      <PullIntro
+        paragraphs={pullIntro
+          .split('\n')
+          .map((p) => p.trim())
+          .filter(Boolean)}
+      />
+    )
+  }
   <slot />
   <slot name="footer" slot="footer" />
 </BaseLayout>
