@@ -55,11 +55,16 @@ const cards = [
     description: 'Hogar del Quetzal Resplandeciente y los senderos del Parque Amistad.',
   },
 ];
+
+// Search-result title and description — localized, kept under ~60 / ~155 characters.
+const seoTitle = 'Wild on the Farm, Boquete Cloud Forest Lodge | Ecolodge en Panamá';
+const seoDescription =
+  'Ecolodge en el bosque nuboso de Boquete, Panamá, a 1.800 m: tres cabañas artesanales en una finca orgánica de permacultura junto al Parque La Amistad.';
 ---
 
 <PageLayout
-  title={`${business.name} — ${business.tagline}`}
-  description={business.description}
+  title={seoTitle}
+  description={seoDescription}
   path="/es/"
   image={ogImage.src}
   locale="es"
@@ -160,5 +165,5 @@ const cards = [
     </div>
   </Fragment>
 
-  <SchemaLodging imageUrl={ogImage.src} />
+  <SchemaLodging imageUrl={ogImage.src} description={seoDescription} path="/es/" />
 </PageLayout>

@@ -7,12 +7,17 @@ export const business = {
   phoneHref: 'tel:50765699134',
   whatsappHref: 'https://api.whatsapp.com/send?phone=50765699134',
   email: 'info@wildonthefarm.com',
+  // Kept in line with the Google Business Profile ("Wild on the Farm, Boquete
+  // Cloud Forest Lodge" — Horqueta, Los Naranjos, Chiriquí) so search engines
+  // see one consistent name/address/phone across the site and Maps.
   address: {
     streetAddress: 'Finca Amistad, Horqueta',
-    addressLocality: 'Boquete',
+    addressLocality: 'Los Naranjos, Boquete',
     addressRegion: 'Chiriquí',
     addressCountry: 'PA',
   },
+  geo: { latitude: 8.8234814, longitude: -82.4480084 },
+  googleMapsUrl: 'https://www.google.com/maps?cid=1276073423635709465',
   social: {
     facebook: 'https://www.facebook.com/profile.php?id=61562308296749',
     instagram: 'https://www.instagram.com/wildonthefarm',

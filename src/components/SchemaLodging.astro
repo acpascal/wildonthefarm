@@ -5,18 +5,26 @@ import { absoluteUrl } from '../lib/seo';
 interface Props {
   /** Root-relative image path (e.g. an astro:assets getImage() .src). */
   imageUrl: string;
+  /** Localized description — the same one the page uses for its meta description. */
+  description: string;
+  /** The localized homepage path this schema sits on, e.g. '/fr/'. */
+  path: string;
 }
 
-const { imageUrl } = Astro.props;
+const { imageUrl, description, path } = Astro.props;
 const site = Astro.site!;
-const siteTrimmed = site.toString().replace(/\/$/, '');
 
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'LodgingBusiness',
-  name: `${business.name} — ${business.tagline}`,
-  description: business.description,
-  url: `${siteTrimmed}/`,
+  // One stable @id across every locale, so Google treats the four
+  // homepages' schemas as the same business rather than four.
+  '@id': absoluteUrl(site, '/#lodging'),
+  // Matches the Google Business Profile name exactly.
+  name: `${business.name}, ${business.tagline}`,
+  alternateName: business.name,
+  description,
+  url: absoluteUrl(site, path),
   telephone: business.phone,
   email: business.email,
   image: absoluteUrl(site, imageUrl),
@@ -25,12 +33,17 @@ const schema = {
     '@type': 'PostalAddress',
     ...business.address,
   },
+  geo: {
+    '@type': 'GeoCoordinates',
+    ...business.geo,
+  },
+  hasMap: business.googleMapsUrl,
   amenityFeature: [
-    { '@type': 'LocationFeatureSpecification', name: 'Solar power' },
-    { '@type': 'LocationFeatureSpecification', name: 'Organic farm' },
-    { '@type': 'LocationFeatureSpecification', name: 'Private terrace' },
+    { '@type': 'LocationFeatureSpecification', name: 'Solar power', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Organic farm', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Private terrace', value: true },
   ],
-  sameAs: [business.social.facebook, business.social.instagram, business.social.youtube],
+  sameAs: [business.social.facebook, business.social.instagram, business.social.youtube, business.googleMapsUrl],
 };
 ---
 

@@ -55,11 +55,16 @@ const cards = [
     description: 'ケツァールが暮らす森、そしてアミスタッド国立公園へと続く山道。',
   },
 ];
+
+// Search-result title and description — localized, kept under ~60 / ~155 characters.
+const seoTitle = 'Wild on the Farm, Boquete Cloud Forest Lodge | パナマの雲霧林エコロッジ';
+const seoDescription =
+  'パナマ・ボケテ、標高1,800mの雲霧林に佇むエコロッジ。ラ・アミスタッド国立公園に隣接するオーガニックのパーマカルチャー農園に、手づくりのキャビンが3棟。';
 ---
 
 <PageLayout
-  title={`${business.name} — ${business.tagline}`}
-  description={business.description}
+  title={seoTitle}
+  description={seoDescription}
   path="/ja/"
   image={ogImage.src}
   locale="ja"
@@ -157,5 +162,5 @@ const cards = [
     </div>
   </Fragment>
 
-  <SchemaLodging imageUrl={ogImage.src} />
+  <SchemaLodging imageUrl={ogImage.src} description={seoDescription} path="/ja/" />
 </PageLayout>
