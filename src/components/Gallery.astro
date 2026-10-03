@@ -11,5 +11,5 @@ const { items, groupId = 'gallery' } = Astro.props;
 ---
 
 <div class="gallery">
-  {items.map((item) => <PhotoTile image={item.image} alt={item.alt} size={item.size} groupId={groupId} />)}
+  {items.map((item) => <PhotoTile image={item.image} alt={item.alt} size={item.size} video={item.video} groupId={groupId} />)}
 </div>

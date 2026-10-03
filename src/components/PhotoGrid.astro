@@ -14,5 +14,5 @@ const { items, groupId, variant = 'uniform' } = Astro.props;
 ---
 
 <div class:list={['photo-grid', { varied: variant === 'varied' }]}>
-  {items.map((item) => <PhotoTile image={item.image} alt={item.alt} size={variant === 'varied' ? item.size : undefined} groupId={groupId} />)}
+  {items.map((item) => <PhotoTile image={item.image} alt={item.alt} size={variant === 'varied' ? item.size : undefined} video={item.video} groupId={groupId} />)}
 </div>

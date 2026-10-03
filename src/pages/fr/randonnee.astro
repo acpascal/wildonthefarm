@@ -20,6 +20,7 @@ const amenities = [
 ];
 
 const trailPhotos: PhotoItem[] = [
+  { image: img('hiking/video-poster-fr.jpg'), alt: 'Vidéo : randonnée de 4 heures au départ de Wild on the Farm', size: 'tall', video: '/videos/hike-4h-fr.mp4' },
   { image: img('hiking/gallery_01.jpg'), alt: 'Le sentier entrant dans la forêt nuageuse', size: 'lg' },
   { image: img('hiking/gallery_02.jpg'), alt: 'Arbres couverts de mousse le long du sentier' },
   { image: img('hiking/gallery_03.jpg'), alt: 'Un sentier étroit à travers la forêt nuageuse dense', size: 'tall' },
@@ -59,7 +60,7 @@ const trailPhotos: PhotoItem[] = [
   locale="fr"
 >
   <Fragment slot="hero">
-    <PhotoHero image={heroImage} alt="Randonnée en forêt nuageuse à Wild on the Farm" eyebrow="Randonnée — Loin de la Foule">
+    <PhotoHero image={heroImage} alt="Randonnée en forêt nuageuse à Wild on the Farm" eyebrow="Randonnée dans le Parc National La Amistad — Loin de la Foule">
       Des sentiers qui partent de notre porte et se perdent dans les nuages.
     </PhotoHero>
   </Fragment>

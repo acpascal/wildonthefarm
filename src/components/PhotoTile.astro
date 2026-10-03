@@ -10,9 +10,11 @@ interface Props {
   size?: 'lg' | 'wide' | 'tall' | 'normal';
   /** Tiles sharing a groupId open together as one lightbox slideshow. */
   groupId?: string;
+  /** Public video URL; the image becomes its poster and the lightbox plays it. */
+  video?: string;
 }
 
-const { image, alt, size = 'normal', groupId } = Astro.props;
+const { image, alt, size = 'normal', groupId, video } = Astro.props;
 
 const sizeClass = size === 'normal' ? '' : `pt-${size}`;
 const spansTwoCols = size === 'lg' || size === 'wide';
@@ -25,11 +27,14 @@ const full = await getImage({ src: image, width: 1800, format: 'webp' });
 ---
 
 <a
-  href={full.src}
-  class:list={['photo-tile', sizeClass]}
+  href={video ?? full.src}
+  class:list={['photo-tile', sizeClass, { 'is-video': video }]}
   data-lightbox
+  data-lightbox-type={video ? 'video' : undefined}
+  data-poster={video ? full.src : undefined}
   data-gallery={groupId}
   aria-label={alt}
 >
   <Image src={image} alt={alt} widths={[400, 800, 1200]} sizes={sizes} loading="lazy" />
+  {video && <span class="photo-tile-play" aria-hidden="true" />}
 </a>

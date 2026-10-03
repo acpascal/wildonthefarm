@@ -12,13 +12,14 @@
   const overlay = document.createElement('div');
   overlay.className = 'lightbox';
   overlay.innerHTML =
-    '<div class="lightbox-stage"><img alt="" /></div>' +
+    '<div class="lightbox-stage"><img alt="" /><video controls playsinline preload="none" hidden></video></div>' +
     '<button class="lightbox-close" type="button" aria-label="Close">&times;</button>' +
     '<button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous photo">&lsaquo;</button>' +
     '<button class="lightbox-nav lightbox-next" type="button" aria-label="Next photo">&rsaquo;</button>';
   document.body.appendChild(overlay);
 
   const img = overlay.querySelector('img');
+  const video = overlay.querySelector('video');
   const closeBtn = overlay.querySelector('.lightbox-close');
   const prevBtn = overlay.querySelector('.lightbox-prev');
   const nextBtn = overlay.querySelector('.lightbox-next');
@@ -38,8 +39,22 @@
   function show(i) {
     index = (i + group.length) % group.length;
     const tile = group[index];
-    img.src = tile.getAttribute('href');
-    img.alt = tile.getAttribute('aria-label') || '';
+    const isVideo = tile.dataset.lightboxType === 'video';
+    video.pause();
+    img.hidden = isVideo;
+    video.hidden = !isVideo;
+    if (isVideo) {
+      img.removeAttribute('src');
+      video.poster = tile.dataset.poster || '';
+      video.src = tile.getAttribute('href');
+      video.setAttribute('aria-label', tile.getAttribute('aria-label') || '');
+      video.play().catch(function () {});
+    } else {
+      video.removeAttribute('src');
+      video.load();
+      img.src = tile.getAttribute('href');
+      img.alt = tile.getAttribute('aria-label') || '';
+    }
     const multi = group.length > 1;
     prevBtn.hidden = !multi;
     nextBtn.hidden = !multi;
@@ -53,6 +68,7 @@
   }
 
   function close() {
+    video.pause();
     overlay.classList.remove('is-open');
     document.body.style.overflow = '';
   }

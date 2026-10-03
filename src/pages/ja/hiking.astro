@@ -20,6 +20,7 @@ const amenities = [
 ];
 
 const trailPhotos: PhotoItem[] = [
+  { image: img('hiking/video-poster-ja.jpg'), alt: '動画：Wild on the Farmから出発する4時間のハイキング', size: 'tall', video: '/videos/hike-4h-ja.mp4' },
   { image: img('hiking/gallery_01.jpg'), alt: '雲霧林へと入っていく小道', size: 'lg' },
   { image: img('hiking/gallery_02.jpg'), alt: '小道沿いに並ぶ、苔に覆われた木々' },
   { image: img('hiking/gallery_03.jpg'), alt: '密生した雲霧林を抜ける、細い小道', size: 'tall' },
@@ -59,7 +60,7 @@ const trailPhotos: PhotoItem[] = [
   locale="ja"
 >
   <Fragment slot="hero">
-    <PhotoHero image={heroImage} alt="Wild on the Farmで雲霧林をハイキングする" eyebrow="ハイキング——人混みから遠く離れて">
+    <PhotoHero image={heroImage} alt="Wild on the Farmで雲霧林をハイキングする" eyebrow="アミスタッド国立公園ハイキング——人混みから遠く離れて">
       私たちの扉から始まり、雲の中へと消えていく小道。
     </PhotoHero>
   </Fragment>
