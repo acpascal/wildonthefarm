@@ -48,6 +48,15 @@
   status = 301
   force = true
 
+# --- Sitemap: the old site served /sitemap.xml, which is still the URL
+# registered in Google Search Console (and the one crawlers guess). Astro's
+# sitemap integration writes /sitemap-index.xml instead. ---
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/sitemap-index.xml"
+  status = 301
+  force = true
+
 # --- EN: top-level pages (only / carried over unchanged — every other
 # slug changed, confirmed against the real src/pages/*.astro files on
 # main, not assumed) ---
