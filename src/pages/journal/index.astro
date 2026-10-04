@@ -3,35 +3,11 @@ import { getImage } from 'astro:assets';
 import PageLayout from '../../layouts/PageLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import Section from '../../components/Section.astro';
-import CardGrid from '../../components/CardGrid.astro';
-import TextCard from '../../components/TextCard.astro';
 import { img } from '../../lib/images';
-import { getJournal, groupBySection, slugFromId } from '../../lib/journal';
+import JournalSections from '../../components/JournalSections.astro';
 
 const heroImage = img('farm/overview_1.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
-
-const entries = await getJournal('en');
-const sections = groupBySection(entries);
-
-const sectionCopy = {
-  'what-we-grow': {
-    label: 'Our Permaculture and Organic Garden',
-    heading: 'What we grow, and what it’s good for.',
-    intro:
-      'Plant profiles covering medicinal and therapeutic properties, culinary interest, and how to grow each one yourself — plus the bigger stories behind what comes out of this farm.',
-  },
-  'farm-notes': {
-    label: 'Boquete Guide',
-    heading: 'History and life in the mountains.',
-    intro: 'Travel guides, local history, trail conditions, Qi Gong and wellness, and whatever else is worth sharing from the farm.',
-  },
-  'travel-panama': {
-    label: 'Travel Panama',
-    heading: 'Stories and guides from beyond Boquete.',
-    intro: 'Experiences and travel notes from across the country — not just the farm, but the rest of wild Panama.',
-  },
-};
 ---
 
 <PageLayout
@@ -47,22 +23,7 @@ const sectionCopy = {
     </PageHero>
   </Fragment>
 
-  {
-    sections.map(([key, items], i) =>
-      items.length > 0 && (
-        <Section id={key} label={sectionCopy[key].label} heading={sectionCopy[key].heading}>
-          <p>{sectionCopy[key].intro}</p>
-          <CardGrid>
-            {items.map((entry) => (
-              <TextCard title={entry.data.title} href={`/journal/${slugFromId(entry.id)}/`} cta="Read more →">
-                {entry.data.description}
-              </TextCard>
-            ))}
-          </CardGrid>
-        </Section>
-      )
-    )
-  }
+  <JournalSections />
 
   <Section label="Follow Along" heading="New posts, shared on Instagram too.">
     <p>

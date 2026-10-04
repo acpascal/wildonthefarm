@@ -8,6 +8,7 @@ import { defaultLocale, type Locale } from '../i18n/ui';
 import { pageHref } from '../data/pageTranslations';
 import { business } from '../data/business';
 import { absoluteUrl } from '../lib/seo';
+import { journalSections, journalSectionHref, type JournalSectionKey } from '../data/journalSections';
 import type { ImageMetadata } from 'astro';
 
 interface Props {
@@ -20,6 +21,8 @@ interface Props {
   date: Date;
   dateDisplay: string;
   pullIntro: string;
+  /** The article's journal section — adds a footer link to that section's page. */
+  section?: JournalSectionKey;
   locale?: Locale;
   alternates?: Partial<Record<Locale, string>>;
 }
@@ -34,6 +37,7 @@ const {
   date,
   dateDisplay,
   pullIntro,
+  section,
   locale = defaultLocale,
   alternates,
 } = Astro.props;
@@ -104,6 +108,7 @@ const copyAttribution = copyAttributionByLocale[locale];
     <div class="section-label">{t('journal.continueReading')}</div>
     <h2>{t('journal.moreFromJournal')}</h2>
     <div class="contact-list">
+      {section && <a href={journalSectionHref(section, locale)}>{journalSections[section].copy[locale].label} →</a>}
       <a href={journalIndexHref}>{t('journal.allPosts')}</a>
     </div>
   </Fragment>

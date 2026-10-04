@@ -1,50 +1,71 @@
 ---
 import { getCollection, render } from 'astro:content';
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import { slugFromId, localeFromId, getJournalTranslations, type JournalSection } from '../../lib/journal';
+import JournalSectionPage from '../../components/JournalSectionPage.astro';
+import { JOURNAL_SECTION_KEYS, journalSections, journalUi, type JournalSectionKey } from '../../data/journalSections';
+import { slugFromId, localeFromId, getJournalTranslations, type JournalEntry } from '../../lib/journal';
 
 export async function getStaticPaths() {
   const entries = await getCollection('journal', (entry) => localeFromId(entry.id) === 'en' && !entry.data.draft);
-  return entries.map((entry) => ({
+  // Each journal section also gets a page here, at its own slug — see
+  // data/journalSections.ts. An article can't share a section's slug.
+  const sectionPaths = JOURNAL_SECTION_KEYS.map((section) => ({
+    params: { slug: journalSections[section].slug['en'] },
+    props: { section },
+  }));
+  const articlePaths = entries.map((entry) => ({
     params: { slug: slugFromId(entry.id) },
     props: { entry },
   }));
+  return [...sectionPaths, ...articlePaths];
 }
 
-const { entry } = Astro.props;
-const { Content } = await render(entry);
-const slug = slugFromId(entry.id);
-const alternates = await getJournalTranslations(entry);
+interface Props {
+  entry?: JournalEntry;
+  section?: JournalSectionKey;
+}
 
-const eyebrowBySection: Record<JournalSection, string> = {
-  'what-we-grow': entry.data.kind === 'plant' ? 'Plant Profile' : 'Journal',
-  'farm-notes': 'Boquete Guide',
-  'travel-panama': 'Travel Panama',
+const { entry, section } = Astro.props;
+
+// Everything below is article-only — left undefined on a section page.
+const article = entry && {
+  Content: (await render(entry)).Content,
+  slug: slugFromId(entry.id),
+  alternates: await getJournalTranslations(entry),
+  // A plant profile says so; anything else carries its section's name.
+  eyebrow:
+    entry.data.kind === 'plant' ? journalUi['en'].plantProfile : journalSections[entry.data.section].copy['en'].label,
+  // timeZone: 'UTC' matters here — frontmatter dates like `2026-02-02` parse
+  // as UTC midnight, and without pinning the formatter to UTC too, a
+  // negative-offset timezone (e.g. Panama, UTC-5) renders it as the day
+  // before.
+  dateDisplay: entry.data.date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    timeZone: 'UTC',
+  }),
 };
-
-// timeZone: 'UTC' matters here — frontmatter dates like `2026-02-02` parse
-// as UTC midnight, and without pinning the formatter to UTC too, a
-// negative-offset timezone (e.g. Panama, UTC-5) renders it as the day
-// before.
-const dateDisplay = entry.data.date.toLocaleDateString('en-US', {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-  timeZone: 'UTC',
-});
 ---
 
-<ArticleLayout
-  title={entry.data.title}
-  description={entry.data.description}
-  path={`/journal/${slug}/`}
-  cover={entry.data.cover!}
-  coverAlt={entry.data.coverAlt ?? entry.data.title}
-  eyebrow={eyebrowBySection[entry.data.section]}
-  date={entry.data.date}
-  dateDisplay={dateDisplay}
-  pullIntro={entry.data.pullIntro}
-  alternates={alternates}
->
-  <Content />
-</ArticleLayout>
+{section && <JournalSectionPage section={section} />}
+
+{
+  entry && article && (
+    <ArticleLayout
+      title={entry.data.title}
+      description={entry.data.description}
+      path={`/journal/${article.slug}/`}
+      cover={entry.data.cover!}
+      coverAlt={entry.data.coverAlt ?? entry.data.title}
+      eyebrow={article.eyebrow}
+      date={entry.data.date}
+      dateDisplay={article.dateDisplay}
+      pullIntro={entry.data.pullIntro}
+      section={entry.data.section}
+      alternates={article.alternates}
+    >
+      <article.Content />
+    </ArticleLayout>
+  )
+}

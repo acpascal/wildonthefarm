@@ -3,35 +3,11 @@ import { getImage } from 'astro:assets';
 import PageLayout from '../../../layouts/PageLayout.astro';
 import PageHero from '../../../components/PageHero.astro';
 import Section from '../../../components/Section.astro';
-import CardGrid from '../../../components/CardGrid.astro';
-import TextCard from '../../../components/TextCard.astro';
 import { img } from '../../../lib/images';
-import { getJournal, groupBySection, slugFromId } from '../../../lib/journal';
+import JournalSections from '../../../components/JournalSections.astro';
 
 const heroImage = img('farm/overview_1.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
-
-const entries = await getJournal('ja');
-const sections = groupBySection(entries);
-
-const sectionCopy = {
-  'what-we-grow': {
-    label: 'パーマカルチャーとオーガニックの菜園',
-    heading: '私たちが育てているもの、そしてその効能。',
-    intro:
-      '薬用・療法的な効能、料理としての魅力、そして自分で育てる方法まで——この農園から生まれるものの背景にある、より大きな物語とともにお届けする植物図鑑です。',
-  },
-  'farm-notes': {
-    label: 'ボケテガイド',
-    heading: '山の歴史と暮らし。',
-    intro: '旅行ガイド、地域の歴史、小道の状況、気功とウェルネス、そして農園から分かち合う価値のあるあらゆること。',
-  },
-  'travel-panama': {
-    label: 'パナマを旅する',
-    heading: 'ボケテの先にある、物語とガイド。',
-    intro: 'この国全体からの体験談と旅の記録——農園だけでなく、野生に満ちたパナマのその他の土地についても。',
-  },
-};
 ---
 
 <PageLayout
@@ -48,22 +24,7 @@ const sectionCopy = {
     </PageHero>
   </Fragment>
 
-  {
-    sections.map(([key, items], i) =>
-      items.length > 0 && (
-        <Section id={key} label={sectionCopy[key].label} heading={sectionCopy[key].heading}>
-          <p>{sectionCopy[key].intro}</p>
-          <CardGrid>
-            {items.map((entry) => (
-              <TextCard title={entry.data.title} href={`/ja/journal/${slugFromId(entry.id)}/`} cta="続きを読む →">
-                {entry.data.description}
-              </TextCard>
-            ))}
-          </CardGrid>
-        </Section>
-      )
-    )
-  }
+  <JournalSections locale="ja" />
 
   <Section label="フォローする" heading="新しい記事は、Instagramでも。">
     <p>

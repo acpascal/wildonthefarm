@@ -1,5 +1,6 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { defaultLocale, type Locale } from '../i18n/ui';
+import { JOURNAL_SECTION_ORDER } from '../data/journalSections';
 
 export type JournalEntry = CollectionEntry<'journal'>;
 export type JournalSection = JournalEntry['data']['section'];
@@ -26,7 +27,8 @@ function translationKeyOf(entry: JournalEntry): string {
   return entry.data.translationKey ?? slugFromId(entry.id);
 }
 
-function journalHref(locale: Locale, slug: string): string {
+/** The URL of a journal article in a given locale. */
+export function journalHref(locale: Locale, slug: string): string {
   return locale === defaultLocale ? `/journal/${slug}/` : `/${locale}/journal/${slug}/`;
 }
 
@@ -43,12 +45,10 @@ export async function getJournalTranslations(entry: JournalEntry): Promise<Parti
   return alternates;
 }
 
-const SECTION_ORDER: JournalSection[] = ['what-we-grow', 'farm-notes', 'travel-panama'];
-
 export function groupBySection(entries: JournalEntry[]): Array<[JournalSection, JournalEntry[]]> {
-  const groups = new Map<JournalSection, JournalEntry[]>(SECTION_ORDER.map((s) => [s, []]));
+  const groups = new Map<JournalSection, JournalEntry[]>(JOURNAL_SECTION_ORDER.map((s) => [s, []]));
   for (const entry of entries) {
     groups.get(entry.data.section)?.push(entry);
   }
-  return SECTION_ORDER.map((section) => [section, groups.get(section) ?? []]);
+  return JOURNAL_SECTION_ORDER.map((section) => [section, groups.get(section) ?? []]);
 }

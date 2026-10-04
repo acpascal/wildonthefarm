@@ -3,35 +3,11 @@ import { getImage } from 'astro:assets';
 import PageLayout from '../../../layouts/PageLayout.astro';
 import PageHero from '../../../components/PageHero.astro';
 import Section from '../../../components/Section.astro';
-import CardGrid from '../../../components/CardGrid.astro';
-import TextCard from '../../../components/TextCard.astro';
 import { img } from '../../../lib/images';
-import { getJournal, groupBySection, slugFromId } from '../../../lib/journal';
+import JournalSections from '../../../components/JournalSections.astro';
 
 const heroImage = img('farm/overview_1.jpg');
 const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
-
-const entries = await getJournal('es');
-const sections = groupBySection(entries);
-
-const sectionCopy = {
-  'what-we-grow': {
-    label: 'Nuestro Huerto Orgánico en Permacultura',
-    heading: 'Lo que cultivamos, y para qué sirve.',
-    intro:
-      'Perfiles de plantas con sus propiedades medicinales y terapéuticas, usos culinarios, y cómo cultivarlas tú mismo.',
-  },
-  'farm-notes': {
-    label: 'Guía de Boquete',
-    heading: 'Historia y vida en la montaña.',
-    intro: 'Guías de viaje, historia local, condiciones de senderos, y lo que valga la pena compartir desde la finca.',
-  },
-  'travel-panama': {
-    label: 'Viajes por Panamá',
-    heading: 'Historias y guías más allá de Boquete.',
-    intro: 'Experiencias y notas de viaje por todo el país — no solo la finca, sino el resto del Panamá salvaje.',
-  },
-};
 ---
 
 <PageLayout
@@ -48,22 +24,7 @@ const sectionCopy = {
     </PageHero>
   </Fragment>
 
-  {
-    sections.map(([key, items], i) =>
-      items.length > 0 && (
-        <Section id={key} label={sectionCopy[key].label} heading={sectionCopy[key].heading}>
-          <p>{sectionCopy[key].intro}</p>
-          <CardGrid>
-            {items.map((entry) => (
-              <TextCard title={entry.data.title} href={`/es/journal/${slugFromId(entry.id)}/`} cta="Leer más →">
-                {entry.data.description}
-              </TextCard>
-            ))}
-          </CardGrid>
-        </Section>
-      )
-    )
-  }
+  <JournalSections locale="es" />
 
   <Section label="Síguenos" heading="Nuevas publicaciones, también en Instagram.">
     <p>

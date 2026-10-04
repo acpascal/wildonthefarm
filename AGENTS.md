@@ -18,6 +18,17 @@ is a standing responsibility for every change, not a one-time cleanup:
   drift to resolve (pick one, apply it everywhere), not a precedent to
   extend.
 
+## Journal sections
+
+The journal's sections ("Our Permaculture and Organic Garden", "Boquete
+Guide", "Travel Panama") are declared in one place: `src/data/journalSections.ts`.
+To open a new section, add its key and its block there (slug, hero image, copy
+in all four languages), then set `section: <key>` on its articles. Its page in
+every language, its entry in the Journal nav dropdown, the language switcher,
+the sitemap, and the links from the journal index and from each article all
+follow from that file — don't hand-write any of them, and don't add a page
+file per section.
+
 ## Typography
 
 Fonts are loaded via Astro's `fonts` config in `astro.config.mjs`. Both

@@ -1,0 +1,41 @@
+---
+import Section from './Section.astro';
+import CardGrid from './CardGrid.astro';
+import TextCard from './TextCard.astro';
+import { getJournal, groupBySection, journalHref, slugFromId } from '../lib/journal';
+import { defaultLocale, type Locale } from '../i18n/ui';
+import { JOURNAL_PREVIEW_COUNT, journalSections, journalSectionHref, journalUi } from '../data/journalSections';
+
+interface Props {
+  locale?: Locale;
+}
+
+// The journal index's body: each section previewed by its latest few
+// articles, with a link through to that section's own page for the rest.
+const { locale = defaultLocale } = Astro.props;
+const ui = journalUi[locale];
+const sections = groupBySection(await getJournal(locale));
+---
+
+{
+  sections.map(([key, items]) => {
+    const copy = journalSections[key].copy[locale];
+    return (
+      items.length > 0 && (
+        <Section id={key} label={copy.label} heading={copy.heading}>
+          <p>{copy.teaser}</p>
+          <CardGrid>
+            {items.slice(0, JOURNAL_PREVIEW_COUNT).map((entry) => (
+              <TextCard title={entry.data.title} href={journalHref(locale, slugFromId(entry.id))} cta={ui.readMore}>
+                {entry.data.description}
+              </TextCard>
+            ))}
+          </CardGrid>
+          <div class="contact-list">
+            <a href={journalSectionHref(key, locale)}>{ui.seeAll(items.length, copy.label)}</a>
+          </div>
+        </Section>
+      )
+    );
+  })
+}

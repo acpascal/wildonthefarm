@@ -1,4 +1,5 @@
 import { languages, type Locale } from '../i18n/ui';
+import { journalSectionPages } from './journalSections';
 
 export interface PageTranslation {
   id: string;
@@ -43,6 +44,8 @@ export const pageTranslations: PageTranslation[] = [
     ja: '/ja/birdwatching/',
   },
   { id: 'journal', en: '/journal/', es: '/es/journal/', fr: '/fr/journal/', ja: '/ja/journal/' },
+  // One page per journal section — declared in data/journalSections.ts.
+  ...journalSectionPages,
   { id: 'shop', en: '/shop/', es: '/es/tienda/', fr: '/fr/boutique/', ja: '/ja/shop/' },
   {
     id: 'rates-retreats',

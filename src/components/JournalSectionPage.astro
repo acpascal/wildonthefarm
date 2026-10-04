@@ -1,0 +1,115 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../layouts/PageLayout.astro';
+import PageHero from './PageHero.astro';
+import Section from './Section.astro';
+import CardGrid from './CardGrid.astro';
+import TextCard from './TextCard.astro';
+import { img } from '../lib/images';
+import { getJournal, journalHref, slugFromId } from '../lib/journal';
+import { defaultLocale, type Locale } from '../i18n/ui';
+import { pageHref } from '../data/pageTranslations';
+import {
+  JOURNAL_SECTION_ORDER,
+  journalSections,
+  journalSectionHref,
+  journalUi,
+  type JournalSectionKey,
+} from '../data/journalSections';
+
+interface Props {
+  section: JournalSectionKey;
+  locale?: Locale;
+}
+
+// One journal section on its own page: every article in that section, under
+// a title and description written for what people actually search for. The
+// per-locale page files are one-liners that render this.
+const { section, locale = defaultLocale } = Astro.props;
+const def = journalSections[section];
+const copy = def.copy[locale];
+const ui = journalUi[locale];
+
+const heroImage = img(def.heroImage);
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+
+const entries = (await getJournal(locale)).filter((entry) => entry.data.section === section);
+const otherSections = JOURNAL_SECTION_ORDER.filter((key) => key !== section);
+
+// With sub-headings declared, split the articles under them (in the declared
+// order), then whatever carries no group; empty ones drop out. Without any,
+// it's a single untitled block.
+const blocks = def.groups
+  ? [
+      ...def.groups.map((group) => ({
+        id: group.key as string,
+        heading: group.label[locale],
+        items: entries.filter((entry) => entry.data.group === group.key),
+      })),
+      {
+        id: 'more',
+        heading: def.ungroupedLabel?.[locale] ?? copy.label,
+        items: entries.filter((entry) => !def.groups!.some((group) => group.key === entry.data.group)),
+      },
+    ].filter((block) => block.items.length > 0)
+  : [{ id: undefined, heading: copy.heading, items: entries }];
+---
+
+<PageLayout
+  title={`${copy.seoTitle} | Wild on the Farm, Boquete Cloud Forest Lodge`}
+  description={copy.seoDescription}
+  path={journalSectionHref(section, locale)}
+  image={ogImage.src}
+  pullIntro={copy.intro}
+  locale={locale}
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt={copy.heroAlt} eyebrow={ui.eyebrow} focus={def.heroFocus}>
+      {copy.label}
+    </PageHero>
+  </Fragment>
+
+  {
+    (def.groups || def.featuredLinks) && (
+      <Section heading={copy.heading}>
+        {def.featuredLinks?.map((link) => (
+          <p>
+            <a href={link.href[locale]}>
+              <strong>{link.label[locale]}</strong>
+            </a>
+          </p>
+        ))}
+        {def.groups && (
+          <div class="contact-list">
+            {blocks.map((block) => (
+              <a href={`#${block.id}`}>{block.heading} ↓</a>
+            ))}
+          </div>
+        )}
+      </Section>
+    )
+  }
+
+  {
+    blocks.map((block) => (
+      <Section id={block.id} heading={block.heading}>
+        <CardGrid>
+          {block.items.map((entry) => (
+            <TextCard title={entry.data.title} href={journalHref(locale, slugFromId(entry.id))} cta={ui.readMore}>
+              {entry.data.description}
+            </TextCard>
+          ))}
+        </CardGrid>
+      </Section>
+    ))
+  }
+
+  <Fragment slot="footer">
+    <div class="section-label">{ui.otherSections}</div>
+    <h2>{ui.allSections}</h2>
+    <div class="contact-list">
+      {otherSections.map((key) => <a href={journalSectionHref(key, locale)}>{journalSections[key].copy[locale].label} →</a>)}
+      <a href={pageHref('journal', locale)}>{ui.backToJournal}</a>
+    </div>
+  </Fragment>
+</PageLayout>

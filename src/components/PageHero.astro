@@ -6,18 +6,23 @@ interface Props {
   image: ImageMetadata;
   alt: string;
   eyebrow?: string;
+  /** Where the photo's subject sits, as a CSS background-position (e.g. 'center 35%').
+   *  The hero is a wide band, so it only ever shows a slice of the photo — this picks
+   *  which slice. Defaults to the middle. */
+  focus?: string;
 }
 
-const { image, alt, eyebrow } = Astro.props;
+const { image, alt, eyebrow, focus } = Astro.props;
 
 // A cropped full-bleed background-image hero can't be expressed as a static
 // CSS class (the URL is per-page data) — this is the one deliberate,
 // narrow exception to "no inline styles": a single dynamic background-image
 // declaration, not a utility-class stand-in.
 const optimized = await getImage({ src: image, width: 1600, format: 'webp' });
+const style = `background-image:url(${optimized.src})` + (focus ? `;background-position:${focus}` : '');
 ---
 
-<header class="page-hero" style={`background-image:url(${optimized.src})`} role="img" aria-label={alt}>
+<header class="page-hero" style={style} role="img" aria-label={alt}>
   <div class="page-hero-content container">
     {eyebrow && <div class="hero-eyebrow">{eyebrow}</div>}
     <h1><slot /></h1>

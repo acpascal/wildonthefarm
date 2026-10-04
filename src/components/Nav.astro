@@ -17,6 +17,7 @@ const { locale = defaultLocale, alternates } = Astro.props;
 const t = useTranslations(locale);
 const home = pageHref('home', locale);
 const reserveHref = pageHref('reserve', locale);
+const labelOf = (item: NavLink) => item.label?.[locale] ?? (item.key ? t(item.key) : '');
 const resolveHref = (item: NavLink) => (item.pageId ? pageHref(item.pageId, locale) : item.href ?? '#');
 const currentPath = Astro.url.pathname;
 const isCurrent = (item: NavLink) => resolveHref(item) === currentPath;
@@ -63,7 +64,7 @@ const taglineWords = business.tagline.split(' ');
                 aria-expanded="false"
                 data-dropdown-toggle
               >
-                {t(item.key)}
+                {labelOf(item)}
                 <svg viewBox="0 0 12 8" aria-hidden="true">
                   <path d="M1 1l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.5" />
                 </svg>
@@ -75,7 +76,7 @@ const taglineWords = business.tagline.split(' ');
                     class={isCurrent(sub) ? 'is-current' : undefined}
                     aria-current={isCurrent(sub) ? 'page' : undefined}
                   >
-                    {t(sub.key)}
+                    {labelOf(sub)}
                   </a>
                 ))}
               </div>
@@ -86,7 +87,7 @@ const taglineWords = business.tagline.split(' ');
               class={isCurrent(item) ? 'is-current' : undefined}
               aria-current={isCurrent(item) ? 'page' : undefined}
             >
-              {t(item.key)}
+              {labelOf(item)}
             </a>
           )
         )

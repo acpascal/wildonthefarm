@@ -1,6 +1,7 @@
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
+import { JOURNAL_GROUP_KEYS, JOURNAL_SECTION_KEYS } from './data/journalSections';
 
 const journal = defineCollection({
   loader: glob({ pattern: '**/[^_]*.mdx', base: './src/content/journal' }),
@@ -14,7 +15,10 @@ const journal = defineCollection({
       pullIntro: z.string(),
       date: z.coerce.date(),
       kind: z.enum(['plant', 'note']),
-      section: z.enum(['what-we-grow', 'farm-notes', 'travel-panama']),
+      // The sections are declared in data/journalSections.ts.
+      section: z.enum(JOURNAL_SECTION_KEYS),
+      /** Sub-heading on the section's page (e.g. the garden's Vegetables / Fruits). */
+      group: z.enum(JOURNAL_GROUP_KEYS).optional(),
       cover: image().optional(),
       coverAlt: z.string().optional(),
       latinName: z.string().optional(),

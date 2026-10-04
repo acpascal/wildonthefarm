@@ -722,9 +722,10 @@ section {
   padding: var(--space-6) 0;
 }
 
-/* Anchored sections (e.g. /journal/#what-we-grow) land below the sticky nav
-   instead of underneath it. */
-section[id] {
+/* Anchored sections (e.g. /shop/#teas) and article chapters land below the
+   sticky nav instead of underneath it. */
+section[id],
+.prose :is(h2, h3)[id] {
   scroll-margin-top: var(--nav-h);
 }
 
