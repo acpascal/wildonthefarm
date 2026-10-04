@@ -5,12 +5,15 @@ interface Props {
   /** Forces a background against the automatic paper/cream rhythm (see
    *  global.css). Leave unset in the common case — position alone decides. */
   bg?: 'cream' | 'paper';
+  /** Anchor so other pages can link straight to this section (e.g. /journal/#what-we-grow). */
+  id?: string;
 }
 
-const { label, heading, bg } = Astro.props;
+const { label, heading, bg, id } = Astro.props;
 ---
 
 <section
+  id={id}
   class:list={{
     'bg-cream': bg === 'cream',
     'bg-paper': bg === 'paper',

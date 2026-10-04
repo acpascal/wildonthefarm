@@ -722,6 +722,12 @@ section {
   padding: var(--space-6) 0;
 }
 
+/* Anchored sections (e.g. /journal/#what-we-grow) land below the sticky nav
+   instead of underneath it. */
+section[id] {
+  scroll-margin-top: var(--nav-h);
+}
+
 /* p/ul/etc. carry a trailing margin that stacks on top of the section's own
    bottom padding, making the last line sit further from the edge than the
    first. A plain wrapper div has no padding/border to stop a child's margin
