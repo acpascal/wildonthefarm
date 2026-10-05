@@ -26,7 +26,7 @@ export const JOURNAL_SECTION_ORDER: readonly JournalSectionKey[] = JOURNAL_SECTI
 // with `group: <key>` in its frontmatter; a section lists the groups it uses
 // (and their order) in its `groups` below. To add a sub-heading: add its key
 // here, add it to a section's `groups`, and tag the articles.
-export const JOURNAL_GROUP_KEYS = ['vegetables', 'wild-plants', 'herbs', 'fruits'] as const;
+export const JOURNAL_GROUP_KEYS = ['vegetables', 'wild-plants', 'herbs', 'fruits', 'flowers'] as const;
 
 export type JournalGroupKey = (typeof JOURNAL_GROUP_KEYS)[number];
 
@@ -94,6 +94,7 @@ export const journalSections: Record<JournalSectionKey, SectionDef> = {
         },
       },
       { key: 'fruits', label: { en: 'Fruits', fr: 'Fruits', es: 'Frutas', ja: '果物' } },
+      { key: 'flowers', label: { en: 'Flowers', fr: 'Fleurs', es: 'Flores', ja: '花' } },
     ],
     ungroupedLabel: {
       en: 'Garden Stories & Recipes',
@@ -105,11 +106,11 @@ export const journalSections: Record<JournalSectionKey, SectionDef> = {
       en: {
         label: 'Our Permaculture and Organic Garden',
         navLabel: 'Organic Garden',
-        heading: 'What we grow, and what it’s good for.',
+        heading: 'Our guide to growing organic vegetables and fruits, and their nutritional properties.',
         teaser:
           'Plant profiles covering medicinal and therapeutic properties, culinary interest, and how to grow each one yourself — plus the bigger stories behind what comes out of this farm.',
         intro:
-          'The organic vegetables, herbs and medicinal plants we grow in permaculture at 1,800 metres, in the cloud forest above Boquete. For each one: what it’s good for, how to eat it, and how to grow it yourself without chemical inputs.',
+          'The organic vegetables and fruits, medicinal and aromatic plants, and flowers we grow in permaculture at 1,800 metres, in the cloud forest above Boquete. For each one: what it’s good for, how to eat it, and how to grow it yourself without chemical inputs.',
         seoTitle: 'Organic Vegetables & Permaculture Garden in Boquete',
         seoDescription:
           'Organic vegetables, herbs and medicinal plants grown in permaculture at 1,800 m in Boquete, Panama: benefits, how to eat them, and how to grow each one.',
@@ -118,11 +119,11 @@ export const journalSections: Record<JournalSectionKey, SectionDef> = {
       fr: {
         label: 'Notre Jardin en Permaculture et Bio',
         navLabel: 'Jardin Bio',
-        heading: 'Ce que nous cultivons, et à quoi ça sert.',
+        heading: 'Notre guide de culture bio des légumes et des fruits, et de leurs propriétés alimentaires.',
         teaser:
           'Fiches de plantes avec leurs propriétés médicinales et thérapeutiques, leurs usages culinaires, et comment les cultiver vous-même.',
         intro:
-          'Les légumes bio, les herbes et les plantes médicinales que nous cultivons en permaculture à 1 800 mètres, dans la forêt nébuleuse au-dessus de Boquete. Pour chacun : ses bienfaits, comment le manger, et comment le cultiver vous-même sans intrants chimiques.',
+          'Les légumes et les fruits bio, les plantes médicinales et aromatiques et les fleurs que nous cultivons en permaculture à 1 800 mètres, dans la forêt nébuleuse au-dessus de Boquete. Pour chacun : ses bienfaits, comment le manger, et comment le cultiver vous-même sans intrants chimiques.',
         seoTitle: 'Légumes Bio et Jardin en Permaculture à Boquete',
         seoDescription:
           'Légumes bio, herbes et plantes médicinales cultivés en permaculture à 1 800 m à Boquete, Panama : bienfaits, comment les manger et comment les cultiver.',
@@ -131,11 +132,11 @@ export const journalSections: Record<JournalSectionKey, SectionDef> = {
       es: {
         label: 'Nuestro Huerto Orgánico en Permacultura',
         navLabel: 'Huerto Orgánico',
-        heading: 'Lo que cultivamos, y para qué sirve.',
+        heading: 'Nuestra guía de cultivo orgánico de verduras y frutas, y sus propiedades alimenticias.',
         teaser:
           'Perfiles de plantas con sus propiedades medicinales y terapéuticas, usos culinarios, y cómo cultivarlas tú mismo.',
         intro:
-          'Las verduras orgánicas, las hierbas y las plantas medicinales que cultivamos en permacultura a 1.800 metros, en el bosque nuboso sobre Boquete. De cada una: para qué sirve, cómo comerla y cómo cultivarla tú mismo sin insumos químicos.',
+          'Las verduras y frutas orgánicas, las plantas medicinales y aromáticas y las flores que cultivamos en permacultura a 1.800 metros, en el bosque nuboso sobre Boquete. De cada una: para qué sirve, cómo comerla y cómo cultivarla tú mismo sin insumos químicos.',
         seoTitle: 'Verduras Orgánicas y Huerto en Permacultura en Boquete',
         seoDescription:
           'Verduras orgánicas, hierbas y plantas medicinales cultivadas en permacultura a 1.800 m en Boquete, Panamá: beneficios, cómo comerlas y cómo cultivarlas.',
@@ -144,11 +145,11 @@ export const journalSections: Record<JournalSectionKey, SectionDef> = {
       ja: {
         label: 'パーマカルチャーとオーガニックの菜園',
         navLabel: 'オーガニック菜園',
-        heading: '私たちが育てているもの、そしてその効能。',
+        heading: 'オーガニックの野菜と果物の育て方、そしてその栄養・効能のガイド。',
         teaser:
           '薬用・療法的な効能、料理としての魅力、そして自分で育てる方法まで——この農園から生まれるものの背景にある、より大きな物語とともにお届けする植物図鑑です。',
         intro:
-          'ボケテを見下ろす標高1,800メートルの雲霧林で、パーマカルチャーによって育てているオーガニックの野菜、ハーブ、薬草。それぞれの効能、食べ方、そして化学資材を使わずに自分で育てる方法をご紹介します。',
+          'ボケテを見下ろす標高1,800メートルの雲霧林で、パーマカルチャーによって育てているオーガニックの野菜と果物、薬草とハーブ、そして花。それぞれの効能、食べ方、そして化学資材を使わずに自分で育てる方法をご紹介します。',
         seoTitle: 'ボケテのオーガニック野菜とパーマカルチャー菜園',
         seoDescription:
           'パナマ・ボケテの標高1,800mで、パーマカルチャーで育てるオーガニックの野菜、ハーブ、薬草。効能、食べ方、育て方をご紹介します。',
