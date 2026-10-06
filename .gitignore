@@ -29,3 +29,6 @@ pnpm-debug.log*
 
 # Claude Code local settings (personal permission overrides, not shared)
 .claude/settings.local.json
+
+# Tour-operator presentation kit (not part of the site)
+presentation-tour-operateurs/
