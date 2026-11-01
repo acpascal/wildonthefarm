@@ -1,0 +1,47 @@
+---
+import { getImage } from 'astro:assets';
+import PageLayout from '../../../layouts/PageLayout.astro';
+import PageHero from '../../../components/PageHero.astro';
+import Section from '../../../components/Section.astro';
+import { business } from '../../../data/business';
+import { img } from '../../../lib/images';
+
+const heroImage = img('hiking/hero.jpg');
+const ogImage = await getImage({ src: heroImage, width: 1200, format: 'webp' });
+---
+
+{/* Private page: noindex, out of the nav and the sitemap. The bookings come
+   from /api/hikes/admin, which checks the password — nothing is in the HTML. */}
+<PageLayout
+  title="Réservations des randonnées | Wild on the Farm"
+  description="Page privée de gestion des réservations de randonnées."
+  path="/fr/admin/reservations/"
+  image={ogImage.src}
+  noindex
+  locale="fr"
+  alternates={{ fr: '/fr/admin/reservations/' }}
+>
+  <Fragment slot="hero">
+    <PageHero image={heroImage} alt="Le sentier en forêt nuageuse" eyebrow="Administration">
+      Réservations des randonnées
+    </PageHero>
+  </Fragment>
+
+  <Section label="Accès Privé" heading="Les inscriptions, date par date.">
+    <div data-hike-admin data-paypal={business.paypalMe}>
+      <form class="admin-login" data-admin-login>
+        <label class="field">
+          <span>Mot de passe</span>
+          <input type="password" name="password" autocomplete="current-password" required />
+        </label>
+        <button type="submit" class="btn btn-normal">Ouvrir</button>
+      </form>
+      <p class="hike-booking-error" data-admin-error hidden></p>
+      <div data-admin-content></div>
+    </div>
+  </Section>
+</PageLayout>
+
+<script>
+  import '../../../scripts/hike-admin.js';
+</script>

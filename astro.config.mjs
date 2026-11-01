@@ -50,6 +50,8 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap({
+      // Private pages (bookings admin) stay out of the sitemap.
+      filter: (page) => !page.includes('/admin/'),
       i18n: {
         defaultLocale: 'en',
         locales: { en: 'en', es: 'es', fr: 'fr', ja: 'ja' },

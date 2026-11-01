@@ -1,0 +1,459 @@
+---
+import type { HikeOption } from '../data/guidedHikes';
+import { business } from '../data/business';
+import type { Locale } from '../i18n/ui';
+
+interface Props {
+  options: HikeOption[];
+  locale: Locale;
+}
+
+const { options, locale } = Astro.props;
+
+// Three steps — hike, month, day — then the participant's details. Submitting
+// holds the seat as "pending" (netlify/functions/hike-book) and emails the
+// booking to us through Netlify Forms (public/__forms.html). We then send the
+// guest the payment link ourselves. See scripts/hike-booking.js.
+// Form wording per language. `languages` and `experienceOptions` keep the
+// same order in every language: we always read the booking email in French,
+// so each option's value is its French wording, whatever the page's language.
+const labels = {
+  fr: {
+    stepHike: 'Choisissez votre randonnée',
+    stepMonth: 'Choisissez le mois',
+    stepDay: 'Choisissez le jour',
+    stepGroup: 'Vos informations',
+    chooseHikeFirst: "Choisissez d'abord une randonnée.",
+    chooseMonthFirst: "Choisissez d'abord un mois.",
+    departure: '1 départ',
+    departures: '{n} départs',
+    monthFull: 'Complet',
+    comingSoon: 'Bientôt — jours de départ à venir',
+    perPerson: '{price} / pers.',
+    summaryHike: 'Randonnée',
+    summaryMeal: 'Repas',
+    mealOption: 'Ajouter le repas (en supplément)',
+    mealPrice: '+ {price} par personne',
+    mealPriceTbc: 'supplément à confirmer',
+    mealNo: 'non',
+    full: 'Complet',
+    seatLeft: '1 place',
+    seatsLeft: '{n} places',
+    pending: 'En attente',
+    statusLine: '{date} — confirmées : {confirmed} · en attente de paiement : {pending} · libres : {left}',
+    statusNote: 'Une place en attente de paiement peut se libérer si la réservation est annulée.',
+    onePerson:
+      'Une inscription par personne : chaque participant remplit son propre formulaire et règle son propre acompte.',
+    name: 'Nom et prénom',
+    age: 'Âge',
+    idNumber: 'Numéro de cédula ou de passeport',
+    home: 'Domicile (ville, pays)',
+    whatsapp: 'Téléphone WhatsApp (avec indicatif)',
+    email: 'E-mail',
+    lodging: 'Où logez-vous à Boquete ?',
+    optional: '(facultatif)',
+    language: 'Langue parlée',
+    languages: ['Français', 'Anglais', 'Espagnol', 'Japonais', 'Autre'],
+    experience: 'Votre dernière randonnée de plus de 6 heures',
+    experienceChoose: 'Choisir',
+    experienceOptions: ['Il y a moins de 6 mois', 'Il y a 6 à 12 mois', "Il y a plus d'un an", 'Jamais'],
+    health: 'Santé, allergies, ou autre chose à signaler au guide',
+    emergencyName: "Contact d'urgence — nom",
+    emergencyPhone: "Contact d'urgence — téléphone",
+    checkInsurance: "J'ai une assurance qui me couvre en cas d'accident en randonnée.",
+    checkWaiver: 'Je signerai mon formulaire et la décharge de responsabilité au départ de la randonnée.',
+    checkTerms:
+      "J'ai lu les conditions de paiement et d'annulation, et je comprends que la randonnée se fait en terrain sauvage.",
+    summary: 'Votre demande',
+    summaryDate: 'Date',
+    summaryMeeting: 'Rendez-vous',
+    summaryTotal: 'Total',
+    summaryDeposit: 'Acompte à la réservation',
+    summaryBalance: 'Solde avant le départ',
+    money: '{n} $',
+    error: 'Merci de choisir une randonnée et une date, de remplir les champs marqués * et de cocher les trois cases.',
+    errorFull: "Ce départ vient d'être complété. Le calendrier est à jour : choisissez une autre date.",
+    send: 'Envoyer ma réservation',
+    note: 'Aucun paiement maintenant. Nous recevons votre réservation, puis nous vous envoyons le lien de paiement par e-mail.',
+    doneTitle: 'Réservation reçue',
+    doneText: 'Merci ! Votre place est réservée, en attente de paiement. Nous vous écrivons par e-mail avec le lien PayPal de votre acompte de {deposit}.',
+    errorSend: "Votre réservation n'a pas pu être envoyée. Réessayez, ou écrivez-nous par WhatsApp au {phone} ou à {email}.",
+    anotherPerson: 'Inscrire une autre personne pour ce départ',
+  },
+  en: {
+    stepHike: 'Choose your hike',
+    stepMonth: 'Choose the month',
+    stepDay: 'Choose the day',
+    stepGroup: 'Your details',
+    chooseHikeFirst: 'Choose a hike first.',
+    chooseMonthFirst: 'Choose a month first.',
+    departure: '1 departure',
+    departures: '{n} departures',
+    monthFull: 'Full',
+    comingSoon: 'Coming soon — departure days to be announced',
+    perPerson: '{price} / person',
+    summaryHike: 'Hike',
+    summaryMeal: 'Meal',
+    mealOption: 'Add the meal (extra)',
+    mealPrice: '+ {price} per person',
+    mealPriceTbc: 'price to be confirmed',
+    mealNo: 'no',
+    full: 'Full',
+    seatLeft: '1 spot',
+    seatsLeft: '{n} spots',
+    pending: 'Pending',
+    statusLine: '{date} — confirmed: {confirmed} · awaiting payment: {pending} · free: {left}',
+    statusNote: 'A spot awaiting payment can open up again if the booking is cancelled.',
+    onePerson:
+      'One registration per person: each participant fills in their own form and pays their own deposit.',
+    name: 'Full name',
+    age: 'Age',
+    idNumber: 'Cédula or passport number',
+    home: 'Home (city, country)',
+    whatsapp: 'WhatsApp number (with country code)',
+    email: 'Email',
+    lodging: 'Where are you staying in Boquete?',
+    optional: '(optional)',
+    language: 'Language spoken',
+    languages: ['French', 'English', 'Spanish', 'Japanese', 'Other'],
+    experience: 'Your last hike of more than 6 hours',
+    experienceChoose: 'Choose',
+    experienceOptions: ['Less than 6 months ago', '6 to 12 months ago', 'More than a year ago', 'Never'],
+    health: 'Health, allergies, or anything else the guide should know',
+    emergencyName: 'Emergency contact — name',
+    emergencyPhone: 'Emergency contact — phone',
+    checkInsurance: 'I have insurance that covers me in case of a hiking accident.',
+    checkWaiver: 'I will sign my form and the liability waiver at the start of the hike.',
+    checkTerms: 'I have read the payment and cancellation terms, and I understand that the hike crosses wild terrain.',
+    summary: 'Your request',
+    summaryDate: 'Date',
+    summaryMeeting: 'Meeting point',
+    summaryTotal: 'Total',
+    summaryDeposit: 'Deposit when booking',
+    summaryBalance: 'Balance before departure',
+    money: '${n}',
+    error: 'Please choose a hike and a date, fill in the fields marked * and tick the three boxes.',
+    errorFull: 'This departure has just filled up. The calendar is up to date: please choose another date.',
+    send: 'Send my booking',
+    note: 'Nothing to pay now. We receive your booking, then email you the payment link.',
+    doneTitle: 'Booking received',
+    doneText: 'Thank you! Your spot is held, awaiting payment. We will email you the PayPal link for your {deposit} deposit.',
+    errorSend: 'Your booking could not be sent. Please try again, or write to us on WhatsApp at {phone} or at {email}.',
+    anotherPerson: 'Register another person for this departure',
+  },
+  es: {
+    stepHike: 'Elige tu caminata',
+    stepMonth: 'Elige el mes',
+    stepDay: 'Elige el día',
+    stepGroup: 'Tus datos',
+    chooseHikeFirst: 'Primero elige una caminata.',
+    chooseMonthFirst: 'Primero elige un mes.',
+    departure: '1 salida',
+    departures: '{n} salidas',
+    monthFull: 'Completo',
+    comingSoon: 'Próximamente — días de salida por anunciar',
+    perPerson: '{price} / pers.',
+    summaryHike: 'Caminata',
+    summaryMeal: 'Comida',
+    mealOption: 'Añadir la comida (suplemento)',
+    mealPrice: '+ {price} por persona',
+    mealPriceTbc: 'precio por confirmar',
+    mealNo: 'no',
+    full: 'Completo',
+    seatLeft: '1 cupo',
+    seatsLeft: '{n} cupos',
+    pending: 'En espera',
+    statusLine: '{date} — confirmados: {confirmed} · pendientes de pago: {pending} · libres: {left}',
+    statusNote: 'Un cupo pendiente de pago puede liberarse si la reserva se cancela.',
+    onePerson:
+      'Una inscripción por persona: cada participante llena su propio formulario y paga su propio depósito.',
+    name: 'Nombre y apellido',
+    age: 'Edad',
+    idNumber: 'Número de cédula o de pasaporte',
+    home: 'Domicilio (ciudad, país)',
+    whatsapp: 'Teléfono WhatsApp (con código de país)',
+    email: 'Correo electrónico',
+    lodging: '¿Dónde te alojas en Boquete?',
+    optional: '(opcional)',
+    language: 'Idioma',
+    languages: ['Francés', 'Inglés', 'Español', 'Japonés', 'Otro'],
+    experience: 'Tu última caminata de más de 6 horas',
+    experienceChoose: 'Elegir',
+    experienceOptions: ['Hace menos de 6 meses', 'Hace 6 a 12 meses', 'Hace más de un año', 'Nunca'],
+    health: 'Salud, alergias u otra cosa que el guía deba saber',
+    emergencyName: 'Contacto de emergencia — nombre',
+    emergencyPhone: 'Contacto de emergencia — teléfono',
+    checkInsurance: 'Tengo un seguro que me cubre en caso de accidente durante la caminata.',
+    checkWaiver: 'Firmaré mi formulario y el descargo de responsabilidad al inicio de la caminata.',
+    checkTerms: 'He leído las condiciones de pago y de cancelación, y entiendo que la caminata recorre terreno salvaje.',
+    summary: 'Tu solicitud',
+    summaryDate: 'Fecha',
+    summaryMeeting: 'Punto de encuentro',
+    summaryTotal: 'Total',
+    summaryDeposit: 'Depósito al reservar',
+    summaryBalance: 'Saldo antes de la salida',
+    money: '${n}',
+    error: 'Elige una caminata y una fecha, llena los campos marcados con * y marca las tres casillas.',
+    errorFull: 'Esta salida acaba de completarse. El calendario está actualizado: elige otra fecha.',
+    send: 'Enviar mi reserva',
+    note: 'No pagas nada ahora. Recibimos tu reserva y luego te enviamos el enlace de pago por correo.',
+    doneTitle: 'Reserva recibida',
+    doneText: '¡Gracias! Tu cupo está reservado, pendiente de pago. Te escribiremos por correo con el enlace de PayPal de tu depósito de {deposit}.',
+    errorSend: 'No se pudo enviar tu reserva. Inténtalo de nuevo o escríbenos por WhatsApp al {phone} o a {email}.',
+    anotherPerson: 'Inscribir a otra persona para esta salida',
+  },
+  ja: {
+    stepHike: 'ハイキングを選ぶ',
+    stepMonth: '月を選ぶ',
+    stepDay: '日を選ぶ',
+    stepGroup: 'お客様の情報',
+    chooseHikeFirst: 'まずハイキングを選んでください。',
+    chooseMonthFirst: 'まず月を選んでください。',
+    departure: '出発 1 日',
+    departures: '出発 {n} 日',
+    monthFull: '満員',
+    comingSoon: '近日公開 — 出発日は未定',
+    perPerson: '1名 {price}',
+    summaryHike: 'ハイキング',
+    summaryMeal: '食事',
+    mealOption: '食事を追加する(別料金)',
+    mealPrice: '1名につき +{price}',
+    mealPriceTbc: '料金は確認中',
+    mealNo: 'なし',
+    full: '満員',
+    seatLeft: '残り1席',
+    seatsLeft: '残り{n}席',
+    pending: '支払い待ち',
+    statusLine: '{date} — 確定: {confirmed} · 支払い待ち: {pending} · 空き: {left}',
+    statusNote: '予約がキャンセルされると、支払い待ちの席が空くことがあります。',
+    onePerson:
+      'お申し込みは1名ずつです。参加者はそれぞれご自身でフォームに記入し、ご自身のデポジットをお支払いください。',
+    name: '氏名',
+    age: '年齢',
+    idNumber: 'セドゥラ(身分証)またはパスポートの番号',
+    home: 'お住まい(都市、国)',
+    whatsapp: 'WhatsApp の電話番号(国番号から)',
+    email: 'メールアドレス',
+    lodging: 'ボケテでの宿泊先',
+    optional: '(任意)',
+    language: '話せる言語',
+    languages: ['フランス語', '英語', 'スペイン語', '日本語', 'その他'],
+    experience: '最後に6時間以上歩いたハイキング',
+    experienceChoose: '選択してください',
+    experienceOptions: ['6か月以内', '6〜12か月前', '1年以上前', 'なし'],
+    health: '健康状態やアレルギーなど、ガイドに伝えておきたいこと',
+    emergencyName: '緊急連絡先 — 氏名',
+    emergencyPhone: '緊急連絡先 — 電話番号',
+    checkInsurance: 'ハイキング中の事故を補償する保険に加入しています。',
+    checkWaiver: 'ハイキングの出発時に、自分のフォームと免責同意書に署名します。',
+    checkTerms: '支払いとキャンセルの条件を読み、このハイキングが手つかずの自然の中を歩くことを理解しています。',
+    summary: 'お申し込み内容',
+    summaryDate: '日付',
+    summaryMeeting: '集合場所',
+    summaryTotal: '合計',
+    summaryDeposit: '予約時のデポジット',
+    summaryBalance: '出発前にお支払いの残金',
+    money: '${n}',
+    error: 'ハイキングと日付を選び、* の項目を入力し、3つのチェックボックスにチェックを入れてください。',
+    errorFull: 'この出発日はちょうど満員になりました。カレンダーは最新の状態です。別の日を選んでください。',
+    send: '予約を送信する',
+    note: '今はお支払いの必要はありません。ご予約を受け取り次第、支払いリンクをメールでお送りします。',
+    doneTitle: 'ご予約を受け付けました',
+    doneText: 'ありがとうございます。お支払い待ちとしてお席を確保しました。{deposit} のデポジット用の PayPal リンクをメールでお送りします。',
+    errorSend: 'ご予約を送信できませんでした。もう一度お試しいただくか、WhatsApp({phone})または {email} までご連絡ください。',
+    anotherPerson: 'この出発日に別の方を申し込む',
+  },
+};
+
+const t = labels[locale as keyof typeof labels] ?? labels.fr;
+const languageIndex = { fr: 0, en: 1, es: 2, ja: 3 }[locale] ?? 0;
+t.errorSend = t.errorSend.replace('{phone}', business.phone).replace('{email}', business.email);
+const money = (n: number) => t.money.replace('{n}', String(n));
+
+const hikes = options.flatMap(({ hike }) =>
+  hike
+    ? [
+        {
+          slug: hike.slug,
+          title: hike.title,
+          weekdays: hike.weekdays,
+          meetingPoint: hike.meetingPoint[locale],
+          meetingPointFr: hike.meetingPoint.fr,
+          startTime: hike.startTime,
+          maxPeople: hike.maxPeople,
+          price: hike.pricePerPerson,
+          meal: hike.meal ?? null,
+          depositRate: hike.depositRate,
+          minNoticeDays: hike.minNoticeDays,
+          lastDate: hike.lastDate,
+          seats: hike.seats,
+        },
+      ]
+    : []
+);
+---
+
+<form
+  class="hike-booking"
+  data-hike-booking
+  data-hikes={JSON.stringify(hikes)}
+  data-labels={JSON.stringify(t)}
+  data-paypal={business.paypalMe}
+  novalidate
+>
+  <div class="hike-booking-fields">
+    <fieldset class="field field-wide booking-step">
+      <legend><span class="step-num">1</span>{t.stepHike}</legend>
+      <div class="hike-options">
+        {
+          options.map(({ hike, title, level, details = [] }) => (
+            <label class:list={['hike-option', { 'is-soon': !hike }]}>
+              <input type="radio" name="hike" value={hike?.slug ?? ''} disabled={!hike} />
+              <span class="hike-option-title">{title}</span>
+              {level && <span class="hike-option-level">{level}</span>}
+              <span class="hike-option-details">
+                {details.map((detail) => <span>{detail}</span>)}
+              </span>
+              <span class="hike-option-price">
+                {hike ? t.perPerson.replace('{price}', money(hike.pricePerPerson)) : t.comingSoon}
+              </span>
+            </label>
+          ))
+        }
+      </div>
+    </fieldset>
+
+    <fieldset class="field field-wide booking-step">
+      <legend><span class="step-num">2</span>{t.stepMonth}</legend>
+      <p class="booking-step-hint" data-month-hint>{t.chooseHikeFirst}</p>
+      <div class="month-tabs" data-month-tabs></div>
+    </fieldset>
+
+    <fieldset class="field field-wide booking-step">
+      <legend><span class="step-num">3</span>{t.stepDay}</legend>
+      <p class="booking-step-hint" data-day-hint>{t.chooseHikeFirst}</p>
+      <div class="date-row" data-date-chips></div>
+      <div class="date-status" data-date-status hidden>
+        <ul></ul>
+        <p>{t.statusNote}</p>
+      </div>
+    </fieldset>
+
+    <div class="field-wide booking-step-title"><span class="step-num">4</span>{t.stepGroup}</div>
+
+    <p class="field-wide booking-step-hint">{t.onePerson}</p>
+
+    <label class="field field-wide">
+      <span>{t.name} *</span>
+      <input type="text" name="name" autocomplete="name" required />
+    </label>
+
+    <label class="field">
+      <span>{t.age} *</span>
+      <input type="number" name="age" min="1" max="99" inputmode="numeric" required />
+    </label>
+
+    <label class="field">
+      <span>{t.idNumber} *</span>
+      <input type="text" name="idNumber" required />
+    </label>
+
+    <label class="field field-wide">
+      <span>{t.home} *</span>
+      <input type="text" name="home" autocomplete="address-level2" required />
+    </label>
+
+    <label class="field field-wide field-check" data-meal-option hidden>
+      <input type="checkbox" name="meal" />
+      <span>{t.mealOption} — <span data-meal-price></span></span>
+    </label>
+
+    <label class="field">
+      <span>{t.whatsapp} *</span>
+      <input type="tel" name="whatsapp" autocomplete="tel" required />
+    </label>
+
+    <label class="field">
+      <span>{t.email} *</span>
+      <input type="email" name="email" autocomplete="email" required />
+    </label>
+
+    <label class="field">
+      <span>{t.lodging} {t.optional}</span>
+      <input type="text" name="lodging" />
+    </label>
+
+    <label class="field">
+      <span>{t.language}</span>
+      <select name="language">
+        {t.languages.map((language, i) => <option value={labels.fr.languages[i]} selected={i === languageIndex}>{language}</option>)}
+      </select>
+    </label>
+
+    <label class="field field-wide">
+      <span>{t.experience} *</span>
+      <select name="experience" required>
+        <option value="">{t.experienceChoose}</option>
+        {t.experienceOptions.map((option, i) => <option value={labels.fr.experienceOptions[i]}>{option}</option>)}
+      </select>
+    </label>
+
+    <label class="field field-wide">
+      <span>{t.health} {t.optional}</span>
+      <textarea name="health" rows="3"></textarea>
+    </label>
+
+    <label class="field">
+      <span>{t.emergencyName} *</span>
+      <input type="text" name="emergencyName" required />
+    </label>
+
+    <label class="field">
+      <span>{t.emergencyPhone} *</span>
+      <input type="tel" name="emergencyPhone" required />
+    </label>
+
+    {/* Honeypot: hidden from people, filled in by bots — see hike-book. */}
+    <input type="text" name="website" tabindex="-1" autocomplete="off" hidden />
+
+    <label class="field field-wide field-check">
+      <input type="checkbox" name="checkInsurance" required />
+      <span>{t.checkInsurance}</span>
+    </label>
+
+    <label class="field field-wide field-check">
+      <input type="checkbox" name="checkWaiver" required />
+      <span>{t.checkWaiver}</span>
+    </label>
+
+    <label class="field field-wide field-check">
+      <input type="checkbox" name="checkTerms" required />
+      <span>{t.checkTerms}</span>
+    </label>
+  </div>
+
+  <aside class="hike-booking-summary" aria-live="polite">
+    <div class="section-label">{t.summary}</div>
+    <dl>
+      <div><dt>{t.summaryHike}</dt><dd data-summary="hike">—</dd></div>
+      <div><dt>{t.summaryDate}</dt><dd data-summary="date">—</dd></div>
+      <div><dt>{t.summaryMeeting}</dt><dd data-summary="meeting">—</dd></div>
+      <div data-summary-meal hidden><dt>{t.summaryMeal}</dt><dd data-summary="meal">—</dd></div>
+      <div><dt>{t.summaryTotal}</dt><dd data-summary="total">—</dd></div>
+      <div><dt>{t.summaryDeposit}</dt><dd data-summary="deposit">—</dd></div>
+      <div><dt>{t.summaryBalance}</dt><dd data-summary="balance">—</dd></div>
+    </dl>
+    <p class="hike-booking-error" data-booking-error hidden>{t.error}</p>
+    <button type="submit" class="btn btn-normal" data-send>{t.send}</button>
+    <p class="hike-booking-note" data-send-note>{t.note}</p>
+    <div class="hike-booking-done" data-booking-done hidden>
+      <div class="section-label">{t.doneTitle}</div>
+      <p data-done-text></p>
+      <a class="btn" data-another-person>{t.anotherPerson}</a>
+    </div>
+  </aside>
+</form>
+
+<script>
+  import '../scripts/hike-booking.js';
+</script>

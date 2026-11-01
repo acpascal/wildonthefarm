@@ -130,6 +130,12 @@ button {
   color: inherit;
 }
 
+/* The `hidden` attribute always wins over a component's own display rule
+   (flex, grid…), so scripts can show and hide parts of a form with it. */
+[hidden] {
+  display: none !important;
+}
+
 /* ==========================================================================
    Layout primitives
    ========================================================================== */
@@ -170,6 +176,10 @@ button {
   padding: 0.75em 1.5em;
   border: 1px solid var(--green-deep);
   border-radius: 2px;
+  /* Lets a <button> match an <a class="btn">, which has neither a grey fill
+     nor the default cursor. */
+  background: transparent;
+  cursor: pointer;
   font-size: 0.9rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1954,4 +1964,577 @@ a.text-card:hover .card-cta {
   .story-text {
     padding: var(--space-6);
   }
+}
+
+/* ==========================================================================
+   Hike booking form — fields beside a sticky summary. Rendered by
+   HikeBooking.astro from data/guidedHikes.ts; behaviour in
+   scripts/hike-booking.js.
+   ========================================================================== */
+
+.hike-booking {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+.hike-booking-fields {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+  align-content: start;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35em;
+  font-size: 0.88rem;
+  color: var(--green-deep);
+}
+
+fieldset.field {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+fieldset.field legend {
+  padding: 0;
+  margin-bottom: 0.35em;
+}
+
+.field input,
+.field select,
+.field textarea {
+  font: inherit;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 0.7em 0.8em;
+  width: 100%;
+}
+
+.field input:focus-visible,
+.field select:focus-visible,
+.field textarea:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 1px;
+}
+
+.field-check {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.6em;
+}
+
+.field-check input {
+  width: auto;
+  margin-top: 0.25em;
+  accent-color: var(--green-deep);
+}
+
+/* Booking steps — numbered headings: 1 hike, 2 month, 3 day, 4 group. */
+
+.booking-step legend,
+.booking-step-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--green-deep);
+  margin-bottom: 0.7em;
+}
+
+.booking-step-title {
+  margin: var(--space-3) 0 0;
+}
+
+.step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.8em;
+  height: 1.8em;
+  border-radius: 50%;
+  background: var(--gold-bright);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.booking-step-hint {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--gray);
+  font-style: italic;
+}
+
+/* Step 1 — one card per hike. */
+
+.hike-options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2);
+}
+
+.hike-option {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35em;
+  padding: var(--space-3);
+  background: var(--paper);
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.hike-option input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.hike-option-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  line-height: 1.2;
+  color: var(--green-deep);
+}
+
+.hike-option-level {
+  align-self: flex-start;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.hike-option-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15em;
+  font-size: 0.85rem;
+  color: var(--gray);
+}
+
+.hike-option-price {
+  margin-top: auto;
+  padding-top: 0.4em;
+  font-size: 0.95rem;
+  color: var(--green-deep);
+}
+
+.hike-option:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.hike-option:has(input:checked) {
+  border-color: var(--green-deep);
+  box-shadow: 0 0 0 1px var(--green-deep);
+}
+
+.hike-option:has(input:checked)::after {
+  content: '✓';
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: var(--green-deep);
+  color: var(--paper);
+  font-size: 0.85rem;
+}
+
+.hike-option:has(input:focus-visible) {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.hike-option.is-soon {
+  cursor: default;
+  border-style: dashed;
+}
+
+.hike-option.is-soon:hover {
+  border-color: var(--border);
+  transform: none;
+}
+
+.hike-option.is-soon input {
+  cursor: default;
+}
+
+.hike-option.is-soon .hike-option-price {
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--gray);
+}
+
+/* Step 2 — month tabs, each with its number of open departures. */
+
+.month-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.month-year {
+  flex-basis: 100%;
+  margin-top: 0.3rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--gray);
+}
+
+.month-year:first-child {
+  margin-top: 0;
+}
+
+.month-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 7rem;
+  padding: 0.6em 1em;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.month-tab-name {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  text-transform: capitalize;
+}
+
+.month-tab-count {
+  font-size: 0.72rem;
+  color: var(--gray);
+}
+
+.month-tab:hover {
+  border-color: var(--gold);
+}
+
+.month-tab[aria-pressed='true'] {
+  background: var(--green-deep);
+  border-color: var(--green-deep);
+  color: var(--paper);
+}
+
+.month-tab[aria-pressed='true'] .month-tab-count {
+  color: var(--paper);
+}
+
+.month-tab:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.month-tab:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Phones: three months per row, so a year and a half of tabs stays short. */
+@media (max-width: 639px) {
+  .month-tab {
+    flex: 1 1 calc(33.333% - 0.5rem);
+    min-width: 0;
+    padding: 0.5em 0.4em;
+  }
+}
+
+/* Step 3 — one chip per departure day of the chosen month. */
+
+.date-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.date-chip {
+  animation: date-chip-in 0.25s ease both;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 4.2rem;
+  padding: 0.5em 0.6em;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+@keyframes date-chip-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .date-chip,
+  .hike-option {
+    animation: none;
+    transition: none;
+  }
+}
+
+.date-chip input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.date-chip-day {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gray);
+}
+
+.date-chip-num {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.date-chip-note {
+  font-size: 0.72rem;
+  color: var(--gray);
+}
+
+.date-chip:hover {
+  border-color: var(--gold);
+}
+
+.date-chip:has(input:checked) {
+  background: var(--green-deep);
+  border-color: var(--green-deep);
+  color: var(--paper);
+}
+
+.date-chip:has(input:checked) .date-chip-day,
+.date-chip:has(input:checked) .date-chip-note {
+  color: var(--paper);
+}
+
+.date-chip:has(input:focus-visible) {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.date-chip:has(input:disabled) {
+  cursor: not-allowed;
+  opacity: 0.55;
+  border-color: var(--border);
+}
+
+.date-chip:has(input:disabled) .date-chip-num {
+  text-decoration: line-through;
+}
+
+.date-status {
+  margin-top: var(--space-3);
+  font-size: 0.85rem;
+  color: var(--gray);
+}
+
+.date-status ul {
+  margin: 0 0 0.4em;
+  padding-left: 1.1em;
+  color: var(--green-deep);
+}
+
+.date-status p {
+  margin: 0;
+}
+
+.hike-booking-summary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  align-self: start;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--gold);
+  border-radius: 4px;
+  padding: var(--space-4) var(--space-3);
+}
+
+.hike-booking-summary dl {
+  margin: 0 0 var(--space-2);
+}
+
+.hike-booking-summary dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: 0.5em 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.hike-booking-summary dt {
+  color: var(--gray);
+  font-size: 0.88rem;
+}
+
+.hike-booking-summary dd {
+  margin: 0;
+  text-align: right;
+  color: var(--green-deep);
+}
+
+.hike-booking-done {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--border);
+}
+
+.hike-booking-done p {
+  margin: 0;
+}
+
+.hike-booking[aria-busy='true'] [data-send] {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+.hike-booking-note,
+.hike-booking-error {
+  font-size: 0.82rem;
+  margin: 0;
+}
+
+.hike-booking-note {
+  color: var(--gray);
+}
+
+.hike-booking-error {
+  color: #a3341f;
+}
+
+@media (min-width: 640px) {
+  .hike-booking-fields {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hike-options {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .field-wide {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 860px) {
+  .hike-booking {
+    grid-template-columns: 3fr 2fr;
+    gap: var(--space-5);
+  }
+
+  .hike-booking-summary {
+    position: sticky;
+    top: calc(var(--nav-h) + var(--space-3));
+  }
+}
+
+/* ==========================================================================
+   Bookings admin — the private list of hike bookings (pages/fr/admin/
+   reservations.astro; behaviour in scripts/hike-admin.js).
+   ========================================================================== */
+
+.admin-login {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: var(--space-3);
+  max-width: 28rem;
+}
+
+.admin-login .field {
+  flex: 1;
+}
+
+.booking-seats {
+  padding-left: 1.1em;
+  font-size: 0.92rem;
+  color: var(--green-deep);
+}
+
+.booking-table-scroll {
+  overflow-x: auto;
+  margin: var(--space-3) 0;
+}
+
+.booking-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.booking-table th,
+.booking-table td {
+  padding: 0.6em 0.8em;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.booking-table th {
+  font-weight: 500;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
+.booking-table tr.is-inactive td {
+  color: var(--gray);
+}
+
+.booking-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.booking-actions .btn {
+  padding: 0.45em 0.9em;
+  font-size: 0.75rem;
 }

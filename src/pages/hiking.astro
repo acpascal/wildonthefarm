@@ -1,10 +1,14 @@
 ---
-import { getImage } from 'astro:assets';
+import { getImage, Image } from 'astro:assets';
 import PageLayout from '../layouts/PageLayout.astro';
 import PhotoHero from '../components/PhotoHero.astro';
 import Section from '../components/Section.astro';
 import Split from '../components/Split.astro';
 import PhotoGrid from '../components/PhotoGrid.astro';
+import NoteBox from '../components/NoteBox.astro';
+import HikeBooking from '../components/HikeBooking.astro';
+import { amistadWildCrossing, cloudForestWaterfall, farmTourCloudForest, type HikeOption } from '../data/guidedHikes';
+import { business } from '../data/business';
 import { img } from '../lib/images';
 import type { PhotoItem } from '../lib/photos';
 
@@ -17,6 +21,31 @@ const amenities = [
   'Primary cloud forest',
   'Monkeys & birdlife en route',
   'Sturdy boots recommended',
+];
+
+const amistadFacts = ["For experienced hikers", "About 11 km", "Elevation gain: 850 m", "Start: Pianista, 1,268 m", "High point: 1,918 m", "Finish: Wild on the Farm, 1,730 m", "Guide required", "2 to 6 people", "Gourmet picnic included", "Drive back to Boquete", "Accident insurance required"];
+
+const waterfallFacts = ["Moderate", "About 6.5 km", "Elevation gain: 400 m", "Start: Camino del Español", "High point: 1,918 m", "Steep slopes", "2 to 6 people", "Monday and Thursday", "Gourmet picnic included"];
+
+const farmTourFacts = ["For all hikers", "About 4 hours", "Elevation gain: 200 m", "Start: bottom of the farm, 1,700 m", "High point: 1,918 m", "Steep slopes", "2 to 6 people", "Friday", "Optional meal"];
+
+// The booking form's three hikes, in the order of the sections above it.
+const hikeOptions: HikeOption[] = [
+  { hike: amistadWildCrossing, title: 'Amistad Wild Crossing', level: "For experienced hikers", details: ["11 km · 850 m elevation gain", "Sunday and Wednesday, 8 am", "Start at El Pianista · gourmet picnic included"] },
+  { hike: cloudForestWaterfall, title: 'Cloud Forest and Waterfall', level: "Moderate", details: ["6.5 km · 400 m elevation gain", "Monday and Thursday, 9 am", "Start at Camino del Español · gourmet picnic included"] },
+  { hike: farmTourCloudForest, title: 'Farm Tour and Cloud Forest', level: "For all hikers", details: ["About 4 h · 200 m elevation gain", "Friday, 9 am", "Start at the bottom of the farm · optional meal"] },
+];
+
+const amistadMaps = [
+  { image: img('hiking/amistad-wild-crossing-map.webp'), alt: "Map of the Amistad Wild Crossing route, from Pianista to Wild on the Farm" },
+  { image: img('hiking/amistad-wild-crossing-relief.webp'), alt: "Relief view of the Amistad Wild Crossing route through the forest" },
+];
+
+const waterfallMaps = [{ image: img('hiking/cloud-forest-waterfall-map.webp'), alt: "Map of the Cloud Forest and Waterfall loop, from the Camino del Español to the ridges above Wild on the Farm" }];
+
+const farmTourMaps = [
+  { image: img('hiking/farm-tour-cloud-forest-relief.webp'), alt: "Relief view of the Farm Tour and Cloud Forest loop, above the farm" },
+  { image: img('hiking/farm-tour-cloud-forest-above.webp'), alt: "The Farm Tour and Cloud Forest loop seen from above, from the farm to the cloud forest" },
 ];
 
 const trailPhotos: PhotoItem[] = [
@@ -106,6 +135,112 @@ const trailPhotos: PhotoItem[] = [
       </div>
     </Split>
     <p><a href="/journal/hiking-in-boquete/"><strong>The trails of Boquete, their history, and our own map →</strong></a></p>
+  </Section>
+
+  <Section label="For Experienced Hikers" heading="Amistad Wild Crossing.">
+    <Split>
+      <div>
+        <p>
+          Our most demanding crossing: a hike through mountain and jungle terrain, about 11 kilometres from the Pianista valley to Wild on the Farm, through a wild, mountainous part of La Amistad National Park. The trail is sensed more than followed — fallen trees to climb over, rivers to cross, 850 metres of elevation gain.
+        </p>
+        <p>
+          The forest is beautiful and keeps changing mood, right up to the windswept ridges at the end. This is the territory of the tapir, the peccary, monkeys, deer, the ocelot, the puma and the jaguar — and of the quetzal.
+        </p>
+        <p>
+          <strong>Bring:</strong> very good hiking shoes or boots, a fleece, rain gear and a windbreaker, a small light backpack and at least one litre of water. The gourmet picnic is included.
+        </p>
+      </div>
+      <div>
+        <div class="amenity-list">
+          {amistadFacts.map((item) => <span>{item}</span>)}
+        </div>
+      </div>
+    </Split>
+    <NoteBox>
+      <p>
+        The route is unmarked and can only be walked with a guide, in groups of 6 at most. The return to Boquete is by car from Wild on the Farm.
+      </p>
+      <p>
+        A liability waiver is signed before departure: every participant must have insurance that covers them in case of a hiking accident.
+      </p>
+    </NoteBox>
+    <a class="btn btn-normal btn-spaced" href={`?randonnee=${amistadWildCrossing.slug}#reserver`}>Book this trail</a>
+    {amistadMaps.map((map) => (
+      <div class="wide-photo">
+        <Image src={map.image} alt={map.alt} widths={[480, 900, 1600, 2000]} sizes="100vw" />
+      </div>
+    ))}
+  </Section>
+
+  <Section label="Moderate" heading="Cloud Forest and Waterfall.">
+    <Split>
+      <div>
+        <p>
+          A 6.5-kilometre loop through mountain terrain, starting from the Camino del Español: the cloud forest, the waterfall, and beautiful ridges. The slopes are steep, with 400 metres of elevation gain up to 1,918 metres.
+        </p>
+        <p>
+          <strong>Bring:</strong> very good hiking shoes or boots, a fleece, rain gear and a windbreaker, a small light backpack and at least one litre of water. The gourmet picnic is included.
+        </p>
+      </div>
+      <div>
+        <div class="amenity-list">
+          {waterfallFacts.map((item) => <span>{item}</span>)}
+        </div>
+      </div>
+    </Split>
+    <a class="btn btn-normal btn-spaced" href={`?randonnee=${cloudForestWaterfall.slug}#reserver`}>Book this trail</a>
+    {waterfallMaps.map((map) => (
+      <div class="wide-photo">
+        <Image src={map.image} alt={map.alt} widths={[480, 900, 1600, 2000]} sizes="100vw" />
+      </div>
+    ))}
+  </Section>
+
+  <Section label="For All Hikers" heading="Farm Tour and Cloud Forest.">
+    <Split>
+      <div>
+        <p>
+          A loop of about 4 hours from the bottom of the farm: up into the cloud forest, a beautiful forest, then a discovery of Wild on the Farm. The slopes are steep: 200 metres of elevation gain, from 1,700 to 1,918 metres.
+        </p>
+        <p>
+          At the farm: the macadamia plantation, the animals, and an introduction to permaculture. A meal can be added for an extra charge.
+        </p>
+      </div>
+      <div>
+        <div class="amenity-list">
+          {farmTourFacts.map((item) => <span>{item}</span>)}
+        </div>
+      </div>
+    </Split>
+    <a class="btn btn-normal btn-spaced" href={`?randonnee=${farmTourCloudForest.slug}#reserver`}>Book this trail</a>
+    {farmTourMaps.map((map) => (
+      <div class="wide-photo">
+        <Image src={map.image} alt={map.alt} widths={[480, 900, 1600, 2000]} sizes="100vw" />
+      </div>
+    ))}
+  </Section>
+
+  <Section label="Book" heading="Choose your hike, then your day." id="reserver">
+    <p>
+      Three steps: the hike, the month, then the day. Each participant then sends their own booking. Nothing to pay at this stage: we receive your booking, then email you the payment link for your deposit.
+    </p>
+    <NoteBox>
+      <p>
+        Payment: after your booking, we email you the PayPal link for the 50% deposit; the remaining 50% is due before the hike starts. Cancellation: no refund within {amistadWildCrossing.noRefundDays} days of departure. A departure runs from {amistadWildCrossing.minPeople} registered participants.
+      </p>
+      <p>
+        Each participant fills in their own form and pays their own deposit. At the start of the hike, each participant signs their form and the liability waiver.
+      </p>
+      <p>
+        In case of extreme weather, if we have to cancel the outing: full refund, or postponement to the next departure day.
+      </p>
+      <p>
+        Already a group of {amistadWildCrossing.maxPeople}? We can open another day for you. Write to us on{' '}
+        <a href={business.whatsappHref}>WhatsApp at {business.phone}</a> or at{' '}
+        <a href={`mailto:${business.email}`}>{business.email}</a>.
+      </p>
+    </NoteBox>
+    <HikeBooking options={hikeOptions} locale="en" />
   </Section>
 
   <Section label="In the Field" heading="A forest best met on foot.">

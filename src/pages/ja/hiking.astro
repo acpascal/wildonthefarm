@@ -1,10 +1,14 @@
 ---
-import { getImage } from 'astro:assets';
+import { getImage, Image } from 'astro:assets';
 import PageLayout from '../../layouts/PageLayout.astro';
 import PhotoHero from '../../components/PhotoHero.astro';
 import Section from '../../components/Section.astro';
 import Split from '../../components/Split.astro';
 import PhotoGrid from '../../components/PhotoGrid.astro';
+import NoteBox from '../../components/NoteBox.astro';
+import HikeBooking from '../../components/HikeBooking.astro';
+import { amistadWildCrossing, cloudForestWaterfall, farmTourCloudForest, type HikeOption } from '../../data/guidedHikes';
+import { business } from '../../data/business';
 import { img } from '../../lib/images';
 import type { PhotoItem } from '../../lib/photos';
 
@@ -17,6 +21,31 @@ const amenities = [
   '原生の雲霧林',
   '道中で出会うサルと野鳥',
   '丈夫な登山靴を推奨',
+];
+
+const amistadFacts = ["経験者向け", "約11 km", "標高差 850 m", "出発:ピアニスタ(1,268 m)", "最高地点:1,918 m", "到着:Wild on the Farm(1,730 m)", "ガイド必須", "2〜6名", "グルメピクニック付き", "ボケテへは車で戻ります", "傷害保険への加入必須"];
+
+const waterfallFacts = ["中級", "約6.5 km", "標高差 400 m", "出発:カミノ・デル・エスパニョール", "最高地点:1,918 m", "急な斜面", "2〜6名", "月曜・木曜", "グルメピクニック付き"];
+
+const farmTourFacts = ["どなたでも", "約4時間", "標高差 200 m", "出発:農園の下(1,700 m)", "最高地点:1,918 m", "急な斜面", "2〜6名", "金曜", "食事はオプション"];
+
+// The booking form's three hikes, in the order of the sections above it.
+const hikeOptions: HikeOption[] = [
+  { hike: amistadWildCrossing, title: 'Amistad Wild Crossing', level: "経験者向け", details: ["11 km · 標高差 850 m", "日曜・水曜 午前8時", "エル・ピアニスタ発 · グルメピクニック付き"] },
+  { hike: cloudForestWaterfall, title: 'Cloud Forest and Waterfall', level: "中級", details: ["6.5 km · 標高差 400 m", "月曜・木曜 午前9時", "カミノ・デル・エスパニョール発 · グルメピクニック付き"] },
+  { hike: farmTourCloudForest, title: 'Farm Tour and Cloud Forest', level: "どなたでも", details: ["約4時間 · 標高差 200 m", "金曜 午前9時", "農園の下から出発 · 食事はオプション"] },
+];
+
+const amistadMaps = [
+  { image: img('hiking/amistad-wild-crossing-map.webp'), alt: "ピアニスタから Wild on the Farm までの Amistad Wild Crossing のルート地図" },
+  { image: img('hiking/amistad-wild-crossing-relief.webp'), alt: "森を抜ける Amistad Wild Crossing のルートの立体図" },
+];
+
+const waterfallMaps = [{ image: img('hiking/cloud-forest-waterfall-map.webp'), alt: "カミノ・デル・エスパニョールから Wild on the Farm の上の尾根へ向かう Cloud Forest and Waterfall の周回ルート地図" }];
+
+const farmTourMaps = [
+  { image: img('hiking/farm-tour-cloud-forest-relief.webp'), alt: "農園の上を巡る Farm Tour and Cloud Forest の周回ルートの立体図" },
+  { image: img('hiking/farm-tour-cloud-forest-above.webp'), alt: "上空から見た Farm Tour and Cloud Forest の周回ルート、農園から雲霧林まで" },
 ];
 
 const trailPhotos: PhotoItem[] = [
@@ -106,6 +135,112 @@ const trailPhotos: PhotoItem[] = [
       </div>
     </Split>
     <p><a href="/ja/journal/hiking-in-boquete/"><strong>ボケテの小道、その歴史、そして私たち自身が描いた地図 →</strong></a></p>
+  </Section>
+
+  <Section label="経験者向け" heading="Amistad Wild Crossing">
+    <Split>
+      <div>
+        <p>
+          私たちのいちばん本格的なルートです。ピアニスタの谷から Wild on the Farm まで、山とジャングルの地形を約11キロ、ラ・アミスタッド国立公園の険しく手つかずの一帯を横断します。道ははっきりとは見えず、倒木を越え、川を渡り、標高差は850メートルあります。
+        </p>
+        <p>
+          森はとても美しく、終盤の風の吹きつける尾根まで、刻々と表情を変えます。バク、ペッカリー、サル、シカ、オセロット、ピューマ、ジャガー、そしてケツァールが暮らす土地です。
+        </p>
+        <p>
+          <strong>持ち物:</strong>しっかりした登山靴またはブーツ、フリース、雨具とウインドブレーカー、小さく軽いリュック、そして最低1リットルの水。グルメピクニックが付いています。
+        </p>
+      </div>
+      <div>
+        <div class="amenity-list">
+          {amistadFacts.map((item) => <span>{item}</span>)}
+        </div>
+      </div>
+    </Split>
+    <NoteBox>
+      <p>
+        ルートは決まった道ではないため、必ずガイドと一緒に、最大6名のグループで歩きます。ボケテへは Wild on the Farm から車で戻ります。
+      </p>
+      <p>
+        出発前に免責同意書に署名していただきます。参加者は全員、ハイキング中の事故を補償する保険に加入している必要があります。
+      </p>
+    </NoteBox>
+    <a class="btn btn-normal btn-spaced" href={`?randonnee=${amistadWildCrossing.slug}#reserver`}>このトレイルを予約する</a>
+    {amistadMaps.map((map) => (
+      <div class="wide-photo">
+        <Image src={map.image} alt={map.alt} widths={[480, 900, 1600, 2000]} sizes="100vw" />
+      </div>
+    ))}
+  </Section>
+
+  <Section label="中級" heading="Cloud Forest and Waterfall">
+    <Split>
+      <div>
+        <p>
+          カミノ・デル・エスパニョールを出発し、山の地形を歩く6.5キロの周回コースです。雲霧林、滝、そして美しい尾根。斜面は急で、標高1,918メートルまで400メートルを登ります。
+        </p>
+        <p>
+          <strong>持ち物:</strong>しっかりした登山靴またはブーツ、フリース、雨具とウインドブレーカー、小さく軽いリュック、そして最低1リットルの水。グルメピクニックが付いています。
+        </p>
+      </div>
+      <div>
+        <div class="amenity-list">
+          {waterfallFacts.map((item) => <span>{item}</span>)}
+        </div>
+      </div>
+    </Split>
+    <a class="btn btn-normal btn-spaced" href={`?randonnee=${cloudForestWaterfall.slug}#reserver`}>このトレイルを予約する</a>
+    {waterfallMaps.map((map) => (
+      <div class="wide-photo">
+        <Image src={map.image} alt={map.alt} widths={[480, 900, 1600, 2000]} sizes="100vw" />
+      </div>
+    ))}
+  </Section>
+
+  <Section label="どなたでも" heading="Farm Tour and Cloud Forest">
+    <Split>
+      <div>
+        <p>
+          農園の下から出発する約4時間の周回コースです。とても美しい雲霧林へ登り、そのあと Wild on the Farm を巡ります。斜面は急で、標高差は200メートル(1,700〜1,918メートル)です。
+        </p>
+        <p>
+          農園では、マカダミアの農園、動物たち、そしてパーマカルチャーの入門をご案内します。食事は別料金で追加できます。
+        </p>
+      </div>
+      <div>
+        <div class="amenity-list">
+          {farmTourFacts.map((item) => <span>{item}</span>)}
+        </div>
+      </div>
+    </Split>
+    <a class="btn btn-normal btn-spaced" href={`?randonnee=${farmTourCloudForest.slug}#reserver`}>このトレイルを予約する</a>
+    {farmTourMaps.map((map) => (
+      <div class="wide-photo">
+        <Image src={map.image} alt={map.alt} widths={[480, 900, 1600, 2000]} sizes="100vw" />
+      </div>
+    ))}
+  </Section>
+
+  <Section label="予約" heading="ハイキングを選び、日を選ぶ。" id="reserver">
+    <p>
+      ハイキング、月、日の3ステップです。そのあと参加者はそれぞれご自身で予約をお送りください。この時点でのお支払いはありません。ご予約を受け取り次第、デポジットの支払いリンクをメールでお送りします。
+    </p>
+    <NoteBox>
+      <p>
+        お支払い:ご予約後、50%のデポジット用の PayPal リンクをメールでお送りします。残りの50%はハイキングの出発前にお支払いください。キャンセル:出発の{amistadWildCrossing.noRefundDays}日前を過ぎると返金はありません。{amistadWildCrossing.minPeople}名以上のお申し込みで催行します。
+      </p>
+      <p>
+        参加者はそれぞれご自身のフォームに記入し、ご自身のデポジットをお支払いください。ハイキングの出発時に、参加者全員がご自身のフォームと免責同意書に署名します。
+      </p>
+      <p>
+        極端な悪天候でツアーを中止する場合は、全額返金、または次の出発日への振替となります。
+      </p>
+      <p>
+        すでに{amistadWildCrossing.maxPeople}名のグループですか?別の日を設けることもできます。{' '}
+        <a href={business.whatsappHref}>WhatsApp({business.phone})</a>または{' '}
+        <a href={`mailto:${business.email}`}>{business.email}</a> までご連絡ください。
+      </p>
+    </NoteBox>
+    <HikeBooking options={hikeOptions} locale="ja" />
   </Section>
 
   <Section label="現地にて" heading="この森と出会う、いちばんの方法は、歩くこと。">

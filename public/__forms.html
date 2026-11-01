@@ -1,0 +1,44 @@
+<!doctype html>
+<!-- Declares the hike booking form to Netlify Forms, which reads built HTML to
+     learn a form's fields. Guests never see this page: scripts/hike-booking.js
+     posts here, and Netlify emails each booking to info@wildonthefarm.com.
+     A field missing from this list is dropped, so keep it in sync with
+     sendBooking() in that script. `email` also sets the Reply-To. -->
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <title>Formulaires</title>
+  </head>
+  <body>
+    <form name="reservation-randonnee" data-netlify="true" data-netlify-honeypot="website" hidden>
+      <input type="hidden" name="subject" />
+      <input type="text" name="website" />
+      <input type="text" name="Randonnee" />
+      <input type="text" name="Date" />
+      <input type="text" name="Rendez-vous" />
+      <input type="text" name="Nom" />
+      <input type="text" name="Age" />
+      <input type="text" name="Cedula-ou-passeport" />
+      <input type="text" name="Domicile" />
+      <input type="text" name="Repas" />
+      <input type="text" name="Total" />
+      <input type="text" name="Acompte" />
+      <input type="text" name="Solde" />
+      <input type="text" name="Lien-de-paiement-a-envoyer" />
+      <input type="text" name="WhatsApp" />
+      <input type="email" name="email" />
+      <input type="text" name="Logement-a-Boquete" />
+      <input type="text" name="Langue-parlee" />
+      <input type="text" name="Langue-du-site" />
+      <input type="text" name="Derniere-randonnee-de-6h" />
+      <textarea name="Sante"></textarea>
+      <input type="text" name="Urgence-nom" />
+      <input type="text" name="Urgence-telephone" />
+      <input type="text" name="Assurance" />
+      <input type="text" name="Decharge" />
+      <input type="text" name="Conditions" />
+      <input type="text" name="Reference" />
+    </form>
+  </body>
+</html>

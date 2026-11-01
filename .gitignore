@@ -32,3 +32,6 @@ pnpm-debug.log*
 
 # Tour-operator presentation kit (not part of the site)
 presentation-tour-operateurs/
+
+# Tours booking project notes, draft and exported discussion (holds client data — not part of the site)
+tours-reservation/

@@ -1,10 +1,14 @@
 ---
-import { getImage } from 'astro:assets';
+import { getImage, Image } from 'astro:assets';
 import PageLayout from '../../layouts/PageLayout.astro';
 import PhotoHero from '../../components/PhotoHero.astro';
 import Section from '../../components/Section.astro';
 import Split from '../../components/Split.astro';
 import PhotoGrid from '../../components/PhotoGrid.astro';
+import NoteBox from '../../components/NoteBox.astro';
+import HikeBooking from '../../components/HikeBooking.astro';
+import { amistadWildCrossing, cloudForestWaterfall, farmTourCloudForest, type HikeOption } from '../../data/guidedHikes';
+import { business } from '../../data/business';
 import { img } from '../../lib/images';
 import type { PhotoItem } from '../../lib/photos';
 
@@ -17,6 +21,81 @@ const amenities = [
   'Forêt nuageuse primaire',
   'Singes et oiseaux sur le chemin',
   'Chaussures de marche solides recommandées',
+];
+
+const amistadFacts = [
+  'Randonneurs confirmés',
+  'Environ 11 km',
+  'Dénivelé : 850 m',
+  'Départ : Pianista, 1 268 m',
+  'Point haut : 1 918 m',
+  'Arrivée : Wild on the Farm, 1 730 m',
+  'Guide indispensable',
+  'De 2 à 6 personnes',
+  'Pique-nique gourmet inclus',
+  'Retour en voiture à Boquete',
+  'Assurance accident obligatoire',
+];
+
+// The booking form's three hikes, in the order of the sections above it.
+const hikeOptions: HikeOption[] = [
+  {
+    hike: amistadWildCrossing,
+    title: 'Amistad Wild Crossing',
+    level: 'Randonneurs confirmés',
+    details: ['11 km · 850 m de dénivelé', 'Dimanche et mercredi, 8 h', 'Départ El Pianista · pique-nique gourmet inclus'],
+  },
+  {
+    hike: cloudForestWaterfall,
+    title: 'Cloud Forest and Waterfall',
+    level: 'Difficulté modérée',
+    details: ['6,5 km · 400 m de dénivelé', 'Lundi et jeudi, 9 h', 'Départ Camino del Español · pique-nique gourmet inclus'],
+  },
+  {
+    hike: farmTourCloudForest,
+    title: 'Farm Tour and Cloud Forest',
+    level: 'Pour tous les randonneurs',
+    details: ['Environ 4 h · 200 m de dénivelé', 'Le vendredi, 9 h', 'Départ en bas de la ferme · repas en option'],
+  },
+];
+
+const waterfallFacts = [
+  'Difficulté modérée',
+  'Environ 6,5 km',
+  'Dénivelé : 400 m',
+  'Départ : Camino del Español',
+  'Point haut : 1 918 m',
+  'Fortes pentes',
+  'De 2 à 6 personnes',
+  'Lundi et jeudi',
+  'Pique-nique gourmet inclus',
+];
+
+const waterfallMap = {
+  image: img('hiking/cloud-forest-waterfall-map.webp'),
+  alt: 'Carte de la boucle Cloud Forest and Waterfall, du Camino del Español aux crêtes au-dessus de Wild on the Farm',
+};
+
+const farmTourFacts = [
+  'Pour tous les randonneurs',
+  'Environ 4 heures',
+  'Dénivelé : 200 m',
+  'Départ : en bas de la ferme, 1 700 m',
+  'Point haut : 1 918 m',
+  'Fortes pentes',
+  'De 2 à 6 personnes',
+  'Le vendredi',
+  'Repas en option',
+];
+
+const farmTourMaps = [
+  { image: img('hiking/farm-tour-cloud-forest-relief.webp'), alt: 'Vue en relief de la boucle du Farm Tour and Cloud Forest, au-dessus de la ferme' },
+  { image: img('hiking/farm-tour-cloud-forest-above.webp'), alt: 'La boucle du Farm Tour and Cloud Forest vue du dessus, de la ferme à la forêt nuageuse' },
+];
+
+const amistadMaps = [
+  { image: img('hiking/amistad-wild-crossing-map.webp'), alt: "Carte du tracé de l'Amistad Wild Crossing, du Pianista à Wild on the Farm" },
+  { image: img('hiking/amistad-wild-crossing-relief.webp'), alt: "Vue en relief du tracé de l'Amistad Wild Crossing à travers la forêt" },
 ];
 
 const trailPhotos: PhotoItem[] = [
@@ -108,6 +187,131 @@ const trailPhotos: PhotoItem[] = [
       </div>
     </Split>
     <p><a href="/fr/journal/randonnee-a-boquete/"><strong>Les sentiers de Boquete, leur histoire, et notre propre carte →</strong></a></p>
+  </Section>
+
+  <Section label="Randonneurs Confirmés" heading="Amistad Wild Crossing.">
+    <Split>
+      <div>
+        <p>
+          Notre traversée la plus engagée : une randonnée en terrain de montagne et de jungle,
+          environ 11 kilomètres de la vallée du Pianista jusqu'à Wild on the Farm, à travers une
+          partie montagneuse et sauvage du parc national La Amistad. Le sentier se devine plus qu'il ne se suit — arbres tombés à franchir,
+          rivières à traverser, 850 mètres de dénivelé.
+        </p>
+        <p>
+          La forêt est très belle et change sans cesse d'ambiance, jusqu'aux crêtes ventées de la
+          fin du parcours. C'est le territoire du tapir, du pécari, des singes, du cerf, de
+          l'ocelot, du puma et du jaguar — et celui du quetzal.
+        </p>
+        <p>
+          <strong>À prévoir :</strong> de très bonnes chaussures de marche ou des bottes, une
+          polaire, un vêtement de pluie et un coupe-vent, un petit sac à dos léger et un litre
+          d'eau au minimum. Le pique-nique gourmet est inclus.
+        </p>
+      </div>
+      <div>
+        <div class="amenity-list">
+          {amistadFacts.map((item) => <span>{item}</span>)}
+        </div>
+      </div>
+    </Split>
+    <NoteBox>
+      <p>
+        Le tracé est aléatoire et ne se parcourt qu'avec un guide, en groupe de 6 personnes
+        maximum. Le retour à Boquete se fait en voiture depuis Wild on the Farm.
+      </p>
+      <p>
+        Une décharge de responsabilité est signée avant le départ : chaque participant doit avoir
+        une assurance qui le couvre en cas d'accident en randonnée.
+      </p>
+    </NoteBox>
+    <a class="btn btn-normal btn-spaced" href={`?randonnee=${amistadWildCrossing.slug}#reserver`}>Réserver ce sentier</a>
+    {amistadMaps.map((map) => (
+      <div class="wide-photo">
+        <Image src={map.image} alt={map.alt} widths={[480, 900, 1600, 2000]} sizes="100vw" />
+      </div>
+    ))}
+  </Section>
+
+  <Section label="Difficulté Modérée" heading="Cloud Forest and Waterfall.">
+    <Split>
+      <div>
+        <p>
+          Une boucle de 6,5 kilomètres en terrain de montagne, au départ du Camino del Español : la
+          forêt nuageuse, la cascade, et de belles crêtes. Les pentes sont fortes, avec 400 mètres de
+          dénivelé jusqu'à 1 918 mètres d'altitude.
+        </p>
+        <p>
+          <strong>À prévoir :</strong> de très bonnes chaussures de marche ou des bottes, une
+          polaire, un vêtement de pluie et un coupe-vent, un petit sac à dos léger et un litre
+          d'eau au minimum. Le pique-nique gourmet est inclus.
+        </p>
+      </div>
+      <div>
+        <div class="amenity-list">
+          {waterfallFacts.map((item) => <span>{item}</span>)}
+        </div>
+      </div>
+    </Split>
+    <a class="btn btn-normal btn-spaced" href={`?randonnee=${cloudForestWaterfall.slug}#reserver`}>Réserver ce sentier</a>
+    <div class="wide-photo">
+      <Image src={waterfallMap.image} alt={waterfallMap.alt} widths={[480, 900, 1600, 2000]} sizes="100vw" />
+    </div>
+  </Section>
+
+  <Section label="Pour Tous les Randonneurs" heading="Farm Tour and Cloud Forest.">
+    <Split>
+      <div>
+        <p>
+          Une boucle d'environ 4 heures au départ du bas de la ferme : on monte dans la forêt
+          nuageuse, une très belle forêt, puis on découvre Wild on the Farm. Les pentes sont fortes :
+          200 mètres de dénivelé, de 1 700 à 1 918 mètres d'altitude.
+        </p>
+        <p>
+          À la ferme : la plantation de macadamias, les animaux, et une introduction à la
+          permaculture. Le repas peut être ajouté en supplément.
+        </p>
+      </div>
+      <div>
+        <div class="amenity-list">
+          {farmTourFacts.map((item) => <span>{item}</span>)}
+        </div>
+      </div>
+    </Split>
+    <a class="btn btn-normal btn-spaced" href={`?randonnee=${farmTourCloudForest.slug}#reserver`}>Réserver ce sentier</a>
+    {farmTourMaps.map((map) => (
+      <div class="wide-photo">
+        <Image src={map.image} alt={map.alt} widths={[480, 900, 1600, 2000]} sizes="100vw" />
+      </div>
+    ))}
+  </Section>
+
+  <Section label="Réserver" heading="Choisissez votre randonnée, puis votre jour." id="reserver">
+    <p>
+      Trois étapes : la randonnée, le mois, puis le jour. Chaque participant envoie ensuite sa propre réservation. Rien à payer à ce moment-là : nous recevons votre réservation, puis nous vous envoyons par e-mail le lien de paiement de votre acompte.
+    </p>
+    <NoteBox>
+      <p>
+        Paiement : après votre réservation, nous vous envoyons par e-mail le lien PayPal de l'acompte de 50 % ; les 50 % restants se règlent avant le départ de la randonnée.
+        Annulation : aucun remboursement à moins de {amistadWildCrossing.noRefundDays} jours du départ.
+        Le départ a lieu à partir de {amistadWildCrossing.minPeople} personnes inscrites.
+      </p>
+      <p>
+        Chaque participant remplit son propre formulaire et règle son propre acompte. Au départ de
+        la randonnée, chaque participant signe son formulaire et la décharge de responsabilité.
+      </p>
+      <p>
+        En cas de mauvais temps extrême, si nous devons annuler la sortie : remboursement complet,
+        ou report au prochain jour de départ.
+      </p>
+      <p>
+        Vous êtes déjà un groupe de {amistadWildCrossing.maxPeople} personnes ? Nous pouvons ouvrir
+        pour vous un autre jour. Écrivez-nous par{' '}
+        <a href={business.whatsappHref}>WhatsApp au {business.phone}</a> ou à{' '}
+        <a href={`mailto:${business.email}`}>{business.email}</a>.
+      </p>
+    </NoteBox>
+    <HikeBooking options={hikeOptions} locale="fr" />
   </Section>
 
   <Section label="Sur le Terrain" heading="Une forêt qui se découvre avant tout à pied.">

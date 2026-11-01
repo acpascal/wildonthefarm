@@ -7,6 +7,8 @@ export const business = {
   phoneHref: 'tel:50765699134',
   whatsappHref: 'https://api.whatsapp.com/send?phone=50765699134',
   email: 'info@wildonthefarm.com',
+  // PayPal.Me page; append `/<amount>USD` for a link with the amount filled in.
+  paypalMe: 'https://www.paypal.me/boquetepermaculturas.a',
   // Kept in line with the Google Business Profile ("Wild on the Farm, Boquete
   // Cloud Forest Lodge" — Horqueta, Los Naranjos, Chiriquí) so search engines
   // see one consistent name/address/phone across the site and Maps.
