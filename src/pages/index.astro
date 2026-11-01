@@ -1,4 +1,5 @@
 ---
+import LastMinuteNotice from '../components/LastMinuteNotice.astro';
 import { getImage } from 'astro:assets';
 import PageLayout from '../layouts/PageLayout.astro';
 import Hero from '../components/Hero.astro';
@@ -80,6 +81,7 @@ const seoDescription =
         <a href="/reserve/" class="btn btn-inverted">Reserve Your Stay</a>
         <a href="/farm/" class="btn btn-transparent">Discover the Farm</a>
       </div>
+      <LastMinuteNotice locale="en" />
     </Hero>
   </Fragment>
 

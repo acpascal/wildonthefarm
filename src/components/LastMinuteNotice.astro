@@ -1,0 +1,21 @@
+---
+import type { Locale } from '../i18n/ui';
+import { pageHref } from '../data/pageTranslations';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+// The last-minute offer itself lives on the rates pages; this line only points
+// to it, so the percentage here must match the highest discount there.
+const label: Record<Locale, string> = {
+  en: 'Last-minute: up to 30% off if a cabin is still free →',
+  es: 'Último momento: hasta 30% de descuento si queda una cabaña libre →',
+  fr: "Dernière minute : jusqu'à -30 % si une cabane est encore libre →",
+  ja: '直前割引：空きがあれば最大30%オフ →',
+};
+---
+
+<a class="last-minute-notice" href={`${pageHref('rates-retreats', locale)}#last-minute`}>{label[locale]}</a>
