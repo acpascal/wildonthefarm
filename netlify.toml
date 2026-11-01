@@ -67,6 +67,12 @@
   force = true
 
 [[redirects]]
+  from = "/about/"
+  to = "/farm/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/the-farm/"
   to = "/farm/"
   status = 301

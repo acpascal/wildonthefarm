@@ -45,16 +45,16 @@ const species = [
 ---
 
 <PageLayout
-  title="Observation des Oiseaux | Wild on the Farm, Boquete Cloud Forest Lodge"
-  description="Observation des oiseaux à Wild on the Farm : refuge du quetzal resplendissant et de la chlorophonie dorée, à la lisière du parc national La Amistad, Panama."
+  title="Observation du quetzal et des oiseaux à Boquete | Wild on the Farm, Boquete Cloud Forest Lodge"
+  description="Observation des oiseaux à Boquete, aux portes du parc La Amistad : cherchez le quetzal resplendissant là où il niche, parmi 28 espèces photographiées sur la ferme."
   path="/fr/observation-des-oiseaux/"
   image={ogImage.src}
-  pullIntro="À la lisière du parc national La Amistad, la forêt nuageuse abrite quelques-uns des oiseaux les plus recherchés d'Amérique centrale — silencieux, patients, et à observer de préférence aux premières lueurs du jour."
+  pullIntro="À Boquete, à la lisière du parc national La Amistad, la forêt nuageuse abrite quelques-uns des oiseaux les plus recherchés d'Amérique centrale — silencieux, patients, et à observer de préférence aux premières lueurs du jour."
   locale="fr"
 >
   <Fragment slot="hero">
-    <PhotoHero image={heroImage} alt="Quetzal resplendissant en vol à Wild on the Farm" eyebrow="Expérience — Observation des Oiseaux">
-      Là où niche encore le quetzal resplendissant.
+    <PhotoHero image={heroImage} alt="Quetzal resplendissant en vol à Wild on the Farm" eyebrow="Observation des Oiseaux — Boquete, Panama">
+      Observer les oiseaux à Boquete, là où niche encore le quetzal resplendissant.
     </PhotoHero>
   </Fragment>
 
@@ -93,7 +93,7 @@ const species = [
     </Split>
   </Section>
 
-  <Section label="Observées Sur La Ferme" heading="Vingt-six espèces de plus, photographiées ici même.">
+  <Section label="Observées Sur La Ferme" heading="26 oiseaux de Boquete de plus, photographiés sur la ferme.">
     <CardGrid>
       {species.map((s) => (
         <ImageTextCard image={s.image} alt={s.alt} title={s.name} eyebrow={s.latin} groupId="birdwatching-species">
@@ -105,8 +105,8 @@ const species = [
 
   <Fragment slot="footer">
     <div class="section-label">Préparez Votre Visite</div>
-    <h2>Idéal aux premières lueurs.</h2>
-    <p>Des sorties guidées peuvent être organisées tôt le matin, quand la forêt est la plus animée. Dites-nous si l'observation des oiseaux est au cœur de votre séjour, et nous l'organiserons autour de cela.</p>
+    <h2>Quand voir le quetzal à Boquete.</h2>
+    <p>La meilleure période va du 15 mars au 15 mai, quand la plupart des oiseaux nichent et que les quetzals sont nombreux dans la région. Des sorties guidées peuvent être organisées tôt le matin, quand la forêt est la plus animée. Dites-nous si l'observation des oiseaux est au cœur de votre séjour, et nous l'organiserons autour de cela.</p>
     <div class="contact-list">
       <a href="/fr/randonnee/">Randonnée et Sentiers →</a>
       <a href="/fr/ferme/">Retour à La Ferme →</a>

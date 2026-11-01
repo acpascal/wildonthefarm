@@ -45,16 +45,16 @@ const species = [
 ---
 
 <PageLayout
-  title="野鳥観察 | Wild on the Farm, Boquete Cloud Forest Lodge"
-  description="Wild on the Farmでの野鳥観察——ケツァールとキンマユクロロフォニアが暮らす、パナマ、アミスタッド国立公園の縁にある地。"
+  title="ボケテのバードウォッチングとケツァール | Wild on the Farm, Boquete Cloud Forest Lodge"
+  description="ラ・アミスタッド国立公園に隣接するボケテでバードウォッチング。ケツァールが巣を作る森で、農園で撮影された28種の鳥に出会えます。"
   path="/ja/birdwatching/"
   image={ogImage.src}
-  pullIntro="アミスタッド国立公園の縁で、雲霧林は中央アメリカでもっとも人気の高い鳥たちを抱いています——静かに、辛抱強く、そして夜明けの最初の光の中で出会うのが一番です。"
+  pullIntro="ボケテ、アミスタッド国立公園の縁で、雲霧林は中央アメリカでもっとも人気の高い鳥たちを抱いています——静かに、辛抱強く、そして夜明けの最初の光の中で出会うのが一番です。"
   locale="ja"
 >
   <Fragment slot="hero">
-    <PhotoHero image={heroImage} alt="Wild on the Farmで飛翔するケツァール" eyebrow="体験——野鳥観察">
-      ケツァールが、いまも巣を作る場所。
+    <PhotoHero image={heroImage} alt="Wild on the Farmで飛翔するケツァール" eyebrow="バードウォッチング——パナマ、ボケテ">
+      ボケテのバードウォッチング——ケツァールが、いまも巣を作る場所。
     </PhotoHero>
   </Fragment>
 
@@ -91,7 +91,7 @@ const species = [
     </Split>
   </Section>
 
-  <Section label="農園で見られた鳥たち" heading="さらに二十六種、まさにここで撮影されたもの。">
+  <Section label="農園で見られた鳥たち" heading="ボケテの鳥たち、さらに26種——この農園で撮影。">
     <CardGrid>
       {species.map((s) => (
         <ImageTextCard image={s.image} alt={s.alt} title={s.name} eyebrow={s.latin} groupId="birdwatching-species">
@@ -103,8 +103,8 @@ const species = [
 
   <Fragment slot="footer">
     <div class="section-label">ご滞在の計画を</div>
-    <h2>夜明けの光が、いちばん。</h2>
-    <p>森がもっとも活気づく早朝には、ガイド付きの散策を手配することができます。ご滞在の中心を野鳥観察に据えたい場合は、ぜひお知らせください——それに合わせて計画いたします。</p>
+    <h2>ボケテでケツァールに出会える季節。</h2>
+    <p>最適な時期は3月15日から5月15日のあいだ。ほとんどの鳥が巣作りをし、この一帯でケツァールが多く見られる季節です。森がもっとも活気づく早朝には、ガイド付きの散策を手配することができます。ご滞在の中心を野鳥観察に据えたい場合は、ぜひお知らせください——それに合わせて計画いたします。</p>
     <div class="contact-list">
       <a href="/ja/hiking/">ハイキングと小道 →</a>
       <a href="/ja/farm/">農園に戻る →</a>
