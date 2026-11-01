@@ -67,6 +67,12 @@
   force = true
 
 [[redirects]]
+  from = "/booking-engine/"
+  to = "/reserve/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/about/"
   to = "/farm/"
   status = 301
