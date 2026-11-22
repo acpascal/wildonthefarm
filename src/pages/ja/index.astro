@@ -5,6 +5,7 @@ import PageLayout from '../../layouts/PageLayout.astro';
 import Hero from '../../components/Hero.astro';
 import Stats from '../../components/Stats.astro';
 import Section from '../../components/Section.astro';
+import NoteBox from '../../components/NoteBox.astro';
 import Split from '../../components/Split.astro';
 import Story from '../../components/Story.astro';
 import CardGrid from '../../components/CardGrid.astro';
@@ -93,6 +94,9 @@ const seoDescription =
   <Stats stats={stats} />
 
   <Section>
+    <NoteBox>
+      <p>重要なお知らせ：農園へ上る最後の1キロは非常に急な坂道で、4WD車が必要です。普通の乗用車では上ることができません。4WD車のレンタルをおすすめします。特に、燃費が良く、ボケテ周辺を巡るのに最適なスズキ・ジムニーがおすすめです。</p>
+    </NoteBox>
     <Split>
       <div>
         <div class="section-label">農園</div>
