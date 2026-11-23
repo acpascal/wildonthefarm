@@ -1033,6 +1033,16 @@ section > .container:has(> p.display) > :is(.section-label, .lede, p) {
   border-left-color: var(--gold-bright);
 }
 
+.note-box-important {
+  background: #e3efdc;
+  border-left-color: var(--green-soft);
+  margin-top: -1cm;
+}
+
+.note-box-important strong {
+  font-weight: 700;
+}
+
 .note-box p:last-child {
   margin-bottom: 0;
 }
